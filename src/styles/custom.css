@@ -1,16 +1,32 @@
 :root {
-  --sl-color-accent-low: #d9f0ea;
-  --sl-color-accent: #147c74;
-  --sl-color-accent-high: #0f4d4a;
-  --sl-color-white: #fffdfa;
-  --sl-color-gray-1: #f7f4ed;
-  --sl-color-gray-2: #e8e1d4;
-  --sl-color-gray-3: #c9d2ca;
-  --sl-color-gray-4: #85948d;
-  --sl-color-gray-5: #53605c;
-  --sl-color-gray-6: #263331;
-  --sl-color-black: #101917;
   --sl-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --biolearn-panel-bg: #16322f;
+  --biolearn-panel-border: #3f625c;
+  --biolearn-panel-text: #f3faf7;
+  --biolearn-panel-muted: #d2e4df;
+  --biolearn-table-head: #214a44;
+  --biolearn-table-rule: #3f625c;
+}
+
+:root,
+:root[data-theme="dark"] {
+  --sl-color-accent-low: #123c38;
+  --sl-color-accent: #54c6b7;
+  --sl-color-accent-high: #bdeee6;
+  --sl-color-text-accent: #89ded3;
+}
+
+:root[data-theme="light"] {
+  --sl-color-accent-low: #d9f1ec;
+  --sl-color-accent: #087b73;
+  --sl-color-accent-high: #07524d;
+  --sl-color-text-accent: #087b73;
+  --biolearn-panel-bg: #f7fbf8;
+  --biolearn-panel-border: #c9d9d3;
+  --biolearn-panel-text: #18312d;
+  --biolearn-panel-muted: #4f625d;
+  --biolearn-table-head: #e3f3ee;
+  --biolearn-table-rule: #c9d9d3;
 }
 
 html {
@@ -29,17 +45,36 @@ html {
 .biolearn-box,
 .biolearn-quiz,
 .glossary-table {
-  border: 1px solid var(--sl-color-gray-3);
+  color: var(--biolearn-panel-text);
+  border: 1px solid var(--biolearn-panel-border);
   border-radius: 8px;
   padding: 1rem 1.1rem;
   margin: 1.25rem 0;
-  background: color-mix(in srgb, var(--sl-color-gray-1) 72%, white);
+  background: var(--biolearn-panel-bg);
 }
 
 .biolearn-box h3,
 .biolearn-quiz h3 {
+  color: var(--biolearn-panel-text);
   margin-top: 0;
   font-size: 1rem;
+}
+
+.biolearn-box a,
+.biolearn-quiz a,
+.glossary-table a {
+  color: var(--sl-color-text-accent);
+}
+
+.biolearn-box li,
+.biolearn-quiz li,
+.glossary-table td {
+  color: var(--biolearn-panel-text);
+}
+
+.biolearn-box ::marker,
+.biolearn-quiz ::marker {
+  color: var(--sl-color-accent);
 }
 
 .biolearn-term {
@@ -71,13 +106,17 @@ html {
 
 .glossary-table th,
 .glossary-table td {
-  border-bottom: 1px solid var(--sl-color-gray-3);
+  border-bottom: 1px solid var(--biolearn-table-rule);
   padding: 0.7rem 0.6rem;
   text-align: left;
   vertical-align: top;
 }
 
 .glossary-table th {
-  color: var(--sl-color-accent-high);
-  background: color-mix(in srgb, var(--sl-color-accent-low) 42%, transparent);
+  color: var(--biolearn-panel-text);
+  background: var(--biolearn-table-head);
+}
+
+.glossary-table tr:last-child td {
+  border-bottom: 0;
 }
