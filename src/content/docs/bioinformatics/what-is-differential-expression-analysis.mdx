@@ -1,0 +1,50 @@
+---
+title: 差次的発現解析とは何か
+description: 条件間で遺伝子発現が変わるかを調べる解析の基本を説明します。
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+
+<LearningGoals items={['差次的発現解析の目的を説明できる', '発現量、正規化、統計的検定の関係を知る', '結果の解釈で効果量と信頼性の両方を見る必要があることを理解する']} />
+
+## まず一言でいうと
+
+差次的発現解析は、条件の違いによって遺伝子発現が変わっているかを調べる解析です。
+
+## 本文
+
+RNA-seqでは、各遺伝子に対応するリード数を数え、発現量の指標を作ります。ただし、試料ごとの総リード数や技術的な違いがあるため、比較の前に正規化が必要です。
+
+差次的発現解析では、条件Aと条件Bで発現量が異なる遺伝子を統計的に調べます。結果を見るときは、p値や調整済みp値だけでなく、発現変化の大きさ、実験設計、再現性、生物学的な意味も合わせて考えます。
+
+<TermBox term="差次的発現解析" english="differential expression analysis" abbreviation="DEA">
+条件間で遺伝子発現に差があるかを統計的に調べる解析です。
+</TermBox>
+
+## 名称の対応表
+
+| 日本語名 | 英語名 | 略語 |
+| --- | --- | --- |
+| 差次的発現解析 | differential expression analysis | DEA |
+| 正規化 | normalization | - |
+| 調整済みp値 | adjusted p-value | FDR |
+| 対数変化倍率 | log fold change | logFC |
+
+## よくある誤解
+
+- p値が小さいだけで、生物学的に重要とは限りません。
+- 解析結果は実験設計やサンプル数に大きく影響されます。
+
+## 重要用語
+
+- 差次的発現解析 / differential expression analysis
+- 正規化 / normalization
+- 調整済みp値 / adjusted p-value
+- 対数変化倍率 / log fold change
+
+<Quiz questions={[{ question: '差次的発現解析で正規化が必要な理由を説明してください。', answer: '試料ごとの総リード数や技術的な違いを調整し、条件間の比較をしやすくするためです。' }, { question: '解析結果を見るとき、p値以外に確認したいものを一つ挙げてください。', answer: '発現変化の大きさ、調整済みp値、サンプル数、実験設計、再現性などがあります。' }]} />
+
+<NextSteps items={[{ title: '論文Figureの読み方', href: '/reading-figures/' }, { title: '用語集', href: '/glossary/' }]} />

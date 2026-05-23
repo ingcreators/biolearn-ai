@@ -1,0 +1,50 @@
+---
+title: 翻訳とは何か
+description: RNAの情報からタンパク質が作られる過程を説明します。
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+
+<LearningGoals items={['翻訳がRNAからタンパク質を作る過程であることを理解する', 'コドンとアミノ酸の関係を知る', 'リボソームとtRNAの役割を説明できる']} />
+
+## まず一言でいうと
+
+翻訳は、mRNAの情報をアミノ酸配列へ変換し、タンパク質を作る過程です。
+
+## 本文
+
+mRNAには、3つの塩基を1組とするコドンが並んでいます。リボソームはmRNAを読み取り、tRNAが運ぶアミノ酸を順番につなげます。こうしてできたアミノ酸の鎖は折りたたまれ、タンパク質として働きます。
+
+翻訳は、遺伝情報が細胞内の機能へつながる重要な段階です。ただし、タンパク質の働きは翻訳後の折りたたみや修飾にも影響されます。
+
+<TermBox term="翻訳" english="translation">
+mRNAの塩基配列をもとにアミノ酸をつなぎ、タンパク質を作る過程です。
+</TermBox>
+
+## 名称の対応表
+
+| 日本語名 | 英語名 | 略語 |
+| --- | --- | --- |
+| 翻訳 | translation | - |
+| コドン | codon | - |
+| リボソーム | ribosome | - |
+| 転移RNA | transfer RNA | tRNA |
+
+## よくある誤解
+
+- 翻訳は言語の翻訳と同じ意味ではなく、RNAの情報をアミノ酸配列へ変換する生物学用語です。
+- mRNAがあれば必ず同じ量のタンパク質ができるとは限りません。
+
+## 重要用語
+
+- 翻訳 / translation
+- コドン / codon
+- リボソーム / ribosome
+- tRNA / transfer RNA
+
+<Quiz questions={[{ question: 'コドンとは何ですか。', answer: 'mRNA上の3つの塩基の組で、対応するアミノ酸などを指定します。' }, { question: 'リボソームの役割を説明してください。', answer: 'mRNAを読み取り、アミノ酸をつなげてタンパク質を作る場として働きます。' }]} />
+
+<NextSteps items={[{ title: '遺伝子発現とは何か', href: '/molecular-biology/what-is-gene-expression/' }, { title: '用語集', href: '/glossary/' }]} />

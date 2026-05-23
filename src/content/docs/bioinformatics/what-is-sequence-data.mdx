@@ -1,0 +1,50 @@
+---
+title: シーケンスデータとは何か
+description: DNAやRNAの配列を読んで得られるデータの基本を説明します。
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+
+<LearningGoals items={['シーケンスデータが塩基配列を読んだ結果であることを理解する', 'リード、品質スコア、リファレンスゲノムの意味を知る', '実験データを解析可能な形にする流れを説明できる']} />
+
+## まず一言でいうと
+
+シーケンスデータは、DNAやRNA由来の塩基配列を読み取って得られるデータです。
+
+## 本文
+
+シーケンサーは、試料から作ったライブラリを読み取り、多数の短い配列情報を出力します。この短い配列をリードと呼びます。各塩基には読み取りの信頼度を表す品質スコアが付くことがあります。
+
+解析では、リードの品質を確認し、必要に応じて前処理を行い、リファレンスゲノムや転写産物へ対応づけます。シーケンスデータは、ゲノム解析やRNA-seq解析の出発点になります。
+
+<TermBox term="シーケンスデータ" english="sequence data">
+DNAやRNAの塩基配列を読み取って得られるデータです。
+</TermBox>
+
+## 名称の対応表
+
+| 日本語名 | 英語名 | 略語 |
+| --- | --- | --- |
+| シーケンスデータ | sequence data | - |
+| リード | read | - |
+| 品質スコア | quality score | Q score |
+| リファレンスゲノム | reference genome | - |
+
+## よくある誤解
+
+- シーケンスデータはそのまま答えではありません。品質確認や解析手順が必要です。
+- すべてのリードが同じ信頼度を持つわけではありません。
+
+## 重要用語
+
+- シーケンスデータ / sequence data
+- リード / read
+- 品質スコア / quality score
+- リファレンスゲノム / reference genome
+
+<Quiz questions={[{ question: 'リードとは何ですか。', answer: 'シーケンサーで読み取られた短い配列情報です。' }, { question: '品質スコアを見る理由を説明してください。', answer: '塩基の読み取りがどの程度信頼できるかを確認するためです。' }]} />
+
+<NextSteps items={[{ title: '差次的発現解析とは何か', href: '/bioinformatics/what-is-differential-expression-analysis/' }, { title: '用語集', href: '/glossary/' }]} />

@@ -1,0 +1,50 @@
+---
+title: 遺伝子発現とは何か
+description: 遺伝子の情報がRNAやタンパク質として使われることを説明します。
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+
+<LearningGoals items={['遺伝子発現の意味を説明できる', '発現量が細胞の状態によって変わることを理解する', 'RNA-seqが発現を調べる手法とつながることを知る']} />
+
+## まず一言でいうと
+
+遺伝子発現は、遺伝子の情報がRNAやタンパク質として実際に使われることです。
+
+## 本文
+
+同じゲノムを持つ細胞でも、すべての遺伝子を同じように使っているわけではありません。神経細胞、筋細胞、免疫細胞などは、それぞれ必要な遺伝子を異なる強さで発現させます。
+
+遺伝子発現は、転写、RNAの加工、翻訳、タンパク質の分解など、複数の段階で調節されます。RNA-seqでは主にRNAの量を測ることで、どの遺伝子がどの程度使われているかを推定します。
+
+<TermBox term="遺伝子発現" english="gene expression">
+遺伝子の情報がRNAやタンパク質として読み出され、細胞内で機能につながることです。
+</TermBox>
+
+## 名称の対応表
+
+| 日本語名 | 英語名 | 略語 |
+| --- | --- | --- |
+| 遺伝子発現 | gene expression | - |
+| 発現量 | expression level | - |
+| 発現制御 | expression regulation | - |
+| 転写因子 | transcription factor | TF |
+
+## よくある誤解
+
+- 遺伝子が存在することと、その遺伝子が強く発現していることは別です。
+- RNAの量だけでタンパク質量や機能が完全に決まるわけではありません。
+
+## 重要用語
+
+- 遺伝子発現 / gene expression
+- 発現量 / expression level
+- 発現制御 / expression regulation
+- 転写因子 / transcription factor
+
+<Quiz questions={[{ question: '同じゲノムを持つ細胞でも性質が違う理由を、遺伝子発現の観点から説明してください。', answer: '細胞ごとに発現している遺伝子や発現量が異なるため、作られるRNAやタンパク質が変わるからです。' }, { question: 'RNA-seqは遺伝子発現の何を主に測りますか。', answer: 'RNAの量を測り、遺伝子ごとの発現量を推定します。' }]} />
+
+<NextSteps items={[{ title: '細胞膜とは何か', href: '/cell-biology/what-is-cell-membrane/' }, { title: '用語集', href: '/glossary/' }]} />

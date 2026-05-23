@@ -1,0 +1,50 @@
+---
+title: 遺伝的変異とは何か
+description: ゲノム配列の違いと、その解釈で注意すべき点を説明します。
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+
+<LearningGoals items={['遺伝的変異がゲノム配列の違いであることを理解する', '一塩基多型、挿入、欠失などの種類を知る', '変異の意味を慎重に解釈する必要があることを説明できる']} />
+
+## まず一言でいうと
+
+遺伝的変異は、個体や細胞の間で見られるゲノム配列の違いです。
+
+## 本文
+
+ゲノム配列には、個人差や細胞ごとの差があります。1塩基だけが異なる場合もあれば、塩基が挿入されたり欠失したりする場合もあります。こうした違いを遺伝的変異と呼びます。
+
+変異があるからといって、必ず大きな影響があるとは限りません。多くの変異は中立的か、影響が小さい場合があります。疾患や形質との関係を考えるには、統計的証拠、機能実験、集団頻度などを合わせて慎重に解釈します。
+
+<TermBox term="遺伝的変異" english="genetic variant">
+ゲノム配列に見られる違いです。影響の有無や大きさは変異ごとに異なります。
+</TermBox>
+
+## 名称の対応表
+
+| 日本語名 | 英語名 | 略語 |
+| --- | --- | --- |
+| 遺伝的変異 | genetic variant | variant |
+| 一塩基多型 | single nucleotide polymorphism | SNP |
+| 挿入 | insertion | INS |
+| 欠失 | deletion | DEL |
+
+## よくある誤解
+
+- 変異という言葉は必ず悪い意味ではありません。
+- ある変異が見つかっただけで、個人の健康状態や将来を断定できるわけではありません。
+
+## 重要用語
+
+- 遺伝的変異 / genetic variant
+- 一塩基多型 / single nucleotide polymorphism
+- 挿入 / insertion
+- 欠失 / deletion
+
+<Quiz questions={[{ question: 'SNPとは何ですか。', answer: 'ゲノム中の1塩基の違いとして見られる多型です。' }, { question: '変異の解釈で注意が必要な理由を説明してください。', answer: '変異の影響は種類や場所、証拠の強さによって異なり、見つかっただけで意味を断定できないからです。' }]} />
+
+<NextSteps items={[{ title: 'PCRとは何か', href: '/molecular-biology/what-is-pcr/' }, { title: '用語集', href: '/glossary/' }]} />
