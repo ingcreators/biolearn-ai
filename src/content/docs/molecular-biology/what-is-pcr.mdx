@@ -7,7 +7,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
-import ConceptFigure from '../../../components/ConceptFigure.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
 
 <LearningGoals items={['PCRの目的を説明できる', '変性、アニーリング、伸長の流れを知る', 'PCRが研究や検査技術の基礎になる理由を理解する']} />
 
@@ -27,7 +27,7 @@ PCRは研究、環境検査、感染症検査技術などの基礎として広�
 
 ## 図解
 
-<ConceptFigure title="PCRの基本サイクル" subtitle="温度変化を使って目的のDNA領域を増やす" variant="molecule" labels={['変性', '結合', '伸長', '増幅']} note="温度変化を繰り返すことで、特定のDNA領域を増幅します。" />
+<LessonFigure src="/figures/pcr-concept.jpg" alt="PCRチューブの中でDNAがほどけ、プライマーが結合し、目的領域のコピーが増える様子を示す教材イラスト" title="PCRは目的のDNA領域を繰り返し増やす方法" caption="温度変化を利用して、変性、プライマー結合、伸長を繰り返し、特定のDNA領域を増幅します。" />
 
 <TermBox term="PCR" english="polymerase chain reaction" abbreviation="PCR">
 特定のDNA領域を多数コピーする実験手法です。

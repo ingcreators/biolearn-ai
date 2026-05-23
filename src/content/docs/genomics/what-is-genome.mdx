@@ -7,7 +7,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
-import ConceptFigure from '../../../components/ConceptFigure.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
 
 <LearningGoals items={['ゲノムが遺伝情報の全体であることを理解する', '遺伝子とゲノムの違いを説明できる', 'ゲノミクスが全体像を見る分野であることを知る']} />
 
@@ -27,7 +27,7 @@ import ConceptFigure from '../../../components/ConceptFigure.astro';
 
 ## 図解
 
-<ConceptFigure title="ゲノムを全体として見る" subtitle="遺伝子だけでなく、遺伝情報全体を解析対象にする" variant="genome" labels={['DNA配列', '機能領域', '染色体', '全体解析']} note="ゲノムは遺伝子だけでなく、遺伝情報の全体を指します。" />
+<LessonFigure src="/figures/genome-concept.jpg" alt="核内の染色体からDNAへ拡大し、遺伝子や調節領域を含むゲノム全体を示す教材イラスト" title="ゲノムは遺伝情報の全体" caption="ゲノムには遺伝子だけでなく、調節領域やまだ機能が十分に分かっていない領域も含まれます。" />
 
 <TermBox term="ゲノム" english="genome">
 ある生物や細胞が持つ遺伝情報の全体です。研究では、配列だけでなく構造や機能も含めて考えます。

@@ -7,7 +7,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
-import ConceptFigure from '../../../components/ConceptFigure.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
 
 <LearningGoals items={['RNAが情報の読み出しや調節に関わることを知る', 'mRNA、rRNA、tRNAの違いを大まかに理解する', '転写という言葉の意味を説明できる']} />
 
@@ -27,7 +27,7 @@ RNAは単なる中継役に限らず、遺伝子発現の調節にも関わり�
 
 ## 図解
 
-<ConceptFigure title="RNAの主な役割" subtitle="保存された情報を、働く情報へつなぐ分子" variant="molecule" labels={['転写', '情報を運ぶ', '翻訳を支える', '発現を見る']} note="RNAは情報の中継だけでなく、タンパク質合成や発現解析にも関わります。" />
+<LessonFigure src="/figures/rna-concept.jpg" alt="DNAから作られたRNAが情報を運び、タンパク質合成を支える様子を示す教材イラスト" title="RNAは保存された情報を働く情報へつなぐ" caption="RNAはDNAの情報を写し取り、mRNA、tRNA、rRNAなどとして細胞内の働きを支えます。" />
 
 <TermBox term="RNA" english="ribonucleic acid" abbreviation="RNA">
 DNAの情報を読み出したり、タンパク質合成や発現制御に関わったりする分子です。

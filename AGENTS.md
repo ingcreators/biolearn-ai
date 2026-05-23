@@ -22,6 +22,10 @@ BioLearn AI is a Japanese learning site for molecular biology, cell biology, gen
 - Avoid unsupported claims.
 - Prefer educational explanations over sensational claims.
 - Use diagrams only when they are original or clearly licensed.
+- New lesson pages should include a `LessonFigure` image in the 図解 section.
+- Store lesson figure images under `public/figures/{lesson-slug}-concept.jpg`.
+- Keep generated images free of dense embedded text; put explanations in Japanese `alt`, `title`, and `caption`.
+- Optimize generated lesson images for the web before committing.
 
 ## Lesson structure
 

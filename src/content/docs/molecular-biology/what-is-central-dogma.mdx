@@ -7,7 +7,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
-import ConceptFigure from '../../../components/ConceptFigure.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
 
 <LearningGoals items={['DNAからRNA、タンパク質へ進む情報の流れを説明できる', '転写と翻訳を区別できる', '例外や調節があることを知る']} />
 
@@ -27,7 +27,7 @@ DNAの情報をRNAへ写す過程を転写、RNAの情報をもとにタンパ�
 
 ## 図解
 
-<ConceptFigure title="セントラルドグマの基本" subtitle="遺伝情報がDNAからRNA、タンパク質へ流れる" variant="molecule" labels={['DNA', '転写', 'RNA', 'タンパク質']} note="まずはDNA → RNA → タンパク質という基本の流れを押さえます。" />
+<LessonFigure src="/figures/central-dogma-concept.jpg" alt="DNAからRNAを経てタンパク質へ情報が流れ、細胞機能につながる様子を示す教材イラスト" title="遺伝情報はDNAからRNA、タンパク質へ流れる" caption="セントラルドグマは、分子の種類をまたいで情報がどう使われるかを整理する基本の見取り図です。" />
 
 <TermBox term="セントラルドグマ" english="central dogma">
 DNA、RNA、タンパク質の間で遺伝情報がどのように使われるかを示す基本概念です。

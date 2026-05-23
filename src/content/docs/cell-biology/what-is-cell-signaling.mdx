@@ -7,7 +7,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
-import ConceptFigure from '../../../components/ConceptFigure.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
 
 <LearningGoals items={['細胞がシグナルを受け取って応答する流れを理解する', 'リガンド、受容体、シグナル伝達経路の関係を知る', 'シグナルが遺伝子発現や細胞のふるまいに影響することを説明できる']} />
 
@@ -27,7 +27,7 @@ import ConceptFigure from '../../../components/ConceptFigure.astro';
 
 ## 図解
 
-<ConceptFigure title="細胞シグナル伝達の流れ" subtitle="外から届いた情報が細胞内の反応へ変わる" variant="cell" labels={['リガンド', '受容体', '細胞内伝達', '応答']} note="外部の情報は、細胞内の分子反応を通じて応答へ変換されます。" />
+<LessonFigure src="/figures/cell-signaling-concept.jpg" alt="細胞外のシグナル分子が受容体に結合し、細胞内の分子反応を経て応答につながる様子を示す教材イラスト" title="細胞シグナル伝達は外の情報を内側の反応へ変える" caption="シグナル分子を受け取った細胞は、細胞内の分子反応を通じて遺伝子発現や行動を変えます。" />
 
 <TermBox term="細胞シグナル伝達" english="cell signaling">
 細胞がシグナルを受け取り、細胞内の反応やふるまいを変える仕組みです。

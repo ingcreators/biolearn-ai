@@ -7,7 +7,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
-import ConceptFigure from '../../../components/ConceptFigure.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
 
 <LearningGoals items={['細胞小器官が細胞内の機能分担に関わることを理解する', '核、ミトコンドリア、小胞体、ゴルジ体の役割を知る', '分子の働きが細胞内の場所と関係することを説明できる']} />
 
@@ -27,7 +27,7 @@ import ConceptFigure from '../../../components/ConceptFigure.astro';
 
 ## 図解
 
-<ConceptFigure title="細胞小器官の機能分担" subtitle="細胞内の場所ごとに役割が分かれている" variant="cell" labels={['核', 'リボソーム', '小胞体・ゴルジ体', 'ミトコンドリア']} note="真核細胞では、細胞内の場所ごとに役割が分担されています。" />
+<LessonFigure src="/figures/organelles-concept.jpg" alt="真核細胞の中に核、ミトコンドリア、小胞体、ゴルジ体などの細胞小器官が配置されている様子を示す教材イラスト" title="細胞小器官は細胞内で役割分担する構造" caption="真核細胞では、核、ミトコンドリア、小胞体、ゴルジ体などがそれぞれ異なる働きを担います。" />
 
 <TermBox term="細胞小器官" english="organelle">
 真核細胞の内部にある、特定の機能を担う構造です。

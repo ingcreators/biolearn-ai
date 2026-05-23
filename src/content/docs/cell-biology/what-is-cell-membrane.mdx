@@ -7,7 +7,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
-import ConceptFigure from '../../../components/ConceptFigure.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
 
 <LearningGoals items={['細胞膜が細胞内外を区切る構造であることを理解する', 'リン脂質二重層と膜タンパク質の役割を知る', '物質輸送と情報伝達の入口としての細胞膜を説明できる']} />
 
@@ -27,7 +27,7 @@ import ConceptFigure from '../../../components/ConceptFigure.astro';
 
 ## 図解
 
-<ConceptFigure title="細胞膜の働き" subtitle="境界であり、同時に外界との連絡口でもある" variant="cell" labels={['内外を区切る', '物質輸送', '受容体', '細胞応答']} note="細胞膜は境界であり、同時に外界との連絡口でもあります。" />
+<LessonFigure src="/figures/cell-membrane-concept.jpg" alt="リン脂質二重層に膜タンパク質や受容体があり、物質輸送とシグナル受容が起きる様子を示す教材イラスト" title="細胞膜は境界であり、外界との連絡口でもある" caption="細胞膜は内外を区切るだけでなく、物質を通したり、受容体でシグナルを受け取ったりします。" />
 
 <TermBox term="細胞膜" english="cell membrane">
 細胞を外界から区切る膜で、物質輸送や情報伝達にも関わります。

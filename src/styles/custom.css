@@ -259,123 +259,38 @@ html {
   font-size: 0.95rem;
 }
 
-.biolearn-concept-figure {
+.biolearn-lesson-figure {
+  overflow: hidden;
   color: var(--biolearn-panel-text);
   border: 1px solid var(--biolearn-panel-border);
   border-radius: 8px;
-  padding: 1rem;
   margin: 1.5rem 0;
   background: var(--biolearn-panel-bg);
 }
 
-.biolearn-concept-figure figcaption {
-  display: grid;
-  gap: 0.2rem;
-  margin-bottom: 0.8rem;
-}
-
-.biolearn-concept-figure figcaption span {
-  color: var(--sl-color-accent);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.biolearn-concept-figure figcaption strong {
-  color: var(--biolearn-panel-text);
-  font-size: 1.05rem;
-}
-
-.biolearn-concept-figure figcaption small,
-.biolearn-concept-figure > p {
-  color: var(--biolearn-panel-muted);
-  line-height: 1.7;
-}
-
-.biolearn-concept-figure > p {
-  margin: 0.85rem 0 0;
-  font-size: 0.95rem;
-}
-
-.biolearn-concept-visual {
-  overflow: hidden;
-  border: 1px solid var(--biolearn-table-rule);
-  border-radius: 8px;
-  background: color-mix(in srgb, var(--biolearn-panel-bg) 86%, var(--sl-color-accent-low));
-}
-
-.biolearn-concept-visual svg {
+.biolearn-lesson-figure img {
   display: block;
   width: 100%;
   height: auto;
-  min-height: 15rem;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: var(--biolearn-panel-bg);
 }
 
-.concept-bg {
-  fill: color-mix(in srgb, var(--biolearn-panel-bg) 70%, var(--sl-color-accent-low));
-}
-
-.concept-link {
-  fill: none;
-  stroke: var(--sl-color-accent);
-  stroke-width: 5;
-  stroke-linecap: round;
-  opacity: 0.62;
-}
-
-.concept-motif {
-  fill: none;
-  stroke: var(--biolearn-panel-text);
-  stroke-width: 5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.concept-motif circle,
-.concept-motif ellipse,
-.concept-motif rect {
-  fill: color-mix(in srgb, var(--sl-color-accent-low) 52%, transparent);
-}
-
-.concept-node circle {
-  fill: var(--sl-color-accent);
-  stroke: var(--biolearn-panel-bg);
-  stroke-width: 4;
-}
-
-.concept-node text {
-  fill: var(--sl-color-text-invert);
-  font-size: 16px;
-  font-weight: 700;
-  text-anchor: middle;
-}
-
-.concept-node p {
-  color: var(--biolearn-panel-text);
+.biolearn-lesson-figure figcaption {
   display: grid;
-  place-items: start center;
-  height: 100%;
-  margin: 0;
-  font-size: 0.82rem;
-  line-height: 1.35;
-  text-align: center;
+  gap: 0.25rem;
+  padding: 0.9rem 1rem 1rem;
 }
 
-.biolearn-concept-figure[data-variant="molecule"] .concept-link {
-  stroke: #60c6d8;
+.biolearn-lesson-figure figcaption strong {
+  color: var(--biolearn-panel-text);
 }
 
-.biolearn-concept-figure[data-variant="cell"] .concept-link {
-  stroke: #86c26d;
-}
-
-.biolearn-concept-figure[data-variant="genome"] .concept-link {
-  stroke: #d1a45f;
-}
-
-.biolearn-concept-figure[data-variant="data"] .concept-link {
-  stroke: #9ca7e8;
+.biolearn-lesson-figure figcaption span {
+  color: var(--biolearn-panel-muted);
+  line-height: 1.7;
+  font-size: 0.95rem;
 }
 
 @media (max-width: 34rem) {
@@ -389,13 +304,5 @@ html {
     top: auto;
     bottom: -0.8rem;
     transform: translateX(50%);
-  }
-
-  .biolearn-concept-figure {
-    padding: 0.85rem;
-  }
-
-  .biolearn-concept-visual svg {
-    min-width: 42rem;
   }
 }

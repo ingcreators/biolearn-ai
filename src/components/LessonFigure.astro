@@ -1,0 +1,18 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  title: string;
+  caption?: string;
+}
+
+const { src, alt, title, caption } = Astro.props;
+---
+
+<figure class="biolearn-lesson-figure">
+  <img src={src} alt={alt} loading="lazy" decoding="async" />
+  <figcaption>
+    <strong>{title}</strong>
+    {caption && <span>{caption}</span>}
+  </figcaption>
+</figure>

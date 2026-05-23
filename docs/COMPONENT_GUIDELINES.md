@@ -22,9 +22,41 @@
 
 記事末尾で次に読む記事を示します。
 
+### LessonFigure
+
+各レッスンの「図解」で、基礎解説の中心概念を示す教材画像を表示します。
+
+```mdx
+<LessonFigure
+  src="/figures/dna-concept.jpg"
+  alt="細胞核の中のDNAが一部読み出され、RNAとタンパク質へつながる流れを示す教材イラスト"
+  title="DNAは保存された情報であり、必要な部分が読み出される"
+  caption="DNA全体が常に使われるのではなく、細胞の状態に応じて一部の領域が読み出されます。"
+/>
+```
+
+- `src`: `public/figures/` 配下の画像を `/figures/...` で参照する。
+- `alt`: 画像が見えない読者にも内容が伝わる説明にする。装飾画像として扱わない。
+- `title`: 図から読み取ってほしい要点を短く書く。
+- `caption`: 本文理解を助ける補足を1文で書く。
+- 画像内の文字は最小限にし、ラベルや説明はHTML側に置く。
+- 生成画像はWeb向けに軽量化し、原則 `.jpg` として配置する。
+
 ### GlossaryTable
 
 用語集ページで、日本語、英語、略語、説明を表形式で表示します。
+
+## Figure generation workflow
+
+新しい教材画像を作るときは、次の方針を守ります。
+
+1. 記事の基礎解説から、読者に見せたい中心概念を1つ選ぶ。
+2. 画像生成では「calm, trustworthy Japanese educational science illustration」「watercolor-like semi-flat digital illustration」「no embedded text」を基本指定にする。
+3. 画像内に細かい専門用語や長文ラベルを入れない。
+4. 生成画像を `public/figures/{lesson-slug}-concept.jpg` に配置する。
+5. 必要に応じて横幅1536px程度、JPEG品質80〜85程度に軽量化する。
+6. `LessonFigure` で `alt`、`title`、`caption` を必ず設定する。
+7. `npm run build` を実行して、画像参照切れがないことを確認する。
 
 ## Design
 

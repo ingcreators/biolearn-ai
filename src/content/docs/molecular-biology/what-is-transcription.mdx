@@ -7,7 +7,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
-import ConceptFigure from '../../../components/ConceptFigure.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
 
 <LearningGoals items={['転写がDNAからRNAを作る過程であることを理解する', 'RNAポリメラーゼとプロモーターの役割を知る', '転写が遺伝子発現の入口であることを説明できる']} />
 
@@ -27,7 +27,7 @@ import ConceptFigure from '../../../components/ConceptFigure.astro';
 
 ## 図解
 
-<ConceptFigure title="転写の流れ" subtitle="DNAの一部を鋳型にしてRNAを作る" variant="molecule" labels={['開始位置', '酵素が結合', 'RNA合成', '転写産物']} note="転写は遺伝子発現の入口になる過程です。" />
+<LessonFigure src="/figures/transcription-concept.jpg" alt="DNAの一部がほどけ、RNAポリメラーゼがRNA鎖を合成する様子を示す教材イラスト" title="転写はDNAの情報をRNAへ写し取る過程" caption="RNAポリメラーゼがDNAを鋳型として読み取り、RNAという形で情報を取り出します。" />
 
 <TermBox term="転写" english="transcription">
 DNAの塩基配列をもとにRNAを合成する過程です。

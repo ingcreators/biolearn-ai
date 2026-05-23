@@ -7,7 +7,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
-import ConceptFigure from '../../../components/ConceptFigure.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
 
 <LearningGoals items={['染色体がDNAとタンパク質からなる構造であることを理解する', 'ヒストンとクロマチンの関係を知る', '染色体が細胞分裂と遺伝情報の受け渡しに関わることを説明できる']} />
 
@@ -27,7 +27,7 @@ DNAは非常に長い分子なので、そのままでは細胞の核の中に�
 
 ## 図解
 
-<ConceptFigure title="DNAから染色体へ" subtitle="長いDNAを整理し、細胞分裂で分配しやすくする" variant="genome" labels={['DNA', 'ヒストン', 'クロマチン', '染色体']} note="染色体は長いDNAを整理し、受け渡しやすくする構造です。" />
+<LessonFigure src="/figures/chromosomes-concept.jpg" alt="DNAがヒストンに巻きつき、クロマチンを経て凝縮した染色体になる様子を示す教材イラスト" title="染色体は長いDNAを整理して受け渡す構造" caption="DNAはヒストンなどのタンパク質と組み合わさり、細胞分裂のときには染色体としてまとまります。" />
 
 <TermBox term="染色体" english="chromosome">
 DNAとタンパク質からなる構造で、遺伝情報の収納と受け渡しに関わります。
