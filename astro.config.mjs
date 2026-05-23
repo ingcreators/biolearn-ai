@@ -199,6 +199,10 @@ export default defineConfig({
               items: [
                 { label: 'カテゴリトップ', link: '/reading-figures/' },
                 {
+                  label: 'Figure legendの読み方',
+                  link: '/reading-figures/how-to-read-figure-legend/',
+                },
+                {
                   label: '棒グラフの読み方',
                   link: '/reading-figures/how-to-read-bar-plot/',
                 },
