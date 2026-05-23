@@ -7,7 +7,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
-import FlowDiagram from '../../../components/FlowDiagram.astro';
+import ConceptFigure from '../../../components/ConceptFigure.astro';
 
 <LearningGoals items={['シーケンスデータが塩基配列を読んだ結果であることを理解する', 'リード、品質スコア、リファレンスゲノムの意味を知る', '実験データを解析可能な形にする流れを説明できる']} />
 
@@ -27,7 +27,7 @@ import FlowDiagram from '../../../components/FlowDiagram.astro';
 
 ## 図解
 
-<FlowDiagram title="シーケンスデータの基本処理" steps={['リードを取得する', '品質を確認する', '前処理を行う', '参照配列へ対応づける']} note="解析結果の信頼性は、生データの質と前処理に大きく影響されます。" />
+<ConceptFigure title="シーケンスデータの基本処理" subtitle="読み取った配列を、解析できる形へ整える" variant="data" labels={['リード', '品質確認', '前処理', '参照配列']} note="解析結果の信頼性は、生データの質と前処理に大きく影響されます。" />
 
 <TermBox term="シーケンスデータ" english="sequence data">
 DNAやRNAの塩基配列を読み取って得られるデータです。

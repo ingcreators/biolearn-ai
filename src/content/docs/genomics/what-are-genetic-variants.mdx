@@ -7,7 +7,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
-import FlowDiagram from '../../../components/FlowDiagram.astro';
+import ConceptFigure from '../../../components/ConceptFigure.astro';
 
 <LearningGoals items={['遺伝的変異がゲノム配列の違いであることを理解する', '一塩基多型、挿入、欠失などの種類を知る', '変異の意味を慎重に解釈する必要があることを説明できる']} />
 
@@ -27,7 +27,7 @@ import FlowDiagram from '../../../components/FlowDiagram.astro';
 
 ## 図解
 
-<FlowDiagram title="遺伝的変異の解釈" steps={['配列の違いを見つける', '種類と場所を確認する', '頻度や証拠を調べる', '影響を慎重に考える']} note="変異があることと、意味が確定することは別です。" />
+<ConceptFigure title="遺伝的変異の解釈" subtitle="配列の違いを見つけ、意味は証拠と文脈から考える" variant="genome" labels={['違いを検出', '種類と場所', '頻度と証拠', '慎重に解釈']} note="変異があることと、意味が確定することは別です。" />
 
 <TermBox term="遺伝的変異" english="genetic variant">
 ゲノム配列に見られる違いです。影響の有無や大きさは変異ごとに異なります。

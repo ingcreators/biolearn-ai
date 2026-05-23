@@ -7,7 +7,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
-import FlowDiagram from '../../../components/FlowDiagram.astro';
+import ConceptFigure from '../../../components/ConceptFigure.astro';
 
 <LearningGoals items={['細胞が生命の基本単位である理由を説明できる', '原核細胞と真核細胞の大まかな違いを知る', '細胞小器官という考え方を理解する']} />
 
@@ -27,7 +27,7 @@ import FlowDiagram from '../../../components/FlowDiagram.astro';
 
 ## 図解
 
-<FlowDiagram title="細胞を理解する見方" steps={['細胞膜が境界を作る', '内部で分子が働く', '外部シグナルに応答する', '組織や個体を構成する']} note="細胞は分子の働きが集まって生命活動になる場所です。" />
+<ConceptFigure title="細胞を理解する見方" subtitle="境界を持つ小さな単位の中で分子が働く" variant="cell" labels={['境界', '内部構造', '応答', '個体へ']} note="細胞は分子の働きが集まって生命活動になる場所です。" />
 
 <TermBox term="細胞" english="cell">
 膜で囲まれた生命活動の単位です。細胞の内部では、多数の分子が協調して働いています。

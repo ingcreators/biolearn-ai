@@ -7,7 +7,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
-import FlowDiagram from '../../../components/FlowDiagram.astro';
+import ConceptFigure from '../../../components/ConceptFigure.astro';
 
 <LearningGoals items={['遺伝子発現の意味を説明できる', '発現量が細胞の状態によって変わることを理解する', 'RNA-seqが発現を調べる手法とつながることを知る']} />
 
@@ -27,7 +27,7 @@ RNA-seqでは主にRNAの量を測ることで、どの遺伝子がどの程度�
 
 ## 図解
 
-<FlowDiagram title="遺伝子発現を見る視点" steps={['遺伝子が転写される', 'RNA量が変わる', 'タンパク質や機能に影響する', '細胞状態の手がかりになる']} note="発現は細胞がどの遺伝子を使っているかを見るための重要な指標です。" />
+<ConceptFigure title="遺伝子発現を見る視点" subtitle="どの遺伝子がどれくらい使われているかを見る" variant="molecule" labels={['遺伝子', 'RNA量', '機能', '細胞状態']} note="発現は細胞がどの遺伝子を使っているかを見るための重要な指標です。" />
 
 <TermBox term="遺伝子発現" english="gene expression">
 遺伝子の情報がRNAやタンパク質として読み出され、細胞内で機能につながることです。

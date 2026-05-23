@@ -7,7 +7,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
-import FlowDiagram from '../../../components/FlowDiagram.astro';
+import ConceptFigure from '../../../components/ConceptFigure.astro';
 
 <LearningGoals items={['差次的発現解析の目的を説明できる', '発現量、正規化、統計的検定の関係を知る', '結果の解釈で効果量と信頼性の両方を見る必要があることを理解する']} />
 
@@ -27,7 +27,7 @@ RNA-seqでは、各遺伝子に対応するリード数を数え、発現量の�
 
 ## 図解
 
-<FlowDiagram title="差次的発現解析の流れ" steps={['遺伝子ごとに数える', '試料間で正規化する', '条件間の差を検定する', '結果を生物学的に解釈する']} note="統計的な差と生物学的な意味を分けて確認します。" />
+<ConceptFigure title="差次的発現解析の流れ" subtitle="条件間の発現量の違いを統計と生物学の両方で読む" variant="data" labels={['数える', '正規化', '差を検定', '解釈']} note="統計的な差と生物学的な意味を分けて確認します。" />
 
 <TermBox term="差次的発現解析" english="differential expression analysis" abbreviation="DEA">
 条件間で遺伝子発現に差があるかを統計的に調べる解析です。

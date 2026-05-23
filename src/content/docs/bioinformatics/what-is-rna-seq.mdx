@@ -7,7 +7,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
-import FlowDiagram from '../../../components/FlowDiagram.astro';
+import ConceptFigure from '../../../components/ConceptFigure.astro';
 
 <LearningGoals items={['RNA-seqが何を測る手法か説明できる', '発現量という考え方を理解する', '実験と計算解析がつながる流れを知る']} />
 
@@ -27,7 +27,7 @@ RNA-seqは、細胞の状態や条件の違いによって遺伝子発現がど�
 
 ## 図解
 
-<FlowDiagram title="RNA-seq解析の入口" steps={['RNAを取り出す', '配列を読む', 'リードを対応づける', '発現量を推定する']} note="RNA-seqは、RNAの量から細胞の状態を読むための方法です。" />
+<ConceptFigure title="RNA-seq解析の入口" subtitle="RNAを読み、遺伝子発現として数値化する" variant="data" labels={['RNA抽出', '配列決定', '対応づけ', '発現量']} note="RNA-seqは、RNAの量から細胞の状態を読むための方法です。" />
 
 <TermBox term="RNA-seq" english="RNA sequencing" abbreviation="RNA-seq">
 RNAを配列決定し、遺伝子発現や転写産物の特徴を調べる手法です。

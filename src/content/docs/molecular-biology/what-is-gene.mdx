@@ -7,7 +7,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
-import FlowDiagram from '../../../components/FlowDiagram.astro';
+import ConceptFigure from '../../../components/ConceptFigure.astro';
 
 <LearningGoals items={['遺伝子をDNA上の機能単位として説明できる', '遺伝子と形質を単純に一対一で結ばない考え方を知る', '発現という言葉の入口を理解する']} />
 
@@ -27,7 +27,7 @@ import FlowDiagram from '../../../components/FlowDiagram.astro';
 
 ## 図解
 
-<FlowDiagram title="遺伝子をDNA上の機能領域として見る" steps={['DNA全体がある', '一部が遺伝子として働く', 'RNAやタンパク質が作られる', '細胞の働きに関わる']} note="遺伝子はDNA全体ではなく、機能を持つ領域として理解します。" />
+<ConceptFigure title="遺伝子をDNA上の機能領域として見る" subtitle="DNA全体の中に、RNAやタンパク質につながる領域がある" variant="molecule" labels={['DNA全体', '機能領域', '産物', '細胞機能']} note="遺伝子はDNA全体ではなく、機能を持つ領域として理解します。" />
 
 <TermBox term="遺伝子" english="gene">
 DNA上にある機能的な領域です。RNAやタンパク質を通じて生命現象に関わります。

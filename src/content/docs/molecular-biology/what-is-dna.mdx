@@ -7,7 +7,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
-import FlowDiagram from '../../../components/FlowDiagram.astro';
+import ConceptFigure from '../../../components/ConceptFigure.astro';
 
 <LearningGoals items={['DNAが遺伝情報を保存する分子であることを理解する', '塩基配列という考え方を説明できる', 'DNAと遺伝子の違いへの入口をつかむ']} />
 
@@ -27,7 +27,7 @@ DNAのすべての部分がタンパク質の設計図というわけではあ�
 
 ## 図解
 
-<FlowDiagram title="DNA情報の使われ方" steps={['塩基配列として保存', '必要な領域が読み出される', 'RNAやタンパク質につながる', '細胞の性質に影響する']} note="DNAは保存された情報であり、読み出されてはじめて細胞の働きにつながります。" />
+<ConceptFigure title="DNA情報の使われ方" subtitle="塩基配列として保存された情報が必要に応じて読まれる" variant="molecule" labels={['保存', '読み出し', 'RNA・タンパク質', '細胞の性質']} note="DNAは保存された情報であり、読み出されてはじめて細胞の働きにつながります。" />
 
 <TermBox term="DNA" english="deoxyribonucleic acid" abbreviation="DNA">
 遺伝情報を長期的に保存する分子です。細胞分裂のときには複製され、次の細胞へ受け継がれます。

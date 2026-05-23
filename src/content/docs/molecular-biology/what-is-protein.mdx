@@ -7,7 +7,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
-import FlowDiagram from '../../../components/FlowDiagram.astro';
+import ConceptFigure from '../../../components/ConceptFigure.astro';
 
 <LearningGoals items={['タンパク質がアミノ酸からできることを理解する', '酵素、構造、輸送、情報伝達などの役割を知る', '配列と立体構造の関係を大まかに説明できる']} />
 
@@ -27,7 +27,7 @@ DNAやRNAを学ぶと「情報」に注目しがちですが、細胞の形や�
 
 ## 図解
 
-<FlowDiagram title="タンパク質が機能するまで" steps={['アミノ酸がつながる', '立体構造を作る', '酵素や受容体として働く', '細胞の性質に現れる']} note="タンパク質は情報が細胞の機能へ変わる重要な出口です。" />
+<ConceptFigure title="タンパク質が機能するまで" subtitle="アミノ酸の並びが形を作り、細胞の働きになる" variant="molecule" labels={['アミノ酸', '立体構造', '機能', '細胞の性質']} note="タンパク質は情報が細胞の機能へ変わる重要な出口です。" />
 
 <TermBox term="タンパク質" english="protein">
 アミノ酸が連なってできる分子で、細胞の構造、反応、輸送、情報伝達などを担います。
