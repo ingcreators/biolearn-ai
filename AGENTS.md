@@ -28,12 +28,14 @@ BioLearn AI is a Japanese learning site for molecular biology, cell biology, gen
 Each lesson should include:
 
 1. この記事で学ぶこと
-2. まず一言でいうと
-3. 本文
-4. よくある誤解
-5. 重要用語
-6. 確認問題
-7. 次に読む記事
+2. 要点
+3. 基礎解説
+4. 図解
+5. 英語表記と略語
+6. よくある誤解
+7. 重要用語
+8. 確認問題
+9. 次に読む記事
 
 ## Quality checks
 
