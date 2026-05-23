@@ -1,0 +1,41 @@
+---
+title: 遺伝子とは何か
+description: 遺伝子をDNA上の機能的な領域として説明します。
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+
+<LearningGoals items={['遺伝子をDNA上の機能単位として説明できる', '遺伝子と形質を単純に一対一で結ばない考え方を知る', '発現という言葉の入口を理解する']} />
+
+## まず一言でいうと
+
+遺伝子は、機能を持つRNAやタンパク質の産生に関わるDNA領域です。
+
+## 本文
+
+遺伝子は「タンパク質の設計図」と説明されることがあります。この説明は入口として便利ですが、すべての遺伝子がタンパク質を作るわけではありません。RNAとして機能する遺伝子もあります。
+
+また、一つの遺伝子が一つの特徴だけを決めるとは限りません。多くの形質は複数の遺伝子、環境、細胞状態の影響を受けます。
+
+<TermBox term="遺伝子" english="gene">
+DNA上にある機能的な領域です。RNAやタンパク質を通じて生命現象に関わります。
+</TermBox>
+
+## よくある誤解
+
+- 遺伝子は運命を完全に決めるスイッチではありません。
+- 「遺伝子 = DNA全体」ではありません。DNA上の一部の機能領域です。
+
+## 重要用語
+
+- 遺伝子 / gene
+- 遺伝子発現 / gene expression
+- コード領域 / coding region
+- 調節領域 / regulatory region
+
+<Quiz questions={[{ question: '遺伝子とDNAの違いを説明してください。', answer: 'DNAは分子全体を指し、遺伝子はDNA上の機能を持つ領域を指します。' }, { question: 'すべての遺伝子はタンパク質を作りますか。', answer: 'いいえ。機能性RNAとして働く遺伝子もあります。' }]} />
+
+<NextSteps items={[{ title: 'ゲノムとは何か', href: '/genomics/what-is-genome/' }, { title: 'セントラルドグマとは何か', href: '/molecular-biology/what-is-central-dogma/' }]} />

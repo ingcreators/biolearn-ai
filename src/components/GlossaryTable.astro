@@ -1,0 +1,39 @@
+---
+interface TermRow {
+  term: string;
+  english?: string;
+  abbreviation?: string;
+  description: string;
+}
+
+interface Props {
+  terms: TermRow[];
+}
+
+const { terms } = Astro.props;
+---
+
+<div class="glossary-table">
+  <table>
+    <thead>
+      <tr>
+        <th>日本語</th>
+        <th>英語</th>
+        <th>略語</th>
+        <th>説明</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        terms.map((row) => (
+          <tr>
+            <td>{row.term}</td>
+            <td>{row.english ?? '-'}</td>
+            <td>{row.abbreviation ?? '-'}</td>
+            <td>{row.description}</td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</div>

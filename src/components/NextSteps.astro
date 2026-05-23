@@ -1,0 +1,19 @@
+---
+interface LinkItem {
+  title: string;
+  href: string;
+}
+
+interface Props {
+  items: LinkItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<nav class="biolearn-box biolearn-next" aria-labelledby="next-steps-title">
+  <h3 id="next-steps-title">次に読む記事</h3>
+  <ul>
+    {items.map((item) => <li><a href={item.href}>{item.title}</a></li>)}
+  </ul>
+</nav>

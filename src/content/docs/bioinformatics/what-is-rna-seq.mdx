@@ -1,0 +1,42 @@
+---
+title: RNA-seqとは何か
+description: RNA-seqを遺伝子発現を調べるシーケンス手法として説明します。
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+
+<LearningGoals items={['RNA-seqが何を測る手法か説明できる', '発現量という考え方を理解する', '実験と計算解析がつながる流れを知る']} />
+
+## まず一言でいうと
+
+RNA-seqは、細胞や組織でどのRNAがどれくらい存在するかを調べる手法です。
+
+## 本文
+
+RNA-seqでは、試料からRNAを取り出し、シーケンサーで読める形に変換して配列を読みます。その後、得られたリードをゲノムや転写産物に対応づけ、遺伝子ごとの発現量を推定します。
+
+RNA-seqは、細胞の状態や条件の違いによって遺伝子発現がどう変わるかを調べるために使われます。解析では品質確認、マッピング、カウント、正規化、差次的発現解析などの工程があります。
+
+<TermBox term="RNA-seq" english="RNA sequencing" abbreviation="RNA-seq">
+RNAを配列決定し、遺伝子発現や転写産物の特徴を調べる手法です。
+</TermBox>
+
+## よくある誤解
+
+- RNA-seqはDNA配列そのものを読む手法ではありません。主にRNA由来の情報を読みます。
+- 発現量の差は生物学的な意味を持つ可能性がありますが、実験設計や統計的検証が必要です。
+
+## 重要用語
+
+- RNA-seq / RNA sequencing
+- リード / read
+- マッピング / mapping
+- 発現量 / expression level
+- 差次的発現解析 / differential expression analysis
+
+<Quiz questions={[{ question: 'RNA-seqで主に知りたいことは何ですか。', answer: 'どのRNA、または遺伝子発現がどれくらいあるかです。' }, { question: 'RNA-seq解析で品質確認が重要な理由を説明してください。', answer: '試料やシーケンスの質が低いと、発現量推定や比較結果が信頼しにくくなるからです。' }]} />
+
+<NextSteps items={[{ title: 'ゲノムとは何か', href: '/genomics/what-is-genome/' }, { title: '論文Figureの読み方', href: '/reading-figures/' }]} />

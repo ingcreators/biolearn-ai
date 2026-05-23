@@ -1,0 +1,42 @@
+---
+title: 生命科学とは何か
+description: 生命科学の範囲と、BioLearn AIで学ぶ全体像を説明します。
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+
+<LearningGoals items={['生命科学が何を対象にする学問か説明できる', '分子・細胞・個体・集団という階層を区別できる', 'このサイトで学ぶ分野の位置づけを理解する']} />
+
+## まず一言でいうと
+
+生命科学は、生命現象を観察し、分子・細胞・個体・環境のつながりとして理解する学問です。
+
+## 本文
+
+生命科学は、生物がどのように形を保ち、エネルギーを使い、情報を受け取り、増え、変化するのかを調べます。分子生物学はDNA、RNA、タンパク質の働きを扱い、細胞生物学は細胞の構造や振る舞いを扱います。ゲノミクスはゲノム全体を対象にし、バイオインフォマティクスは生命科学データを計算で解析します。
+
+BioLearn AI では、まず基本概念を押さえ、次に実験法やデータ解析へ進みます。医療や創薬に関係する話題も登場しますが、ここでの説明は診断や治療の助言ではなく、学習のための基礎知識です。
+
+<TermBox term="生命科学" english="life science">
+生命に関わる現象を、観察、実験、計算、理論によって理解しようとする幅広い分野です。
+</TermBox>
+
+## よくある誤解
+
+- 生命科学は暗記だけの科目ではありません。仕組みと証拠を結びつけて理解する学問です。
+- 医学と同じではありません。医学に役立つ知識を含みますが、対象は医療だけに限られません。
+
+## 重要用語
+
+- 生命科学 / life science
+- 分子生物学 / molecular biology
+- 細胞生物学 / cell biology
+- ゲノミクス / genomics
+- バイオインフォマティクス / bioinformatics
+
+<Quiz questions={[{ question: '生命科学が扱う階層を2つ以上挙げてください。', answer: '分子、細胞、組織、個体、集団、環境などがあります。' }, { question: 'バイオインフォマティクスは何をする分野ですか。', answer: '生命科学データを計算機で整理・解析し、意味を読み取る分野です。' }]} />
+
+<NextSteps items={[{ title: '細胞とは何か', href: '/basics/what-is-a-cell/' }, { title: 'DNAとは何か', href: '/molecular-biology/what-is-dna/' }]} />

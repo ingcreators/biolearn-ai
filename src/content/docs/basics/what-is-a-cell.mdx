@@ -1,0 +1,42 @@
+---
+title: 細胞とは何か
+description: 細胞が生命の基本単位と呼ばれる理由を説明します。
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+
+<LearningGoals items={['細胞が生命の基本単位である理由を説明できる', '原核細胞と真核細胞の大まかな違いを知る', '細胞小器官という考え方を理解する']} />
+
+## まず一言でいうと
+
+細胞は、生命活動を行う最小の基本単位です。
+
+## 本文
+
+私たちの体は多くの細胞からできています。細胞は外側を細胞膜で区切られ、内部で物質を作り、エネルギーを使い、情報に応答します。細菌のような原核生物は比較的単純な細胞を持ち、動物や植物のような真核生物は核やミトコンドリアなどの細胞小器官を持ちます。
+
+細胞を学ぶことは、DNAやタンパク質の働きが実際にどこで起こるのかを理解する助けになります。
+
+<TermBox term="細胞" english="cell">
+膜で囲まれた生命活動の単位です。細胞の内部では、多数の分子が協調して働いています。
+</TermBox>
+
+## よくある誤解
+
+- すべての細胞が同じ形をしているわけではありません。
+- 細胞は袋のような静的な構造ではなく、常に物質を作り替える動的なシステムです。
+
+## 重要用語
+
+- 細胞 / cell
+- 細胞膜 / cell membrane
+- 原核細胞 / prokaryotic cell
+- 真核細胞 / eukaryotic cell
+- 細胞小器官 / organelle
+
+<Quiz questions={[{ question: '細胞膜の役割を一つ説明してください。', answer: '細胞の内側と外側を区切り、物質の出入りや情報伝達に関わります。' }, { question: '真核細胞に見られる代表的な細胞小器官を一つ挙げてください。', answer: '核、ミトコンドリア、小胞体、ゴルジ体などがあります。' }]} />
+
+<NextSteps items={[{ title: 'DNAとは何か', href: '/molecular-biology/what-is-dna/' }, { title: 'タンパク質とは何か', href: '/molecular-biology/what-is-protein/' }]} />

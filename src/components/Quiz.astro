@@ -1,0 +1,29 @@
+---
+interface Question {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  questions: Question[];
+}
+
+const { questions } = Astro.props;
+---
+
+<section class="biolearn-quiz" aria-labelledby="quiz-title">
+  <h3 id="quiz-title">確認問題</h3>
+  <ol>
+    {
+      questions.map((item) => (
+        <li>
+          <p>{item.question}</p>
+          <details class="biolearn-answer">
+            <summary>解答例を見る</summary>
+            <p>{item.answer}</p>
+          </details>
+        </li>
+      ))
+    }
+  </ol>
+</section>

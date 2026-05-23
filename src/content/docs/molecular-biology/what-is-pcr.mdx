@@ -1,0 +1,41 @@
+---
+title: PCRとは何か
+description: PCRが特定のDNA領域を増幅する手法であることを説明します。
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+
+<LearningGoals items={['PCRの目的を説明できる', '変性、アニーリング、伸長の流れを知る', 'PCRが研究や検査技術の基礎になる理由を理解する']} />
+
+## まず一言でいうと
+
+PCRは、特定のDNA領域を試験管内で増やす方法です。
+
+## 本文
+
+PCRでは、目的のDNA領域をはさむプライマー、DNAポリメラーゼ、材料となるヌクレオチドを使います。温度を変化させながら、DNAをほどく変性、プライマーを結合させるアニーリング、新しいDNA鎖を伸ばす伸長を繰り返します。
+
+PCRは研究、環境検査、感染症検査技術などの基礎として広く使われます。この教材では原理の理解を目的とし、個別の診断や治療判断には踏み込みません。
+
+<TermBox term="PCR" english="polymerase chain reaction" abbreviation="PCR">
+特定のDNA領域を多数コピーする実験手法です。
+</TermBox>
+
+## よくある誤解
+
+- PCRはDNAを「発見」する装置ではなく、対象領域を増幅して検出しやすくする方法です。
+- PCRの結果は条件設計や試料の質に影響されます。
+
+## 重要用語
+
+- PCR / polymerase chain reaction
+- プライマー / primer
+- DNAポリメラーゼ / DNA polymerase
+- アニーリング / annealing
+
+<Quiz questions={[{ question: 'PCRでプライマーが必要な理由を説明してください。', answer: '増幅したいDNA領域の始点を指定し、DNAポリメラーゼが伸長を始められるようにするためです。' }, { question: 'PCRの3つの基本ステップを挙げてください。', answer: '変性、アニーリング、伸長です。' }]} />
+
+<NextSteps items={[{ title: 'RNA-seqとは何か', href: '/bioinformatics/what-is-rna-seq/' }, { title: '用語集', href: '/glossary/' }]} />

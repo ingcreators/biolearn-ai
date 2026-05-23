@@ -1,0 +1,83 @@
+:root {
+  --sl-color-accent-low: #d9f0ea;
+  --sl-color-accent: #147c74;
+  --sl-color-accent-high: #0f4d4a;
+  --sl-color-white: #fffdfa;
+  --sl-color-gray-1: #f7f4ed;
+  --sl-color-gray-2: #e8e1d4;
+  --sl-color-gray-3: #c9d2ca;
+  --sl-color-gray-4: #85948d;
+  --sl-color-gray-5: #53605c;
+  --sl-color-gray-6: #263331;
+  --sl-color-black: #101917;
+  --sl-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+html {
+  font-feature-settings: "palt";
+}
+
+.sl-markdown-content {
+  line-height: 1.9;
+  font-size: 1.03rem;
+}
+
+.sl-markdown-content h2 {
+  margin-top: 2.4rem;
+}
+
+.biolearn-box,
+.biolearn-quiz,
+.glossary-table {
+  border: 1px solid var(--sl-color-gray-3);
+  border-radius: 8px;
+  padding: 1rem 1.1rem;
+  margin: 1.25rem 0;
+  background: color-mix(in srgb, var(--sl-color-gray-1) 72%, white);
+}
+
+.biolearn-box h3,
+.biolearn-quiz h3 {
+  margin-top: 0;
+  font-size: 1rem;
+}
+
+.biolearn-term {
+  border-left: 4px solid var(--sl-color-accent);
+}
+
+.biolearn-next ul,
+.biolearn-goals ul {
+  margin-bottom: 0;
+}
+
+.biolearn-quiz ol {
+  padding-left: 1.35rem;
+}
+
+.biolearn-answer {
+  margin-top: 0.75rem;
+}
+
+.glossary-table {
+  overflow-x: auto;
+}
+
+.glossary-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.glossary-table th,
+.glossary-table td {
+  border-bottom: 1px solid var(--sl-color-gray-3);
+  padding: 0.7rem 0.6rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.glossary-table th {
+  color: var(--sl-color-accent-high);
+  background: color-mix(in srgb, var(--sl-color-accent-low) 42%, transparent);
+}

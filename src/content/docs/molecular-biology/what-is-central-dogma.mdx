@@ -1,0 +1,41 @@
+---
+title: セントラルドグマとは何か
+description: DNA、RNA、タンパク質の情報の流れを説明します。
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+
+<LearningGoals items={['DNAからRNA、タンパク質へ進む情報の流れを説明できる', '転写と翻訳を区別できる', '例外や調節があることを知る']} />
+
+## まず一言でいうと
+
+セントラルドグマは、遺伝情報がDNAからRNAを経てタンパク質へ使われる基本的な流れを表す考え方です。
+
+## 本文
+
+DNAの情報をRNAへ写す過程を転写、RNAの情報をもとにタンパク質を作る過程を翻訳と呼びます。この流れは分子生物学の基本です。
+
+ただし、細胞内の情報の使われ方は単純な一本道ではありません。RNAの加工、発現調節、非コードRNA、逆転写など、さまざまな仕組みがあります。MVPではまず基本の流れを押さえましょう。
+
+<TermBox term="セントラルドグマ" english="central dogma">
+DNA、RNA、タンパク質の間で遺伝情報がどのように使われるかを示す基本概念です。
+</TermBox>
+
+## よくある誤解
+
+- すべての情報が必ずタンパク質になるわけではありません。
+- セントラルドグマは調節機構を否定するものではありません。
+
+## 重要用語
+
+- セントラルドグマ / central dogma
+- 転写 / transcription
+- 翻訳 / translation
+- 非コードRNA / non-coding RNA
+
+<Quiz questions={[{ question: '転写とは何ですか。', answer: 'DNAの情報をもとにRNAを作る過程です。' }, { question: '翻訳とは何ですか。', answer: 'RNAの情報をもとにアミノ酸をつなぎ、タンパク質を作る過程です。' }]} />
+
+<NextSteps items={[{ title: 'PCRとは何か', href: '/molecular-biology/what-is-pcr/' }, { title: 'RNA-seqとは何か', href: '/bioinformatics/what-is-rna-seq/' }]} />

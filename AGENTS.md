@@ -1,0 +1,52 @@
+# AGENTS.md
+
+## Project overview
+
+BioLearn AI is a Japanese learning site for molecular biology, cell biology, genomics, and bioinformatics.
+
+## Development rules
+
+- Use Astro + Starlight + MDX.
+- Keep the site static-first.
+- Prefer simple, maintainable components.
+- Use TypeScript where applicable.
+- Use kebab-case for slugs and file names.
+- Keep content in Japanese.
+- Keep code comments in English or Japanese consistently, but user-facing text must be Japanese.
+
+## Content rules
+
+- Explain concepts accurately but clearly for beginners.
+- Include Japanese term, English term, and abbreviation when useful.
+- Do not present medical diagnosis or treatment advice.
+- Avoid unsupported claims.
+- Prefer educational explanations over sensational claims.
+- Use diagrams only when they are original or clearly licensed.
+
+## Lesson structure
+
+Each lesson should include:
+
+1. この記事で学ぶこと
+2. まず一言でいうと
+3. 本文
+4. よくある誤解
+5. 重要用語
+6. 確認問題
+7. 次に読む記事
+
+## Quality checks
+
+Before finishing a task, run:
+
+- npm run build
+
+If formatting or linting scripts exist, run them too.
+
+## Review guidelines
+
+- Treat broken builds as P1.
+- Treat broken internal links as P1.
+- Treat incorrect scientific explanations as P1.
+- Treat medical advice-like wording as P1.
+- Treat typos in Japanese educational content as P2 unless they change meaning.

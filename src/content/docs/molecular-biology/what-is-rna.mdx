@@ -1,0 +1,42 @@
+---
+title: RNAとは何か
+description: RNAの役割と、DNA・タンパク質との関係を説明します。
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+
+<LearningGoals items={['RNAが情報の読み出しや調節に関わることを知る', 'mRNA、rRNA、tRNAの違いを大まかに理解する', '転写という言葉の意味を説明できる']} />
+
+## まず一言でいうと
+
+RNAは、DNAの情報を使う場面で働く、柔軟な役割を持つ分子です。
+
+## 本文
+
+RNAはリボ核酸の略です。DNAと似ていますが、一般に一本鎖で働くことが多く、塩基としてTの代わりにUを使います。タンパク質の材料情報を運ぶmRNA、リボソームの構成要素であるrRNA、アミノ酸を運ぶtRNAなど、複数の種類があります。
+
+DNAからRNAが作られる過程を転写と呼びます。RNAは単なる中継役に限らず、遺伝子発現の調節にも関わります。
+
+<TermBox term="RNA" english="ribonucleic acid" abbreviation="RNA">
+DNAの情報を読み出したり、タンパク質合成や発現制御に関わったりする分子です。
+</TermBox>
+
+## よくある誤解
+
+- RNAはmRNAだけではありません。rRNA、tRNA、調節性RNAなど多様な種類があります。
+- RNAはDNAの劣化版ではなく、独自の機能を持ちます。
+
+## 重要用語
+
+- RNA / ribonucleic acid
+- mRNA / messenger RNA
+- rRNA / ribosomal RNA
+- tRNA / transfer RNA
+- 転写 / transcription
+
+<Quiz questions={[{ question: 'RNAでTの代わりに使われる塩基は何ですか。', answer: 'U、つまりウラシルです。' }, { question: 'mRNAの主な役割を説明してください。', answer: 'タンパク質合成に使われる情報をDNAからリボソームへ伝えることです。' }]} />
+
+<NextSteps items={[{ title: 'タンパク質とは何か', href: '/molecular-biology/what-is-protein/' }, { title: 'セントラルドグマとは何か', href: '/molecular-biology/what-is-central-dogma/' }]} />

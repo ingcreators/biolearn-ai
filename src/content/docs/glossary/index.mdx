@@ -1,0 +1,19 @@
+---
+title: 用語集
+description: BioLearn AI で使う重要用語の一覧です。
+---
+
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<GlossaryTable
+  terms={[
+    { term: '細胞', english: 'cell', description: '生物の構造と働きの基本単位。' },
+    { term: 'DNA', english: 'deoxyribonucleic acid', abbreviation: 'DNA', description: '遺伝情報を長期的に保存する分子。' },
+    { term: 'RNA', english: 'ribonucleic acid', abbreviation: 'RNA', description: '遺伝情報の読み出しや調節に関わる分子。' },
+    { term: 'タンパク質', english: 'protein', description: '細胞内外で構造、反応、輸送、情報伝達などを担う分子。' },
+    { term: '遺伝子', english: 'gene', description: '機能を持つRNAやタンパク質の産生に関わるDNA領域。' },
+    { term: 'ゲノム', english: 'genome', description: 'ある生物が持つ遺伝情報の全体。' },
+    { term: 'PCR', english: 'polymerase chain reaction', abbreviation: 'PCR', description: '特定のDNA領域を試験管内で増幅する実験法。' },
+    { term: 'RNA-seq', english: 'RNA sequencing', abbreviation: 'RNA-seq', description: 'RNAを配列決定し、遺伝子発現などを調べる手法。' },
+  ]}
+/>
