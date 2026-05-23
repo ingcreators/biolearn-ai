@@ -1,23 +1,27 @@
 ---
 title: 学習ロードマップ
-description: BioLearn AI で生命科学を分子、細胞、ゲノム、データ解析の順に学ぶための道案内です。
+description: BioLearn AI で生命科学の基礎から論文Figureの読み方までを章立てで学ぶためのシラバスです。
 ---
 
 import FlowDiagram from '../../../components/FlowDiagram.astro';
 
-BioLearn AI のロードマップは、生命科学を「分子」「細胞」「ゲノム」「データ解析」の順に積み上げる構成です。用語を暗記するよりも、情報がどこに保存され、どう読み出され、細胞の働きや解析結果にどう現れるかを追います。
+BioLearn AI のロードマップは、生命科学の基本概念から分子生物学、細胞生物学、ゲノミクス、実験とバイオインフォマティクス、論文Figureの読み方へ進む学習シラバスです。
+
+単なる記事一覧ではなく、「何を学び、何が読めるようになり、次にどこへ進むか」を見失わないための地図として使ってください。
 
 ## 全体像
 
 <FlowDiagram
-  title="分子からデータ解析へ"
+  title="生命科学の基礎からFigure読解へ"
   steps={[
-    '分子: DNA・RNA・タンパク質',
-    '細胞: 膜・小器官・シグナル',
-    'ゲノム: 染色体・変異',
-    'データ解析: RNA-seq・発現解析',
+    'はじめに: 生命科学の地図',
+    '第1章: DNAからタンパク質へ',
+    '第2章: 分子が働く場所',
+    '第3章: 遺伝情報の全体像',
+    '第4章: 測定からデータへ',
+    '第5章: 論文Figureを読む',
   ]}
-  note="最初は生命科学の言葉に慣れ、後半で実験データと論文Figureを読める状態を目指します。"
+  note="前半で生命科学の言葉と仕組みを作り、後半で実験データと論文Figureを読む準備を整えます。"
 />
 
 ## 到達目標
@@ -28,7 +32,8 @@ BioLearn AI のロードマップは、生命科学を「分子」「細胞」�
 - セントラルドグマ、転写、翻訳、遺伝子発現の関係を説明できる
 - 細胞膜、細胞小器官、細胞シグナル伝達を分子の働きと結びつけられる
 - 染色体や遺伝的変異を、ゲノム全体の文脈で捉えられる
-- RNA-seqや差次的発現解析の結果を読むための前提知識を持てる
+- PCR、RNA-seq、シーケンスデータ、差次的発現解析の位置づけを説明できる
+- 棒グラフ、qPCR、Western blot、Volcano plot、ヒートマップを読むときの確認点を持てる
 
 ## 推奨ペース
 
@@ -36,66 +41,177 @@ BioLearn AI のロードマップは、生命科学を「分子」「細胞」�
 
 | ペース   | 目安                 | 向いている人                           |
 | -------- | -------------------- | -------------------------------------- |
-| ゆっくり | 1日1記事、約3週間    | 高校生物を学び直したい人               |
-| 標準     | 1日2〜3記事、約1週間 | 生命科学の全体像を早めにつかみたい人   |
+| ゆっくり | 1日1記事、約4週間    | 高校生物を学び直したい人               |
+| 標準     | 1日2〜3記事、約2週間 | 生命科学の全体像を早めにつかみたい人   |
 | 集中     | 週末にまとめて読む   | 情報系エンジニアで概念の地図がほしい人 |
 
-## Phase 0: 導入
+## はじめに：生命科学の地図を作る
 
-生命科学の全体像と、細胞という基本単位を押さえます。
+### この章で学ぶこと
+
+生命科学が、分子、細胞、組織、個体、データをつなげて考える学問であることを押さえます。最初に細胞という基本単位を確認し、以降の章で扱う分子や実験データがどこに位置づくかを見ます。
+
+### 読む記事一覧
 
 1. [生命科学とは何か](/getting-started/what-is-life-science/)
 2. [細胞とは何か](/basics/what-is-a-cell/)
 
-ここでのゴールは、「生命科学は分子だけでも、個体だけでもなく、複数の階層をつなげて考える学問だ」と理解することです。
+### この章を終えるとできること
 
-## Phase 1: 分子
+- 生命科学が扱う階層を、自分の言葉で説明できる
+- 細胞を生命の基本単位として位置づけられる
+- 分子生物学、細胞生物学、ゲノミクス、バイオインフォマティクスが別々の話ではなく、つながった学習領域だと理解できる
 
-DNA、RNA、タンパク質を別々の用語としてではなく、情報の保存、読み出し、機能の流れとして学びます。
+### 関連する用語
 
-3. [DNAとは何か](/molecular-biology/what-is-dna/)
-4. [RNAとは何か](/molecular-biology/what-is-rna/)
-5. [タンパク質とは何か](/molecular-biology/what-is-protein/)
-6. [遺伝子とは何か](/molecular-biology/what-is-gene/)
-7. [セントラルドグマとは何か](/molecular-biology/what-is-central-dogma/)
-8. [転写とは何か](/molecular-biology/what-is-transcription/)
-9. [翻訳とは何か](/molecular-biology/what-is-translation/)
-10. [遺伝子発現とは何か](/molecular-biology/what-is-gene-expression/)
+生命科学（life science）、細胞（cell）、分子（molecule）、遺伝情報（genetic information）、データ（data）
 
-この章を終えると、RNA-seqの「発現量」という言葉が何を測っているのか見えやすくなります。
+### 次に進む章
 
-## Phase 2: 細胞
+次は [第1章 分子生物学：DNAからタンパク質へ](#第1章-分子生物学dnaからタンパク質へ) へ進み、生命科学の中心となる分子の流れを学びます。
 
-分子の働きが、細胞という場所でどう意味を持つのかを学びます。
+## 第1章 分子生物学：DNAからタンパク質へ
 
-11. [細胞膜とは何か](/cell-biology/what-is-cell-membrane/)
-12. [細胞小器官とは何か](/cell-biology/what-are-organelles/)
-13. [細胞シグナル伝達とは何か](/cell-biology/what-is-cell-signaling/)
+### この章で学ぶこと
 
-この章では、外部シグナル、受容体、タンパク質、遺伝子発現がつながる感覚を作ります。
+DNA、RNA、タンパク質を別々の用語としてではなく、情報の保存、読み出し、働きの流れとして学びます。セントラルドグマを軸に、転写、翻訳、遺伝子発現の関係を整理します。
 
-## Phase 3: ゲノム
+### 読む記事一覧
 
-遺伝情報を、単一の遺伝子ではなく全体像として捉えます。
+1. [DNAとは何か](/molecular-biology/what-is-dna/)
+2. [RNAとは何か](/molecular-biology/what-is-rna/)
+3. [タンパク質とは何か](/molecular-biology/what-is-protein/)
+4. [遺伝子とは何か](/molecular-biology/what-is-gene/)
+5. [セントラルドグマとは何か](/molecular-biology/what-is-central-dogma/)
+6. [転写とは何か](/molecular-biology/what-is-transcription/)
+7. [翻訳とは何か](/molecular-biology/what-is-translation/)
+8. [遺伝子発現とは何か](/molecular-biology/what-is-gene-expression/)
 
-14. [ゲノムとは何か](/genomics/what-is-genome/)
-15. [染色体とは何か](/genomics/what-are-chromosomes/)
-16. [遺伝的変異とは何か](/genomics/what-are-genetic-variants/)
+### この章を終えるとできること
 
-ここでは「遺伝子」「ゲノム」「染色体」「変異」を混同しないことが大切です。
+- DNA、RNA、タンパク質、遺伝子の違いを説明できる
+- 転写と翻訳が、遺伝情報からタンパク質へ向かう流れのどこにあるか説明できる
+- RNA-seqの「発現量」が、何を手がかりにしている言葉なのか見通せる
 
-## Phase 4: 実験とデータ解析
+### 関連する用語
 
-実験で得た分子情報を、データとして読み解く入口に進みます。
+DNA、RNA、タンパク質（protein）、遺伝子（gene）、セントラルドグマ（central dogma）、転写（transcription）、翻訳（translation）、遺伝子発現（gene expression）
 
-17. [PCRとは何か](/molecular-biology/what-is-pcr/)
-18. [RNA-seqとは何か](/bioinformatics/what-is-rna-seq/)
-19. [シーケンスデータとは何か](/bioinformatics/what-is-sequence-data/)
-20. [差次的発現解析とは何か](/bioinformatics/what-is-differential-expression-analysis/)
+### 次に進む章
 
-この章を読むと、生命科学論文のFigureに出てくる発現量、ヒートマップ、volcano plotなどへ進む準備ができます。
+次は [第2章 細胞生物学：分子が働く場所を理解する](#第2章-細胞生物学分子が働く場所を理解する) へ進み、分子の働きが細胞の中でどう意味を持つかを学びます。
+
+## 第2章 細胞生物学：分子が働く場所を理解する
+
+### この章で学ぶこと
+
+分子の働きが、細胞という場所でどう機能として現れるのかを学びます。細胞膜、細胞小器官、細胞シグナル伝達を通して、外からの刺激、受容体、タンパク質、遺伝子発現のつながりを整理します。
+
+### 読む記事一覧
+
+1. [細胞膜とは何か](/cell-biology/what-is-cell-membrane/)
+2. [細胞小器官とは何か](/cell-biology/what-are-organelles/)
+3. [細胞シグナル伝達とは何か](/cell-biology/what-is-cell-signaling/)
+
+### この章を終えるとできること
+
+- 細胞膜が、細胞の内外を分けるだけでなく情報の入口にもなることを説明できる
+- 細胞小器官を、分子が働く場所として捉えられる
+- シグナル伝達と遺伝子発現の変化をつなげて考えられる
+
+### 関連する用語
+
+細胞膜（cell membrane）、細胞小器官（organelle）、受容体（receptor）、細胞シグナル伝達（cell signaling）、タンパク質、遺伝子発現
+
+### 次に進む章
+
+次は [第3章 ゲノミクス：遺伝情報を全体で捉える](#第3章-ゲノミクス遺伝情報を全体で捉える) へ進み、遺伝情報を単一の遺伝子ではなく全体像として見ます。
+
+## 第3章 ゲノミクス：遺伝情報を全体で捉える
+
+### この章で学ぶこと
+
+遺伝情報を、単一の遺伝子だけでなくゲノム全体として捉えます。ゲノム、染色体、遺伝的変異の違いを整理し、個々の遺伝子がより大きな情報体系の中にあることを学びます。
+
+### 読む記事一覧
+
+1. [ゲノムとは何か](/genomics/what-is-genome/)
+2. [染色体とは何か](/genomics/what-are-chromosomes/)
+3. [遺伝的変異とは何か](/genomics/what-are-genetic-variants/)
+
+### この章を終えるとできること
+
+- 遺伝子、ゲノム、染色体を混同せずに説明できる
+- 遺伝的変異を、ゲノム配列の違いとして捉えられる
+- シーケンスデータや変異解析に進むための言葉の土台を持てる
+
+### 関連する用語
+
+ゲノム（genome）、染色体（chromosome）、遺伝子（gene）、遺伝的変異（genetic variant）、変異（mutation）、SNP
+
+### 次に進む章
+
+次は [第4章 実験とバイオインフォマティクス：測定からデータへ](#第4章-実験とバイオインフォマティクス測定からデータへ) へ進み、分子やゲノムをどう測定し、データとして読むかを学びます。
+
+## 第4章 実験とバイオインフォマティクス：測定からデータへ
+
+### この章で学ぶこと
+
+実験で得た分子情報を、データとして読み解く入口に進みます。PCR、RNA-seq、シーケンスデータ、差次的発現解析を通して、「何を測り、どのような結果として表れるのか」を整理します。
+
+### 読む記事一覧
+
+1. [PCRとは何か](/molecular-biology/what-is-pcr/)
+2. [RNA-seqとは何か](/bioinformatics/what-is-rna-seq/)
+3. [シーケンスデータとは何か](/bioinformatics/what-is-sequence-data/)
+4. [差次的発現解析とは何か](/bioinformatics/what-is-differential-expression-analysis/)
+
+### この章を終えるとできること
+
+- PCRとRNA-seqの目的の違いを説明できる
+- シーケンスデータが、DNAやRNA由来の配列情報として扱われることを理解できる
+- 差次的発現解析の結果を見るとき、変化量と統計的な確からしさを分けて考えられる
+
+### 関連する用語
+
+PCR、RNA-seq、シーケンス（sequencing）、シーケンスデータ（sequence data）、バイオインフォマティクス（bioinformatics）、差次的発現解析（differential expression analysis）
+
+### 次に進む章
+
+次は [第5章 論文Figureの読み方：結果を読む](#第5章-論文figureの読み方結果を読む) へ進み、実験結果が図として示されたときの読み方を学びます。
+
+## 第5章 論文Figureの読み方：結果を読む
+
+### この章で学ぶこと
+
+生命科学論文のFigureを、見た目だけで判断せず、軸、条件、サンプル数、ばらつき、コントロール、統計表示を確認しながら読む練習をします。外部論文画像ではなく模式図を使い、よく出てくる結果表示の読み方を学びます。
+
+### 読む記事一覧
+
+1. [棒グラフの読み方](/reading-figures/how-to-read-bar-plot/)
+2. [qPCRプロットの読み方](/reading-figures/how-to-read-qpcr-plot/)
+3. [Western blotの読み方](/reading-figures/how-to-read-western-blot/)
+4. [Volcano plotの読み方](/reading-figures/how-to-read-volcano-plot/)
+5. [ヒートマップの読み方](/reading-figures/how-to-read-heatmap/)
+
+### この章を終えるとできること
+
+- 棒グラフで平均だけでなく、ばらつき、n数、エラーバーを確認できる
+- qPCRプロットでCt値や相対発現量の基本的な意味を説明できる
+- Western blotでバンド、分子量、ローディングコントロールを確認できる
+- Volcano plotとヒートマップを、RNA-seqや差次的発現解析の結果として読める
+
+### 関連する用語
+
+Figure、Figure legend、棒グラフ（bar plot）、qPCR、Ct値、Western blot、ローディングコントロール（loading control）、Volcano plot、ヒートマップ（heatmap）、p値、fold change
+
+### 次に進む章
+
+この章まで読んだら、[用語集](/glossary/) を行き来しながら、各記事の確認問題で説明できなかった言葉を戻って確認します。必要に応じて [論文Figureの読み方](/reading-figures/) のカテゴリトップから復習してください。
 
 ## 目的別ルート
+
+章を順番に読むのが基本ですが、目的がはっきりしている場合は次の入口から始めても構いません。
 
 ### 高校生物を学び直したい
 
@@ -103,15 +219,19 @@ DNA、RNA、タンパク質を別々の用語としてではなく、情報の�
 
 ### 分子生物学を先に学びたい
 
-[DNAとは何か](/molecular-biology/what-is-dna/) から [遺伝子発現とは何か](/molecular-biology/what-is-gene-expression/) までを読みます。その後、細胞生物学へ進むと理解が安定します。
+[DNAとは何か](/molecular-biology/what-is-dna/) から [遺伝子発現とは何か](/molecular-biology/what-is-gene-expression/) までを読みます。その後、細胞生物学へ進むと、分子がどこで働くかを理解しやすくなります。
+
+### 細胞の仕組みを知りたい
+
+[細胞とは何か](/basics/what-is-a-cell/) で全体像を押さえてから、[細胞膜とは何か](/cell-biology/what-is-cell-membrane/)、[細胞小器官とは何か](/cell-biology/what-are-organelles/)、[細胞シグナル伝達とは何か](/cell-biology/what-is-cell-signaling/) へ進みます。
 
 ### バイオインフォマティクスに進みたい
 
-いきなりRNA-seqへ進まず、[遺伝子発現とは何か](/molecular-biology/what-is-gene-expression/) を読んでから [RNA-seqとは何か](/bioinformatics/what-is-rna-seq/) に進みます。
+いきなりRNA-seqへ進まず、[遺伝子発現とは何か](/molecular-biology/what-is-gene-expression/) を読んでから [RNA-seqとは何か](/bioinformatics/what-is-rna-seq/) に進みます。差次的発現解析へ進む前に、[ゲノムとは何か](/genomics/what-is-genome/) も読んでおくと位置づけが安定します。
 
 ### 論文Figureを読みたい
 
-まず [RNA-seqとは何か](/bioinformatics/what-is-rna-seq/) と [差次的発現解析とは何か](/bioinformatics/what-is-differential-expression-analysis/) を読み、その後 [論文Figureの読み方](/reading-figures/) へ進みます。
+まず [RNA-seqとは何か](/bioinformatics/what-is-rna-seq/) と [差次的発現解析とは何か](/bioinformatics/what-is-differential-expression-analysis/) を読み、その後 [棒グラフの読み方](/reading-figures/how-to-read-bar-plot/) から [論文Figureの読み方](/reading-figures/) へ進みます。
 
 ## 学習チェック
 
@@ -122,6 +242,7 @@ DNA、RNA、タンパク質を別々の用語としてではなく、情報の�
 - 遺伝子発現は細胞の状態とどう関係しますか。
 - RNA-seqでは何を測っていると言えますか。
 - 差次的発現解析の結果を見るとき、p値以外に何を確認しますか。
+- 論文Figureを読むとき、軸、条件、コントロール、ばらつきのうち何を最初に確認しますか。
 
 ## 次に進む
 
