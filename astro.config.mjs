@@ -22,55 +22,34 @@ export default defineConfig({
       customCss: ['./src/styles/custom.css'],
       sidebar: [
         {
-          label: 'はじめに',
+          label: '学習ロードマップ',
           items: [
-            { label: 'カテゴリ概要', link: '/getting-started/' },
-            { label: '生命科学とは何か', link: '/getting-started/what-is-life-science/' },
+            { label: '00. はじめに', link: '/getting-started/' },
+            { label: '01. 生命科学とは何か', link: '/getting-started/what-is-life-science/' },
+            { label: '02. 細胞とは何か', link: '/basics/what-is-a-cell/' },
+            { label: '03. DNAとは何か', link: '/molecular-biology/what-is-dna/' },
+            { label: '04. RNAとは何か', link: '/molecular-biology/what-is-rna/' },
+            { label: '05. タンパク質とは何か', link: '/molecular-biology/what-is-protein/' },
+            { label: '06. 遺伝子とは何か', link: '/molecular-biology/what-is-gene/' },
+            { label: '07. ゲノムとは何か', link: '/genomics/what-is-genome/' },
+            { label: '08. セントラルドグマとは何か', link: '/molecular-biology/what-is-central-dogma/' },
+            { label: '09. PCRとは何か', link: '/molecular-biology/what-is-pcr/' },
+            { label: '10. RNA-seqとは何か', link: '/bioinformatics/what-is-rna-seq/' },
           ],
         },
         {
-          label: '生命科学の基礎',
+          label: 'カテゴリ別に探す',
           items: [
-            { label: 'カテゴリ概要', link: '/basics/' },
-            { label: '細胞とは何か', link: '/basics/what-is-a-cell/' },
+            { label: '生命科学の基礎', link: '/basics/' },
+            { label: '分子生物学', link: '/molecular-biology/' },
+            { label: '細胞生物学', link: '/cell-biology/' },
+            { label: 'ゲノミクス', link: '/genomics/' },
+            { label: 'バイオインフォマティクス', link: '/bioinformatics/' },
+            { label: '論文Figureの読み方', link: '/reading-figures/' },
           ],
         },
         {
-          label: '分子生物学',
-          items: [
-            { label: 'カテゴリ概要', link: '/molecular-biology/' },
-            { label: 'DNAとは何か', link: '/molecular-biology/what-is-dna/' },
-            { label: 'RNAとは何か', link: '/molecular-biology/what-is-rna/' },
-            { label: 'タンパク質とは何か', link: '/molecular-biology/what-is-protein/' },
-            { label: '遺伝子とは何か', link: '/molecular-biology/what-is-gene/' },
-            { label: 'セントラルドグマとは何か', link: '/molecular-biology/what-is-central-dogma/' },
-            { label: 'PCRとは何か', link: '/molecular-biology/what-is-pcr/' },
-          ],
-        },
-        {
-          label: '細胞生物学',
-          items: [{ label: 'カテゴリ概要', link: '/cell-biology/' }],
-        },
-        {
-          label: 'ゲノミクス',
-          items: [
-            { label: 'カテゴリ概要', link: '/genomics/' },
-            { label: 'ゲノムとは何か', link: '/genomics/what-is-genome/' },
-          ],
-        },
-        {
-          label: 'バイオインフォマティクス',
-          items: [
-            { label: 'カテゴリ概要', link: '/bioinformatics/' },
-            { label: 'RNA-seqとは何か', link: '/bioinformatics/what-is-rna-seq/' },
-          ],
-        },
-        {
-          label: '論文Figureの読み方',
-          items: [{ label: 'カテゴリ概要', link: '/reading-figures/' }],
-        },
-        {
-          label: '用語集',
+          label: 'リファレンス',
           items: [{ label: '用語集', link: '/glossary/' }],
         },
       ],

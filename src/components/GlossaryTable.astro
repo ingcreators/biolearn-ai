@@ -4,6 +4,7 @@ interface TermRow {
   english?: string;
   abbreviation?: string;
   description: string;
+  href?: string;
 }
 
 interface Props {
@@ -27,7 +28,7 @@ const { terms } = Astro.props;
       {
         terms.map((row) => (
           <tr>
-            <td>{row.term}</td>
+            <td>{row.href ? <a href={row.href}>{row.term}</a> : row.term}</td>
             <td>{row.english ?? '-'}</td>
             <td>{row.abbreviation ?? '-'}</td>
             <td>{row.description}</td>

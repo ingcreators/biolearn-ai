@@ -7,13 +7,15 @@ import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <GlossaryTable
   terms={[
-    { term: '細胞', english: 'cell', description: '生物の構造と働きの基本単位。' },
-    { term: 'DNA', english: 'deoxyribonucleic acid', abbreviation: 'DNA', description: '遺伝情報を長期的に保存する分子。' },
-    { term: 'RNA', english: 'ribonucleic acid', abbreviation: 'RNA', description: '遺伝情報の読み出しや調節に関わる分子。' },
-    { term: 'タンパク質', english: 'protein', description: '細胞内外で構造、反応、輸送、情報伝達などを担う分子。' },
-    { term: '遺伝子', english: 'gene', description: '機能を持つRNAやタンパク質の産生に関わるDNA領域。' },
-    { term: 'ゲノム', english: 'genome', description: 'ある生物が持つ遺伝情報の全体。' },
-    { term: 'PCR', english: 'polymerase chain reaction', abbreviation: 'PCR', description: '特定のDNA領域を試験管内で増幅する実験法。' },
-    { term: 'RNA-seq', english: 'RNA sequencing', abbreviation: 'RNA-seq', description: 'RNAを配列決定し、遺伝子発現などを調べる手法。' },
+    { term: '生命科学', english: 'life science', description: '生命現象を分子、細胞、個体、集団などの階層で理解する分野。', href: '/getting-started/what-is-life-science/' },
+    { term: '細胞', english: 'cell', description: '生物の構造と働きの基本単位。', href: '/basics/what-is-a-cell/' },
+    { term: 'DNA', english: 'deoxyribonucleic acid', abbreviation: 'DNA', description: '遺伝情報を長期的に保存する分子。', href: '/molecular-biology/what-is-dna/' },
+    { term: 'RNA', english: 'ribonucleic acid', abbreviation: 'RNA', description: '遺伝情報の読み出しや調節に関わる分子。', href: '/molecular-biology/what-is-rna/' },
+    { term: 'タンパク質', english: 'protein', description: '細胞内外で構造、反応、輸送、情報伝達などを担う分子。', href: '/molecular-biology/what-is-protein/' },
+    { term: '遺伝子', english: 'gene', description: '機能を持つRNAやタンパク質の産生に関わるDNA領域。', href: '/molecular-biology/what-is-gene/' },
+    { term: 'ゲノム', english: 'genome', description: 'ある生物が持つ遺伝情報の全体。', href: '/genomics/what-is-genome/' },
+    { term: 'セントラルドグマ', english: 'central dogma', description: 'DNA、RNA、タンパク質の間で情報が使われる基本的な流れ。', href: '/molecular-biology/what-is-central-dogma/' },
+    { term: 'PCR', english: 'polymerase chain reaction', abbreviation: 'PCR', description: '特定のDNA領域を試験管内で増幅する実験法。', href: '/molecular-biology/what-is-pcr/' },
+    { term: 'RNA-seq', english: 'RNA sequencing', abbreviation: 'RNA-seq', description: 'RNAを配列決定し、遺伝子発現などを調べる手法。', href: '/bioinformatics/what-is-rna-seq/' },
   ]}
 />
