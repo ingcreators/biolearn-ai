@@ -1,0 +1,23 @@
+---
+interface Props {
+  title: string;
+  steps: string[];
+  note?: string;
+}
+
+const { title, steps, note } = Astro.props;
+---
+
+<figure class="biolearn-diagram" aria-labelledby={`diagram-${title}`}>
+  <figcaption id={`diagram-${title}`}>{title}</figcaption>
+  <ol>
+    {
+      steps.map((step) => (
+        <li>
+          <span>{step}</span>
+        </li>
+      ))
+    }
+  </ol>
+  {note && <p>{note}</p>}
+</figure>

@@ -7,6 +7,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
+import FlowDiagram from '../../../components/FlowDiagram.astro';
 
 <LearningGoals items={['生命科学が何を対象にする学問か説明できる', '分子・細胞・個体・集団という階層を区別できる', 'このサイトで学ぶ分野の位置づけを理解する']} />
 
@@ -23,6 +24,10 @@ import NextSteps from '../../../components/NextSteps.astro';
 このサイトでは、細かい用語をいきなり暗記するよりも、「情報がどこに保存され、どう読み出され、細胞の働きやデータ解析にどうつながるか」を重視します。生命科学の文章や論文を読むときには、分子、細胞、ゲノム、データ解析のどの話をしているのかを見分けることが大切です。
 
 BioLearn AI では、まず基本概念を押さえ、次に実験法やデータ解析へ進みます。医療や創薬に関係する話題も登場しますが、ここでの説明は診断や治療の助言ではなく、学習のための基礎知識です。
+
+## 図解
+
+<FlowDiagram title="生命科学で見る4つの階層" steps={['分子の働きを見る', '細胞の中で理解する', 'ゲノム全体で捉える', 'データから読み解く']} note="BioLearn AIでは、この順番で生命科学の見取り図を作ります。" />
 
 <TermBox term="生命科学" english="life science">
 生命に関わる現象を、観察、実験、計算、理論によって理解しようとする幅広い分野です。

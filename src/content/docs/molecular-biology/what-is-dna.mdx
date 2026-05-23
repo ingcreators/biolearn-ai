@@ -7,6 +7,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
+import FlowDiagram from '../../../components/FlowDiagram.astro';
 
 <LearningGoals items={['DNAが遺伝情報を保存する分子であることを理解する', '塩基配列という考え方を説明できる', 'DNAと遺伝子の違いへの入口をつかむ']} />
 
@@ -23,6 +24,10 @@ DNAの情報は、文章のように塩基の順番として表せます。た�
 DNAは細胞分裂の前に複製され、次の細胞へ受け継がれます。この性質によって、細胞や個体は遺伝情報を保ちながら増えることができます。一方で、複製や修復の過程で配列の違いが生じることもあり、これが遺伝的変異の理解につながります。
 
 DNAのすべての部分がタンパク質の設計図というわけではありません。遺伝子として働く領域、発現を調節する領域、まだ機能が十分に分かっていない領域などがあります。
+
+## 図解
+
+<FlowDiagram title="DNA情報の使われ方" steps={['塩基配列として保存', '必要な領域が読み出される', 'RNAやタンパク質につながる', '細胞の性質に影響する']} note="DNAは保存された情報であり、読み出されてはじめて細胞の働きにつながります。" />
 
 <TermBox term="DNA" english="deoxyribonucleic acid" abbreviation="DNA">
 遺伝情報を長期的に保存する分子です。細胞分裂のときには複製され、次の細胞へ受け継がれます。

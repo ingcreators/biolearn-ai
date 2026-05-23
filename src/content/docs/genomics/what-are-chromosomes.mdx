@@ -7,6 +7,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
+import FlowDiagram from '../../../components/FlowDiagram.astro';
 
 <LearningGoals items={['染色体がDNAとタンパク質からなる構造であることを理解する', 'ヒストンとクロマチンの関係を知る', '染色体が細胞分裂と遺伝情報の受け渡しに関わることを説明できる']} />
 
@@ -23,6 +24,10 @@ DNAは非常に長い分子なので、そのままでは細胞の核の中に�
 細胞分裂のときには、染色体はさらに凝縮し、複製されたDNAを娘細胞へ分配しやすい形になります。教科書でよく見るX字型の染色体は、細胞周期の特定の時期に見られる姿です。普段の核内では、DNAはよりほどけたクロマチンとして存在しています。
 
 染色体を理解すると、ゲノムが単なる長い文字列ではなく、細胞内で立体的に収納され、複製や発現制御と関係しながら働くことが見えてきます。ゲノムを読むとは、配列だけでなく、その配列が細胞内でどう扱われるかを見ることでもあります。
+
+## 図解
+
+<FlowDiagram title="DNAから染色体へ" steps={['DNAがヒストンに巻きつく', 'クロマチンを作る', '分裂時に凝縮する', '染色体として分配される']} note="染色体は長いDNAを整理し、受け渡しやすくする構造です。" />
 
 <TermBox term="染色体" english="chromosome">
 DNAとタンパク質からなる構造で、遺伝情報の収納と受け渡しに関わります。

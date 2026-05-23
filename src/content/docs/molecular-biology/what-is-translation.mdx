@@ -7,6 +7,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
+import FlowDiagram from '../../../components/FlowDiagram.astro';
 
 <LearningGoals items={['翻訳がRNAからタンパク質を作る過程であることを理解する', 'コドンとアミノ酸の関係を知る', 'リボソームとtRNAの役割を説明できる']} />
 
@@ -23,6 +24,10 @@ mRNAには、3つの塩基を1組とするコドンが並んでいます。リ�
 tRNAは、特定のアミノ酸を運びながら、mRNA上のコドンと対応します。この対応関係によって、塩基配列という情報がアミノ酸配列という分子の構造へ変換されます。ここで作られたアミノ酸鎖は、その後折りたたまれたり修飾されたりして機能を持ちます。
 
 翻訳は、遺伝情報が細胞内の機能へつながる重要な段階です。ただし、タンパク質の働きは翻訳後の折りたたみや修飾にも影響されます。そのため、mRNAの量とタンパク質の機能は関連しますが、完全に同じ意味ではありません。
+
+## 図解
+
+<FlowDiagram title="翻訳の流れ" steps={['mRNAのコドンを読む', 'tRNAがアミノ酸を運ぶ', 'リボソームでつなげる', 'タンパク質ができる']} note="翻訳では塩基配列の情報がアミノ酸配列へ変換されます。" />
 
 <TermBox term="翻訳" english="translation">
 mRNAの塩基配列をもとにアミノ酸をつなぎ、タンパク質を作る過程です。

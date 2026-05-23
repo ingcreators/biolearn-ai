@@ -7,6 +7,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
+import FlowDiagram from '../../../components/FlowDiagram.astro';
 
 <LearningGoals items={['ゲノムが遺伝情報の全体であることを理解する', '遺伝子とゲノムの違いを説明できる', 'ゲノミクスが全体像を見る分野であることを知る']} />
 
@@ -23,6 +24,10 @@ import NextSteps from '../../../components/NextSteps.astro';
 同じ生物種でも、個体ごとにゲノム配列には違いがあります。こうした違いは遺伝的変異として観察され、形質や疾患研究、進化研究などで扱われます。ただし、ゲノム情報の違いがすぐに意味を持つとは限らず、解釈には慎重さが必要です。
 
 ゲノミクスでは、個々の遺伝子だけでなく、ゲノム全体の構造、変異、発現制御、進化的な関係を調べます。分子生物学で学んだDNAや遺伝子の知識を、より大きなスケールで見直す分野だと考えると理解しやすくなります。
+
+## 図解
+
+<FlowDiagram title="ゲノムを全体として見る" steps={['DNA配列がある', '遺伝子や調節領域を含む', '染色体として収納される', '全体を解析対象にする']} note="ゲノムは遺伝子だけでなく、遺伝情報の全体を指します。" />
 
 <TermBox term="ゲノム" english="genome">
 ある生物や細胞が持つ遺伝情報の全体です。研究では、配列だけでなく構造や機能も含めて考えます。

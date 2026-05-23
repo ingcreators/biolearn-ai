@@ -7,6 +7,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
+import FlowDiagram from '../../../components/FlowDiagram.astro';
 
 <LearningGoals items={['DNAからRNA、タンパク質へ進む情報の流れを説明できる', '転写と翻訳を区別できる', '例外や調節があることを知る']} />
 
@@ -23,6 +24,10 @@ DNAの情報をRNAへ写す過程を転写、RNAの情報をもとにタンパ�
 たとえば、ある遺伝子が転写されてmRNAが作られ、そのmRNAが翻訳されてタンパク質が作られるとします。このタンパク質が酵素や受容体として働けば、細胞の性質や反応が変わります。つまり、セントラルドグマは分子の話であると同時に、細胞のふるまいを理解する入口でもあります。
 
 ただし、細胞内の情報の使われ方は単純な一本道ではありません。RNAの加工、発現調節、非コードRNA、逆転写など、さまざまな仕組みがあります。まずは基本の流れを押さえ、そのうえで例外や調節の仕組みを学ぶと理解しやすくなります。
+
+## 図解
+
+<FlowDiagram title="セントラルドグマの基本" steps={['DNAに情報を保存', '転写でRNAを作る', '翻訳でタンパク質を作る', 'タンパク質が機能する']} note="まずはDNA → RNA → タンパク質という基本の流れを押さえます。" />
 
 <TermBox term="セントラルドグマ" english="central dogma">
 DNA、RNA、タンパク質の間で遺伝情報がどのように使われるかを示す基本概念です。

@@ -7,6 +7,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
+import FlowDiagram from '../../../components/FlowDiagram.astro';
 
 <LearningGoals items={['細胞小器官が細胞内の機能分担に関わることを理解する', '核、ミトコンドリア、小胞体、ゴルジ体の役割を知る', '分子の働きが細胞内の場所と関係することを説明できる']} />
 
@@ -23,6 +24,10 @@ import NextSteps from '../../../components/NextSteps.astro';
 ミトコンドリアはエネルギー代謝に関わる細胞小器官です。細胞が活動するにはエネルギーが必要であり、その供給や代謝の調整は細胞の状態に深く関係します。細胞の種類によって、発達している細胞小器官や働きの強さは異なります。
 
 細胞小器官を学ぶと、DNA、RNA、タンパク質の働きが細胞内のどこで起こるのかを考えやすくなります。分子の知識を細胞の構造に結びつけることで、生命現象をより立体的に理解できます。
+
+## 図解
+
+<FlowDiagram title="細胞小器官の機能分担" steps={['核がDNAを保持する', 'リボソームでタンパク質を作る', '小胞体・ゴルジ体で加工する', 'ミトコンドリアが代謝を支える']} note="真核細胞では、細胞内の場所ごとに役割が分担されています。" />
 
 <TermBox term="細胞小器官" english="organelle">
 真核細胞の内部にある、特定の機能を担う構造です。

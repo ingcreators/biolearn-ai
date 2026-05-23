@@ -7,6 +7,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
+import FlowDiagram from '../../../components/FlowDiagram.astro';
 
 <LearningGoals items={['差次的発現解析の目的を説明できる', '発現量、正規化、統計的検定の関係を知る', '結果の解釈で効果量と信頼性の両方を見る必要があることを理解する']} />
 
@@ -23,6 +24,10 @@ RNA-seqでは、各遺伝子に対応するリード数を数え、発現量の�
 結果には、発現変化の大きさを表す指標と、統計的な確からしさを表す指標が含まれます。log fold changeは変化の方向と大きさを示し、p値や調整済みp値は偶然では説明しにくい差かどうかを考える手がかりになります。ただし、数値だけで意味を決めるのではなく、実験の目的に照らして解釈します。
 
 結果を見るときは、p値や調整済みp値だけでなく、発現変化の大きさ、実験設計、再現性、生物学的な意味も合わせて考えます。差次的発現解析は、候補を見つける強力な方法ですが、最終的な解釈には追加の検証や文献知識が必要になることがあります。
+
+## 図解
+
+<FlowDiagram title="差次的発現解析の流れ" steps={['遺伝子ごとに数える', '試料間で正規化する', '条件間の差を検定する', '結果を生物学的に解釈する']} note="統計的な差と生物学的な意味を分けて確認します。" />
 
 <TermBox term="差次的発現解析" english="differential expression analysis" abbreviation="DEA">
 条件間で遺伝子発現に差があるかを統計的に調べる解析です。

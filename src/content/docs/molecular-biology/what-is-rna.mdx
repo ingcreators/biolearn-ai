@@ -7,6 +7,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
+import FlowDiagram from '../../../components/FlowDiagram.astro';
 
 <LearningGoals items={['RNAが情報の読み出しや調節に関わることを知る', 'mRNA、rRNA、tRNAの違いを大まかに理解する', '転写という言葉の意味を説明できる']} />
 
@@ -23,6 +24,10 @@ RNAは、DNAに保存された情報を細胞内で使うための重要な分�
 DNAからRNAが作られる過程を転写と呼びます。転写されたRNAは、そのまま使われる場合もあれば、加工を受けてから働く場合もあります。真核生物では、mRNAが成熟するまでに不要な部分が取り除かれたり、末端に構造が加えられたりします。
 
 RNAは単なる中継役に限らず、遺伝子発現の調節にも関わります。RNAの量や種類を調べることで、細胞がどの遺伝子をどれくらい使っているかを推定できます。この考え方は、後で学ぶRNA-seqにつながります。
+
+## 図解
+
+<FlowDiagram title="RNAの主な役割" steps={['DNAから転写される', 'mRNAが情報を運ぶ', 'rRNAとtRNAが翻訳を支える', 'RNA量から発現を推定する']} note="RNAは情報の中継だけでなく、タンパク質合成や発現解析にも関わります。" />
 
 <TermBox term="RNA" english="ribonucleic acid" abbreviation="RNA">
 DNAの情報を読み出したり、タンパク質合成や発現制御に関わったりする分子です。

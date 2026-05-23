@@ -7,6 +7,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
+import FlowDiagram from '../../../components/FlowDiagram.astro';
 
 <LearningGoals items={['遺伝的変異がゲノム配列の違いであることを理解する', '一塩基多型、挿入、欠失などの種類を知る', '変異の意味を慎重に解釈する必要があることを説明できる']} />
 
@@ -23,6 +24,10 @@ import NextSteps from '../../../components/NextSteps.astro';
 変異があるからといって、必ず大きな影響があるとは限りません。多くの変異は中立的か、影響が小さい場合があります。一方で、特定の条件では機能に影響する変異もあります。重要なのは、変異の存在と意味を分けて考えることです。
 
 疾患や形質との関係を考えるには、統計的証拠、機能実験、集団頻度などを合わせて慎重に解釈します。この教材では、個人の診断や治療判断ではなく、ゲノム配列の違いを学ぶための基礎概念として扱います。
+
+## 図解
+
+<FlowDiagram title="遺伝的変異の解釈" steps={['配列の違いを見つける', '種類と場所を確認する', '頻度や証拠を調べる', '影響を慎重に考える']} note="変異があることと、意味が確定することは別です。" />
 
 <TermBox term="遺伝的変異" english="genetic variant">
 ゲノム配列に見られる違いです。影響の有無や大きさは変異ごとに異なります。

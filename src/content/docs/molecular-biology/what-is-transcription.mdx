@@ -7,6 +7,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
+import FlowDiagram from '../../../components/FlowDiagram.astro';
 
 <LearningGoals items={['転写がDNAからRNAを作る過程であることを理解する', 'RNAポリメラーゼとプロモーターの役割を知る', '転写が遺伝子発現の入口であることを説明できる']} />
 
@@ -23,6 +24,10 @@ import NextSteps from '../../../components/NextSteps.astro';
 たとえば、同じ個体の中でも、神経細胞と筋細胞では発現している遺伝子の組み合わせが異なります。これはDNA配列が大きく違うからではなく、どの遺伝子がどの程度転写されるかが違うためです。
 
 どの遺伝子がどの程度転写されるかは、細胞の種類や状態によって変わります。そのため、転写は細胞が必要な分子を必要な量だけ作るための重要な調節点です。RNA-seqのような解析では、この転写の結果として存在するRNAを調べます。
+
+## 図解
+
+<FlowDiagram title="転写の流れ" steps={['プロモーターを認識', 'RNAポリメラーゼが結合', 'DNAを鋳型にRNAを合成', '転写産物ができる']} note="転写は遺伝子発現の入口になる過程です。" />
 
 <TermBox term="転写" english="transcription">
 DNAの塩基配列をもとにRNAを合成する過程です。

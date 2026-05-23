@@ -7,6 +7,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
+import FlowDiagram from '../../../components/FlowDiagram.astro';
 
 <LearningGoals items={['細胞膜が細胞内外を区切る構造であることを理解する', 'リン脂質二重層と膜タンパク質の役割を知る', '物質輸送と情報伝達の入口としての細胞膜を説明できる']} />
 
@@ -23,6 +24,10 @@ import NextSteps from '../../../components/NextSteps.astro';
 膜タンパク質には、物質を通すチャネル、分子を運ぶ輸送体、外からのシグナルを受け取る受容体などがあります。これらのタンパク質があることで、細胞膜はただの仕切りではなく、細胞が環境と会話する場所になります。
 
 細胞膜は単なる壁ではありません。必要な物質を取り込み、不要な物質を外へ出し、外からのシグナルを細胞内の反応へつなげます。分子生物学で学んだタンパク質の働きが、細胞の境界でどのように使われるかを見るよい例です。
+
+## 図解
+
+<FlowDiagram title="細胞膜の働き" steps={['内側と外側を区切る', '必要な物質を通す', '受容体でシグナルを受ける', '細胞内の反応につなげる']} note="細胞膜は境界であり、同時に外界との連絡口でもあります。" />
 
 <TermBox term="細胞膜" english="cell membrane">
 細胞を外界から区切る膜で、物質輸送や情報伝達にも関わります。

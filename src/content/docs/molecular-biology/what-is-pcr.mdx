@@ -7,6 +7,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
+import FlowDiagram from '../../../components/FlowDiagram.astro';
 
 <LearningGoals items={['PCRの目的を説明できる', '変性、アニーリング、伸長の流れを知る', 'PCRが研究や検査技術の基礎になる理由を理解する']} />
 
@@ -23,6 +24,10 @@ PCRのポイントは、対象となるDNA領域だけを選んで増やせる�
 PCRを繰り返すと、目的領域のコピー数は大きく増えます。そのため、最初はごく少量しかないDNAでも、後続の解析で扱いやすくなります。一方で、プライマー設計や試料の状態が結果に影響するため、実験条件の理解が重要です。
 
 PCRは研究、環境検査、感染症検査技術などの基礎として広く使われます。この教材では原理の理解を目的とし、個別の診断や治療判断には踏み込みません。実験手法としてのPCRを理解すると、シーケンス解析や遺伝子検出の説明も読みやすくなります。
+
+## 図解
+
+<FlowDiagram title="PCRの基本サイクル" steps={['変性でDNAをほどく', 'プライマーを結合させる', 'DNAポリメラーゼで伸長する', '目的領域が増える']} note="温度変化を繰り返すことで、特定のDNA領域を増幅します。" />
 
 <TermBox term="PCR" english="polymerase chain reaction" abbreviation="PCR">
 特定のDNA領域を多数コピーする実験手法です。

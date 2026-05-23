@@ -7,6 +7,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
+import FlowDiagram from '../../../components/FlowDiagram.astro';
 
 <LearningGoals items={['遺伝子をDNA上の機能単位として説明できる', '遺伝子と形質を単純に一対一で結ばない考え方を知る', '発現という言葉の入口を理解する']} />
 
@@ -23,6 +24,10 @@ import NextSteps from '../../../components/NextSteps.astro';
 遺伝子が働くには、まずその情報がRNAとして読み出されます。タンパク質を作る遺伝子では、RNAを経てアミノ酸配列へつながります。一方で、RNAそのものが機能する遺伝子もあります。このため、「遺伝子 = タンパク質の設計図」とだけ覚えると、後で理解が窮屈になります。
 
 また、一つの遺伝子が一つの特徴だけを決めるとは限りません。多くの形質は複数の遺伝子、環境、細胞状態の影響を受けます。遺伝子は重要な出発点ですが、生命現象は遺伝子だけで完結するものではありません。
+
+## 図解
+
+<FlowDiagram title="遺伝子をDNA上の機能領域として見る" steps={['DNA全体がある', '一部が遺伝子として働く', 'RNAやタンパク質が作られる', '細胞の働きに関わる']} note="遺伝子はDNA全体ではなく、機能を持つ領域として理解します。" />
 
 <TermBox term="遺伝子" english="gene">
 DNA上にある機能的な領域です。RNAやタンパク質を通じて生命現象に関わります。

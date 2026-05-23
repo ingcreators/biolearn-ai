@@ -7,6 +7,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
+import FlowDiagram from '../../../components/FlowDiagram.astro';
 
 <LearningGoals items={['遺伝子発現の意味を説明できる', '発現量が細胞の状態によって変わることを理解する', 'RNA-seqが発現を調べる手法とつながることを知る']} />
 
@@ -23,6 +24,10 @@ import NextSteps from '../../../components/NextSteps.astro';
 遺伝子発現は、転写、RNAの加工、翻訳、タンパク質の分解など、複数の段階で調節されます。転写が増えても、RNAがすぐ分解される場合や、タンパク質として作られにくい場合もあります。このため、発現という言葉が何を指しているのかを確認することが大切です。
 
 RNA-seqでは主にRNAの量を測ることで、どの遺伝子がどの程度使われているかを推定します。遺伝子発現を理解しておくと、RNA-seqの結果で出てくる「発現量」「差次的発現」「クラスタリング」といった言葉が読みやすくなります。
+
+## 図解
+
+<FlowDiagram title="遺伝子発現を見る視点" steps={['遺伝子が転写される', 'RNA量が変わる', 'タンパク質や機能に影響する', '細胞状態の手がかりになる']} note="発現は細胞がどの遺伝子を使っているかを見るための重要な指標です。" />
 
 <TermBox term="遺伝子発現" english="gene expression">
 遺伝子の情報がRNAやタンパク質として読み出され、細胞内で機能につながることです。
