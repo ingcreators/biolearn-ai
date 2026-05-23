@@ -13,5 +13,7 @@
     "astro": "^5.16.16",
     "typescript": "^5.9.3"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "wrangler": "^4.94.0"
+  }
 }
