@@ -5,14 +5,14 @@ description: BioLearn の入口です。
 
 import FlowDiagram from '../../../components/FlowDiagram.astro';
 
-BioLearn では、生命科学を「分子」「細胞」「ゲノム」「データ解析」の流れで学びます。
+BioLearn では、生命科学を「分子」「細胞」「ゲノム」「データ解析」から「論文Figureの読み方」へ進む流れで学びます。
 
 - 高校生物を学び直したい人
 - 医療・ヘルスケア・創薬領域に関心がある人
 - 情報系エンジニアとして生命科学に入門したい人
 - 生命科学論文を読めるようになりたい人
 
-最初に読む記事は [生命科学とは何か](/getting-started/what-is-life-science/) です。すべてを一度に覚える必要はありません。まずは言葉に慣れ、次に「分子が細胞で働き、その情報をゲノムとデータから読み解く」という流れをつかみます。
+最初に読む記事は [生命科学とは何か](/getting-started/what-is-life-science/) です。すべてを一度に覚える必要はありません。まずは言葉に慣れ、次に「分子が細胞で働き、その情報をゲノムとデータから読み解き、最後に論文Figureとして示された結果を読む」という流れをつかみます。
 
 詳しい学習計画は [学習ロードマップ](/roadmap/) にまとめています。
 
@@ -25,8 +25,9 @@ BioLearn では、生命科学を「分子」「細胞」「ゲノム」「デ�
     '細胞: 膜・小器官・シグナル',
     'ゲノム: 染色体・変異',
     'データ解析: RNA-seq・発現解析',
+    '論文Figure: 結果表示を読む',
   ]}
-  note="分子の働きを細胞の中で理解し、ゲノム全体とデータ解析へ広げます。"
+  note="分子の働きを細胞の中で理解し、ゲノム全体、データ解析、論文Figureの読解へ広げます。"
 />
 
 ## このロードマップの使い方
@@ -64,6 +65,13 @@ BioLearn では、生命科学を「分子」「細胞」「ゲノム」「デ�
   <section>
     <h3>データ解析</h3>
     <p>RNA-seqやシーケンスデータを入口に、生命科学データを読む力を育てます。</p>
+  </section>
+  <section>
+    <h3>論文Figure</h3>
+    <p>
+      棒グラフ、qPCR、Western blot、Volcano
+      plot、ヒートマップを結果のFigureとして読む練習をします。
+    </p>
   </section>
 </div>
 
@@ -104,6 +112,14 @@ BioLearn では、生命科学を「分子」「細胞」「ゲノム」「デ�
 19. [シーケンスデータとは何か](/bioinformatics/what-is-sequence-data/)
 20. [差次的発現解析とは何か](/bioinformatics/what-is-differential-expression-analysis/)
 
+### 論文Figureの読み方
+
+21. [棒グラフの読み方](/reading-figures/how-to-read-bar-plot/)
+22. [qPCRプロットの読み方](/reading-figures/how-to-read-qpcr-plot/)
+23. [Western blotの読み方](/reading-figures/how-to-read-western-blot/)
+24. [Volcano plotの読み方](/reading-figures/how-to-read-volcano-plot/)
+25. [ヒートマップの読み方](/reading-figures/how-to-read-heatmap/)
+
 ## 学び終えたら
 
-20本を読み終えたら、次は [論文Figureの読み方](/reading-figures/) へ進みます。棒グラフ、ヒートマップ、volcano plot、顕微鏡画像などを読めるようになると、生命科学論文の結果を追いやすくなります。
+第4章までの20本で分子、細胞、ゲノム、実験とデータ解析の土台を作ったら、第5章として [論文Figureの読み方](/reading-figures/) に進みます。棒グラフ、qPCR、Western blot、Volcano plot、ヒートマップを読めるようになると、生命科学論文の結果を追いやすくなります。
