@@ -1,0 +1,154 @@
+---
+title: Volcano plotの読み方
+description: RNA-seqなどの差次的発現解析で使われるVolcano plotの軸、点、しきい値、解釈の注意点を説明します。
+---
+
+Volcano plot（ボルケーノプロット）は、差次的発現解析の結果を一覧するためのFigureです。各点が遺伝子を表し、横軸に変化の大きさ、縦軸に統計的な確からしさを置くことで、変化が大きく信頼性も高い候補を見つけやすくします。
+
+## このFigureで何を見るか
+
+どの遺伝子が条件間で増えているか、減っているか、そしてその変化が統計的にどの程度支持されているかを見ます。[RNA-seqとは何か](/bioinformatics/what-is-rna-seq/)と[差次的発現解析とは何か](/bioinformatics/what-is-differential-expression-analysis/)を読んでおくと、軸の意味が理解しやすくなります。
+
+## まず一言でいうと
+
+Volcano plotは「横に離れるほど変化が大きく、上に行くほど統計的に目立つ」遺伝子を探す図です。
+
+<svg
+  role="img"
+  aria-label="Volcano plotの模式図。左右上側に注目候補の点があり、中央下に変化の小さい点が集まる。"
+  viewBox="0 0 760 420"
+  width="100%"
+  height="auto"
+>
+  <rect x="0" y="0" width="760" height="420" fill="#f8fafc" rx="8" />
+  <line x1="95" y1="340" x2="670" y2="340" stroke="#334155" strokeWidth="3" />
+  <line
+    x1="382"
+    y1="60"
+    x2="382"
+    y2="340"
+    stroke="#94a3b8"
+    strokeWidth="2"
+    strokeDasharray="7 7"
+  />
+  <line
+    x1="95"
+    y1="110"
+    x2="670"
+    y2="110"
+    stroke="#94a3b8"
+    strokeWidth="2"
+    strokeDasharray="7 7"
+  />
+  <line x1="95" y1="340" x2="95" y2="60" stroke="#334155" strokeWidth="3" />
+  <g fill="#94a3b8" opacity="0.85">
+    <circle cx="350" cy="300" r="6" />
+    <circle cx="390" cy="295" r="6" />
+    <circle cx="330" cy="255" r="6" />
+    <circle cx="420" cy="250" r="6" />
+    <circle cx="300" cy="220" r="6" />
+    <circle cx="465" cy="215" r="6" />
+    <circle cx="270" cy="180" r="6" />
+    <circle cx="500" cy="175" r="6" />
+    <circle cx="230" cy="140" r="6" />
+    <circle cx="535" cy="145" r="6" />
+  </g>
+  <g fill="#2563eb">
+    <circle cx="170" cy="82" r="8" />
+    <circle cx="205" cy="95" r="8" />
+    <circle cx="225" cy="70" r="8" />
+  </g>
+  <g fill="#dc2626">
+    <circle cx="570" cy="78" r="8" />
+    <circle cx="605" cy="92" r="8" />
+    <circle cx="630" cy="65" r="8" />
+  </g>
+  <text x="235" y="385" textAnchor="middle" fill="#334155" fontSize="20">
+    低下
+  </text>
+  <text x="528" y="385" textAnchor="middle" fill="#334155" fontSize="20">
+    上昇
+  </text>
+  <text x="384" y="400" textAnchor="middle" fill="#334155" fontSize="20">
+    log2 fold change
+  </text>
+  <text
+    x="48"
+    y="205"
+    textAnchor="middle"
+    fill="#334155"
+    fontSize="20"
+    transform="rotate(-90 48 205)"
+  >
+    -log10 adjusted p-value
+  </text>
+  <text x="185" y="45" fill="#1d4ed8" fontSize="20">
+    低下候補
+  </text>
+  <text x="548" y="45" fill="#b91c1c" fontSize="20">
+    上昇候補
+  </text>
+</svg>
+
+## 図の構成要素
+
+- 点: 1つの遺伝子や特徴量を表します。
+- 横軸: log2 fold changeなど、条件間の変化の方向と大きさを表します。
+- 縦軸: -log10 p値や-log10調整済みp値を表すことが多く、上ほど統計的に目立ちます。
+- しきい値線: fold changeや調整済みp値の基準を示します。
+- 色分け: 上昇、低下、有意、注目遺伝子などを示します。
+- ラベル: 特に注目する遺伝子名が表示されることがあります。
+
+## 読む順番
+
+1. 比較している条件を確認します。どちらを基準にしたlog fold changeかが重要です。
+2. 横軸を見て、右が上昇なのか左が上昇なのかを確認します。
+3. 縦軸がp値か調整済みp値かを確認します。
+4. しきい値線や色分けの定義を確認します。
+5. 右上・左上の点を候補として見ます。
+6. 候補遺伝子の機能や発現量、実験設計を合わせて解釈します。
+
+## よくある誤解
+
+- 上にある点ほど変化量が大きい、ではありません。縦軸は主に統計的な確からしさを表します。
+- 右側の点が常に「良い遺伝子」という意味ではありません。比較の向きと研究目的によって意味が変わります。
+- p値が小さくても、変化量が小さい場合は生物学的な意味が限定的なことがあります。
+- 色がついた点だけを見れば十分ではありません。低発現遺伝子、外れ値、サンプル数などの影響もあります。
+
+## 関連する実験・解析
+
+- RNA-seqの差次的発現解析
+- マイクロアレイ解析
+- プロテオーム解析やメタボローム解析の群間比較
+- 候補遺伝子をqPCRやWestern blotで検証する実験
+- [RNA-seqとは何か](/bioinformatics/what-is-rna-seq/)
+- [差次的発現解析とは何か](/bioinformatics/what-is-differential-expression-analysis/)
+- [用語: RNA-seq](/glossary/rna-seq/)
+- [用語: 差次的発現解析](/glossary/differential-expression-analysis/)
+
+## 確認問題
+
+1. Volcano plotで横軸と縦軸は、それぞれ何を表すことが多いですか。
+
+   <details>
+     <summary>解答例を見る</summary>
+     <p>
+       横軸はlog2 fold changeなど変化の方向と大きさ、縦軸は-log10
+       p値や-log10調整済みp値など統計的な目立ちやすさを表します。
+     </p>
+   </details>
+
+2. 右上の点を読むとき、最初に確認すべきことは何ですか。
+
+   <details>
+     <summary>解答例を見る</summary>
+     <p>
+       どちらの条件を基準にした比較かを確認し、その点がどの条件で上昇しているのかを判断します。
+     </p>
+   </details>
+
+## 次に読む記事
+
+- [ヒートマップの読み方](/reading-figures/how-to-read-heatmap/)
+- [qPCRプロットの読み方](/reading-figures/how-to-read-qpcr-plot/)
+- [用語: 差次的発現解析](/glossary/differential-expression-analysis/)

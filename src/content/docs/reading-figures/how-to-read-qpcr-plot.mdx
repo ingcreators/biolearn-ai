@@ -1,0 +1,138 @@
+---
+title: qPCRプロットの読み方
+description: qPCRの増幅曲線、Ct値、相対発現量グラフを読むときの基本を説明します。
+---
+
+qPCR（quantitative PCR）は、特定のDNAやRNA由来のcDNAを増幅しながら定量する方法です。論文では、増幅曲線、Ct値、相対発現量の棒グラフや点付きグラフとして示されます。
+
+## このFigureで何を見るか
+
+目的の遺伝子や配列が、条件間でどのくらい違って検出されたかを見ます。mRNA量の比較では、[遺伝子発現とは何か](/molecular-biology/what-is-gene-expression/)や[用語: PCR](/glossary/pcr/)の理解が土台になります。
+
+## まず一言でいうと
+
+qPCRは「どのサイクルで検出しきい値を超えたか」を見て、相対量を比較するFigureです。
+
+<svg
+  role="img"
+  aria-label="qPCRの増幅曲線模式図。条件Bの曲線が条件Aより早くしきい値を超える。"
+  viewBox="0 0 760 360"
+  width="100%"
+  height="auto"
+>
+  <rect x="0" y="0" width="760" height="360" fill="#f8fafc" rx="8" />
+  <line x1="90" y1="290" x2="660" y2="290" stroke="#334155" strokeWidth="3" />
+  <line x1="90" y1="60" x2="90" y2="290" stroke="#334155" strokeWidth="3" />
+  <line
+    x1="90"
+    y1="170"
+    x2="660"
+    y2="170"
+    stroke="#64748b"
+    strokeWidth="2"
+    strokeDasharray="8 8"
+  />
+  <path
+    d="M110 282 C210 282 235 270 260 230 C285 185 320 118 390 92 C450 70 555 66 650 66"
+    fill="none"
+    stroke="#f97316"
+    strokeWidth="5"
+  />
+  <path
+    d="M110 283 C285 283 320 275 350 235 C382 190 430 125 505 100 C555 82 610 76 650 74"
+    fill="none"
+    stroke="#38bdf8"
+    strokeWidth="5"
+  />
+  <circle cx="294" cy="170" r="7" fill="#f97316" />
+  <circle cx="405" cy="170" r="7" fill="#38bdf8" />
+  <text x="668" y="176" fill="#475569" fontSize="20">
+    しきい値
+  </text>
+  <text x="294" y="205" textAnchor="middle" fill="#9a3412" fontSize="20">
+    Ct低い
+  </text>
+  <text x="405" y="205" textAnchor="middle" fill="#0369a1" fontSize="20">
+    Ct高い
+  </text>
+  <text x="372" y="330" textAnchor="middle" fill="#334155" fontSize="22">
+    PCRサイクル
+  </text>
+  <text
+    x="48"
+    y="180"
+    textAnchor="middle"
+    fill="#334155"
+    fontSize="20"
+    transform="rotate(-90 48 180)"
+  >
+    蛍光シグナル
+  </text>
+  <text x="520" y="115" fill="#9a3412" fontSize="20">
+    量が多い条件
+  </text>
+  <text x="525" y="145" fill="#0369a1" fontSize="20">
+    量が少ない条件
+  </text>
+</svg>
+
+## 図の構成要素
+
+- 増幅曲線: PCRサイクルが進むにつれて蛍光シグナルが増える様子です。
+- しきい値: シグナルを検出したと判断する基準線です。
+- Ct値またはCq値: 曲線がしきい値を超えるサイクル数です。一般に、Ctが低いほど初期量が多いことを意味します。
+- 内部標準遺伝子: サンプル量や反応効率の違いを補正するために使われます。
+- 相対発現量: ΔΔCt法などで、基準条件に対する比として示されることがあります。
+- エラーバーと点: 反復間のばらつきを示します。
+
+## 読む順番
+
+1. 何を測っているかを確認します。DNA量なのか、RNAをcDNAにして測った発現量なのかで意味が変わります。
+2. Ct値が低い条件と高い条件を確認します。
+3. 内部標準遺伝子や基準条件が何かを確認します。
+4. 相対発現量に変換されている場合、基準を1とした比較なのかを確認します。
+5. 反復数、エラーバー、点の散らばりを見ます。
+6. 統計検定がある場合、どの比較に対するp値かを確認します。
+
+## よくある誤解
+
+- Ct値が高いほど発現量が高い、ではありません。Ct値が低いほど、しきい値に早く到達したことを示します。
+- qPCRだけで遺伝子の働きが証明されるわけではありません。発現量の変化は、機能を考えるための手がかりです。
+- 内部標準遺伝子が常に安定しているとは限りません。実験条件で変わらないかを確認する必要があります。
+- 相対発現量のグラフでは、縦軸が線形か対数かで見え方が変わります。
+
+## 関連する実験・解析
+
+- RT-qPCRによるmRNA発現量の検証
+- RNA-seqで見つかった候補遺伝子の確認
+- 遺伝子ノックダウンや刺激実験後の発現変化の確認
+- [PCRとは何か](/molecular-biology/what-is-pcr/)
+- [RNA-seqとは何か](/bioinformatics/what-is-rna-seq/)
+- [差次的発現解析とは何か](/bioinformatics/what-is-differential-expression-analysis/)
+- [用語: 遺伝子発現](/glossary/gene-expression/)
+
+## 確認問題
+
+1. qPCRでCt値が低いとは、一般に何を意味しますか。
+
+   <details>
+     <summary>解答例を見る</summary>
+     <p>
+       しきい値に早く到達したという意味で、一般に初期量が多いことを示します。
+     </p>
+   </details>
+
+2. 相対発現量を見るとき、内部標準遺伝子を確認する理由は何ですか。
+
+   <details>
+     <summary>解答例を見る</summary>
+     <p>
+       サンプル量や反応条件の違いを補正する基準であり、その基準が不安定だと比較の解釈が揺らぐためです。
+     </p>
+   </details>
+
+## 次に読む記事
+
+- [棒グラフの読み方](/reading-figures/how-to-read-bar-plot/)
+- [Volcano plotの読み方](/reading-figures/how-to-read-volcano-plot/)
+- [用語: PCR](/glossary/pcr/)

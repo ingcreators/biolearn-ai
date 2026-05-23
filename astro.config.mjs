@@ -159,7 +159,32 @@ export default defineConfig({
             { label: '細胞生物学', link: '/cell-biology/' },
             { label: 'ゲノミクス', link: '/genomics/' },
             { label: 'バイオインフォマティクス', link: '/bioinformatics/' },
-            { label: '論文Figureの読み方', link: '/reading-figures/' },
+            {
+              label: '論文Figureの読み方',
+              items: [
+                { label: 'カテゴリトップ', link: '/reading-figures/' },
+                {
+                  label: '棒グラフの読み方',
+                  link: '/reading-figures/how-to-read-bar-plot/',
+                },
+                {
+                  label: 'qPCRプロットの読み方',
+                  link: '/reading-figures/how-to-read-qpcr-plot/',
+                },
+                {
+                  label: 'Western blotの読み方',
+                  link: '/reading-figures/how-to-read-western-blot/',
+                },
+                {
+                  label: 'Volcano plotの読み方',
+                  link: '/reading-figures/how-to-read-volcano-plot/',
+                },
+                {
+                  label: 'ヒートマップの読み方',
+                  link: '/reading-figures/how-to-read-heatmap/',
+                },
+              ],
+            },
           ],
         },
         {

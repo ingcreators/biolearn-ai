@@ -1,0 +1,161 @@
+---
+title: ヒートマップの読み方
+description: 遺伝子発現解析などで使われるヒートマップの色、行、列、クラスタリング、スケールの読み方を説明します。
+---
+
+ヒートマップ（heatmap）は、多数の遺伝子やサンプルの値を色で表すFigureです。RNA-seqや差次的発現解析の結果をまとめるときによく使われ、全体のパターンを一目で見るのに向いています。
+
+## このFigureで何を見るか
+
+サンプル間で似たパターンがあるか、特定の遺伝子群が条件ごとに高いか低いか、クラスタが実験条件と対応しているかを見ます。[RNA-seqとは何か](/bioinformatics/what-is-rna-seq/)や[用語: 遺伝子発現](/glossary/gene-expression/)と関係が深いFigureです。
+
+## まず一言でいうと
+
+ヒートマップは、個々の数値よりも「色のまとまり」と「サンプルや遺伝子の並び」を読む図です。
+
+<svg
+  role="img"
+  aria-label="遺伝子発現ヒートマップの模式図。行が遺伝子、列がサンプルで、赤と青の色のまとまりがある。"
+  viewBox="0 0 760 420"
+  width="100%"
+  height="auto"
+>
+  <rect x="0" y="0" width="760" height="420" fill="#f8fafc" rx="8" />
+  <g transform="translate(150 75)">
+    <rect x="0" y="0" width="60" height="45" fill="#fee2e2" />
+    <rect x="60" y="0" width="60" height="45" fill="#fecaca" />
+    <rect x="120" y="0" width="60" height="45" fill="#ef4444" />
+    <rect x="180" y="0" width="60" height="45" fill="#3b82f6" />
+    <rect x="240" y="0" width="60" height="45" fill="#bfdbfe" />
+    <rect x="300" y="0" width="60" height="45" fill="#dbeafe" />
+    <rect x="0" y="45" width="60" height="45" fill="#fecaca" />
+    <rect x="60" y="45" width="60" height="45" fill="#ef4444" />
+    <rect x="120" y="45" width="60" height="45" fill="#dc2626" />
+    <rect x="180" y="45" width="60" height="45" fill="#60a5fa" />
+    <rect x="240" y="45" width="60" height="45" fill="#bfdbfe" />
+    <rect x="300" y="45" width="60" height="45" fill="#dbeafe" />
+    <rect x="0" y="90" width="60" height="45" fill="#dbeafe" />
+    <rect x="60" y="90" width="60" height="45" fill="#bfdbfe" />
+    <rect x="120" y="90" width="60" height="45" fill="#60a5fa" />
+    <rect x="180" y="90" width="60" height="45" fill="#fca5a5" />
+    <rect x="240" y="90" width="60" height="45" fill="#ef4444" />
+    <rect x="300" y="90" width="60" height="45" fill="#dc2626" />
+    <rect x="0" y="135" width="60" height="45" fill="#bfdbfe" />
+    <rect x="60" y="135" width="60" height="45" fill="#dbeafe" />
+    <rect x="120" y="135" width="60" height="45" fill="#60a5fa" />
+    <rect x="180" y="135" width="60" height="45" fill="#fee2e2" />
+    <rect x="240" y="135" width="60" height="45" fill="#fca5a5" />
+    <rect x="300" y="135" width="60" height="45" fill="#ef4444" />
+    <rect
+      x="0"
+      y="0"
+      width="360"
+      height="180"
+      fill="none"
+      stroke="#334155"
+      strokeWidth="2"
+    />
+    <line
+      x1="180"
+      y1="-20"
+      x2="180"
+      y2="200"
+      stroke="#334155"
+      strokeWidth="2"
+      strokeDasharray="6 6"
+    />
+  </g>
+  <text x="330" y="45" textAnchor="middle" fill="#334155" fontSize="21">
+    サンプル
+  </text>
+  <text
+    x="95"
+    y="170"
+    textAnchor="middle"
+    fill="#334155"
+    fontSize="21"
+    transform="rotate(-90 95 170)"
+  >
+    遺伝子
+  </text>
+  <text x="245" y="300" textAnchor="middle" fill="#334155" fontSize="19">
+    条件A
+  </text>
+  <text x="425" y="300" textAnchor="middle" fill="#334155" fontSize="19">
+    条件B
+  </text>
+  <rect x="570" y="105" width="28" height="28" fill="#dc2626" />
+  <text x="610" y="127" fill="#334155" fontSize="19">
+    高い
+  </text>
+  <rect x="570" y="150" width="28" height="28" fill="#fee2e2" />
+  <text x="610" y="172" fill="#334155" fontSize="19">
+    中間
+  </text>
+  <rect x="570" y="195" width="28" height="28" fill="#3b82f6" />
+  <text x="610" y="217" fill="#334155" fontSize="19">
+    低い
+  </text>
+</svg>
+
+## 図の構成要素
+
+- 行: 遺伝子、タンパク質、代謝物などの特徴量を表すことが多いです。
+- 列: サンプル、条件、時間点などを表します。
+- 色: 値の大小を表します。赤が高い、青が低いとは限らないため、カラーバーを確認します。
+- スケール: 生の発現量、正規化値、z-scoreなど、色に変換する前の値の扱いです。
+- クラスタリング: 似たパターンの行や列を近くに並べる処理です。
+- アノテーション: サンプル群、細胞種、処理条件などを色帯で示すことがあります。
+
+## 読む順番
+
+1. 行と列が何を表すかを確認します。
+2. 色の意味とカラースケールを確認します。
+3. 値が行ごとに標準化されているか、サンプル間で直接比較できる値かを確認します。
+4. サンプルのまとまりが実験条件と対応しているかを見ます。
+5. 遺伝子群のまとまりが、既知の経路や機能と関係しそうかを考えます。
+6. 個別の遺伝子を解釈する前に、元データや別のFigureで確認します。
+
+## よくある誤解
+
+- 赤いから絶対量が高い、とは限りません。z-score表示では、その遺伝子内で相対的に高いことを示します。
+- クラスタが分かれているだけで、原因が証明されたわけではありません。
+- 色の強さをサンプル間で直接比べられるかは、スケーリング方法に依存します。
+- ヒートマップは全体像を見る図であり、個別遺伝子の結論には追加の確認が必要です。
+
+## 関連する実験・解析
+
+- RNA-seqの発現量行列の可視化
+- 差次的発現遺伝子のパターン確認
+- シングルセル解析でのマーカー遺伝子表示
+- プロテオームやメタボロームの多変量データ可視化
+- [RNA-seqとは何か](/bioinformatics/what-is-rna-seq/)
+- [差次的発現解析とは何か](/bioinformatics/what-is-differential-expression-analysis/)
+- [用語: RNA-seq](/glossary/rna-seq/)
+- [用語: 差次的発現解析](/glossary/differential-expression-analysis/)
+
+## 確認問題
+
+1. ヒートマップで、色を見る前に確認したいことを2つ挙げてください。
+
+   <details>
+     <summary>解答例を見る</summary>
+     <p>
+       行と列が何を表すか、色のスケールが何か、z-scoreなどで標準化されているかなどです。
+     </p>
+   </details>
+
+2. z-scoreのヒートマップで赤いセルは、必ず絶対発現量が高いと言えますか。
+
+   <details>
+     <summary>解答例を見る</summary>
+     <p>
+       必ずしも言えません。z-scoreでは、その遺伝子内で平均より相対的に高いことを示している場合があります。
+     </p>
+   </details>
+
+## 次に読む記事
+
+- [Volcano plotの読み方](/reading-figures/how-to-read-volcano-plot/)
+- [棒グラフの読み方](/reading-figures/how-to-read-bar-plot/)
+- [用語: RNA-seq](/glossary/rna-seq/)

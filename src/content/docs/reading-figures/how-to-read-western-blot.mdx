@@ -1,0 +1,212 @@
+---
+title: Western blotの読み方
+description: Western blotのバンド、分子量マーカー、ローディングコントロール、定量グラフを読む基本を説明します。
+---
+
+Western blot（ウェスタンブロット）は、特定のタンパク質を検出する実験です。論文では、バンド画像と、その濃さを定量したグラフが組み合わせて示されることがよくあります。
+
+## このFigureで何を見るか
+
+目的のタンパク質が検出されているか、条件間で量が変わっているか、ローディングコントロールで比較が妥当かを見ます。基礎として、[タンパク質とは何か](/molecular-biology/what-is-protein/)と[用語: タンパク質](/glossary/protein/)を押さえておくと読みやすくなります。
+
+## まず一言でいうと
+
+Western blotは、目的タンパク質のバンド位置と濃さを、コントロールとセットで読むFigureです。
+
+<svg
+  role="img"
+  aria-label="Western blotの模式図。3条件のレーンに目的タンパク質とローディングコントロールのバンドがある。"
+  viewBox="0 0 760 360"
+  width="100%"
+  height="auto"
+>
+  <rect x="0" y="0" width="760" height="360" fill="#f8fafc" rx="8" />
+  <rect
+    x="135"
+    y="55"
+    width="395"
+    height="230"
+    fill="#e2e8f0"
+    stroke="#475569"
+    strokeWidth="2"
+  />
+  <line x1="235" y1="55" x2="235" y2="285" stroke="#cbd5e1" strokeWidth="2" />
+  <line x1="330" y1="55" x2="330" y2="285" stroke="#cbd5e1" strokeWidth="2" />
+  <line x1="425" y1="55" x2="425" y2="285" stroke="#cbd5e1" strokeWidth="2" />
+  <rect
+    x="165"
+    y="112"
+    width="50"
+    height="14"
+    fill="#111827"
+    opacity="0.45"
+    rx="4"
+  />
+  <rect
+    x="260"
+    y="108"
+    width="50"
+    height="16"
+    fill="#111827"
+    opacity="0.85"
+    rx="4"
+  />
+  <rect
+    x="355"
+    y="115"
+    width="50"
+    height="13"
+    fill="#111827"
+    opacity="0.6"
+    rx="4"
+  />
+  <rect
+    x="450"
+    y="111"
+    width="50"
+    height="15"
+    fill="#111827"
+    opacity="0.3"
+    rx="4"
+  />
+  <rect
+    x="165"
+    y="222"
+    width="50"
+    height="15"
+    fill="#111827"
+    opacity="0.65"
+    rx="4"
+  />
+  <rect
+    x="260"
+    y="222"
+    width="50"
+    height="15"
+    fill="#111827"
+    opacity="0.65"
+    rx="4"
+  />
+  <rect
+    x="355"
+    y="222"
+    width="50"
+    height="15"
+    fill="#111827"
+    opacity="0.65"
+    rx="4"
+  />
+  <rect
+    x="450"
+    y="222"
+    width="50"
+    height="15"
+    fill="#111827"
+    opacity="0.65"
+    rx="4"
+  />
+  <text x="92" y="122" textAnchor="end" fill="#334155" fontSize="20">
+    目的タンパク質
+  </text>
+  <text x="92" y="235" textAnchor="end" fill="#334155" fontSize="20">
+    コントロール
+  </text>
+  <text x="190" y="322" textAnchor="middle" fill="#334155" fontSize="20">
+    A
+  </text>
+  <text x="285" y="322" textAnchor="middle" fill="#334155" fontSize="20">
+    B
+  </text>
+  <text x="380" y="322" textAnchor="middle" fill="#334155" fontSize="20">
+    C
+  </text>
+  <text x="475" y="322" textAnchor="middle" fill="#334155" fontSize="20">
+    D
+  </text>
+  <line
+    x1="580"
+    y1="105"
+    x2="650"
+    y2="105"
+    stroke="#111827"
+    strokeWidth="7"
+    opacity="0.85"
+  />
+  <text x="586" y="138" fill="#334155" fontSize="19">
+    濃い = 多い傾向
+  </text>
+  <line
+    x1="580"
+    y1="220"
+    x2="650"
+    y2="220"
+    stroke="#111827"
+    strokeWidth="7"
+    opacity="0.65"
+  />
+  <text x="586" y="253" fill="#334155" fontSize="19">
+    補正の基準
+  </text>
+</svg>
+
+## 図の構成要素
+
+- レーン: 各サンプルや条件を表します。
+- バンド: 抗体が検出したタンパク質の位置です。分子量に対応する高さに出ます。
+- 分子量マーカー: バンドが想定サイズに近いかを確認する基準です。
+- ローディングコントロール: サンプル量の違いを補正するための基準バンドです。
+- 定量グラフ: バンドの濃さを数値化し、条件間で比較したものです。
+- Figure legend: 抗体名、サンプル、反復数、定量方法を確認する場所です。
+
+## 読む順番
+
+1. 目的タンパク質名と予想される分子量を確認します。
+2. バンドが予想位置に出ているかを見ます。
+3. 条件間でバンドの濃さがどう変わるかを見ます。
+4. ローディングコントロールが同程度かを確認します。
+5. 定量グラフがある場合、何で補正した値かを確認します。
+6. 反復数と統計表示を確認します。
+
+## よくある誤解
+
+- バンドが濃いだけで、すぐに発現が増えたと断定はできません。サンプル量、露光、補正方法を確認します。
+- ローディングコントロールが変動していると、目的バンドの比較も不安定になります。
+- 1枚の代表画像だけでは再現性は分かりません。独立した反復や定量結果が重要です。
+- バンドの位置が予想分子量と大きく違う場合、非特異的バンドの可能性も考えます。
+
+## 関連する実験・解析
+
+- タンパク質発現量の比較
+- リン酸化など翻訳後修飾の検出
+- RNA-seqやqPCRで見つかった発現変化がタンパク質でも見えるかの確認
+- [タンパク質とは何か](/molecular-biology/what-is-protein/)
+- [遺伝子発現とは何か](/molecular-biology/what-is-gene-expression/)
+- [RNA-seqとは何か](/bioinformatics/what-is-rna-seq/)
+- [用語: タンパク質](/glossary/protein/)
+- [用語: 遺伝子発現](/glossary/gene-expression/)
+
+## 確認問題
+
+1. Western blotでローディングコントロールを見る理由は何ですか。
+
+   <details>
+     <summary>解答例を見る</summary>
+     <p>
+       各レーンに入ったサンプル量や検出条件の違いを補正し、目的タンパク質の比較を妥当にするためです。
+     </p>
+   </details>
+
+2. 目的タンパク質のバンドが予想分子量と違う位置にある場合、何を考える必要がありますか。
+
+   <details>
+     <summary>解答例を見る</summary>
+     <p>
+       非特異的な検出、分解産物、修飾による移動度の変化、抗体の特異性などを確認する必要があります。
+     </p>
+   </details>
+
+## 次に読む記事
+
+- [棒グラフの読み方](/reading-figures/how-to-read-bar-plot/)
+- [qPCRプロットの読み方](/reading-figures/how-to-read-qpcr-plot/)
+- [用語: タンパク質](/glossary/protein/)
