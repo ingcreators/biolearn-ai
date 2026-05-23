@@ -9,7 +9,13 @@ import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
 
-<LearningGoals items={['PCRの目的を説明できる', '変性、アニーリング、伸長の流れを知る', 'PCRが研究や検査技術の基礎になる理由を理解する']} />
+<LearningGoals
+  items={[
+    'PCRの目的を説明できる',
+    '変性、アニーリング、伸長の流れを知る',
+    'PCRが研究や検査技術の基礎になる理由を理解する',
+  ]}
+/>
 
 ## 要点
 
@@ -27,20 +33,25 @@ PCRは研究、環境検査、感染症検査技術などの基礎として広�
 
 ## 図解
 
-<LessonFigure src="/figures/pcr-concept.jpg" alt="PCRチューブの中でDNAがほどけ、プライマーが結合し、目的領域のコピーが増える様子を示す教材イラスト" title="PCRは目的のDNA領域を繰り返し増やす方法" caption="温度変化を利用して、変性、プライマー結合、伸長を繰り返し、特定のDNA領域を増幅します。" />
+<LessonFigure
+  src="/figures/pcr-concept.jpg"
+  alt="PCRチューブの中でDNAがほどけ、プライマーが結合し、目的領域のコピーが増える様子を示す教材イラスト"
+  title="PCRは目的のDNA領域を繰り返し増やす方法"
+  caption="温度変化を利用して、変性、プライマー結合、伸長を繰り返し、特定のDNA領域を増幅します。"
+/>
 
 <TermBox term="PCR" english="polymerase chain reaction" abbreviation="PCR">
-特定のDNA領域を多数コピーする実験手法です。
+  特定のDNA領域を多数コピーする実験手法です。
 </TermBox>
 
 ## 英語表記と略語
 
-| 日本語名 | 英語名 | 略語 |
-| --- | --- | --- |
-| ポリメラーゼ連鎖反応 | polymerase chain reaction | PCR |
-| プライマー | primer | - |
-| DNAポリメラーゼ | DNA polymerase | - |
-| アニーリング | annealing | - |
+| 日本語名             | 英語名                    | 略語 |
+| -------------------- | ------------------------- | ---- |
+| ポリメラーゼ連鎖反応 | polymerase chain reaction | PCR  |
+| プライマー           | primer                    | -    |
+| DNAポリメラーゼ      | DNA polymerase            | -    |
+| アニーリング         | annealing                 | -    |
 
 ## よくある誤解
 
@@ -54,6 +65,24 @@ PCRは研究、環境検査、感染症検査技術などの基礎として広�
 - DNAポリメラーゼ: DNA鎖を伸ばして新しいDNAを合成する酵素。
 - アニーリング: プライマーが標的DNAに結合する段階。
 
-<Quiz questions={[{ question: 'PCRでプライマーが必要な理由を説明してください。', answer: '増幅したいDNA領域の始点を指定し、DNAポリメラーゼが伸長を始められるようにするためです。' }, { question: 'PCRの3つの基本ステップを挙げてください。', answer: '変性、アニーリング、伸長です。' }]} />
+<Quiz
+  questions={[
+    {
+      question: 'PCRでプライマーが必要な理由を説明してください。',
+      answer:
+        '増幅したいDNA領域の始点を指定し、DNAポリメラーゼが伸長を始められるようにするためです。',
+    },
+    {
+      question: 'PCRの3つの基本ステップを挙げてください。',
+      answer: '変性、アニーリング、伸長です。',
+    },
+  ]}
+/>
 
-<NextSteps items={[{ title: 'RNA-seqとは何か', href: '/bioinformatics/what-is-rna-seq/' }, { title: '用語: PCR', href: '/glossary/pcr/' }, { title: '用語集', href: '/glossary/' }]} />
+<NextSteps
+  items={[
+    { title: 'RNA-seqとは何か', href: '/bioinformatics/what-is-rna-seq/' },
+    { title: '用語: PCR', href: '/glossary/pcr/' },
+    { title: '用語集', href: '/glossary/' },
+  ]}
+/>

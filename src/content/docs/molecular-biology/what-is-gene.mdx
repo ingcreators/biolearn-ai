@@ -9,7 +9,13 @@ import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
 
-<LearningGoals items={['遺伝子をDNA上の機能単位として説明できる', '遺伝子と形質を単純に一対一で結ばない考え方を知る', '発現という言葉の入口を理解する']} />
+<LearningGoals
+  items={[
+    '遺伝子をDNA上の機能単位として説明できる',
+    '遺伝子と形質を単純に一対一で結ばない考え方を知る',
+    '発現という言葉の入口を理解する',
+  ]}
+/>
 
 ## 要点
 
@@ -27,20 +33,25 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 ## 図解
 
-<LessonFigure src="/figures/gene-concept.jpg" alt="長いDNAの一部が機能領域として強調され、RNAやタンパク質の産生につながる様子を示す教材イラスト" title="遺伝子はDNA上の機能を持つ領域" caption="DNA全体が遺伝子なのではなく、RNAやタンパク質の産生に関わる領域を遺伝子として捉えます。" />
+<LessonFigure
+  src="/figures/gene-concept.jpg"
+  alt="長いDNAの一部が機能領域として強調され、RNAやタンパク質の産生につながる様子を示す教材イラスト"
+  title="遺伝子はDNA上の機能を持つ領域"
+  caption="DNA全体が遺伝子なのではなく、RNAやタンパク質の産生に関わる領域を遺伝子として捉えます。"
+/>
 
 <TermBox term="遺伝子" english="gene">
-DNA上にある機能的な領域です。RNAやタンパク質を通じて生命現象に関わります。
+  DNA上にある機能的な領域です。RNAやタンパク質を通じて生命現象に関わります。
 </TermBox>
 
 ## 英語表記と略語
 
-| 日本語名 | 英語名 | 略語 |
-| --- | --- | --- |
-| 遺伝子 | gene | - |
-| 遺伝子発現 | gene expression | - |
-| コード領域 | coding region | - |
-| 調節領域 | regulatory region | - |
+| 日本語名   | 英語名            | 略語 |
+| ---------- | ----------------- | ---- |
+| 遺伝子     | gene              | -    |
+| 遺伝子発現 | gene expression   | -    |
+| コード領域 | coding region     | -    |
+| 調節領域   | regulatory region | -    |
 
 ## よくある誤解
 
@@ -54,6 +65,26 @@ DNA上にある機能的な領域です。RNAやタンパク質を通じて生�
 - コード領域: タンパク質のアミノ酸配列に対応する情報を含む領域。
 - 調節領域: 遺伝子がいつ、どこで、どの程度使われるかに関わる領域。
 
-<Quiz questions={[{ question: '遺伝子とDNAの違いを説明してください。', answer: 'DNAは分子全体を指し、遺伝子はDNA上の機能を持つ領域を指します。' }, { question: 'すべての遺伝子はタンパク質を作りますか。', answer: 'いいえ。機能性RNAとして働く遺伝子もあります。' }]} />
+<Quiz
+  questions={[
+    {
+      question: '遺伝子とDNAの違いを説明してください。',
+      answer: 'DNAは分子全体を指し、遺伝子はDNA上の機能を持つ領域を指します。',
+    },
+    {
+      question: 'すべての遺伝子はタンパク質を作りますか。',
+      answer: 'いいえ。機能性RNAとして働く遺伝子もあります。',
+    },
+  ]}
+/>
 
-<NextSteps items={[{ title: 'セントラルドグマとは何か', href: '/molecular-biology/what-is-central-dogma/' }, { title: '用語: 遺伝子', href: '/glossary/gene/' }, { title: '用語集', href: '/glossary/' }]} />
+<NextSteps
+  items={[
+    {
+      title: 'セントラルドグマとは何か',
+      href: '/molecular-biology/what-is-central-dogma/',
+    },
+    { title: '用語: 遺伝子', href: '/glossary/gene/' },
+    { title: '用語集', href: '/glossary/' },
+  ]}
+/>

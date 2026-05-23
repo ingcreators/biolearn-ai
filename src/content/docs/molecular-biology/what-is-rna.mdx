@@ -9,7 +9,13 @@ import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
 
-<LearningGoals items={['RNAが情報の読み出しや調節に関わることを知る', 'mRNA、rRNA、tRNAの違いを大まかに理解する', '転写という言葉の意味を説明できる']} />
+<LearningGoals
+  items={[
+    'RNAが情報の読み出しや調節に関わることを知る',
+    'mRNA、rRNA、tRNAの違いを大まかに理解する',
+    '転写という言葉の意味を説明できる',
+  ]}
+/>
 
 ## 要点
 
@@ -27,21 +33,26 @@ RNAは単なる中継役に限らず、遺伝子発現の調節にも関わり�
 
 ## 図解
 
-<LessonFigure src="/figures/rna-concept.jpg" alt="DNAから作られたRNAが情報を運び、タンパク質合成を支える様子を示す教材イラスト" title="RNAは保存された情報を働く情報へつなぐ" caption="RNAはDNAの情報を写し取り、mRNA、tRNA、rRNAなどとして細胞内の働きを支えます。" />
+<LessonFigure
+  src="/figures/rna-concept.jpg"
+  alt="DNAから作られたRNAが情報を運び、タンパク質合成を支える様子を示す教材イラスト"
+  title="RNAは保存された情報を働く情報へつなぐ"
+  caption="RNAはDNAの情報を写し取り、mRNA、tRNA、rRNAなどとして細胞内の働きを支えます。"
+/>
 
 <TermBox term="RNA" english="ribonucleic acid" abbreviation="RNA">
-DNAの情報を読み出したり、タンパク質合成や発現制御に関わったりする分子です。
+  DNAの情報を読み出したり、タンパク質合成や発現制御に関わったりする分子です。
 </TermBox>
 
 ## 英語表記と略語
 
-| 日本語名 | 英語名 | 略語 |
-| --- | --- | --- |
-| リボ核酸 | ribonucleic acid | RNA |
-| メッセンジャーRNA | messenger RNA | mRNA |
-| リボソームRNA | ribosomal RNA | rRNA |
-| 転移RNA | transfer RNA | tRNA |
-| 転写 | transcription | - |
+| 日本語名          | 英語名           | 略語 |
+| ----------------- | ---------------- | ---- |
+| リボ核酸          | ribonucleic acid | RNA  |
+| メッセンジャーRNA | messenger RNA    | mRNA |
+| リボソームRNA     | ribosomal RNA    | rRNA |
+| 転移RNA           | transfer RNA     | tRNA |
+| 転写              | transcription    | -    |
 
 ## よくある誤解
 
@@ -56,6 +67,27 @@ DNAの情報を読み出したり、タンパク質合成や発現制御に関�
 - tRNA: アミノ酸をリボソームへ運び、コドンに対応づけるRNA。
 - 転写: DNAの情報をもとにRNAを合成する過程。
 
-<Quiz questions={[{ question: 'RNAでTの代わりに使われる塩基は何ですか。', answer: 'U、つまりウラシルです。' }, { question: 'mRNAの主な役割を説明してください。', answer: 'タンパク質合成に使われる情報をDNAからリボソームへ伝えることです。' }]} />
+<Quiz
+  questions={[
+    {
+      question: 'RNAでTの代わりに使われる塩基は何ですか。',
+      answer: 'U、つまりウラシルです。',
+    },
+    {
+      question: 'mRNAの主な役割を説明してください。',
+      answer:
+        'タンパク質合成に使われる情報をDNAからリボソームへ伝えることです。',
+    },
+  ]}
+/>
 
-<NextSteps items={[{ title: 'タンパク質とは何か', href: '/molecular-biology/what-is-protein/' }, { title: '用語: RNA', href: '/glossary/rna/' }, { title: '用語集', href: '/glossary/' }]} />
+<NextSteps
+  items={[
+    {
+      title: 'タンパク質とは何か',
+      href: '/molecular-biology/what-is-protein/',
+    },
+    { title: '用語: RNA', href: '/glossary/rna/' },
+    { title: '用語集', href: '/glossary/' },
+  ]}
+/>

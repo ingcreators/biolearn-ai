@@ -6,7 +6,10 @@ interface Props {
 const { items } = Astro.props;
 ---
 
-<section class="biolearn-box biolearn-goals" aria-labelledby="learning-goals-title">
+<section
+  class="biolearn-box biolearn-goals"
+  aria-labelledby="learning-goals-title"
+>
   <h3 id="learning-goals-title">この記事で学ぶこと</h3>
   <ul>
     {items.map((item) => <li>{item}</li>)}

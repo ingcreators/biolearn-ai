@@ -9,7 +9,13 @@ import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
 
-<LearningGoals items={['生命科学が何を対象にする学問か説明できる', '分子・細胞・個体・集団という階層を区別できる', 'このサイトで学ぶ分野の位置づけを理解する']} />
+<LearningGoals
+  items={[
+    '生命科学が何を対象にする学問か説明できる',
+    '分子・細胞・個体・集団という階層を区別できる',
+    'このサイトで学ぶ分野の位置づけを理解する',
+  ]}
+/>
 
 ## 要点
 
@@ -27,21 +33,26 @@ BioLearn AI では、まず基本概念を押さえ、次に実験法やデー�
 
 ## 図解
 
-<LessonFigure src="/figures/life-science-concept.jpg" alt="分子、細胞、ゲノム、データ解析がつながる生命科学の全体像を示す教材イラスト" title="生命科学は分子からデータ解析までをつなげて理解する" caption="分子の働き、細胞のふるまい、ゲノム情報、データ解析を別々ではなく連続した見方として学びます。" />
+<LessonFigure
+  src="/figures/life-science-concept.jpg"
+  alt="分子、細胞、ゲノム、データ解析がつながる生命科学の全体像を示す教材イラスト"
+  title="生命科学は分子からデータ解析までをつなげて理解する"
+  caption="分子の働き、細胞のふるまい、ゲノム情報、データ解析を別々ではなく連続した見方として学びます。"
+/>
 
 <TermBox term="生命科学" english="life science">
-生命に関わる現象を、観察、実験、計算、理論によって理解しようとする幅広い分野です。
+  生命に関わる現象を、観察、実験、計算、理論によって理解しようとする幅広い分野です。
 </TermBox>
 
 ## 英語表記と略語
 
-| 日本語名 | 英語名 | 略語 |
-| --- | --- | --- |
-| 生命科学 | life science | - |
-| 分子生物学 | molecular biology | - |
-| 細胞生物学 | cell biology | - |
-| ゲノミクス | genomics | - |
-| バイオインフォマティクス | bioinformatics | - |
+| 日本語名                 | 英語名            | 略語 |
+| ------------------------ | ----------------- | ---- |
+| 生命科学                 | life science      | -    |
+| 分子生物学               | molecular biology | -    |
+| 細胞生物学               | cell biology      | -    |
+| ゲノミクス               | genomics          | -    |
+| バイオインフォマティクス | bioinformatics    | -    |
 
 ## よくある誤解
 
@@ -56,6 +67,23 @@ BioLearn AI では、まず基本概念を押さえ、次に実験法やデー�
 - ゲノミクス: ゲノム全体を対象に、遺伝情報の構造や違いを調べる分野。
 - バイオインフォマティクス: 生命科学データを計算で整理、解析、解釈する分野。
 
-<Quiz questions={[{ question: '生命科学が扱う階層を2つ以上挙げてください。', answer: '分子、細胞、組織、個体、集団、環境などがあります。' }, { question: 'バイオインフォマティクスは何をする分野ですか。', answer: '生命科学データを計算機で整理・解析し、意味を読み取る分野です。' }]} />
+<Quiz
+  questions={[
+    {
+      question: '生命科学が扱う階層を2つ以上挙げてください。',
+      answer: '分子、細胞、組織、個体、集団、環境などがあります。',
+    },
+    {
+      question: 'バイオインフォマティクスは何をする分野ですか。',
+      answer: '生命科学データを計算機で整理・解析し、意味を読み取る分野です。',
+    },
+  ]}
+/>
 
-<NextSteps items={[{ title: '細胞とは何か', href: '/basics/what-is-a-cell/' }, { title: '用語: 生命科学', href: '/glossary/life-science/' }, { title: '用語集', href: '/glossary/' }]} />
+<NextSteps
+  items={[
+    { title: '細胞とは何か', href: '/basics/what-is-a-cell/' },
+    { title: '用語: 生命科学', href: '/glossary/life-science/' },
+    { title: '用語集', href: '/glossary/' },
+  ]}
+/>

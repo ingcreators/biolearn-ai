@@ -9,7 +9,13 @@ import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
 
-<LearningGoals items={['タンパク質がアミノ酸からできることを理解する', '酵素、構造、輸送、情報伝達などの役割を知る', '配列と立体構造の関係を大まかに説明できる']} />
+<LearningGoals
+  items={[
+    'タンパク質がアミノ酸からできることを理解する',
+    '酵素、構造、輸送、情報伝達などの役割を知る',
+    '配列と立体構造の関係を大まかに説明できる',
+  ]}
+/>
 
 ## 要点
 
@@ -27,20 +33,25 @@ DNAやRNAを学ぶと「情報」に注目しがちですが、細胞の形や�
 
 ## 図解
 
-<LessonFigure src="/figures/protein-concept.jpg" alt="アミノ酸の鎖が折りたたまれて立体構造を作り、機能するタンパク質になる様子を示す教材イラスト" title="タンパク質は形を作り、その形で働く" caption="アミノ酸の並びは立体構造につながり、酵素や受容体などの具体的な機能として現れます。" />
+<LessonFigure
+  src="/figures/protein-concept.jpg"
+  alt="アミノ酸の鎖が折りたたまれて立体構造を作り、機能するタンパク質になる様子を示す教材イラスト"
+  title="タンパク質は形を作り、その形で働く"
+  caption="アミノ酸の並びは立体構造につながり、酵素や受容体などの具体的な機能として現れます。"
+/>
 
 <TermBox term="タンパク質" english="protein">
-アミノ酸が連なってできる分子で、細胞の構造、反応、輸送、情報伝達などを担います。
+  アミノ酸が連なってできる分子で、細胞の構造、反応、輸送、情報伝達などを担います。
 </TermBox>
 
 ## 英語表記と略語
 
-| 日本語名 | 英語名 | 略語 |
-| --- | --- | --- |
-| タンパク質 | protein | - |
-| アミノ酸 | amino acid | - |
-| 酵素 | enzyme | - |
-| 立体構造 | three-dimensional structure | - |
+| 日本語名   | 英語名                      | 略語 |
+| ---------- | --------------------------- | ---- |
+| タンパク質 | protein                     | -    |
+| アミノ酸   | amino acid                  | -    |
+| 酵素       | enzyme                      | -    |
+| 立体構造   | three-dimensional structure | -    |
 
 ## よくある誤解
 
@@ -54,6 +65,23 @@ DNAやRNAを学ぶと「情報」に注目しがちですが、細胞の形や�
 - 酵素: 化学反応を進みやすくするタンパク質などの分子。
 - 立体構造: タンパク質が働くために重要な三次元的な形。
 
-<Quiz questions={[{ question: 'タンパク質を構成する基本単位は何ですか。', answer: 'アミノ酸です。' }, { question: '酵素の役割を一文で説明してください。', answer: '細胞内外の化学反応を進みやすくするタンパク質です。' }]} />
+<Quiz
+  questions={[
+    {
+      question: 'タンパク質を構成する基本単位は何ですか。',
+      answer: 'アミノ酸です。',
+    },
+    {
+      question: '酵素の役割を一文で説明してください。',
+      answer: '細胞内外の化学反応を進みやすくするタンパク質です。',
+    },
+  ]}
+/>
 
-<NextSteps items={[{ title: '遺伝子とは何か', href: '/molecular-biology/what-is-gene/' }, { title: '用語: タンパク質', href: '/glossary/protein/' }, { title: '用語集', href: '/glossary/' }]} />
+<NextSteps
+  items={[
+    { title: '遺伝子とは何か', href: '/molecular-biology/what-is-gene/' },
+    { title: '用語: タンパク質', href: '/glossary/protein/' },
+    { title: '用語集', href: '/glossary/' },
+  ]}
+/>

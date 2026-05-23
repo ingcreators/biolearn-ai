@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "format": "prettier --write \"**/*.{astro,md,mdx,json,jsonc,js,mjs,ts,tsx,yml,yaml}\"",
+    "format:check": "prettier --check \"**/*.{astro,md,mdx,json,jsonc,js,mjs,ts,tsx,yml,yaml}\"",
+    "check": "npm run format:check && npm run build"
   },
   "dependencies": {
     "@astrojs/starlight": "^0.37.4",
@@ -14,6 +17,8 @@
     "typescript": "^5.9.3"
   },
   "devDependencies": {
+    "prettier": "^3.8.3",
+    "prettier-plugin-astro": "^0.14.1",
     "wrangler": "^4.94.0"
   }
 }

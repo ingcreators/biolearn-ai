@@ -9,7 +9,13 @@ import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
 
-<LearningGoals items={['翻訳がRNAからタンパク質を作る過程であることを理解する', 'コドンとアミノ酸の関係を知る', 'リボソームとtRNAの役割を説明できる']} />
+<LearningGoals
+  items={[
+    '翻訳がRNAからタンパク質を作る過程であることを理解する',
+    'コドンとアミノ酸の関係を知る',
+    'リボソームとtRNAの役割を説明できる',
+  ]}
+/>
 
 ## 要点
 
@@ -27,20 +33,25 @@ tRNAは、特定のアミノ酸を運びながら、mRNA上のコドンと対応
 
 ## 図解
 
-<LessonFigure src="/figures/translation-concept.jpg" alt="mRNAがリボソームを通り、tRNAがアミノ酸を運んでタンパク質鎖が伸びる様子を示す教材イラスト" title="翻訳はRNAの情報をタンパク質へ変換する過程" caption="mRNAの塩基配列をもとに、リボソームとtRNAがアミノ酸を順番につなげます。" />
+<LessonFigure
+  src="/figures/translation-concept.jpg"
+  alt="mRNAがリボソームを通り、tRNAがアミノ酸を運んでタンパク質鎖が伸びる様子を示す教材イラスト"
+  title="翻訳はRNAの情報をタンパク質へ変換する過程"
+  caption="mRNAの塩基配列をもとに、リボソームとtRNAがアミノ酸を順番につなげます。"
+/>
 
 <TermBox term="翻訳" english="translation">
-mRNAの塩基配列をもとにアミノ酸をつなぎ、タンパク質を作る過程です。
+  mRNAの塩基配列をもとにアミノ酸をつなぎ、タンパク質を作る過程です。
 </TermBox>
 
 ## 英語表記と略語
 
-| 日本語名 | 英語名 | 略語 |
-| --- | --- | --- |
-| 翻訳 | translation | - |
-| コドン | codon | - |
-| リボソーム | ribosome | - |
-| 転移RNA | transfer RNA | tRNA |
+| 日本語名   | 英語名       | 略語 |
+| ---------- | ------------ | ---- |
+| 翻訳       | translation  | -    |
+| コドン     | codon        | -    |
+| リボソーム | ribosome     | -    |
+| 転移RNA    | transfer RNA | tRNA |
 
 ## よくある誤解
 
@@ -54,6 +65,27 @@ mRNAの塩基配列をもとにアミノ酸をつなぎ、タンパク質を作�
 - リボソーム: mRNAを読み取り、タンパク質合成を進める複合体。
 - tRNA: コドンに対応するアミノ酸を運ぶRNA。
 
-<Quiz questions={[{ question: 'コドンとは何ですか。', answer: 'mRNA上の3つの塩基の組で、対応するアミノ酸などを指定します。' }, { question: 'リボソームの役割を説明してください。', answer: 'mRNAを読み取り、アミノ酸をつなげてタンパク質を作る場として働きます。' }]} />
+<Quiz
+  questions={[
+    {
+      question: 'コドンとは何ですか。',
+      answer: 'mRNA上の3つの塩基の組で、対応するアミノ酸などを指定します。',
+    },
+    {
+      question: 'リボソームの役割を説明してください。',
+      answer:
+        'mRNAを読み取り、アミノ酸をつなげてタンパク質を作る場として働きます。',
+    },
+  ]}
+/>
 
-<NextSteps items={[{ title: '遺伝子発現とは何か', href: '/molecular-biology/what-is-gene-expression/' }, { title: '用語: 翻訳', href: '/glossary/translation/' }, { title: '用語集', href: '/glossary/' }]} />
+<NextSteps
+  items={[
+    {
+      title: '遺伝子発現とは何か',
+      href: '/molecular-biology/what-is-gene-expression/',
+    },
+    { title: '用語: 翻訳', href: '/glossary/translation/' },
+    { title: '用語集', href: '/glossary/' },
+  ]}
+/>

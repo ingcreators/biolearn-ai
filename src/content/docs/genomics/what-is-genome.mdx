@@ -9,7 +9,13 @@ import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
 
-<LearningGoals items={['ゲノムが遺伝情報の全体であることを理解する', '遺伝子とゲノムの違いを説明できる', 'ゲノミクスが全体像を見る分野であることを知る']} />
+<LearningGoals
+  items={[
+    'ゲノムが遺伝情報の全体であることを理解する',
+    '遺伝子とゲノムの違いを説明できる',
+    'ゲノミクスが全体像を見る分野であることを知る',
+  ]}
+/>
 
 ## 要点
 
@@ -27,20 +33,25 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 ## 図解
 
-<LessonFigure src="/figures/genome-concept.jpg" alt="核内の染色体からDNAへ拡大し、遺伝子や調節領域を含むゲノム全体を示す教材イラスト" title="ゲノムは遺伝情報の全体" caption="ゲノムには遺伝子だけでなく、調節領域やまだ機能が十分に分かっていない領域も含まれます。" />
+<LessonFigure
+  src="/figures/genome-concept.jpg"
+  alt="核内の染色体からDNAへ拡大し、遺伝子や調節領域を含むゲノム全体を示す教材イラスト"
+  title="ゲノムは遺伝情報の全体"
+  caption="ゲノムには遺伝子だけでなく、調節領域やまだ機能が十分に分かっていない領域も含まれます。"
+/>
 
 <TermBox term="ゲノム" english="genome">
-ある生物や細胞が持つ遺伝情報の全体です。研究では、配列だけでなく構造や機能も含めて考えます。
+  ある生物や細胞が持つ遺伝情報の全体です。研究では、配列だけでなく構造や機能も含めて考えます。
 </TermBox>
 
 ## 英語表記と略語
 
-| 日本語名 | 英語名 | 略語 |
-| --- | --- | --- |
-| ゲノム | genome | - |
-| 染色体 | chromosome | - |
-| 変異 | variant | - |
-| ゲノミクス | genomics | - |
+| 日本語名   | 英語名     | 略語 |
+| ---------- | ---------- | ---- |
+| ゲノム     | genome     | -    |
+| 染色体     | chromosome | -    |
+| 変異       | variant    | -    |
+| ゲノミクス | genomics   | -    |
 
 ## よくある誤解
 
@@ -54,6 +65,24 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 - 変異: ゲノム配列に見られる違い。
 - ゲノミクス: ゲノム全体を対象に、構造、機能、違いを調べる分野。
 
-<Quiz questions={[{ question: 'ゲノムと遺伝子の違いを説明してください。', answer: 'ゲノムは遺伝情報全体で、遺伝子はその中の機能領域です。' }, { question: 'ゲノミクスが「全体」を重視する理由を一つ挙げてください。', answer: '遺伝子同士の関係や調節領域、変異の分布などをまとめて理解できるからです。' }]} />
+<Quiz
+  questions={[
+    {
+      question: 'ゲノムと遺伝子の違いを説明してください。',
+      answer: 'ゲノムは遺伝情報全体で、遺伝子はその中の機能領域です。',
+    },
+    {
+      question: 'ゲノミクスが「全体」を重視する理由を一つ挙げてください。',
+      answer:
+        '遺伝子同士の関係や調節領域、変異の分布などをまとめて理解できるからです。',
+    },
+  ]}
+/>
 
-<NextSteps items={[{ title: '染色体とは何か', href: '/genomics/what-are-chromosomes/' }, { title: '用語: ゲノム', href: '/glossary/genome/' }, { title: '用語集', href: '/glossary/' }]} />
+<NextSteps
+  items={[
+    { title: '染色体とは何か', href: '/genomics/what-are-chromosomes/' },
+    { title: '用語: ゲノム', href: '/glossary/genome/' },
+    { title: '用語集', href: '/glossary/' },
+  ]}
+/>

@@ -9,7 +9,13 @@ import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
 
-<LearningGoals items={['細胞小器官が細胞内の機能分担に関わることを理解する', '核、ミトコンドリア、小胞体、ゴルジ体の役割を知る', '分子の働きが細胞内の場所と関係することを説明できる']} />
+<LearningGoals
+  items={[
+    '細胞小器官が細胞内の機能分担に関わることを理解する',
+    '核、ミトコンドリア、小胞体、ゴルジ体の役割を知る',
+    '分子の働きが細胞内の場所と関係することを説明できる',
+  ]}
+/>
 
 ## 要点
 
@@ -27,21 +33,26 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 ## 図解
 
-<LessonFigure src="/figures/organelles-concept.jpg" alt="真核細胞の中に核、ミトコンドリア、小胞体、ゴルジ体などの細胞小器官が配置されている様子を示す教材イラスト" title="細胞小器官は細胞内で役割分担する構造" caption="真核細胞では、核、ミトコンドリア、小胞体、ゴルジ体などがそれぞれ異なる働きを担います。" />
+<LessonFigure
+  src="/figures/organelles-concept.jpg"
+  alt="真核細胞の中に核、ミトコンドリア、小胞体、ゴルジ体などの細胞小器官が配置されている様子を示す教材イラスト"
+  title="細胞小器官は細胞内で役割分担する構造"
+  caption="真核細胞では、核、ミトコンドリア、小胞体、ゴルジ体などがそれぞれ異なる働きを担います。"
+/>
 
 <TermBox term="細胞小器官" english="organelle">
-真核細胞の内部にある、特定の機能を担う構造です。
+  真核細胞の内部にある、特定の機能を担う構造です。
 </TermBox>
 
 ## 英語表記と略語
 
-| 日本語名 | 英語名 | 略語 |
-| --- | --- | --- |
-| 細胞小器官 | organelle | - |
-| 核 | nucleus | - |
-| ミトコンドリア | mitochondrion | - |
-| 小胞体 | endoplasmic reticulum | ER |
-| ゴルジ体 | Golgi apparatus | - |
+| 日本語名       | 英語名                | 略語 |
+| -------------- | --------------------- | ---- |
+| 細胞小器官     | organelle             | -    |
+| 核             | nucleus               | -    |
+| ミトコンドリア | mitochondrion         | -    |
+| 小胞体         | endoplasmic reticulum | ER   |
+| ゴルジ体       | Golgi apparatus       | -    |
 
 ## よくある誤解
 
@@ -56,6 +67,26 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 - 小胞体: タンパク質や脂質の合成、加工、輸送に関わる膜構造。
 - ゴルジ体: タンパク質や脂質を加工し、仕分けする細胞小器官。
 
-<Quiz questions={[{ question: '核の主な役割を説明してください。', answer: '多くのDNAを収め、遺伝情報の管理やRNA合成に関わります。' }, { question: '小胞体やゴルジ体は何に関わりますか。', answer: 'タンパク質や脂質の加工、輸送に関わります。' }]} />
+<Quiz
+  questions={[
+    {
+      question: '核の主な役割を説明してください。',
+      answer: '多くのDNAを収め、遺伝情報の管理やRNA合成に関わります。',
+    },
+    {
+      question: '小胞体やゴルジ体は何に関わりますか。',
+      answer: 'タンパク質や脂質の加工、輸送に関わります。',
+    },
+  ]}
+/>
 
-<NextSteps items={[{ title: '細胞シグナル伝達とは何か', href: '/cell-biology/what-is-cell-signaling/' }, { title: '用語: 細胞小器官', href: '/glossary/organelle/' }, { title: '用語集', href: '/glossary/' }]} />
+<NextSteps
+  items={[
+    {
+      title: '細胞シグナル伝達とは何か',
+      href: '/cell-biology/what-is-cell-signaling/',
+    },
+    { title: '用語: 細胞小器官', href: '/glossary/organelle/' },
+    { title: '用語集', href: '/glossary/' },
+  ]}
+/>

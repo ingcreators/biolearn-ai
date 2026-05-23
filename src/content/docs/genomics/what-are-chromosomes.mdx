@@ -9,7 +9,13 @@ import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
 
-<LearningGoals items={['染色体がDNAとタンパク質からなる構造であることを理解する', 'ヒストンとクロマチンの関係を知る', '染色体が細胞分裂と遺伝情報の受け渡しに関わることを説明できる']} />
+<LearningGoals
+  items={[
+    '染色体がDNAとタンパク質からなる構造であることを理解する',
+    'ヒストンとクロマチンの関係を知る',
+    '染色体が細胞分裂と遺伝情報の受け渡しに関わることを説明できる',
+  ]}
+/>
 
 ## 要点
 
@@ -27,20 +33,25 @@ DNAは非常に長い分子なので、そのままでは細胞の核の中に�
 
 ## 図解
 
-<LessonFigure src="/figures/chromosomes-concept.jpg" alt="DNAがヒストンに巻きつき、クロマチンを経て凝縮した染色体になる様子を示す教材イラスト" title="染色体は長いDNAを整理して受け渡す構造" caption="DNAはヒストンなどのタンパク質と組み合わさり、細胞分裂のときには染色体としてまとまります。" />
+<LessonFigure
+  src="/figures/chromosomes-concept.jpg"
+  alt="DNAがヒストンに巻きつき、クロマチンを経て凝縮した染色体になる様子を示す教材イラスト"
+  title="染色体は長いDNAを整理して受け渡す構造"
+  caption="DNAはヒストンなどのタンパク質と組み合わさり、細胞分裂のときには染色体としてまとまります。"
+/>
 
 <TermBox term="染色体" english="chromosome">
-DNAとタンパク質からなる構造で、遺伝情報の収納と受け渡しに関わります。
+  DNAとタンパク質からなる構造で、遺伝情報の収納と受け渡しに関わります。
 </TermBox>
 
 ## 英語表記と略語
 
-| 日本語名 | 英語名 | 略語 |
-| --- | --- | --- |
-| 染色体 | chromosome | - |
-| クロマチン | chromatin | - |
-| ヒストン | histone | - |
-| 姉妹染色分体 | sister chromatid | - |
+| 日本語名     | 英語名           | 略語 |
+| ------------ | ---------------- | ---- |
+| 染色体       | chromosome       | -    |
+| クロマチン   | chromatin        | -    |
+| ヒストン     | histone          | -    |
+| 姉妹染色分体 | sister chromatid | -    |
 
 ## よくある誤解
 
@@ -54,6 +65,26 @@ DNAとタンパク質からなる構造で、遺伝情報の収納と受け渡�
 - ヒストン: DNAが巻きつく主要なタンパク質。
 - 姉妹染色分体: 複製後の染色体を構成する、同じ情報を持つ2本の構造。
 
-<Quiz questions={[{ question: '染色体は主に何からできていますか。', answer: 'DNAとタンパク質からできています。' }, { question: 'クロマチンとは何ですか。', answer: 'DNAとヒストンなどのタンパク質が結びついた構造です。' }]} />
+<Quiz
+  questions={[
+    {
+      question: '染色体は主に何からできていますか。',
+      answer: 'DNAとタンパク質からできています。',
+    },
+    {
+      question: 'クロマチンとは何ですか。',
+      answer: 'DNAとヒストンなどのタンパク質が結びついた構造です。',
+    },
+  ]}
+/>
 
-<NextSteps items={[{ title: '遺伝的変異とは何か', href: '/genomics/what-are-genetic-variants/' }, { title: '用語: 染色体', href: '/glossary/chromosome/' }, { title: '用語集', href: '/glossary/' }]} />
+<NextSteps
+  items={[
+    {
+      title: '遺伝的変異とは何か',
+      href: '/genomics/what-are-genetic-variants/',
+    },
+    { title: '用語: 染色体', href: '/glossary/chromosome/' },
+    { title: '用語集', href: '/glossary/' },
+  ]}
+/>

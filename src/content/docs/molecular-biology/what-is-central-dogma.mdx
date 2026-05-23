@@ -9,7 +9,13 @@ import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
 
-<LearningGoals items={['DNAからRNA、タンパク質へ進む情報の流れを説明できる', '転写と翻訳を区別できる', '例外や調節があることを知る']} />
+<LearningGoals
+  items={[
+    'DNAからRNA、タンパク質へ進む情報の流れを説明できる',
+    '転写と翻訳を区別できる',
+    '例外や調節があることを知る',
+  ]}
+/>
 
 ## 要点
 
@@ -27,20 +33,25 @@ DNAの情報をRNAへ写す過程を転写、RNAの情報をもとにタンパ�
 
 ## 図解
 
-<LessonFigure src="/figures/central-dogma-concept.jpg" alt="DNAからRNAを経てタンパク質へ情報が流れ、細胞機能につながる様子を示す教材イラスト" title="遺伝情報はDNAからRNA、タンパク質へ流れる" caption="セントラルドグマは、分子の種類をまたいで情報がどう使われるかを整理する基本の見取り図です。" />
+<LessonFigure
+  src="/figures/central-dogma-concept.jpg"
+  alt="DNAからRNAを経てタンパク質へ情報が流れ、細胞機能につながる様子を示す教材イラスト"
+  title="遺伝情報はDNAからRNA、タンパク質へ流れる"
+  caption="セントラルドグマは、分子の種類をまたいで情報がどう使われるかを整理する基本の見取り図です。"
+/>
 
 <TermBox term="セントラルドグマ" english="central dogma">
-DNA、RNA、タンパク質の間で遺伝情報がどのように使われるかを示す基本概念です。
+  DNA、RNA、タンパク質の間で遺伝情報がどのように使われるかを示す基本概念です。
 </TermBox>
 
 ## 英語表記と略語
 
-| 日本語名 | 英語名 | 略語 |
-| --- | --- | --- |
-| セントラルドグマ | central dogma | - |
-| 転写 | transcription | - |
-| 翻訳 | translation | - |
-| 非コードRNA | non-coding RNA | ncRNA |
+| 日本語名         | 英語名         | 略語  |
+| ---------------- | -------------- | ----- |
+| セントラルドグマ | central dogma  | -     |
+| 転写             | transcription  | -     |
+| 翻訳             | translation    | -     |
+| 非コードRNA      | non-coding RNA | ncRNA |
 
 ## よくある誤解
 
@@ -54,6 +65,26 @@ DNA、RNA、タンパク質の間で遺伝情報がどのように使われる�
 - 翻訳: mRNAの情報をもとにタンパク質を作る過程。
 - 非コードRNA: タンパク質には翻訳されないが、細胞内で機能を持つRNA。
 
-<Quiz questions={[{ question: '転写とは何ですか。', answer: 'DNAの情報をもとにRNAを作る過程です。' }, { question: '翻訳とは何ですか。', answer: 'RNAの情報をもとにアミノ酸をつなぎ、タンパク質を作る過程です。' }]} />
+<Quiz
+  questions={[
+    {
+      question: '転写とは何ですか。',
+      answer: 'DNAの情報をもとにRNAを作る過程です。',
+    },
+    {
+      question: '翻訳とは何ですか。',
+      answer: 'RNAの情報をもとにアミノ酸をつなぎ、タンパク質を作る過程です。',
+    },
+  ]}
+/>
 
-<NextSteps items={[{ title: '転写とは何か', href: '/molecular-biology/what-is-transcription/' }, { title: '用語: セントラルドグマ', href: '/glossary/central-dogma/' }, { title: '用語集', href: '/glossary/' }]} />
+<NextSteps
+  items={[
+    {
+      title: '転写とは何か',
+      href: '/molecular-biology/what-is-transcription/',
+    },
+    { title: '用語: セントラルドグマ', href: '/glossary/central-dogma/' },
+    { title: '用語集', href: '/glossary/' },
+  ]}
+/>

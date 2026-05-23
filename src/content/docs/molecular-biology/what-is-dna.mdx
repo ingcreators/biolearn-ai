@@ -9,7 +9,13 @@ import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
 
-<LearningGoals items={['DNAが遺伝情報を保存する分子であることを理解する', '塩基配列という考え方を説明できる', 'DNAと遺伝子の違いへの入口をつかむ']} />
+<LearningGoals
+  items={[
+    'DNAが遺伝情報を保存する分子であることを理解する',
+    '塩基配列という考え方を説明できる',
+    'DNAと遺伝子の違いへの入口をつかむ',
+  ]}
+/>
 
 ## 要点
 
@@ -27,20 +33,25 @@ DNAのすべての部分がタンパク質の設計図というわけではあ�
 
 ## 図解
 
-<LessonFigure src="/figures/dna-concept.jpg" alt="細胞核の中のDNAが一部読み出され、RNAとタンパク質へつながる流れを示す教材イラスト" title="DNAは保存された情報であり、必要な部分が読み出される" caption="DNA全体が常に使われるのではなく、細胞の状態に応じて一部の領域が読み出されます。" />
+<LessonFigure
+  src="/figures/dna-concept.jpg"
+  alt="細胞核の中のDNAが一部読み出され、RNAとタンパク質へつながる流れを示す教材イラスト"
+  title="DNAは保存された情報であり、必要な部分が読み出される"
+  caption="DNA全体が常に使われるのではなく、細胞の状態に応じて一部の領域が読み出されます。"
+/>
 
 <TermBox term="DNA" english="deoxyribonucleic acid" abbreviation="DNA">
-遺伝情報を長期的に保存する分子です。細胞分裂のときには複製され、次の細胞へ受け継がれます。
+  遺伝情報を長期的に保存する分子です。細胞分裂のときには複製され、次の細胞へ受け継がれます。
 </TermBox>
 
 ## 英語表記と略語
 
-| 日本語名 | 英語名 | 略語 |
-| --- | --- | --- |
-| デオキシリボ核酸 | deoxyribonucleic acid | DNA |
-| 塩基 | base | - |
-| 塩基配列 | nucleotide sequence | - |
-| 二重らせん | double helix | - |
+| 日本語名         | 英語名                | 略語 |
+| ---------------- | --------------------- | ---- |
+| デオキシリボ核酸 | deoxyribonucleic acid | DNA  |
+| 塩基             | base                  | -    |
+| 塩基配列         | nucleotide sequence   | -    |
+| 二重らせん       | double helix          | -    |
 
 ## よくある誤解
 
@@ -54,6 +65,24 @@ DNAのすべての部分がタンパク質の設計図というわけではあ�
 - 塩基配列: 塩基が並んだ順番で、遺伝情報の内容を表す。
 - 二重らせん: 2本のDNA鎖が互いに対応しながら巻いた構造。
 
-<Quiz questions={[{ question: 'DNAの情報は何の並びとして表されますか。', answer: 'A、T、G、Cの4種類の塩基の並びとして表されます。' }, { question: 'DNAと遺伝子の関係を簡単に説明してください。', answer: '遺伝子はDNA上にある、機能を持つRNAやタンパク質の産生に関わる領域です。' }]} />
+<Quiz
+  questions={[
+    {
+      question: 'DNAの情報は何の並びとして表されますか。',
+      answer: 'A、T、G、Cの4種類の塩基の並びとして表されます。',
+    },
+    {
+      question: 'DNAと遺伝子の関係を簡単に説明してください。',
+      answer:
+        '遺伝子はDNA上にある、機能を持つRNAやタンパク質の産生に関わる領域です。',
+    },
+  ]}
+/>
 
-<NextSteps items={[{ title: 'RNAとは何か', href: '/molecular-biology/what-is-rna/' }, { title: '用語: DNA', href: '/glossary/dna/' }, { title: '用語集', href: '/glossary/' }]} />
+<NextSteps
+  items={[
+    { title: 'RNAとは何か', href: '/molecular-biology/what-is-rna/' },
+    { title: '用語: DNA', href: '/glossary/dna/' },
+    { title: '用語集', href: '/glossary/' },
+  ]}
+/>

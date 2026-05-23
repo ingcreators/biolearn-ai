@@ -9,7 +9,13 @@ import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
 
-<LearningGoals items={['遺伝的変異がゲノム配列の違いであることを理解する', '一塩基多型、挿入、欠失などの種類を知る', '変異の意味を慎重に解釈する必要があることを説明できる']} />
+<LearningGoals
+  items={[
+    '遺伝的変異がゲノム配列の違いであることを理解する',
+    '一塩基多型、挿入、欠失などの種類を知る',
+    '変異の意味を慎重に解釈する必要があることを説明できる',
+  ]}
+/>
 
 ## 要点
 
@@ -27,20 +33,25 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 ## 図解
 
-<LessonFigure src="/figures/genetic-variants-concept.jpg" alt="似たDNA配列の間に置換、挿入、欠失の違いがあり、周囲の情報と合わせて解釈する様子を示す教材イラスト" title="遺伝的変異はゲノム配列に見られる違い" caption="配列の違いを見つけることと、その意味を確定することは別であり、頻度や位置、証拠を合わせて考えます。" />
+<LessonFigure
+  src="/figures/genetic-variants-concept.jpg"
+  alt="似たDNA配列の間に置換、挿入、欠失の違いがあり、周囲の情報と合わせて解釈する様子を示す教材イラスト"
+  title="遺伝的変異はゲノム配列に見られる違い"
+  caption="配列の違いを見つけることと、その意味を確定することは別であり、頻度や位置、証拠を合わせて考えます。"
+/>
 
 <TermBox term="遺伝的変異" english="genetic variant">
-ゲノム配列に見られる違いです。影響の有無や大きさは変異ごとに異なります。
+  ゲノム配列に見られる違いです。影響の有無や大きさは変異ごとに異なります。
 </TermBox>
 
 ## 英語表記と略語
 
-| 日本語名 | 英語名 | 略語 |
-| --- | --- | --- |
-| 遺伝的変異 | genetic variant | variant |
-| 一塩基多型 | single nucleotide polymorphism | SNP |
-| 挿入 | insertion | INS |
-| 欠失 | deletion | DEL |
+| 日本語名   | 英語名                         | 略語    |
+| ---------- | ------------------------------ | ------- |
+| 遺伝的変異 | genetic variant                | variant |
+| 一塩基多型 | single nucleotide polymorphism | SNP     |
+| 挿入       | insertion                      | INS     |
+| 欠失       | deletion                       | DEL     |
 
 ## よくある誤解
 
@@ -54,6 +65,25 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 - 挿入: 配列の一部に塩基が追加される変化。
 - 欠失: 配列の一部の塩基が失われる変化。
 
-<Quiz questions={[{ question: 'SNPとは何ですか。', answer: 'ゲノム中の1塩基の違いとして見られる多型です。' }, { question: '変異の解釈で注意が必要な理由を説明してください。', answer: '変異の影響は種類や場所、証拠の強さによって異なり、見つかっただけで意味を断定できないからです。' }]} />
+<Quiz
+  questions={[
+    {
+      question: 'SNPとは何ですか。',
+      answer: 'ゲノム中の1塩基の違いとして見られる多型です。',
+    },
+    {
+      question: '変異の解釈で注意が必要な理由を説明してください。',
+      answer:
+        '変異の影響は種類や場所、証拠の強さによって異なり、見つかっただけで意味を断定できないからです。',
+    },
+  ]}
+/>
 
-<NextSteps items={[{ title: 'PCRとは何か', href: '/molecular-biology/what-is-pcr/' }, { title: '用語: 変異', href: '/glossary/mutation/' }, { title: '用語: SNP', href: '/glossary/snp/' }, { title: '用語集', href: '/glossary/' }]} />
+<NextSteps
+  items={[
+    { title: 'PCRとは何か', href: '/molecular-biology/what-is-pcr/' },
+    { title: '用語: 変異', href: '/glossary/mutation/' },
+    { title: '用語: SNP', href: '/glossary/snp/' },
+    { title: '用語集', href: '/glossary/' },
+  ]}
+/>

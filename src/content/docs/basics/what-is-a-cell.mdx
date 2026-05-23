@@ -9,7 +9,13 @@ import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
 
-<LearningGoals items={['細胞が生命の基本単位である理由を説明できる', '原核細胞と真核細胞の大まかな違いを知る', '細胞小器官という考え方を理解する']} />
+<LearningGoals
+  items={[
+    '細胞が生命の基本単位である理由を説明できる',
+    '原核細胞と真核細胞の大まかな違いを知る',
+    '細胞小器官という考え方を理解する',
+  ]}
+/>
 
 ## 要点
 
@@ -27,21 +33,26 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 ## 図解
 
-<LessonFigure src="/figures/cell-concept.jpg" alt="細胞膜に囲まれた細胞内に核や細胞小器官があり、外部からのシグナルに応答する様子を示す教材イラスト" title="細胞は膜で区切られた生命活動の単位" caption="細胞の中では核や細胞小器官、さまざまな分子が協調して働き、外からの情報にも応答します。" />
+<LessonFigure
+  src="/figures/cell-concept.jpg"
+  alt="細胞膜に囲まれた細胞内に核や細胞小器官があり、外部からのシグナルに応答する様子を示す教材イラスト"
+  title="細胞は膜で区切られた生命活動の単位"
+  caption="細胞の中では核や細胞小器官、さまざまな分子が協調して働き、外からの情報にも応答します。"
+/>
 
 <TermBox term="細胞" english="cell">
-膜で囲まれた生命活動の単位です。細胞の内部では、多数の分子が協調して働いています。
+  膜で囲まれた生命活動の単位です。細胞の内部では、多数の分子が協調して働いています。
 </TermBox>
 
 ## 英語表記と略語
 
-| 日本語名 | 英語名 | 略語 |
-| --- | --- | --- |
-| 細胞 | cell | - |
-| 細胞膜 | cell membrane | - |
-| 原核細胞 | prokaryotic cell | - |
-| 真核細胞 | eukaryotic cell | - |
-| 細胞小器官 | organelle | - |
+| 日本語名   | 英語名           | 略語 |
+| ---------- | ---------------- | ---- |
+| 細胞       | cell             | -    |
+| 細胞膜     | cell membrane    | -    |
+| 原核細胞   | prokaryotic cell | -    |
+| 真核細胞   | eukaryotic cell  | -    |
+| 細胞小器官 | organelle        | -    |
 
 ## よくある誤解
 
@@ -56,6 +67,23 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 - 真核細胞: 核や細胞小器官を持つ細胞。
 - 細胞小器官: 真核細胞の中で特定の機能を担う構造。
 
-<Quiz questions={[{ question: '細胞膜の役割を一つ説明してください。', answer: '細胞の内側と外側を区切り、物質の出入りや情報伝達に関わります。' }, { question: '真核細胞に見られる代表的な細胞小器官を一つ挙げてください。', answer: '核、ミトコンドリア、小胞体、ゴルジ体などがあります。' }]} />
+<Quiz
+  questions={[
+    {
+      question: '細胞膜の役割を一つ説明してください。',
+      answer: '細胞の内側と外側を区切り、物質の出入りや情報伝達に関わります。',
+    },
+    {
+      question: '真核細胞に見られる代表的な細胞小器官を一つ挙げてください。',
+      answer: '核、ミトコンドリア、小胞体、ゴルジ体などがあります。',
+    },
+  ]}
+/>
 
-<NextSteps items={[{ title: 'DNAとは何か', href: '/molecular-biology/what-is-dna/' }, { title: '用語: 細胞', href: '/glossary/cell/' }, { title: '用語集', href: '/glossary/' }]} />
+<NextSteps
+  items={[
+    { title: 'DNAとは何か', href: '/molecular-biology/what-is-dna/' },
+    { title: '用語: 細胞', href: '/glossary/cell/' },
+    { title: '用語集', href: '/glossary/' },
+  ]}
+/>

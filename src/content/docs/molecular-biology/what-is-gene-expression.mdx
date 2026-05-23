@@ -9,7 +9,13 @@ import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
 
-<LearningGoals items={['遺伝子発現の意味を説明できる', '発現量が細胞の状態によって変わることを理解する', 'RNA-seqが発現を調べる手法とつながることを知る']} />
+<LearningGoals
+  items={[
+    '遺伝子発現の意味を説明できる',
+    '発現量が細胞の状態によって変わることを理解する',
+    'RNA-seqが発現を調べる手法とつながることを知る',
+  ]}
+/>
 
 ## 要点
 
@@ -27,20 +33,25 @@ RNA-seqでは主にRNAの量を測ることで、どの遺伝子がどの程度�
 
 ## 図解
 
-<LessonFigure src="/figures/gene-expression-concept.jpg" alt="核内の複数の遺伝子のうち一部が活性化し、RNA量の違いとして表れる様子を示す教材イラスト" title="遺伝子発現はどの遺伝子がどれくらい使われるかを見る視点" caption="細胞の状態によって使われる遺伝子とRNA量が変わり、その違いが細胞の性質を読み解く手がかりになります。" />
+<LessonFigure
+  src="/figures/gene-expression-concept.jpg"
+  alt="核内の複数の遺伝子のうち一部が活性化し、RNA量の違いとして表れる様子を示す教材イラスト"
+  title="遺伝子発現はどの遺伝子がどれくらい使われるかを見る視点"
+  caption="細胞の状態によって使われる遺伝子とRNA量が変わり、その違いが細胞の性質を読み解く手がかりになります。"
+/>
 
 <TermBox term="遺伝子発現" english="gene expression">
-遺伝子の情報がRNAやタンパク質として読み出され、細胞内で機能につながることです。
+  遺伝子の情報がRNAやタンパク質として読み出され、細胞内で機能につながることです。
 </TermBox>
 
 ## 英語表記と略語
 
-| 日本語名 | 英語名 | 略語 |
-| --- | --- | --- |
-| 遺伝子発現 | gene expression | - |
-| 発現量 | expression level | - |
-| 発現制御 | expression regulation | - |
-| 転写因子 | transcription factor | TF |
+| 日本語名   | 英語名                | 略語 |
+| ---------- | --------------------- | ---- |
+| 遺伝子発現 | gene expression       | -    |
+| 発現量     | expression level      | -    |
+| 発現制御   | expression regulation | -    |
+| 転写因子   | transcription factor  | TF   |
 
 ## よくある誤解
 
@@ -54,6 +65,25 @@ RNA-seqでは主にRNAの量を測ることで、どの遺伝子がどの程度�
 - 発現制御: 遺伝子が使われるタイミングや量を調節する仕組み。
 - 転写因子: 特定のDNA配列に結合し、転写を調節するタンパク質。
 
-<Quiz questions={[{ question: '同じゲノムを持つ細胞でも性質が違う理由を、遺伝子発現の観点から説明してください。', answer: '細胞ごとに発現している遺伝子や発現量が異なるため、作られるRNAやタンパク質が変わるからです。' }, { question: 'RNA-seqは遺伝子発現の何を主に測りますか。', answer: 'RNAの量を測り、遺伝子ごとの発現量を推定します。' }]} />
+<Quiz
+  questions={[
+    {
+      question:
+        '同じゲノムを持つ細胞でも性質が違う理由を、遺伝子発現の観点から説明してください。',
+      answer:
+        '細胞ごとに発現している遺伝子や発現量が異なるため、作られるRNAやタンパク質が変わるからです。',
+    },
+    {
+      question: 'RNA-seqは遺伝子発現の何を主に測りますか。',
+      answer: 'RNAの量を測り、遺伝子ごとの発現量を推定します。',
+    },
+  ]}
+/>
 
-<NextSteps items={[{ title: '細胞膜とは何か', href: '/cell-biology/what-is-cell-membrane/' }, { title: '用語: 遺伝子発現', href: '/glossary/gene-expression/' }, { title: '用語集', href: '/glossary/' }]} />
+<NextSteps
+  items={[
+    { title: '細胞膜とは何か', href: '/cell-biology/what-is-cell-membrane/' },
+    { title: '用語: 遺伝子発現', href: '/glossary/gene-expression/' },
+    { title: '用語集', href: '/glossary/' },
+  ]}
+/>

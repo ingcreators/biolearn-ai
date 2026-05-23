@@ -9,7 +9,13 @@ import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
 
-<LearningGoals items={['転写がDNAからRNAを作る過程であることを理解する', 'RNAポリメラーゼとプロモーターの役割を知る', '転写が遺伝子発現の入口であることを説明できる']} />
+<LearningGoals
+  items={[
+    '転写がDNAからRNAを作る過程であることを理解する',
+    'RNAポリメラーゼとプロモーターの役割を知る',
+    '転写が遺伝子発現の入口であることを説明できる',
+  ]}
+/>
 
 ## 要点
 
@@ -27,20 +33,25 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 ## 図解
 
-<LessonFigure src="/figures/transcription-concept.jpg" alt="DNAの一部がほどけ、RNAポリメラーゼがRNA鎖を合成する様子を示す教材イラスト" title="転写はDNAの情報をRNAへ写し取る過程" caption="RNAポリメラーゼがDNAを鋳型として読み取り、RNAという形で情報を取り出します。" />
+<LessonFigure
+  src="/figures/transcription-concept.jpg"
+  alt="DNAの一部がほどけ、RNAポリメラーゼがRNA鎖を合成する様子を示す教材イラスト"
+  title="転写はDNAの情報をRNAへ写し取る過程"
+  caption="RNAポリメラーゼがDNAを鋳型として読み取り、RNAという形で情報を取り出します。"
+/>
 
 <TermBox term="転写" english="transcription">
-DNAの塩基配列をもとにRNAを合成する過程です。
+  DNAの塩基配列をもとにRNAを合成する過程です。
 </TermBox>
 
 ## 英語表記と略語
 
-| 日本語名 | 英語名 | 略語 |
-| --- | --- | --- |
-| 転写 | transcription | - |
-| RNAポリメラーゼ | RNA polymerase | - |
-| プロモーター | promoter | - |
-| 転写産物 | transcript | - |
+| 日本語名        | 英語名         | 略語 |
+| --------------- | -------------- | ---- |
+| 転写            | transcription  | -    |
+| RNAポリメラーゼ | RNA polymerase | -    |
+| プロモーター    | promoter       | -    |
+| 転写産物        | transcript     | -    |
 
 ## よくある誤解
 
@@ -54,6 +65,23 @@ DNAの塩基配列をもとにRNAを合成する過程です。
 - プロモーター: 転写開始に関わるDNA上の領域。
 - 転写産物: 転写によって作られたRNA分子。
 
-<Quiz questions={[{ question: '転写では何から何が作られますか。', answer: 'DNAの情報をもとにRNAが作られます。' }, { question: 'プロモーターは何に関わる領域ですか。', answer: '転写が始まる位置や転写の起こりやすさに関わるDNA領域です。' }]} />
+<Quiz
+  questions={[
+    {
+      question: '転写では何から何が作られますか。',
+      answer: 'DNAの情報をもとにRNAが作られます。',
+    },
+    {
+      question: 'プロモーターは何に関わる領域ですか。',
+      answer: '転写が始まる位置や転写の起こりやすさに関わるDNA領域です。',
+    },
+  ]}
+/>
 
-<NextSteps items={[{ title: '翻訳とは何か', href: '/molecular-biology/what-is-translation/' }, { title: '用語: 転写', href: '/glossary/transcription/' }, { title: '用語集', href: '/glossary/' }]} />
+<NextSteps
+  items={[
+    { title: '翻訳とは何か', href: '/molecular-biology/what-is-translation/' },
+    { title: '用語: 転写', href: '/glossary/transcription/' },
+    { title: '用語集', href: '/glossary/' },
+  ]}
+/>

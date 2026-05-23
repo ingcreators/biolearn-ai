@@ -96,13 +96,15 @@ export const glossaryTerms: GlossaryTerm[] = [
   {
     term: '染色体',
     english: 'chromosome',
-    description: 'DNAとタンパク質からなる、遺伝情報の収納と受け渡しに関わる構造。',
+    description:
+      'DNAとタンパク質からなる、遺伝情報の収納と受け渡しに関わる構造。',
     href: '/glossary/chromosome/',
   },
   {
     term: '変異',
     english: 'mutation',
-    description: 'DNA配列に生じた変化。文脈によって遺伝的変異と区別して使われる。',
+    description:
+      'DNA配列に生じた変化。文脈によって遺伝的変異と区別して使われる。',
     href: '/glossary/mutation/',
   },
   {
@@ -136,7 +138,8 @@ export const glossaryTerms: GlossaryTerm[] = [
     term: 'NGS',
     english: 'next-generation sequencing',
     abbreviation: 'NGS',
-    description: '多数の配列断片を並列に読み取る高スループットなシーケンシング技術。',
+    description:
+      '多数の配列断片を並列に読み取る高スループットなシーケンシング技術。',
     href: '/glossary/ngs/',
   },
   {
