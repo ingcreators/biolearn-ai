@@ -25,6 +25,7 @@ export default defineConfig({
           label: '学習ロードマップ',
           items: [
             { label: '00. はじめに', link: '/getting-started/' },
+            { label: '学習ロードマップ', link: '/roadmap/' },
             { label: '01. 生命科学とは何か', link: '/getting-started/what-is-life-science/' },
             { label: '02. 細胞とは何か', link: '/basics/what-is-a-cell/' },
             { label: '03. DNAとは何か', link: '/molecular-biology/what-is-dna/' },
