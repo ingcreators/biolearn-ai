@@ -2,7 +2,7 @@
 
 BioLearn AI は、分子生物学・細胞生物学・ゲノミクス・バイオインフォマティクスを日本語で体系的に学ぶための教材サイトです。
 
-想定ドメインは `biolearn.ai`、GitHub Organization は `ingcreators` です。
+公開 URL は `https://biolearn.ai/` です。GitHub Organization は `ingcreators` です。
 
 ## Tech stack
 
@@ -27,7 +27,21 @@ npm run dev
 npm run build
 ```
 
-Cloudflare Pages では、ビルドコマンドに `npm run build`、出力ディレクトリに `dist` を指定します。
+`astro.config.mjs` の `site` は `https://biolearn.ai` に設定しています。canonical URL、OGP の `og:url`、sitemap はこの公開 URL を前提に生成されます。
+
+Cloudflare Pages では次の設定を使います。
+
+- Build command: `npm run build`
+- Build output directory: `dist`
+- Production branch: `main`
+
+デプロイ前の基本確認は次の通りです。
+
+```bash
+npm run build
+```
+
+ビルド後、`dist/sitemap-index.xml`、`dist/robots.txt`、各ページの canonical URL が `https://biolearn.ai/` 配下になっていることを確認します。
 
 ## Content structure
 
@@ -36,12 +50,14 @@ Cloudflare Pages では、ビルドコマンドに `npm run build`、出力デ�
 各レッスンは次の構成を基本にします。
 
 1. この記事で学ぶこと
-2. まず一言でいうと
-3. 本文
-4. よくある誤解
-5. 重要用語
-6. 確認問題
-7. 次に読む記事
+2. 要点
+3. 基礎解説
+4. 図解
+5. 英語表記と略語
+6. よくある誤解
+7. 重要用語
+8. 確認問題
+9. 次に読む記事
 
 ## Educational components
 

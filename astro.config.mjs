@@ -3,11 +3,48 @@ import starlight from '@astrojs/starlight';
 
 export default defineConfig({
   site: 'https://biolearn.ai',
+  trailingSlash: 'always',
   integrations: [
     starlight({
       title: 'BioLearn AI',
       description:
         '分子生物学・細胞生物学・ゲノミクス・バイオインフォマティクスを体系的に学ぶ日本語教材サイト',
+      locales: {
+        root: {
+          label: '日本語',
+          lang: 'ja',
+        },
+      },
+      head: [
+        {
+          tag: 'meta',
+          attrs: { name: 'robots', content: 'index, follow' },
+        },
+        {
+          tag: 'meta',
+          attrs: { property: 'og:image', content: 'https://biolearn.ai/ogp.jpg' },
+        },
+        {
+          tag: 'meta',
+          attrs: { property: 'og:image:width', content: '1200' },
+        },
+        {
+          tag: 'meta',
+          attrs: { property: 'og:image:height', content: '630' },
+        },
+        {
+          tag: 'meta',
+          attrs: { property: 'og:image:alt', content: 'BioLearn AI の共有カード画像' },
+        },
+        {
+          tag: 'meta',
+          attrs: { name: 'twitter:image', content: 'https://biolearn.ai/ogp.jpg' },
+        },
+        {
+          tag: 'meta',
+          attrs: { name: 'twitter:image:alt', content: 'BioLearn AI の共有カード画像' },
+        },
+      ],
       logo: {
         src: './src/assets/biolearn-logo.svg',
         alt: 'BioLearn AI',
