@@ -1,6 +1,6 @@
-# BioLearn AI
+# BioLearn
 
-BioLearn AI は、分子生物学・細胞生物学・ゲノミクス・バイオインフォマティクスを日本語で体系的に学ぶための教材サイトです。
+BioLearnは、分子生物学・細胞生物学・ゲノミクス・バイオインフォマティクスを日本語で体系的に学ぶための生命科学教材サイトです。
 
 公開 URL は `https://biolearn.ai/` です。GitHub Organization は `ingcreators` です。
 

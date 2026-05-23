@@ -2,7 +2,7 @@
 
 ## Project overview
 
-BioLearn AI is a Japanese learning site for molecular biology, cell biology, genomics, and bioinformatics.
+BioLearn is a Japanese learning site for molecular biology, cell biology, genomics, and bioinformatics.
 
 ## Development rules
 

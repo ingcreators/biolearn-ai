@@ -6,9 +6,9 @@ export default defineConfig({
   trailingSlash: 'always',
   integrations: [
     starlight({
-      title: 'BioLearn AI',
+      title: 'BioLearn',
       description:
-        '分子生物学・細胞生物学・ゲノミクス・バイオインフォマティクスを体系的に学ぶ日本語教材サイト',
+        'BioLearnは、分子生物学・細胞生物学・ゲノミクス・バイオインフォマティクスを日本語で体系的に学ぶための生命科学教材サイトです。',
       locales: {
         root: {
           label: '日本語',
@@ -19,6 +19,13 @@ export default defineConfig({
         {
           tag: 'meta',
           attrs: { name: 'robots', content: 'index, follow' },
+        },
+        {
+          tag: 'meta',
+          attrs: {
+            property: 'og:site_name',
+            content: 'BioLearn',
+          },
         },
         {
           tag: 'meta',
@@ -39,7 +46,7 @@ export default defineConfig({
           tag: 'meta',
           attrs: {
             property: 'og:image:alt',
-            content: 'BioLearn AI の共有カード画像',
+            content: 'BioLearn の共有カード画像',
           },
         },
         {
@@ -53,13 +60,13 @@ export default defineConfig({
           tag: 'meta',
           attrs: {
             name: 'twitter:image:alt',
-            content: 'BioLearn AI の共有カード画像',
+            content: 'BioLearn の共有カード画像',
           },
         },
       ],
       logo: {
         src: './src/assets/biolearn-logo.svg',
-        alt: 'BioLearn AI',
+        alt: 'BioLearn',
       },
       social: [
         {

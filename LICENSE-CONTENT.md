@@ -1,6 +1,6 @@
 # Content License
 
-Educational content, articles, diagrams, figures, and other learning materials in BioLearn AI are licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+Educational content, articles, diagrams, figures, and other learning materials in BioLearn are licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
 
 SPDX-style identifier:
 
