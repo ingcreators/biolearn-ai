@@ -1,0 +1,168 @@
+export interface GlossaryTerm {
+  term: string;
+  english?: string;
+  abbreviation?: string;
+  description: string;
+  href: string;
+}
+
+export const glossaryTerms: GlossaryTerm[] = [
+  {
+    term: '生命科学',
+    english: 'life science',
+    description: '生命現象を分子、細胞、個体、集団などの階層で理解する分野。',
+    href: '/glossary/life-science/',
+  },
+  {
+    term: '細胞',
+    english: 'cell',
+    description: '生物の構造と働きの基本単位。',
+    href: '/glossary/cell/',
+  },
+  {
+    term: 'DNA',
+    english: 'deoxyribonucleic acid',
+    abbreviation: 'DNA',
+    description: '遺伝情報を長期的に保存する分子。',
+    href: '/glossary/dna/',
+  },
+  {
+    term: 'RNA',
+    english: 'ribonucleic acid',
+    abbreviation: 'RNA',
+    description: '遺伝情報の読み出しや調節に関わる分子。',
+    href: '/glossary/rna/',
+  },
+  {
+    term: 'タンパク質',
+    english: 'protein',
+    description: '細胞内外で構造、反応、輸送、情報伝達などを担う分子。',
+    href: '/glossary/protein/',
+  },
+  {
+    term: '遺伝子',
+    english: 'gene',
+    description: '機能を持つRNAやタンパク質の産生に関わるDNA領域。',
+    href: '/glossary/gene/',
+  },
+  {
+    term: 'ゲノム',
+    english: 'genome',
+    description: 'ある生物が持つ遺伝情報の全体。',
+    href: '/glossary/genome/',
+  },
+  {
+    term: 'セントラルドグマ',
+    english: 'central dogma',
+    description: 'DNA、RNA、タンパク質の間で情報が使われる基本的な流れ。',
+    href: '/glossary/central-dogma/',
+  },
+  {
+    term: '転写',
+    english: 'transcription',
+    description: 'DNAの情報をもとにRNAを合成する過程。',
+    href: '/glossary/transcription/',
+  },
+  {
+    term: '翻訳',
+    english: 'translation',
+    description: 'mRNAの情報をもとにアミノ酸をつなぎ、タンパク質を作る過程。',
+    href: '/glossary/translation/',
+  },
+  {
+    term: '遺伝子発現',
+    english: 'gene expression',
+    description: '遺伝子の情報がRNAやタンパク質として使われること。',
+    href: '/glossary/gene-expression/',
+  },
+  {
+    term: '細胞膜',
+    english: 'cell membrane',
+    description: '細胞内外を区切り、物質輸送や情報伝達に関わる膜。',
+    href: '/glossary/cell-membrane/',
+  },
+  {
+    term: '細胞小器官',
+    english: 'organelle',
+    description: '真核細胞の内部で特定の機能を担う構造。',
+    href: '/glossary/organelle/',
+  },
+  {
+    term: '細胞シグナル伝達',
+    english: 'cell signaling',
+    description: '細胞が外からの情報を受け取り、内部の反応へ変える仕組み。',
+    href: '/glossary/cell-signaling/',
+  },
+  {
+    term: '染色体',
+    english: 'chromosome',
+    description: 'DNAとタンパク質からなる、遺伝情報の収納と受け渡しに関わる構造。',
+    href: '/glossary/chromosome/',
+  },
+  {
+    term: '変異',
+    english: 'mutation',
+    description: 'DNA配列に生じた変化。文脈によって遺伝的変異と区別して使われる。',
+    href: '/glossary/mutation/',
+  },
+  {
+    term: 'SNP',
+    english: 'single nucleotide polymorphism',
+    abbreviation: 'SNP',
+    description: '集団の中で見られる1塩基の配列多型。',
+    href: '/glossary/snp/',
+  },
+  {
+    term: '遺伝的変異',
+    english: 'genetic variant',
+    abbreviation: 'variant',
+    description: 'ゲノム配列に見られる違い。',
+    href: '/glossary/mutation/',
+  },
+  {
+    term: 'PCR',
+    english: 'polymerase chain reaction',
+    abbreviation: 'PCR',
+    description: '特定のDNA領域を試験管内で増幅する実験法。',
+    href: '/glossary/pcr/',
+  },
+  {
+    term: 'シーケンシング',
+    english: 'sequencing',
+    description: 'DNAやRNA由来の塩基配列を読み取る技術の総称。',
+    href: '/glossary/sequencing/',
+  },
+  {
+    term: 'NGS',
+    english: 'next-generation sequencing',
+    abbreviation: 'NGS',
+    description: '多数の配列断片を並列に読み取る高スループットなシーケンシング技術。',
+    href: '/glossary/ngs/',
+  },
+  {
+    term: 'RNA-seq',
+    english: 'RNA sequencing',
+    abbreviation: 'RNA-seq',
+    description: 'RNAを配列決定し、遺伝子発現などを調べる手法。',
+    href: '/glossary/rna-seq/',
+  },
+  {
+    term: 'シーケンスデータ',
+    english: 'sequence data',
+    description: 'DNAやRNAの塩基配列を読み取って得られるデータ。',
+    href: '/glossary/sequence-data/',
+  },
+  {
+    term: '差次的発現解析',
+    english: 'differential expression analysis',
+    abbreviation: 'DEA',
+    description: '条件間で遺伝子発現に差があるかを調べる解析。',
+    href: '/glossary/differential-expression-analysis/',
+  },
+  {
+    term: 'バイオインフォマティクス',
+    english: 'bioinformatics',
+    description: '生命科学のデータを情報科学の方法で整理、解析、解釈する分野。',
+    href: '/glossary/bioinformatics/',
+  },
+];
