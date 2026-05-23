@@ -10,12 +10,58 @@ BioLearn AI では、生命科学を「分子」「細胞」「ゲノム」「�
 - 情報系エンジニアとして生命科学に入門したい人
 - 生命科学論文を読めるようになりたい人
 
-最初に読む記事は [生命科学とは何か](/getting-started/what-is-life-science/) です。
+最初に読む記事は [生命科学とは何か](/getting-started/what-is-life-science/) です。すべてを一度に覚える必要はありません。まずは言葉に慣れ、次に「分子が細胞で働き、その情報をゲノムとデータから読み解く」という流れをつかみます。
+
+## 学習の全体像
+
+```mermaid
+flowchart LR
+  A["分子<br/>DNA・RNA・タンパク質"] --> B["細胞<br/>膜・小器官・シグナル"]
+  B --> C["ゲノム<br/>染色体・変異"]
+  C --> D["データ解析<br/>RNA-seq・発現解析"]
+```
+
+## このロードマップの使い方
+
+- はじめて学ぶ場合は、上から順番に読みます。
+- すでに高校生物の基礎がある場合は、分子生物学の章から始めても構いません。
+- 情報系エンジニアの場合も、RNA-seqへ進む前にDNA、RNA、遺伝子発現を押さえると理解しやすくなります。
+- 各記事の「確認問題」で説明できない用語があれば、[用語集](/glossary/) で確認します。
+
+## 章ごとのゴール
+
+<div class="biolearn-roadmap">
+  <section>
+    <h3>導入</h3>
+    <p>生命科学が何を対象にし、どのような階層で生命現象を見るのかを理解します。</p>
+  </section>
+  <section>
+    <h3>分子</h3>
+    <p>DNA、RNA、タンパク質、遺伝子発現をつなげて、生命情報が使われる流れを学びます。</p>
+  </section>
+  <section>
+    <h3>細胞</h3>
+    <p>分子の働きが細胞膜、細胞小器官、シグナル伝達の中でどう現れるかを学びます。</p>
+  </section>
+  <section>
+    <h3>ゲノム</h3>
+    <p>遺伝情報をゲノム全体、染色体構造、配列の違いとして捉えます。</p>
+  </section>
+  <section>
+    <h3>データ解析</h3>
+    <p>RNA-seqやシーケンスデータを入口に、生命科学データを読む力を育てます。</p>
+  </section>
+</div>
 
 ## 推奨学習順序
 
+### 導入
+
 1. [生命科学とは何か](/getting-started/what-is-life-science/)
 2. [細胞とは何か](/basics/what-is-a-cell/)
+
+### 分子
+
 3. [DNAとは何か](/molecular-biology/what-is-dna/)
 4. [RNAとは何か](/molecular-biology/what-is-rna/)
 5. [タンパク質とは何か](/molecular-biology/what-is-protein/)
@@ -24,13 +70,26 @@ BioLearn AI では、生命科学を「分子」「細胞」「ゲノム」「�
 8. [転写とは何か](/molecular-biology/what-is-transcription/)
 9. [翻訳とは何か](/molecular-biology/what-is-translation/)
 10. [遺伝子発現とは何か](/molecular-biology/what-is-gene-expression/)
+
+### 細胞
+
 11. [細胞膜とは何か](/cell-biology/what-is-cell-membrane/)
 12. [細胞小器官とは何か](/cell-biology/what-are-organelles/)
 13. [細胞シグナル伝達とは何か](/cell-biology/what-is-cell-signaling/)
+
+### ゲノム
+
 14. [ゲノムとは何か](/genomics/what-is-genome/)
 15. [染色体とは何か](/genomics/what-are-chromosomes/)
 16. [遺伝的変異とは何か](/genomics/what-are-genetic-variants/)
+
+### 実験とデータ解析
+
 17. [PCRとは何か](/molecular-biology/what-is-pcr/)
 18. [RNA-seqとは何か](/bioinformatics/what-is-rna-seq/)
 19. [シーケンスデータとは何か](/bioinformatics/what-is-sequence-data/)
 20. [差次的発現解析とは何か](/bioinformatics/what-is-differential-expression-analysis/)
+
+## 学び終えたら
+
+20本を読み終えたら、次は [論文Figureの読み方](/reading-figures/) へ進みます。棒グラフ、ヒートマップ、volcano plot、顕微鏡画像などを読めるようになると、生命科学論文の結果を追いやすくなります。

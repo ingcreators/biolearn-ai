@@ -120,3 +120,68 @@ html {
 .glossary-table tr:last-child td {
   border-bottom: 0;
 }
+
+.biolearn-home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.biolearn-home-card {
+  display: block;
+  min-height: 11rem;
+  color: var(--biolearn-panel-text);
+  text-decoration: none;
+  border: 1px solid var(--biolearn-panel-border);
+  border-radius: 8px;
+  padding: 1rem;
+  background: var(--biolearn-panel-bg);
+}
+
+.biolearn-home-card:hover {
+  border-color: var(--sl-color-accent);
+}
+
+.biolearn-home-card span {
+  color: var(--sl-color-accent);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.biolearn-home-card h3 {
+  color: var(--biolearn-panel-text);
+  margin: 0.25rem 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+.biolearn-home-card p {
+  color: var(--biolearn-panel-muted);
+  margin: 0;
+  line-height: 1.75;
+}
+
+.biolearn-roadmap {
+  display: grid;
+  gap: 0.9rem;
+  margin: 1.25rem 0 2rem;
+}
+
+.biolearn-roadmap section {
+  border-left: 4px solid var(--sl-color-accent);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  background: var(--biolearn-panel-bg);
+  color: var(--biolearn-panel-text);
+}
+
+.biolearn-roadmap h3 {
+  color: var(--biolearn-panel-text);
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+}
+
+.biolearn-roadmap p {
+  color: var(--biolearn-panel-muted);
+  margin: 0;
+}
