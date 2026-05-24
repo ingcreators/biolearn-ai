@@ -98,10 +98,6 @@ export default defineConfig({
           items: [
             { label: 'はじめに', link: '/start/' },
             { label: '学習ロードマップ', link: '/roadmap/' },
-            {
-              label: '論文を読めるようになるまで',
-              link: '/paths/paper-reading/',
-            },
           ],
         },
         {
