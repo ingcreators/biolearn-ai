@@ -167,7 +167,7 @@ const relatedItems = items.filter(
           {sequenceItems.map((item) => (
             <li>
               <a href={item.href}>
-                {`${item.contexts.join(' / ')}（${item.title}）`}
+                {`${item.contexts.join(' / ')}: ${item.title}`}
               </a>
             </li>
           ))}
