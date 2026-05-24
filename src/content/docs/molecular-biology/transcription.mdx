@@ -16,7 +16,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -29,11 +28,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 転写は、DNA上の情報をRNAとして読み出す過程です。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/transcription-concept.jpg"
+  alt="DNAの一部がほどけ、RNAポリメラーゼがRNA鎖を合成する様子を示す教材イラスト"
+  title="転写はDNAの情報をRNAへ写し取る過程"
+  caption="RNAポリメラーゼがDNAを鋳型として読み取り、RNAという形で情報を取り出します。"
+/>
 
 遺伝子の情報を使うためには、まずDNAからRNAが作られます。この過程を転写と呼びます。RNAポリメラーゼはDNAの特定領域に結合し、鋳型となるDNA鎖を読みながらRNAを合成します。
 
@@ -64,19 +66,6 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 ## 論文や実験ではどう出てくるか
 
 転写は、RT-qPCR、RNA-seq、レポーターアッセイ、ChIP-seqなどで扱われます。論文では「mRNA発現が上昇した」「転写因子がプロモーター領域に結合した」「転写産物を検出した」のように、RNA量や調節因子の結合として示されることが多いです。
-
-## 図解
-
-<LessonFigure
-  src="/figures/transcription-concept.jpg"
-  alt="DNAの一部がほどけ、RNAポリメラーゼがRNA鎖を合成する様子を示す教材イラスト"
-  title="転写はDNAの情報をRNAへ写し取る過程"
-  caption="RNAポリメラーゼがDNAを鋳型として読み取り、RNAという形で情報を取り出します。"
-/>
-
-<TermBox term="転写" english="transcription">
-  DNAの塩基配列をもとにRNAを合成する過程です。
-</TermBox>
 
 ## 英語表記と略語
 

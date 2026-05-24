@@ -24,7 +24,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -37,17 +36,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 この演習では、実在論文ではなくBioLearn用の架空ケースを使い、RNA-seq論文を読む手順を練習します。
-
-## 架空ケース
-
-ある研究では、細胞を条件Aと条件Bで培養し、RNA-seqで遺伝子発現の違いを調べたとします。論文の主張は「条件Bではストレス応答に関わる遺伝子群が変化する」です。
-
-この主張を読むときは、まずFigure全体を見て、PCA、Volcano plot、ヒートマップ、pathway enrichment plotがどの順番で出てくるかを確認します。
-
-## 図解
 
 <LessonFigure
   src="/figures/walkthrough-rna-seq-concept.jpg"
@@ -56,9 +45,11 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   caption="PCAでサンプルのまとまり、Volcano plotで候補、ヒートマップでパターン、enrichmentで経路を確認します。"
 />
 
-<TermBox term="RNA-seq論文" english="RNA-seq paper">
-  RNA-seqを使って遺伝子発現の違いやパターンを解析した研究論文です。
-</TermBox>
+## 架空ケース
+
+ある研究では、細胞を条件Aと条件Bで培養し、RNA-seqで遺伝子発現の違いを調べたとします。論文の主張は「条件Bではストレス応答に関わる遺伝子群が変化する」です。
+
+この主張を読むときは、まずFigure全体を見て、PCA、Volcano plot、ヒートマップ、pathway enrichment plotがどの順番で出てくるかを確認します。
 
 ## 読む順番
 

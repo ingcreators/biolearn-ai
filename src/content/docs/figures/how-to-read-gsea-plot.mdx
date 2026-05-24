@@ -19,7 +19,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -32,19 +31,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 GSEA plotは、あらかじめ定義した遺伝子セットが、ランキングの上位や下位に偏っているかを見るFigureです。
-
-## 基礎解説
-
-GSEAは Gene Set Enrichment Analysis の略です。差次的発現解析のように遺伝子を1つずつ見るだけでなく、経路や機能に属する遺伝子群が全体として偏っているかを見ます。
-
-GSEA plotでは、横軸に遺伝子ランキング、縦軸にエンリッチメントスコアが示されることがあります。遺伝子セットに含まれる遺伝子がランキングのどこに多いかを確認します。
-
-読み取るときは、どの比較のランキングか、遺伝子セット名、NES、FDR、leading edgeを確認します。経路名だけで結論を決めず、どの遺伝子が寄与しているかも見ます。
-
-## 図解
 
 <LessonFigure
   src="/figures/gsea-plot-concept.jpg"
@@ -53,9 +40,11 @@ GSEA plotでは、横軸に遺伝子ランキング、縦軸にエンリッチ�
   caption="ランキングの向き、遺伝子セット名、NES、FDR、leading edgeを確認して経路単位で読みます。"
 />
 
-<TermBox term="GSEA" english="Gene Set Enrichment Analysis" abbreviation="GSEA">
-  遺伝子セットがランキング上で偏って現れるかを調べる解析です。
-</TermBox>
+GSEAは Gene Set Enrichment Analysis の略です。差次的発現解析のように遺伝子を1つずつ見るだけでなく、経路や機能に属する遺伝子群が全体として偏っているかを見ます。
+
+GSEA plotでは、横軸に遺伝子ランキング、縦軸にエンリッチメントスコアが示されることがあります。遺伝子セットに含まれる遺伝子がランキングのどこに多いかを確認します。
+
+読み取るときは、どの比較のランキングか、遺伝子セット名、NES、FDR、leading edgeを確認します。経路名だけで結論を決めず、どの遺伝子が寄与しているかも見ます。
 
 ## よくある誤解
 

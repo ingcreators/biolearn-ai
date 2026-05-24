@@ -19,7 +19,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -32,19 +31,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 UMAPやt-SNEは、多数の特徴を持つ細胞やサンプルを2次元に配置し、クラスタや連続性を見るFigureです。
-
-## 基礎解説
-
-[single-cell RNA-seq](/glossary/single-cell-rna-seq/)の論文では、[UMAP](/glossary/umap/)やt-SNEの図がよく登場します。多くの場合、1つの点が1つの細胞を表し、似た発現パターンを持つ細胞が近くに配置されます。
-
-色は細胞タイプ、クラスタ、サンプル条件、遺伝子発現量などを表します。まず、点が何を表すか、色が何を表すかを確認します。
-
-UMAPやt-SNEは可視化の方法であり、距離や形をそのまま物理的な距離として読むものではありません。[クラスタリング](/glossary/clustering/)の結果やクラスタの意味は、[マーカー遺伝子](/glossary/marker-gene/)、注釈方法、サンプル情報と合わせて解釈します。
-
-## 図解
 
 <LessonFigure
   src="/figures/umap-tsne-concept.jpg"
@@ -53,13 +40,11 @@ UMAPやt-SNEは可視化の方法であり、距離や形をそのまま物理�
   caption="点の単位、色の意味、クラスタ注釈、サンプル由来を確認し、形を読みすぎないようにします。"
 />
 
-<TermBox
-  term="UMAP"
-  english="Uniform Manifold Approximation and Projection"
-  abbreviation="UMAP"
->
-  高次元データを低次元に配置して、全体の構造を見やすくする可視化手法です。
-</TermBox>
+[single-cell RNA-seq](/glossary/single-cell-rna-seq/)の論文では、[UMAP](/glossary/umap/)やt-SNEの図がよく登場します。多くの場合、1つの点が1つの細胞を表し、似た発現パターンを持つ細胞が近くに配置されます。
+
+色は細胞タイプ、クラスタ、サンプル条件、遺伝子発現量などを表します。まず、点が何を表すか、色が何を表すかを確認します。
+
+UMAPやt-SNEは可視化の方法であり、距離や形をそのまま物理的な距離として読むものではありません。[クラスタリング](/glossary/clustering/)の結果やクラスタの意味は、[マーカー遺伝子](/glossary/marker-gene/)、注釈方法、サンプル情報と合わせて解釈します。
 
 ## よくある誤解
 

@@ -22,7 +22,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -35,11 +34,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 PCRは、特定のDNA領域を試験管内で増やす方法です。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/pcr-concept.jpg"
+  alt="PCRチューブの中でDNAがほどけ、プライマーが結合し、目的領域のコピーが増える様子を示す教材イラスト"
+  title="PCRは目的のDNA領域を繰り返し増やす方法"
+  caption="温度変化を利用して、変性、プライマー結合、伸長を繰り返し、特定のDNA領域を増幅します。"
+/>
 
 PCRでは、目的のDNA領域をはさむプライマー、DNAポリメラーゼ、材料となるヌクレオチドを使います。温度を変化させながら、DNAをほどく変性、プライマーを結合させるアニーリング、新しいDNA鎖を伸ばす伸長を繰り返します。
 
@@ -80,19 +82,6 @@ PCRそのものはMethodsに書かれることが多いですが、結果はゲ�
 - シーケンシング前処理として使われる場合は、どの領域を増幅したかをMethodsで確認します。
 
 Figureだけではプライマーや増幅条件が分からないため、[Figure legend](/figures/figure-legend/)とMethodsを合わせて読みます。
-
-## 図解
-
-<LessonFigure
-  src="/figures/pcr-concept.jpg"
-  alt="PCRチューブの中でDNAがほどけ、プライマーが結合し、目的領域のコピーが増える様子を示す教材イラスト"
-  title="PCRは目的のDNA領域を繰り返し増やす方法"
-  caption="温度変化を利用して、変性、プライマー結合、伸長を繰り返し、特定のDNA領域を増幅します。"
-/>
-
-<TermBox term="PCR" english="polymerase chain reaction" abbreviation="PCR">
-  特定のDNA領域を多数コピーする実験手法です。
-</TermBox>
 
 ## 英語表記と略語
 

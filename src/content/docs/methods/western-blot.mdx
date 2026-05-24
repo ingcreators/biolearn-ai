@@ -23,7 +23,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -36,11 +35,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 Western blotは、特定のタンパク質を抗体で検出し、条件間で量や修飾の違いを見る実験です。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/western-blot-concept.jpg"
+  alt="Western blotでタンパク質をバンドとして検出し、定量グラフへつなげる流れを示す概念図"
+  title="Western blotは特定のタンパク質をバンドとして検出する"
+  caption="目的タンパク質のバンドを、ローディングコントロールや定量結果と合わせて読みます。"
+/>
 
 Western blotでは、サンプル中のタンパク質を大きさで分け、膜に移してから抗体で目的タンパク質を検出します。検出されたタンパク質は、バンドとして表示されます。
 
@@ -51,19 +53,6 @@ Western blotでは、サンプル中のタンパク質を大きさで分け、�
 ## なぜ重要か
 
 Western blotは、RNAや遺伝子発現の変化がタンパク質レベルでも見えるかを確認する場面でよく使われます。また、リン酸化などのタンパク質修飾を見るFigureにも登場します。
-
-## 図解
-
-<LessonFigure
-  src="/figures/western-blot-concept.jpg"
-  alt="Western blotでタンパク質をバンドとして検出し、定量グラフへつなげる流れを示す概念図"
-  title="Western blotは特定のタンパク質をバンドとして検出する"
-  caption="目的タンパク質のバンドを、ローディングコントロールや定量結果と合わせて読みます。"
-/>
-
-<TermBox term="Western blot" english="Western blot">
-  特定のタンパク質を抗体で検出する実験手法です。
-</TermBox>
 
 ## 英語表記と略語
 

@@ -22,7 +22,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -35,21 +34,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 Lollipop plotは、遺伝子、タンパク質、ゲノム領域などの位置に沿って、変異やイベントを棒と丸で示すFigureです。
-
-## 基礎解説
-
-生命科学論文では、変異がタンパク質のどの位置に多いか、特定のドメインに集中しているかを示すためにLollipop plotが使われることがあります。横軸はアミノ酸位置、塩基位置、またはゲノム座標を表します。
-
-丸の大きさ、高さ、色は、変異の頻度、種類、サンプル群、影響予測などを表すことがあります。まずFigure legendで、何が大きさで、何が色で、何が棒の高さなのかを確認します。
-
-変異が特定領域に集まって見えると、その領域が重要そうに見えます。ただし、サンプルの偏り、検出方法、表示対象、ドメイン注釈の違いで見え方は変わります。位置の集中は手がかりであり、それだけで機能影響や原因を証明するものではありません。
-
-Lollipop plotでは、論文によって「mutation」「variant」「alteration」などの言葉が使い分けられます。まず [遺伝的変異](/glossary/genetic-variant/) と [変異](/glossary/mutation/) の違いを確認してから、Figure legendの定義に合わせて読みます。
-
-## 図解
 
 <LessonFigure
   src="/figures/how-to-read-lollipop-plot-concept.jpg"
@@ -58,9 +43,13 @@ Lollipop plotでは、論文によって「mutation」「variant」「alteration
   caption="横軸の対象、ドメイン、丸の大きさや色の意味を確認してから、変異の集中を慎重に解釈します。"
 />
 
-<TermBox term="Lollipop plot" english="lollipop plot">
-  位置に沿ってイベントを棒と丸で示す図です。変異の分布をタンパク質上に示すときによく使われます。
-</TermBox>
+生命科学論文では、変異がタンパク質のどの位置に多いか、特定のドメインに集中しているかを示すためにLollipop plotが使われることがあります。横軸はアミノ酸位置、塩基位置、またはゲノム座標を表します。
+
+丸の大きさ、高さ、色は、変異の頻度、種類、サンプル群、影響予測などを表すことがあります。まずFigure legendで、何が大きさで、何が色で、何が棒の高さなのかを確認します。
+
+変異が特定領域に集まって見えると、その領域が重要そうに見えます。ただし、サンプルの偏り、検出方法、表示対象、ドメイン注釈の違いで見え方は変わります。位置の集中は手がかりであり、それだけで機能影響や原因を証明するものではありません。
+
+Lollipop plotでは、論文によって「mutation」「variant」「alteration」などの言葉が使い分けられます。まず [遺伝的変異](/glossary/genetic-variant/) と [変異](/glossary/mutation/) の違いを確認してから、Figure legendの定義に合わせて読みます。
 
 ## よくある誤解
 

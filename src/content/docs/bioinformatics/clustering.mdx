@@ -19,7 +19,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -32,19 +31,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 クラスタリングは、特徴が似ているデータ点をグループに分ける探索的な解析です。
-
-## 基礎解説
-
-single-cell解析では、各点が1つの細胞を表し、各細胞は多数の遺伝子発現量を持っています。クラスタリングは、発現パターンが似ている細胞を近いグループとしてまとめるために使われます。
-
-クラスタは、データから見つかったまとまりです。クラスタ名そのものが細胞型を証明するわけではありません。細胞型として解釈するには、マーカー遺伝子、既知の知識、サンプル条件、Methodsの注釈方法を合わせて確認します。
-
-また、クラスタリング結果は前処理、使う遺伝子、次元削減、近傍の設定、解像度などで変わります。論文を読むときは、クラスタがいくつあるかだけでなく、どの条件で分けたか、分け方が主張にどう使われているかを確認します。
-
-## 図解
 
 <LessonFigure
   src="/figures/clustering-concept.jpg"
@@ -53,9 +40,11 @@ single-cell解析では、各点が1つの細胞を表し、各細胞は多数�
   caption="クラスタはデータ上のまとまりであり、細胞型名を付けるには追加の根拠が必要です。"
 />
 
-<TermBox term="クラスタリング" english="clustering">
-  データ点どうしの似ている度合いをもとに、複数のグループに分ける解析です。
-</TermBox>
+single-cell解析では、各点が1つの細胞を表し、各細胞は多数の遺伝子発現量を持っています。クラスタリングは、発現パターンが似ている細胞を近いグループとしてまとめるために使われます。
+
+クラスタは、データから見つかったまとまりです。クラスタ名そのものが細胞型を証明するわけではありません。細胞型として解釈するには、マーカー遺伝子、既知の知識、サンプル条件、Methodsの注釈方法を合わせて確認します。
+
+また、クラスタリング結果は前処理、使う遺伝子、次元削減、近傍の設定、解像度などで変わります。論文を読むときは、クラスタがいくつあるかだけでなく、どの条件で分けたか、分け方が主張にどう使われているかを確認します。
 
 ## よくある誤解
 

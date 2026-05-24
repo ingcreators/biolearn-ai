@@ -107,14 +107,15 @@ Figure 読解に加えて、Abstract、Introduction、Methods、Results、Discus
 分野別カテゴリに置く通常記事です。新規 Lesson は原則として次の構成を持ちます。
 
 1. この記事で学ぶこと
-2. 要点
-3. 基礎解説
-4. 図解
-5. 英語表記と略語
-6. よくある誤解
-7. 重要用語
-8. 確認問題
-9. 次に読む記事
+2. 見出しなしの短い概要
+3. 見出しなしの `LessonFigure`
+4. 見出しなしの基礎解説
+5. なぜ重要か
+6. 英語表記と略語
+7. よくある誤解
+8. 重要用語
+9. 確認問題
+10. 次に読む記事
 
 新規 Lesson には `LessonFigure` を含め、画像は `public/figures/{lesson-slug}-concept.jpg` に置きます。画像内の文字は最小限にし、説明は日本語の `alt`、`title`、`caption` に置きます。
 

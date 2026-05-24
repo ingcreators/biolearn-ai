@@ -24,7 +24,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -37,11 +36,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 Methodsは、論文の結果がどのサンプル、実験、解析、統計から作られたかを確認するためのセクションです。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/how-to-read-methods-concept.jpg"
+  alt="サンプル、実験条件、解析、統計を確認してResultsやFigureへ戻る読み方を示す概念図"
+  title="Methodsは結果の作られ方を確認する場所"
+  caption="サンプル、条件、測定、解析を分けて確認し、FigureやResultsの解釈に戻します。"
+/>
 
 Methodsには細かい条件が多く書かれているため、最初からすべてを完全に理解しようとすると読み進めにくくなります。まずは、何を使い、何を比べ、どの方法で測り、どの解析でまとめたかを押さえます。
 
@@ -54,19 +56,6 @@ Methodsを読む目的は、手順を暗記することではありません。R
 同じFigureに見えても、サンプル数、対照群、測定方法、正規化、統計検定が違えば、読み取れる意味は変わります。Methodsを読むと、結果の強さや限界を判断するための材料が得られます。
 
 Methodsは診断や治療の手順を示すものではなく、研究でどのように証拠を作ったかを説明する部分として読みます。
-
-## 図解
-
-<LessonFigure
-  src="/figures/how-to-read-methods-concept.jpg"
-  alt="サンプル、実験条件、解析、統計を確認してResultsやFigureへ戻る読み方を示す概念図"
-  title="Methodsは結果の作られ方を確認する場所"
-  caption="サンプル、条件、測定、解析を分けて確認し、FigureやResultsの解釈に戻します。"
-/>
-
-<TermBox term="Methods" english="Methods">
-  論文の実験条件、解析手順、統計方法などを説明するセクションです。
-</TermBox>
 
 ## 英語表記と略語
 

@@ -24,7 +24,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -37,17 +36,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 この演習では、実在論文ではなくBioLearn用の架空ケースを使い、single-cell解析論文を読む手順を練習します。
-
-## 架空ケース
-
-ある研究では、条件Aと条件Bの細胞を[single-cell RNA-seq](/glossary/single-cell-rna-seq/)で解析し、細胞集団の構成と[遺伝子発現](/glossary/gene-expression/)の違いを調べたとします。論文の主張は「条件Bでは特定の細胞集団が増え、その集団で応答関連遺伝子が高い」です。
-
-この主張を読むときは、[UMAP](/glossary/umap/)の見た目だけで結論を受け取らず、クラスタ、細胞型注釈、[マーカー遺伝子](/glossary/marker-gene/)、条件ごとの細胞数、差次的発現、Methodsの前処理を順に確認します。
-
-## 図解
 
 <LessonFigure
   src="/figures/walkthrough-single-cell-concept.jpg"
@@ -56,13 +45,11 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   caption="UMAPの形、クラスタ名、マーカー、条件ごとの細胞割合、差次的発現、前処理条件を行き来して確認します。"
 />
 
-<TermBox
-  term="single-cell RNA-seq"
-  english="single-cell RNA sequencing"
-  abbreviation="scRNA-seq"
->
-  1細胞ごとのRNA量を測定し、細胞集団の違いや遺伝子発現のばらつきを調べる解析です。
-</TermBox>
+## 架空ケース
+
+ある研究では、条件Aと条件Bの細胞を[single-cell RNA-seq](/glossary/single-cell-rna-seq/)で解析し、細胞集団の構成と[遺伝子発現](/glossary/gene-expression/)の違いを調べたとします。論文の主張は「条件Bでは特定の細胞集団が増え、その集団で応答関連遺伝子が高い」です。
+
+この主張を読むときは、[UMAP](/glossary/umap/)の見た目だけで結論を受け取らず、クラスタ、細胞型注釈、[マーカー遺伝子](/glossary/marker-gene/)、条件ごとの細胞数、差次的発現、Methodsの前処理を順に確認します。
 
 ## 読む順番
 

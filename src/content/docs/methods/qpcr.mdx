@@ -25,7 +25,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -38,11 +37,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 qPCRは、PCRによる増幅の進み方をリアルタイムに測り、試料中の核酸量を比べる方法です。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/qpcr-concept.jpg"
+  alt="複数の試料から得た蛍光シグナルがPCRサイクルに応じて増え、しきい値を超えるタイミングを比較する概念図"
+  title="qPCRは増幅が検出されるタイミングを比較する"
+  caption="試料中の対象核酸が多いほど、蛍光シグナルは早いサイクルでしきい値を超えやすくなります。"
+/>
 
 qPCRは quantitative PCR の略で、PCRの増幅過程を蛍光シグナルとして追跡します。通常のPCRが「増幅産物があるか」を確認する場面で使われるのに対し、qPCRでは増幅がどのサイクルで検出可能になるかを見ます。
 
@@ -66,19 +68,6 @@ qPCR Figureでは、棒グラフだけでなく、増幅曲線、Ct値、正規�
 - Figure legendでは、比較条件、参照遺伝子、検定方法を探します。
 
 読み方は[qPCRプロット](/figures/how-to-read-qpcr-plot/)と[棒グラフ](/figures/how-to-read-bar-plot/)に戻ると整理しやすくなります。
-
-## 図解
-
-<LessonFigure
-  src="/figures/qpcr-concept.jpg"
-  alt="複数の試料から得た蛍光シグナルがPCRサイクルに応じて増え、しきい値を超えるタイミングを比較する概念図"
-  title="qPCRは増幅が検出されるタイミングを比較する"
-  caption="試料中の対象核酸が多いほど、蛍光シグナルは早いサイクルでしきい値を超えやすくなります。"
-/>
-
-<TermBox term="qPCR" english="quantitative PCR" abbreviation="qPCR">
-  PCRの増幅過程を蛍光で追跡し、核酸量を比較する実験手法です。
-</TermBox>
 
 ## 英語表記と略語
 

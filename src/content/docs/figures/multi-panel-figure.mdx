@@ -21,7 +21,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -34,19 +33,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 複数パネルFigureは、1枚の図の中で実験の流れ、代表画像、定量結果、追加検証を組み合わせて示すことがあります。
-
-## 基礎解説
-
-生命科学論文のFigureでは、`Figure 1A`、`Figure 1B`、`Figure 1C` のように複数のパネルが並びます。各パネルは独立した小図でありながら、全体として1つの主張を支える構成になっています。
-
-読み始めるときは、まずFigure legendの冒頭や本文で、このFigure全体が何を示したいのかを確認します。そのうえで、各パネルが「実験デザイン」「代表画像」「定量グラフ」「追加実験」「統計的な比較」のどれに近い役割かを見分けます。
-
-1つの見栄えのよい画像だけで結論を決めず、定量結果、反復、対照、別手法での確認が同じ方向を示しているかを確認します。
-
-## 図解
 
 <LessonFigure
   src="/figures/multi-panel-figure-concept.jpg"
@@ -55,9 +42,11 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   caption="代表画像、定量、対照、追加検証がどのように主張を支えているかを確認します。"
 />
 
-<TermBox term="パネル" english="panel">
-  1つのFigureを構成する小さな図やグラフです。A、B、Cのような文字で区別されることが多いです。
-</TermBox>
+生命科学論文のFigureでは、`Figure 1A`、`Figure 1B`、`Figure 1C` のように複数のパネルが並びます。各パネルは独立した小図でありながら、全体として1つの主張を支える構成になっています。
+
+読み始めるときは、まずFigure legendの冒頭や本文で、このFigure全体が何を示したいのかを確認します。そのうえで、各パネルが「実験デザイン」「代表画像」「定量グラフ」「追加実験」「統計的な比較」のどれに近い役割かを見分けます。
+
+1つの見栄えのよい画像だけで結論を決めず、定量結果、反復、対照、別手法での確認が同じ方向を示しているかを確認します。
 
 ## よくある誤解
 

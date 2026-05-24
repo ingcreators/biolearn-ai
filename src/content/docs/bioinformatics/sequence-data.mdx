@@ -17,7 +17,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -30,11 +29,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 シーケンスデータは、DNAやRNA由来の塩基配列を読み取って得られるデータです。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/sequence-data-concept.jpg"
+  alt="シーケンサーから短いリードが得られ、品質確認を経て参照ゲノムに対応づけられる様子を示す教材イラスト"
+  title="シーケンスデータは多くの短いリードから始まる"
+  caption="読み取られた配列は品質を確認し、必要な前処理を行ってから参照配列などに対応づけます。"
+/>
 
 シーケンサーは、試料から作ったライブラリを読み取り、多数の短い配列情報を出力します。この短い配列をリードと呼びます。各塩基には読み取りの信頼度を表す品質スコアが付くことがあります。
 
@@ -65,19 +67,6 @@ FASTQファイルには、リードの塩基配列と品質スコアが含まれ
 ## 論文や実験ではどう出てくるか
 
 シーケンスデータは、FASTQ、BAM、VCF、カウント行列などの形式で扱われます。論文では、リード数、マッピング率、カバレッジ、品質管理図、データベース登録番号として示されることがあります。
-
-## 図解
-
-<LessonFigure
-  src="/figures/sequence-data-concept.jpg"
-  alt="シーケンサーから短いリードが得られ、品質確認を経て参照ゲノムに対応づけられる様子を示す教材イラスト"
-  title="シーケンスデータは多くの短いリードから始まる"
-  caption="読み取られた配列は品質を確認し、必要な前処理を行ってから参照配列などに対応づけます。"
-/>
-
-<TermBox term="シーケンスデータ" english="sequence data">
-  DNAやRNAの塩基配列を読み取って得られるデータです。
-</TermBox>
 
 ## 英語表記と略語
 

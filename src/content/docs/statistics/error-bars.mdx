@@ -16,7 +16,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -29,11 +28,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 エラーバーは、データのばらつきや平均値の不確かさを示す図上の表示です。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/error-bars-concept.jpg"
+  alt="棒グラフの上にエラーバーがあり、平均値とばらつきや不確かさを示す概念図"
+  title="エラーバーは平均値だけでは見えない情報を示す"
+  caption="SD、SEM、信頼区間など、何を示すエラーバーかはFigure legendで確認します。"
+/>
 
 棒グラフや折れ線グラフには、上下に線が伸びたエラーバーが付くことがあります。ただし、同じ見た目でも意味は論文によって異なります。
 
@@ -48,19 +50,6 @@ Figureを読むときは、エラーバーが何を表しているかをFigure l
 ## Figureで見る場所
 
 エラーバーは、[棒グラフの読み方](/figures/how-to-read-bar-plot/)や[Forest plotの読み方](/figures/how-to-read-forest-plot/)で特に重要です。棒グラフでは平均の周りのばらつきや不確かさ、Forest plotでは推定値の信頼区間として読むことがあります。
-
-## 図解
-
-<LessonFigure
-  src="/figures/error-bars-concept.jpg"
-  alt="棒グラフの上にエラーバーがあり、平均値とばらつきや不確かさを示す概念図"
-  title="エラーバーは平均値だけでは見えない情報を示す"
-  caption="SD、SEM、信頼区間など、何を示すエラーバーかはFigure legendで確認します。"
-/>
-
-<TermBox term="エラーバー" english="error bar">
-  グラフ上で、ばらつきや推定の不確かさを示す線です。
-</TermBox>
 
 ## 英語表記と略語
 

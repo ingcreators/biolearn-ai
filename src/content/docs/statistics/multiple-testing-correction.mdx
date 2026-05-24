@@ -18,7 +18,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -31,11 +30,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 多重検定補正は、多数の検定を同時に行うと偶然小さいp値が出やすくなる問題を調整する考え方です。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/multiple-testing-correction-concept.jpg"
+  alt="多数の検定を行うと偶然小さいp値が混ざりやすく、補正して候補を慎重に選ぶ様子を示す概念図"
+  title="多くの検定では偶然の有意も増える"
+  caption="オミクス解析では、多数の遺伝子を同時に調べるため、補正済みp値やFDRを確認します。"
+/>
 
 1つの検定だけなら、p値が小さい結果は比較的珍しい出来事として扱えます。しかし、何千、何万もの遺伝子を同時に調べると、偶然小さいp値が出る遺伝子も増えます。
 
@@ -50,19 +52,6 @@ RNA-seqの差次的発現解析では、多数の遺伝子について条件間�
 ## Figureで見る場所
 
 多重検定補正は、[Volcano plotの読み方](/figures/how-to-read-volcano-plot/)や[Pathway enrichment plotの読み方](/figures/how-to-read-pathway-enrichment/)で重要です。多数の遺伝子や経路を同時に見ている場合、p値そのものか補正済みp値かを確認します。
-
-## 図解
-
-<LessonFigure
-  src="/figures/multiple-testing-correction-concept.jpg"
-  alt="多数の検定を行うと偶然小さいp値が混ざりやすく、補正して候補を慎重に選ぶ様子を示す概念図"
-  title="多くの検定では偶然の有意も増える"
-  caption="オミクス解析では、多数の遺伝子を同時に調べるため、補正済みp値やFDRを確認します。"
-/>
-
-<TermBox term="多重検定補正" english="multiple testing correction">
-  多数の検定を行うと偶然の有意が増える問題を調整する方法です。
-</TermBox>
 
 ## 英語表記と略語
 

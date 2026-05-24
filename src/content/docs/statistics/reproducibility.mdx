@@ -19,7 +19,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -32,21 +31,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 再現性は、同じ問いに対して、同じ手順や独立した条件で似た結果が得られるかを考える視点です。
-
-## 基礎解説
-
-生命科学では、1回の実験や1つのデータセットだけで結論を強く読みすぎないことが大切です。測定のばらつき、サンプルの違い、解析条件、実験日の違いなどによって、結果は変わり得ます。
-
-再現性を見るときは、技術的反復で測定手順が安定しているか、生物学的反復で個体やサンプル間でも傾向が見えるか、別の実験やデータセットでも同じ方向の結果が得られるかを分けて考えます。
-
-## なぜ重要か
-
-Figureがきれいでも、同じ条件で繰り返したときに安定するのか、別のサンプルでも同じ傾向が見えるのかは別の問題です。Discussionでは、著者が再現性や検証の範囲をどう述べているかを確認します。
-
-## 図解
 
 <LessonFigure
   src="/figures/reproducibility-concept.jpg"
@@ -55,9 +40,13 @@ Figureがきれいでも、同じ条件で繰り返したときに安定する�
   caption="技術的反復、生物学的反復、独立した検証を分けて読みます。"
 />
 
-<TermBox term="再現性" english="reproducibility">
-  同じ問いに対して、同じような結果が繰り返し得られるかを考える性質です。
-</TermBox>
+生命科学では、1回の実験や1つのデータセットだけで結論を強く読みすぎないことが大切です。測定のばらつき、サンプルの違い、解析条件、実験日の違いなどによって、結果は変わり得ます。
+
+再現性を見るときは、技術的反復で測定手順が安定しているか、生物学的反復で個体やサンプル間でも傾向が見えるか、別の実験やデータセットでも同じ方向の結果が得られるかを分けて考えます。
+
+## なぜ重要か
+
+Figureがきれいでも、同じ条件で繰り返したときに安定するのか、別のサンプルでも同じ傾向が見えるのかは別の問題です。Discussionでは、著者が再現性や検証の範囲をどう述べているかを確認します。
 
 ## 英語表記と略語
 

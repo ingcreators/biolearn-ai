@@ -21,7 +21,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -34,11 +33,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 免疫染色画像は、特定のタンパク質が細胞や組織のどこに見えるかを読むFigureです。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/how-to-read-immunostaining-concept.jpg"
+  alt="免疫染色画像で細胞内の蛍光シグナルの局在と定量を確認する概念図"
+  title="免疫染色画像はシグナルの場所と条件を読む"
+  caption="色の意味、局在、対照、撮影条件、定量方法をFigure legendとMethodsで確認します。"
+/>
 
 免疫染色画像では、蛍光や発色のシグナルが目的タンパク質の存在場所を示します。まず、どの色が何を表すか、核、細胞膜、細胞質、細胞小器官のどこにシグナルがあるかを確認します。
 
@@ -54,19 +56,6 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 - 背景シグナルや非特異的反応は、[陽性対照と陰性対照](/methods/positive-negative-control/)の観点で確認します。
 - 代表画像と定量グラフの関係は、[顕微鏡画像](/figures/how-to-read-microscopy-image/)と[棒グラフ](/figures/how-to-read-bar-plot/)を行き来して読みます。
 - 視野数や細胞数だけでなく、独立実験数を[生物学的反復と技術的反復](/statistics/biological-technical-replicates/)で確認します。
-
-## 図解
-
-<LessonFigure
-  src="/figures/how-to-read-immunostaining-concept.jpg"
-  alt="免疫染色画像で細胞内の蛍光シグナルの局在と定量を確認する概念図"
-  title="免疫染色画像はシグナルの場所と条件を読む"
-  caption="色の意味、局在、対照、撮影条件、定量方法をFigure legendとMethodsで確認します。"
-/>
-
-<TermBox term="免疫染色画像" english="immunostaining image">
-  抗体で可視化した分子の位置や強さを示す顕微鏡画像です。
-</TermBox>
 
 ## よくある誤解
 

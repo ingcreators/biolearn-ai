@@ -19,7 +19,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -32,11 +31,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 フローサイトメトリーFigureは、細胞集団を点の分布とゲートで示すFigureです。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/how-to-read-flow-cytometry-concept.jpg"
+  alt="フローサイトメトリーFigureで散布図のゲートと陽性率グラフを確認する概念図"
+  title="フローサイトメトリーはゲートと陽性率を読む"
+  caption="軸、ゲート、対照、陽性率、独立サンプル数を確認して細胞集団の変化を読みます。"
+/>
 
 フローサイトメトリーでは、1つの点が1つの細胞を表すことが多いです。散布図上で、どの細胞集団を解析対象にするかを囲む操作をゲーティングと呼びます。
 
@@ -52,19 +54,6 @@ Figureを見るときは、まず軸が何を表すかを確認します。FSC�
 - ゲートや陽性率の基準は、[陽性対照と陰性対照](/methods/positive-negative-control/)を合わせて読むと整理できます。
 - 点の分布は[散布図](/figures/how-to-read-scatter-plot/)として読み、軸が何を表すかは[軸・ラベル・単位](/figures/axis-label-unit/)で確認します。
 - 点の数と独立サンプル数は、[生物学的反復と技術的反復](/statistics/biological-technical-replicates/)で区別します。
-
-## 図解
-
-<LessonFigure
-  src="/figures/how-to-read-flow-cytometry-concept.jpg"
-  alt="フローサイトメトリーFigureで散布図のゲートと陽性率グラフを確認する概念図"
-  title="フローサイトメトリーはゲートと陽性率を読む"
-  caption="軸、ゲート、対照、陽性率、独立サンプル数を確認して細胞集団の変化を読みます。"
-/>
-
-<TermBox term="ゲート" english="gate">
-  フローサイトメトリーで、解析対象にする細胞集団を選ぶ範囲です。
-</TermBox>
 
 ## よくある誤解
 

@@ -18,7 +18,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -31,11 +30,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 差次的発現解析は、条件の違いによって遺伝子発現が変わっているかを調べる解析です。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/differential-expression-concept.jpg"
+  alt="2つの条件の細胞やサンプルを比べ、発現量の違いをグラフや解析結果として整理する様子を示す教材イラスト"
+  title="差次的発現解析は条件間の発現量の違いを見る"
+  caption="サンプル間の測定量を整えたうえで、どの遺伝子の発現が条件間で異なるかを統計的に調べます。"
+/>
 
 RNA-seqでは、各遺伝子に対応するリード数を数え、発現量の指標を作ります。ただし、試料ごとの総リード数や技術的な違いがあるため、比較の前に正規化が必要です。
 
@@ -66,23 +68,6 @@ RNA-seqでは、各遺伝子に対応するリード数を数え、発現量の�
 ## 論文や実験ではどう出てくるか
 
 差次的発現解析は、RNA-seq論文の結果でよく登場します。ボルケーノプロット、MAプロット、ヒートマップ、発現変動遺伝子リスト、GO解析やパスウェイ解析の前段階として示されることがあります。
-
-## 図解
-
-<LessonFigure
-  src="/figures/differential-expression-concept.jpg"
-  alt="2つの条件の細胞やサンプルを比べ、発現量の違いをグラフや解析結果として整理する様子を示す教材イラスト"
-  title="差次的発現解析は条件間の発現量の違いを見る"
-  caption="サンプル間の測定量を整えたうえで、どの遺伝子の発現が条件間で異なるかを統計的に調べます。"
-/>
-
-<TermBox
-  term="差次的発現解析"
-  english="differential expression analysis"
-  abbreviation="DEA"
->
-  条件間で遺伝子発現に差があるかを統計的に調べる解析です。
-</TermBox>
 
 ## 英語表記と略語
 

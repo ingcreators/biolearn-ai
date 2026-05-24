@@ -21,7 +21,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -34,17 +33,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 この演習では、実在論文ではなくBioLearn用の架空ケースを使い、Western blotを含む論文を読む手順を練習します。
-
-## 架空ケース
-
-ある研究では、条件Bでタンパク質Xが増えるかを調べたとします。Figureには、Western blotのバンド画像、ローディングコントロール、バンド強度の定量グラフが示されています。
-
-この主張を読むときは、まずバンドが予想される位置に出ているか、条件間で濃さがどう違うか、ローディングコントロールが比較可能かを確認します。
-
-## 図解
 
 <LessonFigure
   src="/figures/walkthrough-western-blot-concept.jpg"
@@ -53,9 +42,11 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   caption="バンド位置、濃さ、ローディングコントロール、定量方法、反復をMethodsと合わせて確認します。"
 />
 
-<TermBox term="ローディングコントロール" english="loading control">
-  各レーンに入ったサンプル量の違いを補正するための基準です。
-</TermBox>
+## 架空ケース
+
+ある研究では、条件Bでタンパク質Xが増えるかを調べたとします。Figureには、Western blotのバンド画像、ローディングコントロール、バンド強度の定量グラフが示されています。
+
+この主張を読むときは、まずバンドが予想される位置に出ているか、条件間で濃さがどう違うか、ローディングコントロールが比較可能かを確認します。
 
 ## 読む順番
 

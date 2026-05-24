@@ -25,7 +25,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -38,11 +37,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 批判的に読むとは、論文を否定的に読むことではありません。主張がどの証拠に支えられ、どこに限界があるかを確かめながら読むことです。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/critical-reading-concept.jpg"
+  alt="論文の主張をFigure、Methods、限界、代替説明に戻して確認する概念図"
+  title="批判的読解は主張と証拠の距離を見る"
+  caption="主張をFigureとMethodsに戻し、限界や代替説明が残っていないかを確認します。"
+/>
 
 論文には、データから直接言えること、著者の解釈、今後の仮説が混ざっています。批判的に読むときは、まず本文の主張をFigureやMethodsに戻し、証拠の強さを確認します。
 
@@ -64,19 +66,6 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 | 一般化   | 結論がデータの範囲を超えていないか                      | 「この実験では言えること」に戻して読む |
 
 バイアス、交絡、再現性、研究の限界は、同じ主張を別角度から点検するための読み方です。結論を否定するためではなく、結論の強さと範囲を見積もるために使います。
-
-## 図解
-
-<LessonFigure
-  src="/figures/critical-reading-concept.jpg"
-  alt="論文の主張をFigure、Methods、限界、代替説明に戻して確認する概念図"
-  title="批判的読解は主張と証拠の距離を見る"
-  caption="主張をFigureとMethodsに戻し、限界や代替説明が残っていないかを確認します。"
-/>
-
-<TermBox term="批判的読解" english="critical reading">
-  主張、証拠、限界、代替説明を分けて確認しながら読む方法です。
-</TermBox>
 
 ## よくある誤解
 

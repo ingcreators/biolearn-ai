@@ -17,7 +17,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -30,11 +29,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 RNAは、DNAの情報を使う場面で働く、柔軟な役割を持つ分子です。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/rna-concept.jpg"
+  alt="DNAから作られたRNAが情報を運び、タンパク質合成を支える様子を示す教材イラスト"
+  title="RNAは保存された情報を働く情報へつなぐ"
+  caption="RNAはDNAの情報を写し取り、mRNA、tRNA、rRNAなどとして細胞内の働きを支えます。"
+/>
 
 RNAはリボ核酸の略です。DNAと似ていますが、一般に一本鎖で働くことが多く、塩基としてTの代わりにUを使います。タンパク質の材料情報を運ぶmRNA、リボソームの構成要素であるrRNA、アミノ酸を運ぶtRNAなど、複数の種類があります。
 
@@ -65,19 +67,6 @@ mRNAは、タンパク質を作るための情報をリボソームへ伝えま�
 ## 論文や実験ではどう出てくるか
 
 RNAは、RT-qPCR、RNA-seq、ノーザンブロット、in situ hybridizationなどで登場します。論文では「この遺伝子のmRNA発現が上昇した」「RNA-seqで発現変動遺伝子を同定した」のように、細胞状態を読むための指標として使われることが多いです。
-
-## 図解
-
-<LessonFigure
-  src="/figures/rna-concept.jpg"
-  alt="DNAから作られたRNAが情報を運び、タンパク質合成を支える様子を示す教材イラスト"
-  title="RNAは保存された情報を働く情報へつなぐ"
-  caption="RNAはDNAの情報を写し取り、mRNA、tRNA、rRNAなどとして細胞内の働きを支えます。"
-/>
-
-<TermBox term="RNA" english="ribonucleic acid" abbreviation="RNA">
-  DNAの情報を読み出したり、タンパク質合成や発現制御に関わったりする分子です。
-</TermBox>
 
 ## 英語表記と略語
 

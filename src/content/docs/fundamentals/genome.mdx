@@ -17,7 +17,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -30,11 +29,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 ゲノムは、ある生物が持つ遺伝情報の全体です。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/genome-concept.jpg"
+  alt="核内の染色体からDNAへ拡大し、遺伝子や調節領域を含むゲノム全体を示す教材イラスト"
+  title="ゲノムは遺伝情報の全体"
+  caption="ゲノムには遺伝子だけでなく、調節領域やまだ機能が十分に分かっていない領域も含まれます。"
+/>
 
 ゲノムには、タンパク質をコードする遺伝子だけでなく、遺伝子発現を調節する領域や反復配列なども含まれます。ヒトの細胞では、核の中の染色体に多くのDNAが収められています。
 
@@ -65,19 +67,6 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 ## 論文や実験ではどう出てくるか
 
 ゲノムは、全ゲノムシーケンシング、エクソーム解析、GWAS、比較ゲノム解析などで登場します。論文では、変異の位置、遺伝子の周辺領域、染色体上の配置、集団間の違いなどを図や表で示すことがあります。ゲノムデータの解釈では、統計的な関連と生物学的な機能を分けて考えることが重要です。
-
-## 図解
-
-<LessonFigure
-  src="/figures/genome-concept.jpg"
-  alt="核内の染色体からDNAへ拡大し、遺伝子や調節領域を含むゲノム全体を示す教材イラスト"
-  title="ゲノムは遺伝情報の全体"
-  caption="ゲノムには遺伝子だけでなく、調節領域やまだ機能が十分に分かっていない領域も含まれます。"
-/>
-
-<TermBox term="ゲノム" english="genome">
-  ある生物や細胞が持つ遺伝情報の全体です。研究では、配列だけでなく構造や機能も含めて考えます。
-</TermBox>
 
 ## 英語表記と略語
 

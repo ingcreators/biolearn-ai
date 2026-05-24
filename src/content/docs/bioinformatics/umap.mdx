@@ -19,7 +19,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -32,19 +31,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 UMAPは、高次元データを2次元などに配置し、全体のまとまりやクラスタを見やすくする可視化手法です。
-
-## 基礎解説
-
-single-cell RNA-seqでは、各細胞が多数の遺伝子発現量を持っています。UMAPは、そのような高次元データを2次元の図として表示し、似た発現パターンの細胞が近くに見えるように配置します。
-
-UMAP図では、1つの点が1つの細胞を表すことが多く、色はクラスタ、細胞型、サンプル条件、遺伝子発現量などを表します。まず、点の単位と色の意味を確認します。
-
-UMAPは便利な地図のような図ですが、距離や形をそのまま生物学的距離として読むものではありません。クラスタ名や細胞型名は、マーカー遺伝子、注釈方法、Methodsの設定と合わせて解釈します。
-
-## 図解
 
 <LessonFigure
   src="/figures/umap-concept.jpg"
@@ -53,13 +40,11 @@ UMAPは便利な地図のような図ですが、距離や形をそのまま生�
   caption="点、色、クラスタ名、サンプル由来を確認し、距離や形を読みすぎないようにします。"
 />
 
-<TermBox
-  term="UMAP"
-  english="Uniform Manifold Approximation and Projection"
-  abbreviation="UMAP"
->
-  高次元データを低次元に配置して、全体の構造を見やすくする可視化手法です。
-</TermBox>
+single-cell RNA-seqでは、各細胞が多数の遺伝子発現量を持っています。UMAPは、そのような高次元データを2次元の図として表示し、似た発現パターンの細胞が近くに見えるように配置します。
+
+UMAP図では、1つの点が1つの細胞を表すことが多く、色はクラスタ、細胞型、サンプル条件、遺伝子発現量などを表します。まず、点の単位と色の意味を確認します。
+
+UMAPは便利な地図のような図ですが、距離や形をそのまま生物学的距離として読むものではありません。クラスタ名や細胞型名は、マーカー遺伝子、注釈方法、Methodsの設定と合わせて解釈します。
 
 ## よくある誤解
 

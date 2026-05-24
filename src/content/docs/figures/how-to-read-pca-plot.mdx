@@ -18,7 +18,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -31,19 +30,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 PCAプロットは、多数の変数を持つデータで、サンプル同士の全体的な似ている・違うを可視化するFigureです。
-
-## 基礎解説
-
-PCAは主成分分析（principal component analysis）の略です。[RNA-seq](/glossary/rna-seq/)などでは、各サンプルが多数の遺伝子発現量を持っています。PCAプロットは、その違いを2次元に要約して示す[次元削減](/glossary/dimensionality-reduction/)の代表的な図です。
-
-点はサンプルを表すことが多く、近い点ほど全体的なパターンが似ていると読みます。条件ごとに点がまとまるか、外れたサンプルがないか、[バッチ効果](/glossary/batch-effect/)が見えていないかを確認します。
-
-軸にはPC1、PC2などが使われ、どれくらいのばらつきを説明しているかの割合が書かれることがあります。割合が小さい場合、2次元の図だけで全体を判断しすぎないようにします。
-
-## 図解
 
 <LessonFigure
   src="/figures/pca-plot-concept.jpg"
@@ -52,9 +39,11 @@ PCAは主成分分析（principal component analysis）の略です。[RNA-seq](
   caption="点の単位、条件ごとのまとまり、外れ値、PC1/PC2の説明割合を確認します。"
 />
 
-<TermBox term="PCA" english="principal component analysis" abbreviation="PCA">
-  多数の変数を持つデータのばらつきを、少数の軸に要約する解析です。
-</TermBox>
+PCAは主成分分析（principal component analysis）の略です。[RNA-seq](/glossary/rna-seq/)などでは、各サンプルが多数の遺伝子発現量を持っています。PCAプロットは、その違いを2次元に要約して示す[次元削減](/glossary/dimensionality-reduction/)の代表的な図です。
+
+点はサンプルを表すことが多く、近い点ほど全体的なパターンが似ていると読みます。条件ごとに点がまとまるか、外れたサンプルがないか、[バッチ効果](/glossary/batch-effect/)が見えていないかを確認します。
+
+軸にはPC1、PC2などが使われ、どれくらいのばらつきを説明しているかの割合が書かれることがあります。割合が小さい場合、2次元の図だけで全体を判断しすぎないようにします。
 
 ## よくある誤解
 

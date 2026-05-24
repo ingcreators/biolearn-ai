@@ -50,21 +50,22 @@ npm run build
 各レッスンは次の構成を基本にします。
 
 1. この記事で学ぶこと
-2. 要点
-3. 基礎解説
-4. 図解
-5. 英語表記と略語
-6. よくある誤解
-7. 重要用語
-8. 確認問題
-9. 次に読む記事
+2. 見出しなしの短い概要
+3. 見出しなしの `LessonFigure`
+4. 見出しなしの基礎解説
+5. なぜ重要か
+6. 英語表記と略語
+7. よくある誤解
+8. 重要用語
+9. 確認問題
+10. 次に読む記事
 
 ## Educational components
 
 MDX では次の教材用コンポーネントを利用できます。
 
 - `LearningGoals`
-- `TermBox`
+- `LessonFigure`
 - `Quiz`
 - `NextSteps`
 - `GlossaryTable`

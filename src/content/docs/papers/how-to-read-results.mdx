@@ -21,7 +21,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -34,11 +33,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 Resultsは、実験や解析で得られた証拠の流れを示すセクションです。Figureと対応づけて読むことが重要です。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/how-to-read-results-concept.jpg"
+  alt="Results本文、Figure、Methodsを行き来して証拠を確認する流れを示す概念図"
+  title="ResultsはFigureと対応づけて読む"
+  caption="本文の主張をFigureに戻して確認し、必要に応じてMethodsで条件や解析を確かめます。"
+/>
 
 Results本文は、Figureの順番に沿って結果を説明することが多いです。読むときは、本文の主張をそのまま受け取るのではなく、対応するFigureに戻って、どのデータがその文を支えているかを確認します。
 
@@ -49,19 +51,6 @@ Resultsには著者の解釈が混じることもあります。「示した」�
 ## なぜ重要か
 
 生命科学論文の中心的な証拠は、ResultsとFigureにあります。Discussionだけを読むと、著者の解釈に引っ張られやすくなります。ResultsをFigureに戻して読むことで、主張がどの程度データに支えられているかを確認できます。
-
-## 図解
-
-<LessonFigure
-  src="/figures/how-to-read-results-concept.jpg"
-  alt="Results本文、Figure、Methodsを行き来して証拠を確認する流れを示す概念図"
-  title="ResultsはFigureと対応づけて読む"
-  caption="本文の主張をFigureに戻して確認し、必要に応じてMethodsで条件や解析を確かめます。"
-/>
-
-<TermBox term="Results" english="Results">
-  論文の実験結果や解析結果を、Figureや表とともに示すセクションです。
-</TermBox>
 
 ## 英語表記と略語
 

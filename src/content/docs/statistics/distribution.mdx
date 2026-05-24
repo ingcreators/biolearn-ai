@@ -17,7 +17,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -30,11 +29,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 分布は、データがどの値にどれくらい集まっているかを示す見方です。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/distribution-concept.jpg"
+  alt="同じ平均でも狭い分布と広い分布があり、データの散らばり方が異なることを示す概念図"
+  title="分布は値の集まり方を示す"
+  caption="平均だけでなく、広がり、偏り、外れ値を確認します。"
+/>
 
 同じ平均値を持つデータでも、値の散らばり方は大きく異なることがあります。あるデータは平均の近くに集まり、別のデータは広く散らばるかもしれません。片側に長く伸びる分布や、2つの山を持つ分布もあります。
 
@@ -47,19 +49,6 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 ## Figureで見る場所
 
 分布は、[箱ひげ図の読み方](/figures/how-to-read-box-plot/)や[バイオリンプロットの読み方](/figures/how-to-read-violin-plot/)で直接読みます。平均やp値を見る前に、点の広がり、外れ値、山の数、群内のばらつきを確認すると、Figureの結論を読みすぎにくくなります。
-
-## 図解
-
-<LessonFigure
-  src="/figures/distribution-concept.jpg"
-  alt="同じ平均でも狭い分布と広い分布があり、データの散らばり方が異なることを示す概念図"
-  title="分布は値の集まり方を示す"
-  caption="平均だけでなく、広がり、偏り、外れ値を確認します。"
-/>
-
-<TermBox term="分布" english="distribution">
-  データがどの値の周辺にどれくらい集まっているかを表す見方です。
-</TermBox>
 
 ## 英語表記と略語
 

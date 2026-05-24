@@ -18,7 +18,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -31,21 +30,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 n数は、Figureや統計解析で数えられている単位です。
-
-## 基礎解説
-
-論文のFigureでは、`n = 3`、`n = 6 mice`、`n = 120 cells` のような表記がよく出てきます。大切なのは、nの数字だけでなく、何を数えたnなのかを確認することです。
-
-同じ `n = 100` でも、独立した100個体なのか、1つのサンプル内の100細胞なのかで意味は大きく変わります。細胞数が多いことは情報量を増やしますが、独立した生物学的反復が多いことと同じではありません。
-
-## なぜ重要か
-
-n数を読み違えると、Figureの確からしさを過大に見積もることがあります。p値、エラーバー、信頼区間を読む前に、どの単位が独立しているのかをMethodsやFigure legendで確認します。
-
-## 図解
 
 <LessonFigure
   src="/figures/sample-size-concept.jpg"
@@ -54,9 +39,13 @@ n数を読み違えると、Figureの確からしさを過大に見積もるこ�
   caption="個体、培養、サンプル、細胞、測定点のどれを数えているかを確認します。"
 />
 
-<TermBox term="n数" english="sample size" abbreviation="n">
-  Figureや解析で数えられているサンプル、個体、細胞、測定点などの数です。
-</TermBox>
+論文のFigureでは、`n = 3`、`n = 6 mice`、`n = 120 cells` のような表記がよく出てきます。大切なのは、nの数字だけでなく、何を数えたnなのかを確認することです。
+
+同じ `n = 100` でも、独立した100個体なのか、1つのサンプル内の100細胞なのかで意味は大きく変わります。細胞数が多いことは情報量を増やしますが、独立した生物学的反復が多いことと同じではありません。
+
+## なぜ重要か
+
+n数を読み違えると、Figureの確からしさを過大に見積もることがあります。p値、エラーバー、信頼区間を読む前に、どの単位が独立しているのかをMethodsやFigure legendで確認します。
 
 ## 英語表記と略語
 

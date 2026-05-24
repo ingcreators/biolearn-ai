@@ -20,7 +20,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -33,19 +32,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 pathway enrichment plotは、遺伝子リストやランキングに、特定の経路や機能に属する遺伝子が偏って含まれるかを見るFigureです。
-
-## 基礎解説
-
-RNA-seqなどで多数の遺伝子が変化したとき、1つずつ遺伝子を読むだけでは全体像がつかみにくいことがあります。pathway enrichment解析では、変化した遺伝子が、どの経路や機能カテゴリに多く含まれるかを調べます。
-
-Figureでは、縦軸に経路名、横軸にenrichment scoreやgene ratio、点の大きさに遺伝子数、色にFDRやp値が使われることがあります。何がどの見た目に対応しているかを、凡例とFigure legendで確認します。
-
-経路名は便利ですが、広い意味を持つことがあります。経路名だけで機能が直接証明されたと読まず、入力遺伝子、解析方法、データベース、FDR、代表的な遺伝子を合わせて確認します。
-
-## 図解
 
 <LessonFigure
   src="/figures/how-to-read-pathway-enrichment-concept.jpg"
@@ -54,9 +41,11 @@ Figureでは、縦軸に経路名、横軸にenrichment scoreやgene ratio、点
   caption="経路名、スコア、遺伝子数、FDR、入力遺伝子リストを確認して読みます。"
 />
 
-<TermBox term="pathway enrichment" english="pathway enrichment">
-  遺伝子リストやランキングに、特定の経路に属する遺伝子が偏って含まれるかを調べる解析です。
-</TermBox>
+RNA-seqなどで多数の遺伝子が変化したとき、1つずつ遺伝子を読むだけでは全体像がつかみにくいことがあります。pathway enrichment解析では、変化した遺伝子が、どの経路や機能カテゴリに多く含まれるかを調べます。
+
+Figureでは、縦軸に経路名、横軸にenrichment scoreやgene ratio、点の大きさに遺伝子数、色にFDRやp値が使われることがあります。何がどの見た目に対応しているかを、凡例とFigure legendで確認します。
+
+経路名は便利ですが、広い意味を持つことがあります。経路名だけで機能が直接証明されたと読まず、入力遺伝子、解析方法、データベース、FDR、代表的な遺伝子を合わせて確認します。
 
 ## よくある誤解
 

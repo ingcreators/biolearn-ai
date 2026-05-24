@@ -1109,7 +1109,6 @@ next
 
 ```text
 LearningGoals
-TermBox
 Quiz
 NextSteps
 GlossaryTable

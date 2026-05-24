@@ -21,7 +21,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -34,11 +33,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 陽性対照は「反応が出るはずの条件」、陰性対照は「反応が出ないはずの条件」です。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/positive-negative-control-concept.jpg"
+  alt="陰性対照は低いシグナル、陽性対照は高いシグナル、試験条件はその間で評価されることを示す概念図"
+  title="陽性対照と陰性対照で実験系を確認する"
+  caption="反応が出る条件と出ない条件を置くことで、試験条件の結果を解釈しやすくします。"
+/>
 
 実験では、目的の処理やサンプルだけを見ても、実験系が正しく動いているか判断しにくいことがあります。そこで、反応が出ることを期待する陽性対照と、反応が出ないことを期待する陰性対照を置きます。
 
@@ -58,23 +60,6 @@ Figureで差が見えても、陽性対照と陰性対照が適切でないと�
 - qPCRやWestern blotでは、目的の反応が期待どおり出るかを確認する助けになります。
 
 対照がFigure内に見えない場合でも、MethodsやFigure legendに条件名として書かれていることがあります。
-
-## 図解
-
-<LessonFigure
-  src="/figures/positive-negative-control-concept.jpg"
-  alt="陰性対照は低いシグナル、陽性対照は高いシグナル、試験条件はその間で評価されることを示す概念図"
-  title="陽性対照と陰性対照で実験系を確認する"
-  caption="反応が出る条件と出ない条件を置くことで、試験条件の結果を解釈しやすくします。"
-/>
-
-<TermBox term="陽性対照" english="positive control">
-  実験系で反応が出ることを期待する対照条件です。
-</TermBox>
-
-<TermBox term="陰性対照" english="negative control">
-  実験系で反応が出ないことを期待する対照条件です。
-</TermBox>
 
 ## 英語表記と略語
 

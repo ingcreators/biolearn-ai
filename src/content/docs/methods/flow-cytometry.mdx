@@ -22,7 +22,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -35,11 +34,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 フローサイトメトリーは、多数の細胞を1つずつ測定し、細胞集団の特徴を解析する手法です。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/flow-cytometry-concept.jpg"
+  alt="細胞を1つずつ測定し、散布図上でゲートを設定して細胞集団を解析する概念図"
+  title="フローサイトメトリーは細胞集団を1細胞ずつ測る"
+  caption="点の分布、ゲート、陽性率、対照を確認しながら細胞集団の変化を読みます。"
+/>
 
 フローサイトメトリーでは、細胞を流路に流し、レーザーなどで1細胞ずつ測定します。細胞の大きさや複雑さ、蛍光標識したマーカーの強さを記録できます。
 
@@ -61,19 +63,6 @@ Figureを読むときは、どのゲートで細胞を選んだか、陰性対�
 - 複数マーカーのFigureでは、どの軸がどのマーカーか、補正や対照があるかを確認します。
 
 具体的な読み方は[フローサイトメトリー図](/figures/how-to-read-flow-cytometry/)と[散布図](/figures/how-to-read-scatter-plot/)に進みます。
-
-## 図解
-
-<LessonFigure
-  src="/figures/flow-cytometry-concept.jpg"
-  alt="細胞を1つずつ測定し、散布図上でゲートを設定して細胞集団を解析する概念図"
-  title="フローサイトメトリーは細胞集団を1細胞ずつ測る"
-  caption="点の分布、ゲート、陽性率、対照を確認しながら細胞集団の変化を読みます。"
-/>
-
-<TermBox term="フローサイトメトリー" english="flow cytometry">
-  多数の細胞を1つずつ測定し、細胞集団の特徴を解析する実験手法です。
-</TermBox>
 
 ## 英語表記と略語
 

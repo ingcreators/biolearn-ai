@@ -24,7 +24,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -37,11 +36,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 ライブラリ調製は、DNAやcDNAをシーケンサーで読める形に整える工程です。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/library-preparation-concept.jpg"
+  alt="DNA断片にアダプターを付け、シーケンシング用ライブラリとして整える流れを示す概念図"
+  title="ライブラリ調製はNGSで読む前の準備"
+  caption="核酸断片をシーケンサーが読める形に整え、必要に応じてサンプル識別用の情報も付けます。"
+/>
 
 NGSでは、試料中のDNAやcDNAをそのまま読むのではなく、シーケンサーに適した形に準備します。この準備をライブラリ調製と呼びます。
 
@@ -63,19 +65,6 @@ Methodsでライブラリ調製を確認すると、シーケンシング結果�
 - 複数サンプルをまとめて読む場合は、インデックスやバッチの扱いを確認します。
 
 Figureを読むときは、表示された差だけでなく、ライブラリ調製でどの分子集団を見ているのかをMethodsに戻って確認します。
-
-## 図解
-
-<LessonFigure
-  src="/figures/library-preparation-concept.jpg"
-  alt="DNA断片にアダプターを付け、シーケンシング用ライブラリとして整える流れを示す概念図"
-  title="ライブラリ調製はNGSで読む前の準備"
-  caption="核酸断片をシーケンサーが読める形に整え、必要に応じてサンプル識別用の情報も付けます。"
-/>
-
-<TermBox term="ライブラリ調製" english="library preparation">
-  DNAやcDNAをNGSで読める形に整える前処理です。
-</TermBox>
 
 ## 英語表記と略語
 

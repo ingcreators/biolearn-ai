@@ -21,7 +21,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -34,11 +33,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 箱ひげ図は、データの中央値、ばらつき、外れ値をまとめて見るためのFigureです。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/box-plot-concept.jpg"
+  alt="箱ひげ図で中央値、四分位範囲、ひげ、外れ値を見る概念図"
+  title="箱ひげ図は分布の中心と広がりを見る"
+  caption="箱、ひげ、点が何を示すかはFigure legendで確認し、中央値だけでなく分布全体を見ます。"
+/>
 
 箱ひげ図では、箱の中の線が中央値を表すことが多く、箱の上下は第1四分位数と第3四分位数を表します。箱の高さは、データの中央50%がどれくらい広がっているかを示します。
 
@@ -49,19 +51,6 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 ## なぜ重要か
 
 生命科学論文では、発現量、細胞ごとの測定値、患者群の指標、スコアなどの分布を示すときに箱ひげ図が使われます。棒グラフより分布の情報が見えやすい一方で、定義を確認しないと誤読しやすい図でもあります。
-
-## 図解
-
-<LessonFigure
-  src="/figures/box-plot-concept.jpg"
-  alt="箱ひげ図で中央値、四分位範囲、ひげ、外れ値を見る概念図"
-  title="箱ひげ図は分布の中心と広がりを見る"
-  caption="箱、ひげ、点が何を示すかはFigure legendで確認し、中央値だけでなく分布全体を見ます。"
-/>
-
-<TermBox term="箱ひげ図" english="box plot">
-  中央値、四分位範囲、ひげ、外れ値などでデータ分布を示すグラフです。
-</TermBox>
 
 ## 英語表記と略語
 

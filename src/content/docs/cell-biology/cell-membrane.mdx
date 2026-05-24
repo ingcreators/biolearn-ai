@@ -16,7 +16,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -29,11 +28,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 細胞膜は、細胞の内側と外側を区切りながら、物質や情報のやり取りを調節する膜です。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/cell-membrane-concept.jpg"
+  alt="リン脂質二重層に膜タンパク質や受容体があり、物質輸送とシグナル受容が起きる様子を示す教材イラスト"
+  title="細胞膜は境界であり、外界との連絡口でもある"
+  caption="細胞膜は内外を区切るだけでなく、物質を通したり、受容体でシグナルを受け取ったりします。"
+/>
 
 細胞膜は主にリン脂質二重層からできています。リン脂質は水になじむ部分と油になじむ部分を持ち、細胞を囲む薄い膜を作ります。膜にはタンパク質も埋め込まれており、物質の輸送、情報の受け取り、細胞同士の認識に関わります。
 
@@ -64,19 +66,6 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 ## 論文や実験ではどう出てくるか
 
 細胞膜は、蛍光染色、膜電位測定、パッチクランプ、膜タンパク質の局在解析などで登場します。論文では、受容体の細胞膜上での発現、チャネル活性、膜透過性、細胞表面マーカーとして示されることがあります。
-
-## 図解
-
-<LessonFigure
-  src="/figures/cell-membrane-concept.jpg"
-  alt="リン脂質二重層に膜タンパク質や受容体があり、物質輸送とシグナル受容が起きる様子を示す教材イラスト"
-  title="細胞膜は境界であり、外界との連絡口でもある"
-  caption="細胞膜は内外を区切るだけでなく、物質を通したり、受容体でシグナルを受け取ったりします。"
-/>
-
-<TermBox term="細胞膜" english="cell membrane">
-  細胞を外界から区切る膜で、物質輸送や情報伝達にも関わります。
-</TermBox>
 
 ## 英語表記と略語
 

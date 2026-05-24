@@ -21,7 +21,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -34,19 +33,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 Forest plotは、複数の研究やサブグループの効果量と信頼区間を並べて比較するFigureです。
-
-## 基礎解説
-
-Forest plot（フォレストプロット）では、1行が1つの研究、サブグループ、解析条件を表すことがあります。点は効果量、横線は信頼区間を示すことが多いです。縦の基準線は「差がない」位置を表します。
-
-点が基準線のどちら側にあるかで効果の方向を見ます。横線が長いほど不確実性が大きいと読みます。横線が基準線をまたぐ場合、その解析だけでは差が明確とは言いにくいことがあります。
-
-医療・疾患関連の論文でも使われますが、BioLearnでは個別の診断・治療判断ではなく、研究Figureの読み方として扱います。研究デザイン、対象、解析方法、統合方法を確認することが大切です。
-
-## 図解
 
 <LessonFigure
   src="/figures/how-to-read-forest-plot-concept.jpg"
@@ -55,9 +42,11 @@ Forest plot（フォレストプロット）では、1行が1つの研究、サ�
   caption="点、横線、基準線、統合推定、研究間のばらつきを確認して読みます。"
 />
 
-<TermBox term="信頼区間" english="confidence interval" abbreviation="CI">
-  推定値の不確実性を表す範囲です。Figureでは横線として示されることがあります。
-</TermBox>
+Forest plot（フォレストプロット）では、1行が1つの研究、サブグループ、解析条件を表すことがあります。点は効果量、横線は信頼区間を示すことが多いです。縦の基準線は「差がない」位置を表します。
+
+点が基準線のどちら側にあるかで効果の方向を見ます。横線が長いほど不確実性が大きいと読みます。横線が基準線をまたぐ場合、その解析だけでは差が明確とは言いにくいことがあります。
+
+医療・疾患関連の論文でも使われますが、BioLearnでは個別の診断・治療判断ではなく、研究Figureの読み方として扱います。研究デザイン、対象、解析方法、統合方法を確認することが大切です。
 
 ## よくある誤解
 

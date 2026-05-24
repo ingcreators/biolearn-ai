@@ -22,7 +22,7 @@ BioLearn is a Japanese learning site for molecular biology, cell biology, genomi
 - Avoid unsupported claims.
 - Prefer educational explanations over sensational claims.
 - Use diagrams only when they are original or clearly licensed.
-- New lesson pages should include a `LessonFigure` image in the 図解 section.
+- New lesson pages should place a `LessonFigure` image near the top, after the short overview and before the main explanatory text.
 - Store lesson figure images under `public/figures/{lesson-slug}-concept.jpg`.
 - Keep generated images free of dense embedded text; put explanations in Japanese `alt`, `title`, and `caption`.
 - Optimize generated lesson images for the web before committing.
@@ -32,14 +32,15 @@ BioLearn is a Japanese learning site for molecular biology, cell biology, genomi
 Each lesson should include:
 
 1. この記事で学ぶこと
-2. 要点
-3. 基礎解説
-4. 図解
-5. 英語表記と略語
-6. よくある誤解
-7. 重要用語
-8. 確認問題
-9. 次に読む記事
+2. Short overview paragraph without a heading
+3. `LessonFigure` without a 図解 heading
+4. Main explanatory text without a 基礎解説 heading
+5. なぜ重要か
+6. 英語表記と略語
+7. よくある誤解
+8. 重要用語
+9. 確認問題
+10. 次に読む記事
 
 ## Quality checks
 

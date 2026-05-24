@@ -23,7 +23,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -36,11 +35,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 免疫染色は、抗体を使って細胞や組織の中で特定のタンパク質がどこにあるかを見る実験です。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/immunostaining-concept.jpg"
+  alt="抗体で細胞内の特定タンパク質を蛍光シグナルとして可視化する免疫染色の概念図"
+  title="免疫染色はタンパク質の場所を見る"
+  caption="シグナルの強さだけでなく、どの細胞内領域に見えるか、対照や撮影条件も確認します。"
+/>
 
 免疫染色では、目的タンパク質を認識する抗体を使い、蛍光や発色によって位置を可視化します。細胞の核、細胞膜、細胞質、細胞小器官など、どこにシグナルがあるかを観察します。
 
@@ -62,19 +64,6 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 - 画像処理では、明るさやコントラストが条件間で同じかを確認します。
 
 画像そのものの読み方は[免疫染色画像](/figures/how-to-read-immunostaining/)と[顕微鏡画像](/figures/how-to-read-microscopy-image/)に進むと整理できます。
-
-## 図解
-
-<LessonFigure
-  src="/figures/immunostaining-concept.jpg"
-  alt="抗体で細胞内の特定タンパク質を蛍光シグナルとして可視化する免疫染色の概念図"
-  title="免疫染色はタンパク質の場所を見る"
-  caption="シグナルの強さだけでなく、どの細胞内領域に見えるか、対照や撮影条件も確認します。"
-/>
-
-<TermBox term="免疫染色" english="immunostaining">
-  抗体を使って、細胞や組織内の特定分子を可視化する実験手法です。
-</TermBox>
 
 ## 英語表記と略語
 

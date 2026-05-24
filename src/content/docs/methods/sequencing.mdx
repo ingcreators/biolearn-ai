@@ -23,7 +23,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -36,11 +35,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 シーケンシングは、DNAやRNA由来の塩基配列を読む技術です。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/sequencing-concept.jpg"
+  alt="DNA断片を読み取り、配列データとして解析へ渡す流れを示す概念図"
+  title="シーケンシングは塩基の並びを読む技術"
+  caption="読まれた配列は、リードとして解析に渡され、マッピングや変異検出、発現解析に使われます。"
+/>
 
 DNAはA、T、G、Cという塩基の並びとして情報を持ちます。シーケンシングは、その並びを実験的に読み取る技術です。RNAを調べる場合も、多くはRNAからcDNAを作り、配列として読みます。
 
@@ -62,19 +64,6 @@ PCRは特定領域を増やす方法で、シーケンシングは配列を読�
 - 変異やコピー数を見るときは、lollipop plotやCNV plotの読み方に進みます。
 
 Methodsでは、どの試料を読み、どの参照配列に対応づけ、どの解析でFigureに変換したかを確認します。
-
-## 図解
-
-<LessonFigure
-  src="/figures/sequencing-concept.jpg"
-  alt="DNA断片を読み取り、配列データとして解析へ渡す流れを示す概念図"
-  title="シーケンシングは塩基の並びを読む技術"
-  caption="読まれた配列は、リードとして解析に渡され、マッピングや変異検出、発現解析に使われます。"
-/>
-
-<TermBox term="シーケンシング" english="sequencing">
-  DNAやRNA由来の塩基配列を読む実験技術です。
-</TermBox>
 
 ## 英語表記と略語
 

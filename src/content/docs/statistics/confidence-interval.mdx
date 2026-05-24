@@ -18,7 +18,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -31,11 +30,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 信頼区間は、平均や差などの推定値について、不確かさを範囲として示す考え方です。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/confidence-interval-concept.jpg"
+  alt="推定値の点の周囲に信頼区間の線が伸び、不確かさの範囲を示す概念図"
+  title="信頼区間は推定値の不確かさを範囲で示す"
+  caption="点推定だけでなく、範囲の幅と比較の基準を確認します。"
+/>
 
 実験では、手元のサンプルから平均値や群間差を推定します。しかし、サンプルを取り直せば推定値は少し変わる可能性があります。信頼区間は、その推定の不確かさを範囲として示します。
 
@@ -48,19 +50,6 @@ p値だけを見ると、差がどれくらいの範囲であり得るのかが�
 ## Figureで見る場所
 
 信頼区間は、[Forest plotの読み方](/figures/how-to-read-forest-plot/)で横線として出ることがあります。また、棒グラフや点推定の図では、エラーバーが信頼区間を表している場合があります。Figure legendで何を示す線かを確認します。
-
-## 図解
-
-<LessonFigure
-  src="/figures/confidence-interval-concept.jpg"
-  alt="推定値の点の周囲に信頼区間の線が伸び、不確かさの範囲を示す概念図"
-  title="信頼区間は推定値の不確かさを範囲で示す"
-  caption="点推定だけでなく、範囲の幅と比較の基準を確認します。"
-/>
-
-<TermBox term="信頼区間" english="confidence interval" abbreviation="CI">
-  平均や差などの推定値について、不確かさを範囲として示す表示です。
-</TermBox>
 
 ## 英語表記と略語
 

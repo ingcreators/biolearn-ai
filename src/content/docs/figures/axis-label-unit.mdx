@@ -17,7 +17,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -30,19 +29,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 Figureを読むときは、値の大小を見る前に、軸、ラベル、単位、スケール、条件名を確認します。
-
-## 基礎解説
-
-論文Figureでは、同じ形のグラフでも、軸の意味が違えば解釈は大きく変わります。横軸が時間なのか条件なのか、縦軸が発現量なのか割合なのか、単位が相対値なのか絶対値なのかを最初に確認します。
-
-また、logスケールや正規化値が使われている場合、見た目の差をそのまま直感的な差として読むと誤解しやすくなります。軸ラベルに `log2`、`fold change`、`relative`、`normalized` などが書かれていないかを見ます。
-
-条件名も重要です。対照群を基準にした比なのか、処理群を基準にした比なのかで、増減の向きが変わることがあります。
-
-## 図解
 
 <LessonFigure
   src="/figures/axis-label-unit-concept.jpg"
@@ -51,9 +38,11 @@ Figureを読むときは、値の大小を見る前に、軸、ラベル、単�
   caption="値の大小を判断する前に、何を測り、どの単位で、どの条件を比べているのかを確認します。"
 />
 
-<TermBox term="スケール" english="scale">
-  値を図上に表すときの目盛りや変換方法です。線形スケール、logスケール、相対値、z-scoreなどがあります。
-</TermBox>
+論文Figureでは、同じ形のグラフでも、軸の意味が違えば解釈は大きく変わります。横軸が時間なのか条件なのか、縦軸が発現量なのか割合なのか、単位が相対値なのか絶対値なのかを最初に確認します。
+
+また、logスケールや正規化値が使われている場合、見た目の差をそのまま直感的な差として読むと誤解しやすくなります。軸ラベルに `log2`、`fold change`、`relative`、`normalized` などが書かれていないかを見ます。
+
+条件名も重要です。対照群を基準にした比なのか、処理群を基準にした比なのかで、増減の向きが変わることがあります。
 
 ## よくある誤解
 

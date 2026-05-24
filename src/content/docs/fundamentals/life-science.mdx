@@ -14,7 +14,6 @@ prerequisites: []
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -27,11 +26,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 生命科学は、生命現象を観察し、分子・細胞・個体・環境のつながりとして理解する学問です。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/life-science-concept.jpg"
+  alt="分子、細胞、ゲノム、データ解析がつながる生命科学の全体像を示す教材イラスト"
+  title="生命科学は分子からデータ解析までをつなげて理解する"
+  caption="分子の働き、細胞のふるまい、ゲノム情報、データ解析を別々ではなく連続した見方として学びます。"
+/>
 
 生命科学は、生物がどのように形を保ち、エネルギーを使い、情報を受け取り、増え、変化するのかを調べます。分子生物学はDNA、RNA、タンパク質の働きを扱い、細胞生物学は細胞の構造や振る舞いを扱います。ゲノミクスはゲノム全体を対象にし、バイオインフォマティクスは生命科学データを計算で解析します。
 
@@ -62,19 +64,6 @@ BioLearn では、まず基本概念を押さえ、次に実験法やデータ�
 ## 論文や実験ではどう出てくるか
 
 論文では、背景で「この生命現象がなぜ重要か」を説明し、実験では分子、細胞、個体、データ解析のどのレベルで証拠を出したかが示されます。たとえば「RNA-seqで発現変化を調べ、顕微鏡観察で細胞の変化を確認した」というように、複数の階層を組み合わせて結論を支えることがあります。
-
-## 図解
-
-<LessonFigure
-  src="/figures/life-science-concept.jpg"
-  alt="分子、細胞、ゲノム、データ解析がつながる生命科学の全体像を示す教材イラスト"
-  title="生命科学は分子からデータ解析までをつなげて理解する"
-  caption="分子の働き、細胞のふるまい、ゲノム情報、データ解析を別々ではなく連続した見方として学びます。"
-/>
-
-<TermBox term="生命科学" english="life science">
-  生命に関わる現象を、観察、実験、計算、理論によって理解しようとする幅広い分野です。
-</TermBox>
 
 ## 英語表記と略語
 

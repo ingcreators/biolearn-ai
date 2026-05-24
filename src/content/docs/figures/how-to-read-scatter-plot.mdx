@@ -21,7 +21,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -34,11 +33,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 散布図は、2つの変数の関係を点の分布として見るFigureです。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/scatter-plot-concept.jpg"
+  alt="点の分布から2つの変数の関係や外れ値を読む散布図の概念図"
+  title="散布図は2つの変数の関係を見る"
+  caption="軸、点の単位、外れ値、相関係数を確認し、相関と因果を混同しないように読みます。"
+/>
 
 散布図では、1つの点が1つのサンプル、細胞、遺伝子、患者、実験単位などを表します。横軸と縦軸にそれぞれ別の変数を置き、点がどのように広がるかを見ます。
 
@@ -49,19 +51,6 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 ## なぜ重要か
 
 生命科学論文では、遺伝子発現どうしの関係、スコアと表現型、測定値の再現性、細胞ごとの特徴量などを示すときに散布図が使われます。分布を見ることで、平均値だけでは見えない構造に気づけます。
-
-## 図解
-
-<LessonFigure
-  src="/figures/scatter-plot-concept.jpg"
-  alt="点の分布から2つの変数の関係や外れ値を読む散布図の概念図"
-  title="散布図は2つの変数の関係を見る"
-  caption="軸、点の単位、外れ値、相関係数を確認し、相関と因果を混同しないように読みます。"
-/>
-
-<TermBox term="散布図" english="scatter plot">
-  2つの変数の関係を、点の分布として示すグラフです。
-</TermBox>
 
 ## 英語表記と略語
 

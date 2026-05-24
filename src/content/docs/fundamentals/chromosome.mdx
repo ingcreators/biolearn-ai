@@ -17,7 +17,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -30,11 +29,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 染色体は、長いDNAを細胞内で整理して収納し、分裂時に受け渡しやすくする構造です。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/chromosomes-concept.jpg"
+  alt="DNAがヒストンに巻きつき、クロマチンを経て凝縮した染色体になる様子を示す教材イラスト"
+  title="染色体は長いDNAを整理して受け渡す構造"
+  caption="DNAはヒストンなどのタンパク質と組み合わさり、細胞分裂のときには染色体としてまとまります。"
+/>
 
 真核細胞では、DNAはヒストンなどのタンパク質と結びついてクロマチンを作ります。細胞分裂の時期にはクロマチンがより凝縮し、顕微鏡で見える染色体として観察されます。
 
@@ -65,19 +67,6 @@ DNAは非常に長い分子なので、そのままでは細胞の核の中に�
 ## 論文や実験ではどう出てくるか
 
 染色体は、核型解析、FISH、顕微鏡観察、Hi-Cのようなゲノム立体構造解析で登場します。論文では、染色体上の遺伝子の位置、染色体の数や構造の変化、クロマチンの開きやすさ、遠く離れた領域同士の接触として示されることがあります。
-
-## 図解
-
-<LessonFigure
-  src="/figures/chromosomes-concept.jpg"
-  alt="DNAがヒストンに巻きつき、クロマチンを経て凝縮した染色体になる様子を示す教材イラスト"
-  title="染色体は長いDNAを整理して受け渡す構造"
-  caption="DNAはヒストンなどのタンパク質と組み合わさり、細胞分裂のときには染色体としてまとまります。"
-/>
-
-<TermBox term="染色体" english="chromosome">
-  DNAとタンパク質からなる構造で、遺伝情報の収納と受け渡しに関わります。
-</TermBox>
 
 ## 英語表記と略語
 

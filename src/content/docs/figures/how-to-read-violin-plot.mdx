@@ -21,7 +21,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -34,19 +33,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 Violin plotは、データの分布の形を、左右に広がる形として見せるFigureです。
-
-## 基礎解説
-
-Violin plot（バイオリンプロット）は、箱ひげ図よりも分布の形を見やすくしたグラフです。幅が広い部分は、その値の付近にデータが多いことを表します。
-
-生命科学論文では、細胞ごとの発現量、サンプルごとのスコア、群ごとの測定値などを示すときに使われます。複数の群を比べるときは、分布の中心だけでなく、広がり、重なり、外れた値、サンプル数を確認します。
-
-図によっては、中央値、四分位範囲、個々の点が重ねて表示されます。何が表示されているかはFigure legendで確認します。
-
-## 図解
 
 <LessonFigure
   src="/figures/how-to-read-violin-plot-concept.jpg"
@@ -55,9 +42,11 @@ Violin plot（バイオリンプロット）は、箱ひげ図よりも分布の
   caption="幅が広い値域、中央値、分布の重なり、個々の点やサンプル数を確認します。"
 />
 
-<TermBox term="Violin plot" english="violin plot">
-  データ分布の密度を、左右に広がる形で示すグラフです。
-</TermBox>
+Violin plot（バイオリンプロット）は、箱ひげ図よりも分布の形を見やすくしたグラフです。幅が広い部分は、その値の付近にデータが多いことを表します。
+
+生命科学論文では、細胞ごとの発現量、サンプルごとのスコア、群ごとの測定値などを示すときに使われます。複数の群を比べるときは、分布の中心だけでなく、広がり、重なり、外れた値、サンプル数を確認します。
+
+図によっては、中央値、四分位範囲、個々の点が重ねて表示されます。何が表示されているかはFigure legendで確認します。
 
 ## よくある誤解
 

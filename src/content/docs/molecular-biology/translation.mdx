@@ -16,7 +16,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -29,11 +28,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 翻訳は、mRNAの情報をアミノ酸配列へ変換し、タンパク質を作る過程です。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/translation-concept.jpg"
+  alt="mRNAがリボソームを通り、tRNAがアミノ酸を運んでタンパク質鎖が伸びる様子を示す教材イラスト"
+  title="翻訳はRNAの情報をタンパク質へ変換する過程"
+  caption="mRNAの塩基配列をもとに、リボソームとtRNAがアミノ酸を順番につなげます。"
+/>
 
 mRNAには、3つの塩基を1組とするコドンが並んでいます。リボソームはmRNAを読み取り、tRNAが運ぶアミノ酸を順番につなげます。こうしてできたアミノ酸の鎖は折りたたまれ、タンパク質として働きます。
 
@@ -64,19 +66,6 @@ mRNA上のAUGは、多くの場合、翻訳開始の目印として働きます�
 ## 論文や実験ではどう出てくるか
 
 翻訳は、リボソームプロファイリング、ポリソーム解析、タンパク質量測定などで扱われます。論文では「mRNA量は変わらないがタンパク質量が変化した」「翻訳効率が変わった」のように、転写後の調節として示されることがあります。
-
-## 図解
-
-<LessonFigure
-  src="/figures/translation-concept.jpg"
-  alt="mRNAがリボソームを通り、tRNAがアミノ酸を運んでタンパク質鎖が伸びる様子を示す教材イラスト"
-  title="翻訳はRNAの情報をタンパク質へ変換する過程"
-  caption="mRNAの塩基配列をもとに、リボソームとtRNAがアミノ酸を順番につなげます。"
-/>
-
-<TermBox term="翻訳" english="translation">
-  mRNAの塩基配列をもとにアミノ酸をつなぎ、タンパク質を作る過程です。
-</TermBox>
 
 ## 英語表記と略語
 

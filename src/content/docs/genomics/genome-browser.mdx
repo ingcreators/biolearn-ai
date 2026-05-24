@@ -19,7 +19,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -32,19 +31,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 ゲノムブラウザは、ゲノム上の位置に沿って、遺伝子、変異、シーケンスデータ、注釈情報を重ねて見るための表示方法です。
-
-## 基礎解説
-
-ゲノムは非常に長い配列なので、特定の遺伝子や領域だけを見たいときには、位置を指定して表示する必要があります。ゲノムブラウザでは、染色体上の座標を横軸のように使い、その位置に対応する情報を段ごとに並べます。
-
-各段はトラックと呼ばれます。遺伝子モデル、変異、RNA-seqのリード、ChIP-seqのピーク、保存性スコアなど、さまざまな情報がトラックとして表示されます。
-
-ゲノムブラウザで見える重なりは、研究の手がかりになります。ただし、重なって見えることだけで機能や原因を断定することはできません。表示範囲、データの種類、サンプル、解析条件を確認します。
-
-## 図解
 
 <LessonFigure
   src="/figures/genome-browser-concept.jpg"
@@ -53,9 +40,11 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   caption="遺伝子、変異、シーケンスリード、アノテーションをトラックごとに分けて読みます。"
 />
 
-<TermBox term="ゲノムブラウザ" english="genome browser">
-  ゲノム上の位置に沿って、遺伝子や変異などの情報を視覚的に表示する道具や表示形式です。
-</TermBox>
+ゲノムは非常に長い配列なので、特定の遺伝子や領域だけを見たいときには、位置を指定して表示する必要があります。ゲノムブラウザでは、染色体上の座標を横軸のように使い、その位置に対応する情報を段ごとに並べます。
+
+各段はトラックと呼ばれます。遺伝子モデル、変異、RNA-seqのリード、ChIP-seqのピーク、保存性スコアなど、さまざまな情報がトラックとして表示されます。
+
+ゲノムブラウザで見える重なりは、研究の手がかりになります。ただし、重なって見えることだけで機能や原因を断定することはできません。表示範囲、データの種類、サンプル、解析条件を確認します。
 
 ## よくある誤解
 

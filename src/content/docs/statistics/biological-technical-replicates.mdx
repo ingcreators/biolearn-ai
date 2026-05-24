@@ -16,7 +16,6 @@ prerequisites: []
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -29,11 +28,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 生物学的反復は独立したサンプルや実験単位の繰り返しで、技術的反復は同じサンプルを測定上繰り返すことです。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/biological-technical-replicates-concept.jpg"
+  alt="独立した複数サンプルと、同じサンプルを複数回測る技術的反復の違いを示す概念図"
+  title="反復には生物学的反復と技術的反復がある"
+  caption="n数を見るときは、個体・培養・サンプル・測定のどれを数えているのかを確認します。"
+/>
 
 生命科学論文では `n = 3` や `n = 100 cells` のような表記がよく出てきます。ただし、nが何を数えているかは必ず確認する必要があります。
 
@@ -44,19 +46,6 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 ## なぜ重要か
 
 反復の種類を区別できると、Figureの信頼性を読みやすくなります。p値やエラーバーを見る前に、そもそも比較がどの独立単位に基づいているのかを考えることが大切です。
-
-## 図解
-
-<LessonFigure
-  src="/figures/biological-technical-replicates-concept.jpg"
-  alt="独立した複数サンプルと、同じサンプルを複数回測る技術的反復の違いを示す概念図"
-  title="反復には生物学的反復と技術的反復がある"
-  caption="n数を見るときは、個体・培養・サンプル・測定のどれを数えているのかを確認します。"
-/>
-
-<TermBox term="生物学的反復" english="biological replicate">
-  独立した生物学的サンプルや実験単位を繰り返すことです。
-</TermBox>
 
 ## 英語表記と略語
 

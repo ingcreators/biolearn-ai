@@ -19,7 +19,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -32,11 +31,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 相関は2つの変数が一緒に変化する傾向であり、因果は一方がもう一方を引き起こす関係です。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/correlation-causation-concept.jpg"
+  alt="2つの変数が一緒に変化していても、直接因果、逆向き因果、第三の要因など複数の説明があり得ることを示す概念図"
+  title="相関は因果をそのまま示すわけではない"
+  caption="共通要因、逆向きの関係、サンプルの偏りなど、別の説明も考えます。"
+/>
 
 相関図では、横軸と縦軸の値が一緒に増えたり、一方が増えるともう一方が減ったりする傾向を見ることがあります。このような関係を相関と呼びます。
 
@@ -49,19 +51,6 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 ## Figureで見る場所
 
 相関と因果の区別は、[相関図の読み方](/figures/how-to-read-correlation-plot/)で特に重要です。点のまとまりや近似線を見るだけでなく、群分け、外れ値、時間順序、実験的な検証の有無を合わせて確認します。
-
-## 図解
-
-<LessonFigure
-  src="/figures/correlation-causation-concept.jpg"
-  alt="2つの変数が一緒に変化していても、直接因果、逆向き因果、第三の要因など複数の説明があり得ることを示す概念図"
-  title="相関は因果をそのまま示すわけではない"
-  caption="共通要因、逆向きの関係、サンプルの偏りなど、別の説明も考えます。"
-/>
-
-<TermBox term="相関" english="correlation">
-  2つの変数が一緒に変化する傾向です。因果関係そのものを意味する言葉ではありません。
-</TermBox>
 
 ## 英語表記と略語
 

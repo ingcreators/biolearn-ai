@@ -23,7 +23,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -36,11 +35,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 NGSは、多数のDNA断片を同時に読み、生命科学データ解析の出発点になる技術です。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/ngs-concept.jpg"
+  alt="多数のDNA断片をシーケンサーで読み、リードとして解析する流れを示す概念図"
+  title="NGSは大量の配列断片を並列に読む"
+  caption="NGSで得られたリードは、マッピングやカウントなどの解析を経てFigureに変換されます。"
+/>
 
 NGSは next-generation sequencing の略で、従来よりも大量の配列を並列に読む技術を指します。試料からDNAやcDNA断片を調製し、シーケンサーで短い配列断片として読み取ります。
 
@@ -62,19 +64,6 @@ NGSのFigureでは、測定技術よりも「どの解析結果として見せ�
 - どのFigureでも、サンプル、ライブラリ調製、マッピング、正規化、品質管理がMethods側の確認点になります。
 
 まずは[シーケンスデータ](/bioinformatics/sequence-data/)でデータの流れを押さえ、Figure別に読み方を分けます。
-
-## 図解
-
-<LessonFigure
-  src="/figures/ngs-concept.jpg"
-  alt="多数のDNA断片をシーケンサーで読み、リードとして解析する流れを示す概念図"
-  title="NGSは大量の配列断片を並列に読む"
-  caption="NGSで得られたリードは、マッピングやカウントなどの解析を経てFigureに変換されます。"
-/>
-
-<TermBox term="NGS" english="next-generation sequencing" abbreviation="NGS">
-  多数のDNA断片を並列に読み取るシーケンシング技術の総称です。
-</TermBox>
 
 ## 英語表記と略語
 

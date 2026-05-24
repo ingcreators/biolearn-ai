@@ -16,7 +16,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -29,11 +28,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 細胞シグナル伝達は、細胞が外からの情報を受け取り、内部の反応へ変える仕組みです。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/cell-signaling-concept.jpg"
+  alt="細胞外のシグナル分子が受容体に結合し、細胞内の分子反応を経て応答につながる様子を示す教材イラスト"
+  title="細胞シグナル伝達は外の情報を内側の反応へ変える"
+  caption="シグナル分子を受け取った細胞は、細胞内の分子反応を通じて遺伝子発現や行動を変えます。"
+/>
 
 細胞は周囲の環境や他の細胞から多くの情報を受け取ります。シグナル分子であるリガンドが受容体に結合すると、細胞内のタンパク質の働きが変わり、最終的に遺伝子発現、代謝、移動、増殖などが変化することがあります。
 
@@ -64,19 +66,6 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 ## 論文や実験ではどう出てくるか
 
 細胞シグナル伝達は、リン酸化タンパク質の検出、阻害剤処理、レポーターアッセイ、免疫染色、遺伝子発現解析などで登場します。論文では、経路図、リン酸化のウェスタンブロット、阻害剤で応答が弱まる結果などとして示されることがあります。
-
-## 図解
-
-<LessonFigure
-  src="/figures/cell-signaling-concept.jpg"
-  alt="細胞外のシグナル分子が受容体に結合し、細胞内の分子反応を経て応答につながる様子を示す教材イラスト"
-  title="細胞シグナル伝達は外の情報を内側の反応へ変える"
-  caption="シグナル分子を受け取った細胞は、細胞内の分子反応を通じて遺伝子発現や行動を変えます。"
-/>
-
-<TermBox term="細胞シグナル伝達" english="cell signaling">
-  細胞がシグナルを受け取り、細胞内の反応やふるまいを変える仕組みです。
-</TermBox>
 
 ## 英語表記と略語
 

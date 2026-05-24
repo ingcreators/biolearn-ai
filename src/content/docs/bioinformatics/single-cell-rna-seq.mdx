@@ -19,7 +19,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -32,19 +31,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 single-cell RNA-seqは、1細胞ごとのRNA量を測定し、細胞集団の違いや状態を調べる手法です。
-
-## 基礎解説
-
-通常のRNA-seqでは、試料全体からRNAを取り出し、細胞集団全体の平均的な発現を見ます。single-cell RNA-seqでは、1つ1つの細胞を区別して測定するため、同じ試料の中にある細胞集団の違いを調べやすくなります。
-
-解析では、細胞ごと、遺伝子ごとの発現量を行列として整理します。その後、品質の低い細胞を除く、正規化する、次元削減で全体像を見る、クラスタリングで似た細胞をまとめる、マーカー遺伝子で細胞型を推定する、といった流れで進みます。
-
-single-cell RNA-seqは強力ですが、1細胞の測定はノイズや欠測の影響を受けやすく、結果は前処理や解析条件にも左右されます。Figureを読むときは、UMAPの形だけでなく、細胞数、サンプル数、品質管理、バッチ補正、細胞型注釈の根拠を確認します。
-
-## 図解
 
 <LessonFigure
   src="/figures/single-cell-rna-seq-concept.jpg"
@@ -53,13 +40,11 @@ single-cell RNA-seqは強力ですが、1細胞の測定はノイズや欠測の
   caption="細胞ごとの発現量をもとに、品質確認、次元削減、クラスタリング、細胞型注釈へ進みます。"
 />
 
-<TermBox
-  term="single-cell RNA-seq"
-  english="single-cell RNA sequencing"
-  abbreviation="scRNA-seq"
->
-  1細胞ごとのRNA量を測定し、細胞集団の違いや遺伝子発現のばらつきを調べる手法です。
-</TermBox>
+通常のRNA-seqでは、試料全体からRNAを取り出し、細胞集団全体の平均的な発現を見ます。single-cell RNA-seqでは、1つ1つの細胞を区別して測定するため、同じ試料の中にある細胞集団の違いを調べやすくなります。
+
+解析では、細胞ごと、遺伝子ごとの発現量を行列として整理します。その後、品質の低い細胞を除く、正規化する、次元削減で全体像を見る、クラスタリングで似た細胞をまとめる、マーカー遺伝子で細胞型を推定する、といった流れで進みます。
+
+single-cell RNA-seqは強力ですが、1細胞の測定はノイズや欠測の影響を受けやすく、結果は前処理や解析条件にも左右されます。Figureを読むときは、UMAPの形だけでなく、細胞数、サンプル数、品質管理、バッチ補正、細胞型注釈の根拠を確認します。
 
 ## よくある誤解
 

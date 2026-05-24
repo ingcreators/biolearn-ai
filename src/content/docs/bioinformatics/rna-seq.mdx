@@ -17,7 +17,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -30,11 +29,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 RNA-seqは、細胞や組織でどのRNAがどれくらい存在するかを調べる手法です。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/rna-seq-concept.jpg"
+  alt="細胞からRNAを取り出し、シーケンサーで短い配列として読み、コンピューターで発現量グラフとして解析する流れを示す教材イラスト"
+  title="RNA-seqはRNAを読み、細胞の状態をデータとして見る方法"
+  caption="RNAを配列データに変換し、コンピューター上で遺伝子ごとの発現量として整理します。"
+/>
 
 RNA-seqでは、試料からRNAを取り出し、シーケンサーで読める形に変換して配列を読みます。その後、得られたリードをゲノムや転写産物に対応づけ、遺伝子ごとの発現量を推定します。
 
@@ -65,19 +67,6 @@ RNA-seqを理解すると、発現量、正規化、マッピング、[差次的
 ## 論文や実験ではどう出てくるか
 
 RNA-seqは、実験方法の「library preparation」「sequencing」「mapping」「count matrix」「differential expression analysis」といった流れで登場します。結果では、発現量の表、品質管理図、PCA、ヒートマップ、ボルケーノプロット、発現変動遺伝子リストとして示されることが多いです。
-
-## 図解
-
-<LessonFigure
-  src="/figures/rna-seq-concept.jpg"
-  alt="細胞からRNAを取り出し、シーケンサーで短い配列として読み、コンピューターで発現量グラフとして解析する流れを示す教材イラスト"
-  title="RNA-seqはRNAを読み、細胞の状態をデータとして見る方法"
-  caption="RNAを配列データに変換し、コンピューター上で遺伝子ごとの発現量として整理します。"
-/>
-
-<TermBox term="RNA-seq" english="RNA sequencing" abbreviation="RNA-seq">
-  RNAを配列決定し、遺伝子発現や転写産物の特徴を調べる手法です。
-</TermBox>
 
 ## 英語表記と略語
 

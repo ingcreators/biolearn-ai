@@ -19,7 +19,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -32,19 +31,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 カウント行列は、遺伝子ごとに観測されたリードや分子の数を、サンプルまたは細胞ごとに並べた表です。
-
-## 基礎解説
-
-RNA-seq解析では、シーケンサーから得られたリードを遺伝子や転写産物に対応づけ、遺伝子ごとの数を数えます。この数を表にしたものがカウント行列です。
-
-bulk RNA-seqでは、列がサンプル、行が遺伝子になることが多いです。single-cell RNA-seqでは、列が細胞、行が遺伝子になることが多く、非常に大きく、値が0の多い表になります。
-
-カウントは解析の出発点ですが、そのまま発現量として単純比較するものではありません。サンプルごとの総リード数、細胞ごとの検出効率、遺伝子長、技術的なばらつきなどの影響を受けるため、正規化や品質管理とセットで扱います。
-
-## 図解
 
 <LessonFigure
   src="/figures/count-matrix-concept.jpg"
@@ -53,9 +40,11 @@ bulk RNA-seqでは、列がサンプル、行が遺伝子になることが多�
   caption="RNA-seqやsingle-cell解析では、この表を出発点に正規化、次元削減、クラスタリングへ進みます。"
 />
 
-<TermBox term="カウント行列" english="count matrix">
-  遺伝子ごとの観測数を、サンプルまたは細胞ごとに並べた表です。
-</TermBox>
+RNA-seq解析では、シーケンサーから得られたリードを遺伝子や転写産物に対応づけ、遺伝子ごとの数を数えます。この数を表にしたものがカウント行列です。
+
+bulk RNA-seqでは、列がサンプル、行が遺伝子になることが多いです。single-cell RNA-seqでは、列が細胞、行が遺伝子になることが多く、非常に大きく、値が0の多い表になります。
+
+カウントは解析の出発点ですが、そのまま発現量として単純比較するものではありません。サンプルごとの総リード数、細胞ごとの検出効率、遺伝子長、技術的なばらつきなどの影響を受けるため、正規化や品質管理とセットで扱います。
 
 ## よくある誤解
 

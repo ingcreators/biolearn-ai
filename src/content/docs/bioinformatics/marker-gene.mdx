@@ -19,7 +19,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -32,19 +31,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 マーカー遺伝子は、特定の細胞型や細胞状態で特徴的に発現する遺伝子です。
-
-## 基礎解説
-
-single-cell解析では、クラスタに細胞型名を付けるとき、各クラスタで高く発現する遺伝子を確認します。既知の細胞型に特徴的な遺伝子が高ければ、そのクラスタをその細胞型として解釈する手がかりになります。
-
-ただし、マーカー遺伝子は文脈依存です。ある組織では有用なマーカーでも、別の組織や状態では別の意味を持つことがあります。また、1つの遺伝子だけで細胞型を確定するのではなく、複数のマーカー、発現パターン、参考データ、Methodsの注釈方法を合わせて読みます。
-
-論文では、Feature plot、Dot plot、ヒートマップ、表などでマーカー遺伝子が示されます。図を見るときは、どのクラスタで高いか、発現している細胞の割合はどれくらいか、条件差と細胞型差が混ざっていないかを確認します。
-
-## 図解
 
 <LessonFigure
   src="/figures/marker-gene-concept.jpg"
@@ -53,9 +40,11 @@ single-cell解析では、クラスタに細胞型名を付けるとき、各ク
   caption="複数のマーカーと発現パターンを見て、クラスタ名の根拠を確認します。"
 />
 
-<TermBox term="マーカー遺伝子" english="marker gene">
-  特定の細胞型や状態を見分ける手がかりとして使われる遺伝子です。
-</TermBox>
+single-cell解析では、クラスタに細胞型名を付けるとき、各クラスタで高く発現する遺伝子を確認します。既知の細胞型に特徴的な遺伝子が高ければ、そのクラスタをその細胞型として解釈する手がかりになります。
+
+ただし、マーカー遺伝子は文脈依存です。ある組織では有用なマーカーでも、別の組織や状態では別の意味を持つことがあります。また、1つの遺伝子だけで細胞型を確定するのではなく、複数のマーカー、発現パターン、参考データ、Methodsの注釈方法を合わせて読みます。
+
+論文では、Feature plot、Dot plot、ヒートマップ、表などでマーカー遺伝子が示されます。図を見るときは、どのクラスタで高いか、発現している細胞の割合はどれくらいか、条件差と細胞型差が混ざっていないかを確認します。
 
 ## よくある誤解
 

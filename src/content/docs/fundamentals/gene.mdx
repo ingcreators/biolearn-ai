@@ -17,7 +17,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -30,11 +29,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 遺伝子は、機能を持つRNAやタンパク質の産生に関わるDNA領域です。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/gene-concept.jpg"
+  alt="長いDNAの一部が機能領域として強調され、RNAやタンパク質の産生につながる様子を示す教材イラスト"
+  title="遺伝子はDNA上の機能を持つ領域"
+  caption="DNA全体が遺伝子なのではなく、RNAやタンパク質の産生に関わる領域を遺伝子として捉えます。"
+/>
 
 遺伝子は「タンパク質の設計図」と説明されることがあります。この説明は入口として便利ですが、すべての遺伝子がタンパク質を作るわけではありません。RNAとして機能する遺伝子もあります。
 
@@ -65,19 +67,6 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 ## 論文や実験ではどう出てくるか
 
 遺伝子は、発現量の測定、変異解析、ノックアウト、ノックダウン、過剰発現などで登場します。論文では「Gene Xの発現が上昇した」「Gene Yをノックアウトすると細胞の増殖が低下した」のように、遺伝子の情報、使われ方、機能を結びつけて説明されます。
-
-## 図解
-
-<LessonFigure
-  src="/figures/gene-concept.jpg"
-  alt="長いDNAの一部が機能領域として強調され、RNAやタンパク質の産生につながる様子を示す教材イラスト"
-  title="遺伝子はDNA上の機能を持つ領域"
-  caption="DNA全体が遺伝子なのではなく、RNAやタンパク質の産生に関わる領域を遺伝子として捉えます。"
-/>
-
-<TermBox term="遺伝子" english="gene">
-  DNA上にある機能的な領域です。RNAやタンパク質を通じて生命現象に関わります。
-</TermBox>
 
 ## 英語表記と略語
 

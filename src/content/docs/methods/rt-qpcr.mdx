@@ -26,7 +26,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -39,11 +38,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 RT-qPCRは、RNAをcDNAに変換してからqPCRで測り、遺伝子発現量を比較する方法です。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/rt-qpcr-concept.jpg"
+  alt="RNAをcDNAへ逆転写し、qPCRで増幅曲線として測る流れを示す概念図"
+  title="RT-qPCRはRNAをcDNAに変換してから測る"
+  caption="RNAそのものではなく、逆転写で作ったcDNAをqPCRで測定し、遺伝子発現量を比較します。"
+/>
 
 PCRやqPCRはDNAを増幅する手法です。そのため、RNAの量を調べたい場合は、まず逆転写によってRNAをcDNAに変換します。この逆転写の工程を含むqPCRがRT-qPCRです。
 
@@ -65,23 +67,6 @@ RT-qPCR Figureでは、RNA量の比較がどの基準で正規化されている
 - 発現量の変化だけで、タンパク質量や機能変化まで示したとは読まないようにします。
 
 棒グラフとして出る場合は[棒グラフの読み方](/figures/how-to-read-bar-plot/)へ、増幅やCt値の考え方は[qPCRプロット](/figures/how-to-read-qpcr-plot/)へ戻ります。
-
-## 図解
-
-<LessonFigure
-  src="/figures/rt-qpcr-concept.jpg"
-  alt="RNAをcDNAへ逆転写し、qPCRで増幅曲線として測る流れを示す概念図"
-  title="RT-qPCRはRNAをcDNAに変換してから測る"
-  caption="RNAそのものではなく、逆転写で作ったcDNAをqPCRで測定し、遺伝子発現量を比較します。"
-/>
-
-<TermBox
-  term="RT-qPCR"
-  english="reverse transcription quantitative PCR"
-  abbreviation="RT-qPCR"
->
-  RNAをcDNAに変換してからqPCRで測る、遺伝子発現解析の実験手法です。
-</TermBox>
 
 ## 英語表記と略語
 

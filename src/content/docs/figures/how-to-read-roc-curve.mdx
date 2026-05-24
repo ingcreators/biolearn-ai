@@ -19,7 +19,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -32,19 +31,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 ROC曲線は、分類や判別のしきい値を変えたときに、真陽性率と偽陽性率の関係がどう変わるかを見るFigureです。
-
-## 基礎解説
-
-ROCは receiver operating characteristic の略です。生命科学論文では、遺伝子発現、画像特徴量、スコアなどを使って、2つの状態をどの程度区別できるかを示すときに使われることがあります。
-
-縦軸は真陽性率（true positive rate）または感度（sensitivity）、横軸は偽陽性率（false positive rate）を表すことが多いです。曲線が左上に近いほど、あるデータセット上では区別がよいと読みます。
-
-AUC（area under the curve）は曲線の下の面積で、1に近いほど区別性能が高い目安になります。ただし、AUCが高いことは、そのまま実用性や因果関係を意味しません。データの分け方、サンプル数、外部検証、目的に合う評価指標を確認します。
-
-## 図解
 
 <LessonFigure
   src="/figures/how-to-read-roc-curve-concept.jpg"
@@ -53,9 +40,11 @@ AUC（area under the curve）は曲線の下の面積で、1に近いほど区�
   caption="真陽性率、偽陽性率、AUC、検証データの有無を確認して読みます。"
 />
 
-<TermBox term="AUC" english="area under the curve" abbreviation="AUC">
-  ROC曲線の下の面積です。分類や判別の性能を要約する指標として使われます。
-</TermBox>
+ROCは receiver operating characteristic の略です。生命科学論文では、遺伝子発現、画像特徴量、スコアなどを使って、2つの状態をどの程度区別できるかを示すときに使われることがあります。
+
+縦軸は真陽性率（true positive rate）または感度（sensitivity）、横軸は偽陽性率（false positive rate）を表すことが多いです。曲線が左上に近いほど、あるデータセット上では区別がよいと読みます。
+
+AUC（area under the curve）は曲線の下の面積で、1に近いほど区別性能が高い目安になります。ただし、AUCが高いことは、そのまま実用性や因果関係を意味しません。データの分け方、サンプル数、外部検証、目的に合う評価指標を確認します。
 
 ## よくある誤解
 

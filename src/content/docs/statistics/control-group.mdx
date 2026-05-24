@@ -19,7 +19,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -32,21 +31,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 対照群は、処理群や観察対象を解釈するための比較の基準です。
-
-## 基礎解説
-
-研究で「処理によって変化した」と言うには、何と比べて変化したのかが必要です。その基準になる群が対照群です。
-
-統計・研究デザインの観点では、対照群と処理群で、目的の条件以外ができるだけ揃っているかを見ます。培養条件、測定日、サンプルの由来、処理時間、データ処理の方法などが大きく違うと、観察された差が目的の処理によるものか判断しにくくなります。
-
-## なぜ重要か
-
-Figureで棒や点が並んでいるとき、どの群を基準にして差を見ているのかを確認する必要があります。対照群が不適切だと、p値や効果量が示されていても、比較そのものの意味が弱くなります。
-
-## 図解
 
 <LessonFigure
   src="/figures/control-group-concept.jpg"
@@ -55,9 +40,13 @@ Figureで棒や点が並んでいるとき、どの群を基準にして差を�
   caption="目的の処理以外の条件が揃っているかをMethodsで確認します。"
 />
 
-<TermBox term="対照群" english="control group">
-  研究で比較の基準になる群です。
-</TermBox>
+研究で「処理によって変化した」と言うには、何と比べて変化したのかが必要です。その基準になる群が対照群です。
+
+統計・研究デザインの観点では、対照群と処理群で、目的の条件以外ができるだけ揃っているかを見ます。培養条件、測定日、サンプルの由来、処理時間、データ処理の方法などが大きく違うと、観察された差が目的の処理によるものか判断しにくくなります。
+
+## なぜ重要か
+
+Figureで棒や点が並んでいるとき、どの群を基準にして差を見ているのかを確認する必要があります。対照群が不適切だと、p値や効果量が示されていても、比較そのものの意味が弱くなります。
 
 ## 英語表記と略語
 

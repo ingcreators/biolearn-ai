@@ -15,7 +15,6 @@ prerequisites: []
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -28,11 +27,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 変数は、研究で観察、測定、比較する値やカテゴリです。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/variable-concept.jpg"
+  alt="横軸に条件、縦軸に測定値、色に細胞タイプを置き、それぞれが変数であることを示す概念図"
+  title="Figureの軸や色は変数を表す"
+  caption="何が測定値で、何が群分けかを最初に確認します。"
+/>
 
 Figureを読むとき、最初に確認したいのは「何を比べているか」です。横軸、縦軸、色、形、群分け、凡例は、それぞれ何らかの変数を表しています。
 
@@ -47,19 +49,6 @@ Figureを読むとき、最初に確認したいのは「何を比べている�
 ## Figureで見る場所
 
 変数は、ほぼすべてのFigure読解の入口です。[軸ラベルと単位の読み方](/figures/axis-label-unit/)では横軸・縦軸・単位を確認し、[散布図の読み方](/figures/how-to-read-scatter-plot/)では1点が何を表すか、[UMAP/t-SNEの読み方](/figures/how-to-read-umap-tsne/)では色やクラスタが何の変数を表すかを確認します。
-
-## 図解
-
-<LessonFigure
-  src="/figures/variable-concept.jpg"
-  alt="横軸に条件、縦軸に測定値、色に細胞タイプを置き、それぞれが変数であることを示す概念図"
-  title="Figureの軸や色は変数を表す"
-  caption="何が測定値で、何が群分けかを最初に確認します。"
-/>
-
-<TermBox term="変数" english="variable">
-  研究で観察、測定、比較する値やカテゴリです。
-</TermBox>
 
 ## 英語表記と略語
 

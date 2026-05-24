@@ -22,7 +22,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -35,17 +34,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 この演習では、BioLearn用の架空ケースを使い、免疫染色画像を含む論文を読む手順を練習します。
-
-## 架空ケース
-
-ある研究では、条件Bでタンパク質Yが核へ移動すると主張しているとします。Figureには、免疫染色の代表画像、チャンネルごとの画像、細胞ごとの核内シグナル定量が示されています。
-
-読むときは、画像の明るさだけでなく、局在、対照、撮影条件、定量した細胞数や視野数を確認します。
-
-## 図解
 
 <LessonFigure
   src="/figures/walkthrough-immunostaining-concept.jpg"
@@ -54,9 +43,11 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   caption="色、局在、対照、撮影条件、細胞数、視野数をMethodsと合わせて確認します。"
 />
 
-<TermBox term="局在" english="localization">
-  分子が細胞内や組織内のどこに見えるかを表す考え方です。
-</TermBox>
+## 架空ケース
+
+ある研究では、条件Bでタンパク質Yが核へ移動すると主張しているとします。Figureには、免疫染色の代表画像、チャンネルごとの画像、細胞ごとの核内シグナル定量が示されています。
+
+読むときは、画像の明るさだけでなく、局在、対照、撮影条件、定量した細胞数や視野数を確認します。
 
 ## 読む順番
 

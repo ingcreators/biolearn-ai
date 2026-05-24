@@ -23,7 +23,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -36,21 +35,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 ローディングコントロールは、各レーンに入ったサンプル量や検出条件の違いを補正するための基準です。
-
-## 基礎解説
-
-Western blotでは、サンプルをレーンごとに流して目的タンパク質を検出します。しかし、各レーンに入った総タンパク質量や転写・検出の効率が完全に同じとは限りません。
-
-そこで、条件間で大きく変わらないと期待されるタンパク質や総タンパク質染色を基準にして、目的バンドの濃さを補正します。この基準がローディングコントロールです。
-
-## なぜ重要か
-
-目的バンドが濃く見えても、単にそのレーンに多くのサンプルが入っていた可能性があります。ローディングコントロールが安定しているか、定量値が何で割られているかを確認すると、Figureの比較を読みやすくなります。
-
-## 図解
 
 <LessonFigure
   src="/figures/loading-control-concept.jpg"
@@ -59,9 +44,13 @@ Western blotでは、サンプルをレーンごとに流して目的タンパ�
   caption="ローディングコントロールが安定しているか、定量値が何で補正されたかを確認します。"
 />
 
-<TermBox term="ローディングコントロール" english="loading control">
-  各レーンのサンプル量や検出条件の違いを補正するために使う基準です。
-</TermBox>
+Western blotでは、サンプルをレーンごとに流して目的タンパク質を検出します。しかし、各レーンに入った総タンパク質量や転写・検出の効率が完全に同じとは限りません。
+
+そこで、条件間で大きく変わらないと期待されるタンパク質や総タンパク質染色を基準にして、目的バンドの濃さを補正します。この基準がローディングコントロールです。
+
+## なぜ重要か
+
+目的バンドが濃く見えても、単にそのレーンに多くのサンプルが入っていた可能性があります。ローディングコントロールが安定しているか、定量値が何で割られているかを確認すると、Figureの比較を読みやすくなります。
 
 ## 英語表記と略語
 

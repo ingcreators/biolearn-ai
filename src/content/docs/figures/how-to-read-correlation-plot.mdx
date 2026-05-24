@@ -19,7 +19,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -32,19 +31,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 相関図は、2つの変数が一緒に変化する傾向を、点の分布や相関係数で示すFigureです。
-
-## 基礎解説
-
-相関図は散布図の一種として示されることが多く、横軸と縦軸に別々の変数を置きます。点が右上がりに並ぶと正の相関、右下がりに並ぶと負の相関と表現されることがあります。
-
-Figureでは、相関係数 `r` や `rho`、p値、近似線が一緒に表示されることがあります。相関係数は関係の強さと向きを表し、p値はその関係が偶然だけで説明しにくいかの目安になります。両者は同じ意味ではありません。
-
-相関があることは、片方がもう片方を直接引き起こしたことを意味しません。[相関と因果の違い](/statistics/correlation-causation/)を意識し、共通の別要因、サンプルの偏り、外れ値、測定条件の影響も考える必要があります。
-
-## 図解
 
 <LessonFigure
   src="/figures/how-to-read-correlation-plot-concept.jpg"
@@ -53,9 +40,11 @@ Figureでは、相関係数 `r` や `rho`、p値、近似線が一緒に表示�
   caption="軸、点の単位、相関係数、外れ値、群の混ざり方を確認し、因果と混同しないように読みます。"
 />
 
-<TermBox term="相関" english="correlation">
-  2つの変数が一緒に変化する傾向です。因果関係そのものを示す言葉ではありません。
-</TermBox>
+相関図は散布図の一種として示されることが多く、横軸と縦軸に別々の変数を置きます。点が右上がりに並ぶと正の相関、右下がりに並ぶと負の相関と表現されることがあります。
+
+Figureでは、相関係数 `r` や `rho`、p値、近似線が一緒に表示されることがあります。相関係数は関係の強さと向きを表し、p値はその関係が偶然だけで説明しにくいかの目安になります。両者は同じ意味ではありません。
+
+相関があることは、片方がもう片方を直接引き起こしたことを意味しません。[相関と因果の違い](/statistics/correlation-causation/)を意識し、共通の別要因、サンプルの偏り、外れ値、測定条件の影響も考える必要があります。
 
 ## よくある誤解
 

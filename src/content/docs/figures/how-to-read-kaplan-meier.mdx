@@ -19,7 +19,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -32,19 +31,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 Kaplan-Meierプロットは、時間の経過にともなって、イベントがまだ起きていない割合がどう変わるかを示すFigureです。
-
-## 基礎解説
-
-Kaplan-Meierプロットは、時間-to-eventデータを可視化するために使われます。横軸は時間、縦軸はイベントが起きていない割合を表すことが多く、曲線が段階的に下がるたびにイベントが発生したことを示します。
-
-曲線が2本以上ある場合、群ごとの違いを比較します。ただし、曲線が離れて見えても、サンプル数、追跡期間、打ち切り、背景因子、統計検定の方法を確認しないと、意味を判断しすぎることになります。
-
-BioLearnでは、このFigureを論文読解のための教育例として扱います。個別の健康状態、診断、治療選択を判断するための情報ではありません。
-
-## 図解
 
 <LessonFigure
   src="/figures/how-to-read-kaplan-meier-concept.jpg"
@@ -53,9 +40,11 @@ BioLearnでは、このFigureを論文読解のための教育例として扱い
   caption="曲線の差だけでなく、打ち切り、リスク数、追跡期間、群の背景を確認します。"
 />
 
-<TermBox term="打ち切り" english="censoring">
-  観察期間中にイベントが確認されなかった、または途中で追跡できなくなったデータの扱いです。
-</TermBox>
+Kaplan-Meierプロットは、時間-to-eventデータを可視化するために使われます。横軸は時間、縦軸はイベントが起きていない割合を表すことが多く、曲線が段階的に下がるたびにイベントが発生したことを示します。
+
+曲線が2本以上ある場合、群ごとの違いを比較します。ただし、曲線が離れて見えても、サンプル数、追跡期間、打ち切り、背景因子、統計検定の方法を確認しないと、意味を判断しすぎることになります。
+
+BioLearnでは、このFigureを論文読解のための教育例として扱います。個別の健康状態、診断、治療選択を判断するための情報ではありません。
 
 ## よくある誤解
 

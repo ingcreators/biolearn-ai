@@ -20,7 +20,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -33,19 +32,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 Figureを読む目的は、見た目を理解するだけでなく、論文の主張がどのデータに支えられているかを確認することです。
-
-## 基礎解説
-
-Results本文には、「増加した」「低下した」「関連した」「必要である」「示唆された」などの表現が出てきます。これらの文を読んだら、対応するFigureやパネルに戻り、どのデータがその文を支えているかを確認します。
-
-まず、主張の対象を分解します。何が、どの条件で、何と比べて、どの方向に変化したのかを見ます。次に、その主張に対応するパネルで、軸、条件、対照、ばらつき、反復、統計表示を確認します。
-
-Figureから直接言えることと、解釈として一歩進んでいることは分けて読みます。たとえば「相関した」はFigureから読みやすい一方で、「原因である」は追加実験やデザインが必要です。
-
-## 図解
 
 <LessonFigure
   src="/figures/figure-to-claim-concept.jpg"
@@ -54,9 +41,11 @@ Figureから直接言えることと、解釈として一歩進んでいるこ�
   caption="本文の文、対応パネル、測定値、対照、統計表示をつなげて、どこまで言えるかを考えます。"
 />
 
-<TermBox term="主張" english="claim">
-  論文中で著者が結果から述べる結論や解釈です。Figureのデータにどの程度支えられているかを確認します。
-</TermBox>
+Results本文には、「増加した」「低下した」「関連した」「必要である」「示唆された」などの表現が出てきます。これらの文を読んだら、対応するFigureやパネルに戻り、どのデータがその文を支えているかを確認します。
+
+まず、主張の対象を分解します。何が、どの条件で、何と比べて、どの方向に変化したのかを見ます。次に、その主張に対応するパネルで、軸、条件、対照、ばらつき、反復、統計表示を確認します。
+
+Figureから直接言えることと、解釈として一歩進んでいることは分けて読みます。たとえば「相関した」はFigureから読みやすい一方で、「原因である」は追加実験やデザインが必要です。
 
 ## よくある誤解
 

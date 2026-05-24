@@ -17,7 +17,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -30,11 +29,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 遺伝的変異は、個体や細胞の間で見られるゲノム配列の違いです。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/genetic-variants-concept.jpg"
+  alt="似たDNA配列の間に置換、挿入、欠失の違いがあり、周囲の情報と合わせて解釈する様子を示す教材イラスト"
+  title="遺伝的変異はゲノム配列に見られる違い"
+  caption="配列の違いを見つけることと、その意味を確定することは別であり、頻度や位置、証拠を合わせて考えます。"
+/>
 
 ゲノム配列には、個人差や細胞ごとの差があります。1塩基だけが異なる場合もあれば、塩基が挿入されたり欠失したりする場合もあります。こうした違いを遺伝的変異と呼びます。
 
@@ -65,19 +67,6 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 ## 論文や実験ではどう出てくるか
 
 遺伝的変異は、全ゲノムシーケンシング、エクソーム解析、GWAS、バリアントコールなどで登場します。論文では、変異のゲノム上の位置、アリル頻度、影響予測、集団間の頻度差、機能実験の結果として示されることがあります。
-
-## 図解
-
-<LessonFigure
-  src="/figures/genetic-variants-concept.jpg"
-  alt="似たDNA配列の間に置換、挿入、欠失の違いがあり、周囲の情報と合わせて解釈する様子を示す教材イラスト"
-  title="遺伝的変異はゲノム配列に見られる違い"
-  caption="配列の違いを見つけることと、その意味を確定することは別であり、頻度や位置、証拠を合わせて考えます。"
-/>
-
-<TermBox term="遺伝的変異" english="genetic variant">
-  ゲノム配列に見られる違いです。影響の有無や大きさは変異ごとに異なります。
-</TermBox>
 
 ## 英語表記と略語
 

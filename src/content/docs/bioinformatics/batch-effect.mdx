@@ -19,7 +19,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -32,19 +31,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 バッチ効果は、実験日、試薬、担当者、測定機器、処理手順などの違いによって、サンプル間に生じる技術的な差です。
-
-## 基礎解説
-
-生命科学データでは、見えている違いが生物学的な条件差なのか、測定や処理の違いによる差なのかを分けて考える必要があります。バッチ効果は、後者の代表的な要因です。
-
-RNA-seqやsingle-cell RNA-seqでは、同じ種類のサンプルでも、別の日に処理した、別の試薬ロットを使った、別の機器で読んだ、といった違いでデータがまとまって見えることがあります。UMAPやPCAで、条件ではなく実験日ごとに点が分かれる場合、バッチ効果の可能性があります。
-
-バッチ補正は、技術的な差を小さくするための処理です。ただし、補正すれば常に正しいわけではありません。条件とバッチが完全に重なっていると、生物学的差と技術的差を分けにくくなります。論文では、実験デザイン、サンプルの割り付け、補正方法、補正前後の図を確認します。
-
-## 図解
 
 <LessonFigure
   src="/figures/batch-effect-concept.jpg"
@@ -53,9 +40,11 @@ RNA-seqやsingle-cell RNA-seqでは、同じ種類のサンプルでも、別の
   caption="条件とバッチが混ざっているか、補正前後で何が変わるかをMethodsとFigureで確認します。"
 />
 
-<TermBox term="バッチ効果" english="batch effect">
-  実験日、試薬、機器、処理手順などの技術的な違いによって、データに生じる差です。
-</TermBox>
+生命科学データでは、見えている違いが生物学的な条件差なのか、測定や処理の違いによる差なのかを分けて考える必要があります。バッチ効果は、後者の代表的な要因です。
+
+RNA-seqやsingle-cell RNA-seqでは、同じ種類のサンプルでも、別の日に処理した、別の試薬ロットを使った、別の機器で読んだ、といった違いでデータがまとまって見えることがあります。UMAPやPCAで、条件ではなく実験日ごとに点が分かれる場合、バッチ効果の可能性があります。
+
+バッチ補正は、技術的な差を小さくするための処理です。ただし、補正すれば常に正しいわけではありません。条件とバッチが完全に重なっていると、生物学的差と技術的差を分けにくくなります。論文では、実験デザイン、サンプルの割り付け、補正方法、補正前後の図を確認します。
 
 ## よくある誤解
 

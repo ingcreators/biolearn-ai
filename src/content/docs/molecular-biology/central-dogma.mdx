@@ -18,7 +18,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -31,11 +30,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 セントラルドグマは、遺伝情報がDNAからRNAを経てタンパク質へ使われる基本的な流れを表す考え方です。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/central-dogma-concept.jpg"
+  alt="DNAからRNAを経てタンパク質へ情報が流れ、細胞機能につながる様子を示す教材イラスト"
+  title="遺伝情報はDNAからRNA、タンパク質へ流れる"
+  caption="セントラルドグマは、分子の種類をまたいで情報がどう使われるかを整理する基本の見取り図です。"
+/>
 
 DNAの情報をRNAへ写す過程を転写、RNAの情報をもとにタンパク質を作る過程を翻訳と呼びます。この流れは分子生物学の基本です。
 
@@ -66,19 +68,6 @@ DNAの情報をRNAへ写す過程を転写、RNAの情報をもとにタンパ�
 ## 論文や実験ではどう出てくるか
 
 セントラルドグマそのものは実験手法名として出るより、結果の解釈の枠組みとして登場します。たとえばRNA-seqでmRNA量を調べ、ウェスタンブロットでタンパク質量を調べると、転写レベルの変化とタンパク質レベルの変化を分けて考えられます。
-
-## 図解
-
-<LessonFigure
-  src="/figures/central-dogma-concept.jpg"
-  alt="DNAからRNAを経てタンパク質へ情報が流れ、細胞機能につながる様子を示す教材イラスト"
-  title="遺伝情報はDNAからRNA、タンパク質へ流れる"
-  caption="セントラルドグマは、分子の種類をまたいで情報がどう使われるかを整理する基本の見取り図です。"
-/>
-
-<TermBox term="セントラルドグマ" english="central dogma">
-  DNA、RNA、タンパク質の間で遺伝情報がどのように使われるかを示す基本概念です。
-</TermBox>
 
 ## 英語表記と略語
 

@@ -19,7 +19,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -32,19 +31,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 single-cell QCは、single-cell RNA-seqデータから低品質な細胞や解析を歪める可能性のある細胞を見つけ、扱いを決める工程です。
-
-## 基礎解説
-
-single-cell RNA-seqでは、1細胞ごとの測定を行うため、細胞ごとにデータ品質が異なります。壊れかけた細胞、RNA量が少なすぎる細胞、複数細胞が1つとして読まれたdoubletなどが混ざることがあります。
-
-QCでは、細胞ごとの総カウント数、検出された遺伝子数、ミトコンドリア遺伝子の割合、doubletの可能性などを確認します。これらは細胞の状態を理解する手がかりですが、単純な良し悪しだけで決めるものではありません。組織や細胞型によって自然な範囲が変わることもあります。
-
-論文では、どの指標を使ったか、どの閾値で細胞を除外したか、除外後にサンプルや条件のバランスが崩れていないかを確認します。
-
-## 図解
 
 <LessonFigure
   src="/figures/single-cell-quality-control-concept.jpg"
@@ -53,9 +40,11 @@ QCでは、細胞ごとの総カウント数、検出された遺伝子数、ミ
   caption="低品質細胞やdoubletを確認し、除外基準が結果に与える影響をMethodsで確認します。"
 />
 
-<TermBox term="品質管理" english="quality control" abbreviation="QC">
-  データの信頼性を下げる可能性があるサンプル、細胞、測定値を確認する工程です。
-</TermBox>
+single-cell RNA-seqでは、1細胞ごとの測定を行うため、細胞ごとにデータ品質が異なります。壊れかけた細胞、RNA量が少なすぎる細胞、複数細胞が1つとして読まれたdoubletなどが混ざることがあります。
+
+QCでは、細胞ごとの総カウント数、検出された遺伝子数、ミトコンドリア遺伝子の割合、doubletの可能性などを確認します。これらは細胞の状態を理解する手がかりですが、単純な良し悪しだけで決めるものではありません。組織や細胞型によって自然な範囲が変わることもあります。
+
+論文では、どの指標を使ったか、どの閾値で細胞を除外したか、除外後にサンプルや条件のバランスが崩れていないかを確認します。
 
 ## よくある誤解
 

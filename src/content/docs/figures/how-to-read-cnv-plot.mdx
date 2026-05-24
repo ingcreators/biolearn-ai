@@ -22,7 +22,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -35,21 +34,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 CNV plotは、ゲノム上の位置に沿って、DNA領域のコピー数が増えているか減っているかを示すFigureです。
-
-## 基礎解説
-
-コピー数変化（copy number variation, CNV）は、ゲノムの一部が通常より多く存在したり、少なく存在したりする変化です。CNV plotでは、横軸に染色体やゲノム位置、縦軸にコピー数やlog ratioを置くことが多くあります。
-
-上方向の変化は増幅、下方向の変化は欠失として示されることがあります。ただし、縦軸の定義はFigureごとに異なるため、0が基準なのか、2コピーが基準なのか、正規化後の値なのかを確認します。
-
-CNV plotは点が細かく揺れて見えることがあります。個々の点だけでなく、平滑化された線、セグメント、閾値、サンプル数を確認します。広い領域の変化と狭い領域の変化では、解釈に必要な文脈も変わります。
-
-CNVは、1塩基の違いだけでなく、ゲノム領域のコピー数が変わるタイプの [遺伝的変異](/glossary/genetic-variant/) として扱われます。Figureでは、どの種類の変化を検出しているのかをMethodsに戻って確認します。
-
-## 図解
 
 <LessonFigure
   src="/figures/how-to-read-cnv-plot-concept.jpg"
@@ -58,9 +43,13 @@ CNVは、1塩基の違いだけでなく、ゲノム領域のコピー数が変�
   caption="縦軸の定義、増幅と欠失の向き、セグメントの幅、ノイズと閾値を分けて確認します。"
 />
 
-<TermBox term="コピー数変化" english="copy number variation" abbreviation="CNV">
-  ゲノム領域のコピー数が増えたり減ったりする変化です。論文では増幅や欠失として示されることがあります。
-</TermBox>
+コピー数変化（copy number variation, CNV）は、ゲノムの一部が通常より多く存在したり、少なく存在したりする変化です。CNV plotでは、横軸に染色体やゲノム位置、縦軸にコピー数やlog ratioを置くことが多くあります。
+
+上方向の変化は増幅、下方向の変化は欠失として示されることがあります。ただし、縦軸の定義はFigureごとに異なるため、0が基準なのか、2コピーが基準なのか、正規化後の値なのかを確認します。
+
+CNV plotは点が細かく揺れて見えることがあります。個々の点だけでなく、平滑化された線、セグメント、閾値、サンプル数を確認します。広い領域の変化と狭い領域の変化では、解釈に必要な文脈も変わります。
+
+CNVは、1塩基の違いだけでなく、ゲノム領域のコピー数が変わるタイプの [遺伝的変異](/glossary/genetic-variant/) として扱われます。Figureでは、どの種類の変化を検出しているのかをMethodsに戻って確認します。
 
 ## よくある誤解
 

@@ -20,7 +20,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -33,21 +32,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 統計的有意性は、観察された差が偶然だけでは説明しにくいかを見る考え方であり、生物学的重要性は、その差が研究対象の文脈で意味を持つかを考える視点です。
-
-## 基礎解説
-
-論文のFigureでは、`p < 0.05` やアスタリスクによって統計的有意性が示されることがあります。しかし、p値が小さいことは、差が大きいことや、生物学的に重要であることと同じではありません。
-
-生物学的重要性を考えるには、効果量、信頼区間、測定単位、サンプル数、再現性、既存知識、実験系で期待される変化の大きさを合わせて見ます。小さい差でも重要な場合もあれば、統計的に有意でも解釈に注意が必要な場合もあります。
-
-## なぜ重要か
-
-アスタリスクの有無だけでFigureを読むと、結論を強く読みすぎたり、逆に重要な傾向を見落としたりします。Resultsでは統計表示を確認し、Discussionではその差がどの範囲で意味を持つかを読みます。
-
-## 図解
 
 <LessonFigure
   src="/figures/significance-vs-importance-concept.jpg"
@@ -56,9 +41,13 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   caption="p値、効果量、信頼区間、実験文脈を合わせて解釈します。"
 />
 
-<TermBox term="統計的有意性" english="statistical significance">
-  観察された差が、基準となる仮定のもとで偶然だけでは説明しにくいかを考える統計上の判断です。
-</TermBox>
+論文のFigureでは、`p < 0.05` やアスタリスクによって統計的有意性が示されることがあります。しかし、p値が小さいことは、差が大きいことや、生物学的に重要であることと同じではありません。
+
+生物学的重要性を考えるには、効果量、信頼区間、測定単位、サンプル数、再現性、既存知識、実験系で期待される変化の大きさを合わせて見ます。小さい差でも重要な場合もあれば、統計的に有意でも解釈に注意が必要な場合もあります。
+
+## なぜ重要か
+
+アスタリスクの有無だけでFigureを読むと、結論を強く読みすぎたり、逆に重要な傾向を見落としたりします。Resultsでは統計表示を確認し、Discussionではその差がどの範囲で意味を持つかを読みます。
 
 ## 英語表記と略語
 

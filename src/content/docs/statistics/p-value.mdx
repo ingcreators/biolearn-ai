@@ -19,7 +19,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -32,11 +31,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 p値は、「差がない」という仮定のもとで、観察された差やそれ以上の差がどれくらい起こりにくいかを表す指標です。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/p-value-concept.jpg"
+  alt="2つの棒グラフの差と、差がないという仮定のもとで珍しさを考える様子を示す概念図"
+  title="p値は差の珍しさを考えるための指標"
+  caption="p値だけで重要性を判断せず、差の大きさや実験設計と合わせて読みます。"
+/>
 
 論文のFigureでは、`p < 0.05` やアスタリスクがよく出てきます。これは、統計的検定の結果としてp値が一定の基準より小さいことを示している場合があります。
 
@@ -53,19 +55,6 @@ Figureを読むときは、何と何を比べたp値なのか、どの検定を�
 ## Figureで見る場所
 
 p値は、[棒グラフの読み方](/figures/how-to-read-bar-plot/)のアスタリスク、[箱ひげ図の読み方](/figures/how-to-read-box-plot/)の群間比較、[Volcano plotの読み方](/figures/how-to-read-volcano-plot/)の縦軸などで出てきます。オミクス解析では、補正済みp値かどうかも確認します。
-
-## 図解
-
-<LessonFigure
-  src="/figures/p-value-concept.jpg"
-  alt="2つの棒グラフの差と、差がないという仮定のもとで珍しさを考える様子を示す概念図"
-  title="p値は差の珍しさを考えるための指標"
-  caption="p値だけで重要性を判断せず、差の大きさや実験設計と合わせて読みます。"
-/>
-
-<TermBox term="p値" english="p-value">
-  帰無仮説のもとで、観察された差やそれ以上の差が起こる確率を考えるための統計指標です。
-</TermBox>
 
 ## 英語表記と略語
 

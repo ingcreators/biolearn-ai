@@ -18,7 +18,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -31,11 +30,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 遺伝子発現は、遺伝子の情報がRNAやタンパク質として実際に使われることです。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/gene-expression-concept.jpg"
+  alt="核内の複数の遺伝子のうち一部が活性化し、RNA量の違いとして表れる様子を示す教材イラスト"
+  title="遺伝子発現はどの遺伝子がどれくらい使われるかを見る視点"
+  caption="細胞の状態によって使われる遺伝子とRNA量が変わり、その違いが細胞の性質を読み解く手がかりになります。"
+/>
 
 同じゲノムを持つ細胞でも、すべての遺伝子を同じように使っているわけではありません。神経細胞、筋細胞、免疫細胞などは、それぞれ必要な遺伝子を異なる強さで発現させます。
 
@@ -66,19 +68,6 @@ RNA-seqの結果では、遺伝子ごとに発現量の表が作られます。�
 ## 論文や実験ではどう出てくるか
 
 遺伝子発現は、RT-qPCR、RNA-seq、マイクロアレイ、ウェスタンブロット、免疫染色などで登場します。論文では、発現量の表、ヒートマップ、ボルケーノプロット、発現変動遺伝子リストとして示されることが多いです。
-
-## 図解
-
-<LessonFigure
-  src="/figures/gene-expression-concept.jpg"
-  alt="核内の複数の遺伝子のうち一部が活性化し、RNA量の違いとして表れる様子を示す教材イラスト"
-  title="遺伝子発現はどの遺伝子がどれくらい使われるかを見る視点"
-  caption="細胞の状態によって使われる遺伝子とRNA量が変わり、その違いが細胞の性質を読み解く手がかりになります。"
-/>
-
-<TermBox term="遺伝子発現" english="gene expression">
-  遺伝子の情報がRNAやタンパク質として読み出され、細胞内で機能につながることです。
-</TermBox>
 
 ## 英語表記と略語
 

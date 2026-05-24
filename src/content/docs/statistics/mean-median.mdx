@@ -17,7 +17,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -30,11 +29,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 平均と中央値は、データの中心を表す代表値ですが、外れ値や分布の偏りへの影響が異なります。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/mean-median-concept.jpg"
+  alt="外れ値があるデータで平均が右に引かれ、中央値は中央付近に残ることを示す概念図"
+  title="平均と中央値は外れ値への影響が違う"
+  caption="代表値だけでなく、分布と個々の点も合わせて確認します。"
+/>
 
 平均は、すべての値を足してデータ数で割った値です。多くの棒グラフでは平均が示されます。中央値は、値を小さい順に並べたとき中央に来る値です。箱ひげ図では中央値がよく使われます。
 
@@ -47,19 +49,6 @@ Figureの中央の線や棒の高さが何を表しているかを確認しな�
 ## Figureで見る場所
 
 [棒グラフの読み方](/figures/how-to-read-bar-plot/)では棒の高さが平均なのか別の代表値なのかを確認します。[箱ひげ図の読み方](/figures/how-to-read-box-plot/)では箱の中線が中央値を表すことが多く、平均とは違う見方が必要です。
-
-## 図解
-
-<LessonFigure
-  src="/figures/mean-median-concept.jpg"
-  alt="外れ値があるデータで平均が右に引かれ、中央値は中央付近に残ることを示す概念図"
-  title="平均と中央値は外れ値への影響が違う"
-  caption="代表値だけでなく、分布と個々の点も合わせて確認します。"
-/>
-
-<TermBox term="平均" english="mean">
-  すべての値を足し、データ数で割った代表値です。
-</TermBox>
 
 ## 英語表記と略語
 

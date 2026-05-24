@@ -19,7 +19,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -32,19 +31,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 細胞タイプ注釈は、クラスタや細胞に対して、マーカー遺伝子などの根拠をもとに細胞型名を付ける工程です。
-
-## 基礎解説
-
-single-cell解析では、クラスタリングによって似た発現パターンの細胞がまとまります。しかし、クラスタ番号だけでは、その細胞が何の細胞型かは分かりません。そこで、各クラスタで高く発現するマーカー遺伝子を確認し、既知の細胞型の知識と照らし合わせます。
-
-たとえば、あるクラスタで特定の免疫細胞に関連するマーカーが高い場合、そのクラスタをその細胞型として注釈することがあります。ただし、マーカー遺伝子は文脈依存で、1つの遺伝子だけで細胞型が決まるわけではありません。
-
-論文を読むときは、クラスタ名だけでなく、どのマーカーを使ったか、複数の根拠があるか、参考データや自動注釈ツールを使ったか、曖昧なクラスタをどう扱ったかを確認します。
-
-## 図解
 
 <LessonFigure
   src="/figures/cell-type-annotation-concept.jpg"
@@ -53,9 +40,11 @@ single-cell解析では、クラスタリングによって似た発現パター
   caption="クラスタ名は結果そのものではなく、マーカー遺伝子や参考情報にもとづく解釈です。"
 />
 
-<TermBox term="細胞タイプ注釈" english="cell type annotation">
-  single-cell解析で、クラスタや細胞に細胞型名を付ける工程です。
-</TermBox>
+single-cell解析では、クラスタリングによって似た発現パターンの細胞がまとまります。しかし、クラスタ番号だけでは、その細胞が何の細胞型かは分かりません。そこで、各クラスタで高く発現するマーカー遺伝子を確認し、既知の細胞型の知識と照らし合わせます。
+
+たとえば、あるクラスタで特定の免疫細胞に関連するマーカーが高い場合、そのクラスタをその細胞型として注釈することがあります。ただし、マーカー遺伝子は文脈依存で、1つの遺伝子だけで細胞型が決まるわけではありません。
+
+論文を読むときは、クラスタ名だけでなく、どのマーカーを使ったか、複数の根拠があるか、参考データや自動注釈ツールを使ったか、曖昧なクラスタをどう扱ったかを確認します。
 
 ## よくある誤解
 

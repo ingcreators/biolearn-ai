@@ -19,7 +19,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -32,11 +31,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 効果量は、群間の差や変数どうしの関係がどれくらい大きいかを表す指標です。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/effect-size-concept.jpg"
+  alt="p値の印と差の大きさを分けて示し、効果量は差そのものの大きさを見ることを示す概念図"
+  title="効果量は差や関係の大きさを見る"
+  caption="p値だけでなく、どれくらい変わったのかを確認します。"
+/>
 
 p値は、ある仮定のもとで観察結果がどれくらい珍しいかを見る指標です。一方、効果量は「差がどれくらい大きいか」「関係がどれくらい強いか」に注目します。
 
@@ -49,19 +51,6 @@ p値は、ある仮定のもとで観察結果がどれくらい珍しいかを�
 ## Figureで見る場所
 
 効果量は、[Volcano plotの読み方](/figures/how-to-read-volcano-plot/)ではlog2 fold change、[相関図の読み方](/figures/how-to-read-correlation-plot/)では相関の強さ、[Forest plotの読み方](/figures/how-to-read-forest-plot/)では点推定の位置として読むことがあります。
-
-## 図解
-
-<LessonFigure
-  src="/figures/effect-size-concept.jpg"
-  alt="p値の印と差の大きさを分けて示し、効果量は差そのものの大きさを見ることを示す概念図"
-  title="効果量は差や関係の大きさを見る"
-  caption="p値だけでなく、どれくらい変わったのかを確認します。"
-/>
-
-<TermBox term="効果量" english="effect size">
-  差や関係の大きさを表す指標です。
-</TermBox>
 
 ## 英語表記と略語
 

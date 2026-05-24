@@ -17,7 +17,6 @@ prerequisites:
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
-import TermBox from '../../../components/TermBox.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
@@ -30,11 +29,14 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-## 要点
-
 DNAは、生物が持つ遺伝情報を塩基配列として保存する分子です。
 
-## 基礎解説
+<LessonFigure
+  src="/figures/dna-concept.jpg"
+  alt="細胞核の中のDNAが一部読み出され、RNAとタンパク質へつながる流れを示す教材イラスト"
+  title="DNAは保存された情報であり、必要な部分が読み出される"
+  caption="DNA全体が常に使われるのではなく、細胞の状態に応じて一部の領域が読み出されます。"
+/>
 
 DNAはデオキシリボ核酸の略で、A、T、G、Cという4種類の塩基の並びで情報を持ちます。二本の鎖が互いに対応する塩基同士で結びつき、二重らせん構造を作ります。
 
@@ -65,19 +67,6 @@ DNAは安定に情報を保存する一方で、配列の違いも生じます�
 ## 論文や実験ではどう出てくるか
 
 DNAは、PCR、ゲル電気泳動、サンガーシーケンシング、次世代シーケンシングなどで登場します。論文中では、特定の遺伝子領域を増幅した、変異を同定した、ゲノム配列を比較した、という形で扱われます。図では塩基配列、ゲノム上の位置、変異の場所として示されることが多いです。
-
-## 図解
-
-<LessonFigure
-  src="/figures/dna-concept.jpg"
-  alt="細胞核の中のDNAが一部読み出され、RNAとタンパク質へつながる流れを示す教材イラスト"
-  title="DNAは保存された情報であり、必要な部分が読み出される"
-  caption="DNA全体が常に使われるのではなく、細胞の状態に応じて一部の領域が読み出されます。"
-/>
-
-<TermBox term="DNA" english="deoxyribonucleic acid" abbreviation="DNA">
-  遺伝情報を長期的に保存する分子です。細胞分裂のときには複製され、次の細胞へ受け継がれます。
-</TermBox>
 
 ## 英語表記と略語
 
