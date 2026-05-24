@@ -84,13 +84,9 @@ export default defineConfig({
         src: './src/assets/biolearn-logo.svg',
         alt: 'BioLearn',
       },
-      social: [
-        {
-          icon: 'github',
-          label: 'GitHub',
-          href: 'https://github.com/ingcreators/biolearn-ai',
-        },
-      ],
+      components: {
+        Footer: './src/components/BiolearnFooter.astro',
+      },
       customCss: ['./src/styles/custom.css'],
       sidebar: [
         {
