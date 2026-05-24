@@ -1,0 +1,53 @@
+---
+title: single-cell QCとは | BioLearn
+description: single-cell QCの意味、低品質細胞、検出遺伝子数、ミトコンドリア比率、doubletとの関係を説明します。
+---
+
+## 日本語名
+
+single-cell QC
+
+## 英語名
+
+single-cell quality control
+
+## 略語
+
+QC
+
+## まず一言でいうと
+
+single-cell QCは、single-cell解析で低品質細胞や技術的な外れ値を確認する工程です。
+
+## もう少し詳しく
+
+[single-cell RNA-seq](/glossary/single-cell-rna-seq/)では、細胞ごとに測定の質が異なります。RNAが少ない細胞、壊れた可能性のある細胞、複数の細胞が混ざった可能性のあるデータなどを確認します。
+
+よく見る指標には、検出された遺伝子数、総カウント数、ミトコンドリア由来RNAの割合、doubletの可能性があります。しきい値はデータや実験条件によって変わるため、固定の正解として覚えるより、何を除外しようとしているかを理解することが大切です。
+
+## なぜ重要か
+
+品質の低い細胞が多いと、[クラスタリング](/glossary/clustering/)や[UMAP](/glossary/umap/)の見え方が変わることがあります。Figureを読むときは、結果だけでなくMethodsでQC条件を確認します。
+
+## よく混同される用語
+
+- フィルタリング: QC結果にもとづいて一部の細胞や遺伝子を除く処理。
+- doublet: 複数の細胞が1つの細胞として測定された可能性のあるデータ。
+- [バッチ効果](/glossary/batch-effect/): 実験日や条件の違いによる技術的な差。
+
+## 関連する用語
+
+- [single-cell RNA-seq](/glossary/single-cell-rna-seq/)
+- [カウント行列](/glossary/count-matrix/)
+- [クラスタリング](/glossary/clustering/)
+- [バッチ効果](/glossary/batch-effect/)
+
+## 関連する教材ページ
+
+- [single-cell QCとは何か](/bioinformatics/single-cell-quality-control/)
+- [カウント行列とは何か](/bioinformatics/count-matrix/)
+- [バッチ効果とは何か](/bioinformatics/batch-effect/)
+
+## 次に読む記事
+
+[次元削減とは何か](/bioinformatics/dimensionality-reduction/) で、QC後のデータを全体像として見る考え方へ進みましょう。

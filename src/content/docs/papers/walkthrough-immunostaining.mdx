@@ -1,0 +1,181 @@
+---
+title: '論文読解演習: 免疫染色を含む論文'
+description: 架空の免疫染色論文を題材に、代表画像、局在、対照、定量、Methods確認をつなげて読む練習をします。
+part: papers
+module: paper-walkthrough
+level: intermediate
+priority: P1
+order: 330
+learningPaths:
+  - paper-reading
+relatedTerms:
+  - protein
+  - cell
+  - biological-technical-replicates
+prerequisites:
+  - /methods/immunostaining/
+  - /methods/positive-negative-control/
+  - /figures/how-to-read-immunostaining/
+  - /figures/how-to-read-microscopy-image/
+  - /statistics/biological-technical-replicates/
+  - /papers/methods-checklist/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    '免疫染色を含む論文で代表画像と定量を対応づけられる',
+    '局在、チャンネル、対照、撮影条件を確認できる',
+    'Methodsで確認すべき染色条件と画像解析条件を挙げられる',
+  ]}
+/>
+
+## 要点
+
+この演習では、BioLearn用の架空ケースを使い、免疫染色画像を含む論文を読む手順を練習します。
+
+## 架空ケース
+
+ある研究では、条件Bでタンパク質Yが核へ移動すると主張しているとします。Figureには、免疫染色の代表画像、チャンネルごとの画像、細胞ごとの核内シグナル定量が示されています。
+
+読むときは、画像の明るさだけでなく、局在、対照、撮影条件、定量した細胞数や視野数を確認します。
+
+## 図解
+
+<LessonFigure
+  src="/figures/walkthrough-immunostaining-concept.jpg"
+  alt="免疫染色論文で代表画像、チャンネル、定量、Methodsを確認する概念図"
+  title="免疫染色論文は代表画像と定量を行き来する"
+  caption="色、局在、対照、撮影条件、細胞数、視野数をMethodsと合わせて確認します。"
+/>
+
+<TermBox term="局在" english="localization">
+  分子が細胞内や組織内のどこに見えるかを表す考え方です。
+</TermBox>
+
+## 読む順番
+
+1. Abstractで、タンパク質Yの局在について何を主張しているかを拾います。
+2. 代表画像で、どの色が何を表すかを確認します。
+3. 条件間でシグナルの場所や強さがどう違うかを見ます。
+4. 陰性対照、二次抗体のみ、既知マーカーなどの対照を探します。
+5. 定量グラフで、何を数値化したかを確認します。
+6. Methodsで、抗体、撮影条件、画像解析、細胞数、視野数を確認します。
+
+## Methodsで確認すること
+
+| 項目     | 確認すること                     |
+| -------- | -------------------------------- |
+| 抗体     | 一次抗体、二次抗体、希釈条件     |
+| 対照     | 陰性対照、二次抗体のみ、陽性対照 |
+| 撮影     | 露光、レーザー強度、同一条件か   |
+| 画像処理 | 明るさ調整、しきい値、正規化     |
+| 定量     | 細胞数、視野数、独立実験数       |
+| 局在判定 | 核、細胞質、膜、オルガネラの基準 |
+
+## 3段階で読む演習
+
+### 1. Methodsで確認する
+
+免疫染色では、染まっているかどうかだけでなく、抗体、画像取得、定量の条件を確認します。
+
+- 一次抗体、二次抗体、染色条件が示されているか。
+- 陽性対照、陰性対照、二次抗体のみ対照が使われているか。
+- 露光、レーザー強度、しきい値などが条件間で比較可能か。
+- 画像処理や定量の基準が説明されているか。
+- 解析した細胞数、視野数、独立実験数が分かるか。
+
+代表画像だけでは、局在や強度の変化を一般化するには不十分です。
+
+### 2. Figureで確認する
+
+次に、画像の見た目と定量結果を分けて読みます。
+
+- 各チャンネルが何を示しているかを確認する。
+- シグナルが核内、細胞質、膜、特定構造のどこにあるかを見る。
+- 背景シグナルや非特異的な染色が目立たないか確認する。
+- 代表画像と定量グラフが同じ方向の変化を示しているか。
+- スケールバー、条件名、視野の選び方が結論に影響しないかを見る。
+
+免疫染色のFigureでは、「きれいに見えるか」よりも「比較可能な条件で同じ基準で読めるか」が重要です。
+
+### 3. Discussionで言える範囲に戻す
+
+免疫染色から言いやすいのは、「条件Bでタンパク質Xのシグナルが核内で高く見える」「局在が変わった可能性がある」という範囲です。
+
+一方で、追加実験なしに「タンパク質Xがその現象を直接制御している」とまでは言えません。Discussionでは、局在の観察と機能的な因果関係が混ざっていないかを確認します。
+
+### 自分で答える問い
+
+- 代表画像と定量グラフは同じ主張を支えているか。
+- 対照染色から、非特異的シグナルの可能性をどこまで減らせているか。
+- Discussionの表現は、観察結果から直接言える範囲に収まっているか。
+
+## よくある誤解
+
+- 明るい画像ほど、必ず発現量が高いと読む。
+- 代表画像だけで再現性まで分かると思う。
+- チャンネルの重なりを、完全な共局在と決めつける。
+- 撮影条件や画像処理を確認せずに条件間を比べる。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question:
+        '免疫染色論文で代表画像だけで判断しにくい理由を説明してください。',
+      answer:
+        'ばらつき、再現性、細胞数、視野数、撮影条件、定量方法が分かりにくいためです。',
+    },
+    {
+      question:
+        '局在の変化を読むときにMethodsで確認したいことを一つ挙げてください。',
+      answer:
+        '抗体、対照、撮影条件、画像処理、定量した細胞数や視野数などです。',
+    },
+    {
+      question:
+        '免疫染色のMethodsで、条件間の画像を比較できるか確認するために見る情報を挙げてください。',
+      answer:
+        '抗体条件、陽性対照・陰性対照、露光やレーザー強度、しきい値、画像処理、細胞数、視野数、独立実験数などです。',
+    },
+    {
+      question:
+        '代表画像でシグナルが強く見えるとき、Figure側で追加確認したいことを挙げてください。',
+      answer:
+        '各チャンネルの意味、背景シグナル、スケールバー、同じ撮影条件か、定量グラフと同じ方向の変化かを確認します。',
+    },
+    {
+      question:
+        '「タンパク質Yが現象Zを直接制御している」という表現を、免疫染色から直接言いやすい表現に言い換えてください。',
+      answer:
+        '条件Bでタンパク質Yのシグナルや局在が変化して見える、というように、観察された局在や強度の変化に戻します。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    {
+      title: '前の演習: Western blotを含む論文',
+      href: '/papers/walkthrough-western-blot/',
+    },
+    {
+      title: '免疫染色画像の読み方',
+      href: '/figures/how-to-read-immunostaining/',
+    },
+    { title: '免疫染色とは何か', href: '/methods/immunostaining/' },
+    {
+      title: '顕微鏡画像の読み方',
+      href: '/figures/how-to-read-microscopy-image/',
+    },
+    { title: '論文読解演習トップ', href: '/papers/' },
+    { title: '論文を読めるようになる', href: '/paths/paper-reading/' },
+  ]}
+/>

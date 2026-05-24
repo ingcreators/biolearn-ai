@@ -4,8 +4,110 @@ description: BioLearn で使う重要用語を、個別の学習ページへ進�
 ---
 
 import GlossaryTable from '../../../components/GlossaryTable.astro';
-import { glossaryTerms } from '../../../data/glossary';
+import { glossaryCategories, glossaryTerms } from '../../../data/glossary';
 
 BioLearn の用語集は、短い定義を確認するだけでなく、関連する概念や教材へ進むための学習ハブです。用語を短く確認したい場合はこの一覧を使い、詳しく学びたい場合は各用語ページから関連教材へ進んでください。
 
-<GlossaryTable terms={glossaryTerms} />
+## まず選ぶ
+
+| 探したいもの                             | 入口                                                      |
+| ---------------------------------------- | --------------------------------------------------------- |
+| 分野ごとの基本語                         | [カテゴリから探す](#categories)                           |
+| Figure、統計表示、研究デザインの用語     | [統計・研究デザインの用語](#figure-statistics-terms)      |
+| ゲノム、変異、配列データの用語           | [ゲノミクスの用語](#genomics-terms)                       |
+| 論文の部位やFigure、主張、限界の用語     | [論文読解の用語](#paper-section-terms)                    |
+| PubMed、PMC、DOI、PMID、論文タイプの用語 | [論文探索・論文タイプ・識別子の用語](#paper-search-terms) |
+| すべての用語を一覧で見たい               | [用語一覧](#terms)                                        |
+
+用語の意味だけを短く確認する場合はこのページ内で探し、読み方を練習したい場合は各セクションからカテゴリトップ、Figure読解、論文読解演習へ進みます。
+
+<a id="categories"></a>
+
+## カテゴリから探す
+
+<div class="biolearn-glossary-nav">
+  {glossaryCategories.map((category) => (
+    <a href={`#${category.id}`}>
+      <span>{category.label}</span>
+      <small>{category.description}</small>
+    </a>
+  ))}
+</div>
+
+<a id="figure-statistics-terms"></a>
+
+## 統計・研究デザインの用語を使う場面
+
+Figureや論文読解で迷いやすい用語は、目的別に戻ると整理しやすくなります。
+
+- Figureの軸やばらつきを読む: [変数](/glossary/variable/)、[分布](/glossary/distribution/)、[平均と中央値](/glossary/mean-median/)、[n数](/glossary/sample-size/)
+- 統計表示の意味を確認する: [p値](/glossary/p-value/)、[信頼区間](/glossary/confidence-interval/)、[効果量](/glossary/effect-size/)、[多重検定補正](/glossary/multiple-testing-correction/)
+- 実験設計を確認する: [対照群](/glossary/control-group/)、[反復](/glossary/biological-technical-replicates/)、[ランダム化](/glossary/randomization/)
+- Discussionの言いすぎを避ける: [相関と因果](/glossary/correlation-causation/)、[統計的有意性と生物学的重要性](/glossary/significance-vs-importance/)、[バイアス](/glossary/bias/)、[交絡](/glossary/confounding/)、[再現性](/glossary/reproducibility/)
+
+<a id="genomics-terms"></a>
+
+## ゲノミクスの用語を使う場面
+
+配列の違いを読むときは、似た用語を分けて戻ると整理しやすくなります。
+
+- 全体像を確認する: [ゲノム](/glossary/genome/)、[染色体](/glossary/chromosome/)、[遺伝子](/glossary/gene/)
+- 配列の違いを確認する: [遺伝的変異](/glossary/genetic-variant/)、[変異](/glossary/mutation/)、[SNP](/glossary/snp/)
+- データとして読む: [シーケンシング](/glossary/sequencing/)、[NGS](/glossary/ngs/)、[シーケンスデータ](/glossary/sequence-data/)
+
+<a id="paper-section-terms"></a>
+
+## 論文読解の用語を使う場面
+
+論文のどの部位で止まったかが分かっている場合は、構造ごとに戻ると読み直しやすくなります。
+
+- 論文全体を把握する: [Title](/glossary/title/)、[Abstract](/glossary/abstract/)、[研究の問い](/glossary/research-question/)
+- 本文の構造を確認する: [Introduction](/glossary/introduction/)、[Methods](/glossary/methods/)、[Results](/glossary/results/)、[Discussion](/glossary/discussion/)
+- Figureと主張を読む: [Figure](/glossary/figure/)、[Figure legend](/glossary/figure-legend/)、[主張](/glossary/claim/)、[証拠](/glossary/evidence/)、[限界](/glossary/limitation/)
+- 論文を探す・たどる: [References](/glossary/references/)、[PubMed](/glossary/pubmed/)、[PMC](/glossary/pmc/)、[DOI](/glossary/doi/)、[PMID](/glossary/pmid/)
+
+### 論文の部位から練習へ進む
+
+| 用語で確認したい部位                                                                           | 練習する教材                                                                                               |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| [Title](/glossary/title/) / [Abstract](/glossary/abstract/)                                    | [TitleとAbstractの読み方](/papers/how-to-read-title-abstract/)                                             |
+| [Introduction](/glossary/introduction/)                                                        | [Introductionの読み方](/papers/how-to-read-introduction/)                                                  |
+| [Methods](/glossary/methods/)                                                                  | [Methodsの読み方](/papers/how-to-read-methods/)、[Methods確認チェックリスト](/papers/methods-checklist/)   |
+| [Results](/glossary/results/) / [Figure](/glossary/figure/)                                    | [Resultsの読み方](/papers/how-to-read-results/)、[Figureから論文を読む方法](/papers/figure-first-reading/) |
+| [Discussion](/glossary/discussion/) / [主張](/glossary/claim/) / [限界](/glossary/limitation/) | [Discussionの読み方](/papers/how-to-read-discussion/)、[批判的に読む](/papers/critical-reading/)           |
+| [References](/glossary/references/) / [先行研究](/glossary/prior-study/)                       | [Referencesの読み方](/papers/how-to-read-references/)                                                      |
+
+用語集は、言葉の意味や読み方の観点を短く確認する入口です。実際に論文の流れで読む練習をしたい場合は、[論文読解演習](/papers/) へ進みます。
+
+<a id="paper-search-terms"></a>
+
+### 論文探索・論文タイプ・識別子で迷ったら
+
+| 迷っていること               | 戻る用語                                                                                                                  | 関連する教材                                                               |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| どこで論文を探すか           | [PubMed](/glossary/pubmed/)、[PMC](/glossary/pmc/)                                                                        | [PubMedの使い方](/papers/pubmed/)、[PMCで全文を読む](/papers/pmc/)         |
+| レビュー論文と原著論文の違い | [レビュー論文](/glossary/review-paper/)、[原著論文](/glossary/primary-research-article/)                                  | [レビュー論文と原著論文](/papers/review-vs-primary-paper/)                 |
+| 論文を一意に指定したい       | [DOI](/glossary/doi/)、[PMID](/glossary/pmid/)                                                                            | [DOIとは何か](/papers/doi/)、[PubMed / PMC 早見表](/resources/pubmed-pmc/) |
+| 引用から次の論文へ進みたい   | [References](/glossary/references/)、[先行研究](/glossary/prior-study/)                                                   | [Referencesの読み方](/papers/how-to-read-references/)                      |
+| 読んだ内容を整理したい       | [論文ノート](/glossary/paper-note/)、[主張](/glossary/claim/)、[証拠](/glossary/evidence/)、[限界](/glossary/limitation/) | [論文ノートの取り方](/papers/note-taking/)                                 |
+
+論文探索では、識別子やデータベース名を結論の根拠と混同しないことが大切です。PubMed、PMC、DOI、PMIDは論文を探す・指定するための入口であり、研究内容の妥当性はMethods、Results、Figure、Discussionを読んで確認します。
+
+<a id="terms"></a>
+
+## 用語一覧
+
+{
+glossaryCategories.map((category) => {
+const terms = glossaryTerms.filter((term) => term.category === category.id);
+
+    return (
+      <section class="biolearn-glossary-section" id={category.id}>
+        <h3>{category.label}</h3>
+        <p>{category.description}</p>
+        <GlossaryTable terms={terms} />
+      </section>
+    );
+
+})
+}

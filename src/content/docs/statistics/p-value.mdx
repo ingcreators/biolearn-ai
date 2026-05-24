@@ -1,0 +1,120 @@
+---
+title: p値とは何か
+description: p値を、帰無仮説のもとで観察された差がどれくらい珍しいかを考えるための指標として説明します。
+part: statistics
+module: inference-and-interpretation
+level: foundation
+priority: P1
+order: 70
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - p-value
+  - effect-size
+  - confidence-interval
+prerequisites:
+  - /statistics/mean-median/
+  - /statistics/error-bars/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'p値が何を表す指標か説明できる',
+    'p値と効果の大きさを区別できる',
+    'Figure中のアスタリスクを読むときの注意点を理解する',
+  ]}
+/>
+
+## 要点
+
+p値は、「差がない」という仮定のもとで、観察された差やそれ以上の差がどれくらい起こりにくいかを表す指標です。
+
+## 基礎解説
+
+論文のFigureでは、`p < 0.05` やアスタリスクがよく出てきます。これは、統計的検定の結果としてp値が一定の基準より小さいことを示している場合があります。
+
+大切なのは、p値が「仮説が正しい確率」や「結果が重要である確率」ではないことです。p値は、帰無仮説と呼ばれる基準の仮定のもとで、観察されたデータがどれくらい珍しいかを考えるための値です。
+
+p値が小さい結果でも、差の大きさが小さい場合があります。逆に、サンプル数が少ないと、実際には意味のある差があっても統計的に有意と示されないことがあります。そのため、p値だけではなく、効果量、信頼区間、実験設計、反復の種類も合わせて読みます。
+
+## なぜ重要か
+
+生命科学論文では、棒グラフ、箱ひげ図、ボルケーノプロットなどにp値が添えられることがあります。p値の意味を誤解すると、アスタリスクの有無だけで結果を強く読みすぎてしまいます。
+
+Figureを読むときは、何と何を比べたp値なのか、どの検定を使ったのか、多重検定補正が必要な場面かを確認します。
+
+## Figureで見る場所
+
+p値は、[棒グラフの読み方](/figures/how-to-read-bar-plot/)のアスタリスク、[箱ひげ図の読み方](/figures/how-to-read-box-plot/)の群間比較、[Volcano plotの読み方](/figures/how-to-read-volcano-plot/)の縦軸などで出てきます。オミクス解析では、補正済みp値かどうかも確認します。
+
+## 図解
+
+<LessonFigure
+  src="/figures/p-value-concept.jpg"
+  alt="2つの棒グラフの差と、差がないという仮定のもとで珍しさを考える様子を示す概念図"
+  title="p値は差の珍しさを考えるための指標"
+  caption="p値だけで重要性を判断せず、差の大きさや実験設計と合わせて読みます。"
+/>
+
+<TermBox term="p値" english="p-value">
+  帰無仮説のもとで、観察された差やそれ以上の差が起こる確率を考えるための統計指標です。
+</TermBox>
+
+## 英語表記と略語
+
+| 日本語名 | 英語名             | 略語 |
+| -------- | ------------------ | ---- |
+| p値      | p-value            | p    |
+| 帰無仮説 | null hypothesis    | -    |
+| 効果量   | effect size        | -    |
+| 有意水準 | significance level | -    |
+
+## よくある誤解
+
+- p値は「仮説が正しい確率」ではありません。
+- p値が小さいことは、効果が大きいことと同じではありません。
+- アスタリスクがない結果でも、生物学的に意味がないとは限りません。
+
+## 重要用語
+
+- p値: 帰無仮説のもとで観察結果の珍しさを考える指標。
+- 帰無仮説: 比較している群の間に差がない、などの基準となる仮定。
+- 効果量: 差や関係の大きさを表す指標。
+- 多重検定補正: 多数の検定を行うときに、偶然の有意を増やしすぎないための補正。
+
+<Quiz
+  questions={[
+    {
+      question:
+        'p値が小さい結果を見るとき、p値以外に確認したいものを一つ挙げてください。',
+      answer:
+        '効果量、信頼区間、サンプル数、反復の種類、検定方法などがあります。',
+    },
+    {
+      question: 'p値が効果の大きさそのものではない理由を説明してください。',
+      answer:
+        'p値は観察結果の珍しさを表す指標であり、差がどれくらい大きいかは効果量として別に見る必要があるからです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: '棒グラフの読み方', href: '/figures/how-to-read-bar-plot/' },
+    {
+      title: 'Volcano plotの読み方',
+      href: '/figures/how-to-read-volcano-plot/',
+    },
+    {
+      title: '多重検定補正とは何か',
+      href: '/statistics/multiple-testing-correction/',
+    },
+  ]}
+/>

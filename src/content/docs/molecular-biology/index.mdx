@@ -1,37 +1,73 @@
 ---
 title: 分子生物学
-description: DNA、RNA、タンパク質、遺伝子、セントラルドグマ、遺伝子発現を学びます。
+description: セントラルドグマ、転写、翻訳、遺伝子発現を学びます。
 ---
 
-分子生物学は、生命現象をDNA、RNA、タンパク質などの分子の働きとして理解する分野です。BioLearnでは、遺伝情報が保存され、読み出され、細胞の中で働きに変わる流れを順番に学びます。
+import ArticleList from '../../../components/ArticleList.astro';
+
+分子生物学は、生命現象をDNA、RNA、タンパク質などの分子の働きとして理解する分野です。BioLearnでは、基礎カテゴリで学んだDNA、RNA、タンパク質、遺伝子を土台に、遺伝情報が読み出され、細胞の中で働きに変わる流れを学びます。
 
 ## この分野で学ぶこと
 
-- DNA、RNA、タンパク質、遺伝子の違い
 - セントラルドグマ、転写、翻訳、遺伝子発現の関係
+- DNA、RNA、タンパク質、遺伝子の知識を、情報の流れとしてつなげる見方
 - RNA-seqや差次的発現解析へ進む前提になる分子の言葉
+
+## 目的別に選ぶ
+
+分子生物学は、基礎カテゴリで学んだDNA、RNA、タンパク質、遺伝子を、細胞の中で働く情報の流れとして読み直すカテゴリです。Figure読解やRNA-seqに進む前に、何が測られ、何が「発現」と呼ばれているのかを確認します。
+
+<div class="biolearn-home-grid">
+  <a class="biolearn-home-card" href="/molecular-biology/central-dogma/">
+    <span>全体像</span>
+    <h3>セントラルドグマで流れを見る</h3>
+    <p>DNA、RNA、タンパク質を、遺伝情報が読み出される流れとしてつなげます。</p>
+  </a>
+  <a class="biolearn-home-card" href="/molecular-biology/transcription/">
+    <span>転写</span>
+    <h3>DNAからRNAへの読み出し</h3>
+    <p>
+      遺伝子の情報がRNAとして写し取られる過程を確認し、RNA-seqの前提につなげます。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="/molecular-biology/translation/">
+    <span>翻訳</span>
+    <h3>RNAからタンパク質へ進む</h3>
+    <p>
+      RNAの情報がタンパク質の配列に変換され、細胞内の働きにつながる流れを読みます。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="/molecular-biology/gene-expression/">
+    <span>発現</span>
+    <h3>遺伝子発現をFigureにつなげる</h3>
+    <p>
+      細胞の状態や刺激に応じて、どの遺伝子がどれくらい使われるかを確認します。
+    </p>
+  </a>
+</div>
+
+| 迷っていること                     | 入口                                                                                                     | 次に進む場所                                                                                                   |
+| ---------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| DNA、RNA、タンパク質の流れを見たい | [セントラルドグマ](/molecular-biology/central-dogma/)                                                    | [基礎から学ぶ](/paths/foundations/)、[遺伝子発現](/molecular-biology/gene-expression/)                         |
+| RNAがどこで出てくるか知りたい      | [転写](/molecular-biology/transcription/)、[RNA](/fundamentals/rna/)                                     | [RNA-seq](/bioinformatics/rna-seq/)、[シーケンスデータ](/bioinformatics/sequence-data/)                        |
+| タンパク質の働きへつなげたい       | [翻訳](/molecular-biology/translation/)、[タンパク質](/fundamentals/protein/)                            | [細胞生物学](/cell-biology/)、[Western blotの読み方](/figures/how-to-read-western-blot/)                       |
+| 発現量や発現差を読みたい           | [遺伝子発現](/molecular-biology/gene-expression/)、[遺伝子](/fundamentals/gene/)                         | [差次的発現解析](/bioinformatics/differential-expression/)、[Volcano plot](/figures/how-to-read-volcano-plot/) |
+| 実験手法やFigureに戻りたい         | [遺伝子発現](/molecular-biology/gene-expression/)、[セントラルドグマ](/molecular-biology/central-dogma/) | [qPCR](/methods/qpcr/)、[RT-qPCR](/methods/rt-qpcr/)、[qPCRプロット](/figures/how-to-read-qpcr-plot/)          |
 
 ## まず押さえる3つの考え方
 
-1. DNAは情報を保存し、RNAはその情報を読み出す途中で働きます。
-2. タンパク質は、細胞の構造や反応を担う主要な分子です。
+1. セントラルドグマは、遺伝情報がRNAやタンパク質へ向かう基本的な見取り図です。
+2. 転写と翻訳は、情報が段階的に読み出される過程です。
 3. 遺伝子発現は、細胞の状態や刺激に応じて変わる「情報の使われ方」です。
 
 ## 読む順番
 
-1. [DNAとは何か](/molecular-biology/what-is-dna/)
-2. [RNAとは何か](/molecular-biology/what-is-rna/)
-3. [タンパク質とは何か](/molecular-biology/what-is-protein/)
-4. [遺伝子とは何か](/molecular-biology/what-is-gene/)
-5. [セントラルドグマとは何か](/molecular-biology/what-is-central-dogma/)
-6. [転写とは何か](/molecular-biology/what-is-transcription/)
-7. [翻訳とは何か](/molecular-biology/what-is-translation/)
-8. [遺伝子発現とは何か](/molecular-biology/what-is-gene-expression/)
-   最初はDNA、RNA、タンパク質を別々に押さえ、その後にセントラルドグマ、転写、翻訳で流れとして整理します。実験手法へ進む場合は、次に [PCRとは何か](/methods/what-is-pcr/) を読みます。
+<ArticleList part="molecular-biology" groupByModule />
+
+DNA、RNA、タンパク質、遺伝子があいまいな場合は、先に [生命科学の基礎](/fundamentals/) から読みます。実験手法へ進む場合は、次に [PCRとは何か](/methods/pcr/) を読みます。
 
 ## このカテゴリを終えるとできること
 
-- DNA、RNA、タンパク質、遺伝子を混同せずに説明できる
 - 転写と翻訳が、遺伝情報からタンパク質へ向かう流れのどこにあるか説明できる
 - RNA-seqや差次的発現解析に出てくる「発現量」の入口を理解できる
 

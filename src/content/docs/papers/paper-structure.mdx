@@ -1,0 +1,110 @@
+---
+title: 生命科学論文の構成
+description: 生命科学論文をTitle、Abstract、Introduction、Results、Methods、Discussionに分けて読む基本を説明します。
+part: papers
+module: paper-structure
+level: foundation
+priority: P0
+order: 10
+learningPaths:
+  - paper-reading
+relatedTerms:
+  - title
+  - abstract
+  - introduction
+  - methods
+  - results
+  - discussion
+  - references
+prerequisites:
+  - /figures/figure-legend/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    '生命科学論文の主な構成を説明できる',
+    '各セクションで何を読むべきか区別できる',
+    'Figure、Results、Methodsを行き来して読む理由を理解する',
+  ]}
+/>
+
+## 要点
+
+生命科学論文は、研究の問い、方法、結果、解釈を分担する複数のセクションで構成されています。
+
+## 基礎解説
+
+論文は最初から最後まで一直線に読むだけではありません。TitleとAbstractで研究の主題をつかみ、Introductionで背景と問いを確認し、Resultsでどの証拠が示されたかを読みます。Methodsでは、その証拠がどの実験や解析で得られたかを確認します。
+
+Discussionは、結果から何が言えるか、どこまでが限界かを述べるセクションです。論文の主張を読むときは、Discussionの言葉だけでなく、ResultsとFigureが本当にその主張を支えているかを見る必要があります。
+
+生命科学論文ではFigureが中心的な証拠になることが多いため、Figure、Results本文、Figure legend、Methodsを行き来しながら読むのが大切です。
+
+## なぜ重要か
+
+論文の構成を知っていると、分からない用語があっても「今どの役割の文章を読んでいるのか」を見失いにくくなります。特に初学者は、Methodsの細部で止まりすぎず、まず研究の問いと主要なFigureの流れをつかむことが大切です。
+
+## 図解
+
+<LessonFigure
+  src="/figures/paper-structure-concept.jpg"
+  alt="論文の各セクションが研究の問い、方法、結果、解釈を分担していることを示す概念図"
+  title="論文は役割の異なるセクションでできている"
+  caption="Abstractで全体をつかみ、ResultsとFigureで証拠を読み、Methodsで根拠の作り方を確認します。"
+/>
+
+<TermBox term="生命科学論文" english="life science paper">
+  生命現象についての研究の問い、方法、結果、解釈をまとめた学術論文です。
+</TermBox>
+
+## 英語表記と略語
+
+| 日本語名 | 英語名       | 略語 |
+| -------- | ------------ | ---- |
+| 要旨     | Abstract     | -    |
+| 導入     | Introduction | -    |
+| 結果     | Results      | -    |
+| 方法     | Methods      | -    |
+| 考察     | Discussion   | -    |
+
+## よくある誤解
+
+- Abstractだけで論文全体を判断しきれるわけではありません。
+- Resultsは著者の解釈ではなく、主にデータと証拠の流れを示す部分です。
+- Methodsは細部を暗記する場所ではなく、結果がどう作られたかを確認する場所です。
+
+## 重要用語
+
+- Abstract: 研究の背景、方法、主な結果、結論を短くまとめた部分。
+- Results: 実験や解析で得られた結果を示す部分。
+- Methods: サンプル、実験、解析、統計の方法を説明する部分。
+- Discussion: 結果の解釈、意義、限界を述べる部分。
+
+<Quiz
+  questions={[
+    {
+      question: 'ResultsとMethodsを行き来して読む理由を説明してください。',
+      answer:
+        'Resultsで示された結果が、どの実験条件や解析手順から得られたものかを確認するためです。',
+    },
+    {
+      question: 'Discussionを読むときに注意したいことを一つ挙げてください。',
+      answer:
+        '著者の解釈がResultsやFigureの証拠でどこまで支えられているかを確認することです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'Methodsの読み方', href: '/papers/how-to-read-methods/' },
+    { title: 'Figure legendの読み方', href: '/figures/figure-legend/' },
+    { title: '論文を読めるようになる', href: '/paths/paper-reading/' },
+  ]}
+/>

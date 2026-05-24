@@ -1,13 +1,30 @@
 ---
 title: Volcano plotの読み方
 description: RNA-seqなどの差次的発現解析で使われるVolcano plotの軸、点、しきい値、解釈の注意点を説明します。
+part: figures
+module: bioinformatics-figures
+level: foundation
+order: 50
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - differential-expression-analysis
+  - rna-seq
+  - multiple-testing-correction
+  - effect-size
+prerequisites:
+  - /bioinformatics/differential-expression/
+  - /statistics/p-value/
+  - /statistics/effect-size/
+  - /statistics/multiple-testing-correction/
 ---
 
 Volcano plot（ボルケーノプロット）は、差次的発現解析の結果を一覧するためのFigureです。各点が遺伝子を表し、横軸に変化の大きさ、縦軸に統計的な確からしさを置くことで、変化が大きく信頼性も高い候補を見つけやすくします。
 
 ## このFigureで何を見るか
 
-どの遺伝子が条件間で増えているか、減っているか、そしてその変化が統計的にどの程度支持されているかを見ます。[RNA-seqとは何か](/bioinformatics/what-is-rna-seq/)と[差次的発現解析とは何か](/bioinformatics/what-is-differential-expression-analysis/)を読んでおくと、軸の意味が理解しやすくなります。
+どの遺伝子が条件間で増えているか、減っているか、そしてその変化が統計的にどの程度支持されているかを見ます。[RNA-seqとは何か](/bioinformatics/rna-seq/)と[差次的発現解析とは何か](/bioinformatics/differential-expression/)を読んでおくと、軸の意味が理解しやすくなります。
 
 ## まず一言でいうと
 
@@ -108,6 +125,15 @@ Volcano plotは「横に離れるほど変化が大きく、上に行くほど�
 5. 右上・左上の点を候補として見ます。
 6. 候補遺伝子の機能や発現量、実験設計を合わせて解釈します。
 
+## 前提に戻る
+
+Volcano plotは、変化の大きさと統計的な目立ちやすさを同時に見るFigureです。候補点だけを拾う前に、解析と統計の前提に戻ります。
+
+- 解析の流れは[差次的発現解析](/bioinformatics/differential-expression/)で確認します。
+- 横軸の変化量は[効果量](/statistics/effect-size/)として読み、縦軸のp値とは分けて考えます。
+- 縦軸がp値か補正済みp値かは、[p値](/statistics/p-value/)と[多重検定補正](/statistics/multiple-testing-correction/)で確認します。
+- 候補遺伝子を選んだあとも、qPCRやWestern blotなど別手法で確認されているかをMethodsに戻って見ます。
+
 ## よくある誤解
 
 - 上にある点ほど変化量が大きい、ではありません。縦軸は主に統計的な確からしさを表します。
@@ -121,8 +147,8 @@ Volcano plotは「横に離れるほど変化が大きく、上に行くほど�
 - マイクロアレイ解析
 - プロテオーム解析やメタボローム解析の群間比較
 - 候補遺伝子をqPCRやWestern blotで検証する実験
-- [RNA-seqとは何か](/bioinformatics/what-is-rna-seq/)
-- [差次的発現解析とは何か](/bioinformatics/what-is-differential-expression-analysis/)
+- [RNA-seqとは何か](/bioinformatics/rna-seq/)
+- [差次的発現解析とは何か](/bioinformatics/differential-expression/)
 - [用語: RNA-seq](/glossary/rna-seq/)
 - [用語: 差次的発現解析](/glossary/differential-expression-analysis/)
 
@@ -149,7 +175,8 @@ Volcano plotは「横に離れるほど変化が大きく、上に行くほど�
 
 ## 次に読む記事
 
-- [Figure legendの読み方](/figures/how-to-read-figure-legend/)
+- [Figure legendの読み方](/figures/figure-legend/)
 - [ヒートマップの読み方](/figures/how-to-read-heatmap/)
+- [多重検定補正とは何か](/statistics/multiple-testing-correction/)
 - [qPCRプロットの読み方](/figures/how-to-read-qpcr-plot/)
 - [用語: 差次的発現解析](/glossary/differential-expression-analysis/)

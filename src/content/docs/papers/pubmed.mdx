@@ -1,0 +1,99 @@
+---
+title: PubMedの使い方
+description: PubMedで生命科学・医学系論文を探し、Title、Abstract、論文種別、本文リンクを確認する基本を説明します。
+part: papers
+module: paper-discovery
+level: foundation
+priority: P0
+order: 200
+learningPaths:
+  - paper-reading
+relatedTerms:
+  - pubmed
+  - pmc
+  - doi
+  - abstract
+  - primary-research-article
+  - review-paper
+prerequisites:
+  - /papers/how-to-read-title-abstract/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'PubMedが文献検索データベースであることを説明できる',
+    '検索結果でTitle、Abstract、論文種別を確認できる',
+    '本文へ進む前に読む候補を絞れる',
+  ]}
+/>
+
+## 要点
+
+PubMedは、生命科学・医学系の文献情報を検索するためのデータベースです。まず論文を見つけ、TitleとAbstractで読む候補を絞ります。
+
+PubMed、PMC、DOI、PMIDの違いだけを短く確認したい場合は、[PubMed / PMC の使い分け](/resources/pubmed-pmc/) に戻ります。このページでは、検索結果から読む候補を絞る練習をします。
+
+## 基礎解説
+
+PubMedでは、キーワード、著者名、雑誌名、年などを手がかりに文献を探せます。検索結果には、Title、著者、雑誌、出版年、Abstract、論文種別などの情報が表示されます。
+
+最初は、広すぎる検索語よりも、研究対象、方法、現象を組み合わせると候補を絞りやすくなります。たとえば、細胞種、遺伝子名、手法名、疾患名、解析名などを組み合わせます。
+
+PubMedは本文そのものを必ず提供する場所ではありません。本文を読むには、出版社ページ、PMC、所属機関のアクセス、オープンアクセスリンクなどへ進む必要があります。
+
+## 図解
+
+<LessonFigure
+  src="/figures/pubmed-concept.jpg"
+  alt="PubMedでキーワード検索、検索結果、TitleとAbstract、本文リンクへ進む流れを示す概念図"
+  title="PubMedは論文を探す入口"
+  caption="検索語を調整し、Title、Abstract、論文種別を見て、読む候補を絞ります。"
+/>
+
+<TermBox term="PubMed" english="PubMed">
+  生命科学・医学系文献の書誌情報やAbstractを検索できるデータベースです。
+</TermBox>
+
+## よくある誤解
+
+- PubMedにある論文は、すべて本文まで無料で読めると思う。
+- 検索結果の上位にある論文が、必ず自分の目的に最適だと思う。
+- Abstractだけで、研究の根拠まで十分に確認できたと考える。
+- 論文種別を見ずに、レビュー論文と原著論文を同じように読む。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question:
+        'PubMedで検索結果を見たとき、本文へ進む前に確認したい情報を3つ挙げてください。',
+      answer:
+        'Title、Abstract、出版年、論文種別、対象、方法、本文リンクの有無などがあります。',
+    },
+    {
+      question: 'PubMedとPMCの役割の違いを簡単に説明してください。',
+      answer:
+        'PubMedは文献情報を検索する入口で、PMCは本文が公開されている論文を読めるアーカイブです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'PubMed / PMC の使い分け', href: '/resources/pubmed-pmc/' },
+    { title: 'PMC論文の探し方', href: '/papers/pmc/' },
+    { title: 'DOIとは何か', href: '/papers/doi/' },
+    { title: 'PubMedとは何か', href: '/glossary/pubmed/' },
+    {
+      title: 'TitleとAbstractの読み方',
+      href: '/papers/how-to-read-title-abstract/',
+    },
+  ]}
+/>

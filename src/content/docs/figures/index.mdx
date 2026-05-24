@@ -3,12 +3,26 @@ title: 論文Figureの読み方
 description: 生命科学論文のFigureを、図の構成要素、読む順番、よくある誤解から学ぶカテゴリです。
 ---
 
+import ArticleList from '../../../components/ArticleList.astro';
+
 生命科学論文では、Figureが研究結果の中心になることがよくあります。このカテゴリでは、外部の論文画像に頼らず、模式図を使ってFigureの読み方を学びます。
+
+## このページの役割
+
+このページは、Figureの種類や困りごとから記事を探すカテゴリトップです。順番に読む道筋を身につけたい場合は、[Figureを読めるようになる](/paths/figure-reading/) を使います。
+
+| 使いたい場面                         | 使う入口                                           |
+| ------------------------------------ | -------------------------------------------------- |
+| 読みたいFigureの種類が決まっている   | このページの「目的別に選ぶ」や「記事一覧」から探す |
+| 何から練習すればよいか分からない     | [Figureを読めるようになる](/paths/figure-reading/) |
+| 図を読んでいる途中で確認点だけ見たい | [Figure早見表](/resources/figures-cheatsheet/)     |
+| 統計表示、n数、p値、FDRで止まった    | [統計・研究デザイン](/statistics/)                 |
+| Figureから論文全体の読み方へ進みたい | [論文を読めるようになる](/paths/paper-reading/)    |
 
 ## この分野で学ぶこと
 
 - 軸、条件、サンプル数、ばらつき、コントロールを確認しながらFigureを読むこと
-- Figure legend、棒グラフ、qPCR、Western blot、Volcano plot、ヒートマップの基本的な見方
+- Figure legend、軸・ラベル、複数パネル、相関図、Violin plot、qPCR、Western blot、Volcano plot、ヒートマップ、pathway enrichment plot、ゲノム系Figureの基本的な見方
 - Figureを見た目だけで判断せず、実験や解析の文脈と結びつけること
 
 ## まず押さえる3つの考え方
@@ -17,29 +31,88 @@ description: 生命科学論文のFigureを、図の構成要素、読む順番�
 2. 平均や色の印象だけでなく、条件、n数、ばらつき、コントロールを確認します。
 3. Figure legendや本文と行き来しながら、何を測り、何を比較しているのかを読みます。
 
-## 読む順番
+## 目的別に選ぶ
 
-1. [Figure legendの読み方](/figures/how-to-read-figure-legend/)
-2. [棒グラフの読み方](/figures/how-to-read-bar-plot/)
-3. [qPCRプロットの読み方](/figures/how-to-read-qpcr-plot/)
-4. [Western blotの読み方](/figures/how-to-read-western-blot/)
-5. [Volcano plotの読み方](/figures/how-to-read-volcano-plot/)
-6. [ヒートマップの読み方](/figures/how-to-read-heatmap/)
+読みたいFigureの種類が決まっている場合は、まず近い入口から始めます。迷う場合は [Figure legend](/figures/figure-legend/) と [軸・ラベル・単位](/figures/axis-label-unit/) に戻ると整理しやすくなります。
 
-まずFigure legendで、条件、n数、統計表示の探し方に慣れます。その後、多くの論文に出てくる棒グラフで、軸、条件、ばらつきの見方を確認します。続いて、分子生物学実験のqPCRとWestern blot、RNA-seqの結果でよく見るVolcano plotとヒートマップへ進みます。
+<div class="biolearn-home-grid">
+  <a class="biolearn-home-card" href="/figures/how-to-read-bar-plot/">
+    <span>統計系Figure</span>
+    <h3>分布、ばらつき、関係を読む</h3>
+    <p>
+      棒グラフ、箱ひげ図、散布図、Violin plot、ROC曲線、Forest
+      plotなどを、軸、n数、効果量、信頼区間から確認します。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="/figures/how-to-read-qpcr-plot/">
+    <span>実験系Figure</span>
+    <h3>対照と測定条件を読む</h3>
+    <p>
+      qPCR、Western
+      blot、免疫染色、顕微鏡画像、フローサイトメトリーを、対照、反復、補正、撮影条件と合わせて読みます。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="/figures/how-to-read-volcano-plot/">
+    <span>オミクス系Figure</span>
+    <h3>解析結果と前処理に戻る</h3>
+    <p>
+      Volcano plot、ヒートマップ、PCA、UMAP、GSEA、pathway
+      enrichment、ゲノム系Figureを、解析条件と統計表示に戻して読みます。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="/figures/figure-to-claim/">
+    <span>論文構造系Figure</span>
+    <h3>Figureと主張を対応づける</h3>
+    <p>
+      複数パネル、補足Figure、Graphical
+      abstract、Results本文の流れを見て、図から言える範囲を確認します。
+    </p>
+  </a>
+</div>
+
+| 目的                     | 入口                                                                                                                                                                 | 戻る前提                                                                                                                                                  |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 平均やばらつきを読む     | [棒グラフ](/figures/how-to-read-bar-plot/)、[箱ひげ図](/figures/how-to-read-box-plot/)、[Violin plot](/figures/how-to-read-violin-plot/)                             | [エラーバー](/statistics/error-bars/)、[分布](/statistics/distribution/)、[n数](/statistics/sample-size/)                                                 |
+| 関係や予測性能を見る     | [散布図](/figures/how-to-read-scatter-plot/)、[相関図](/figures/how-to-read-correlation-plot/)、[ROC曲線](/figures/how-to-read-roc-curve/)                           | [相関と因果](/statistics/correlation-causation/)、[効果量](/statistics/effect-size/)、[有意性と重要性](/statistics/significance-vs-importance/)           |
+| 実験Figureを読む         | [qPCR](/figures/how-to-read-qpcr-plot/)、[Western blot](/figures/how-to-read-western-blot/)、[免疫染色](/figures/how-to-read-immunostaining/)                        | [実験手法](/methods/)、[対照実験](/methods/control/)、[反復](/statistics/biological-technical-replicates/)                                                |
+| オミクス解析Figureを読む | [Volcano plot](/figures/how-to-read-volcano-plot/)、[ヒートマップ](/figures/how-to-read-heatmap/)、[GSEA plot](/figures/how-to-read-gsea-plot/)                      | [RNA-seq](/bioinformatics/rna-seq/)、[差次的発現解析](/bioinformatics/differential-expression/)、[多重検定補正](/statistics/multiple-testing-correction/) |
+| ゲノム上の位置を見る     | [ゲノムブラウザ図](/figures/how-to-read-genome-browser/)、[Lollipop plot](/figures/how-to-read-lollipop-plot/)、[CNV plot](/figures/how-to-read-cnv-plot/)           | [ゲノム](/glossary/genome/)、[遺伝的変異](/glossary/genetic-variant/)、[ゲノムブラウザ](/genomics/genome-browser/)                                        |
+| 論文本文と対応づける     | [Figureと主張を対応づける](/figures/figure-to-claim/)、[Resultsセクションの流れ](/figures/results-section-flow/)、[Graphical abstract](/figures/graphical-abstract/) | [Resultsの読み方](/papers/how-to-read-results/)、[Methods確認チェックリスト](/papers/methods-checklist/)、[研究の限界](/statistics/limitations/)          |
+
+## 統計表示で迷ったら
+
+Figureの見た目は分かっても、ばらつき、n数、有意差、効果の大きさが読みにくいことがあります。その場合は、Figure記事を読み進める前に統計・研究デザインへ戻ります。
+
+| Figureで見えているもの       | 先に確認する統計・研究デザイン                                                                               | Figureでの使いどころ                                                                                                                                        |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 点、バー、箱、分布の広がり   | [分布](/statistics/distribution/)、[平均と中央値](/statistics/mean-median/)、[n数](/statistics/sample-size/) | [棒グラフ](/figures/how-to-read-bar-plot/)、[箱ひげ図](/figures/how-to-read-box-plot/)、[Violin plot](/figures/how-to-read-violin-plot/)                    |
+| エラーバー、範囲、推定の幅   | [エラーバー](/statistics/error-bars/)、[信頼区間](/statistics/confidence-interval/)                          | [棒グラフ](/figures/how-to-read-bar-plot/)、[qPCRプロット](/figures/how-to-read-qpcr-plot/)、[Forest plot](/figures/how-to-read-forest-plot/)               |
+| アスタリスク、p値、FDR       | [p値](/statistics/p-value/)、[多重検定補正](/statistics/multiple-testing-correction/)                        | [Volcano plot](/figures/how-to-read-volcano-plot/)、[GSEA plot](/figures/how-to-read-gsea-plot/)、[Figureと主張](/figures/figure-to-claim/)                 |
+| 相関係数、点の傾向、分類性能 | [相関と因果](/statistics/correlation-causation/)、[効果量](/statistics/effect-size/)                         | [散布図](/figures/how-to-read-scatter-plot/)、[相関図](/figures/how-to-read-correlation-plot/)、[ROC曲線](/figures/how-to-read-roc-curve/)                  |
+| 結論の強さ、例外、説明の飛躍 | [バイアス](/statistics/bias/)、[交絡](/statistics/confounding/)、[研究の限界](/statistics/limitations/)      | [Figureと主張](/figures/figure-to-claim/)、[Resultsセクションの流れ](/figures/results-section-flow/)、[Discussionの読み方](/papers/how-to-read-discussion/) |
+
+## 記事一覧
+
+<ArticleList part="figures" groupByModule />
+
+この一覧は、Figureの種類から記事を探すための入口です。順番に練習したい場合は、[Figureを読めるようになる](/paths/figure-reading/) で基本構造、基本グラフ、実験Figure、オミクスFigure、論文本文との対応づけへ進みます。
 
 ## このカテゴリを終えるとできること
 
 - 棒グラフで平均だけでなく、ばらつき、n数、エラーバーを確認できる
 - Figure legendから実験条件、反復、統計検定の情報を探せる
+- 複数パネルFigureで、各パネルが全体の主張をどう支えているかを確認できる
 - qPCRやWestern blotの結果を、コントロールとセットで読める
 - Volcano plotやヒートマップを、差次的発現解析やRNA-seqの結果として読める
+- enrichmentやForest plotなど、より発展的なFigureでも、軸、凡例、統計表示を確認しながら読める
+- ゲノムブラウザ図、Lollipop plot、CNV plotで、位置、スケール、凡例、解析条件を確認できる
+- Results内でFigureがどのように主張を積み上げているかを整理できる
 
 ## 関連する基礎記事
 
-- [RNA-seqとは何か](/bioinformatics/what-is-rna-seq/)
-- [差次的発現解析とは何か](/bioinformatics/what-is-differential-expression-analysis/)
-- [遺伝子発現とは何か](/molecular-biology/what-is-gene-expression/)
+- [RNA-seqとは何か](/bioinformatics/rna-seq/)
+- [差次的発現解析とは何か](/bioinformatics/differential-expression/)
+- [遺伝子発現とは何か](/molecular-biology/gene-expression/)
 
 ## 関連する用語
 

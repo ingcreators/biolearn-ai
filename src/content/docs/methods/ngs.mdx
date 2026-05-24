@@ -1,0 +1,137 @@
+---
+title: NGSとは何か
+description: NGSが大量のDNA断片を並列に読むシーケンシング技術であることを説明します。
+part: methods
+module: nucleic-acid-methods
+level: foundation
+priority: P0
+order: 90
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - ngs
+  - sequencing
+  - sample-size
+  - figure-legend
+  - sequence-data
+  - biological-technical-replicates
+  - methods
+  - multiple-testing-correction
+prerequisites:
+  - /methods/sequencing/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'NGSが大量の配列断片を並列に読む技術であることを説明できる',
+    'リード、ライブラリ、マッピングの関係を理解する',
+    'NGSがRNA-seqや変異解析の土台になる理由を説明できる',
+  ]}
+/>
+
+## 要点
+
+NGSは、多数のDNA断片を同時に読み、生命科学データ解析の出発点になる技術です。
+
+## 基礎解説
+
+NGSは next-generation sequencing の略で、従来よりも大量の配列を並列に読む技術を指します。試料からDNAやcDNA断片を調製し、シーケンサーで短い配列断片として読み取ります。
+
+NGSで得られるリードは、参照ゲノムや転写産物にマッピングされます。その後、変異を探したり、遺伝子発現量を推定したり、クロマチン状態を調べたりします。
+
+重要なのは、NGSは一つの実験名というより、多くの解析手法を支える測定技術だという点です。RNA-seq、ChIP-seq、ATAC-seq、全ゲノムシーケンシングなどは、目的と前処理、解析方法が異なります。
+
+## なぜ重要か
+
+論文Figureでは、NGS由来の結果がヒートマップ、ボルケーノプロット、ゲノムブラウザ、UMAPなどとして示されます。NGSの大まかな流れを知っていると、Figureが何のデータから作られているのかを追いやすくなります。
+
+## Figureで見る場所
+
+NGSのFigureでは、測定技術よりも「どの解析結果として見せているか」を先に確認します。
+
+- RNA-seqでは、PCA、Volcano plot、ヒートマップ、pathway enrichment plotがよく出ます。
+- single-cell RNA-seqでは、UMAP/t-SNE、クラスタ、マーカー遺伝子、細胞割合を見ます。
+- ゲノム解析では、ゲノムブラウザ図、lollipop plot、CNV plotなどに変換されます。
+- どのFigureでも、サンプル、ライブラリ調製、マッピング、正規化、品質管理がMethods側の確認点になります。
+
+まずは[シーケンスデータ](/bioinformatics/sequence-data/)でデータの流れを押さえ、Figure別に読み方を分けます。
+
+## 図解
+
+<LessonFigure
+  src="/figures/ngs-concept.jpg"
+  alt="多数のDNA断片をシーケンサーで読み、リードとして解析する流れを示す概念図"
+  title="NGSは大量の配列断片を並列に読む"
+  caption="NGSで得られたリードは、マッピングやカウントなどの解析を経てFigureに変換されます。"
+/>
+
+<TermBox term="NGS" english="next-generation sequencing" abbreviation="NGS">
+  多数のDNA断片を並列に読み取るシーケンシング技術の総称です。
+</TermBox>
+
+## 英語表記と略語
+
+| 日本語名             | 英語名                     | 略語 |
+| -------------------- | -------------------------- | ---- |
+| 次世代シーケンシング | next-generation sequencing | NGS  |
+| リード               | read                       | -    |
+| ライブラリ           | sequencing library         | -    |
+| マッピング           | mapping                    | -    |
+
+## よくある誤解
+
+- NGSは特定の1種類の解析だけを指す言葉ではありません。
+- NGSのFigureを読むには、測定目的と解析手順を合わせて確認する必要があります。
+- リード数が多いことだけで、結果の解釈が自動的に正しくなるわけではありません。
+
+## 重要用語
+
+- NGS: 大量の配列断片を並列に読む技術。
+- ライブラリ調製: 試料をシーケンシング可能な形に整える工程。
+- リード: シーケンサーから得られる配列断片。
+- マッピング: リードを参照配列に対応づける解析。
+- [シーケンスデータ](/glossary/sequence-data/): NGSから得られる配列情報を解析に使える形で整理したデータ。
+- [多重検定補正](/glossary/multiple-testing-correction/): 多数の遺伝子や変異を同時に調べる解析で、偶然の有意を増やしすぎないための考え方。
+
+<Quiz
+  questions={[
+    {
+      question: 'NGSがRNA-seqや変異解析の土台になる理由を説明してください。',
+      answer:
+        '大量の配列断片を読み、そのリードを解析することで発現量推定や変異検出に使えるからです。',
+    },
+    {
+      question:
+        'NGS由来のFigureを見るときに確認したいことを一つ挙げてください。',
+      answer:
+        'どの種類のNGS実験か、サンプル、ライブラリ調製、マッピング、正規化方法などがあります。',
+    },
+    {
+      question:
+        'NGSのリード数が多いだけで結論が強くなるとは限らない理由を説明してください。',
+      answer:
+        '独立サンプル数、ライブラリ調製、品質管理、解析方法、バッチ効果なども解釈に影響するためです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'シーケンシングとは何か', href: '/methods/sequencing/' },
+    {
+      title: 'シーケンスデータとは何か',
+      href: '/bioinformatics/sequence-data/',
+    },
+    {
+      title: 'Volcano plotの読み方',
+      href: '/figures/how-to-read-volcano-plot/',
+    },
+  ]}
+/>

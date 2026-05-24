@@ -1,0 +1,92 @@
+---
+title: PCAプロットの読み方
+description: PCAプロットでサンプル間の全体的な違い、クラスタ、外れ値を読む基本を説明します。
+part: figures
+module: bioinformatics-figures
+level: foundation
+priority: P1
+order: 70
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - rna-seq
+  - dimensionality-reduction
+  - batch-effect
+prerequisites:
+  - /bioinformatics/rna-seq/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'PCAプロットで点が何を表すか確認できる',
+    'サンプルのまとまりや外れ値を読める',
+    'PC1/PC2の割合を確認する理由を理解する',
+  ]}
+/>
+
+## 要点
+
+PCAプロットは、多数の変数を持つデータで、サンプル同士の全体的な似ている・違うを可視化するFigureです。
+
+## 基礎解説
+
+PCAは主成分分析（principal component analysis）の略です。[RNA-seq](/glossary/rna-seq/)などでは、各サンプルが多数の遺伝子発現量を持っています。PCAプロットは、その違いを2次元に要約して示す[次元削減](/glossary/dimensionality-reduction/)の代表的な図です。
+
+点はサンプルを表すことが多く、近い点ほど全体的なパターンが似ていると読みます。条件ごとに点がまとまるか、外れたサンプルがないか、[バッチ効果](/glossary/batch-effect/)が見えていないかを確認します。
+
+軸にはPC1、PC2などが使われ、どれくらいのばらつきを説明しているかの割合が書かれることがあります。割合が小さい場合、2次元の図だけで全体を判断しすぎないようにします。
+
+## 図解
+
+<LessonFigure
+  src="/figures/pca-plot-concept.jpg"
+  alt="PCAプロットで条件ごとのサンプルがまとまり、外れ値を確認する概念図"
+  title="PCAプロットはサンプル同士の全体的な違いを見る"
+  caption="点の単位、条件ごとのまとまり、外れ値、PC1/PC2の説明割合を確認します。"
+/>
+
+<TermBox term="PCA" english="principal component analysis" abbreviation="PCA">
+  多数の変数を持つデータのばらつきを、少数の軸に要約する解析です。
+</TermBox>
+
+## よくある誤解
+
+- PCAの近さは、特定の1遺伝子だけの近さではありません。
+- 2次元で離れている理由は、追加解析やメタデータと合わせて考えます。
+- クラスタが分かれていても、それだけで原因が証明されたわけではありません。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question: 'PCAプロットで点が表すものは何であることが多いですか。',
+      answer: 'RNA-seqなどでは、各点がサンプルを表すことが多いです。',
+    },
+    {
+      question:
+        'PCAプロットで外れた点があるときに確認したいことを一つ挙げてください。',
+      answer:
+        'サンプル品質、バッチ、処理条件、ライブラリ調製、メタデータなどがあります。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'RNA-seqとは何か', href: '/bioinformatics/rna-seq/' },
+    {
+      title: '次元削減とは何か',
+      href: '/bioinformatics/dimensionality-reduction/',
+    },
+    { title: 'ヒートマップの読み方', href: '/figures/how-to-read-heatmap/' },
+    { title: 'UMAP / t-SNEの読み方', href: '/figures/how-to-read-umap-tsne/' },
+  ]}
+/>

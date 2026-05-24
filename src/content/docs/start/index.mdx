@@ -5,16 +5,42 @@ description: BioLearn の入口です。
 
 import FlowDiagram from '../../../components/FlowDiagram.astro';
 
-BioLearn では、生命科学を「分子」「細胞」「ゲノム」「データ解析」から「論文Figureの読み方」へ進む流れで学びます。
+BioLearn では、生命科学を「分子」「細胞」「ゲノム」「データ解析」から「論文Figureの読み方」、さらに「論文全体の読み方」へ進む流れで学びます。
 
 - 高校生物を学び直したい人
 - 医療・ヘルスケア・創薬領域に関心がある人
 - 情報系エンジニアとして生命科学に入門したい人
 - 生命科学論文を読めるようになりたい人
 
-最初に読む記事は [生命科学とは何か](/start/what-is-life-science/) です。すべてを一度に覚える必要はありません。まずは言葉に慣れ、次に「分子が細胞で働き、その情報をゲノムとデータから読み解き、最後に論文Figureとして示された結果を読む」という流れをつかみます。
+最初に読む記事は [生命科学とは何か](/fundamentals/life-science/) です。すべてを一度に覚える必要はありません。まずは言葉に慣れ、次に「分子が細胞で働き、その情報をゲノムとデータから読み解き、最後に論文Figureや論文本文として示された結果を読む」という流れをつかみます。
 
-詳しい学習計画は [学習ロードマップ](/roadmap/) にまとめています。
+BioLearn全体の章立ては [学習ロードマップ](/roadmap/) にまとめています。順番に練習したい場合は [ラーニングパス](/paths/) から始め、途中で確認点だけ見直したい場合は [リファレンス](/resources/) を使います。
+
+## まず選ぶ
+
+<div class="biolearn-home-grid">
+  <a class="biolearn-home-card" href="/paths/foundations/">
+    <span>基礎</span>
+    <h3>基礎から学ぶ</h3>
+    <p>
+      生命科学の全体像、細胞、DNA、RNA、タンパク質、遺伝子、ゲノムを順番につなげます。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="/paths/figure-reading/">
+    <span>Figure</span>
+    <h3>Figureを読めるようになる</h3>
+    <p>
+      Figure legend、軸、ばらつき、対照、解析条件を確認しながら図を読みます。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="/paths/paper-reading/">
+    <span>論文</span>
+    <h3>論文を読めるようになる</h3>
+    <p>
+      Figure、Methods、Results、Discussionを行き来し、主張をデータに戻します。
+    </p>
+  </a>
+</div>
 
 ## 学習の全体像
 
@@ -26,16 +52,32 @@ BioLearn では、生命科学を「分子」「細胞」「ゲノム」「デ�
     'ゲノム: 染色体・変異',
     'データ解析: RNA-seq・発現解析',
     '論文Figure: 結果表示を読む',
+    '論文読解: Methods・Results・Discussion',
   ]}
-  note="分子の働きを細胞の中で理解し、ゲノム全体、データ解析、論文Figureの読解へ広げます。"
+  note="分子の働きを細胞の中で理解し、ゲノム全体、データ解析、論文Figure、論文全体の読解へ広げます。"
 />
 
-## このロードマップの使い方
+## 使い方
 
-- はじめて学ぶ場合は、上から順番に読みます。
-- すでに高校生物の基礎がある場合は、分子生物学の章から始めても構いません。
-- 情報系エンジニアの場合も、RNA-seqへ進む前にDNA、RNA、遺伝子発現を押さえると理解しやすくなります。
+- はじめて学ぶ場合は、[基礎から学ぶ](/paths/foundations/) から始めます。
+- すでに基礎用語に慣れている場合は、[Figureを読めるようになる](/paths/figure-reading/) から始めても構いません。
+- 論文全体を読みたい場合は、先にFigure読解の感覚を作ってから [論文を読めるようになる](/paths/paper-reading/) へ進みます。
+- 特定の記事だけを探したい場合は、分野別カテゴリや [用語集](/glossary/) を使います。
 - 各記事の「確認問題」で説明できない用語があれば、[用語集](/glossary/) で確認します。
+
+## 分野別に探す
+
+| 探したいこと                      | 入口                                         |
+| --------------------------------- | -------------------------------------------- |
+| 生命科学の基本語                  | [生命科学の基礎](/fundamentals/)             |
+| DNA、RNA、タンパク質、遺伝子発現  | [分子生物学](/molecular-biology/)            |
+| 細胞膜、小器官、シグナル          | [細胞生物学](/cell-biology/)                 |
+| ゲノム、染色体、変異              | [ゲノミクス](/genomics/)                     |
+| PCR、qPCR、NGS、Western blotなど  | [実験手法](/methods/)                        |
+| RNA-seq、発現解析、オミクスデータ | [バイオインフォマティクス](/bioinformatics/) |
+| n数、p値、反復、研究デザイン      | [統計・研究デザイン](/statistics/)           |
+| Figureの種類ごとの読み方          | [論文Figureの読み方](/figures/)              |
+| 論文全体の読み方                  | [論文読解演習](/papers/)                     |
 
 ## 章ごとのゴール
 
@@ -73,53 +115,28 @@ BioLearn では、生命科学を「分子」「細胞」「ゲノム」「デ�
       plot、ヒートマップを結果のFigureとして読む練習をします。
     </p>
   </section>
+  <section>
+    <h3>論文読解</h3>
+    <p>
+      Figure、Methods、Results、Discussionを行き来して、主張をデータに戻して確認します。
+    </p>
+  </section>
 </div>
 
-## 推奨学習順序
+## 最短ルート
 
-### 導入
+まず [生命科学とは何か](/fundamentals/life-science/) と [細胞とは何か](/fundamentals/cell/) で全体像を作ります。その後、DNA、RNA、タンパク質、遺伝子発現を確認し、実験手法、バイオインフォマティクス、統計、Figure読解へ進みます。
 
-1. [生命科学とは何か](/start/what-is-life-science/)
-2. [細胞とは何か](/fundamentals/what-is-a-cell/)
+章ごとの詳しい順番は [学習ロードマップ](/roadmap/) にあります。記事を順番に並べたルートで進みたい場合は、[基礎から学ぶ](/paths/foundations/)、[Figureを読めるようになる](/paths/figure-reading/)、[論文を読めるようになる](/paths/paper-reading/) を使います。
 
-### 分子
+## 迷ったときの戻り先
 
-3. [DNAとは何か](/molecular-biology/what-is-dna/)
-4. [RNAとは何か](/molecular-biology/what-is-rna/)
-5. [タンパク質とは何か](/molecular-biology/what-is-protein/)
-6. [遺伝子とは何か](/molecular-biology/what-is-gene/)
-7. [セントラルドグマとは何か](/molecular-biology/what-is-central-dogma/)
-8. [転写とは何か](/molecular-biology/what-is-transcription/)
-9. [翻訳とは何か](/molecular-biology/what-is-translation/)
-10. [遺伝子発現とは何か](/molecular-biology/what-is-gene-expression/)
-
-### 細胞
-
-11. [細胞膜とは何か](/cell-biology/what-is-cell-membrane/)
-12. [細胞小器官とは何か](/cell-biology/what-are-organelles/)
-13. [細胞シグナル伝達とは何か](/cell-biology/what-is-cell-signaling/)
-
-### ゲノム
-
-14. [ゲノムとは何か](/genomics/what-is-genome/)
-15. [染色体とは何か](/genomics/what-are-chromosomes/)
-16. [遺伝的変異とは何か](/genomics/what-are-genetic-variants/)
-
-### 実験とデータ解析
-
-17. [PCRとは何か](/methods/what-is-pcr/)
-18. [RNA-seqとは何か](/bioinformatics/what-is-rna-seq/)
-19. [シーケンスデータとは何か](/bioinformatics/what-is-sequence-data/)
-20. [差次的発現解析とは何か](/bioinformatics/what-is-differential-expression-analysis/)
-
-### 論文Figureの読み方
-
-21. [棒グラフの読み方](/figures/how-to-read-bar-plot/)
-22. [qPCRプロットの読み方](/figures/how-to-read-qpcr-plot/)
-23. [Western blotの読み方](/figures/how-to-read-western-blot/)
-24. [Volcano plotの読み方](/figures/how-to-read-volcano-plot/)
-25. [ヒートマップの読み方](/figures/how-to-read-heatmap/)
-
-## 学び終えたら
-
-第4章までの20本で分子、細胞、ゲノム、実験とデータ解析の土台を作ったら、第5章として [論文Figureの読み方](/figures/) に進みます。棒グラフ、qPCR、Western blot、Volcano plot、ヒートマップを読めるようになると、生命科学論文の結果を追いやすくなります。
+| 迷っていること                       | 戻る場所                                                                |
+| ------------------------------------ | ----------------------------------------------------------------------- |
+| 何から始めればよいか分からない       | [ラーニングパス](/paths/)                                               |
+| BioLearn全体の構成を知りたい         | [学習ロードマップ](/roadmap/)                                           |
+| 用語だけ確認したい                   | [用語集](/glossary/)                                                    |
+| Figureの種類から探したい             | [論文Figureの読み方](/figures/)                                         |
+| MethodsやFigure legendの手法名が不安 | [実験手法](/methods/)、[実験手法早見表](/resources/methods-cheatsheet/) |
+| 統計表示やn数が読みにくい            | [統計・研究デザイン](/statistics/)                                      |
+| 論文を探すところから始めたい         | [PubMed / PMC 早見表](/resources/pubmed-pmc/)                           |

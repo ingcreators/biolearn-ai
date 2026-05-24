@@ -118,9 +118,9 @@ export default defineConfig({
           items: [
             { label: '用語集', link: '/glossary/' },
             { label: '実験手法早見表', link: '/resources/methods-cheatsheet/' },
-            { label: 'Figure早見表', link: '/resources/figure-cheatsheet/' },
+            { label: 'Figure早見表', link: '/resources/figures-cheatsheet/' },
             { label: 'PubMed / PMC の使い方', link: '/resources/pubmed-pmc/' },
-            { label: '外部学習リソース', link: '/resources/' },
+            { label: 'リファレンス', link: '/resources/' },
             { label: 'About', link: '/about/' },
           ],
         },

@@ -1,0 +1,134 @@
+---
+title: qPCRとは何か
+description: qPCRがDNA量やcDNA量の増え方をリアルタイムに測る手法であることを説明します。
+part: methods
+module: nucleic-acid-methods
+level: foundation
+priority: P1
+order: 30
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - pcr
+  - gene-expression
+  - biological-technical-replicates
+  - sample-size
+  - figure-legend
+  - control-group
+  - p-value
+  - effect-size
+  - methods
+prerequisites:
+  - /methods/pcr/
+  - /fundamentals/dna/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'qPCRが何を測る実験か説明できる',
+    'Ct値と増幅曲線の基本的な意味を理解する',
+    'qPCRグラフを読む前に確認する条件を挙げられる',
+  ]}
+/>
+
+## 要点
+
+qPCRは、PCRによる増幅の進み方をリアルタイムに測り、試料中の核酸量を比べる方法です。
+
+## 基礎解説
+
+qPCRは quantitative PCR の略で、PCRの増幅過程を蛍光シグナルとして追跡します。通常のPCRが「増幅産物があるか」を確認する場面で使われるのに対し、qPCRでは増幅がどのサイクルで検出可能になるかを見ます。
+
+よく出てくる指標がCt値です。Ct値は、蛍光シグナルが一定のしきい値を超えるサイクル数を表します。対象となる核酸が多い試料ほど早いサイクルで検出されやすく、Ct値は小さくなります。ただし、Ct値だけで結論を決めるのではなく、プライマー、対照、正規化、反復を確認します。
+
+RNAの量を比べる場合は、RNAをcDNAに変換してからqPCRを行います。この場合はRT-qPCRと呼ばれ、遺伝子発現の変化を調べる実験として論文によく出てきます。
+
+## なぜ重要か
+
+qPCRは、[遺伝子発現](/glossary/gene-expression/)の変化を確認する実験として頻繁に使われます。RNA-seqで見つけた候補遺伝子を別の方法で確認したり、処理条件による発現変化を少数の遺伝子で調べたりします。
+
+Figureでは棒グラフや折れ線、増幅曲線として示されることがあります。何を基準に正規化したか、どの条件と比べたか、反復が何を意味するかを読むことが大切です。
+
+## Figureで見る場所
+
+qPCR Figureでは、棒グラフだけでなく、増幅曲線、Ct値、正規化方法、参照遺伝子を合わせて確認します。
+
+- 棒グラフでは、何を1として相対量を示しているかを見ます。
+- エラーバーでは、独立サンプルのばらつきか、測定のばらつきかを確認します。
+- 統計表示では、p値だけでなく効果量と反復数を合わせて読みます。
+- Figure legendでは、比較条件、参照遺伝子、検定方法を探します。
+
+読み方は[qPCRプロット](/figures/how-to-read-qpcr-plot/)と[棒グラフ](/figures/how-to-read-bar-plot/)に戻ると整理しやすくなります。
+
+## 図解
+
+<LessonFigure
+  src="/figures/qpcr-concept.jpg"
+  alt="複数の試料から得た蛍光シグナルがPCRサイクルに応じて増え、しきい値を超えるタイミングを比較する概念図"
+  title="qPCRは増幅が検出されるタイミングを比較する"
+  caption="試料中の対象核酸が多いほど、蛍光シグナルは早いサイクルでしきい値を超えやすくなります。"
+/>
+
+<TermBox term="qPCR" english="quantitative PCR" abbreviation="qPCR">
+  PCRの増幅過程を蛍光で追跡し、核酸量を比較する実験手法です。
+</TermBox>
+
+## 英語表記と略語
+
+| 日本語名     | 英語名                     | 略語    |
+| ------------ | -------------------------- | ------- |
+| 定量PCR      | quantitative PCR           | qPCR    |
+| 逆転写qPCR   | reverse transcription qPCR | RT-qPCR |
+| サイクル閾値 | cycle threshold            | Ct      |
+| 参照遺伝子   | reference gene             | -       |
+
+## よくある誤解
+
+- Ct値が小さいほど、対象核酸が多い可能性があります。ただし、実験条件や正規化を確認せずに比較してはいけません。
+- qPCRは遺伝子の働きを直接証明する実験ではありません。発現量の変化を測る手法です。
+- RT-qPCRではRNAを直接PCRしているのではなく、cDNAに変換してから測ります。
+
+## 重要用語
+
+- qPCR: PCRの増幅をリアルタイムに測る手法。
+- Ct値: 蛍光シグナルがしきい値を超えるサイクル数。
+- 参照遺伝子: 正規化の基準として使う遺伝子。
+- RT-qPCR: RNAをcDNAに変換してからqPCRで測る方法。
+- [反復](/glossary/biological-technical-replicates/): 条件間の差が独立したサンプルでどれくらい再現されるかを見る考え方。
+- [p値](/glossary/p-value/): 条件間の差を統計的に評価するときに使われる値。
+- [効果量](/glossary/effect-size/): 発現量の差がどれくらい大きいかを見る指標。
+
+<Quiz
+  questions={[
+    {
+      question: 'qPCRでCt値が小さいとは、一般に何を意味しますか。',
+      answer:
+        '対象となる核酸が多く、少ないサイクル数で検出しきい値を超えた可能性があります。',
+    },
+    {
+      question: 'RT-qPCRで最初にRNAをcDNAに変換する理由を説明してください。',
+      answer:
+        'PCRはDNAを増幅する手法なので、RNAを測るにはまずcDNAに変換する必要があります。',
+    },
+    {
+      question: 'qPCR Figure legendで確認したい情報を2つ挙げてください。',
+      answer:
+        '参照遺伝子、比較条件、反復数、正規化方法、検定方法などがあります。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'PCRとは何か', href: '/methods/pcr/' },
+    { title: 'qPCRプロットの読み方', href: '/figures/how-to-read-qpcr-plot/' },
+    { title: '棒グラフの読み方', href: '/figures/how-to-read-bar-plot/' },
+  ]}
+/>

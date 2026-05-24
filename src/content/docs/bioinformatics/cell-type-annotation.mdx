@@ -1,0 +1,105 @@
+---
+title: 細胞タイプ注釈とは何か
+description: single-cell解析でクラスタに細胞型名を付ける細胞タイプ注釈を、マーカー遺伝子と根拠確認の観点から説明します。
+part: bioinformatics
+module: single-cell-analysis
+level: intermediate
+priority: P2
+order: 48
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - marker-gene
+  - clustering
+  - single-cell-rna-seq
+prerequisites:
+  - /bioinformatics/clustering/
+  - /bioinformatics/marker-gene/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    '細胞タイプ注釈がクラスタに意味づけする工程だと説明できる',
+    'マーカー遺伝子を使った注釈の考え方を理解する',
+    '注釈名を根拠なしに受け取らない読み方を説明できる',
+  ]}
+/>
+
+## 要点
+
+細胞タイプ注釈は、クラスタや細胞に対して、マーカー遺伝子などの根拠をもとに細胞型名を付ける工程です。
+
+## 基礎解説
+
+single-cell解析では、クラスタリングによって似た発現パターンの細胞がまとまります。しかし、クラスタ番号だけでは、その細胞が何の細胞型かは分かりません。そこで、各クラスタで高く発現するマーカー遺伝子を確認し、既知の細胞型の知識と照らし合わせます。
+
+たとえば、あるクラスタで特定の免疫細胞に関連するマーカーが高い場合、そのクラスタをその細胞型として注釈することがあります。ただし、マーカー遺伝子は文脈依存で、1つの遺伝子だけで細胞型が決まるわけではありません。
+
+論文を読むときは、クラスタ名だけでなく、どのマーカーを使ったか、複数の根拠があるか、参考データや自動注釈ツールを使ったか、曖昧なクラスタをどう扱ったかを確認します。
+
+## 図解
+
+<LessonFigure
+  src="/figures/cell-type-annotation-concept.jpg"
+  alt="クラスタ、マーカー遺伝子、既知の知識を照合して細胞型名を付ける概念図"
+  title="細胞タイプ注釈はクラスタに根拠を添えて名前を付ける工程"
+  caption="クラスタ名は結果そのものではなく、マーカー遺伝子や参考情報にもとづく解釈です。"
+/>
+
+<TermBox term="細胞タイプ注釈" english="cell type annotation">
+  single-cell解析で、クラスタや細胞に細胞型名を付ける工程です。
+</TermBox>
+
+## よくある誤解
+
+- クラスタ番号がそのまま細胞型を表すと思う。
+- 1つのマーカー遺伝子だけで細胞型が確定すると考える。
+- 自動注釈ツールの出力を、根拠確認なしに受け入れる。
+- 似た細胞状態、活性化状態、細胞周期の違いを細胞型差と混同する。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question:
+        '細胞タイプ注釈でマーカー遺伝子を確認する理由を説明してください。',
+      answer:
+        'クラスタ名が、既知の細胞型に特徴的な発現パターンと対応しているか確認するためです。',
+    },
+    {
+      question:
+        '自動注釈ツールの結果をそのまま受け取らない方がよい理由を説明してください。',
+      answer:
+        '参照データ、組織、状態、前処理の違いによって注釈がずれることがあり、マーカーや文脈で確認する必要があるためです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    {
+      title: 'クラスタリングとは何か',
+      href: '/bioinformatics/clustering/',
+    },
+    {
+      title: 'マーカー遺伝子とは何か',
+      href: '/bioinformatics/marker-gene/',
+    },
+    {
+      title: 'single-cell解析論文の読み方',
+      href: '/papers/walkthrough-single-cell/',
+    },
+    {
+      title: 'UMAP/t-SNE図の読み方',
+      href: '/figures/how-to-read-umap-tsne/',
+    },
+  ]}
+/>

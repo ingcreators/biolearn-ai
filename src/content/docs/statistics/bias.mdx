@@ -1,0 +1,107 @@
+---
+title: バイアスとは何か
+description: バイアスを、研究デザイン、サンプル選択、測定、解析、報告の過程で結果が一方向にずれる可能性として説明します。
+part: statistics
+module: study-limitations
+level: foundation
+priority: P1
+order: 120
+learningPaths:
+  - paper-reading
+  - figure-reading
+relatedTerms:
+  - bias
+  - confounding
+  - reproducibility
+prerequisites:
+  - /statistics/control-group/
+  - /statistics/randomization/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'バイアスが結果を一方向にずらす可能性であることを説明できる',
+    'サンプル選択、測定、解析、報告のバイアスを意識できる',
+    'DiscussionやMethodsで限界を探せる',
+  ]}
+/>
+
+## 要点
+
+バイアスは、研究の設計、測定、解析、報告の過程で、結果が一方向にずれる可能性です。
+
+## 基礎解説
+
+研究結果には、偶然のばらつきだけでなく、設計や手順による偏りが入り得ます。たとえば、特定のサンプルだけが選ばれる、測定順が群ごとに偏る、解析条件を都合よく選ぶ、出た結果の一部だけを強調する、といった場合です。
+
+バイアスは、サンプル数を増やすだけでは解決しないことがあります。ランダム化、適切な対照群、ブラインド化、事前に決めた解析計画、限界の明示などが、バイアスを減らしたり読み手が評価したりする助けになります。
+
+## なぜ重要か
+
+Figureで差が見えても、その差が研究対象の違いを反映しているのか、手順の偏りを反映しているのかを考える必要があります。MethodsとDiscussionを読み、どのような偏りが残り得るかを確認します。
+
+## 図解
+
+<LessonFigure
+  src="/figures/bias-concept.jpg"
+  alt="サンプル選択、測定、解析、報告の各段階で結果が一方向にずれる可能性を示す概念図"
+  title="バイアスは結果を一方向にずらす"
+  caption="サンプル、測定順、解析条件、報告のされ方を確認します。"
+/>
+
+<TermBox term="バイアス" english="bias">
+  研究の設計や手順によって、結果が一方向にずれる可能性です。
+</TermBox>
+
+## 英語表記と略語
+
+| 日本語名     | 英語名           | 略語 |
+| ------------ | ---------------- | ---- |
+| バイアス     | bias             | -    |
+| 選択バイアス | selection bias   | -    |
+| 測定バイアス | measurement bias | -    |
+| 報告バイアス | reporting bias   | -    |
+
+## よくある誤解
+
+- バイアスを「研究者の悪意」とだけ考える。
+- p値が小さければ、バイアスの問題はないと思ってしまう。
+- サンプル数が多ければ、設計上の偏りも消えると考える。
+
+## 重要用語
+
+- バイアス: 結果を一方向にずらす可能性。
+- 選択バイアス: サンプルの選ばれ方による偏り。
+- 測定バイアス: 測定方法や測定順による偏り。
+- 報告バイアス: 結果の一部だけが強調される偏り。
+
+<Quiz
+  questions={[
+    {
+      question: 'バイアスはサンプル数を増やせば必ず解決しますか。',
+      answer:
+        '必ず解決するわけではありません。設計や測定、解析の偏りが残る場合があります。',
+    },
+    {
+      question:
+        'Methodsでバイアスを考えるために確認したいことを一つ挙げてください。',
+      answer:
+        'サンプルの選び方、割り付け、測定順、解析条件、除外基準、ブラインド化の有無などがあります。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'ランダム化とは何か', href: '/statistics/randomization/' },
+    { title: '交絡とは何か', href: '/statistics/confounding/' },
+    { title: '研究の限界の読み方', href: '/statistics/limitations/' },
+    { title: '相関と因果の違い', href: '/statistics/correlation-causation/' },
+  ]}
+/>

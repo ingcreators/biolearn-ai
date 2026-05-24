@@ -1,0 +1,106 @@
+---
+title: 研究の限界の読み方
+description: 研究の限界を、結論をどこまで一般化できるかを判断するための情報として説明します。
+part: statistics
+module: study-limitations
+level: foundation
+priority: P1
+order: 150
+learningPaths:
+  - paper-reading
+  - figure-reading
+relatedTerms:
+  - bias
+  - confounding
+  - reproducibility
+prerequisites:
+  - /statistics/bias/
+  - /statistics/confounding/
+  - /statistics/reproducibility/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    '研究の限界を結論の範囲を決める情報として読める',
+    'サンプル、方法、解析、解釈の限界を分けられる',
+    'Discussionで著者の主張の強さを調整できる',
+  ]}
+/>
+
+## 要点
+
+研究の限界は、結果がどの条件で成り立ち、どこまで一般化できるかを判断するための情報です。
+
+## 基礎解説
+
+限界は、研究の価値を下げるための記述ではありません。むしろ、結果を正しく使うための範囲を示す情報です。サンプル数が少ない、対象が特定の条件に限られる、対照群が十分でない、測定方法に制約がある、解析で考慮できない要因が残る、といった点が限界になり得ます。
+
+読むときは、限界を「サンプル」「実験方法」「解析」「解釈」のどこに関わるものかに分けます。そのうえで、論文の結論が限界を超えて広がりすぎていないかを確認します。
+
+## なぜ重要か
+
+Discussionでは、著者が研究の意義を強調する一方で、限界や今後の課題も述べます。限界を読むことで、結果を否定するのではなく、どの強さで受け取るべきかを調整できます。
+
+## 図解
+
+<LessonFigure
+  src="/figures/limitations-concept.jpg"
+  alt="サンプル、方法、解析、解釈の4つの観点から研究の限界を整理する概念図"
+  title="限界は結論の適用範囲を決める"
+  caption="サンプル、方法、解析、解釈のどこに制約があるかを分けます。"
+/>
+
+<TermBox term="研究の限界" english="limitations">
+  研究結果をどの範囲で解釈できるかを決める制約や注意点です。
+</TermBox>
+
+## 英語表記と略語
+
+| 日本語名     | 英語名             | 略語 |
+| ------------ | ------------------ | ---- |
+| 研究の限界   | limitations        | -    |
+| 一般化可能性 | generalizability   | -    |
+| 解釈の範囲   | scope of inference | -    |
+| 今後の課題   | future directions  | -    |
+
+## よくある誤解
+
+- 限界が書かれている論文は、信頼できない論文だと考える。
+- 限界を読まず、結論文だけを覚える。
+- サンプルの限界、方法の限界、解析の限界を区別しない。
+
+## 重要用語
+
+- 限界: 結果の解釈や一般化に関わる制約。
+- 一般化可能性: 結果を別の集団や条件にも広げられる程度。
+- 解釈の範囲: データから無理なく言える結論の範囲。
+- 今後の課題: 現在の研究では未解決で、次に検討すべき点。
+
+<Quiz
+  questions={[
+    {
+      question: '研究の限界は、結果をすべて否定するためのものですか。',
+      answer:
+        'いいえ。結果をどの範囲で受け取るべきかを判断するための情報です。',
+    },
+    {
+      question: '限界を読むときに分けたい観点を二つ挙げてください。',
+      answer:
+        'サンプル、実験方法、解析、解釈、一般化可能性などの観点があります。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'Discussionの読み方', href: '/papers/how-to-read-discussion/' },
+    { title: '論文を批判的に読む', href: '/papers/critical-reading/' },
+    { title: '再現性とは何か', href: '/statistics/reproducibility/' },
+  ]}
+/>

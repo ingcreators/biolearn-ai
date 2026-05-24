@@ -3,7 +3,13 @@ title: 論文を読めるようになる
 description: 生命科学論文の Figure、Methods、Results を読めるようになるためのラーニングパスです。
 ---
 
-このパスでは、Figure だけでなく、Methods と Results を行き来しながら論文を読むための考え方を学びます。
+import ArticleList from '../../../components/ArticleList.astro';
+
+このパスでは、論文を最初から順番に訳すのではなく、研究の問い、Figure、Methods、Results、Discussion を行き来しながら読む練習をします。
+
+Figure の見た目だけで結論を決めず、Methods でサンプル、対照、反復、解析条件を確認し、Discussion ではデータから言える範囲と解釈を分けて読みます。
+
+特定の記事や演習を探したい場合は [論文読解演習](/papers/) を使います。このページでは、論文読解の型を順番に身につけることを優先します。
 
 ## 目標
 
@@ -12,14 +18,97 @@ description: 生命科学論文の Figure、Methods、Results を読めるよう
 - Results の主張を Figure と Figure legend に戻って確認できる
 - Discussion の解釈と実験結果そのものを分けて読める
 
-## 読む順番
+## このパスの使い方
 
-1. [学習ロードマップ](/roadmap/)
-2. [基礎から学ぶ](/paths/foundations/)
-3. [Figureを読めるようになる](/paths/figure-reading/)
-4. [統計・研究デザイン](/statistics/)
-5. [論文読解演習](/papers/)
+<div class="biolearn-home-grid">
+  <a class="biolearn-home-card" href="/papers/first-pass-reading/">
+    <span>Step 1</span>
+    <h3>初回読みで全体を見る</h3>
+    <p>
+      Title、Abstract、Figure、Conclusionを見て、読む目的と論文の中心をつかみます。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="/papers/figure-first-reading/">
+    <span>Step 2</span>
+    <h3>Figureから根拠を探す</h3>
+    <p>
+      Figure
+      legend、Results、Methodsへ戻り、図から言えることと言えないことを分けます。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="/papers/methods-checklist/">
+    <span>Step 3</span>
+    <h3>Methodsで確かめる</h3>
+    <p>サンプル、対照、反復、解析条件を確認し、主張の強さを見積もります。</p>
+  </a>
+</div>
 
-## これから追加する内容
+## 推奨ルート
 
-今後は、Abstract、Methods、Results、Discussion の読み方、論文検索、Figure と本文の照合、研究の限界の読み方を追加していきます。
+1. [論文の構成](/papers/paper-structure/) で、Abstract、Introduction、Methods、Results、Discussion の役割を確認します。
+2. [初回読みの流れ](/papers/first-pass-reading/) で、どこから読むかを決めます。
+3. [Figureから論文を読む方法](/papers/figure-first-reading/) で、Figure を入口にした読み方を練習します。
+4. [Methods確認チェックリスト](/papers/methods-checklist/) で、サンプル、対照、反復、解析条件を確認します。
+5. [Resultsの読み方](/papers/how-to-read-results/) と [Discussionの読み方](/papers/how-to-read-discussion/) で、結果と解釈を分けます。
+6. [Referencesの読み方](/papers/how-to-read-references/) で、背景、手法、比較対象、次に読む論文として引用文献を使い分けます。
+7. [批判的に読む](/papers/critical-reading/) で、限界、代替説明、追加で見たい情報を整理します。
+
+この順番は、論文全体を訳す順番ではありません。まず全体像をつかみ、Figureの主張を確認し、MethodsとResultsへ戻り、最後にDiscussionの解釈を読み分けるための練習順です。
+
+## 部位別に戻る
+
+順番に読んでいる途中で特定の部位だけ確認したくなった場合は、次の入口へ戻ります。用語の意味だけを短く確認したい場合は用語集へ、読み方を練習したい場合は論文読解演習へ進みます。
+
+| 止まった場所          | 読み方を練習する                                                                                           | 用語だけ確認する                                                                                                        | 補助リファレンス                                      |
+| --------------------- | ---------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| Title / Abstract      | [TitleとAbstractの読み方](/papers/how-to-read-title-abstract/)                                             | [Title](/glossary/title/)、[Abstract](/glossary/abstract/)、[研究の問い](/glossary/research-question/)                  | [論文の構成](/papers/paper-structure/)                |
+| Introduction          | [Introductionの読み方](/papers/how-to-read-introduction/)                                                  | [Introduction](/glossary/introduction/)、[研究背景](/glossary/research-background/)、[先行研究](/glossary/prior-study/) | [Referencesの読み方](/papers/how-to-read-references/) |
+| Figure / Results      | [Figureから論文を読む方法](/papers/figure-first-reading/)、[Resultsの読み方](/papers/how-to-read-results/) | [Figure](/glossary/figure/)、[Figure legend](/glossary/figure-legend/)、[証拠](/glossary/evidence/)                     | [Figure早見表](/resources/figures-cheatsheet/)        |
+| Methods               | [Methodsの読み方](/papers/how-to-read-methods/)、[Methods確認チェックリスト](/papers/methods-checklist/)   | [Methods](/glossary/methods/)、[対照群](/glossary/control-group/)、[反復](/glossary/biological-technical-replicates/)   | [実験手法早見表](/resources/methods-cheatsheet/)      |
+| Discussion            | [Discussionの読み方](/papers/how-to-read-discussion/)、[批判的に読む](/papers/critical-reading/)           | [Discussion](/glossary/discussion/)、[主張](/glossary/claim/)、[限界](/glossary/limitation/)                            | [研究の限界](/statistics/limitations/)                |
+| References / 論文探索 | [Referencesの読み方](/papers/how-to-read-references/)、[PubMedの使い方](/papers/pubmed/)                   | [References](/glossary/references/)、[PubMed](/glossary/pubmed/)、[DOI](/glossary/doi/)、[PMID](/glossary/pmid/)        | [PubMed / PMC の使い分け](/resources/pubmed-pmc/)     |
+
+## Figure読解に戻るタイミング
+
+論文読解中にFigureで止まった場合は、論文全体を読み進める前に、Figure読解パスやFigureカテゴリへ戻ります。図の前提、表示方法、統計、Methods確認のどこで止まったかを分けると戻り先を選びやすくなります。
+
+| 止まったところ                        | 戻る場所                                                                                        | 論文読解へ戻る目安                            |
+| ------------------------------------- | ----------------------------------------------------------------------------------------------- | --------------------------------------------- |
+| Figure legendの条件や略語が読みにくい | [Figure legendの読み方](/figures/figure-legend/)                                                | 条件、n数、反復、統計表示を拾える             |
+| 軸、単位、パネル構成が分からない      | [軸・ラベル・単位](/figures/axis-label-unit/)、[複数パネルFigure](/figures/multi-panel-figure/) | 何を比較しているFigureか説明できる            |
+| グラフの種類ごとの読み方に迷う        | [論文Figureの読み方](/figures/)                                                                 | Figureの種類から確認点を選べる                |
+| 統計表示やn数で止まる                 | [統計・研究デザイン](/statistics/)、[Figure早見表](/resources/figures-cheatsheet/)              | 表示された差の強さと不確かさを分けられる      |
+| Figureと本文の主張がつながらない      | [Figureと主張を対応づける](/figures/figure-to-claim/)                                           | Results本文の文とFigureパネルを対応づけられる |
+
+## 演習で試す
+
+基本の読み方に慣れたら、架空ケースを使って Methods、Figure、Discussion を3段階で確認します。
+
+| 読みたい対象           | 演習                                                          | 先に戻るFigure                                                                                             | 確認したい前提                                                                                                       |
+| ---------------------- | ------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| RNA-seq論文            | [RNA-seqを含む論文](/papers/walkthrough-rna-seq/)             | [Volcano plot](/figures/how-to-read-volcano-plot/)、[Heatmap](/figures/how-to-read-heatmap/)               | [差次的発現解析](/bioinformatics/differential-expression/)、[多重検定補正](/statistics/multiple-testing-correction/) |
+| single-cell論文        | [single-cell解析を含む論文](/papers/walkthrough-single-cell/) | [UMAP・t-SNE](/figures/how-to-read-umap-tsne/)、[Violin plot](/figures/how-to-read-violin-plot/)           | [single-cell RNA-seq](/bioinformatics/single-cell-rna-seq/)、[バッチ効果](/bioinformatics/batch-effect/)             |
+| Western blotを含む論文 | [Western blotを含む論文](/papers/walkthrough-western-blot/)   | [Western blot](/figures/how-to-read-western-blot/)、[棒グラフ](/figures/how-to-read-bar-plot/)             | [Western blot](/methods/western-blot/)、[ローディングコントロール](/methods/loading-control/)                        |
+| 免疫染色画像を含む論文 | [免疫染色を含む論文](/papers/walkthrough-immunostaining/)     | [免疫染色画像](/figures/how-to-read-immunostaining/)、[顕微鏡画像](/figures/how-to-read-microscopy-image/) | [免疫染色](/methods/immunostaining/)、[陽性対照と陰性対照](/methods/positive-negative-control/)                      |
+
+## 迷ったら戻る場所
+
+- Figureの基本が不安なとき: [Figureを読めるようになる](/paths/figure-reading/) と [論文Figureの読み方](/figures/)
+- 統計表示が読みにくいとき: [統計・研究デザイン](/statistics/)、[p値](/statistics/p-value/)、[効果量](/statistics/effect-size/)、[n数](/statistics/sample-size/)
+- 実験条件を確認したいとき: [実験手法](/methods/)、[実験手法早見表](/resources/methods-cheatsheet/)、[Methodsの読み方](/papers/how-to-read-methods/)
+- PubMed、PMC、DOI、PMIDで迷ったとき: [PubMed / PMC の使い分け](/resources/pubmed-pmc/)、[論文探索・識別子の用語](/glossary/#paper-search-terms)
+- 言いすぎを避けたいとき: [相関と因果](/statistics/correlation-causation/)、[統計的有意性と生物学的重要性](/statistics/significance-vs-importance/)、[研究の限界](/statistics/limitations/)
+
+## 用語で迷ったとき
+
+論文読解では、Title、Abstract、Introduction、Methods、Results、Discussion、References、Figure、主張、限界などの言葉が何度も出てきます。順番に練習している途中で特定の部位だけ確認したくなった場合は、[論文読解の用語](/glossary/#paper-section-terms) と [論文読解演習](/papers/) の「論文の部位から探す」から戻ると、対応する記事を選びやすくなります。
+
+Methodsで止まった場合は、[対照群](/glossary/control-group/)、[反復](/glossary/biological-technical-replicates/)、[n数](/glossary/sample-size/)、[Figure legend](/glossary/figure-legend/) を短く確認してから、[Methods確認チェックリスト](/papers/methods-checklist/) に戻ります。
+
+## パス内の記事一覧
+
+<ArticleList learningPath="paper-reading" />
+
+## 次に進む
+
+論文読解の流れを一度通したら、[論文読解演習](/papers/) から対象別の演習を選びます。読む論文を探す段階では、[PubMedとは何か](/papers/pubmed/)、[PMCとは何か](/papers/pmc/)、[読む論文の選び方](/papers/how-to-choose-paper/) へ進みます。用語だけを短く確認したい場合は、[用語集](/glossary/) に戻ります。

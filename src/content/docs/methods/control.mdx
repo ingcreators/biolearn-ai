@@ -1,0 +1,126 @@
+---
+title: 対照群とは何か
+description: 実験で比較の基準になる対照群の役割を、MethodsとFigureの読み方に結びつけて説明します。
+part: methods
+module: sample-and-control
+level: foundation
+priority: P1
+order: 20
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - control-group
+  - biological-technical-replicates
+  - sample-size
+  - figure-legend
+  - methods
+prerequisites: []
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    '対照群が比較の基準であることを説明できる',
+    '陰性対照、陽性対照、vehicle controlの役割を区別できる',
+    'Figureを読むときに何と何を比べているか確認できる',
+  ]}
+/>
+
+## 要点
+
+対照群は、実験結果を解釈するための比較の基準です。
+
+## 基礎解説
+
+実験では、ある処理や操作によって何が変わったかを知るために、基準になる条件を置きます。この基準が対照群です。
+
+たとえば薬剤処理の実験では、薬剤を溶かした溶媒だけを加えたvehicle controlを置くことがあります。遺伝子ノックダウンでは、標的を持たないcontrol siRNAを使うことがあります。実験系が正しく反応するかを見るために陽性対照を置く場合もあります。
+
+対照群が不適切だと、観察された差が本当に処理の効果なのか、別の条件差によるものなのか分かりにくくなります。Figureを読むときは、まず何がcontrolで、何が比較対象かを確認します。
+
+## なぜ重要か
+
+MethodsやFigure legendでは、control、vehicle、mock、wild type、untreatedなどの語がよく出てきます。これらを読み取れると、Figureの差が何を意味するかを考えやすくなります。
+
+## Figureで見る場所
+
+対照群は、ほぼすべてのFigureで比較の基準になります。
+
+- 棒グラフでは、どの群がcontrolで、どの群との差に印が付いているかを確認します。
+- 画像Figureでは、対照群のシグナルや背景が比較の基準になります。
+- Western blotでは、未処理条件やloading controlと合わせて読みます。
+- Flow cytometryでは、陰性対照やゲート設定の基準として使われます。
+
+Figureを読むときは、最初に「何と何を比べているか」を確認し、次にその対照が主張に合っているかをMethodsで見ます。
+
+## 図解
+
+<LessonFigure
+  src="/figures/control-concept.jpg"
+  alt="対照群と処理群を並べて比較し、処理による変化を読む概念図"
+  title="対照群は比較の基準になる"
+  caption="Figureでは、どの条件を基準にして何を比べているのかを最初に確認します。"
+/>
+
+<TermBox term="対照群" english="control group">
+  実験で比較の基準になる条件や群です。
+</TermBox>
+
+## 英語表記と略語
+
+| 日本語名 | 英語名           | 略語 |
+| -------- | ---------------- | ---- |
+| 対照群   | control group    | -    |
+| 陰性対照 | negative control | -    |
+| 陽性対照 | positive control | -    |
+| 溶媒対照 | vehicle control  | -    |
+
+## よくある誤解
+
+- controlは「何もしない条件」とは限りません。溶媒や模擬処理を加える場合があります。
+- 対照群があるだけで実験設計が十分とは限りません。
+- 比較対象が複数あるFigureでは、どの群との比較かを確認する必要があります。
+
+## 重要用語
+
+- [対照群](/glossary/control-group/): 比較の基準になる条件。
+- 陰性対照: 反応が起きないことを期待する対照。
+- 陽性対照: 反応が起きることを期待する対照。
+- [反復](/glossary/biological-technical-replicates/): 対照群と処理群を、独立したサンプルや測定で繰り返して確認する考え方。
+- [n数](/glossary/sample-size/): Figureで比較に使われたサンプル、個体、細胞、測定点などの数。
+- vehicle control: 薬剤を溶かす溶媒の影響を確認する対照。
+
+<Quiz
+  questions={[
+    {
+      question: '対照群を置く理由を説明してください。',
+      answer: '処理や操作による変化を、基準条件と比べて解釈するためです。',
+    },
+    {
+      question: 'vehicle controlが必要になる場面の例を挙げてください。',
+      answer:
+        '薬剤を溶媒に溶かして処理する実験で、溶媒そのものの影響を確認したい場合です。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    {
+      title: '陽性対照と陰性対照',
+      href: '/methods/positive-negative-control/',
+    },
+    { title: 'Methodsの読み方', href: '/papers/how-to-read-methods/' },
+    {
+      title: '生物学的反復と技術的反復',
+      href: '/statistics/biological-technical-replicates/',
+    },
+    { title: '棒グラフの読み方', href: '/figures/how-to-read-bar-plot/' },
+  ]}
+/>

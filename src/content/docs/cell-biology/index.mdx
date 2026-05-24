@@ -3,6 +3,8 @@ title: 細胞生物学
 description: 細胞の構造、細胞小器官、細胞間コミュニケーションを学ぶカテゴリです。
 ---
 
+import ArticleList from '../../../components/ArticleList.astro';
+
 細胞生物学では、生命の基本単位である細胞の構造と働きを学びます。分子がどこで働き、細胞が外界からの情報をどう受け取り、内部の反応につなげるのかを見ていきます。
 
 ## この分野で学ぶこと
@@ -10,6 +12,47 @@ description: 細胞の構造、細胞小器官、細胞間コミュニケーシ�
 - 細胞膜が細胞の内外を分け、情報の入口にもなること
 - 細胞小器官が、細胞内で役割分担をしていること
 - 細胞シグナル伝達が、刺激と遺伝子発現の変化をつなぐこと
+
+## 目的別に選ぶ
+
+細胞生物学は、分子の知識を「細胞のどこで、何が起きているか」に戻すためのカテゴリです。論文Figureを読むときは、染色像、顕微鏡画像、シグナル伝達の模式図、遺伝子発現変化を細胞内の文脈と結びつけます。
+
+<div class="biolearn-home-grid">
+  <a class="biolearn-home-card" href="/fundamentals/cell/">
+    <span>全体像</span>
+    <h3>細胞とは何かを確認する</h3>
+    <p>細胞を生命の基本単位として押さえ、分子、構造、機能をつなげます。</p>
+  </a>
+  <a class="biolearn-home-card" href="/cell-biology/cell-membrane/">
+    <span>境界</span>
+    <h3>細胞膜と情報の入口を読む</h3>
+    <p>
+      細胞の内外を分ける境界としての膜と、受容体やシグナルの入口を確認します。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="/cell-biology/organelles/">
+    <span>構造</span>
+    <h3>細胞小器官の役割を整理する</h3>
+    <p>
+      核、ミトコンドリア、小胞体などの役割分担を、細胞内の場所と結びつけます。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="/cell-biology/cell-signaling/">
+    <span>応答</span>
+    <h3>シグナルから応答へ進む</h3>
+    <p>
+      外からの刺激が、タンパク質の働きや遺伝子発現の変化につながる流れを読みます。
+    </p>
+  </a>
+</div>
+
+| 迷っていること                | 入口                                                                                                 | Figureや手法で戻る場所                                                                                                 |
+| ----------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| 細胞の全体像を確認したい      | [細胞とは何か](/fundamentals/cell/)                                                                  | [顕微鏡画像の読み方](/figures/how-to-read-microscopy-image/)、[免疫染色の読み方](/figures/how-to-read-immunostaining/) |
+| 境界や受容体の意味を知りたい  | [細胞膜](/cell-biology/cell-membrane/)                                                               | [免疫染色](/methods/immunostaining/)、[フローサイトメトリー](/methods/flow-cytometry/)                                 |
+| 細胞内の場所を整理したい      | [細胞小器官](/cell-biology/organelles/)                                                              | [顕微鏡画像の読み方](/figures/how-to-read-microscopy-image/)、[Figure legend](/figures/figure-legend/)                 |
+| 刺激と応答の流れを読みたい    | [細胞シグナル伝達](/cell-biology/cell-signaling/)、[遺伝子発現](/molecular-biology/gene-expression/) | [Figureと主張](/figures/figure-to-claim/)、[Resultsセクションの流れ](/figures/results-section-flow/)                   |
+| single-cell解析の細胞型が不安 | [細胞とは何か](/fundamentals/cell/)、[細胞タイプ注釈](/bioinformatics/cell-type-annotation/)         | [UMAP / t-SNE](/figures/how-to-read-umap-tsne/)、[マーカー遺伝子](/bioinformatics/marker-gene/)                        |
 
 ## まず押さえる3つの考え方
 
@@ -19,10 +62,7 @@ description: 細胞の構造、細胞小器官、細胞間コミュニケーシ�
 
 ## 読む順番
 
-1. [細胞とは何か](/fundamentals/what-is-a-cell/)
-2. [細胞膜とは何か](/cell-biology/what-is-cell-membrane/)
-3. [細胞小器官とは何か](/cell-biology/what-are-organelles/)
-4. [細胞シグナル伝達とは何か](/cell-biology/what-is-cell-signaling/)
+<ArticleList part="cell-biology" groupByModule />
 
 まず細胞の全体像を押さえ、次に細胞膜、細胞小器官、シグナル伝達へ進みます。分子生物学の記事で学んだタンパク質や遺伝子発現が、細胞の中でどう意味を持つかを意識して読むのがおすすめです。
 

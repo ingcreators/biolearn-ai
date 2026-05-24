@@ -1,0 +1,103 @@
+---
+title: クラスタリングとは何か
+description: single-cell解析などで使われるクラスタリングを、似たデータ点をまとめる探索的な解析として説明します。
+part: bioinformatics
+module: single-cell-analysis
+level: intermediate
+priority: P1
+order: 44
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - clustering
+  - umap
+  - marker-gene
+prerequisites:
+  - /bioinformatics/single-cell-rna-seq/
+  - /bioinformatics/dimensionality-reduction/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'クラスタリングが似たデータをまとめる解析だと説明できる',
+    'クラスタが自動的に細胞型を意味するわけではないと理解する',
+    '解像度や前処理で結果が変わることを説明できる',
+  ]}
+/>
+
+## 要点
+
+クラスタリングは、特徴が似ているデータ点をグループに分ける探索的な解析です。
+
+## 基礎解説
+
+single-cell解析では、各点が1つの細胞を表し、各細胞は多数の遺伝子発現量を持っています。クラスタリングは、発現パターンが似ている細胞を近いグループとしてまとめるために使われます。
+
+クラスタは、データから見つかったまとまりです。クラスタ名そのものが細胞型を証明するわけではありません。細胞型として解釈するには、マーカー遺伝子、既知の知識、サンプル条件、Methodsの注釈方法を合わせて確認します。
+
+また、クラスタリング結果は前処理、使う遺伝子、次元削減、近傍の設定、解像度などで変わります。論文を読むときは、クラスタがいくつあるかだけでなく、どの条件で分けたか、分け方が主張にどう使われているかを確認します。
+
+## 図解
+
+<LessonFigure
+  src="/figures/clustering-concept.jpg"
+  alt="多数の点を発現パターンの近さで複数のクラスタに分ける概念図"
+  title="クラスタリングは似た点をまとめる探索的な解析"
+  caption="クラスタはデータ上のまとまりであり、細胞型名を付けるには追加の根拠が必要です。"
+/>
+
+<TermBox term="クラスタリング" english="clustering">
+  データ点どうしの似ている度合いをもとに、複数のグループに分ける解析です。
+</TermBox>
+
+## よくある誤解
+
+- クラスタが分かれていれば、必ず別の細胞型だと読む。
+- クラスタ番号を、細胞型名や生物学的な順序だと考える。
+- UMAP上で離れている距離を、そのまま定量的な距離として解釈する。
+- 解像度や前処理の影響を確認せず、クラスタ数だけを比較する。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question: 'クラスタと細胞型の違いを説明してください。',
+      answer:
+        'クラスタはデータ上のまとまりで、細胞型はマーカー遺伝子や既知の知識などをもとに解釈した名前です。',
+    },
+    {
+      question: 'クラスタリング結果が変わりうる要因を2つ挙げてください。',
+      answer:
+        '前処理、使う遺伝子、正規化、次元削減、近傍設定、解像度、バッチ補正などです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    {
+      title: 'single-cell RNA-seqとは何か',
+      href: '/bioinformatics/single-cell-rna-seq/',
+    },
+    {
+      title: 'マーカー遺伝子とは何か',
+      href: '/bioinformatics/marker-gene/',
+    },
+    {
+      title: '細胞タイプ注釈とは何か',
+      href: '/bioinformatics/cell-type-annotation/',
+    },
+    {
+      title: 'UMAP/t-SNE図の読み方',
+      href: '/figures/how-to-read-umap-tsne/',
+    },
+  ]}
+/>

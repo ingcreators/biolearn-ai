@@ -1,13 +1,29 @@
 ---
 title: Western blotの読み方
 description: Western blotのバンド、分子量マーカー、ローディングコントロール、定量グラフを読む基本を説明します。
+part: figures
+module: experimental-figures
+level: foundation
+order: 40
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - protein
+  - gene-expression
+  - biological-technical-replicates
+prerequisites:
+  - /fundamentals/protein/
+  - /methods/western-blot/
+  - /methods/loading-control/
+  - /statistics/biological-technical-replicates/
 ---
 
 Western blot（ウェスタンブロット）は、特定のタンパク質を検出する実験です。論文では、バンド画像と、その濃さを定量したグラフが組み合わせて示されることがよくあります。
 
 ## このFigureで何を見るか
 
-目的のタンパク質が検出されているか、条件間で量が変わっているか、ローディングコントロールで比較が妥当かを見ます。基礎として、[タンパク質とは何か](/molecular-biology/what-is-protein/)と[用語: タンパク質](/glossary/protein/)を押さえておくと読みやすくなります。
+目的のタンパク質が検出されているか、条件間で量が変わっているか、[ローディングコントロール](/methods/loading-control/)で比較が妥当かを見ます。基礎として、[タンパク質とは何か](/fundamentals/protein/)と[用語: タンパク質](/glossary/protein/)を押さえておくと読みやすくなります。
 
 ## まず一言でいうと
 
@@ -167,6 +183,15 @@ Western blotは、目的タンパク質のバンド位置と濃さを、コン�
 5. 定量グラフがある場合、何で補正した値かを確認します。
 6. 反復数と統計表示を確認します。
 
+## 前提に戻る
+
+Western blotは画像と定量グラフをセットで読むFigureです。どちらか片方だけで結論を出さず、Methodsと統計の前提に戻ります。
+
+- 実験の流れは[Western blotとは何か](/methods/western-blot/)で確認します。
+- 補正の基準は[ローディングコントロール](/methods/loading-control/)で確認します。
+- 定量グラフの棒や点は、[棒グラフ](/figures/how-to-read-bar-plot/)と[エラーバー](/statistics/error-bars/)に戻って読みます。
+- 代表画像だけでなく、独立実験数は[生物学的反復と技術的反復](/statistics/biological-technical-replicates/)の観点で確認します。
+
 ## よくある誤解
 
 - バンドが濃いだけで、すぐに発現が増えたと断定はできません。サンプル量、露光、補正方法を確認します。
@@ -179,9 +204,10 @@ Western blotは、目的タンパク質のバンド位置と濃さを、コン�
 - タンパク質発現量の比較
 - リン酸化など翻訳後修飾の検出
 - RNA-seqやqPCRで見つかった発現変化がタンパク質でも見えるかの確認
-- [タンパク質とは何か](/molecular-biology/what-is-protein/)
-- [遺伝子発現とは何か](/molecular-biology/what-is-gene-expression/)
-- [RNA-seqとは何か](/bioinformatics/what-is-rna-seq/)
+- [タンパク質とは何か](/fundamentals/protein/)
+- [遺伝子発現とは何か](/molecular-biology/gene-expression/)
+- [RNA-seqとは何か](/bioinformatics/rna-seq/)
+- [ローディングコントロールとは何か](/methods/loading-control/)
 - [用語: タンパク質](/glossary/protein/)
 - [用語: 遺伝子発現](/glossary/gene-expression/)
 
@@ -207,7 +233,9 @@ Western blotは、目的タンパク質のバンド位置と濃さを、コン�
 
 ## 次に読む記事
 
-- [Figure legendの読み方](/figures/how-to-read-figure-legend/)
+- [Figure legendの読み方](/figures/figure-legend/)
+- [Western blotとは何か](/methods/western-blot/)
+- [ローディングコントロールとは何か](/methods/loading-control/)
 - [棒グラフの読み方](/figures/how-to-read-bar-plot/)
 - [qPCRプロットの読み方](/figures/how-to-read-qpcr-plot/)
 - [用語: タンパク質](/glossary/protein/)

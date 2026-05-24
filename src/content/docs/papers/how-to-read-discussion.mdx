@@ -1,0 +1,97 @@
+---
+title: Discussionの読み方
+description: Discussionで著者の解釈、限界、今後の課題を分けて読む方法を説明します。
+part: papers
+module: paper-structure
+level: foundation
+priority: P1
+order: 60
+learningPaths:
+  - paper-reading
+relatedTerms:
+  - p-value
+  - effect-size
+  - bias
+prerequisites:
+  - /papers/how-to-read-results/
+  - /figures/figure-to-claim/
+  - /statistics/significance-vs-importance/
+  - /statistics/limitations/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'Discussionで結果の要約と著者の解釈を区別できる',
+    '研究の限界や代替説明を探せる',
+    '強い結論をResultsの証拠に戻して確認できる',
+  ]}
+/>
+
+## 要点
+
+Discussionは、Resultsの意味を著者が解釈し、先行研究との関係、限界、今後の課題を述べるセクションです。
+
+## 基礎解説
+
+Discussionでは、最初に主要な結果をまとめ、その後に「何を意味するのか」「既存研究とどう関係するのか」「どんな限界があるのか」を説明することが多いです。
+
+読むときは、Resultsで直接示されたことと、著者の解釈を分けます。「suggest」「may」「consistent with」などの表現は、断定ではなく可能性を述べていることがあります。
+
+強い主張が出てきたら、対応するResultsやFigureに戻ります。どの実験や解析がその主張を支えているのか、[統計的有意性と生物学的重要性](/statistics/significance-vs-importance/)が区別されているか、[研究の限界](/statistics/limitations/)やほかの説明が残っていないかを考えると、読みが安定します。
+
+## 図解
+
+<LessonFigure
+  src="/figures/how-to-read-discussion-concept.jpg"
+  alt="Discussionで結果、解釈、限界、今後の課題を分けて読む概念図"
+  title="Discussionは解釈と限界を分けて読む"
+  caption="Resultsの証拠に戻りながら、著者の解釈、限界、今後の課題を整理します。"
+/>
+
+<TermBox term="Discussion" english="Discussion">
+  結果の意味、先行研究との関係、研究の限界、今後の課題を論じるセクションです。
+</TermBox>
+
+## よくある誤解
+
+- Discussionの結論を、Resultsで直接示された事実と同じ強さで読む。
+- 限界の記述を読み飛ばす。
+- 「示唆する」と「証明する」を同じ意味で扱う。
+- 先行研究との一致だけを見て、矛盾や残る疑問を確認しない。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question:
+        'DiscussionでResultsに戻って確認したい場面を一つ挙げてください。',
+      answer:
+        '著者が強い結論や広い解釈を述べているとき、その根拠となるFigureやResultsに戻ります。',
+    },
+    {
+      question: 'Discussionで限界を確認する理由を説明してください。',
+      answer:
+        '研究デザイン、サンプル、解析、解釈の範囲を知ることで、結論を読みすぎないためです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'Resultsの読み方', href: '/papers/how-to-read-results/' },
+    { title: 'Figureと主張を対応づける', href: '/figures/figure-to-claim/' },
+    {
+      title: '統計的有意性と生物学的重要性',
+      href: '/statistics/significance-vs-importance/',
+    },
+    { title: '研究の限界の読み方', href: '/statistics/limitations/' },
+    { title: '論文を批判的に読む', href: '/papers/critical-reading/' },
+  ]}
+/>

@@ -1,0 +1,100 @@
+---
+title: PMC論文の探し方
+description: PMCで本文が公開されている論文を探し、Figure、Methods、Resultsへ進む基本を説明します。
+part: papers
+module: paper-discovery
+level: foundation
+priority: P0
+order: 210
+learningPaths:
+  - paper-reading
+relatedTerms:
+  - pmc
+  - pubmed
+  - doi
+  - figure
+  - methods
+  - results
+prerequisites:
+  - /papers/pubmed/
+  - /papers/figure-first-reading/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'PMCが本文公開アーカイブであることを説明できる',
+    '本文ページでAbstract、Figure、Methods、Referencesを探せる',
+    'PMCで読める論文と読めない論文がある理由を理解する',
+  ]}
+/>
+
+## 要点
+
+PMCは、本文が公開されている生命科学・医学系論文を読めるアーカイブです。PubMedで見つけた論文の本文に進む入口になることがあります。
+
+PubMedとPMCの違いを短く確認したい場合は、[PubMed / PMC の使い分け](/resources/pubmed-pmc/) に戻ります。このページでは、本文を開いたあとにFigure、Results、Methodsへ進む練習をします。
+
+## 基礎解説
+
+PMCでは、論文本文、Figure、表、Methods、ReferencesなどをWeb上で読めます。PubMedの検索結果からPMCリンクがある場合、本文に進めることがあります。
+
+PMCで本文を読むときは、まずAbstractで全体像を確認し、Figure一覧やResultsへ進みます。Figureを見たら、Figure legend、Results本文、Methodsを行き来して、何を測り、何を比較しているかを確認します。
+
+すべての論文がPMCで読めるわけではありません。論文の公開条件や出版社の方針によって、本文の入手方法は異なります。
+
+## 図解
+
+<LessonFigure
+  src="/figures/pmc-concept.jpg"
+  alt="PMCで論文本文、Figure、Methods、Referencesへ進む流れを示す概念図"
+  title="PMCは本文を読む入口になる"
+  caption="Abstract、Figure、Results、Methodsを行き来して、論文の根拠を確認します。"
+/>
+
+<TermBox term="PMC" english="PubMed Central" abbreviation="PMC">
+  本文が公開されている生命科学・医学系論文を読めるアーカイブです。
+</TermBox>
+
+## よくある誤解
+
+- PubMedにある論文は、必ずPMCにもあると思う。
+- PMCで読める論文だけが重要だと考える。
+- Figureだけを見て、MethodsやResultsを確認しない。
+- 本文が読めることと、内容が正しいことを同じに考える。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question:
+        'PMCで本文を開いたあと、Figureを読むときに行き来したい場所を2つ挙げてください。',
+      answer:
+        'Figure legend、Results本文、Methods、必要に応じてSupplementary Figureなどです。',
+    },
+    {
+      question: 'すべての論文がPMCで読めるわけではない理由を説明してください。',
+      answer:
+        '論文の公開条件、出版社の方針、オープンアクセスの有無などによって本文の公開状況が異なるためです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'PubMed / PMC の使い分け', href: '/resources/pubmed-pmc/' },
+    { title: 'PMCとは何か', href: '/glossary/pmc/' },
+    {
+      title: 'Figureから論文を読む方法',
+      href: '/papers/figure-first-reading/',
+    },
+    { title: 'Resultsの読み方', href: '/papers/how-to-read-results/' },
+    { title: 'Methodsの読み方', href: '/papers/how-to-read-methods/' },
+  ]}
+/>

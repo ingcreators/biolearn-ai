@@ -1,0 +1,96 @@
+---
+title: Figureから論文を読む方法
+description: Figureを入口にして、Results、Methods、Discussionへ戻りながら論文を読む方法を説明します。
+part: papers
+module: reading-workflow
+level: foundation
+priority: P0
+order: 90
+learningPaths:
+  - paper-reading
+relatedTerms:
+  - figure
+  - figure-legend
+  - results
+  - methods
+  - discussion
+  - claim
+prerequisites:
+  - /figures/figure-legend/
+  - /figures/results-section-flow/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'Figureを入口に論文の主張を追える',
+    'Figure legend、Results、Methodsを行き来できる',
+    '見た目の印象だけで結論を決めない読み方を身につける',
+  ]}
+/>
+
+## 要点
+
+Figure first readingは、Figureを先に見て、論文がどんな証拠を出しているかをつかんでから本文に戻る読み方です。
+
+## 基礎解説
+
+生命科学論文では、Figureが研究結果の中心になることがよくあります。Figureを先に眺めると、どんな実験や解析が行われ、どの結果が主張の中心なのかを把握しやすくなります。
+
+ただし、Figureだけを見て結論を決める読み方ではありません。Figureを見たら、Figure legendで条件や反復を確認し、Results本文で著者がどう説明しているかを読み、必要に応じてMethodsでサンプルや解析条件を確かめます。
+
+最初は、各Figureに一言メモをつけると読みやすくなります。「何を測った図か」「何を比較した図か」「この図から直接言えることは何か」を短く書きます。
+
+## 図解
+
+<LessonFigure
+  src="/figures/figure-first-reading-concept.jpg"
+  alt="Figureを入口にしてFigure legend、Results、Methods、Discussionへ戻る読み方の概念図"
+  title="Figureから入り、本文に戻って根拠を確認する"
+  caption="Figureの印象を出発点にしつつ、legend、Results、Methodsで条件と解釈を確認します。"
+/>
+
+<TermBox term="Figure first reading" english="figure first reading">
+  Figureを入口にして、論文の結果と主張の全体像をつかむ読み方です。
+</TermBox>
+
+## よくある誤解
+
+- Figureだけを見れば論文全体が分かると思う。
+- 見た目の差を、条件や統計表示を確認せずに結論にする。
+- Figure legendを読まずに、軸やサンプル数を推測する。
+- Methodsを確認せず、測定や解析の前提を見落とす。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question:
+        'Figureから論文を読むとき、Figureの次に確認したい場所を2つ挙げてください。',
+      answer:
+        'Figure legend、Results本文、Methods、必要に応じてDiscussionなどです。',
+    },
+    {
+      question: 'Figureだけで結論を決めない方がよい理由を説明してください。',
+      answer:
+        '条件、反復、統計表示、解析方法、著者の解釈を確認しないと、図の意味を読み違える可能性があるためです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'Figure legendの読み方', href: '/figures/figure-legend/' },
+    {
+      title: 'Resultsセクションの流れを読む',
+      href: '/figures/results-section-flow/',
+    },
+    { title: 'Methodsの読み方', href: '/papers/how-to-read-methods/' },
+  ]}
+/>

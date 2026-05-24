@@ -1,0 +1,133 @@
+---
+title: ライブラリ調製とは何か
+description: NGSで読むためにDNAやcDNA断片を整えるライブラリ調製の基本を説明します。
+part: methods
+module: nucleic-acid-methods
+level: foundation
+priority: P1
+order: 70
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - ngs
+  - sequencing
+  - sample-size
+  - figure-legend
+  - biological-technical-replicates
+  - sequence-data
+  - methods
+  - bias
+prerequisites:
+  - /methods/sequencing/
+  - /methods/ngs/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'ライブラリ調製がNGS前のサンプル準備であることを説明できる',
+    '断片化、アダプター付加、増幅の大まかな役割を理解する',
+    'Methodsでライブラリ調製条件を確認する理由を説明できる',
+  ]}
+/>
+
+## 要点
+
+ライブラリ調製は、DNAやcDNAをシーケンサーで読める形に整える工程です。
+
+## 基礎解説
+
+NGSでは、試料中のDNAやcDNAをそのまま読むのではなく、シーケンサーに適した形に準備します。この準備をライブラリ調製と呼びます。
+
+ライブラリ調製では、核酸を適切な長さにしたり、シーケンサーが認識するアダプター配列を付けたり、必要に応じてPCRで増幅したりします。複数サンプルを同時に読むために、サンプル識別用のインデックスを付けることもあります。
+
+ライブラリ調製の条件は、得られるデータに影響します。RNA-seq、ChIP-seq、ATAC-seqなどでは、何を選択してライブラリ化したかによって、Figureで読める意味が変わります。
+
+## なぜ重要か
+
+Methodsでライブラリ調製を確認すると、シーケンシング結果がどのような分子集団を反映しているのかを理解しやすくなります。Figureだけでは分からない前処理の条件が、結果の解釈に関わることがあります。
+
+## Figureで見る場所
+
+ライブラリ調製の違いは、Figureの見た目に直接出ないこともあります。それでも、ヒートマップ、Volcano plot、ゲノムブラウザ図、UMAP/t-SNEなどの解釈に影響します。
+
+- RNA-seqでは、poly(A)選択かrRNA除去かで見えるRNAの範囲が変わることがあります。
+- single-cell RNA-seqでは、捕捉できた細胞や低品質細胞の扱いがクラスタに影響します。
+- ゲノム系の解析では、断片長やカバレッジがシグナルの見え方に関わります。
+- 複数サンプルをまとめて読む場合は、インデックスやバッチの扱いを確認します。
+
+Figureを読むときは、表示された差だけでなく、ライブラリ調製でどの分子集団を見ているのかをMethodsに戻って確認します。
+
+## 図解
+
+<LessonFigure
+  src="/figures/library-preparation-concept.jpg"
+  alt="DNA断片にアダプターを付け、シーケンシング用ライブラリとして整える流れを示す概念図"
+  title="ライブラリ調製はNGSで読む前の準備"
+  caption="核酸断片をシーケンサーが読める形に整え、必要に応じてサンプル識別用の情報も付けます。"
+/>
+
+<TermBox term="ライブラリ調製" english="library preparation">
+  DNAやcDNAをNGSで読める形に整える前処理です。
+</TermBox>
+
+## 英語表記と略語
+
+| 日本語名       | 英語名              | 略語 |
+| -------------- | ------------------- | ---- |
+| ライブラリ調製 | library preparation | -    |
+| アダプター     | adapter             | -    |
+| インデックス   | index / barcode     | -    |
+| 断片化         | fragmentation       | -    |
+
+## よくある誤解
+
+- ライブラリは文献リストではなく、シーケンシング用に準備された核酸断片の集まりです。
+- NGSデータはライブラリ調製の影響を受けます。
+- すべてのNGS実験で同じライブラリ調製をするわけではありません。
+
+## 重要用語
+
+- ライブラリ: シーケンシング可能な形にした核酸断片の集まり。
+- アダプター: シーケンサーで読むために付加する配列。
+- インデックス: サンプルを識別するための短い配列。
+- 断片化: 核酸を適切な長さに分ける工程。
+- [シーケンスデータ](/glossary/sequence-data/): ライブラリ調製後に読み取られ、解析の出発点になる配列データ。
+- [バイアス](/glossary/bias/): 断片化、増幅、選択条件などによって、読まれやすい配列やサンプルが偏る可能性。
+
+<Quiz
+  questions={[
+    {
+      question: 'ライブラリ調製が必要な理由を説明してください。',
+      answer: 'DNAやcDNAをシーケンサーが読める形に整える必要があるからです。',
+    },
+    {
+      question: 'Methodsでライブラリ調製を確認する理由を一つ挙げてください。',
+      answer:
+        'どの分子をどのように選択・処理したデータなのかが、結果の解釈に関わるためです。',
+    },
+    {
+      question:
+        '複数サンプルをまとめて読むNGS実験で、Methods側で確認したいことを一つ挙げてください。',
+      answer:
+        'インデックス、バッチの扱い、サンプルの処理順、ライブラリ調製条件などがあります。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'NGSとは何か', href: '/methods/ngs/' },
+    {
+      title: 'シーケンスデータとは何か',
+      href: '/bioinformatics/sequence-data/',
+    },
+    { title: 'ヒートマップの読み方', href: '/figures/how-to-read-heatmap/' },
+  ]}
+/>

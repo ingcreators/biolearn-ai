@@ -1,0 +1,196 @@
+---
+title: '論文読解演習: RNA-seq論文'
+description: 架空のRNA-seq論文を題材に、Abstract、Figure、Methods、Resultsを行き来して読む練習をします。
+part: papers
+module: paper-walkthrough
+level: intermediate
+priority: P1
+order: 300
+learningPaths:
+  - paper-reading
+relatedTerms:
+  - rna-seq
+  - differential-expression-analysis
+  - batch-effect
+  - reproducibility
+prerequisites:
+  - /bioinformatics/rna-seq/
+  - /bioinformatics/batch-effect/
+  - /figures/how-to-read-volcano-plot/
+  - /figures/how-to-read-heatmap/
+  - /papers/critical-reading/
+  - /statistics/multiple-testing-correction/
+  - /statistics/limitations/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'RNA-seq論文の主要Figureを読む順番を説明できる',
+    'Volcano plot、ヒートマップ、PCAをResultsと対応づけられる',
+    'Methodsで確認すべき解析条件を挙げられる',
+  ]}
+/>
+
+## 要点
+
+この演習では、実在論文ではなくBioLearn用の架空ケースを使い、RNA-seq論文を読む手順を練習します。
+
+## 架空ケース
+
+ある研究では、細胞を条件Aと条件Bで培養し、RNA-seqで遺伝子発現の違いを調べたとします。論文の主張は「条件Bではストレス応答に関わる遺伝子群が変化する」です。
+
+この主張を読むときは、まずFigure全体を見て、PCA、Volcano plot、ヒートマップ、pathway enrichment plotがどの順番で出てくるかを確認します。
+
+## 図解
+
+<LessonFigure
+  src="/figures/walkthrough-rna-seq-concept.jpg"
+  alt="RNA-seq論文でPCA、Volcano plot、ヒートマップ、pathway enrichmentを順に確認する概念図"
+  title="RNA-seq論文は全体像から候補遺伝子、経路へ読む"
+  caption="PCAでサンプルのまとまり、Volcano plotで候補、ヒートマップでパターン、enrichmentで経路を確認します。"
+/>
+
+<TermBox term="RNA-seq論文" english="RNA-seq paper">
+  RNA-seqを使って遺伝子発現の違いやパターンを解析した研究論文です。
+</TermBox>
+
+## 読む順番
+
+1. Abstractで、比較条件と主な結論を拾います。
+2. PCAで、サンプルが条件ごとにまとまるか、外れ値がないかを見ます。
+3. Volcano plotで、変化の大きい遺伝子と統計表示を確認します。
+4. ヒートマップで、候補遺伝子群のパターンが条件と対応するかを見ます。
+5. pathway enrichmentで、どの経路名が出ているか、FDRや遺伝子数を確認します。
+6. Methodsで、反復数、正規化、フィルタ、差次的発現解析、多重検定補正を確認します。
+
+## Methodsで確認すること
+
+| 項目         | 確認すること                       |
+| ------------ | ---------------------------------- |
+| サンプル     | 条件ごとの独立サンプル数           |
+| 品質管理     | 低品質サンプルや低発現遺伝子の扱い |
+| 正規化       | 発現量をどう比較可能にしたか       |
+| 差次的発現   | 使用した手法、閾値、比較の向き     |
+| 多重検定補正 | FDRや調整済みp値を使っているか     |
+| 経路解析     | 使用した遺伝子セットやデータベース |
+
+## 限界を読むポイント
+
+RNA-seq論文では、遺伝子発現の差がきれいに見えても、その差が何を意味するかは実験設計と解析条件に依存します。
+
+- サンプル数が少ない場合、群の違いと個体差を切り分けにくくなります。
+- 同じ条件のサンプルが同じ測定日や同じ施設に偏っている場合、[バッチ効果](/bioinformatics/batch-effect/)が結果に混ざる可能性があります。
+- Volcano plotでは、p値だけでなく効果量と多重検定補正後の基準を確認します。
+- Heatmapでは、選ばれた遺伝子リストやクラスタリング条件によって見え方が変わります。
+- Pathway enrichmentでは、入力遺伝子リスト、背景集合、データベースの違いで結果が変わります。
+- 発現差だけでは、直接の機能変化や医療上の効果を示したことにはなりません。
+
+読み終える前に、Discussionの主張を「このサンプル、この条件、この解析では何が言えるか」に戻します。強い結論ほど、対照、独立した検証、再現性の確認が必要です。
+
+## 3段階で読む演習
+
+### 1. Methodsで確認する
+
+まず、論文の結論を読む前に、差が出やすい設計になっているかを確認します。
+
+- 条件ごとの独立サンプル数は十分か。
+- 測定日、培養ロット、ライブラリ調製バッチが条件と重なっていないか。
+- 正規化、低発現遺伝子のフィルタ、多重検定補正の方法が書かれているか。
+- 経路解析やGO解析で使った遺伝子リストと背景集合が説明されているか。
+
+これらが不明な場合、発現差は観察できても、条件差としてどこまで一般化できるかは限定的に読む必要があります。
+
+### 2. Figureで確認する
+
+次に、主張の根拠がどの図にあるかを分けます。
+
+- PCAやクラスタリングで、条件ごとの全体傾向と外れ値を確認する。
+- Volcano plotで、横軸の効果量と縦軸の補正済みp値を分けて読む。
+- Heatmapで、表示された遺伝子がどの基準で選ばれたかを見る。
+- Enrichment plotやGO結果では、FDR、遺伝子数、用語の広さを確認する。
+
+Figureは「差があるらしい」ではなく、「どの量に、どの程度の差があるのか」を読む場所です。
+
+### 3. Discussionで言える範囲に戻す
+
+RNA-seqの結果から言いやすいのは、「条件Bで特定の遺伝子群の発現パターンが変わった」という範囲です。
+
+一方で、追加実験なしに「条件Bがその経路を直接活性化した」「その変化が表現型の原因である」とまでは言えません。Discussionでは、著者がFigureより強い言い方をしていないかを確認します。
+
+### 自分で答える問い
+
+- 最も中心的な結論を支えるFigureはどれか。
+- そのFigureの軸、色、サンプル数、多重検定補正は確認できるか。
+- Discussionの一文を、Figureから直接言える表現に言い換えるとどうなるか。
+
+## よくある誤解
+
+- Volcano plotで色がついた遺伝子だけを見れば十分だと思う。
+- PCAで群が分かれているだけで、原因が証明されたと考える。
+- 経路名だけで、機能が直接証明されたと読む。
+- Methodsの正規化や多重検定補正を確認せずに結論を受け取る。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question: 'RNA-seq論文でPCAを最初の方に確認する理由を説明してください。',
+      answer:
+        'サンプル全体のまとまり、条件差、外れ値、バッチの可能性を確認するためです。',
+    },
+    {
+      question:
+        'pathway enrichmentの結果を読むとき、経路名以外に確認したいことを2つ挙げてください。',
+      answer:
+        'FDR、遺伝子数、入力遺伝子、使ったデータベース、比較条件、寄与した遺伝子などです。',
+    },
+    {
+      question:
+        'Methodsで、条件差とバッチ効果を見分けるために確認したい情報を挙げてください。',
+      answer:
+        '条件ごとの独立サンプル数、測定日、培養ロット、ライブラリ調製バッチ、シーケンスの実行単位などです。',
+    },
+    {
+      question:
+        'Volcano plotで「有意な遺伝子が多い」と読む前に、どの2つの軸や基準を確認しますか。',
+      answer:
+        '横軸の効果量、縦軸のp値または補正済みp値、色分けの基準、多重検定補正の有無を確認します。',
+    },
+    {
+      question:
+        '「条件Bが経路Xを直接活性化した」というDiscussionの表現を、RNA-seqから直接言いやすい表現に言い換えてください。',
+      answer:
+        '条件Bで経路Xに関連する遺伝子群の発現パターンが変化していた、というように、発現データから言える範囲に戻します。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    {
+      title: '次の演習: single-cell解析論文',
+      href: '/papers/walkthrough-single-cell/',
+    },
+    { title: 'RNA-seqとは何か', href: '/bioinformatics/rna-seq/' },
+    {
+      title: 'Volcano plotの読み方',
+      href: '/figures/how-to-read-volcano-plot/',
+    },
+    {
+      title: 'pathway enrichment plotの読み方',
+      href: '/figures/how-to-read-pathway-enrichment/',
+    },
+    {
+      title: '研究の限界の読み方',
+      href: '/statistics/limitations/',
+    },
+    { title: '論文読解演習トップ', href: '/papers/' },
+  ]}
+/>

@@ -1,0 +1,101 @@
+---
+title: pathway enrichment plotの読み方
+description: 経路や遺伝子セットのenrichment結果を示すFigureで、経路名、スコア、FDR、遺伝子数を読む基本を説明します。
+part: figures
+module: bioinformatics-figures
+level: intermediate
+priority: P1
+order: 92
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - differential-expression-analysis
+  - rna-seq
+  - multiple-testing-correction
+  - significance-vs-importance
+prerequisites:
+  - /bioinformatics/differential-expression/
+  - /statistics/multiple-testing-correction/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'pathway enrichment plotで点や棒が何を表すか確認できる',
+    'FDR、遺伝子数、enrichment scoreを区別して読める',
+    '経路名だけで結論を決めない読み方を身につける',
+  ]}
+/>
+
+## 要点
+
+pathway enrichment plotは、遺伝子リストやランキングに、特定の経路や機能に属する遺伝子が偏って含まれるかを見るFigureです。
+
+## 基礎解説
+
+RNA-seqなどで多数の遺伝子が変化したとき、1つずつ遺伝子を読むだけでは全体像がつかみにくいことがあります。pathway enrichment解析では、変化した遺伝子が、どの経路や機能カテゴリに多く含まれるかを調べます。
+
+Figureでは、縦軸に経路名、横軸にenrichment scoreやgene ratio、点の大きさに遺伝子数、色にFDRやp値が使われることがあります。何がどの見た目に対応しているかを、凡例とFigure legendで確認します。
+
+経路名は便利ですが、広い意味を持つことがあります。経路名だけで機能が直接証明されたと読まず、入力遺伝子、解析方法、データベース、FDR、代表的な遺伝子を合わせて確認します。
+
+## 図解
+
+<LessonFigure
+  src="/figures/how-to-read-pathway-enrichment-concept.jpg"
+  alt="pathway enrichment plotで経路名、点の大きさ、色、FDRを確認する概念図"
+  title="pathway enrichment plotは経路単位の偏りを見る"
+  caption="経路名、スコア、遺伝子数、FDR、入力遺伝子リストを確認して読みます。"
+/>
+
+<TermBox term="pathway enrichment" english="pathway enrichment">
+  遺伝子リストやランキングに、特定の経路に属する遺伝子が偏って含まれるかを調べる解析です。
+</TermBox>
+
+## よくある誤解
+
+- 経路名が出たことを、その経路が機能的に証明されたことと同じに読む。
+- 点が大きいほど、必ず重要度が高いと考える。
+- FDRと遺伝子数を区別せず、色やサイズの印象だけで判断する。
+- どのデータベースを使ったかを確認しない。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question:
+        'pathway enrichment plotで、点の大きさや色を見る前に確認したいことは何ですか。',
+      answer:
+        '点、色、横軸、縦軸が何を表すか、どの遺伝子リストやランキングを入力したかを確認します。',
+    },
+    {
+      question: '経路名だけで結論を決めない方がよい理由を説明してください。',
+      answer:
+        '経路名は広い概念であり、どの遺伝子が寄与したか、解析方法やFDRがどうかを確認する必要があるためです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    {
+      title: 'GSEA plotの読み方',
+      href: '/figures/how-to-read-gsea-plot/',
+    },
+    {
+      title: '差次的発現解析とは何か',
+      href: '/bioinformatics/differential-expression/',
+    },
+    {
+      title: '多重検定補正とは何か',
+      href: '/statistics/multiple-testing-correction/',
+    },
+  ]}
+/>

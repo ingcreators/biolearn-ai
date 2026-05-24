@@ -1,0 +1,94 @@
+---
+title: Forest plotの読み方
+description: Forest plotで効果量、信頼区間、基準線、研究間のばらつきを読む基本を説明します。
+part: figures
+module: quantitative-figures
+level: intermediate
+priority: P2
+order: 88
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - p-value
+  - confidence-interval
+  - effect-size
+  - significance-vs-importance
+prerequisites:
+  - /statistics/p-value/
+  - /statistics/confidence-interval/
+  - /statistics/effect-size/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'Forest plotの点、横線、基準線を説明できる',
+    '信頼区間と効果量を区別して読める',
+    '研究間のばらつきを慎重に解釈できる',
+  ]}
+/>
+
+## 要点
+
+Forest plotは、複数の研究やサブグループの効果量と信頼区間を並べて比較するFigureです。
+
+## 基礎解説
+
+Forest plot（フォレストプロット）では、1行が1つの研究、サブグループ、解析条件を表すことがあります。点は効果量、横線は信頼区間を示すことが多いです。縦の基準線は「差がない」位置を表します。
+
+点が基準線のどちら側にあるかで効果の方向を見ます。横線が長いほど不確実性が大きいと読みます。横線が基準線をまたぐ場合、その解析だけでは差が明確とは言いにくいことがあります。
+
+医療・疾患関連の論文でも使われますが、BioLearnでは個別の診断・治療判断ではなく、研究Figureの読み方として扱います。研究デザイン、対象、解析方法、統合方法を確認することが大切です。
+
+## 図解
+
+<LessonFigure
+  src="/figures/how-to-read-forest-plot-concept.jpg"
+  alt="Forest plotで効果量の点、信頼区間の横線、基準線を確認する概念図"
+  title="Forest plotは効果量と不確実性を並べて読む"
+  caption="点、横線、基準線、統合推定、研究間のばらつきを確認して読みます。"
+/>
+
+<TermBox term="信頼区間" english="confidence interval" abbreviation="CI">
+  推定値の不確実性を表す範囲です。Figureでは横線として示されることがあります。
+</TermBox>
+
+## よくある誤解
+
+- 点の位置だけを見て、横線の長さを確認しない。
+- 基準線をまたぐかどうかだけで、研究全体の意味を決める。
+- 研究間の対象や方法の違いを見ずに、統合結果だけを読む。
+- Forest plotを個別の医療判断に直接使える図として読んでしまう。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question: 'Forest plotで点と横線は何を表すことが多いですか。',
+      answer: '点は効果量、横線は信頼区間を表すことが多いです。',
+    },
+    {
+      question: '横線が長い場合、どのように解釈しますか。',
+      answer:
+        '推定の不確実性が大きい可能性があるため、サンプル数や研究デザインを確認します。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'p値とは何か', href: '/statistics/p-value/' },
+    { title: 'ROC曲線の読み方', href: '/figures/how-to-read-roc-curve/' },
+    {
+      title: 'Kaplan-Meier曲線の読み方',
+      href: '/figures/how-to-read-kaplan-meier/',
+    },
+  ]}
+/>

@@ -1,0 +1,130 @@
+---
+title: Methods確認チェックリスト
+description: 論文Methodsでサンプル、対照、反復、測定、解析、統計を確認するためのチェックリストを説明します。
+part: papers
+module: reading-workflow
+level: foundation
+priority: P1
+order: 95
+learningPaths:
+  - paper-reading
+relatedTerms:
+  - rna-seq
+  - pcr
+  - bias
+  - confounding
+  - reproducibility
+prerequisites:
+  - /papers/how-to-read-methods/
+  - /statistics/biological-technical-replicates/
+  - /statistics/bias/
+  - /statistics/reproducibility/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'Methodsで確認する項目をチェックリスト化できる',
+    'サンプル、対照、反復、解析、統計を分けて読める',
+    'Figureの解釈に関わるMethods情報を探せる',
+  ]}
+/>
+
+## 要点
+
+Methodsは、すべてを暗記する場所ではなく、FigureやResultsの解釈に必要な前提を確認する場所です。
+
+## 基礎解説
+
+Methodsを読むときは、細かい試薬名や機器名に入る前に、結果の解釈に関わる大きな項目を確認します。特に、サンプル、条件、対照、反復、測定方法、解析方法、統計方法は重要です。
+
+Figureで差が見えても、サンプル数、対照群、正規化、除外基準、統計検定が分からなければ、どこまで解釈できるか判断しにくくなります。
+
+チェックリストは、論文を批判するためだけでなく、自分が何をまだ確認していないかを見えるようにする道具です。
+
+## 図解
+
+<LessonFigure
+  src="/figures/methods-checklist-concept.jpg"
+  alt="Methodsでサンプル、対照、反復、測定、解析、統計を確認するチェックリストの概念図"
+  title="Methodsは確認項目に分けて読む"
+  caption="Figureの解釈に関わるサンプル、対照、反復、測定、解析、統計を順に確認します。"
+/>
+
+<TermBox term="チェックリスト" english="checklist">
+  読み落としや確認漏れを減らすために、見る項目をあらかじめ並べたものです。
+</TermBox>
+
+## 確認する項目
+
+| 項目       | 見ること                             |
+| ---------- | ------------------------------------ |
+| サンプル   | 細胞、組織、個体、データの由来       |
+| 条件       | 処理、時間、濃度、群分け             |
+| 対照       | 比較の基準、陰性対照、陽性対照       |
+| 反復       | 生物学的反復と技術的反復の区別       |
+| 測定       | qPCR、RNA-seq、Western blotなど      |
+| 解析       | 正規化、フィルタ、ソフトウェア、閾値 |
+| 統計       | 検定方法、多重検定補正、表示方法     |
+| 除外・品質 | 除外基準、品質管理、欠測の扱い       |
+
+## 限界に戻す読み方
+
+Methodsを読む目的は、手順を暗記することではありません。FigureやDiscussionで述べられた主張が、どの条件なら支えられるのかを確認することです。
+
+- サンプルの由来が限られている場合は、結論の一般化範囲も限られます。
+- 対照が弱い場合は、観察された差が実験操作によるものか判断しにくくなります。
+- biological replicateが少ない場合は、個体差やサンプル差を見積もりにくくなります。
+- 解析の閾値や除外基準が不明な場合は、結果の再現性を評価しにくくなります。
+- バッチ、測定順、選択基準などが条件と重なっている場合は、交絡の可能性があります。
+
+対照の種類は[陽性対照・陰性対照](/methods/positive-negative-control/)と[コントロール](/methods/control/)で確認できます。反復の解釈は[再現性](/statistics/reproducibility/)、見落としやすい偏りは[バイアス](/statistics/bias/)と[交絡](/statistics/confounding/)に戻ると整理しやすくなります。
+
+## よくある誤解
+
+- Methodsは専門的なので読まなくてよいと思う。
+- サンプル数と測定点の数を同じものとして読む。
+- 正規化や除外基準を確認せずに、Figureの差だけを解釈する。
+- 統計検定名だけを見て、何を比較したかを確認しない。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question:
+        'Methodsチェックリストで、Figureの解釈に特に関わる項目を3つ挙げてください。',
+      answer:
+        'サンプル、対照、反復、測定方法、解析方法、統計方法、品質管理などがあります。',
+    },
+    {
+      question: '反復を確認する理由を説明してください。',
+      answer:
+        '測定点が多くても独立した生物学的反復が少ない場合があり、結果の解釈に影響するためです。',
+    },
+    {
+      question:
+        'Figure legendでn数や統計表示が分からない場合、Methodsで何を探しますか。',
+      answer:
+        '独立サンプル数、測定点の単位、除外基準、検定方法、正規化方法などを探します。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'Methodsの読み方', href: '/papers/how-to-read-methods/' },
+    { title: '実験手法', href: '/methods/' },
+    { title: '実験手法早見表', href: '/resources/methods-cheatsheet/' },
+    {
+      title: '生物学的反復と技術的反復',
+      href: '/statistics/biological-technical-replicates/',
+    },
+    { title: '論文を批判的に読む', href: '/papers/critical-reading/' },
+  ]}
+/>

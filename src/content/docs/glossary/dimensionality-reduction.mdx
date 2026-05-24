@@ -1,0 +1,53 @@
+---
+title: 次元削減とは | BioLearn
+description: 次元削減の意味、PCA、UMAP、t-SNE、single-cell解析との関係を説明します。
+---
+
+## 日本語名
+
+次元削減
+
+## 英語名
+
+dimensionality reduction
+
+## 略語
+
+-
+
+## まず一言でいうと
+
+次元削減は、多数の特徴を少数の軸にまとめ、全体像を見やすくする解析です。
+
+## もう少し詳しく
+
+発現解析では、1つの細胞やサンプルに対して多数の遺伝子の値があります。そのままでは全体像を見にくいため、PCA、[UMAP](/glossary/umap/)、t-SNEなどで少数の軸に配置します。
+
+次元削減は、複雑なデータを見やすくする道具です。一方で、配置された距離や形をそのまま生物学的距離として断定するものではありません。
+
+## なぜ重要か
+
+次元削減を理解すると、PCA plotやUMAPの読み方が安定します。特にsingle-cell解析では、クラスタ、バッチ効果、連続的な細胞状態を確認する入口になります。
+
+## よく混同される用語
+
+- PCA: ばらつきの大きい方向を軸としてまとめる代表的な次元削減。
+- [UMAP](/glossary/umap/): 近いデータ点の関係を保ちながら配置する可視化手法。
+- [クラスタリング](/glossary/clustering/): 似た点をグループに分ける解析。
+
+## 関連する用語
+
+- [UMAP](/glossary/umap/)
+- [クラスタリング](/glossary/clustering/)
+- [single-cell RNA-seq](/glossary/single-cell-rna-seq/)
+- [バイオインフォマティクス](/glossary/bioinformatics/)
+
+## 関連する教材ページ
+
+- [次元削減とは何か](/bioinformatics/dimensionality-reduction/)
+- [UMAPとは何か](/bioinformatics/umap/)
+- [PCA plotの読み方](/figures/how-to-read-pca-plot/)
+
+## 次に読む記事
+
+[UMAPとは何か](/bioinformatics/umap/) で、single-cell Figureでよく見る2次元配置の読み方を確認しましょう。

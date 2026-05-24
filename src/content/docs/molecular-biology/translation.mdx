@@ -1,0 +1,140 @@
+---
+title: 翻訳とは何か
+description: RNAの情報からタンパク質が作られる過程を説明します。
+part: molecular-biology
+module: information-flow
+level: foundation
+order: 30
+learningPaths:
+  - foundations
+relatedTerms:
+  - translation
+  - protein
+  - gene-expression
+prerequisites:
+  - /molecular-biology/transcription/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    '翻訳がRNAからタンパク質を作る過程であることを理解する',
+    'コドンとアミノ酸の関係を知る',
+    'リボソームとtRNAの役割を説明できる',
+  ]}
+/>
+
+## 要点
+
+翻訳は、mRNAの情報をアミノ酸配列へ変換し、タンパク質を作る過程です。
+
+## 基礎解説
+
+mRNAには、3つの塩基を1組とするコドンが並んでいます。リボソームはmRNAを読み取り、tRNAが運ぶアミノ酸を順番につなげます。こうしてできたアミノ酸の鎖は折りたたまれ、タンパク質として働きます。
+
+翻訳では、mRNAの配列がそのままタンパク質になるのではなく、コドン表に従ってアミノ酸配列へ変換されます。開始を示すコドンや終了を示すコドンもあり、リボソームはこれらを手がかりにタンパク質合成を進めます。
+
+tRNAは、特定のアミノ酸を運びながら、mRNA上のコドンと対応します。この対応関係によって、塩基配列という情報がアミノ酸配列という分子の構造へ変換されます。ここで作られたアミノ酸鎖は、その後折りたたまれたり修飾されたりして機能を持ちます。
+
+翻訳は、遺伝情報が細胞内の機能へつながる重要な段階です。ただし、タンパク質の働きは翻訳後の折りたたみや修飾にも影響されます。そのため、mRNAの量とタンパク質の機能は関連しますが、完全に同じ意味ではありません。
+
+## なぜ重要か
+
+[翻訳](/glossary/translation/)は、[RNA](/glossary/rna/)の情報を[タンパク質](/glossary/protein/)という機能分子へ変換する段階です。[セントラルドグマ](/glossary/central-dogma/)の中で、情報が細胞の実際の働きへ近づく重要な位置にあります。
+
+翻訳を理解すると、mRNA量だけではタンパク質量や機能を完全には説明できない理由も見えてきます。翻訳効率、折りたたみ、修飾、分解などが、最終的なタンパク質の量や働きに影響します。
+
+## 具体例
+
+mRNA上のAUGは、多くの場合、翻訳開始の目印として働きます。リボソームがmRNAを読み、tRNAが対応するアミノ酸を運ぶことで、アミノ酸鎖が伸びていきます。
+
+分泌タンパク質や膜タンパク質の一部は、翻訳後に小胞体やゴルジ体で加工され、細胞外や細胞膜へ運ばれます。このように、翻訳はタンパク質が働くまでの流れの一部です。
+
+## よく混同される概念
+
+- 翻訳と転写: 翻訳はmRNAからタンパク質を作る過程で、転写はDNAからRNAを作る過程です。
+- コドンとアミノ酸: コドンはmRNA上の3塩基の単位で、アミノ酸はタンパク質を構成する分子です。
+- タンパク質合成とタンパク質機能: タンパク質が作られても、折りたたみや修飾、局在が適切でなければ機能しないことがあります。
+
+## 論文や実験ではどう出てくるか
+
+翻訳は、リボソームプロファイリング、ポリソーム解析、タンパク質量測定などで扱われます。論文では「mRNA量は変わらないがタンパク質量が変化した」「翻訳効率が変わった」のように、転写後の調節として示されることがあります。
+
+## 図解
+
+<LessonFigure
+  src="/figures/translation-concept.jpg"
+  alt="mRNAがリボソームを通り、tRNAがアミノ酸を運んでタンパク質鎖が伸びる様子を示す教材イラスト"
+  title="翻訳はRNAの情報をタンパク質へ変換する過程"
+  caption="mRNAの塩基配列をもとに、リボソームとtRNAがアミノ酸を順番につなげます。"
+/>
+
+<TermBox term="翻訳" english="translation">
+  mRNAの塩基配列をもとにアミノ酸をつなぎ、タンパク質を作る過程です。
+</TermBox>
+
+## 英語表記と略語
+
+| 日本語名   | 英語名       | 略語 |
+| ---------- | ------------ | ---- |
+| 翻訳       | translation  | -    |
+| コドン     | codon        | -    |
+| リボソーム | ribosome     | -    |
+| 転移RNA    | transfer RNA | tRNA |
+
+## よくある誤解
+
+- 翻訳は言語の翻訳と同じ意味ではなく、RNAの情報をアミノ酸配列へ変換する生物学用語です。
+- mRNAがあれば必ず同じ量のタンパク質ができるとは限りません。
+
+## 重要用語
+
+- 翻訳: [mRNA](/glossary/rna/)の情報をもとにアミノ酸をつなぎ、タンパク質を作る過程。
+- コドン: mRNA上の3つの塩基からなる、アミノ酸指定の単位。
+- リボソーム: mRNAを読み取り、タンパク質合成を進める複合体。
+- tRNA: コドンに対応するアミノ酸を運ぶRNA。
+
+<Quiz
+  questions={[
+    {
+      question: 'コドンとは何ですか。',
+      answer: 'mRNA上の3つの塩基の組で、対応するアミノ酸などを指定します。',
+    },
+    {
+      question: 'リボソームの役割を説明してください。',
+      answer:
+        'mRNAを読み取り、アミノ酸をつなげてタンパク質を作る場として働きます。',
+    },
+    {
+      question: 'tRNAの役割を説明してください。',
+      answer: 'コドンに対応するアミノ酸をリボソームへ運びます。',
+    },
+    {
+      question:
+        'mRNA量とタンパク質機能が完全に同じ意味ではない理由を説明してください。',
+      answer:
+        '翻訳効率、折りたたみ、修飾、分解などがタンパク質の量や働きに影響するからです。',
+    },
+    {
+      question: '翻訳後にタンパク質へ起こる変化の例を一つ挙げてください。',
+      answer:
+        '折りたたみ、リン酸化などの修飾、分解、細胞内での移動などがあります。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    {
+      title: '遺伝子発現とは何か',
+      href: '/molecular-biology/gene-expression/',
+    },
+    { title: '用語: 翻訳', href: '/glossary/translation/' },
+    { title: '用語集', href: '/glossary/' },
+  ]}
+/>

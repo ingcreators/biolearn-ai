@@ -1,0 +1,106 @@
+---
+title: 対照群とは何か
+description: 研究デザインとしての対照群を、比較の基準、交絡、Figure読解の観点から説明します。
+part: statistics
+module: experimental-design
+level: foundation
+priority: P1
+order: 30
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - control-group
+  - confounding
+  - randomization
+prerequisites:
+  - /statistics/variable/
+  - /statistics/sample-size/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    '対照群が比較の基準であることを説明できる',
+    '対照群と処理群で揃えるべき条件を考えられる',
+    'Figureで何と何を比較しているか確認できる',
+  ]}
+/>
+
+## 要点
+
+対照群は、処理群や観察対象を解釈するための比較の基準です。
+
+## 基礎解説
+
+研究で「処理によって変化した」と言うには、何と比べて変化したのかが必要です。その基準になる群が対照群です。
+
+統計・研究デザインの観点では、対照群と処理群で、目的の条件以外ができるだけ揃っているかを見ます。培養条件、測定日、サンプルの由来、処理時間、データ処理の方法などが大きく違うと、観察された差が目的の処理によるものか判断しにくくなります。
+
+## なぜ重要か
+
+Figureで棒や点が並んでいるとき、どの群を基準にして差を見ているのかを確認する必要があります。対照群が不適切だと、p値や効果量が示されていても、比較そのものの意味が弱くなります。
+
+## 図解
+
+<LessonFigure
+  src="/figures/control-group-concept.jpg"
+  alt="対照群と処理群を並べ、目的の条件以外を揃えて比較することを示す概念図"
+  title="対照群は比較の基準を作る"
+  caption="目的の処理以外の条件が揃っているかをMethodsで確認します。"
+/>
+
+<TermBox term="対照群" english="control group">
+  研究で比較の基準になる群です。
+</TermBox>
+
+## 英語表記と略語
+
+| 日本語名 | 英語名           | 略語 |
+| -------- | ---------------- | ---- |
+| 対照群   | control group    | -    |
+| 処理群   | treatment group  | -    |
+| 比較群   | comparison group | -    |
+| 交絡     | confounding      | -    |
+
+## よくある誤解
+
+- 対照群があるだけで、比較が十分に公平だと思ってしまう。
+- 「untreated」と「vehicle control」の違いを確認しない。
+- 複数の比較があるFigureで、どの対照群との比較かを見落とす。
+
+## 重要用語
+
+- 対照群: 比較の基準になる群。
+- 処理群: 目的の処理や条件を受けた群。
+- 交絡: 目的の要因以外の違いが結果に影響すること。
+- 比較設計: どの群どうしを比べるかの設計。
+
+<Quiz
+  questions={[
+    {
+      question: '対照群と処理群で揃えたい条件の例を一つ挙げてください。',
+      answer:
+        '培養条件、測定日、処理時間、サンプルの由来、データ処理方法などがあります。',
+    },
+    {
+      question:
+        '対照群が不適切だと、Figureの解釈にどのような問題が起こりますか。',
+      answer:
+        '観察された差が目的の処理によるものか、別の条件差によるものか分かりにくくなります。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: '対照群とは何か（実験手法）', href: '/methods/control/' },
+    { title: 'ランダム化とは何か', href: '/statistics/randomization/' },
+    { title: 'Methodsの読み方', href: '/papers/how-to-read-methods/' },
+  ]}
+/>

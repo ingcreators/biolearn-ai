@@ -1,0 +1,98 @@
+---
+title: ゲノムブラウザ図の読み方
+description: 論文Figureに出てくるゲノムブラウザ図で、座標、トラック、遺伝子モデル、変異、リードの見方を説明します。
+part: figures
+module: bioinformatics-figures
+level: intermediate
+priority: P2
+order: 94
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - genome
+  - genetic-variant
+  - sequencing
+prerequisites:
+  - /genomics/genome-browser/
+  - /glossary/genetic-variant/
+  - /bioinformatics/sequence-data/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'ゲノムブラウザ図で座標と表示範囲を確認できる',
+    'トラックごとのデータ種類を区別できる',
+    '見た目の重なりを慎重に解釈できる',
+  ]}
+/>
+
+## 要点
+
+ゲノムブラウザ図は、ゲノム上の位置を基準に、複数のデータをトラックとして重ねて示すFigureです。
+
+## 基礎解説
+
+論文では、特定の遺伝子領域や変異周辺を示すために、ゲノムブラウザ風のFigureが使われることがあります。横方向はゲノム上の位置を表し、縦に並ぶトラックが異なるデータを示します。
+
+まず、どの染色体や領域を見ているか、表示範囲がどれくらいかを確認します。次に、各トラックが遺伝子モデル、変異、RNA-seqリード、ピーク、保存性などのどれを表すかを確認します。
+
+トラックが同じ位置に重なって見えると、関係がありそうに見えます。ただし、表示範囲、スケール、サンプル、解析条件によって見え方は変わるため、Figure legendとMethodsに戻って確認します。
+
+変異やバリアントのトラックを読むときは、[遺伝的変異](/glossary/genetic-variant/) という広い言葉と、[変異](/glossary/mutation/) や [SNP](/glossary/snp/) との違いを分けておくと、Figureの表現を読み違えにくくなります。
+
+## 図解
+
+<LessonFigure
+  src="/figures/how-to-read-genome-browser-concept.jpg"
+  alt="ゲノムブラウザ図で座標、遺伝子モデル、変異、リード、ピークのトラックを確認する概念図"
+  title="ゲノムブラウザ図はトラックごとの意味を確認して読む"
+  caption="座標、表示範囲、トラックの種類、スケール、サンプルを確認して解釈します。"
+/>
+
+<TermBox term="トラック" english="track">
+  ゲノムブラウザで、特定の種類のデータを1段として表示したものです。
+</TermBox>
+
+## よくある誤解
+
+- 表示範囲の違いを確認せず、複数の図を直接比較する。
+- ピークやリードの高さを、スケール確認なしに条件間で比べる。
+- 遺伝子の近くに変異があるだけで、機能影響が証明されたと読む。
+- どのサンプルや解析から作られたトラックかを確認しない。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question: 'ゲノムブラウザ図で最初に確認したいことを2つ挙げてください。',
+      answer:
+        '染色体や座標、表示範囲、各トラックのデータ種類、スケール、サンプルなどです。',
+    },
+    {
+      question:
+        'トラックの重なりだけで機能的な結論を決めない方がよい理由を説明してください。',
+      answer:
+        '位置の重なりは手がかりですが、解析条件や追加実験なしに機能や原因を断定できないためです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'ゲノムブラウザとは何か', href: '/genomics/genome-browser/' },
+    { title: '遺伝的変異の用語整理', href: '/glossary/genetic-variant/' },
+    { title: '遺伝的変異の記事', href: '/genomics/genetic-variants/' },
+    {
+      title: 'シーケンスデータとは何か',
+      href: '/bioinformatics/sequence-data/',
+    },
+  ]}
+/>

@@ -1,0 +1,107 @@
+---
+title: TitleとAbstractの読み方
+description: 論文のTitleとAbstractから、研究の問い、対象、方法、主な結論をつかむ読み方を説明します。
+part: papers
+module: paper-structure
+level: foundation
+priority: P0
+order: 20
+learningPaths:
+  - paper-reading
+relatedTerms:
+  - title
+  - abstract
+  - research-question
+  - methods
+  - results
+  - claim
+prerequisites:
+  - /papers/paper-structure/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'Titleから研究対象と主題を拾える',
+    'Abstractから背景、方法、結果、結論を分けて読める',
+    'Abstractだけで判断しすぎない理由を説明できる',
+  ]}
+/>
+
+## 要点
+
+TitleとAbstractは、論文全体の地図です。研究の問い、対象、方法、主な結果を短時間でつかむために読みます。
+
+## 基礎解説
+
+Titleには、研究対象、現象、方法、主張の一部が含まれることがあります。まず、何についての論文なのか、どの生物、細胞、疾患、データを扱っているのかを拾います。
+
+Abstractは、論文全体を短くまとめた文章です。多くの場合、背景、目的、方法、結果、結論が圧縮されています。読むときは、一文ずつ「背景」「問い」「方法」「結果」「解釈」に分けて印をつけると、論文の骨格が見えやすくなります。
+
+ただし、Abstractは著者が強調したい結論を短くまとめたものです。実際にどこまで支持されているかは、Results、Figure、Methodsを読んで確認します。
+
+## なぜ重要か
+
+論文を読む前にTitleとAbstractで全体像をつかむと、途中で知らない用語に出会っても、何のための説明なのかを見失いにくくなります。
+
+## 図解
+
+<LessonFigure
+  src="/figures/how-to-read-title-abstract-concept.jpg"
+  alt="TitleとAbstractから研究の問い、方法、結果、結論を拾って本文へ進む流れを示す概念図"
+  title="TitleとAbstractは論文全体の地図"
+  caption="まず主題と結論の候補をつかみ、その後ResultsやMethodsで根拠を確認します。"
+/>
+
+<TermBox term="Abstract" english="Abstract">
+  論文の背景、目的、方法、主な結果、結論を短くまとめた要旨です。
+</TermBox>
+
+## 英語表記と略語
+
+| 日本語名 | 英語名     | 略語 |
+| -------- | ---------- | ---- |
+| 題名     | Title      | -    |
+| 要旨     | Abstract   | -    |
+| 背景     | Background | -    |
+| 結論     | Conclusion | -    |
+
+## よくある誤解
+
+- Abstractは論文全体の代わりではありません。根拠はResultsとFigureで確認します。
+- Titleに強い表現があっても、実験や解析がどこまで支えているかは別に確認が必要です。
+- Abstractの方法説明は短いため、実験条件の詳細はMethodsに戻ります。
+
+## 重要用語
+
+- Title: 論文の主題を示す題名。
+- Abstract: 論文全体を短くまとめた要旨。
+- 研究の問い: 論文が答えようとしている中心的な問題。
+- 主な結論: 著者が結果から言えると考えている内容。
+
+<Quiz
+  questions={[
+    {
+      question: 'Abstractを読むときに分けて拾いたい要素を3つ挙げてください。',
+      answer: '背景、目的、方法、結果、結論などがあります。',
+    },
+    {
+      question: 'Abstractだけで論文を判断しきれない理由を説明してください。',
+      answer:
+        '要約には著者の強調が含まれ、根拠の詳細はResults、Figure、Methodsにあるからです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: '生命科学論文の構成', href: '/papers/paper-structure/' },
+    { title: 'Resultsの読み方', href: '/papers/how-to-read-results/' },
+    { title: 'Methodsの読み方', href: '/papers/how-to-read-methods/' },
+  ]}
+/>

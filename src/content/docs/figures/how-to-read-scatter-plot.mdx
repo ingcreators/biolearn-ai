@@ -1,0 +1,116 @@
+---
+title: 散布図の読み方
+description: 散布図で2つの変数の関係、点の分布、外れ値、相関を読む基本を説明します。
+part: figures
+module: quantitative-figures
+level: foundation
+priority: P1
+order: 40
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - variable
+  - correlation-causation
+  - sample-size
+prerequisites:
+  - /figures/figure-legend/
+  - /statistics/variable/
+  - /statistics/correlation-causation/
+  - /statistics/sample-size/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    '散布図の横軸と縦軸が何を表すか確認できる',
+    '点の分布や外れ値を読む理由を説明できる',
+    '相関と因果を混同しない読み方を理解する',
+  ]}
+/>
+
+## 要点
+
+散布図は、2つの変数の関係を点の分布として見るFigureです。
+
+## 基礎解説
+
+散布図では、1つの点が1つのサンプル、細胞、遺伝子、患者、実験単位などを表します。横軸と縦軸にそれぞれ別の変数を置き、点がどのように広がるかを見ます。
+
+右上がりの傾向があれば正の相関、右下がりなら負の相関と呼ばれることがあります。ただし、相関があることは、片方がもう片方の原因であることを直接示しません。
+
+散布図を読むときは、軸の単位、対数表示、点の数、外れ値、グループ分け、近似線や相関係数の有無を確認します。点が多い場合でも、独立サンプル数が多いとは限らない点にも注意します。
+
+## なぜ重要か
+
+生命科学論文では、遺伝子発現どうしの関係、スコアと表現型、測定値の再現性、細胞ごとの特徴量などを示すときに散布図が使われます。分布を見ることで、平均値だけでは見えない構造に気づけます。
+
+## 図解
+
+<LessonFigure
+  src="/figures/scatter-plot-concept.jpg"
+  alt="点の分布から2つの変数の関係や外れ値を読む散布図の概念図"
+  title="散布図は2つの変数の関係を見る"
+  caption="軸、点の単位、外れ値、相関係数を確認し、相関と因果を混同しないように読みます。"
+/>
+
+<TermBox term="散布図" english="scatter plot">
+  2つの変数の関係を、点の分布として示すグラフです。
+</TermBox>
+
+## 英語表記と略語
+
+| 日本語名 | 英語名                  | 略語 |
+| -------- | ----------------------- | ---- |
+| 散布図   | scatter plot            | -    |
+| 相関     | correlation             | -    |
+| 外れ値   | outlier                 | -    |
+| 相関係数 | correlation coefficient | r    |
+
+## よくある誤解
+
+- 相関があることは、因果関係を直接示すものではありません。
+- 点が多いことと、独立サンプルが多いことは同じではありません。
+- 近似線だけでなく、点の分布全体を見る必要があります。
+
+## 重要用語
+
+- 変数: 測定される値や特徴。
+- 相関: 2つの変数が一緒に変化する傾向。
+- 外れ値: 他の点から離れた値。
+- 対数表示: 値の範囲が広いときに使われる軸表示。
+
+## 前提に戻る
+
+散布図を読むときは、まず [変数とは何か](/statistics/variable/) に戻り、横軸と縦軸が何を測っているかを確認します。点が細胞、遺伝子、サンプル、個体のどれを表すかは、[n数とは何か](/statistics/sample-size/) と合わせて読むと誤解しにくくなります。
+
+右上がりや右下がりの傾向が見える場合は、[相関と因果の違い](/statistics/correlation-causation/) を確認します。散布図は関係の手がかりを示しますが、それだけで直接の因果関係を示すわけではありません。
+
+<Quiz
+  questions={[
+    {
+      question: '散布図で最初に確認したいことを2つ挙げてください。',
+      answer:
+        '横軸と縦軸が何を表すか、点が何の単位か、単位や対数表示、グループ分けなどです。',
+    },
+    {
+      question: '相関と因果を混同してはいけない理由を説明してください。',
+      answer:
+        '2つの値が一緒に変化していても、片方がもう片方を直接引き起こしたとは限らないからです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: '箱ひげ図の読み方', href: '/figures/how-to-read-box-plot/' },
+    { title: '相関と因果の違い', href: '/statistics/correlation-causation/' },
+    { title: 'p値とは何か', href: '/statistics/p-value/' },
+    { title: 'n数とは何か', href: '/statistics/sample-size/' },
+  ]}
+/>

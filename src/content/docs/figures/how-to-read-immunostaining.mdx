@@ -1,0 +1,109 @@
+---
+title: 免疫染色画像の読み方
+description: 免疫染色画像でシグナルの局在、強さ、対照、撮影条件を確認する読み方を説明します。
+part: figures
+module: experimental-figures
+level: foundation
+priority: P1
+order: 45
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - protein
+  - cell
+  - biological-technical-replicates
+prerequisites:
+  - /methods/immunostaining/
+  - /methods/positive-negative-control/
+  - /figures/figure-legend/
+  - /statistics/biological-technical-replicates/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    '免疫染色画像でシグナルの場所と強さを区別して読める',
+    '対照、チャンネル、撮影条件を確認する理由を説明できる',
+    '代表画像と定量結果をセットで見る習慣を持てる',
+  ]}
+/>
+
+## 要点
+
+免疫染色画像は、特定のタンパク質が細胞や組織のどこに見えるかを読むFigureです。
+
+## 基礎解説
+
+免疫染色画像では、蛍光や発色のシグナルが目的タンパク質の存在場所を示します。まず、どの色が何を表すか、核、細胞膜、細胞質、細胞小器官のどこにシグナルがあるかを確認します。
+
+次に、条件間でシグナルの強さや局在が変わるかを見ます。ただし、画像の明るさは撮影条件や画像処理に影響されます。Figure legendやMethodsで、同じ条件で撮影されたか、陰性対照や二次抗体のみの対照があるかを確認します。
+
+代表画像だけでは再現性やばらつきが分かりにくいため、定量グラフ、解析した細胞数、視野数、独立実験数も合わせて読みます。
+
+## 前提に戻る
+
+免疫染色画像は見た目の印象が強いFigureです。画像の明るさや色だけでなく、実験条件と定量の前提を確認します。
+
+- 実験の原理は[免疫染色とは何か](/methods/immunostaining/)で確認します。
+- 背景シグナルや非特異的反応は、[陽性対照と陰性対照](/methods/positive-negative-control/)の観点で確認します。
+- 代表画像と定量グラフの関係は、[顕微鏡画像](/figures/how-to-read-microscopy-image/)と[棒グラフ](/figures/how-to-read-bar-plot/)を行き来して読みます。
+- 視野数や細胞数だけでなく、独立実験数を[生物学的反復と技術的反復](/statistics/biological-technical-replicates/)で確認します。
+
+## 図解
+
+<LessonFigure
+  src="/figures/how-to-read-immunostaining-concept.jpg"
+  alt="免疫染色画像で細胞内の蛍光シグナルの局在と定量を確認する概念図"
+  title="免疫染色画像はシグナルの場所と条件を読む"
+  caption="色の意味、局在、対照、撮影条件、定量方法をFigure legendとMethodsで確認します。"
+/>
+
+<TermBox term="免疫染色画像" english="immunostaining image">
+  抗体で可視化した分子の位置や強さを示す顕微鏡画像です。
+</TermBox>
+
+## よくある誤解
+
+- 明るい画像ほど発現が高いとは限りません。撮影条件や画像処理を確認します。
+- シグナルが重なって見えても、完全に同じ場所にあるとは限りません。
+- 代表画像だけで結論を決めず、定量と反復を確認します。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question: '免疫染色画像で最初に確認したいことを2つ挙げてください。',
+      answer:
+        'どの色が何を表すか、シグナルがどこにあるか、対照や撮影条件などです。',
+    },
+    {
+      question: '代表画像だけで判断しにくい理由を説明してください。',
+      answer: 'ばらつきや再現性、定量的な差が分かりにくいためです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: '免疫染色とは何か', href: '/methods/immunostaining/' },
+    {
+      title: '陽性対照と陰性対照',
+      href: '/methods/positive-negative-control/',
+    },
+    {
+      title: '顕微鏡画像の読み方',
+      href: '/figures/how-to-read-microscopy-image/',
+    },
+    {
+      title: '生物学的反復と技術的反復',
+      href: '/statistics/biological-technical-replicates/',
+    },
+  ]}
+/>

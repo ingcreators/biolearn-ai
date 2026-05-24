@@ -1,34 +1,75 @@
 ---
 title: ゲノミクス
-description: ゲノム、染色体、遺伝的変異を学びます。
+description: ゲノムの基礎を土台に、遺伝的変異とゲノムデータの見方を学びます。
 ---
 
-ゲノミクスは、ゲノム全体を対象として生命を理解する分野です。個別の遺伝子だけでなく、遺伝情報がどのようにまとまり、細胞内で収納され、個体間や細胞間の違いとして現れるのかを学びます。
+import ArticleList from '../../../components/ArticleList.astro';
+
+ゲノミクスは、ゲノム全体を対象として生命を理解する分野です。基礎カテゴリで学ぶゲノムと染色体を土台に、遺伝情報の違いがデータとしてどう表れ、研究でどう扱われるのかを学びます。
 
 ## この分野で学ぶこと
 
-- ゲノム、遺伝子、染色体の違い
-- 遺伝情報が細胞内でどのように整理されているか
+- ゲノム、遺伝子、染色体の関係を使ってデータを読む考え方
 - 遺伝的変異が、配列の違いとしてどう捉えられるか
+- ゲノム上の位置を基準に、遺伝子や変異を可視化する考え方
+- シーケンスデータや変異解析へ進むための入口
+
+## 目的別に選ぶ
+
+ゲノミクスは、遺伝子を1つずつ覚えるだけでなく、ゲノム上の位置、配列の違い、データ表示を対応づけて読むためのカテゴリです。ゲノム系Figureやシーケンスデータで迷ったときの戻り先として使います。
+
+<div class="biolearn-home-grid">
+  <a class="biolearn-home-card" href="/fundamentals/genome/">
+    <span>基礎</span>
+    <h3>ゲノムの全体像へ戻る</h3>
+    <p>ゲノム、遺伝子、染色体の関係を確認し、位置情報を読む土台を作ります。</p>
+  </a>
+  <a class="biolearn-home-card" href="/genomics/genetic-variants/">
+    <span>変異</span>
+    <h3>配列の違いとして捉える</h3>
+    <p>
+      遺伝的変異を、良い悪いの判断ではなく、ゲノム配列の違いとして整理します。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="/genomics/genome-browser/">
+    <span>位置</span>
+    <h3>ゲノムブラウザで場所を見る</h3>
+    <p>遺伝子、変異、リード、注釈トラックを、ゲノム上の座標として読みます。</p>
+  </a>
+  <a class="biolearn-home-card" href="/bioinformatics/sequence-data/">
+    <span>データ</span>
+    <h3>シーケンスデータへ進む</h3>
+    <p>
+      配列由来のデータが、RNA-seqや変異解析の入力として扱われることを確認します。
+    </p>
+  </a>
+</div>
+
+| 迷っていること                     | 入口                                                                                                | Figureや解析で戻る場所                                                                                  |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| ゲノム、遺伝子、染色体を整理したい | [ゲノム](/fundamentals/genome/)、[遺伝子](/fundamentals/gene/)、[染色体](/fundamentals/chromosome/) | [ゲノムブラウザ図](/figures/how-to-read-genome-browser/)、[軸・ラベル・単位](/figures/axis-label-unit/) |
+| 変異やSNPの意味を確認したい        | [遺伝的変異](/genomics/genetic-variants/)、[SNP](/glossary/snp/)                                    | [Lollipop plot](/figures/how-to-read-lollipop-plot/)、[CNV plot](/figures/how-to-read-cnv-plot/)        |
+| ゲノム上の位置を読みたい           | [ゲノムブラウザ](/genomics/genome-browser/)                                                         | [ゲノムブラウザ図](/figures/how-to-read-genome-browser/)、[Figure legend](/figures/figure-legend/)      |
+| 配列データやRNA-seqにつなげたい    | [シーケンスデータ](/bioinformatics/sequence-data/)、[RNA-seq](/bioinformatics/rna-seq/)             | [Volcano plot](/figures/how-to-read-volcano-plot/)、[ヒートマップ](/figures/how-to-read-heatmap/)       |
+| 解析結果から言える範囲を確認したい | [差次的発現解析](/bioinformatics/differential-expression/)、[研究の限界](/statistics/limitations/)  | [Figureと主張](/figures/figure-to-claim/)、[Resultsセクションの流れ](/figures/results-section-flow/)    |
 
 ## まず押さえる3つの考え方
 
 1. ゲノムは、生命が持つ遺伝情報の全体像です。
-2. 染色体は、長いDNAを細胞内で収納し扱うための構造です。
+2. 染色体や遺伝子の知識は、ゲノム上の位置や領域を読む土台です。
 3. 遺伝的変異は、良い悪いだけでなく、配列の違いとしてまず整理します。
 
 ## 読む順番
 
-1. [ゲノムとは何か](/genomics/what-is-genome/)
-2. [染色体とは何か](/genomics/what-are-chromosomes/)
-3. [遺伝的変異とは何か](/genomics/what-are-genetic-variants/)
+<ArticleList part="genomics" groupByModule />
 
-まずゲノムを全体像として押さえ、その後に染色体と遺伝的変異へ進みます。シーケンスデータやRNA-seqの記事へ進む前に読むと、データが何に由来するのかを理解しやすくなります。
+まず基礎カテゴリでゲノムと染色体を押さえ、その後に遺伝的変異とゲノムブラウザへ進みます。シーケンスデータやRNA-seqの記事へ進む前に読むと、データが何に由来するのかを理解しやすくなります。
 
 ## このカテゴリを終えるとできること
 
 - 遺伝子、ゲノム、染色体を混同せずに説明できる
 - 遺伝的変異を、ゲノム配列の違いとして捉えられる
+- ゲノムブラウザで遺伝子、変異、リードなどのトラックを区別できる
 - バイオインフォマティクスで扱う配列データの背景を説明できる
 
 ## 関連する用語

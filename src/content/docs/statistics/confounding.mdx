@@ -1,0 +1,107 @@
+---
+title: 交絡とは何か
+description: 交絡を、調べたい関係が第三の要因によって見かけ上変わって見えることとして説明します。
+part: statistics
+module: study-limitations
+level: foundation
+priority: P1
+order: 130
+learningPaths:
+  - paper-reading
+  - figure-reading
+relatedTerms:
+  - confounding
+  - bias
+  - p-value
+prerequisites:
+  - /statistics/correlation-causation/
+  - /statistics/control-group/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    '交絡が見かけ上の関係を作ることを説明できる',
+    '第三の要因を考えながらFigureやDiscussionを読める',
+    '対照群、層別化、調整の役割を大まかに理解する',
+  ]}
+/>
+
+## 要点
+
+交絡は、調べたい2つの要因の関係が、第三の要因によって見かけ上強くなったり弱くなったりすることです。
+
+## 基礎解説
+
+たとえば、ある遺伝子の発現量と表現型の強さに相関が見えたとします。しかし、その両方に細胞型の割合、培養条件、年齢、サンプル採取部位、バッチなどが影響している場合、見えている関係の一部は第三の要因によるものかもしれません。
+
+交絡を完全に避けることは難しい場合があります。そのため、研究では対照群を置く、条件をそろえる、層別化する、統計モデルで調整する、限界として明示する、といった工夫をします。
+
+## なぜ重要か
+
+Figureで2つの値が一緒に動いていても、それだけで因果とは読めません。Methodsで条件がそろっているか、Resultsで別の説明を検討しているか、Discussionで交絡の可能性が書かれているかを確認します。
+
+## 図解
+
+<LessonFigure
+  src="/figures/confounding-concept.jpg"
+  alt="調べたい2つの変数の関係に第三の要因が影響し、見かけ上の関係が生じることを示す概念図"
+  title="交絡は第三の要因で関係を見かけ上変える"
+  caption="相関が見えたら、両方に影響する要因がないかを考えます。"
+/>
+
+<TermBox term="交絡" english="confounding">
+  調べたい関係が、別の要因によって見かけ上変わって見えることです。
+</TermBox>
+
+## 英語表記と略語
+
+| 日本語名     | 英語名                | 略語 |
+| ------------ | --------------------- | ---- |
+| 交絡         | confounding           | -    |
+| 交絡因子     | confounder            | -    |
+| 層別化       | stratification        | -    |
+| 調整済み解析 | adjusted analysis     | -    |
+| 未調整の比較 | unadjusted comparison | -    |
+
+## よくある誤解
+
+- 相関が強ければ、交絡は考えなくてよいと思う。
+- p値が小さければ、第三の要因の影響は否定されたと読む。
+- 交絡を「解析だけで必ず消せる問題」と考える。
+
+## 重要用語
+
+- 交絡: 第三の要因によって、目的の関係が見かけ上変わること。
+- 交絡因子: 調べたい2つの要因の両方に関係し得る要因。
+- 層別化: 条件ごとに分けて関係を見ること。
+- 調整: 解析で別の要因の影響を考慮すること。
+
+<Quiz
+  questions={[
+    {
+      question: '交絡を考えるときに探す「第三の要因」とは何ですか。',
+      answer:
+        '調べたい2つの要因の両方に影響し、見かけ上の関係を変え得る要因です。',
+    },
+    {
+      question:
+        '相関図を見たあと、交絡の観点で確認したい情報を一つ挙げてください。',
+      answer:
+        'サンプルの条件、群の構成、バッチ、細胞型の割合、採取条件、調整解析の有無などがあります。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: '相関と因果の違い', href: '/statistics/correlation-causation/' },
+    { title: 'バイアスとは何か', href: '/statistics/bias/' },
+    { title: 'Discussionの読み方', href: '/papers/how-to-read-discussion/' },
+  ]}
+/>

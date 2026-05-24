@@ -1,0 +1,108 @@
+---
+title: エラーバーとは何か
+description: Figureのエラーバーがばらつきや推定の不確かさを示す表示であることを説明します。
+part: statistics
+module: statistics-basics
+level: foundation
+priority: P1
+order: 40
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms: []
+prerequisites:
+  - /statistics/mean-median/
+  - /statistics/biological-technical-replicates/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'エラーバーが何を示す表示か説明できる',
+    'SD、SEM、信頼区間の違いを大まかに区別できる',
+    'Figure legendでエラーバーの定義を確認する習慣を持てる',
+  ]}
+/>
+
+## 要点
+
+エラーバーは、データのばらつきや平均値の不確かさを示す図上の表示です。
+
+## 基礎解説
+
+棒グラフや折れ線グラフには、上下に線が伸びたエラーバーが付くことがあります。ただし、同じ見た目でも意味は論文によって異なります。
+
+よく使われる表示には、標準偏差（SD）、標準誤差（SEM）、信頼区間（CI）があります。SDはデータそのもののばらつき、SEMは平均値の推定の不確かさ、信頼区間は推定値の範囲を考えるための表示です。
+
+Figureを読むときは、エラーバーが何を表しているかをFigure legendで確認します。エラーバーの重なりだけで有意差の有無を判断するのではなく、統計検定や実験設計も合わせて見ます。
+
+## なぜ重要か
+
+エラーバーは、平均値だけでは見えないばらつきや不確かさを伝えます。Figureの差が大きく見えても、ばらつきが大きい場合や反復が少ない場合には、解釈に注意が必要です。
+
+## Figureで見る場所
+
+エラーバーは、[棒グラフの読み方](/figures/how-to-read-bar-plot/)や[Forest plotの読み方](/figures/how-to-read-forest-plot/)で特に重要です。棒グラフでは平均の周りのばらつきや不確かさ、Forest plotでは推定値の信頼区間として読むことがあります。
+
+## 図解
+
+<LessonFigure
+  src="/figures/error-bars-concept.jpg"
+  alt="棒グラフの上にエラーバーがあり、平均値とばらつきや不確かさを示す概念図"
+  title="エラーバーは平均値だけでは見えない情報を示す"
+  caption="SD、SEM、信頼区間など、何を示すエラーバーかはFigure legendで確認します。"
+/>
+
+<TermBox term="エラーバー" english="error bar">
+  グラフ上で、ばらつきや推定の不確かさを示す線です。
+</TermBox>
+
+## 英語表記と略語
+
+| 日本語名   | 英語名                     | 略語 |
+| ---------- | -------------------------- | ---- |
+| エラーバー | error bar                  | -    |
+| 標準偏差   | standard deviation         | SD   |
+| 標準誤差   | standard error of the mean | SEM  |
+| 信頼区間   | confidence interval        | CI   |
+
+## よくある誤解
+
+- エラーバーは常に標準偏差とは限りません。
+- エラーバーが重なっているかどうかだけで、統計的有意性を判断することはできません。
+- エラーバーが小さいからといって、実験設計が十分とは限りません。
+
+## 重要用語
+
+- SD: データのばらつきを表す指標。
+- SEM: 平均値の推定の不確かさを表す指標。
+- CI: 推定値が入りそうな範囲を考えるための表示。
+- Figure legend: エラーバーの定義が書かれることが多い説明文。
+
+<Quiz
+  questions={[
+    {
+      question:
+        'Figureでエラーバーを見たとき、最初に確認したいことは何ですか。',
+      answer: 'エラーバーがSD、SEM、信頼区間など何を表しているかを確認します。',
+    },
+    {
+      question: 'エラーバーだけで有意差を判断しにくい理由を説明してください。',
+      answer:
+        'エラーバーの定義や検定方法、反復数によって意味が変わるため、統計検定や実験設計も確認する必要があります。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'p値とは何か', href: '/statistics/p-value/' },
+    { title: '棒グラフの読み方', href: '/figures/how-to-read-bar-plot/' },
+    { title: 'Forest plotの読み方', href: '/figures/how-to-read-forest-plot/' },
+  ]}
+/>

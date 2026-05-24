@@ -1,0 +1,98 @@
+---
+title: レビュー論文と原著論文の違い
+description: レビュー論文と原著論文の目的、読み方、FigureやMethodsの確認ポイントの違いを説明します。
+part: papers
+module: paper-discovery
+level: foundation
+priority: P1
+order: 230
+learningPaths:
+  - paper-reading
+relatedTerms:
+  - review-paper
+  - primary-research-article
+  - abstract
+  - figure
+  - methods
+  - results
+  - references
+prerequisites:
+  - /papers/paper-structure/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'レビュー論文と原著論文の役割を区別できる',
+    '初心者がレビュー論文から入る利点を説明できる',
+    '原著論文ではMethodsとFigureを確認する必要があると理解する',
+  ]}
+/>
+
+## 要点
+
+レビュー論文は分野の知識を整理する論文、原著論文は新しい実験や解析結果を報告する論文です。読む目的に応じて使い分けます。
+
+論文種別の意味だけを短く確認したい場合は、[レビュー論文](/glossary/review-paper/) と [原著論文](/glossary/primary-research-article/) に戻ります。このページでは、どちらを先に読むか、どこまで根拠を確認するかを練習します。
+
+## 基礎解説
+
+レビュー論文（review article）は、多くの先行研究をまとめ、分野の背景、主要な考え方、未解決の問題を整理します。初めてのテーマでは、レビュー論文から読むと全体像をつかみやすくなります。
+
+原著論文（primary research article）は、著者自身の実験や解析に基づく新しい結果を報告します。Figure、Methods、Resultsを読んで、どのデータがどの主張を支えているかを確認します。
+
+レビュー論文は便利ですが、著者の整理や解釈が入っています。重要な主張を深く確認したいときは、引用されている原著論文へ戻ります。
+
+## 図解
+
+<LessonFigure
+  src="/figures/review-vs-primary-paper-concept.jpg"
+  alt="レビュー論文が分野の地図、原著論文が新しいデータとFigureを示すことを比較する概念図"
+  title="レビュー論文は地図、原著論文は新しい証拠"
+  caption="全体像をつかむときはレビュー、根拠を確認するときは原著論文のFigureとMethodsへ進みます。"
+/>
+
+<TermBox term="原著論文" english="primary research article">
+  著者自身の実験や解析に基づいて、新しい結果を報告する論文です。
+</TermBox>
+
+## よくある誤解
+
+- レビュー論文だけ読めば、根拠の確認も十分だと思う。
+- 原著論文を読むときに、Abstractだけで結論を判断する。
+- レビュー論文の図を、元データそのものだと考える。
+- 原著論文のMethodsを確認せず、Figureの意味を決めてしまう。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question: '初めてのテーマでレビュー論文から読む利点を説明してください。',
+      answer:
+        '分野の背景、主要な用語、代表的な研究、未解決の問題をまとめて把握しやすいためです。',
+    },
+    {
+      question: '原著論文で特に確認したいセクションを2つ挙げてください。',
+      answer:
+        'Results、Figure、Methodsなどです。どのデータがどの主張を支えるかを確認します。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'PubMed / PMC の使い分け', href: '/resources/pubmed-pmc/' },
+    { title: '最初に読む論文の選び方', href: '/papers/how-to-choose-paper/' },
+    { title: '論文を最初に読む手順', href: '/papers/first-pass-reading/' },
+    {
+      title: 'Figureから論文を読む方法',
+      href: '/papers/figure-first-reading/',
+    },
+  ]}
+/>

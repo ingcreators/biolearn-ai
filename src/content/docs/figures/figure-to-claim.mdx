@@ -1,0 +1,96 @@
+---
+title: Figureと主張を対応づける
+description: 論文の主張が、どのFigure、どのパネル、どのデータに支えられているかを確認する読み方を説明します。
+part: figures
+module: figure-synthesis
+level: intermediate
+priority: P1
+order: 110
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - significance-vs-importance
+  - correlation-causation
+  - control-group
+prerequisites:
+  - /figures/multi-panel-figure/
+  - /papers/how-to-read-results/
+  - /statistics/significance-vs-importance/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    '本文の主張と対応するFigureを探せる',
+    'Figureから言えることと言えないことを区別できる',
+    '強い主張と弱い主張の違いを考えられる',
+  ]}
+/>
+
+## 要点
+
+Figureを読む目的は、見た目を理解するだけでなく、論文の主張がどのデータに支えられているかを確認することです。
+
+## 基礎解説
+
+Results本文には、「増加した」「低下した」「関連した」「必要である」「示唆された」などの表現が出てきます。これらの文を読んだら、対応するFigureやパネルに戻り、どのデータがその文を支えているかを確認します。
+
+まず、主張の対象を分解します。何が、どの条件で、何と比べて、どの方向に変化したのかを見ます。次に、その主張に対応するパネルで、軸、条件、対照、ばらつき、反復、統計表示を確認します。
+
+Figureから直接言えることと、解釈として一歩進んでいることは分けて読みます。たとえば「相関した」はFigureから読みやすい一方で、「原因である」は追加実験やデザインが必要です。
+
+## 図解
+
+<LessonFigure
+  src="/figures/figure-to-claim-concept.jpg"
+  alt="Results本文の主張をFigureのパネルとデータに対応づける概念図"
+  title="主張をFigureの証拠に戻して確認する"
+  caption="本文の文、対応パネル、測定値、対照、統計表示をつなげて、どこまで言えるかを考えます。"
+/>
+
+<TermBox term="主張" english="claim">
+  論文中で著者が結果から述べる結論や解釈です。Figureのデータにどの程度支えられているかを確認します。
+</TermBox>
+
+## よくある誤解
+
+- Results本文に書かれていることを、Figureに戻らずそのまま受け取る。
+- 1つのパネルだけで、広い結論が十分に支えられていると考える。
+- 相関、関連、必要性、十分性などの表現の強さを区別しない。
+- 統計表示だけを見て、効果の大きさや実験デザインを確認しない。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question:
+        '本文の主張をFigureに対応づけるとき、確認したい情報を3つ挙げてください。',
+      answer:
+        '対応パネル、比較条件、対照、軸、差の方向、ばらつき、反復、統計表示などがあります。',
+    },
+    {
+      question:
+        '「相関した」と「原因である」を区別する理由を説明してください。',
+      answer:
+        '相関は一緒に変化する傾向を示しますが、原因であることには追加の実験や研究デザインが必要だからです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    {
+      title: 'Resultsセクションの流れを読む',
+      href: '/figures/results-section-flow/',
+    },
+    { title: 'Resultsの読み方', href: '/papers/how-to-read-results/' },
+    { title: '相関図の読み方', href: '/figures/how-to-read-correlation-plot/' },
+  ]}
+/>

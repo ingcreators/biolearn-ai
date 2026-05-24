@@ -1,0 +1,110 @@
+---
+title: 再現性とは何か
+description: 再現性を、同じ問いに対して同じような結果が得られるかを確認する考え方として説明します。
+part: statistics
+module: study-limitations
+level: foundation
+priority: P1
+order: 140
+learningPaths:
+  - paper-reading
+  - figure-reading
+relatedTerms:
+  - reproducibility
+  - bias
+  - confidence-interval
+prerequisites:
+  - /statistics/biological-technical-replicates/
+  - /statistics/randomization/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    '再現性が研究結果の信頼性を考える入口であることを説明できる',
+    '技術的反復、生物学的反復、独立検証を区別できる',
+    'MethodsやDiscussionで再現性に関わる記述を探せる',
+  ]}
+/>
+
+## 要点
+
+再現性は、同じ問いに対して、同じ手順や独立した条件で似た結果が得られるかを考える視点です。
+
+## 基礎解説
+
+生命科学では、1回の実験や1つのデータセットだけで結論を強く読みすぎないことが大切です。測定のばらつき、サンプルの違い、解析条件、実験日の違いなどによって、結果は変わり得ます。
+
+再現性を見るときは、技術的反復で測定手順が安定しているか、生物学的反復で個体やサンプル間でも傾向が見えるか、別の実験やデータセットでも同じ方向の結果が得られるかを分けて考えます。
+
+## なぜ重要か
+
+Figureがきれいでも、同じ条件で繰り返したときに安定するのか、別のサンプルでも同じ傾向が見えるのかは別の問題です。Discussionでは、著者が再現性や検証の範囲をどう述べているかを確認します。
+
+## 図解
+
+<LessonFigure
+  src="/figures/reproducibility-concept.jpg"
+  alt="1回の観察、反復、独立検証を段階的に並べ、結果の再現性を確認する概念図"
+  title="再現性は同じ傾向が繰り返し見えるかを見る"
+  caption="技術的反復、生物学的反復、独立した検証を分けて読みます。"
+/>
+
+<TermBox term="再現性" english="reproducibility">
+  同じ問いに対して、同じような結果が繰り返し得られるかを考える性質です。
+</TermBox>
+
+## 英語表記と略語
+
+| 日本語名     | 英語名               | 略語 |
+| ------------ | -------------------- | ---- |
+| 再現性       | reproducibility      | -    |
+| 反復         | replicate            | -    |
+| 独立検証     | validation           | -    |
+| 技術的反復   | technical replicate  | -    |
+| 生物学的反復 | biological replicate | -    |
+
+## よくある誤解
+
+- 同じサンプルを何度も測れば、生物学的な再現性も示したことになる。
+- p値が小さい結果は、必ず再現すると思ってしまう。
+- 代表的な画像が1枚あれば、結果全体の再現性が十分だと読む。
+
+## 重要用語
+
+- 再現性: 同じような結果が繰り返し得られるかという視点。
+- 技術的反復: 同じサンプルや条件の測定の安定性を見る反復。
+- 生物学的反復: 独立したサンプルや個体でも傾向が見えるかを見る反復。
+- 独立検証: 別の実験やデータで結果を確かめること。
+
+<Quiz
+  questions={[
+    {
+      question: '技術的反復と生物学的反復は同じ意味ですか。',
+      answer:
+        '同じではありません。技術的反復は測定手順の安定性、生物学的反復は独立したサンプル間での傾向を見ます。',
+    },
+    {
+      question:
+        'Discussionで再現性を考えるために確認したいことを一つ挙げてください。',
+      answer:
+        '反復の種類、独立検証の有無、別データセットでの確認、代表画像だけでなく定量結果があるかなどです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    {
+      title: '生物学的反復と技術的反復',
+      href: '/statistics/biological-technical-replicates/',
+    },
+    { title: 'バイアスとは何か', href: '/statistics/bias/' },
+    { title: '研究の限界の読み方', href: '/statistics/limitations/' },
+  ]}
+/>

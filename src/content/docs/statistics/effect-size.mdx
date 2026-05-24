@@ -1,0 +1,115 @@
+---
+title: 効果量とは何か
+description: 効果量を、差や関係の大きさを表す指標として説明し、p値との違いを整理します。
+part: statistics
+module: inference-and-interpretation
+level: foundation
+priority: P1
+order: 80
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - effect-size
+  - p-value
+  - confidence-interval
+prerequisites:
+  - /statistics/p-value/
+  - /statistics/confidence-interval/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    '効果量が差や関係の大きさを表すことを説明できる',
+    'p値と効果量を区別できる',
+    'Figureで差の大きさと不確かさを合わせて読める',
+  ]}
+/>
+
+## 要点
+
+効果量は、群間の差や変数どうしの関係がどれくらい大きいかを表す指標です。
+
+## 基礎解説
+
+p値は、ある仮定のもとで観察結果がどれくらい珍しいかを見る指標です。一方、効果量は「差がどれくらい大きいか」「関係がどれくらい強いか」に注目します。
+
+生命科学のFigureでは、平均差、fold change、相関係数、オッズ比などが効果量として読まれることがあります。RNA-seqのボルケーノプロットでは、横軸のlog2 fold changeが変化の大きさを表すことが多いです。
+
+## なぜ重要か
+
+サンプル数が大きいと、小さな差でもp値が小さくなることがあります。逆にサンプル数が少ないと、差が大きく見えても不確かさが大きいことがあります。Figureを読むときは、p値、効果量、信頼区間、実験設計を合わせて見ます。
+
+## Figureで見る場所
+
+効果量は、[Volcano plotの読み方](/figures/how-to-read-volcano-plot/)ではlog2 fold change、[相関図の読み方](/figures/how-to-read-correlation-plot/)では相関の強さ、[Forest plotの読み方](/figures/how-to-read-forest-plot/)では点推定の位置として読むことがあります。
+
+## 図解
+
+<LessonFigure
+  src="/figures/effect-size-concept.jpg"
+  alt="p値の印と差の大きさを分けて示し、効果量は差そのものの大きさを見ることを示す概念図"
+  title="効果量は差や関係の大きさを見る"
+  caption="p値だけでなく、どれくらい変わったのかを確認します。"
+/>
+
+<TermBox term="効果量" english="effect size">
+  差や関係の大きさを表す指標です。
+</TermBox>
+
+## 英語表記と略語
+
+| 日本語名    | 英語名                  | 略語 |
+| ----------- | ----------------------- | ---- |
+| 効果量      | effect size             | -    |
+| 平均差      | mean difference         | -    |
+| fold change | fold change             | FC   |
+| 相関係数    | correlation coefficient | r    |
+
+## よくある誤解
+
+- p値が小さければ効果も大きいと思ってしまう。
+- 効果量が大きく見えるだけで、不確かさや反復数を確認しない。
+- fold changeの大きさだけで、生物学的重要性を断定する。
+
+## 重要用語
+
+- 効果量: 差や関係の大きさ。
+- p値: 観察結果の珍しさを考える指標。
+- 信頼区間: 推定値の不確かさを示す範囲。
+- fold change: 条件間の比として表した変化量。
+
+<Quiz
+  questions={[
+    {
+      question: 'p値と効果量の違いを一文で説明してください。',
+      answer:
+        'p値は観察結果の珍しさを考える指標で、効果量は差や関係の大きさを表す指標です。',
+    },
+    {
+      question:
+        '効果量を見るとき、合わせて確認したいものを一つ挙げてください。',
+      answer: '信頼区間、p値、サンプル数、反復の種類、実験設計などがあります。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    {
+      title: 'Volcano plotの読み方',
+      href: '/figures/how-to-read-volcano-plot/',
+    },
+    {
+      title: 'Forest plotの読み方',
+      href: '/figures/how-to-read-forest-plot/',
+    },
+    { title: '相関図の読み方', href: '/figures/how-to-read-correlation-plot/' },
+  ]}
+/>

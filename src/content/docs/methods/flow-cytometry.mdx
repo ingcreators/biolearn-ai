@@ -1,0 +1,131 @@
+---
+title: フローサイトメトリーとは何か
+description: フローサイトメトリーが多数の細胞を1つずつ測定し、細胞集団を解析する手法であることを説明します。
+part: methods
+module: protein-and-cell-methods
+level: foundation
+priority: P1
+order: 150
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - control-group
+  - biological-technical-replicates
+  - sample-size
+  - figure-legend
+  - cell
+  - methods
+prerequisites:
+  - /fundamentals/cell/
+  - /methods/control/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'フローサイトメトリーが細胞を1つずつ測る手法であることを説明できる',
+    '散布図、ゲート、陽性率の基本を理解する',
+    '細胞集団のFigureを読むときの確認点を挙げられる',
+  ]}
+/>
+
+## 要点
+
+フローサイトメトリーは、多数の細胞を1つずつ測定し、細胞集団の特徴を解析する手法です。
+
+## 基礎解説
+
+フローサイトメトリーでは、細胞を流路に流し、レーザーなどで1細胞ずつ測定します。細胞の大きさや複雑さ、蛍光標識したマーカーの強さを記録できます。
+
+結果は散布図やヒストグラムとして表示され、特定の細胞集団を囲む操作をゲーティングと呼びます。たとえば、あるマーカーが陽性の細胞の割合や、複数のマーカーを持つ細胞集団の割合を比較します。
+
+Figureを読むときは、どのゲートで細胞を選んだか、陰性対照や補正があるか、何個の細胞を測ったか、独立サンプル数はいくつかを確認します。
+
+## なぜ重要か
+
+免疫細胞、細胞周期、細胞死、表面マーカー、蛍光レポーターなどの解析でよく使われます。論文Figureでは、点の集まりとゲート、陽性率、定量グラフがセットで示されることが多いです。
+
+## Figureで見る場所
+
+フローサイトメトリーFigureでは、散布図と定量グラフをつなげて読みます。
+
+- 散布図では、どのゲートで細胞集団を選んだかを確認します。
+- ヒストグラムでは、蛍光シグナルの分布と陰性対照を確認します。
+- 定量グラフでは、細胞数ではなく独立サンプル数を確認します。
+- 複数マーカーのFigureでは、どの軸がどのマーカーか、補正や対照があるかを確認します。
+
+具体的な読み方は[フローサイトメトリー図](/figures/how-to-read-flow-cytometry/)と[散布図](/figures/how-to-read-scatter-plot/)に進みます。
+
+## 図解
+
+<LessonFigure
+  src="/figures/flow-cytometry-concept.jpg"
+  alt="細胞を1つずつ測定し、散布図上でゲートを設定して細胞集団を解析する概念図"
+  title="フローサイトメトリーは細胞集団を1細胞ずつ測る"
+  caption="点の分布、ゲート、陽性率、対照を確認しながら細胞集団の変化を読みます。"
+/>
+
+<TermBox term="フローサイトメトリー" english="flow cytometry">
+  多数の細胞を1つずつ測定し、細胞集団の特徴を解析する実験手法です。
+</TermBox>
+
+## 英語表記と略語
+
+| 日本語名                   | 英語名                              | 略語 |
+| -------------------------- | ----------------------------------- | ---- |
+| フローサイトメトリー       | flow cytometry                      | -    |
+| 蛍光活性化セルソーティング | fluorescence-activated cell sorting | FACS |
+| ゲート                     | gate                                | -    |
+| 陽性率                     | positive fraction                   | -    |
+
+## よくある誤解
+
+- 点が多いことと、独立サンプルが多いことは同じではありません。
+- ゲートの設定によって結果の見え方が変わります。
+- 陽性率だけでなく、対照や補正、測定条件を確認する必要があります。
+
+## 重要用語
+
+- ゲーティング: 解析対象の細胞集団を選ぶ操作。
+- 陽性率: あるマーカーを持つ細胞の割合。
+- FSC/SSC: 細胞の大きさや内部の複雑さの手がかりになる測定値。
+- FACS: 細胞を測定しながら分取する技術を指すことが多い用語。
+- [対照群](/glossary/control-group/): ゲートや陽性判定の基準を置くための比較条件。
+- [n数](/glossary/sample-size/): 点の数、細胞数、独立サンプル数を分けて読むための手がかり。
+- [Figure legend](/glossary/figure-legend/): ゲート、マーカー、サンプル数、表示単位を確認する説明文。
+
+<Quiz
+  questions={[
+    {
+      question: 'フローサイトメトリーでゲートを見る理由を説明してください。',
+      answer:
+        'どの細胞集団を解析対象にしているかが、結果の解釈に大きく関わるためです。',
+    },
+    {
+      question:
+        '点が多いFigureでも独立サンプル数を確認する理由を説明してください。',
+      answer:
+        '多数の点が同じサンプル由来の細胞である可能性があり、独立した反復数とは別だからです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    {
+      title: '生物学的反復と技術的反復',
+      href: '/statistics/biological-technical-replicates/',
+    },
+    {
+      title: 'フローサイトメトリー図の読み方',
+      href: '/figures/how-to-read-flow-cytometry/',
+    },
+    { title: '散布図の読み方', href: '/figures/how-to-read-scatter-plot/' },
+  ]}
+/>

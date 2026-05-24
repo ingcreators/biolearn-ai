@@ -1,0 +1,115 @@
+---
+title: 箱ひげ図の読み方
+description: 箱ひげ図で中央値、四分位範囲、ひげ、外れ値を読む基本を説明します。
+part: figures
+module: quantitative-figures
+level: foundation
+priority: P1
+order: 30
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - distribution
+  - mean-median
+  - sample-size
+prerequisites:
+  - /figures/figure-legend/
+  - /statistics/distribution/
+  - /statistics/mean-median/
+  - /statistics/sample-size/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    '箱ひげ図の中央値と四分位範囲を読める',
+    'ばらつきや外れ値を見る理由を説明できる',
+    'Figure legendで箱やひげの定義を確認できる',
+  ]}
+/>
+
+## 要点
+
+箱ひげ図は、データの中央値、ばらつき、外れ値をまとめて見るためのFigureです。
+
+## 基礎解説
+
+箱ひげ図では、箱の中の線が中央値を表すことが多く、箱の上下は第1四分位数と第3四分位数を表します。箱の高さは、データの中央50%がどれくらい広がっているかを示します。
+
+ひげの定義は論文や作図ソフトによって異なります。最小値・最大値を示す場合もあれば、四分位範囲の1.5倍までを示し、それより外側を外れ値として点で示す場合もあります。
+
+箱ひげ図は、平均だけでは分かりにくい分布の形やばらつきを見るのに役立ちます。複数群を比べるときは、中央値の差だけでなく、分布の重なりや外れ値も確認します。
+
+## なぜ重要か
+
+生命科学論文では、発現量、細胞ごとの測定値、患者群の指標、スコアなどの分布を示すときに箱ひげ図が使われます。棒グラフより分布の情報が見えやすい一方で、定義を確認しないと誤読しやすい図でもあります。
+
+## 図解
+
+<LessonFigure
+  src="/figures/box-plot-concept.jpg"
+  alt="箱ひげ図で中央値、四分位範囲、ひげ、外れ値を見る概念図"
+  title="箱ひげ図は分布の中心と広がりを見る"
+  caption="箱、ひげ、点が何を示すかはFigure legendで確認し、中央値だけでなく分布全体を見ます。"
+/>
+
+<TermBox term="箱ひげ図" english="box plot">
+  中央値、四分位範囲、ひげ、外れ値などでデータ分布を示すグラフです。
+</TermBox>
+
+## 英語表記と略語
+
+| 日本語名   | 英語名              | 略語 |
+| ---------- | ------------------- | ---- |
+| 箱ひげ図   | box plot            | -    |
+| 中央値     | median              | -    |
+| 四分位範囲 | interquartile range | IQR  |
+| 外れ値     | outlier             | -    |
+
+## よくある誤解
+
+- 箱の中央線は平均ではなく中央値であることが多いです。
+- ひげの意味は図によって違うため、凡例やFigure legendを確認します。
+- 中央値に差があっても、分布が大きく重なる場合は解釈に注意します。
+
+## 重要用語
+
+- 中央値: データを並べたとき中央に来る値。
+- 四分位範囲: データの中央50%の範囲。
+- ひげ: 箱から伸びる線。定義は図によって異なる。
+- 外れ値: 分布から離れた値として表示される点。
+
+## 前提に戻る
+
+箱ひげ図は、[分布](/statistics/distribution/) と [平均と中央値](/statistics/mean-median/) を理解していると読みやすくなります。箱の中央線が平均ではなく中央値であることが多いため、代表値の違いを意識します。
+
+群どうしを比べるときは、[n数とは何か](/statistics/sample-size/) に戻り、箱の中に何個の独立サンプルが含まれているかを確認します。点が多数あっても、独立したサンプル数が多いとは限りません。
+
+<Quiz
+  questions={[
+    {
+      question: '箱ひげ図でFigure legendを確認したい理由を説明してください。',
+      answer: '箱やひげ、外れ値の定義が論文や作図方法によって異なるためです。',
+    },
+    {
+      question: '箱ひげ図で中央値以外に見たい情報を一つ挙げてください。',
+      answer:
+        '四分位範囲、ひげの長さ、外れ値、群どうしの分布の重なりなどがあります。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: '棒グラフの読み方', href: '/figures/how-to-read-bar-plot/' },
+    { title: '散布図の読み方', href: '/figures/how-to-read-scatter-plot/' },
+    { title: '分布とは何か', href: '/statistics/distribution/' },
+    { title: 'n数とは何か', href: '/statistics/sample-size/' },
+  ]}
+/>

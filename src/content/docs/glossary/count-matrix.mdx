@@ -1,0 +1,53 @@
+---
+title: カウント行列とは | BioLearn
+description: カウント行列の意味、RNA-seq、single-cell RNA-seq、遺伝子発現解析との関係を説明します。
+---
+
+## 日本語名
+
+カウント行列
+
+## 英語名
+
+count matrix
+
+## 略語
+
+-
+
+## まず一言でいうと
+
+カウント行列は、遺伝子とサンプルまたは細胞ごとのリード数を並べた表です。
+
+## もう少し詳しく
+
+[RNA-seq](/glossary/rna-seq/)や[single-cell RNA-seq](/glossary/single-cell-rna-seq/)では、配列データを遺伝子に対応づけ、遺伝子ごとのカウントとして集計します。行に遺伝子、列にサンプルや細胞を置いた表がカウント行列です。
+
+カウントはそのまま「真の発現量」ではありません。ライブラリサイズ、測定効率、細胞の品質などの影響を受けるため、解析では品質確認や正規化を行ってから比較します。
+
+## なぜ重要か
+
+カウント行列は、多くの発現解析の出発点です。どの単位が行で、どの単位が列かを理解すると、ヒートマップ、差次的発現解析、single-cell解析のFigureを読みやすくなります。
+
+## よく混同される用語
+
+- 発現量: カウントを処理して推定される量。カウントそのものとは区別します。
+- [シーケンスデータ](/glossary/sequence-data/): カウント行列を作る前の配列データ。
+- 正規化: カウントの技術的な違いを調整する処理。
+
+## 関連する用語
+
+- [RNA-seq](/glossary/rna-seq/)
+- [single-cell RNA-seq](/glossary/single-cell-rna-seq/)
+- [遺伝子発現](/glossary/gene-expression/)
+- [シーケンスデータ](/glossary/sequence-data/)
+
+## 関連する教材ページ
+
+- [カウント行列とは何か](/bioinformatics/count-matrix/)
+- [RNA-seqとは何か](/bioinformatics/rna-seq/)
+- [single-cell RNA-seqとは何か](/bioinformatics/single-cell-rna-seq/)
+
+## 次に読む記事
+
+[single-cell QCとは何か](/bioinformatics/single-cell-quality-control/) で、カウント行列を解析する前に確認する品質の考え方へ進みましょう。

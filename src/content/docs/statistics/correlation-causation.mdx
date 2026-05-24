@@ -1,0 +1,110 @@
+---
+title: 相関と因果の違い
+description: 相関と因果の違いを、2つの変数が一緒に変化することと、一方がもう一方を引き起こすことの違いとして説明します。
+part: statistics
+module: inference-and-interpretation
+level: foundation
+priority: P1
+order: 100
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - correlation-causation
+  - confounding
+  - bias
+prerequisites:
+  - /statistics/variable/
+  - /figures/how-to-read-correlation-plot/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    '相関と因果の違いを説明できる',
+    '相関図から結論を読みすぎない注意点を理解する',
+    '共通要因や逆向きの説明を考えられる',
+  ]}
+/>
+
+## 要点
+
+相関は2つの変数が一緒に変化する傾向であり、因果は一方がもう一方を引き起こす関係です。
+
+## 基礎解説
+
+相関図では、横軸と縦軸の値が一緒に増えたり、一方が増えるともう一方が減ったりする傾向を見ることがあります。このような関係を相関と呼びます。
+
+しかし、相関があることは、片方の変数がもう片方を直接引き起こしたことを意味しません。第三の要因が両方に影響している場合や、因果の向きが逆の場合、サンプルの偏りや外れ値で相関が見えている場合もあります。
+
+## なぜ重要か
+
+生命科学論文では、遺伝子発現量と表現型、細胞割合と疾患スコア、タンパク質量と応答の強さなどの相関が示されることがあります。読むときは、相関が観察されたことと、因果機構が示されたことを分けます。
+
+## Figureで見る場所
+
+相関と因果の区別は、[相関図の読み方](/figures/how-to-read-correlation-plot/)で特に重要です。点のまとまりや近似線を見るだけでなく、群分け、外れ値、時間順序、実験的な検証の有無を合わせて確認します。
+
+## 図解
+
+<LessonFigure
+  src="/figures/correlation-causation-concept.jpg"
+  alt="2つの変数が一緒に変化していても、直接因果、逆向き因果、第三の要因など複数の説明があり得ることを示す概念図"
+  title="相関は因果をそのまま示すわけではない"
+  caption="共通要因、逆向きの関係、サンプルの偏りなど、別の説明も考えます。"
+/>
+
+<TermBox term="相関" english="correlation">
+  2つの変数が一緒に変化する傾向です。因果関係そのものを意味する言葉ではありません。
+</TermBox>
+
+## 英語表記と略語
+
+| 日本語名 | 英語名       | 略語 |
+| -------- | ------------ | ---- |
+| 相関     | correlation  | -    |
+| 因果     | causation    | -    |
+| 共通要因 | common cause | -    |
+| 交絡     | confounding  | -    |
+
+## よくある誤解
+
+- 相関係数が高ければ、因果関係が証明されたと読む。
+- p値が小さい相関を、強い因果の証拠として扱う。
+- 外れ値や群の混ざり方を確認せず、近似線だけを見る。
+
+## 重要用語
+
+- 相関: 2つの変数が一緒に変化する傾向。
+- 因果: 一方の変化がもう一方の変化を引き起こす関係。
+- 共通要因: 2つの変数の両方に影響し得る別の要因。
+- 交絡: 目的の関係を別の要因が見かけ上変えてしまうこと。
+
+<Quiz
+  questions={[
+    {
+      question: '相関があることは、因果関係を直接示しますか。',
+      answer:
+        '直接は示しません。共通要因、逆向きの因果、偏り、外れ値なども考える必要があります。',
+    },
+    {
+      question: '相関図を読んだあとに確認したい情報を一つ挙げてください。',
+      answer:
+        '点の単位、外れ値、群ごとの傾向、実験設計、時間順序、追加実験の有無などがあります。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: '相関図の読み方', href: '/figures/how-to-read-correlation-plot/' },
+    { title: '交絡とは何か', href: '/statistics/confounding/' },
+    { title: 'バイアスとは何か', href: '/statistics/bias/' },
+    { title: 'Discussionの読み方', href: '/papers/how-to-read-discussion/' },
+  ]}
+/>

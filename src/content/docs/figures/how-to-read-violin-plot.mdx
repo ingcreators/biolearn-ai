@@ -1,0 +1,99 @@
+---
+title: Violin plotの読み方
+description: Violin plotで分布の形、中央値、群間の重なりを読む基本を説明します。
+part: figures
+module: quantitative-figures
+level: foundation
+priority: P1
+order: 42
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - distribution
+  - mean-median
+  - sample-size
+prerequisites:
+  - /figures/figure-legend/
+  - /figures/how-to-read-box-plot/
+  - /statistics/distribution/
+  - /statistics/sample-size/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'Violin plotで分布の形を読める',
+    '中央値や四分位範囲の表示を確認できる',
+    '群間の重なりを見て、差を過大評価しない読み方を身につける',
+  ]}
+/>
+
+## 要点
+
+Violin plotは、データの分布の形を、左右に広がる形として見せるFigureです。
+
+## 基礎解説
+
+Violin plot（バイオリンプロット）は、箱ひげ図よりも分布の形を見やすくしたグラフです。幅が広い部分は、その値の付近にデータが多いことを表します。
+
+生命科学論文では、細胞ごとの発現量、サンプルごとのスコア、群ごとの測定値などを示すときに使われます。複数の群を比べるときは、分布の中心だけでなく、広がり、重なり、外れた値、サンプル数を確認します。
+
+図によっては、中央値、四分位範囲、個々の点が重ねて表示されます。何が表示されているかはFigure legendで確認します。
+
+## 図解
+
+<LessonFigure
+  src="/figures/how-to-read-violin-plot-concept.jpg"
+  alt="Violin plotで分布の幅、中央値、群間の重なりを確認する概念図"
+  title="Violin plotは分布の形と重なりを見る"
+  caption="幅が広い値域、中央値、分布の重なり、個々の点やサンプル数を確認します。"
+/>
+
+<TermBox term="Violin plot" english="violin plot">
+  データ分布の密度を、左右に広がる形で示すグラフです。
+</TermBox>
+
+## よくある誤解
+
+- 幅が広い部分を、値そのものが大きいと誤読する。
+- 中央値だけを見て、分布の重なりを確認しない。
+- 個々の点が表示されていない図で、サンプル数を確認しない。
+- 群の形が違う理由を、実験条件だけで説明しようとする。
+
+## 前提に戻る
+
+Violin plotは、[分布](/statistics/distribution/) を読むFigureです。幅が広い場所はデータが多い値域を示すため、値の大きさそのものとは分けて読みます。
+
+中央値や四分位範囲が重ねて表示される場合は、[平均と中央値](/statistics/mean-median/) と [箱ひげ図の読み方](/figures/how-to-read-box-plot/) に戻ります。群の差を読む前に、[n数](/statistics/sample-size/) と個々の点の有無も確認します。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question: 'Violin plotで幅が広い部分は何を表しますか。',
+      answer: 'その値の付近にデータが多いことを表します。',
+    },
+    {
+      question:
+        '2つの群の中央値が違って見えるとき、ほかに確認したいことを一つ挙げてください。',
+      answer:
+        '分布の重なり、ばらつき、サンプル数、個々の点、統計表示などを確認します。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: '箱ひげ図の読み方', href: '/figures/how-to-read-box-plot/' },
+    { title: '散布図の読み方', href: '/figures/how-to-read-scatter-plot/' },
+    { title: '分布とは何か', href: '/statistics/distribution/' },
+    { title: 'n数とは何か', href: '/statistics/sample-size/' },
+  ]}
+/>

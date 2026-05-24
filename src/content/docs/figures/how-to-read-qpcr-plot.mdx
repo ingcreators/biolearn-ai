@@ -1,13 +1,29 @@
 ---
 title: qPCRプロットの読み方
 description: qPCRの増幅曲線、Ct値、相対発現量グラフを読むときの基本を説明します。
+part: figures
+module: experimental-figures
+level: foundation
+order: 30
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - pcr
+  - gene-expression
+  - biological-technical-replicates
+prerequisites:
+  - /methods/pcr/
+  - /methods/qpcr/
+  - /methods/rt-qpcr/
+  - /statistics/biological-technical-replicates/
 ---
 
 qPCR（quantitative PCR）は、特定のDNAやRNA由来のcDNAを増幅しながら定量する方法です。論文では、増幅曲線、Ct値、相対発現量の棒グラフや点付きグラフとして示されます。
 
 ## このFigureで何を見るか
 
-目的の遺伝子や配列が、条件間でどのくらい違って検出されたかを見ます。mRNA量の比較では、[遺伝子発現とは何か](/molecular-biology/what-is-gene-expression/)や[用語: PCR](/glossary/pcr/)の理解が土台になります。
+目的の遺伝子や配列が、条件間でどのくらい違って検出されたかを見ます。mRNA量の比較では、[遺伝子発現とは何か](/molecular-biology/gene-expression/)や[用語: PCR](/glossary/pcr/)の理解が土台になります。
 
 ## まず一言でいうと
 
@@ -94,6 +110,15 @@ qPCRは「どのサイクルで検出しきい値を超えたか」を見て、�
 5. 反復数、エラーバー、点の散らばりを見ます。
 6. 統計検定がある場合、どの比較に対するp値かを確認します。
 
+## 前提に戻る
+
+qPCRプロットで迷ったら、Figureだけで判断せず、Methodsと統計の前提に戻ります。
+
+- 実験の原理は[qPCRとは何か](/methods/qpcr/)と[RT-qPCRとは何か](/methods/rt-qpcr/)で確認します。
+- 棒グラフの高さやエラーバーは、[平均と中央値](/statistics/mean-median/)と[エラーバー](/statistics/error-bars/)に戻ると読みやすくなります。
+- `n` がtechnical replicateなのかbiological replicateなのかは、[生物学的反復と技術的反復](/statistics/biological-technical-replicates/)で確認します。
+- p値が付いている場合は、どの比較に対する検定かを[Figure legend](/figures/figure-legend/)で確認します。
+
 ## よくある誤解
 
 - Ct値が高いほど発現量が高い、ではありません。Ct値が低いほど、しきい値に早く到達したことを示します。
@@ -106,9 +131,9 @@ qPCRは「どのサイクルで検出しきい値を超えたか」を見て、�
 - RT-qPCRによるmRNA発現量の検証
 - RNA-seqで見つかった候補遺伝子の確認
 - 遺伝子ノックダウンや刺激実験後の発現変化の確認
-- [PCRとは何か](/methods/what-is-pcr/)
-- [RNA-seqとは何か](/bioinformatics/what-is-rna-seq/)
-- [差次的発現解析とは何か](/bioinformatics/what-is-differential-expression-analysis/)
+- [PCRとは何か](/methods/pcr/)
+- [RNA-seqとは何か](/bioinformatics/rna-seq/)
+- [差次的発現解析とは何か](/bioinformatics/differential-expression/)
 - [用語: 遺伝子発現](/glossary/gene-expression/)
 
 ## 確認問題
@@ -133,7 +158,8 @@ qPCRは「どのサイクルで検出しきい値を超えたか」を見て、�
 
 ## 次に読む記事
 
-- [Figure legendの読み方](/figures/how-to-read-figure-legend/)
+- [Figure legendの読み方](/figures/figure-legend/)
+- [qPCRとは何か](/methods/qpcr/)
 - [棒グラフの読み方](/figures/how-to-read-bar-plot/)
 - [Volcano plotの読み方](/figures/how-to-read-volcano-plot/)
 - [用語: PCR](/glossary/pcr/)

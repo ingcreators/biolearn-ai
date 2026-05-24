@@ -1,0 +1,105 @@
+---
+title: 生物学的反復と技術的反復
+description: 論文Figureのn数を読むために、生物学的反復と技術的反復の違いを説明します。
+part: statistics
+module: experimental-design
+level: foundation
+priority: P1
+order: 20
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - biological-technical-replicates
+  - reproducibility
+prerequisites: []
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    '生物学的反復と技術的反復を区別できる',
+    'Figure legendのn数を読むときの注意点を説明できる',
+    '反復の種類が結果の信頼性に関わる理由を理解する',
+  ]}
+/>
+
+## 要点
+
+生物学的反復は独立したサンプルや実験単位の繰り返しで、技術的反復は同じサンプルを測定上繰り返すことです。
+
+## 基礎解説
+
+生命科学論文では `n = 3` や `n = 100 cells` のような表記がよく出てきます。ただし、nが何を数えているかは必ず確認する必要があります。
+
+生物学的反復は、別々の個体、別々に培養した細胞、独立して調製したサンプルなど、実験対象のばらつきを含む繰り返しです。一方、技術的反復は、同じサンプルを複数回測ることで測定のばらつきを確認する繰り返しです。
+
+たとえば同じ培養皿から100個の細胞を測った場合、細胞数としては大きく見えても、独立した生物学的反復が100あるとは限りません。Figure legendやMethodsで、何が独立した単位なのかを確認します。
+
+## なぜ重要か
+
+反復の種類を区別できると、Figureの信頼性を読みやすくなります。p値やエラーバーを見る前に、そもそも比較がどの独立単位に基づいているのかを考えることが大切です。
+
+## 図解
+
+<LessonFigure
+  src="/figures/biological-technical-replicates-concept.jpg"
+  alt="独立した複数サンプルと、同じサンプルを複数回測る技術的反復の違いを示す概念図"
+  title="反復には生物学的反復と技術的反復がある"
+  caption="n数を見るときは、個体・培養・サンプル・測定のどれを数えているのかを確認します。"
+/>
+
+<TermBox term="生物学的反復" english="biological replicate">
+  独立した生物学的サンプルや実験単位を繰り返すことです。
+</TermBox>
+
+## 英語表記と略語
+
+| 日本語名     | 英語名                 | 略語 |
+| ------------ | ---------------------- | ---- |
+| 生物学的反復 | biological replicate   | -    |
+| 技術的反復   | technical replicate    | -    |
+| 独立実験     | independent experiment | -    |
+| サンプル数   | sample size            | n    |
+
+## よくある誤解
+
+- 細胞をたくさん数えたことと、独立サンプルが多いことは同じではありません。
+- 技術的反復は測定の安定性を見る助けになりますが、生物学的なばらつきを十分に表すとは限りません。
+- n数は大きさだけでなく、何を数えたnなのかが重要です。
+
+## 重要用語
+
+- 生物学的反復: 独立したサンプルや実験単位の繰り返し。
+- 技術的反復: 同じサンプルを測定上繰り返すこと。
+- 独立実験: 別の日や別の調製として独立に行われた実験。
+- n数: 解析や表示に使われた数。何を数えたかの確認が必要。
+
+<Quiz
+  questions={[
+    {
+      question:
+        '`n = 100 cells` と書かれているときに確認したいことは何ですか。',
+      answer:
+        'それらの細胞が何個の独立サンプルや独立実験から得られたのかを確認します。',
+    },
+    {
+      question: '生物学的反復と技術的反復の違いを説明してください。',
+      answer:
+        '生物学的反復は独立したサンプルの繰り返しで、技術的反復は同じサンプルを測定上繰り返すことです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'エラーバーとは何か', href: '/statistics/error-bars/' },
+    { title: 'Figure legendの読み方', href: '/figures/figure-legend/' },
+    { title: 'Methodsの読み方', href: '/papers/how-to-read-methods/' },
+  ]}
+/>

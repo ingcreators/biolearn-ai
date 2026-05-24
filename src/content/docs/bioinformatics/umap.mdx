@@ -1,0 +1,103 @@
+---
+title: UMAPとは何か
+description: UMAPを、高次元データを2次元などに配置してsingle-cell解析の全体像を見る可視化手法として説明します。
+part: bioinformatics
+module: single-cell-analysis
+level: intermediate
+priority: P1
+order: 50
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - umap
+  - dimensionality-reduction
+  - clustering
+prerequisites:
+  - /bioinformatics/dimensionality-reduction/
+  - /bioinformatics/clustering/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'UMAPが高次元データを見やすく配置する可視化手法だと説明できる',
+    '点、色、クラスタ、注釈の意味を区別できる',
+    'UMAPの形や距離を読みすぎない注意点を理解する',
+  ]}
+/>
+
+## 要点
+
+UMAPは、高次元データを2次元などに配置し、全体のまとまりやクラスタを見やすくする可視化手法です。
+
+## 基礎解説
+
+single-cell RNA-seqでは、各細胞が多数の遺伝子発現量を持っています。UMAPは、そのような高次元データを2次元の図として表示し、似た発現パターンの細胞が近くに見えるように配置します。
+
+UMAP図では、1つの点が1つの細胞を表すことが多く、色はクラスタ、細胞型、サンプル条件、遺伝子発現量などを表します。まず、点の単位と色の意味を確認します。
+
+UMAPは便利な地図のような図ですが、距離や形をそのまま生物学的距離として読むものではありません。クラスタ名や細胞型名は、マーカー遺伝子、注釈方法、Methodsの設定と合わせて解釈します。
+
+## 図解
+
+<LessonFigure
+  src="/figures/umap-concept.jpg"
+  alt="single-cell解析で細胞をUMAP上に配置し、色でクラスタや細胞型を示す概念図"
+  title="UMAPは細胞のまとまりを見やすくする地図"
+  caption="点、色、クラスタ名、サンプル由来を確認し、距離や形を読みすぎないようにします。"
+/>
+
+<TermBox
+  term="UMAP"
+  english="Uniform Manifold Approximation and Projection"
+  abbreviation="UMAP"
+>
+  高次元データを低次元に配置して、全体の構造を見やすくする可視化手法です。
+</TermBox>
+
+## よくある誤解
+
+- UMAPで離れていれば、必ず別の細胞型だと読む。
+- UMAP上の島の形を、生物学的な形や距離として解釈する。
+- 色がクラスタなのか、細胞型なのか、条件なのかを確認しない。
+- 細胞数が多く見えることを、独立サンプル数が多いことと混同する。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question: 'UMAP図で最初に確認したいことを2つ挙げてください。',
+      answer:
+        '1つの点が何を表すか、色が何を表すか、クラスタ名の根拠、サンプル由来などです。',
+    },
+    {
+      question: 'UMAPの形だけで結論を出さない方がよい理由を説明してください。',
+      answer:
+        'UMAPは高次元データを圧縮した可視化であり、形や距離だけでは細胞型や機能の根拠にならないためです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    {
+      title: 'UMAP / t-SNEの読み方',
+      href: '/figures/how-to-read-umap-tsne/',
+    },
+    {
+      title: 'マーカー遺伝子とは何か',
+      href: '/bioinformatics/marker-gene/',
+    },
+    {
+      title: 'single-cell解析論文の読み方',
+      href: '/papers/walkthrough-single-cell/',
+    },
+  ]}
+/>

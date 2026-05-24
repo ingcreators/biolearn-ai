@@ -1,0 +1,102 @@
+---
+title: multi-panel Figureの読み方
+description: Figure 1A、1B、1Cのような複数パネルFigureで、全体の流れと各パネルの役割を読む方法を説明します。
+part: figures
+module: figure-basics
+level: foundation
+priority: P1
+order: 14
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - control-group
+  - biological-technical-replicates
+  - significance-vs-importance
+prerequisites:
+  - /figures/figure-legend/
+  - /statistics/control-group/
+  - /statistics/biological-technical-replicates/
+  - /papers/how-to-read-results/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    '複数パネルFigureを読む順番を説明できる',
+    '各パネルが示す役割を区別できる',
+    '1つのパネルだけで結論を急がない読み方を身につける',
+  ]}
+/>
+
+## 要点
+
+複数パネルFigureは、1枚の図の中で実験の流れ、代表画像、定量結果、追加検証を組み合わせて示すことがあります。
+
+## 基礎解説
+
+生命科学論文のFigureでは、`Figure 1A`、`Figure 1B`、`Figure 1C` のように複数のパネルが並びます。各パネルは独立した小図でありながら、全体として1つの主張を支える構成になっています。
+
+読み始めるときは、まずFigure legendの冒頭や本文で、このFigure全体が何を示したいのかを確認します。そのうえで、各パネルが「実験デザイン」「代表画像」「定量グラフ」「追加実験」「統計的な比較」のどれに近い役割かを見分けます。
+
+1つの見栄えのよい画像だけで結論を決めず、定量結果、反復、対照、別手法での確認が同じ方向を示しているかを確認します。
+
+## 図解
+
+<LessonFigure
+  src="/figures/multi-panel-figure-concept.jpg"
+  alt="複数パネルFigureでA、B、C、Dの役割を順に確認する概念図"
+  title="複数パネルFigureは全体の流れと各パネルの役割を読む"
+  caption="代表画像、定量、対照、追加検証がどのように主張を支えているかを確認します。"
+/>
+
+<TermBox term="パネル" english="panel">
+  1つのFigureを構成する小さな図やグラフです。A、B、Cのような文字で区別されることが多いです。
+</TermBox>
+
+## よくある誤解
+
+- Aパネルだけを見て、Figure全体の結論を決めてしまう。
+- 代表画像と定量グラフの役割を区別しない。
+- パネルの順番が、必ずしも実験の時間順だと思い込む。
+- 補足Figureに重要な対照がある可能性を見落とす。
+
+## 前提に戻る
+
+multi-panel Figureでは、各パネルが何を支えているかを [Resultsの読み方](/papers/how-to-read-results/) と合わせて確認します。代表画像、定量、対照、追加検証が同じ主張を支えているかを、パネルごとに分けて読みます。
+
+対照や反復が別パネルに置かれていることも多いため、[対照群](/statistics/control-group/) と [生物学的反復と技術的反復](/statistics/biological-technical-replicates/) に戻って、比較の基準と独立性を確認します。アスタリスクがあるパネルでは、[統計的有意性と生物学的重要性](/statistics/significance-vs-importance/) も合わせて見ます。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question: '複数パネルFigureを読むとき、最初に確認したいことは何ですか。',
+      answer:
+        'Figure全体が何を示そうとしているか、各パネルがどの役割を持つかを確認します。',
+    },
+    {
+      question: '代表画像だけで結論を決めない方がよい理由を説明してください。',
+      answer:
+        '代表画像は一例であり、定量結果、反復、対照、統計表示と合わせて判断する必要があるためです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'Figure legendの読み方', href: '/figures/figure-legend/' },
+    {
+      title: '免疫染色Figureの読み方',
+      href: '/figures/how-to-read-immunostaining/',
+    },
+    { title: '対照群とは何か', href: '/statistics/control-group/' },
+    { title: 'Resultsの読み方', href: '/papers/how-to-read-results/' },
+  ]}
+/>

@@ -1,0 +1,109 @@
+---
+title: n数とは何か
+description: n数を、Figureや統計解析で数えられている単位として説明し、細胞数・サンプル数・独立反復の違いを整理します。
+part: statistics
+module: experimental-design
+level: foundation
+priority: P1
+order: 25
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - sample-size
+  - biological-technical-replicates
+  - reproducibility
+prerequisites:
+  - /statistics/biological-technical-replicates/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'n数が何を数えているか確認できる',
+    '細胞数、サンプル数、独立実験数を区別できる',
+    'Figure legendでn数の単位を見る理由を説明できる',
+  ]}
+/>
+
+## 要点
+
+n数は、Figureや統計解析で数えられている単位です。
+
+## 基礎解説
+
+論文のFigureでは、`n = 3`、`n = 6 mice`、`n = 120 cells` のような表記がよく出てきます。大切なのは、nの数字だけでなく、何を数えたnなのかを確認することです。
+
+同じ `n = 100` でも、独立した100個体なのか、1つのサンプル内の100細胞なのかで意味は大きく変わります。細胞数が多いことは情報量を増やしますが、独立した生物学的反復が多いことと同じではありません。
+
+## なぜ重要か
+
+n数を読み違えると、Figureの確からしさを過大に見積もることがあります。p値、エラーバー、信頼区間を読む前に、どの単位が独立しているのかをMethodsやFigure legendで確認します。
+
+## 図解
+
+<LessonFigure
+  src="/figures/sample-size-concept.jpg"
+  alt="3つの独立サンプルと多数の細胞が描かれ、n数が何を数えるかで意味が変わることを示す概念図"
+  title="n数は何を数えたかが重要"
+  caption="個体、培養、サンプル、細胞、測定点のどれを数えているかを確認します。"
+/>
+
+<TermBox term="n数" english="sample size" abbreviation="n">
+  Figureや解析で数えられているサンプル、個体、細胞、測定点などの数です。
+</TermBox>
+
+## 英語表記と略語
+
+| 日本語名 | 英語名           | 略語 |
+| -------- | ---------------- | ---- |
+| n数      | sample size      | n    |
+| サンプル | sample           | -    |
+| 独立単位 | independent unit | -    |
+| 細胞数   | number of cells  | -    |
+
+## よくある誤解
+
+- nが大きければ、必ず独立サンプルが多いと思ってしまう。
+- `n = cells` と `n = animals` を同じ重みで読む。
+- Figure legendにn数が書かれていても、Methodsで独立単位を確認しない。
+
+## 重要用語
+
+- n数: 解析や表示で数えられている単位の数。
+- 独立単位: 統計的な比較で独立とみなす単位。
+- 生物学的反復: 独立した生物学的サンプルの繰り返し。
+- 技術的反復: 同じサンプルを測定上繰り返すこと。
+
+<Quiz
+  questions={[
+    {
+      question:
+        '`n = 200 cells` と書かれているときに、追加で確認したいことは何ですか。',
+      answer:
+        'それらの細胞が何個の独立サンプル、個体、培養、実験から得られたかを確認します。',
+    },
+    {
+      question:
+        'n数の数字だけで結果の信頼性を判断しにくい理由を説明してください。',
+      answer:
+        '何を数えたnなのか、独立単位が何か、反復の種類が何かによって意味が変わるためです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    {
+      title: '生物学的反復と技術的反復',
+      href: '/statistics/biological-technical-replicates/',
+    },
+    { title: 'エラーバーとは何か', href: '/statistics/error-bars/' },
+    { title: 'Figure legendの読み方', href: '/figures/figure-legend/' },
+  ]}
+/>

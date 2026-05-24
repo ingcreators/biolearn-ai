@@ -1,0 +1,52 @@
+---
+title: 多重検定補正とは | BioLearn
+description: 多重検定補正、補正済みp値、FDR、RNA-seqなどのオミクスFigureでの読み方を説明します。
+---
+
+## 日本語名
+
+多重検定補正
+
+## 英語名
+
+multiple testing correction
+
+## 略語
+
+-
+
+## まず一言でいうと
+
+多重検定補正は、多数の検定を行うと偶然の有意が増えやすくなる問題を調整する考え方です。
+
+## もう少し詳しく
+
+RNA-seqのように多数の遺伝子を同時に調べる解析では、偶然小さいp値を示す候補も増えます。そのため、p値そのものだけでなく、補正済みp値、FDR、q値などを確認します。
+
+多重検定補正は、候補をより慎重に選ぶための統計的な調整です。実験設計、効果量、データ品質、生物学的な意味と合わせて読みます。
+
+## なぜ重要か
+
+Volcano plotやpathway enrichment plotでは、補正済みp値やFDRが頻繁に使われます。補正の有無を確認しないと、候補の強さを読み誤りやすくなります。
+
+## よく混同される用語
+
+- p値: 帰無仮説のもとで結果の珍しさを見る値。
+- 補正済みp値: 多重検定の影響を考慮したp値。
+- FDR: 有意とした候補の中に含まれる誤検出の割合を考える指標。
+
+## 関連する用語
+
+- [p値](/glossary/p-value/)
+- [効果量](/glossary/effect-size/)
+- [差次的発現解析](/glossary/differential-expression-analysis/)
+
+## 関連する教材ページ
+
+- [多重検定補正とは何か](/statistics/multiple-testing-correction/)
+- [Volcano plotの読み方](/figures/how-to-read-volcano-plot/)
+- [Pathway enrichment plotの読み方](/figures/how-to-read-pathway-enrichment/)
+
+## 次に読む記事
+
+[多重検定補正とは何か](/statistics/multiple-testing-correction/) で、オミクスFigureで補正済みp値を見る理由を確認しましょう。

@@ -1,0 +1,116 @@
+---
+title: 多重検定補正とは何か
+description: 多数の検定を行うと偶然の有意が増えやすくなるため、補正が必要になることを説明します。
+part: statistics
+module: inference-and-interpretation
+level: foundation
+priority: P1
+order: 90
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - differential-expression-analysis
+  - multiple-testing-correction
+  - p-value
+prerequisites:
+  - /statistics/p-value/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    '多重検定で偶然の有意が増えやすい理由を説明できる',
+    'adjusted p-valueやFDRの役割を理解する',
+    'RNA-seqやオミクスFigureで補正済みp値を見る理由を説明できる',
+  ]}
+/>
+
+## 要点
+
+多重検定補正は、多数の検定を同時に行うと偶然小さいp値が出やすくなる問題を調整する考え方です。
+
+## 基礎解説
+
+1つの検定だけなら、p値が小さい結果は比較的珍しい出来事として扱えます。しかし、何千、何万もの遺伝子を同時に調べると、偶然小さいp値が出る遺伝子も増えます。
+
+RNA-seqの差次的発現解析では、多数の遺伝子について条件間の差を調べます。そのため、p値そのものだけでなく、補正済みp値やFDRを見ます。
+
+多重検定補正は、すべての誤りをなくす魔法ではありません。候補の絞り込みをより慎重にするための統計的な調整です。生物学的な意味や実験設計と合わせて解釈します。
+
+## なぜ重要か
+
+ボルケーノプロットや発現変動遺伝子リストでは、adjusted p-value、FDR、q-valueなどがよく登場します。これらを理解していないと、オミクス解析のFigureを読み誤りやすくなります。
+
+## Figureで見る場所
+
+多重検定補正は、[Volcano plotの読み方](/figures/how-to-read-volcano-plot/)や[Pathway enrichment plotの読み方](/figures/how-to-read-pathway-enrichment/)で重要です。多数の遺伝子や経路を同時に見ている場合、p値そのものか補正済みp値かを確認します。
+
+## 図解
+
+<LessonFigure
+  src="/figures/multiple-testing-correction-concept.jpg"
+  alt="多数の検定を行うと偶然小さいp値が混ざりやすく、補正して候補を慎重に選ぶ様子を示す概念図"
+  title="多くの検定では偶然の有意も増える"
+  caption="オミクス解析では、多数の遺伝子を同時に調べるため、補正済みp値やFDRを確認します。"
+/>
+
+<TermBox term="多重検定補正" english="multiple testing correction">
+  多数の検定を行うと偶然の有意が増える問題を調整する方法です。
+</TermBox>
+
+## 英語表記と略語
+
+| 日本語名     | 英語名                      | 略語 |
+| ------------ | --------------------------- | ---- |
+| 多重検定補正 | multiple testing correction | -    |
+| 補正済みp値  | adjusted p-value            | -    |
+| 偽発見率     | false discovery rate        | FDR  |
+| q値          | q-value                     | q    |
+
+## よくある誤解
+
+- p値が小さい遺伝子が多いほど、すべてが重要とは限りません。
+- 補正済みp値だけで生物学的な意味が決まるわけではありません。
+- 多重検定補正は、実験設計やデータ品質の問題を解決するものではありません。
+
+## 重要用語
+
+- 多重検定: 多数の仮説検定を同時に行うこと。
+- 補正済みp値: 多重検定の影響を考慮したp値。
+- FDR: 有意とした候補の中に含まれる誤検出の割合を考える指標。
+- 差次的発現解析: 多数の遺伝子の発現差を同時に調べる解析。
+
+<Quiz
+  questions={[
+    {
+      question: '多くの遺伝子を同時に検定すると、なぜ補正が必要になりますか。',
+      answer:
+        '検定回数が増えるほど、偶然小さいp値が出る候補も増えやすいからです。',
+    },
+    {
+      question: 'RNA-seqの結果でadjusted p-valueを見る理由を説明してください。',
+      answer:
+        '多数の遺伝子を同時に検定しているため、多重検定の影響を考慮する必要があるからです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'p値とは何か', href: '/statistics/p-value/' },
+    {
+      title: '差次的発現解析とは何か',
+      href: '/bioinformatics/differential-expression/',
+    },
+    {
+      title: 'Volcano plotの読み方',
+      href: '/figures/how-to-read-volcano-plot/',
+    },
+  ]}
+/>

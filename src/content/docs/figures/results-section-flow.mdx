@@ -1,0 +1,92 @@
+---
+title: Resultsセクションの流れを読む
+description: ResultsセクションでFigureがどの順番で主張を積み上げているかを読む方法を説明します。
+part: figures
+module: figure-synthesis
+level: intermediate
+priority: P1
+order: 112
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - significance-vs-importance
+  - reproducibility
+  - control-group
+prerequisites:
+  - /figures/figure-to-claim/
+  - /papers/how-to-read-results/
+  - /statistics/reproducibility/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'Results内のFigureの並びを研究の流れとして読める',
+    '各Figureがどの問いに答えているか整理できる',
+    '主張の積み上げと飛躍を見分ける視点を持てる',
+  ]}
+/>
+
+## 要点
+
+Resultsセクションでは、Figureが順番に並び、研究の問いから結論へ向けて証拠を積み上げる構造になっていることがあります。
+
+## 基礎解説
+
+論文のResultsは、Figure 1、Figure 2、Figure 3の順に、研究のストーリーを進めるように構成されることが多いです。最初のFigureで現象を示し、次のFigureで仕組みや条件を調べ、さらに別のFigureで検証する、といった流れです。
+
+読むときは、各Figureを単独で見るだけでなく、「このFigureは前のFigureのどの疑問に答えているのか」「次のFigureへどんな問いを渡しているのか」を考えます。
+
+ただし、Figureの並びがきれいでも、証拠が十分とは限りません。各段階で、代替説明が残っていないか、対照や反復があるか、解釈がデータより先に進みすぎていないかを確認します。
+
+## 図解
+
+<LessonFigure
+  src="/figures/results-section-flow-concept.jpg"
+  alt="ResultsセクションでFigure 1からFigure 3へ問いと証拠がつながる流れを示す概念図"
+  title="ResultsはFigureの連なりとして読む"
+  caption="各Figureが答える問い、残る疑問、次のFigureへのつながりを整理します。"
+/>
+
+<TermBox term="Resultsの流れ" english="results flow">
+  Resultsセクションで、複数のFigureや実験結果がどの順番で主張を支えていくかという構造です。
+</TermBox>
+
+## よくある誤解
+
+- Figureを1枚ずつ理解すれば、Results全体の論理も自動的に分かると思う。
+- Figureの順番があるだけで、因果の順番が証明されたと読む。
+- 前のFigureの弱い点が、後のFigureで補われているかを確認しない。
+- Discussionの結論から逆算して、Resultsの証拠を強く読みすぎる。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question:
+        'Results内で各Figureを読むとき、単独の内容以外に確認したいことは何ですか。',
+      answer:
+        '前のFigureからどんな問いを受け取り、次のFigureへどんな疑問を渡しているかを確認します。',
+    },
+    {
+      question: 'Figureの並びがきれいでも注意が必要な理由を説明してください。',
+      answer:
+        'ストーリーとして自然でも、対照、反復、代替説明、実験デザインが十分とは限らないためです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'Figureと主張を対応づける', href: '/figures/figure-to-claim/' },
+    { title: 'Resultsの読み方', href: '/papers/how-to-read-results/' },
+    { title: 'Methodsの読み方', href: '/papers/how-to-read-methods/' },
+  ]}
+/>

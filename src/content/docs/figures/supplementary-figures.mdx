@@ -1,0 +1,101 @@
+---
+title: 補足Figureの読み方
+description: Supplementary Figureで追加検証、対照、詳細データを確認する読み方を説明します。
+part: figures
+module: figure-basics
+level: foundation
+priority: P2
+order: 16
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - control-group
+  - reproducibility
+prerequisites:
+  - /figures/figure-legend/
+  - /figures/multi-panel-figure/
+  - /papers/methods-checklist/
+  - /statistics/limitations/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    '補足Figureの役割を説明できる',
+    '本文Figureと補足Figureを対応づけられる',
+    '追加対照や詳細データを確認する視点を持てる',
+  ]}
+/>
+
+## 要点
+
+補足Figureは、本文Figureを支える追加データ、対照、解析詳細を示すことがあります。
+
+## 基礎解説
+
+Supplementary Figure（補足Figure）は、本文に入りきらない詳細データを示すために使われます。重要でない図という意味ではなく、本文Figureの信頼性や解釈を確認する手がかりになることがあります。
+
+たとえば、代表画像の追加例、別条件での確認、品質管理、対照実験、追加サンプル、解析パラメータの違いなどが補足に置かれることがあります。本文Figureだけを見て分からない疑問があるときは、対応する補足Figureを探します。
+
+読むときは、本文のどの主張やFigureを支えている補足なのかを確認します。補足Figureだけで独立した大きな結論を作るのではなく、本文FigureやMethodsと合わせて読みます。
+
+## 図解
+
+<LessonFigure
+  src="/figures/supplementary-figures-concept.jpg"
+  alt="本文Figureと補足Figureを行き来して追加対照や詳細データを確認する概念図"
+  title="補足Figureは本文Figureを支える情報を確認する"
+  caption="追加対照、品質管理、別条件、詳細データが本文のどの主張を支えているかを見ます。"
+/>
+
+<TermBox term="Supplementary Figure" english="supplementary figure">
+  論文本文とは別に示される補足図です。追加データや詳細な確認を示すことがあります。
+</TermBox>
+
+## よくある誤解
+
+- 補足Figureは重要ではない、と決めつける。
+- 本文Figureとの対応を確認せず、単独の図として読む。
+- 対照実験や品質管理が補足にある可能性を見落とす。
+- 補足Figureだけから、本文にない大きな結論を作ってしまう。
+
+## 前提に戻る
+
+補足Figureは、本文Figureの主張を支える対照、品質管理、追加サンプル、解析条件を確認する場所です。対応する本文Figureを見つけたうえで、[Methods確認チェックリスト](/papers/methods-checklist/) に戻り、何を補っているのかを整理します。
+
+補足に対照や追加検証がある場合は、[対照群](/statistics/control-group/) と [再現性](/statistics/reproducibility/) を確認します。補足Figureだけから本文にない大きな結論を作るのではなく、[研究の限界](/statistics/limitations/) と合わせて主張の範囲を考えます。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question: '補足Figureを見るとき、最初に確認したいことは何ですか。',
+      answer:
+        '本文のどのFigureや主張に対応しているか、何を補足しているかを確認します。',
+    },
+    {
+      question: '補足Figureに置かれることがある情報を2つ挙げてください。',
+      answer:
+        '追加対照、品質管理、別条件、追加サンプル、解析パラメータ、代表画像の追加例などがあります。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'Figure legendの読み方', href: '/figures/figure-legend/' },
+    {
+      title: 'multi-panel Figureの読み方',
+      href: '/figures/multi-panel-figure/',
+    },
+    { title: 'Methodsの読み方', href: '/papers/how-to-read-methods/' },
+    { title: '研究の限界の読み方', href: '/statistics/limitations/' },
+  ]}
+/>

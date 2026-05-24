@@ -1,0 +1,131 @@
+---
+title: 免疫染色とは何か
+description: 免疫染色が抗体を使って細胞や組織内のタンパク質の位置を見る手法であることを説明します。
+part: methods
+module: protein-and-cell-methods
+level: foundation
+priority: P1
+order: 130
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - figure-legend
+  - control-group
+  - biological-technical-replicates
+  - sample-size
+  - protein
+  - cell
+  - methods
+prerequisites:
+  - /fundamentals/protein/
+  - /fundamentals/cell/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    '免疫染色が何を見る実験か説明できる',
+    '抗体、蛍光、局在という考え方を理解する',
+    '免疫染色画像を読むときの注意点を挙げられる',
+  ]}
+/>
+
+## 要点
+
+免疫染色は、抗体を使って細胞や組織の中で特定のタンパク質がどこにあるかを見る実験です。
+
+## 基礎解説
+
+免疫染色では、目的タンパク質を認識する抗体を使い、蛍光や発色によって位置を可視化します。細胞の核、細胞膜、細胞質、細胞小器官など、どこにシグナルがあるかを観察します。
+
+論文では、顕微鏡画像として示されることが多く、条件間でシグナルの強さや局在が変わるかを見ます。画像の明るさや色だけでなく、同じ撮影条件か、陰性対照があるか、何個の細胞や視野を解析したかを確認します。
+
+免疫染色は「ある場所にタンパク質がある可能性」を示す手法です。抗体の特異性、背景シグナル、画像処理の条件が結果に影響するため、MethodsやFigure legendを合わせて読みます。
+
+## なぜ重要か
+
+タンパク質がどこにあるかは、機能を考えるうえで重要です。たとえば転写因子が核に移動する、受容体が細胞膜にある、タンパク質がミトコンドリアに局在する、といった結果はFigureでよく示されます。
+
+## Figureで見る場所
+
+免疫染色Figureでは、代表画像と定量グラフを分けて読みます。
+
+- 代表画像では、シグナルの場所、背景、スケールバー、撮影条件を確認します。
+- 定量グラフでは、細胞数ではなく独立サンプル数や視野数を確認します。
+- 対照では、一次抗体なし、陰性対照、陽性対照、共局在マーカーの有無を確認します。
+- 画像処理では、明るさやコントラストが条件間で同じかを確認します。
+
+画像そのものの読み方は[免疫染色画像](/figures/how-to-read-immunostaining/)と[顕微鏡画像](/figures/how-to-read-microscopy-image/)に進むと整理できます。
+
+## 図解
+
+<LessonFigure
+  src="/figures/immunostaining-concept.jpg"
+  alt="抗体で細胞内の特定タンパク質を蛍光シグナルとして可視化する免疫染色の概念図"
+  title="免疫染色はタンパク質の場所を見る"
+  caption="シグナルの強さだけでなく、どの細胞内領域に見えるか、対照や撮影条件も確認します。"
+/>
+
+<TermBox term="免疫染色" english="immunostaining">
+  抗体を使って、細胞や組織内の特定分子を可視化する実験手法です。
+</TermBox>
+
+## 英語表記と略語
+
+| 日本語名     | 英語名             | 略語 |
+| ------------ | ------------------ | ---- |
+| 免疫染色     | immunostaining     | -    |
+| 免疫蛍光染色 | immunofluorescence | IF   |
+| 抗体         | antibody           | -    |
+| 局在         | localization       | -    |
+
+## よくある誤解
+
+- 明るい画像ほど必ず発現が高いとは限りません。撮影条件や画像処理を確認します。
+- シグナルが見えるだけで、抗体が完全に特異的とは限りません。
+- 代表画像だけでは、ばらつきや再現性は分かりません。
+
+## 重要用語
+
+- 抗体: 特定のタンパク質を認識する分子。
+- 蛍光シグナル: 蛍光色素によって可視化された信号。
+- 局在: 分子が細胞内や組織内のどこにあるか。
+- 陰性対照: 非特異的なシグナルを確認するための対照。
+- [反復](/glossary/biological-technical-replicates/): 複数のサンプル、視野、細胞で同じ傾向が見えるかを確認する考え方。
+- [Figure legend](/glossary/figure-legend/): 抗体、染色条件、スケールバー、定量方法を確認する説明文。
+
+<Quiz
+  questions={[
+    {
+      question: '免疫染色で「局在」を見るとは何を確認することですか。',
+      answer:
+        '目的タンパク質が核、細胞膜、細胞質、細胞小器官など、どこにあるかを確認することです。',
+    },
+    {
+      question:
+        '免疫染色画像を読むとき、明るさ以外に確認したいことを一つ挙げてください。',
+      answer:
+        '対照、撮影条件、抗体、解析した細胞数や視野数、画像処理条件などがあります。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: '細胞小器官とは何か', href: '/cell-biology/organelles/' },
+    {
+      title: '免疫染色画像の読み方',
+      href: '/figures/how-to-read-immunostaining/',
+    },
+    {
+      title: '顕微鏡画像の読み方',
+      href: '/figures/how-to-read-microscopy-image/',
+    },
+  ]}
+/>

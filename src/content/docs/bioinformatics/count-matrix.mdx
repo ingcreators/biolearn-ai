@@ -1,0 +1,99 @@
+---
+title: カウント行列とは何か
+description: RNA-seqやsingle-cell RNA-seqで使うカウント行列を、細胞またはサンプルと遺伝子の表として説明します。
+part: bioinformatics
+module: single-cell-analysis
+level: foundation
+priority: P1
+order: 42
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - count-matrix
+  - single-cell-rna-seq
+  - rna-seq
+prerequisites:
+  - /bioinformatics/rna-seq/
+  - /bioinformatics/single-cell-rna-seq/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'カウント行列が何を表す表か説明できる',
+    'bulk RNA-seqとsingle-cell RNA-seqで行列の単位が変わることを理解する',
+    'カウントをそのまま比較しない理由を説明できる',
+  ]}
+/>
+
+## 要点
+
+カウント行列は、遺伝子ごとに観測されたリードや分子の数を、サンプルまたは細胞ごとに並べた表です。
+
+## 基礎解説
+
+RNA-seq解析では、シーケンサーから得られたリードを遺伝子や転写産物に対応づけ、遺伝子ごとの数を数えます。この数を表にしたものがカウント行列です。
+
+bulk RNA-seqでは、列がサンプル、行が遺伝子になることが多いです。single-cell RNA-seqでは、列が細胞、行が遺伝子になることが多く、非常に大きく、値が0の多い表になります。
+
+カウントは解析の出発点ですが、そのまま発現量として単純比較するものではありません。サンプルごとの総リード数、細胞ごとの検出効率、遺伝子長、技術的なばらつきなどの影響を受けるため、正規化や品質管理とセットで扱います。
+
+## 図解
+
+<LessonFigure
+  src="/figures/count-matrix-concept.jpg"
+  alt="遺伝子を行、細胞またはサンプルを列にしたカウント行列の概念図"
+  title="カウント行列は遺伝子と細胞・サンプルの表"
+  caption="RNA-seqやsingle-cell解析では、この表を出発点に正規化、次元削減、クラスタリングへ進みます。"
+/>
+
+<TermBox term="カウント行列" english="count matrix">
+  遺伝子ごとの観測数を、サンプルまたは細胞ごとに並べた表です。
+</TermBox>
+
+## よくある誤解
+
+- カウントが大きい遺伝子を、常に発現が高いと単純に読む。
+- 0が多いことを、必ずその遺伝子が全く発現していない証拠だと考える。
+- カウント行列の単位がサンプルなのか細胞なのかを確認しない。
+- 正規化や品質管理の前後を区別せずに図を読む。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question:
+        'single-cell RNA-seqのカウント行列で、列は何を表すことが多いですか。',
+      answer: '1つ1つの細胞を表すことが多いです。',
+    },
+    {
+      question: 'カウントをそのまま単純比較しにくい理由を説明してください。',
+      answer:
+        '総リード数、検出効率、細胞品質、遺伝子長、技術的ばらつきなどの影響を受けるためです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    {
+      title: 'single-cell RNA-seqとは何か',
+      href: '/bioinformatics/single-cell-rna-seq/',
+    },
+    {
+      title: 'single-cell QCとは何か',
+      href: '/bioinformatics/single-cell-quality-control/',
+    },
+    {
+      title: '差次的発現解析とは何か',
+      href: '/bioinformatics/differential-expression/',
+    },
+  ]}
+/>

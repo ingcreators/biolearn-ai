@@ -1,0 +1,128 @@
+---
+title: Western blotとは何か
+description: Western blotが特定のタンパク質を抗体で検出する実験手法であることを説明します。
+part: methods
+module: protein-and-cell-methods
+level: foundation
+priority: P1
+order: 110
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - figure-legend
+  - control-group
+  - biological-technical-replicates
+  - sample-size
+  - protein
+  - gene-expression
+  - methods
+prerequisites:
+  - /fundamentals/protein/
+  - /methods/control/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'Western blotが何を測る実験か説明できる',
+    'バンド、抗体、ローディングコントロールの役割を理解する',
+    'Western blot Figureを読む前に確認する条件を挙げられる',
+  ]}
+/>
+
+## 要点
+
+Western blotは、特定のタンパク質を抗体で検出し、条件間で量や修飾の違いを見る実験です。
+
+## 基礎解説
+
+Western blotでは、サンプル中のタンパク質を大きさで分け、膜に移してから抗体で目的タンパク質を検出します。検出されたタンパク質は、バンドとして表示されます。
+
+バンドの位置は分子量の手がかりになり、バンドの濃さは量の目安になります。ただし、濃さだけで結論を出すのではなく、サンプル量、抗体の特異性、露光条件、ローディングコントロールを確認します。
+
+ローディングコントロールは、各レーンに入ったサンプル量の違いを補正するための基準です。代表的な画像だけでなく、複数の独立実験と定量結果が示されているかも重要です。
+
+## なぜ重要か
+
+Western blotは、RNAや遺伝子発現の変化がタンパク質レベルでも見えるかを確認する場面でよく使われます。また、リン酸化などのタンパク質修飾を見るFigureにも登場します。
+
+## 図解
+
+<LessonFigure
+  src="/figures/western-blot-concept.jpg"
+  alt="Western blotでタンパク質をバンドとして検出し、定量グラフへつなげる流れを示す概念図"
+  title="Western blotは特定のタンパク質をバンドとして検出する"
+  caption="目的タンパク質のバンドを、ローディングコントロールや定量結果と合わせて読みます。"
+/>
+
+<TermBox term="Western blot" english="Western blot">
+  特定のタンパク質を抗体で検出する実験手法です。
+</TermBox>
+
+## 英語表記と略語
+
+| 日本語名                 | 英語名                  | 略語 |
+| ------------------------ | ----------------------- | ---- |
+| ウェスタンブロット       | Western blot            | WB   |
+| 抗体                     | antibody                | -    |
+| ローディングコントロール | loading control         | -    |
+| 分子量マーカー           | molecular weight marker | -    |
+
+## よくある誤解
+
+- バンドが濃いだけで、すぐにタンパク質量が増えたと断定はできません。
+- ローディングコントロールが安定していないと、目的バンドの比較も不安定になります。
+- 抗体が目的タンパク質だけを検出しているかは、条件や検証に依存します。
+
+## 重要用語
+
+- バンド: 検出されたタンパク質の位置と量を示す帯。
+- 抗体: 特定のタンパク質を認識する分子。
+- ローディングコントロール: サンプル量の違いを補正する基準。
+- 分子量: タンパク質の大きさの目安。
+- [対照群](/glossary/control-group/): バンドの変化を解釈するための比較基準。
+- [反復](/glossary/biological-technical-replicates/): バンドの差が独立したサンプルで再現されるかを見る考え方。
+- [Figure legend](/glossary/figure-legend/): 抗体、補正方法、n数、統計表示を確認する説明文。
+
+<Quiz
+  questions={[
+    {
+      question:
+        'Western blotでローディングコントロールを見る理由を説明してください。',
+      answer:
+        '各レーンのサンプル量や検出条件の違いを補正して比較するためです。',
+    },
+    {
+      question: 'バンドの濃さだけで結論を出しにくい理由を一つ挙げてください。',
+      answer:
+        'サンプル量、露光、抗体の特異性、補正方法などの影響を受けるためです。',
+    },
+    {
+      question:
+        'Western blotのFigure legendで確認したい情報を2つ挙げてください。',
+      answer:
+        '抗体、ローディングコントロール、補正方法、n数、統計表示、露光条件などがあります。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    {
+      title: 'ローディングコントロールとは何か',
+      href: '/methods/loading-control/',
+    },
+    {
+      title: 'Western blotの読み方',
+      href: '/figures/how-to-read-western-blot/',
+    },
+    { title: 'タンパク質とは何か', href: '/fundamentals/protein/' },
+    { title: '対照群とは何か', href: '/methods/control/' },
+  ]}
+/>

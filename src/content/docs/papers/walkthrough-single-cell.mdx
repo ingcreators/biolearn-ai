@@ -1,0 +1,204 @@
+---
+title: '論文読解演習: single-cell解析論文'
+description: 架空のsingle-cell解析論文を題材に、UMAP、クラスタ、マーカー遺伝子、差次的発現、Methodsを行き来して読む練習をします。
+part: papers
+module: paper-walkthrough
+level: intermediate
+priority: P1
+order: 310
+learningPaths:
+  - paper-reading
+relatedTerms:
+  - single-cell-rna-seq
+  - umap
+  - marker-gene
+  - batch-effect
+  - confounding
+prerequisites:
+  - /bioinformatics/rna-seq/
+  - /bioinformatics/batch-effect/
+  - /figures/how-to-read-umap-tsne/
+  - /papers/critical-reading/
+  - /statistics/confounding/
+  - /statistics/limitations/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'single-cell解析論文でUMAPとクラスタを読む順番を説明できる',
+    'マーカー遺伝子、細胞型注釈、差次的発現を区別できる',
+    'Methodsで確認すべき前処理と解析条件を挙げられる',
+  ]}
+/>
+
+## 要点
+
+この演習では、実在論文ではなくBioLearn用の架空ケースを使い、single-cell解析論文を読む手順を練習します。
+
+## 架空ケース
+
+ある研究では、条件Aと条件Bの細胞を[single-cell RNA-seq](/glossary/single-cell-rna-seq/)で解析し、細胞集団の構成と[遺伝子発現](/glossary/gene-expression/)の違いを調べたとします。論文の主張は「条件Bでは特定の細胞集団が増え、その集団で応答関連遺伝子が高い」です。
+
+この主張を読むときは、[UMAP](/glossary/umap/)の見た目だけで結論を受け取らず、クラスタ、細胞型注釈、[マーカー遺伝子](/glossary/marker-gene/)、条件ごとの細胞数、差次的発現、Methodsの前処理を順に確認します。
+
+## 図解
+
+<LessonFigure
+  src="/figures/walkthrough-single-cell-concept.jpg"
+  alt="single-cell解析論文でUMAP、クラスタ、マーカー遺伝子、条件比較、Methodsを順に確認する概念図"
+  title="single-cell解析論文はクラスタの意味と条件差を分けて読む"
+  caption="UMAPの形、クラスタ名、マーカー、条件ごとの細胞割合、差次的発現、前処理条件を行き来して確認します。"
+/>
+
+<TermBox
+  term="single-cell RNA-seq"
+  english="single-cell RNA sequencing"
+  abbreviation="scRNA-seq"
+>
+  1細胞ごとのRNA量を測定し、細胞集団の違いや遺伝子発現のばらつきを調べる解析です。
+</TermBox>
+
+## 読む順番
+
+1. Abstractで、サンプル、条件、主な結論を拾います。
+2. UMAPで、クラスタ数、条件ごとの重なり、外れた集団の有無を確認します。
+3. マーカー遺伝子の図で、クラスタ名の根拠を確認します。
+4. 条件ごとの細胞割合を見て、集団の増減が示されているかを確認します。
+5. 差次的発現やpathway enrichmentで、主張に使われた遺伝子群を確認します。
+6. Methodsで、細胞フィルタ、正規化、[バッチ効果](/glossary/batch-effect/)の扱い、[クラスタリング](/glossary/clustering/)条件、細胞型注釈の方法を確認します。
+
+## Methodsで確認すること
+
+| 項目           | 確認すること                                |
+| -------------- | ------------------------------------------- |
+| サンプル       | 条件ごとの個体数、細胞数、取得条件          |
+| 品質管理       | 低品質細胞、ミトコンドリア比率、doublet処理 |
+| 正規化         | 発現量の正規化、スケーリング、特徴量選択    |
+| バッチ補正     | サンプル差や実験日の影響をどう扱ったか      |
+| クラスタリング | 解像度、近傍グラフ、クラスタ名の根拠        |
+| 比較解析       | 細胞単位かサンプル単位か、統計上の扱い      |
+
+## 限界を読むポイント
+
+single-cell解析では、細胞数が多く見えても、独立したサンプル数が少ないことがあります。細胞を大量に測っていることと、生物学的な反復が十分であることは同じではありません。
+
+- UMAPやt-SNEの距離は、細胞系譜や因果関係を直接示すものではありません。
+- クラスタ名は、marker gene、参照データ、著者の解釈に依存します。
+- バッチ補正は必要なことが多い一方で、補正によって構造が変わる場合があります。
+- 条件比較では、細胞数ではなくサンプル単位の反復がどれだけあるかを確認します。
+- 細胞割合の変化は、採取条件、品質管理、細胞回収の偏りの影響を受けることがあります。
+- 発現差やクラスタの違いだけでは、疾患機序や医療上の効果を直接示したことにはなりません。
+
+Figureが魅力的に見えるほど、Methodsに戻ってサンプル、対照、バッチ、解析単位を確認します。結論は、表示された細胞の数ではなく、独立したサンプルと検証の強さに合わせて読みます。
+
+## 3段階で読む演習
+
+### 1. Methodsで確認する
+
+single-cell論文では、細胞数だけでなく、独立したサンプルの数と処理の流れを確認します。
+
+- 条件ごとの個体数、サンプル数、細胞数が分けて示されているか。
+- QCで除外した細胞、低品質細胞、ダブレットの基準が書かれているか。
+- バッチ補正や統合解析の方法が、条件差を消しすぎない形で説明されているか。
+- クラスタリングの解像度と、細胞型アノテーションの根拠が示されているか。
+- 統計比較の単位が、細胞なのかサンプルなのかを確認できるか。
+
+細胞数が多く見えても、独立サンプルが少ない場合は、結論を控えめに読む必要があります。
+
+### 2. Figureで確認する
+
+次に、UMAPやマーカー遺伝子の図を、結論の種類ごとに読み分けます。
+
+- UMAPでは、クラスタの位置よりも、条件ごとの混ざり方と外れた集団を見る。
+- Marker plotでは、細胞型名がどの遺伝子に基づいているかを確認する。
+- 細胞割合の棒グラフでは、細胞数だけでなくサンプル単位のばらつきを見る。
+- クラスタ別DEGや経路解析では、比較対象と多重検定補正を確認する。
+
+UMAPは強い印象を与えますが、それだけで細胞状態の原因や機能を決める図ではありません。
+
+### 3. Discussionで言える範囲に戻す
+
+Figureから言いやすいのは、「条件Bで特定の細胞集団が多く見える」「特定クラスタで関連遺伝子の発現が高い」という範囲です。
+
+一方で、「細胞運命が直接変わった」「疾患や治療に直結する」といった表現は、追加の機能実験や独立検証が必要です。Discussionでは、細胞集団、発現変化、機能解釈が混ざっていないかを確認します。
+
+### 自分で答える問い
+
+- この論文の中心的な主張は、細胞割合の変化か、遺伝子発現の変化か。
+- その主張はサンプル単位で再現性を確認できるか。
+- UMAPの見た目だけでなく、どの補助Figureが結論を支えているか。
+
+## よくある誤解
+
+- UMAP上で距離が近いだけで、細胞状態が連続的につながっていると読む。
+- クラスタ名を、マーカー遺伝子の確認なしに受け入れる。
+- 細胞数が多い条件を、個体差やサンプル差を見ずに生物学的増加と読む。
+- single-cell解析の差次的発現を、Methodsの統計単位を確認せずに読む。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question:
+        'single-cell解析論文でクラスタ名の根拠として確認したいものを挙げてください。',
+      answer:
+        'マーカー遺伝子の発現、既知の細胞型マーカー、クラスタごとの発現パターン、注釈方法、本文やMethodsの説明などです。',
+    },
+    {
+      question:
+        '条件ごとの細胞割合を見るとき、細胞数だけで判断しない方がよい理由を説明してください。',
+      answer:
+        'サンプルごとの細胞取得数、個体差、前処理、フィルタ条件、バッチなどが細胞割合に影響するためです。',
+    },
+    {
+      question:
+        'single-cell論文のMethodsで、細胞数とは別に確認したいサンプル情報を挙げてください。',
+      answer:
+        '条件ごとの個体数、独立サンプル数、サンプル由来、処理日、QCで除外した細胞数などです。',
+    },
+    {
+      question:
+        'UMAPを見て「細胞状態が連続的に変化している」と読む前に確認したいことを挙げてください。',
+      answer:
+        'クラスタリング方法、バッチ補正、マーカー遺伝子、サンプルごとの分布、別の解析や定量結果との整合を確認します。',
+    },
+    {
+      question:
+        '「条件Bで細胞運命が変わった」という表現を、Figureから直接言いやすい表現に言い換えてください。',
+      answer:
+        '条件Bで特定の細胞集団が多く見える、または特定クラスタで関連遺伝子の発現が高い、という範囲に戻します。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    {
+      title: '次の演習: Western blotを含む論文',
+      href: '/papers/walkthrough-western-blot/',
+    },
+    {
+      title: '前の演習: RNA-seq論文',
+      href: '/papers/walkthrough-rna-seq/',
+    },
+    { title: 'RNA-seqとは何か', href: '/bioinformatics/rna-seq/' },
+    {
+      title: 'UMAP/t-SNE図の読み方',
+      href: '/figures/how-to-read-umap-tsne/',
+    },
+    {
+      title: '用語: single-cell RNA-seq',
+      href: '/glossary/single-cell-rna-seq/',
+    },
+    { title: '批判的に読む', href: '/papers/critical-reading/' },
+    { title: '交絡', href: '/statistics/confounding/' },
+    { title: '論文読解演習トップ', href: '/papers/' },
+  ]}
+/>

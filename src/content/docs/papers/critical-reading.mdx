@@ -1,0 +1,114 @@
+---
+title: 論文を批判的に読む
+description: 論文の主張を否定するのではなく、証拠、限界、代替説明、再現性を確認しながら読む方法を説明します。
+part: papers
+module: reading-workflow
+level: intermediate
+priority: P1
+order: 100
+learningPaths:
+  - paper-reading
+relatedTerms:
+  - claim
+  - evidence
+  - limitation
+  - bias
+  - confounding
+  - reproducibility
+prerequisites:
+  - /figures/figure-to-claim/
+  - /papers/methods-checklist/
+  - /statistics/bias/
+  - /statistics/confounding/
+  - /statistics/reproducibility/
+  - /statistics/limitations/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    '批判的に読むことの意味を説明できる',
+    '主張、証拠、限界、代替説明を分けて整理できる',
+    '強い結論をFigureとMethodsに戻して確認できる',
+  ]}
+/>
+
+## 要点
+
+批判的に読むとは、論文を否定的に読むことではありません。主張がどの証拠に支えられ、どこに限界があるかを確かめながら読むことです。
+
+## 基礎解説
+
+論文には、データから直接言えること、著者の解釈、今後の仮説が混ざっています。批判的に読むときは、まず本文の主張をFigureやMethodsに戻し、証拠の強さを確認します。
+
+次に、代替説明を考えます。サンプルの偏り、対照の不足、反復の少なさ、解析方法の選び方、別の解釈などが残っていないかを見ます。
+
+批判的に読むことは、論文の価値を下げるためではありません。どこまで分かったと言えるのか、次に何を確認すべきかを明確にするための読み方です。
+
+## 限界を読むチェック項目
+
+論文の限界は、Discussionだけに書かれているとは限りません。Methods、Figure、統計解析、Supplementary informationを行き来しながら確認します。
+
+| 観点     | 確認すること                                            | 読み方                                 |
+| -------- | ------------------------------------------------------- | -------------------------------------- |
+| サンプル | 対象、数、条件、由来が主張に合っているか                | その結果をどこまで一般化できるかを見る |
+| 対照     | 陽性対照、陰性対照、vehicle、未処理条件があるか         | 変化が実験操作によるものかを確かめる   |
+| 反復     | biological replicateとtechnical replicateの区別があるか | 再現性をどの単位で見ているかを確認する |
+| 交絡     | 第三の要因、バッチ、条件差が混ざっていないか            | 相関を因果として読んでいないかを見る   |
+| 統計     | p値、効果量、信頼区間、多重検定補正が適切か             | 有意差だけでなく変化の大きさを見る     |
+| 一般化   | 結論がデータの範囲を超えていないか                      | 「この実験では言えること」に戻して読む |
+
+バイアス、交絡、再現性、研究の限界は、同じ主張を別角度から点検するための読み方です。結論を否定するためではなく、結論の強さと範囲を見積もるために使います。
+
+## 図解
+
+<LessonFigure
+  src="/figures/critical-reading-concept.jpg"
+  alt="論文の主張をFigure、Methods、限界、代替説明に戻して確認する概念図"
+  title="批判的読解は主張と証拠の距離を見る"
+  caption="主張をFigureとMethodsに戻し、限界や代替説明が残っていないかを確認します。"
+/>
+
+<TermBox term="批判的読解" english="critical reading">
+  主張、証拠、限界、代替説明を分けて確認しながら読む方法です。
+</TermBox>
+
+## よくある誤解
+
+- 批判的に読むことは、論文を否定することだと思う。
+- p値が小さければ、主張は十分に強いと考える。
+- Discussionの解釈を、Resultsで直接示された事実と同じ強さで読む。
+- Methodsの前提を確認せず、Figureの見た目だけで判断する。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question: '批判的に読むとき、主張の次に確認したいものは何ですか。',
+      answer:
+        'その主張を支えるFigure、Results、Methods、対照、反復、統計表示などです。',
+    },
+    {
+      question: '代替説明を考える理由を説明してください。',
+      answer:
+        '観察された結果が、著者の解釈以外の要因でも説明できる可能性があるためです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'Figureと主張を対応づける', href: '/figures/figure-to-claim/' },
+    { title: 'Methods確認チェックリスト', href: '/papers/methods-checklist/' },
+    {
+      title: '研究の限界の読み方',
+      href: '/statistics/limitations/',
+    },
+  ]}
+/>

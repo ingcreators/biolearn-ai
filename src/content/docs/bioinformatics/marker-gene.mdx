@@ -1,0 +1,100 @@
+---
+title: マーカー遺伝子とは何か
+description: マーカー遺伝子を、特定の細胞型や状態を見分ける手がかりになる遺伝子として説明します。
+part: bioinformatics
+module: single-cell-analysis
+level: intermediate
+priority: P1
+order: 49
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - marker-gene
+  - clustering
+  - gene
+prerequisites:
+  - /molecular-biology/gene-expression/
+  - /bioinformatics/clustering/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'マーカー遺伝子が細胞型や状態を見分ける手がかりだと説明できる',
+    '1つの遺伝子だけで細胞型を断定しない理由を理解する',
+    '細胞タイプ注釈でマーカーを確認する観点を説明できる',
+  ]}
+/>
+
+## 要点
+
+マーカー遺伝子は、特定の細胞型や細胞状態で特徴的に発現する遺伝子です。
+
+## 基礎解説
+
+single-cell解析では、クラスタに細胞型名を付けるとき、各クラスタで高く発現する遺伝子を確認します。既知の細胞型に特徴的な遺伝子が高ければ、そのクラスタをその細胞型として解釈する手がかりになります。
+
+ただし、マーカー遺伝子は文脈依存です。ある組織では有用なマーカーでも、別の組織や状態では別の意味を持つことがあります。また、1つの遺伝子だけで細胞型を確定するのではなく、複数のマーカー、発現パターン、参考データ、Methodsの注釈方法を合わせて読みます。
+
+論文では、Feature plot、Dot plot、ヒートマップ、表などでマーカー遺伝子が示されます。図を見るときは、どのクラスタで高いか、発現している細胞の割合はどれくらいか、条件差と細胞型差が混ざっていないかを確認します。
+
+## 図解
+
+<LessonFigure
+  src="/figures/marker-gene-concept.jpg"
+  alt="クラスタごとに異なるマーカー遺伝子発現を確認して細胞型注釈の根拠にする概念図"
+  title="マーカー遺伝子は細胞型注釈の手がかり"
+  caption="複数のマーカーと発現パターンを見て、クラスタ名の根拠を確認します。"
+/>
+
+<TermBox term="マーカー遺伝子" english="marker gene">
+  特定の細胞型や状態を見分ける手がかりとして使われる遺伝子です。
+</TermBox>
+
+## よくある誤解
+
+- 1つのマーカーが高ければ、細胞型が確定すると考える。
+- マーカー遺伝子の文脈依存性を見落とす。
+- 発現量の高さだけを見て、発現している細胞の割合を確認しない。
+- 条件による発現変化を、細胞型そのものの違いと混同する。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question:
+        '細胞タイプ注釈で複数のマーカー遺伝子を見る理由を説明してください。',
+      answer:
+        '1つの遺伝子だけでは文脈依存性や状態差の影響を受けるため、複数の根拠で細胞型名を確認する必要があるからです。',
+    },
+    {
+      question: 'マーカー遺伝子のFigureで確認したい点を2つ挙げてください。',
+      answer:
+        'どのクラスタで高いか、発現している細胞の割合、複数マーカーの一致、条件差との混同、注釈方法などです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    {
+      title: '細胞タイプ注釈とは何か',
+      href: '/bioinformatics/cell-type-annotation/',
+    },
+    {
+      title: 'UMAPとは何か',
+      href: '/bioinformatics/umap/',
+    },
+    {
+      title: 'ヒートマップの読み方',
+      href: '/figures/how-to-read-heatmap/',
+    },
+  ]}
+/>

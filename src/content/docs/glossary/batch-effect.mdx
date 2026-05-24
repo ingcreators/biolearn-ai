@@ -1,0 +1,53 @@
+---
+title: バッチ効果とは | BioLearn
+description: バッチ効果の意味、実験日、試薬、測定機器、single-cell解析との関係を説明します。
+---
+
+## 日本語名
+
+バッチ効果
+
+## 英語名
+
+batch effect
+
+## 略語
+
+-
+
+## まず一言でいうと
+
+バッチ効果は、実験日、試薬、機器などの技術的な違いによって生じるデータの差です。
+
+## もう少し詳しく
+
+生命科学データでは、生物学的な違いだけでなく、測定した日、担当者、試薬ロット、装置、データ処理の違いによって値が変わることがあります。このような技術的な差をバッチ効果と呼びます。
+
+[single-cell RNA-seq](/glossary/single-cell-rna-seq/)では、サンプルや実験日の違いがUMAPやクラスタに現れることがあります。バッチ効果を完全になくすというより、実験設計と解析でどの程度扱えているかを確認します。
+
+## なぜ重要か
+
+バッチ効果を生物学的な差として読んでしまうと、Figureの解釈を誤る可能性があります。論文では、サンプルの割り付け、反復、QC、補正方法、補正後の確認を合わせて読みます。
+
+## よく混同される用語
+
+- 生物学的差: 条件や細胞状態など、研究対象としての違い。
+- 技術的反復: 測定や処理のばらつきを見るための反復。
+- [single-cell QC](/glossary/single-cell-quality-control/): 低品質細胞などを確認する工程。
+
+## 関連する用語
+
+- [single-cell RNA-seq](/glossary/single-cell-rna-seq/)
+- [UMAP](/glossary/umap/)
+- [クラスタリング](/glossary/clustering/)
+- [バイオインフォマティクス](/glossary/bioinformatics/)
+
+## 関連する教材ページ
+
+- [バッチ効果とは何か](/bioinformatics/batch-effect/)
+- [生物学的反復と技術的反復とは何か](/statistics/biological-technical-replicates/)
+- [UMAPとは何か](/bioinformatics/umap/)
+
+## 次に読む記事
+
+[バッチ効果とは何か](/bioinformatics/batch-effect/) で、解析結果を読むときの注意点をもう少し詳しく確認しましょう。

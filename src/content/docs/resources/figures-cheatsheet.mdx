@@ -1,0 +1,97 @@
+---
+title: Figure早見表
+description: 生命科学論文の Figure を読むときに確認する点をまとめた早見表です。
+---
+
+Figure を読むときは、図の種類にかかわらず、まず軸、条件、サンプル数、ばらつき、コントロール、統計表示を確認します。図だけで結論を決めず、Figure legend、Results、Methodsへ戻ります。
+
+このページは、Figureを読んでいる途中で確認点を思い出すための早見表です。オミクス解析そのものの前提を学びたい場合は [バイオインフォマティクス](/bioinformatics/) へ戻ります。
+
+## このページの役割
+
+このページは、Figureを見ながら確認点を短く拾うための参照ページです。統計や研究デザインを概念から学び直したい場合は [統計・研究デザイン](/statistics/) へ戻ります。
+
+| したいこと                            | 使う場所                                           |
+| ------------------------------------- | -------------------------------------------------- |
+| 図の種類ごとの確認点を思い出す        | このページ                                         |
+| p値、効果量、エラーバーなどを学び直す | [統計・研究デザイン](/statistics/)                 |
+| Figureの種類から個別記事を探す        | [論文Figureの読み方](/figures/)                    |
+| Figure読解を順番に練習する            | [Figureを読めるようになる](/paths/figure-reading/) |
+| Methodsや実験条件へ戻る               | [実験手法早見表](/resources/methods-cheatsheet/)   |
+
+## 共通して確認すること
+
+| 見る場所      | 確認すること                       | 関連記事                                         |
+| ------------- | ---------------------------------- | ------------------------------------------------ |
+| Figure legend | 条件、反復、統計検定、略語         | [Figure legendの読み方](/figures/figure-legend/) |
+| 軸・単位      | 何を、どの単位で比べているか       | [軸ラベルと単位](/figures/axis-label-unit/)      |
+| 複数パネル    | パネル間の関係、代表図と定量の対応 | [複数パネルFigure](/figures/multi-panel-figure/) |
+| 主張との対応  | 図から言える範囲と言えない範囲     | [Figureと主張](/figures/figure-to-claim/)        |
+
+## 基本グラフ
+
+| Figure       | 確認すること                 | 関連記事                                                 |
+| ------------ | ---------------------------- | -------------------------------------------------------- |
+| 棒グラフ     | 軸、平均、ばらつき、n数      | [棒グラフの読み方](/figures/how-to-read-bar-plot/)       |
+| 箱ひげ図     | 中央値、四分位範囲、外れ値   | [箱ひげ図の読み方](/figures/how-to-read-box-plot/)       |
+| Violin plot  | 分布の形、中央値、群間の違い | [Violin plotの読み方](/figures/how-to-read-violin-plot/) |
+| 散布図       | 点の単位、外れ値、相関       | [散布図の読み方](/figures/how-to-read-scatter-plot/)     |
+| 相関図       | 相関係数、線形性、群の混在   | [相関図の読み方](/figures/how-to-read-correlation-plot/) |
+| ROC曲線      | 感度、特異度、AUC            | [ROC曲線の読み方](/figures/how-to-read-roc-curve/)       |
+| Forest plot  | 効果量、信頼区間、重み       | [Forest plotの読み方](/figures/how-to-read-forest-plot/) |
+| Kaplan-Meier | 時間、イベント、打ち切り     | [Kaplan-Meier曲線](/figures/how-to-read-kaplan-meier/)   |
+
+## 統計表示で迷ったら
+
+| Figureで見える表示   | まず確認すること                           | 戻るページ                                                                                                                |
+| -------------------- | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------- |
+| 平均、中央値、外れ値 | 代表値だけでなく、分布の形と点の単位を見る | [分布](/statistics/distribution/)、[平均と中央値](/statistics/mean-median/)                                               |
+| n数、反復、点の数    | 何を1つとして数えているかを確認する        | [n数](/statistics/sample-size/)、[生物学的反復と技術的反復](/statistics/biological-technical-replicates/)                 |
+| エラーバー、範囲     | SD、SEM、信頼区間のどれかを見る            | [エラーバー](/statistics/error-bars/)、[信頼区間](/statistics/confidence-interval/)                                       |
+| p値、星印、FDR       | 有意差の有無と効果の大きさを分ける         | [p値](/statistics/p-value/)、[効果量](/statistics/effect-size/)、[多重検定補正](/statistics/multiple-testing-correction/) |
+| 相関係数、近似線     | 相関を因果として読みすぎない               | [相関と因果](/statistics/correlation-causation/)、[交絡](/statistics/confounding/)                                        |
+| 結論の強さ           | バイアス、再現性、限界を確認する           | [バイアス](/statistics/bias/)、[再現性](/statistics/reproducibility/)、[研究の限界](/statistics/limitations/)             |
+
+## 実験・画像Figure
+
+| Figure               | 確認すること                             | 関連記事                                                           |
+| -------------------- | ---------------------------------------- | ------------------------------------------------------------------ |
+| qPCRプロット         | Ct値、相対発現量、対照遺伝子             | [qPCRプロットの読み方](/figures/how-to-read-qpcr-plot/)            |
+| Western blot         | バンド、分子量、ローディングコントロール | [Western blotの読み方](/figures/how-to-read-western-blot/)         |
+| 免疫染色画像         | 局在、抗体、対照、撮影条件               | [免疫染色画像の読み方](/figures/how-to-read-immunostaining/)       |
+| 顕微鏡画像           | スケールバー、代表性、画像処理           | [顕微鏡画像の読み方](/figures/how-to-read-microscopy-image/)       |
+| フローサイトメトリー | ゲート、軸、対照、細胞集団               | [フローサイトメトリーFigure](/figures/how-to-read-flow-cytometry/) |
+
+## オミクス・ゲノムFigure
+
+| Figure             | 確認すること                     | 関連記事                                                       |
+| ------------------ | -------------------------------- | -------------------------------------------------------------- |
+| Volcano plot       | fold change、p値、多重検定       | [Volcano plotの読み方](/figures/how-to-read-volcano-plot/)     |
+| ヒートマップ       | 行・列、色の意味、クラスタ       | [ヒートマップの読み方](/figures/how-to-read-heatmap/)          |
+| PCA plot           | PC軸、サンプルのまとまり、外れ値 | [PCA plotの読み方](/figures/how-to-read-pca-plot/)             |
+| UMAP・t-SNE        | クラスタ、距離の解釈、ラベル     | [UMAP・t-SNEの読み方](/figures/how-to-read-umap-tsne/)         |
+| GSEA plot          | enrichment score、方向、多重検定 | [GSEA plotの読み方](/figures/how-to-read-gsea-plot/)           |
+| Pathway enrichment | 経路名、遺伝子集合、補正p値      | [Pathway enrichment](/figures/how-to-read-pathway-enrichment/) |
+| Genome browser     | 座標、トラック、リードやピーク   | [Genome browserの読み方](/figures/how-to-read-genome-browser/) |
+| Lollipop plot      | 変異位置、ドメイン、頻度         | [Lollipop plotの読み方](/figures/how-to-read-lollipop-plot/)   |
+| CNV plot           | コピー数、ゲノム領域、基準線     | [CNV plotの読み方](/figures/how-to-read-cnv-plot/)             |
+
+| 前提で迷ったこと              | 戻る場所                                                                                                                                                             |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| RNA-seqや発現量の意味         | [RNA-seq](/bioinformatics/rna-seq/)、[遺伝子発現](/molecular-biology/gene-expression/)                                                                               |
+| Volcano plotやGSEAの解析条件  | [差次的発現解析](/bioinformatics/differential-expression/)、[多重検定補正](/statistics/multiple-testing-correction/)                                                 |
+| PCA、UMAP、クラスタの意味     | [次元削減](/bioinformatics/dimensionality-reduction/)、[クラスタリング](/bioinformatics/clustering/)、[UMAP](/bioinformatics/umap/)                                  |
+| single-cellの細胞型やマーカー | [single-cell RNA-seq](/bioinformatics/single-cell-rna-seq/)、[マーカー遺伝子](/bioinformatics/marker-gene/)、[細胞タイプ注釈](/bioinformatics/cell-type-annotation/) |
+| ゲノム上の位置や変異の見方    | [ゲノミクス](/genomics/)、[ゲノムブラウザ](/genomics/genome-browser/)、[遺伝的変異](/genomics/genetic-variants/)                                                     |
+
+## 論文構造Figure
+
+| Figure・表示         | 確認すること                   | 関連記事                                                |
+| -------------------- | ------------------------------ | ------------------------------------------------------- |
+| Results全体の流れ    | どの図がどの主張を支えているか | [Resultsの流れ](/figures/results-section-flow/)         |
+| graphical abstract   | 研究全体の模式化と省略         | [Graphical abstract](/figures/graphical-abstract/)      |
+| Supplementary Figure | 本文Figureとの関係、追加条件   | [Supplementary Figure](/figures/supplementary-figures/) |
+
+## 使い方
+
+この早見表は、図を読んでいる途中で確認点を思い出すための参照ページです。順番に練習したい場合は [Figureを読めるようになる](/paths/figure-reading/) へ進みます。手法の前提を確認したい場合は [実験手法早見表](/resources/methods-cheatsheet/) と [Methodsの読み方](/papers/how-to-read-methods/) を使います。解析の背景を学び直したい場合は [バイオインフォマティクス](/bioinformatics/) や [統計・研究デザイン](/statistics/) に戻ります。

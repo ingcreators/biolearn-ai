@@ -9,6 +9,44 @@ BioLearn のロードマップは、生命科学の基本概念から分子生�
 
 単なる記事一覧ではなく、「何を学び、何が読めるようになり、次にどこへ進むか」を見失わないための地図として使ってください。
 
+## 使い分け
+
+このページは、BioLearn全体を章立てで見渡すシラバスです。順番に練習したい場合はラーニングパスへ、論文を読んでいる途中で確認点だけ見たい場合はリファレンスへ、用語だけ短く確認したい場合は用語集へ進みます。
+
+<div class="biolearn-home-grid">
+  <a class="biolearn-home-card" href="/paths/">
+    <span>順番に学ぶ</span>
+    <h3>ラーニングパス</h3>
+    <p>基礎、Figure、論文の3つの目的から、今の学習ルートを選びます。</p>
+  </a>
+  <a class="biolearn-home-card" href="/resources/">
+    <span>途中で確認</span>
+    <h3>リファレンス</h3>
+    <p>Figure、Methods、論文探索で迷ったときに、確認点だけを短く見直します。</p>
+  </a>
+  <a class="biolearn-home-card" href="/glossary/">
+    <span>用語確認</span>
+    <h3>用語集</h3>
+    <p>本文やFigureで出てきた言葉を短く確認し、関連する解説記事へ戻ります。</p>
+  </a>
+</div>
+
+## 分野別カテゴリから探す
+
+特定の分野や記事名がすでに分かっている場合は、ロードマップを順番に読むよりもカテゴリトップから探します。
+
+| 探したい内容                     | カテゴリ                                     | 使う場面                                             |
+| -------------------------------- | -------------------------------------------- | ---------------------------------------------------- |
+| 生命科学の基本語                 | [生命科学の基礎](/fundamentals/)             | 細胞、DNA、RNA、タンパク質、遺伝子、ゲノムを確認する |
+| DNAからタンパク質への流れ        | [分子生物学](/molecular-biology/)            | セントラルドグマ、転写、翻訳、遺伝子発現を確認する   |
+| 細胞の構造やシグナル             | [細胞生物学](/cell-biology/)                 | 細胞膜、細胞小器官、細胞シグナル伝達を確認する       |
+| ゲノム全体や変異                 | [ゲノミクス](/genomics/)                     | 染色体、遺伝的変異、ゲノムブラウザを確認する         |
+| MethodsやFigure legendの実験手法 | [実験手法](/methods/)                        | PCR、qPCR、Western blot、NGS、対照を確認する         |
+| 解析結果やオミクスデータ         | [バイオインフォマティクス](/bioinformatics/) | RNA-seq、発現解析、single-cell、UMAPを確認する       |
+| n数、p値、反復、研究デザイン     | [統計・研究デザイン](/statistics/)           | Figureの統計表示や主張の強さを確認する               |
+| Figureの種類ごとの読み方         | [論文Figureの読み方](/figures/)              | 棒グラフ、ヒートマップ、Volcano plotなどを確認する   |
+| 論文全体の読み方や演習           | [論文読解演習](/papers/)                     | Methods、Results、Discussionを行き来する練習をする   |
+
 ## 全体像
 
 <FlowDiagram
@@ -20,8 +58,9 @@ BioLearn のロードマップは、生命科学の基本概念から分子生�
     '第3章: 遺伝情報の全体像',
     '第4章: 測定からデータへ',
     '第5章: 論文Figureを読む',
+    '発展: 論文全体を読む',
   ]}
-  note="前半で生命科学の言葉と仕組みを作り、後半で実験データと論文Figureを読む準備を整えます。"
+  note="前半で生命科学の言葉と仕組みを作り、後半で実験データ、論文Figure、論文全体の読解へ進みます。"
 />
 
 ## 到達目標
@@ -34,6 +73,7 @@ BioLearn のロードマップは、生命科学の基本概念から分子生�
 - 染色体や遺伝的変異を、ゲノム全体の文脈で捉えられる
 - PCR、RNA-seq、シーケンスデータ、差次的発現解析の位置づけを説明できる
 - 棒グラフ、qPCR、Western blot、Volcano plot、ヒートマップを読むときの確認点を持てる
+- Figure、Methods、Results、Discussion を行き来して、論文の主張をデータに戻して確認できる
 
 ## 推奨ペース
 
@@ -53,8 +93,8 @@ BioLearn のロードマップは、生命科学の基本概念から分子生�
 
 ### 読む記事一覧
 
-1. [生命科学とは何か](/start/what-is-life-science/)
-2. [細胞とは何か](/fundamentals/what-is-a-cell/)
+1. [生命科学とは何か](/fundamentals/life-science/)
+2. [細胞とは何か](/fundamentals/cell/)
 
 ### この章を終えるとできること
 
@@ -78,14 +118,14 @@ DNA、RNA、タンパク質を別々の用語としてではなく、情報の�
 
 ### 読む記事一覧
 
-1. [DNAとは何か](/molecular-biology/what-is-dna/)
-2. [RNAとは何か](/molecular-biology/what-is-rna/)
-3. [タンパク質とは何か](/molecular-biology/what-is-protein/)
-4. [遺伝子とは何か](/molecular-biology/what-is-gene/)
-5. [セントラルドグマとは何か](/molecular-biology/what-is-central-dogma/)
-6. [転写とは何か](/molecular-biology/what-is-transcription/)
-7. [翻訳とは何か](/molecular-biology/what-is-translation/)
-8. [遺伝子発現とは何か](/molecular-biology/what-is-gene-expression/)
+1. [DNAとは何か](/fundamentals/dna/)
+2. [RNAとは何か](/fundamentals/rna/)
+3. [タンパク質とは何か](/fundamentals/protein/)
+4. [遺伝子とは何か](/fundamentals/gene/)
+5. [セントラルドグマとは何か](/molecular-biology/central-dogma/)
+6. [転写とは何か](/molecular-biology/transcription/)
+7. [翻訳とは何か](/molecular-biology/translation/)
+8. [遺伝子発現とは何か](/molecular-biology/gene-expression/)
 
 ### この章を終えるとできること
 
@@ -109,9 +149,9 @@ DNA、RNA、タンパク質（protein）、遺伝子（gene）、セントラル
 
 ### 読む記事一覧
 
-1. [細胞膜とは何か](/cell-biology/what-is-cell-membrane/)
-2. [細胞小器官とは何か](/cell-biology/what-are-organelles/)
-3. [細胞シグナル伝達とは何か](/cell-biology/what-is-cell-signaling/)
+1. [細胞膜とは何か](/cell-biology/cell-membrane/)
+2. [細胞小器官とは何か](/cell-biology/organelles/)
+3. [細胞シグナル伝達とは何か](/cell-biology/cell-signaling/)
 
 ### この章を終えるとできること
 
@@ -135,9 +175,9 @@ DNA、RNA、タンパク質（protein）、遺伝子（gene）、セントラル
 
 ### 読む記事一覧
 
-1. [ゲノムとは何か](/genomics/what-is-genome/)
-2. [染色体とは何か](/genomics/what-are-chromosomes/)
-3. [遺伝的変異とは何か](/genomics/what-are-genetic-variants/)
+1. [ゲノムとは何か](/fundamentals/genome/)
+2. [染色体とは何か](/fundamentals/chromosome/)
+3. [遺伝的変異とは何か](/genomics/genetic-variants/)
 
 ### この章を終えるとできること
 
@@ -161,10 +201,10 @@ DNA、RNA、タンパク質（protein）、遺伝子（gene）、セントラル
 
 ### 読む記事一覧
 
-1. [PCRとは何か](/methods/what-is-pcr/)
-2. [RNA-seqとは何か](/bioinformatics/what-is-rna-seq/)
-3. [シーケンスデータとは何か](/bioinformatics/what-is-sequence-data/)
-4. [差次的発現解析とは何か](/bioinformatics/what-is-differential-expression-analysis/)
+1. [PCRとは何か](/methods/pcr/)
+2. [RNA-seqとは何か](/bioinformatics/rna-seq/)
+3. [シーケンスデータとは何か](/bioinformatics/sequence-data/)
+4. [差次的発現解析とは何か](/bioinformatics/differential-expression/)
 
 ### この章を終えるとできること
 
@@ -207,7 +247,32 @@ Figure、Figure legend、棒グラフ（bar plot）、qPCR、Ct値、Western blo
 
 ### 次に進む章
 
-この章まで読んだら、[用語集](/glossary/) を行き来しながら、各記事の確認問題で説明できなかった言葉を戻って確認します。必要に応じて [論文Figureの読み方](/figures/) のカテゴリトップから復習してください。
+この章まで読んだら、[用語集](/glossary/) を行き来しながら、各記事の確認問題で説明できなかった言葉を戻って確認します。必要に応じて [論文Figureの読み方](/figures/) のカテゴリトップから復習してください。順番に練習したい場合は、[Figureを読めるようになる](/paths/figure-reading/) へ進みます。
+
+## 発展：論文全体を読む
+
+### この章で学ぶこと
+
+Figureを読む練習のあとに、論文全体の構造、Methods、Results、Discussionを行き来する読み方へ進みます。論文を最初から訳すのではなく、研究の問い、主要Figure、実験条件、結果の範囲、Discussionの解釈を分けて確認します。
+
+### 読む記事一覧
+
+1. [論文の構成](/papers/paper-structure/)
+2. [初回読みの流れ](/papers/first-pass-reading/)
+3. [Figureから論文を読む方法](/papers/figure-first-reading/)
+4. [Methods確認チェックリスト](/papers/methods-checklist/)
+5. [Resultsの読み方](/papers/how-to-read-results/)
+6. [Discussionの読み方](/papers/how-to-read-discussion/)
+
+### この章を終えるとできること
+
+- 論文の各セクションの役割を説明できる
+- Figureの主張をMethodsとResultsに戻して確認できる
+- Discussionの解釈と、データから直接言えることを分けて読める
+
+### 次に進む場所
+
+順番に練習したい場合は [論文を読めるようになる](/paths/paper-reading/) へ進みます。特定の演習や探索系記事を選びたい場合は [論文読解演習](/papers/) を使います。
 
 ## 目的別ルート
 
@@ -215,23 +280,27 @@ Figure、Figure legend、棒グラフ（bar plot）、qPCR、Ct値、Western blo
 
 ### 高校生物を学び直したい
 
-[生命科学とは何か](/start/what-is-life-science/) から順番に読みます。各記事の確認問題で説明できない用語があれば、[用語集](/glossary/) に戻ります。
+[生命科学とは何か](/fundamentals/life-science/) から順番に読みます。各記事の確認問題で説明できない用語があれば、[用語集](/glossary/) に戻ります。
 
 ### 分子生物学を先に学びたい
 
-[DNAとは何か](/molecular-biology/what-is-dna/) から [遺伝子発現とは何か](/molecular-biology/what-is-gene-expression/) までを読みます。その後、細胞生物学へ進むと、分子がどこで働くかを理解しやすくなります。
+[DNAとは何か](/fundamentals/dna/) から [遺伝子発現とは何か](/molecular-biology/gene-expression/) までを読みます。その後、細胞生物学へ進むと、分子がどこで働くかを理解しやすくなります。
 
 ### 細胞の仕組みを知りたい
 
-[細胞とは何か](/fundamentals/what-is-a-cell/) で全体像を押さえてから、[細胞膜とは何か](/cell-biology/what-is-cell-membrane/)、[細胞小器官とは何か](/cell-biology/what-are-organelles/)、[細胞シグナル伝達とは何か](/cell-biology/what-is-cell-signaling/) へ進みます。
+[細胞とは何か](/fundamentals/cell/) で全体像を押さえてから、[細胞膜とは何か](/cell-biology/cell-membrane/)、[細胞小器官とは何か](/cell-biology/organelles/)、[細胞シグナル伝達とは何か](/cell-biology/cell-signaling/) へ進みます。
 
 ### バイオインフォマティクスに進みたい
 
-いきなりRNA-seqへ進まず、[遺伝子発現とは何か](/molecular-biology/what-is-gene-expression/) を読んでから [RNA-seqとは何か](/bioinformatics/what-is-rna-seq/) に進みます。差次的発現解析へ進む前に、[ゲノムとは何か](/genomics/what-is-genome/) も読んでおくと位置づけが安定します。
+いきなりRNA-seqへ進まず、[遺伝子発現とは何か](/molecular-biology/gene-expression/) を読んでから [RNA-seqとは何か](/bioinformatics/rna-seq/) に進みます。差次的発現解析へ進む前に、[ゲノムとは何か](/fundamentals/genome/) も読んでおくと位置づけが安定します。
 
 ### 論文Figureを読みたい
 
-まず [RNA-seqとは何か](/bioinformatics/what-is-rna-seq/) と [差次的発現解析とは何か](/bioinformatics/what-is-differential-expression-analysis/) を読み、その後 [棒グラフの読み方](/figures/how-to-read-bar-plot/) から [論文Figureの読み方](/figures/) へ進みます。
+まず [RNA-seqとは何か](/bioinformatics/rna-seq/) と [差次的発現解析とは何か](/bioinformatics/differential-expression/) を読み、その後 [棒グラフの読み方](/figures/how-to-read-bar-plot/) から [論文Figureの読み方](/figures/) へ進みます。順番に練習したい場合は [Figureを読めるようになる](/paths/figure-reading/) を使います。
+
+### 論文全体を読めるようになりたい
+
+先に [Figureを読めるようになる](/paths/figure-reading/) でFigureとMethodsに戻る感覚を作り、その後 [論文を読めるようになる](/paths/paper-reading/) へ進みます。読む論文を探すところから始めたい場合は、[読む論文の選び方](/papers/how-to-choose-paper/) と [PubMedとは何か](/papers/pubmed/) を使います。
 
 ## 学習チェック
 
@@ -243,7 +312,8 @@ Figure、Figure legend、棒グラフ（bar plot）、qPCR、Ct値、Western blo
 - RNA-seqでは何を測っていると言えますか。
 - 差次的発現解析の結果を見るとき、p値以外に何を確認しますか。
 - 論文Figureを読むとき、軸、条件、コントロール、ばらつきのうち何を最初に確認しますか。
+- 論文のDiscussionで述べられた解釈を、どのFigureやMethodsに戻って確認しますか。
 
 ## 次に進む
 
-ロードマップを読み終えたら、[論文Figureの読み方](/figures/) と [用語集](/glossary/) を行き来しながら、実際の図表を読む練習へ進みます。
+ロードマップを読み終えたら、[ラーニングパス](/paths/) から今の目的に合う順路を選びます。特定の図表を確認したい場合は [論文Figureの読み方](/figures/)、論文全体の読み方を練習したい場合は [論文を読めるようになる](/paths/paper-reading/)、言葉を確認したい場合は [用語集](/glossary/) を行き来します。

@@ -1,5 +1,7 @@
 # BioLearn 情報設計
 
+この文書は [PRODUCT_BRIEF.md](./PRODUCT_BRIEF.md) と [FINAL_CONTENT_MAP.md](./FINAL_CONTENT_MAP.md) を上位設計として扱い、BioLearn の URL、サイドバー、カテゴリ、コンテンツモデルを実装しやすい形に落とし込んだものです。目的・編集方針は `PRODUCT_BRIEF.md`、最終的な部・モジュール・記事構成と個別 URL は `FINAL_CONTENT_MAP.md` を基準にします。
+
 ## 目的
 
 BioLearn は、生命科学の初学者が分子生物学、細胞生物学、ゲノミクス、実験手法、バイオインフォマティクス、統計・研究デザインを段階的に学び、最終的に生命科学論文の Figure、Methods、Results を読めるようになるための日本語教材サイトです。
@@ -71,7 +73,7 @@ URL は英語の lowercase kebab-case で統一します。記事数が 120〜16
 
 - 用語集: `/glossary/`
 - 実験手法早見表: `/resources/methods-cheatsheet/`
-- Figure 早見表: `/resources/figure-cheatsheet/`
+- Figure 早見表: `/resources/figures-cheatsheet/`
 - PubMed / PMC の使い方: `/resources/pubmed-pmc/`
 - 外部学習リソース: `/resources/`
 - About: `/about/`
@@ -136,19 +138,58 @@ Figure の型ごとに、何を確認するか、よくある誤読、関連す�
 
 将来追加する論文読解演習です。公開論文を扱う場合は、著作権に配慮し、外部画像の転載ではなく、リンク、引用の最小化、独自の読解メモ、再作図した模式図を使います。
 
+## frontmatter 設計
+
+記事数が増えてもカテゴリトップやラーニングパスを保守しやすいように、主要 Lesson と Figure 読解記事には次のメタデータを持たせます。
+
+```yaml
+part: fundamentals
+module: genetic-information
+level: foundation
+order: 20
+learningPaths:
+  - foundations
+relatedTerms:
+  - dna
+  - gene
+prerequisites:
+  - /fundamentals/cell/
+```
+
+`part` は大カテゴリ、`module` はカテゴリ内の小単元、`level` は難度、`order` はカテゴリ内の表示順、`learningPaths` は含まれるラーニングパス、`relatedTerms` は用語集 slug、`prerequisites` は前提記事を表します。
+
+`ArticleList` では `prerequisites` と `relatedTerms` の先頭3件だけを一覧上に表示します。そのため、カテゴリトップやラーニングパスで読者に見せたい前提記事・用語ほど配列の前に置きます。`prerequisites` は内部URL、`relatedTerms` は用語集の slug として扱い、URLを混ぜません。
+
+Starlight では `next` がページネーション設定として使われるため、ブリーフ内の `next` 配列は現時点では追加しません。次に読む記事は既存の `NextSteps` コンポーネントで管理し、frontmatter に持たせる場合は `nextLessons` など衝突しない名前を使います。
+
 ## 既存ページの移動
 
 正式公開前のため、既存 URL は整理済みの構造へ移動できます。
 
-| 旧 URL                                   | 新 URL                          |
-| ---------------------------------------- | ------------------------------- |
-| `/getting-started/`                      | `/start/`                       |
-| `/getting-started/what-is-life-science/` | `/start/what-is-life-science/`  |
-| `/basics/`                               | `/fundamentals/`                |
-| `/basics/what-is-a-cell/`                | `/fundamentals/what-is-a-cell/` |
-| `/reading-figures/`                      | `/figures/`                     |
-| `/reading-figures/*`                     | `/figures/*`                    |
-| `/molecular-biology/what-is-pcr/`        | `/methods/what-is-pcr/`         |
+| 旧 URL                                   | 新 URL                        |
+| ---------------------------------------- | ----------------------------- |
+| `/getting-started/`                      | `/start/`                     |
+| `/getting-started/what-is-life-science/` | `/fundamentals/life-science/` |
+| `/basics/`                               | `/fundamentals/`              |
+| `/basics/what-is-a-cell/`                | `/fundamentals/cell/`         |
+| `/reading-figures/`                      | `/figures/`                   |
+| `/reading-figures/*`                     | `/figures/*`                  |
+| `/molecular-biology/what-is-pcr/`        | `/methods/pcr/`               |
+
+DNA、RNA、タンパク質、遺伝子、ゲノム、染色体などの初学者向け基礎記事は `/fundamentals/` へ移動済みです。セントラルドグマ、転写、翻訳、遺伝子発現、PCR、RNA-seq、シーケンスデータなどの記事は、各カテゴリ内で短い slug に整理しています。
+
+`FINAL_CONTENT_MAP.md` と照合し、次の URL は最終形へ移行済みです。
+
+| 現在の URL                                 | 状態     |
+| ------------------------------------------ | -------- |
+| `/fundamentals/life-science/`              | 移行済み |
+| `/fundamentals/cell/`                      | 移行済み |
+| `/cell-biology/cell-membrane/`             | 移行済み |
+| `/cell-biology/organelles/`                | 移行済み |
+| `/cell-biology/cell-signaling/`            | 移行済み |
+| `/bioinformatics/differential-expression/` | 移行済み |
+| `/figures/figure-legend/`                  | 移行済み |
+| `/resources/figures-cheatsheet/`           | 移行済み |
 
 ## 拡張方針
 

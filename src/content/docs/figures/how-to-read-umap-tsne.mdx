@@ -1,0 +1,94 @@
+---
+title: UMAP / t-SNEの読み方
+description: UMAPやt-SNEで点、クラスタ、距離、細胞タイプ注釈を読む基本を説明します。
+part: figures
+module: bioinformatics-figures
+level: foundation
+priority: P1
+order: 80
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - umap
+  - clustering
+  - marker-gene
+prerequisites:
+  - /bioinformatics/umap/
+  - /bioinformatics/clustering/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'UMAPやt-SNEで点とクラスタが何を表すか説明できる',
+    '距離やクラスタを読みすぎない注意点を理解する',
+    'single-cell Figureで細胞タイプ注釈を確認できる',
+  ]}
+/>
+
+## 要点
+
+UMAPやt-SNEは、多数の特徴を持つ細胞やサンプルを2次元に配置し、クラスタや連続性を見るFigureです。
+
+## 基礎解説
+
+[single-cell RNA-seq](/glossary/single-cell-rna-seq/)の論文では、[UMAP](/glossary/umap/)やt-SNEの図がよく登場します。多くの場合、1つの点が1つの細胞を表し、似た発現パターンを持つ細胞が近くに配置されます。
+
+色は細胞タイプ、クラスタ、サンプル条件、遺伝子発現量などを表します。まず、点が何を表すか、色が何を表すかを確認します。
+
+UMAPやt-SNEは可視化の方法であり、距離や形をそのまま物理的な距離として読むものではありません。[クラスタリング](/glossary/clustering/)の結果やクラスタの意味は、[マーカー遺伝子](/glossary/marker-gene/)、注釈方法、サンプル情報と合わせて解釈します。
+
+## 図解
+
+<LessonFigure
+  src="/figures/umap-tsne-concept.jpg"
+  alt="UMAPやt-SNEで細胞が複数のクラスタとして配置され、色で細胞タイプを示す概念図"
+  title="UMAP / t-SNEは細胞やサンプルのまとまりを見る"
+  caption="点の単位、色の意味、クラスタ注釈、サンプル由来を確認し、形を読みすぎないようにします。"
+/>
+
+<TermBox
+  term="UMAP"
+  english="Uniform Manifold Approximation and Projection"
+  abbreviation="UMAP"
+>
+  高次元データを低次元に配置して、全体の構造を見やすくする可視化手法です。
+</TermBox>
+
+## よくある誤解
+
+- UMAP上で近いことは、必ず生物学的に同じという意味ではありません。
+- クラスタ名は解析者が注釈したものなので、根拠となるマーカーを確認します。
+- 点の数が多いことと、独立サンプル数が多いことは同じではありません。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question: 'single-cellのUMAPで1つの点は何を表すことが多いですか。',
+      answer: '1つの細胞を表すことが多いです。',
+    },
+    {
+      question:
+        'UMAPのクラスタ名を読むときに確認したい根拠を一つ挙げてください。',
+      answer:
+        'マーカー遺伝子、注釈方法、サンプル情報、既知の細胞タイプとの対応などです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'UMAPとは何か', href: '/bioinformatics/umap/' },
+    { title: '用語: UMAP', href: '/glossary/umap/' },
+    { title: 'PCAプロットの読み方', href: '/figures/how-to-read-pca-plot/' },
+    { title: 'ヒートマップの読み方', href: '/figures/how-to-read-heatmap/' },
+  ]}
+/>

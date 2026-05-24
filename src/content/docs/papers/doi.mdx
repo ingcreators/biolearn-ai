@@ -1,0 +1,98 @@
+---
+title: DOIとは何か
+description: DOIが論文やデータなどの恒久的な識別子として使われる理由と、論文読解での確認ポイントを説明します。
+part: papers
+module: paper-discovery
+level: foundation
+priority: P1
+order: 220
+learningPaths:
+  - paper-reading
+relatedTerms:
+  - doi
+  - pubmed
+  - pmid
+  - pmc
+  - references
+prerequisites:
+  - /papers/pubmed/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'DOIが文献を識別するためのIDであることを説明できる',
+    'DOIとURLの違いを理解する',
+    '引用や論文管理でDOIを確認できる',
+  ]}
+/>
+
+## 要点
+
+DOIは、論文やデータなどを識別するための恒久的なIDです。URLが変わっても、同じ文献をたどる手がかりになります。
+
+DOIやPMIDは論文を指定するための識別子です。本文を読めるかどうかや、研究内容の妥当性を示すものではありません。PubMed、PMC、DOI、PMIDの違いを短く確認したい場合は、[PubMed / PMC の使い分け](/resources/pubmed-pmc/) に戻ります。
+
+## 基礎解説
+
+DOIは digital object identifier の略です。生命科学論文では、論文ページ、PubMed、出版社ページ、参考文献リストなどに表示されることがあります。
+
+DOIは、論文を引用したり、文献管理ツールに登録したり、同じ論文を探し直したりするときに役立ちます。タイトルが似た論文や、出版社ページのURLが変わった場合でも、DOIがあると識別しやすくなります。
+
+DOIがあることは、論文の内容が正しいことを保証するものではありません。DOIは識別子であり、論文の質や解釈はResults、Methods、Figure、研究デザインを読んで判断します。
+
+## 図解
+
+<LessonFigure
+  src="/figures/doi-concept.jpg"
+  alt="DOIが論文、出版社ページ、PubMed、引用情報をつなぐ識別子であることを示す概念図"
+  title="DOIは論文を識別するためのID"
+  caption="URLが変わっても同じ文献をたどる手がかりになり、引用や文献管理で役立ちます。"
+/>
+
+<TermBox term="DOI" english="digital object identifier" abbreviation="DOI">
+  論文、データ、書籍章などのデジタル対象を識別するための恒久的なIDです。
+</TermBox>
+
+## よくある誤解
+
+- DOIがある論文は、内容が必ず信頼できると考える。
+- DOIとPubMed IDを同じものだと思う。
+- 論文タイトルだけで十分で、DOIを確認しなくてよいと思う。
+- DOIを本文への無料アクセスリンクそのものだと考える。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question: 'DOIは何のために使われますか。',
+      answer:
+        '論文やデータなどを識別し、引用、文献管理、文献の再検索に使われます。',
+    },
+    {
+      question: 'DOIがあることは、論文内容の正しさを保証しますか。',
+      answer:
+        '保証しません。DOIは識別子であり、内容は研究デザインやResults、Methodsを読んで判断します。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'PubMed / PMC の使い分け', href: '/resources/pubmed-pmc/' },
+    { title: 'DOI', href: '/glossary/doi/' },
+    { title: 'PMID', href: '/glossary/pmid/' },
+    { title: 'PubMedの使い方', href: '/papers/pubmed/' },
+    {
+      title: 'レビュー論文と原著論文の違い',
+      href: '/papers/review-vs-primary-paper/',
+    },
+    { title: '最初に読む論文の選び方', href: '/papers/how-to-choose-paper/' },
+  ]}
+/>

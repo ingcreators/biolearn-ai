@@ -1,0 +1,96 @@
+---
+title: 次元削減とは何か
+description: 次元削減を、多数の遺伝子や特徴量を少ない軸に圧縮して全体像を見やすくする方法として説明します。
+part: bioinformatics
+module: single-cell-analysis
+level: intermediate
+priority: P1
+order: 45
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - dimensionality-reduction
+  - umap
+  - clustering
+prerequisites:
+  - /bioinformatics/count-matrix/
+  - /bioinformatics/single-cell-quality-control/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    '次元削減が多数の特徴を少ない軸に圧縮する方法だと説明できる',
+    'PCA、UMAP、t-SNEの位置づけを区別できる',
+    '可視化の距離や形を読みすぎない注意点を理解する',
+  ]}
+/>
+
+## 要点
+
+次元削減は、多数の特徴量を持つデータを、少ない軸で見やすく表現する方法です。
+
+## 基礎解説
+
+single-cell RNA-seqでは、1つの細胞が数千から数万の遺伝子発現量を持ちます。このままでは全体像を図として見ることが難しいため、次元削減を使って情報を圧縮します。
+
+PCAは、データの大きなばらつきを説明する軸を見つける方法です。UMAPやt-SNEは、細胞どうしの近さを2次元の図として見やすくするためによく使われます。
+
+次元削減は可視化や前処理に便利ですが、情報を圧縮するため、元データのすべてをそのまま保っているわけではありません。論文を読むときは、どの特徴量を使ったか、前処理やバッチ補正をどう行ったか、図の距離や形をどこまで解釈できるかを確認します。
+
+## 図解
+
+<LessonFigure
+  src="/figures/dimensionality-reduction-concept.jpg"
+  alt="多数の遺伝子発現量を少ない軸に圧縮し、2次元の点群として表示する次元削減の概念図"
+  title="次元削減は高次元データを見やすい形に圧縮する"
+  caption="PCA、UMAP、t-SNEは全体像を見る助けになりますが、図の形をそのまま生物学的距離として読みすぎないようにします。"
+/>
+
+<TermBox term="次元削減" english="dimensionality reduction">
+  多数の特徴量を持つデータを、少ない軸や座標で表す方法です。
+</TermBox>
+
+## よくある誤解
+
+- UMAPで近い点は、必ず同じ細胞状態だと読む。
+- 2次元図に見えている形が、元データのすべてを表していると思う。
+- 前処理や使った遺伝子の選び方を確認しない。
+- PCA、UMAP、t-SNEを同じ意味の図として扱う。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question: 'single-cell解析で次元削減が必要になる理由を説明してください。',
+      answer:
+        '各細胞が多数の遺伝子発現量を持つため、そのままでは全体像を見にくく、少ない軸に圧縮して可視化や解析に使うためです。',
+    },
+    {
+      question: 'UMAPの距離を読みすぎない方がよい理由を説明してください。',
+      answer:
+        '高次元データを2次元に圧縮した可視化であり、元データのすべての距離関係を厳密に保つわけではないためです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'UMAPとは何か', href: '/bioinformatics/umap/' },
+    {
+      title: 'クラスタリングとは何か',
+      href: '/bioinformatics/clustering/',
+    },
+    {
+      title: 'PCAプロットの読み方',
+      href: '/figures/how-to-read-pca-plot/',
+    },
+  ]}
+/>

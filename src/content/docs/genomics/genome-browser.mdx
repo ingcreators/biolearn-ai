@@ -1,0 +1,97 @@
+---
+title: ゲノムブラウザとは何か
+description: ゲノム上の位置に沿って、遺伝子、変異、シーケンスリード、アノテーションを重ねて見るゲノムブラウザの基本を説明します。
+part: genomics
+module: genome-visualization
+level: foundation
+priority: P1
+order: 20
+learningPaths:
+  - foundations
+  - figure-reading
+relatedTerms:
+  - genome
+  - gene
+  - sequencing
+prerequisites:
+  - /fundamentals/genome/
+  - /genomics/genetic-variants/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'ゲノムブラウザがゲノム上の位置を基準に情報を並べる道具であることを説明できる',
+    '遺伝子、変異、リード、アノテーションのトラックを区別できる',
+    'ゲノムブラウザ図を読むときの注意点を理解する',
+  ]}
+/>
+
+## 要点
+
+ゲノムブラウザは、ゲノム上の位置に沿って、遺伝子、変異、シーケンスデータ、注釈情報を重ねて見るための表示方法です。
+
+## 基礎解説
+
+ゲノムは非常に長い配列なので、特定の遺伝子や領域だけを見たいときには、位置を指定して表示する必要があります。ゲノムブラウザでは、染色体上の座標を横軸のように使い、その位置に対応する情報を段ごとに並べます。
+
+各段はトラックと呼ばれます。遺伝子モデル、変異、RNA-seqのリード、ChIP-seqのピーク、保存性スコアなど、さまざまな情報がトラックとして表示されます。
+
+ゲノムブラウザで見える重なりは、研究の手がかりになります。ただし、重なって見えることだけで機能や原因を断定することはできません。表示範囲、データの種類、サンプル、解析条件を確認します。
+
+## 図解
+
+<LessonFigure
+  src="/figures/genome-browser-concept.jpg"
+  alt="ゲノム上の座標に沿って遺伝子、変異、リード、アノテーションのトラックが並ぶ概念図"
+  title="ゲノムブラウザは位置を基準に情報を重ねる"
+  caption="遺伝子、変異、シーケンスリード、アノテーションをトラックごとに分けて読みます。"
+/>
+
+<TermBox term="ゲノムブラウザ" english="genome browser">
+  ゲノム上の位置に沿って、遺伝子や変異などの情報を視覚的に表示する道具や表示形式です。
+</TermBox>
+
+## よくある誤解
+
+- 変異が遺伝子の近くに見えるだけで、機能への影響が証明されたと考える。
+- 表示されているトラックのデータ種類やサンプルを確認しない。
+- 表示範囲が違う図を、そのまま同じスケールで比較する。
+- リードが多く見えることを、必ず発現量や機能の差と同じに読む。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question: 'ゲノムブラウザでトラックとは何ですか。',
+      answer:
+        'ゲノム上の位置に対応して表示される情報の段です。遺伝子、変異、リード、ピークなどがあります。',
+    },
+    {
+      question:
+        'ゲノムブラウザで情報が重なって見えても、すぐに原因と断定できない理由を説明してください。',
+      answer:
+        '位置の重なりは手がかりですが、機能的な影響や原因を示すには追加の解析や実験が必要だからです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: '遺伝的変異とは何か', href: '/genomics/genetic-variants/' },
+    {
+      title: 'ゲノムブラウザ図の読み方',
+      href: '/figures/how-to-read-genome-browser/',
+    },
+    {
+      title: 'シーケンスデータとは何か',
+      href: '/bioinformatics/sequence-data/',
+    },
+  ]}
+/>

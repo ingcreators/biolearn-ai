@@ -1,0 +1,97 @@
+---
+title: GSEA plotの読み方
+description: GSEA plotでランキング、エンリッチメントスコア、leading edgeを読む基本を説明します。
+part: figures
+module: bioinformatics-figures
+level: foundation
+priority: P1
+order: 90
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - differential-expression-analysis
+  - multiple-testing-correction
+  - significance-vs-importance
+prerequisites:
+  - /bioinformatics/differential-expression/
+  - /statistics/multiple-testing-correction/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'GSEA plotが遺伝子セットの偏りを見る図であることを説明できる',
+    'ランキング、エンリッチメントスコア、FDRを確認できる',
+    '個別遺伝子ではなく経路単位で読む考え方を理解する',
+  ]}
+/>
+
+## 要点
+
+GSEA plotは、あらかじめ定義した遺伝子セットが、ランキングの上位や下位に偏っているかを見るFigureです。
+
+## 基礎解説
+
+GSEAは Gene Set Enrichment Analysis の略です。差次的発現解析のように遺伝子を1つずつ見るだけでなく、経路や機能に属する遺伝子群が全体として偏っているかを見ます。
+
+GSEA plotでは、横軸に遺伝子ランキング、縦軸にエンリッチメントスコアが示されることがあります。遺伝子セットに含まれる遺伝子がランキングのどこに多いかを確認します。
+
+読み取るときは、どの比較のランキングか、遺伝子セット名、NES、FDR、leading edgeを確認します。経路名だけで結論を決めず、どの遺伝子が寄与しているかも見ます。
+
+## 図解
+
+<LessonFigure
+  src="/figures/gsea-plot-concept.jpg"
+  alt="GSEA plotでランキングに沿ったエンリッチメントスコアの曲線と遺伝子セットの偏りを読む概念図"
+  title="GSEA plotは遺伝子セットの偏りを見る"
+  caption="ランキングの向き、遺伝子セット名、NES、FDR、leading edgeを確認して経路単位で読みます。"
+/>
+
+<TermBox term="GSEA" english="Gene Set Enrichment Analysis" abbreviation="GSEA">
+  遺伝子セットがランキング上で偏って現れるかを調べる解析です。
+</TermBox>
+
+## よくある誤解
+
+- GSEAの経路名だけで、機能が直接証明されたとは言えません。
+- FDRやNESを確認せずに、曲線の形だけで判断してはいけません。
+- 遺伝子セットの定義や比較条件によって結果の意味は変わります。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question: 'GSEA plotで横軸は何を表すことが多いですか。',
+      answer: '比較に基づいて並べた遺伝子ランキングを表すことが多いです。',
+    },
+    {
+      question: 'GSEAの結果でFDRを見る理由を説明してください。',
+      answer:
+        '多数の遺伝子セットを調べるため、多重検定の影響を考慮する必要があるからです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    {
+      title: '差次的発現解析とは何か',
+      href: '/bioinformatics/differential-expression/',
+    },
+    {
+      title: '多重検定補正とは何か',
+      href: '/statistics/multiple-testing-correction/',
+    },
+    {
+      title: 'Volcano plotの読み方',
+      href: '/figures/how-to-read-volcano-plot/',
+    },
+  ]}
+/>

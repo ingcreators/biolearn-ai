@@ -1,0 +1,96 @@
+---
+title: single-cell QCとは何か
+description: single-cell RNA-seqの品質管理を、低品質細胞、検出遺伝子数、ミトコンドリア比率、doublet確認の観点から説明します。
+part: bioinformatics
+module: single-cell-analysis
+level: intermediate
+priority: P2
+order: 43
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - single-cell-quality-control
+  - count-matrix
+  - single-cell-rna-seq
+prerequisites:
+  - /bioinformatics/count-matrix/
+  - /bioinformatics/single-cell-rna-seq/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'single-cell QCで確認する代表的な指標を説明できる',
+    '低品質細胞やdoubletが解析に影響する理由を理解する',
+    'QCの閾値をMethodsで確認する重要性を説明できる',
+  ]}
+/>
+
+## 要点
+
+single-cell QCは、single-cell RNA-seqデータから低品質な細胞や解析を歪める可能性のある細胞を見つけ、扱いを決める工程です。
+
+## 基礎解説
+
+single-cell RNA-seqでは、1細胞ごとの測定を行うため、細胞ごとにデータ品質が異なります。壊れかけた細胞、RNA量が少なすぎる細胞、複数細胞が1つとして読まれたdoubletなどが混ざることがあります。
+
+QCでは、細胞ごとの総カウント数、検出された遺伝子数、ミトコンドリア遺伝子の割合、doubletの可能性などを確認します。これらは細胞の状態を理解する手がかりですが、単純な良し悪しだけで決めるものではありません。組織や細胞型によって自然な範囲が変わることもあります。
+
+論文では、どの指標を使ったか、どの閾値で細胞を除外したか、除外後にサンプルや条件のバランスが崩れていないかを確認します。
+
+## 図解
+
+<LessonFigure
+  src="/figures/single-cell-quality-control-concept.jpg"
+  alt="single-cell QCで低品質細胞、検出遺伝子数、ミトコンドリア比率、doubletを確認する概念図"
+  title="single-cell QCは細胞ごとの測定品質を確認する工程"
+  caption="低品質細胞やdoubletを確認し、除外基準が結果に与える影響をMethodsで確認します。"
+/>
+
+<TermBox term="品質管理" english="quality control" abbreviation="QC">
+  データの信頼性を下げる可能性があるサンプル、細胞、測定値を確認する工程です。
+</TermBox>
+
+## よくある誤解
+
+- QCで除外した細胞は、すべて生物学的に意味がないと考える。
+- 閾値はどのデータでも同じでよいと思う。
+- doubletを確認せずに、珍しいクラスタを新しい細胞型だと読む。
+- QC後に条件間の細胞数バランスが変わった可能性を見落とす。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question: 'single-cell QCで確認する指標を2つ挙げてください。',
+      answer:
+        '総カウント数、検出遺伝子数、ミトコンドリア遺伝子割合、doubletの可能性などです。',
+    },
+    {
+      question: 'QCの閾値をMethodsで確認する理由を説明してください。',
+      answer:
+        '除外基準によって残る細胞や条件間のバランスが変わり、後のクラスタリングや比較に影響するためです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'カウント行列とは何か', href: '/bioinformatics/count-matrix/' },
+    {
+      title: 'バッチ効果とは何か',
+      href: '/bioinformatics/batch-effect/',
+    },
+    {
+      title: 'single-cell解析論文の読み方',
+      href: '/papers/walkthrough-single-cell/',
+    },
+  ]}
+/>

@@ -1,34 +1,79 @@
 ---
 title: 生命科学の基礎
-description: 細胞、分子、情報の流れを学ぶ入口です。
+description: 生命科学の全体像、細胞、DNA、RNA、タンパク質、遺伝子、ゲノムを学ぶ入口です。
 ---
 
-このカテゴリでは、生命科学を学ぶための最小限の土台を扱います。最初に生命科学がどのような階層で生命現象を見るのかを確認し、細胞を生命の基本単位として位置づけます。
+import ArticleList from '../../../components/ArticleList.astro';
+
+このカテゴリでは、生命科学を学ぶための最小限の土台を扱います。最初に生命科学がどのような階層で生命現象を見るのかを確認し、細胞、DNA、RNA、タンパク質、遺伝子、ゲノム、染色体を順に位置づけます。
+
+順番に進みたい場合は [基礎から学ぶ](/paths/foundations/) を使います。このカテゴリトップは、用語や前提に戻りたいときに、基礎記事を目的別に探す入口です。
 
 ## この分野で学ぶこと
 
 - 生命科学が扱う対象と、分子、細胞、個体、データのつながり
 - 細胞が生命現象の基本単位である理由
-- DNA、RNA、タンパク質を学ぶ前に必要な見取り図
+- DNA、RNA、タンパク質、遺伝子、ゲノム、染色体の関係
+
+## 目的別に選ぶ
+
+<div class="biolearn-home-grid">
+  <a class="biolearn-home-card" href="/fundamentals/life-science/">
+    <span>全体像</span>
+    <h3>生命科学の地図を作る</h3>
+    <p>
+      分子、細胞、個体、データという階層を分け、BioLearn全体で何を学ぶかを確認します。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="/fundamentals/cell/">
+    <span>細胞</span>
+    <h3>生命の基本単位へ戻る</h3>
+    <p>
+      分子が働く場所として細胞を押さえ、細胞生物学やsingle-cell解析へ進む土台を作ります。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="/fundamentals/dna/">
+    <span>遺伝情報</span>
+    <h3>DNA、RNA、タンパク質を分ける</h3>
+    <p>
+      遺伝情報が保存され、写し取られ、タンパク質として働く流れの入口を整理します。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="/fundamentals/genome/">
+    <span>ゲノム</span>
+    <h3>全体像と位置情報へ広げる</h3>
+    <p>
+      遺伝子、ゲノム、染色体の関係を押さえ、ゲノミクスやゲノムFigureへ接続します。
+    </p>
+  </a>
+</div>
+
+| 迷っていること                         | 戻る基礎記事                                                                                                                | 次に進む場所                                                                                             |
+| -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| 生命科学全体の位置づけを知りたい       | [生命科学とは何か](/fundamentals/life-science/)                                                                             | [学習ロードマップ](/roadmap/)、[ラーニングパス](/paths/)                                                 |
+| 細胞と分子の関係が分からない           | [細胞とは何か](/fundamentals/cell/)、[タンパク質とは何か](/fundamentals/protein/)                                           | [細胞生物学](/cell-biology/)、[顕微鏡画像の読み方](/figures/how-to-read-microscopy-image/)               |
+| DNA、RNA、タンパク質が混ざる           | [DNAとは何か](/fundamentals/dna/)、[RNAとは何か](/fundamentals/rna/)、[タンパク質とは何か](/fundamentals/protein/)          | [セントラルドグマ](/molecular-biology/central-dogma/)、[遺伝子発現](/molecular-biology/gene-expression/) |
+| 遺伝子とゲノムの違いを確認したい       | [遺伝子とは何か](/fundamentals/gene/)、[ゲノムとは何か](/fundamentals/genome/)、[染色体とは何か](/fundamentals/chromosome/) | [ゲノミクス](/genomics/)、[ゲノムブラウザ図](/figures/how-to-read-genome-browser/)                       |
+| Figure読解や論文読解へ進む準備をしたい | [生命科学とは何か](/fundamentals/life-science/)、[細胞とは何か](/fundamentals/cell/)、[遺伝子とは何か](/fundamentals/gene/) | [Figureを読めるようになる](/paths/figure-reading/)、[論文を読めるようになる](/paths/paper-reading/)      |
 
 ## まず押さえる3つの考え方
 
 1. 生命は階層で見ると理解しやすくなります。
 2. 細胞は、分子が働き、情報が使われる場所です。
-3. 先に全体像を持つと、分子生物学やゲノミクスの記事を読みやすくなります。
+3. 先に基本語の関係を持つと、分子生物学やゲノミクスの記事を読みやすくなります。
 
 ## 読む順番
 
-1. [生命科学とは何か](/start/what-is-life-science/)
-2. [細胞とは何か](/fundamentals/what-is-a-cell/)
+<ArticleList part="fundamentals" groupByModule />
 
-まず生命科学の全体像を確認し、その後に細胞という基本単位へ進みます。細胞を理解すると、DNA、RNA、タンパク質が「どこで、何のために働くのか」を考えやすくなります。
+まず生命科学の全体像を確認し、その後に細胞という基本単位へ進みます。DNA、RNA、タンパク質、遺伝子、ゲノム、染色体をここで押さえると、分子生物学やゲノミクスの記事を「何の詳細を学んでいるのか」と位置づけやすくなります。
 
 ## このカテゴリを終えるとできること
 
 - 生命科学が分子、細胞、組織、個体、データをつなげて考える学問だと説明できる
 - 細胞を生命の基本単位として説明できる
-- 次に分子生物学や細胞生物学へ進むための学習地図を持てる
+- DNA、RNA、タンパク質、遺伝子、ゲノム、染色体を混同せずに説明できる
+- 次に分子生物学、細胞生物学、ゲノミクスへ進むための学習地図を持てる
 
 ## 関連する用語
 
@@ -37,3 +82,6 @@ description: 細胞、分子、情報の流れを学ぶ入口です。
 - [DNA](/glossary/dna/)
 - [RNA](/glossary/rna/)
 - [タンパク質](/glossary/protein/)
+- [遺伝子](/glossary/gene/)
+- [ゲノム](/glossary/genome/)
+- [染色体](/glossary/chromosome/)

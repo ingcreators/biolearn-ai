@@ -1,0 +1,98 @@
+---
+title: Introductionの読み方
+description: Introductionから研究背景、未解決の問い、この論文の目的を拾う読み方を説明します。
+part: papers
+module: paper-structure
+level: foundation
+priority: P1
+order: 30
+learningPaths:
+  - paper-reading
+relatedTerms:
+  - introduction
+  - research-background
+  - prior-study
+  - research-question
+  - references
+prerequisites:
+  - /papers/paper-structure/
+  - /papers/how-to-read-title-abstract/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'Introductionから研究背景と未解決の問いを拾える',
+    '先行研究とこの論文の目的を区別できる',
+    '知らない用語に止まりすぎず、問いを追う読み方を身につける',
+  ]}
+/>
+
+## 要点
+
+Introductionは、なぜこの研究を行ったのかを説明するセクションです。背景、未解決の点、この論文の問いを探します。
+
+## 基礎解説
+
+Introductionでは、分野の背景から始まり、先行研究で分かっていること、まだ分かっていないこと、そしてこの論文が答えようとする問いへ進むことが多いです。
+
+読むときは、すべての引用や専門用語を最初から完全に理解しようとしなくても構いません。まず、「何が既に知られているのか」「何がまだ問題なのか」「この論文は何を調べるのか」を線でつなげます。
+
+最後の段落には、研究目的や仮説、使うアプローチが書かれることがよくあります。ここを押さえてからResultsへ進むと、各Figureが何の問いに答えているのか見えやすくなります。
+
+## 図解
+
+<LessonFigure
+  src="/figures/how-to-read-introduction-concept.jpg"
+  alt="Introductionで背景、既知のこと、未解決の問い、研究目的へ進む流れを示す概念図"
+  title="Introductionは研究の問いへ向かう導入"
+  caption="背景、既知のこと、未解決の点、この論文の目的を分けて拾います。"
+/>
+
+<TermBox term="Introduction" english="Introduction">
+  論文の背景、先行研究、未解決の問題、研究目的を説明するセクションです。
+</TermBox>
+
+## よくある誤解
+
+- Introductionの引用をすべて読まないと先に進めないと思う。
+- 背景説明と、この論文で実際に示した結果を混同する。
+- 最後の段落にある研究目的を見落とす。
+- 知らない専門用語で止まり、論文全体の問いを見失う。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question: 'Introductionでまず拾いたい要素を3つ挙げてください。',
+      answer:
+        '背景、既に分かっていること、未解決の問題、この論文の目的や問いなどがあります。',
+    },
+    {
+      question:
+        'Introductionを読んだあとResultsへ進む前に確認したいことは何ですか。',
+      answer:
+        'この論文が何を明らかにしようとしているのか、どの問いに答えようとしているのかを確認します。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    {
+      title: 'TitleとAbstractの読み方',
+      href: '/papers/how-to-read-title-abstract/',
+    },
+    { title: 'Resultsの読み方', href: '/papers/how-to-read-results/' },
+    {
+      title: 'Figureから論文を読む方法',
+      href: '/papers/figure-first-reading/',
+    },
+  ]}
+/>

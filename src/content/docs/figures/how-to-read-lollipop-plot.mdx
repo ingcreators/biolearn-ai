@@ -1,0 +1,100 @@
+---
+title: Lollipop plotの読み方
+description: タンパク質やゲノム上の位置に沿って変異を示すLollipop plotで、位置、頻度、ドメイン、解釈の注意点を読む方法を説明します。
+part: figures
+module: bioinformatics-figures
+level: intermediate
+priority: P2
+order: 96
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - genetic-variant
+  - mutation
+  - gene
+  - protein
+prerequisites:
+  - /glossary/genetic-variant/
+  - /genomics/genetic-variants/
+  - /fundamentals/protein/
+  - /figures/how-to-read-genome-browser/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'Lollipop plotで横軸の位置と表示対象を確認できる',
+    '丸の大きさや高さが何を表すかを区別できる',
+    '変異の集中を機能や原因として断定しない読み方を説明できる',
+  ]}
+/>
+
+## 要点
+
+Lollipop plotは、遺伝子、タンパク質、ゲノム領域などの位置に沿って、変異やイベントを棒と丸で示すFigureです。
+
+## 基礎解説
+
+生命科学論文では、変異がタンパク質のどの位置に多いか、特定のドメインに集中しているかを示すためにLollipop plotが使われることがあります。横軸はアミノ酸位置、塩基位置、またはゲノム座標を表します。
+
+丸の大きさ、高さ、色は、変異の頻度、種類、サンプル群、影響予測などを表すことがあります。まずFigure legendで、何が大きさで、何が色で、何が棒の高さなのかを確認します。
+
+変異が特定領域に集まって見えると、その領域が重要そうに見えます。ただし、サンプルの偏り、検出方法、表示対象、ドメイン注釈の違いで見え方は変わります。位置の集中は手がかりであり、それだけで機能影響や原因を証明するものではありません。
+
+Lollipop plotでは、論文によって「mutation」「variant」「alteration」などの言葉が使い分けられます。まず [遺伝的変異](/glossary/genetic-variant/) と [変異](/glossary/mutation/) の違いを確認してから、Figure legendの定義に合わせて読みます。
+
+## 図解
+
+<LessonFigure
+  src="/figures/how-to-read-lollipop-plot-concept.jpg"
+  alt="Lollipop plotでタンパク質ドメイン、変異位置、頻度、凡例を確認する概念図"
+  title="Lollipop plotは位置、頻度、凡例を分けて読む"
+  caption="横軸の対象、ドメイン、丸の大きさや色の意味を確認してから、変異の集中を慎重に解釈します。"
+/>
+
+<TermBox term="Lollipop plot" english="lollipop plot">
+  位置に沿ってイベントを棒と丸で示す図です。変異の分布をタンパク質上に示すときによく使われます。
+</TermBox>
+
+## よくある誤解
+
+- 丸が大きい位置を、必ず機能的に重要な位置だと読む。
+- 横軸がアミノ酸位置なのか、塩基位置なのかを確認しない。
+- 色の意味を確認せず、変異の種類やサンプル群を混同する。
+- ドメイン内にある変異だけを重視し、サンプル数や検出条件を見落とす。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question: 'Lollipop plotで最初に確認したい表示要素を3つ挙げてください。',
+      answer:
+        '横軸が何の位置か、丸の大きさや高さが何を表すか、色や凡例の意味、ドメイン注釈、サンプル数などです。',
+    },
+    {
+      question:
+        '変異が特定のドメインに多いように見えても、すぐに機能影響を断定しない理由を説明してください。',
+      answer:
+        '位置の集中は重要な手がかりですが、サンプル構成、検出方法、統計的な偏り、追加実験の有無によって解釈が変わるためです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: '遺伝的変異の用語整理', href: '/glossary/genetic-variant/' },
+    { title: '遺伝的変異の記事', href: '/genomics/genetic-variants/' },
+    { title: 'タンパク質とは何か', href: '/fundamentals/protein/' },
+    {
+      title: 'ゲノムブラウザ図の読み方',
+      href: '/figures/how-to-read-genome-browser/',
+    },
+  ]}
+/>

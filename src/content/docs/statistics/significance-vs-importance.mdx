@@ -1,0 +1,107 @@
+---
+title: 統計的有意性と生物学的重要性
+description: 統計的有意性と生物学的重要性を、p値で示される差の珍しさと、生物学的に意味のある大きさや文脈の違いとして説明します。
+part: statistics
+module: inference-and-interpretation
+level: foundation
+priority: P1
+order: 110
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - significance-vs-importance
+  - p-value
+  - effect-size
+  - confidence-interval
+prerequisites:
+  - /statistics/p-value/
+  - /statistics/effect-size/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    '統計的有意性と生物学的重要性を区別できる',
+    'p値だけで重要性を判断しない理由を説明できる',
+    '効果量、信頼区間、実験文脈を合わせて読める',
+  ]}
+/>
+
+## 要点
+
+統計的有意性は、観察された差が偶然だけでは説明しにくいかを見る考え方であり、生物学的重要性は、その差が研究対象の文脈で意味を持つかを考える視点です。
+
+## 基礎解説
+
+論文のFigureでは、`p < 0.05` やアスタリスクによって統計的有意性が示されることがあります。しかし、p値が小さいことは、差が大きいことや、生物学的に重要であることと同じではありません。
+
+生物学的重要性を考えるには、効果量、信頼区間、測定単位、サンプル数、再現性、既存知識、実験系で期待される変化の大きさを合わせて見ます。小さい差でも重要な場合もあれば、統計的に有意でも解釈に注意が必要な場合もあります。
+
+## なぜ重要か
+
+アスタリスクの有無だけでFigureを読むと、結論を強く読みすぎたり、逆に重要な傾向を見落としたりします。Resultsでは統計表示を確認し、Discussionではその差がどの範囲で意味を持つかを読みます。
+
+## 図解
+
+<LessonFigure
+  src="/figures/significance-vs-importance-concept.jpg"
+  alt="p値の小ささと差の大きさを別の軸として示し、統計的有意性と生物学的重要性を分けて考える概念図"
+  title="有意性と重要性は同じではない"
+  caption="p値、効果量、信頼区間、実験文脈を合わせて解釈します。"
+/>
+
+<TermBox term="統計的有意性" english="statistical significance">
+  観察された差が、基準となる仮定のもとで偶然だけでは説明しにくいかを考える統計上の判断です。
+</TermBox>
+
+## 英語表記と略語
+
+| 日本語名       | 英語名                   | 略語 |
+| -------------- | ------------------------ | ---- |
+| 統計的有意性   | statistical significance | -    |
+| 生物学的重要性 | biological importance    | -    |
+| 効果量         | effect size              | -    |
+| 信頼区間       | confidence interval      | CI   |
+
+## よくある誤解
+
+- p値が小さい結果を、必ず生物学的に重要だと読む。
+- アスタリスクがない結果を、必ず意味がないと読む。
+- 効果量や信頼区間を見ずに、p値だけでFigureを評価する。
+
+## 重要用語
+
+- 統計的有意性: 統計上、偶然だけでは説明しにくいかを考える判断。
+- 生物学的重要性: 研究対象の文脈で、その差や関係が意味を持つかという視点。
+- 効果量: 差や関係の大きさ。
+- 信頼区間: 推定値の不確かさを示す範囲。
+
+<Quiz
+  questions={[
+    {
+      question: 'p値が小さいことと効果が大きいことは同じですか。',
+      answer:
+        '同じではありません。p値は観察結果の珍しさを考える指標で、差の大きさは効果量として別に確認します。',
+    },
+    {
+      question:
+        '生物学的重要性を考えるときに確認したいものを一つ挙げてください。',
+      answer:
+        '効果量、信頼区間、測定単位、再現性、実験文脈、既存知識などがあります。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: '効果量とは何か', href: '/statistics/effect-size/' },
+    { title: '信頼区間とは何か', href: '/statistics/confidence-interval/' },
+    { title: 'Discussionの読み方', href: '/papers/how-to-read-discussion/' },
+  ]}
+/>

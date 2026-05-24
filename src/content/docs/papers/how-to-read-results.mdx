@@ -1,0 +1,110 @@
+---
+title: Resultsの読み方
+description: ResultsをFigureと対応づけながら、何が示され、何がまだ言えないかを読む方法を説明します。
+part: papers
+module: paper-structure
+level: foundation
+priority: P0
+order: 40
+learningPaths:
+  - paper-reading
+relatedTerms:
+  - results
+  - figure
+  - figure-legend
+  - methods
+  - claim
+  - limitation
+prerequisites:
+  - /papers/paper-structure/
+  - /figures/figure-legend/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'Results本文とFigureを対応づけて読める',
+    '結果の記述と著者の解釈を区別できる',
+    'Figureから言えることと言えないことを考えられる',
+  ]}
+/>
+
+## 要点
+
+Resultsは、実験や解析で得られた証拠の流れを示すセクションです。Figureと対応づけて読むことが重要です。
+
+## 基礎解説
+
+Results本文は、Figureの順番に沿って結果を説明することが多いです。読むときは、本文の主張をそのまま受け取るのではなく、対応するFigureに戻って、どのデータがその文を支えているかを確認します。
+
+まず、何と何を比較しているのか、どの測定や解析を使ったのか、結果がどのパネルに示されているのかを見ます。次に、差の方向、大きさ、ばらつき、統計表示、反復を確認します。
+
+Resultsには著者の解釈が混じることもあります。「示した」「増加した」「関連した」といった表現と、「示唆する」「重要である」といった解釈寄りの表現を分けて読むと、証拠の強さを考えやすくなります。
+
+## なぜ重要か
+
+生命科学論文の中心的な証拠は、ResultsとFigureにあります。Discussionだけを読むと、著者の解釈に引っ張られやすくなります。ResultsをFigureに戻して読むことで、主張がどの程度データに支えられているかを確認できます。
+
+## 図解
+
+<LessonFigure
+  src="/figures/how-to-read-results-concept.jpg"
+  alt="Results本文、Figure、Methodsを行き来して証拠を確認する流れを示す概念図"
+  title="ResultsはFigureと対応づけて読む"
+  caption="本文の主張をFigureに戻して確認し、必要に応じてMethodsで条件や解析を確かめます。"
+/>
+
+<TermBox term="Results" english="Results">
+  論文の実験結果や解析結果を、Figureや表とともに示すセクションです。
+</TermBox>
+
+## 英語表記と略語
+
+| 日本語名     | 英語名                   | 略語 |
+| ------------ | ------------------------ | ---- |
+| 結果         | Results                  | -    |
+| 図           | Figure                   | Fig. |
+| パネル       | panel                    | -    |
+| 統計的有意性 | statistical significance | -    |
+
+## よくある誤解
+
+- Results本文だけを読めば十分ではありません。Figureとlegendを確認する必要があります。
+- p値やアスタリスクだけで、結果の意味が決まるわけではありません。
+- Resultsに書かれた解釈が、必ずしもすべての代替説明を排除しているとは限りません。
+
+## 重要用語
+
+- Results: 実験や解析で得られた結果を示すセクション。
+- Figure: 結果を図や画像として示したもの。
+- パネル: Figure内のA、B、Cなどに分かれた部分。
+- 統計表示: p値、信頼区間、エラーバーなど、結果の不確かさを読む手がかり。
+
+<Quiz
+  questions={[
+    {
+      question:
+        'Results本文を読んだあと、対応するFigureに戻る理由を説明してください。',
+      answer:
+        '本文の記述がどのデータやパネルに支えられているかを確認するためです。',
+    },
+    {
+      question: 'Resultsで確認したいFigure上の情報を2つ挙げてください。',
+      answer:
+        '比較条件、軸、単位、差の大きさ、ばらつき、p値、反復数などがあります。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'Figure legendの読み方', href: '/figures/figure-legend/' },
+    { title: 'Methodsの読み方', href: '/papers/how-to-read-methods/' },
+    { title: 'p値とは何か', href: '/statistics/p-value/' },
+  ]}
+/>

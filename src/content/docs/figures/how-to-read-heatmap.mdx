@@ -1,13 +1,31 @@
 ---
 title: ヒートマップの読み方
 description: 遺伝子発現解析などで使われるヒートマップの色、行、列、クラスタリング、スケールの読み方を説明します。
+part: figures
+module: bioinformatics-figures
+level: foundation
+order: 60
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - rna-seq
+  - gene-expression
+  - clustering
+  - marker-gene
+  - distribution
+prerequisites:
+  - /bioinformatics/rna-seq/
+  - /bioinformatics/count-matrix/
+  - /bioinformatics/clustering/
+  - /statistics/distribution/
 ---
 
 ヒートマップ（heatmap）は、多数の遺伝子やサンプルの値を色で表すFigureです。RNA-seqや差次的発現解析の結果をまとめるときによく使われ、全体のパターンを一目で見るのに向いています。
 
 ## このFigureで何を見るか
 
-サンプル間で似たパターンがあるか、特定の遺伝子群が条件ごとに高いか低いか、クラスタが実験条件と対応しているかを見ます。[RNA-seqとは何か](/bioinformatics/what-is-rna-seq/)や[用語: 遺伝子発現](/glossary/gene-expression/)と関係が深いFigureです。
+サンプル間で似たパターンがあるか、特定の遺伝子群が条件ごとに高いか低いか、クラスタが実験条件と対応しているかを見ます。[RNA-seqとは何か](/bioinformatics/rna-seq/)や[用語: 遺伝子発現](/glossary/gene-expression/)と関係が深いFigureです。
 
 ## まず一言でいうと
 
@@ -104,7 +122,7 @@ description: 遺伝子発現解析などで使われるヒートマップの色�
 - 列: サンプル、条件、時間点などを表します。
 - 色: 値の大小を表します。赤が高い、青が低いとは限らないため、カラーバーを確認します。
 - スケール: 生の発現量、正規化値、z-scoreなど、色に変換する前の値の扱いです。
-- クラスタリング: 似たパターンの行や列を近くに並べる処理です。
+- クラスタリング: 似たパターンの行や列を近くに並べる処理です。用語としては[クラスタリング](/glossary/clustering/)も確認しておくと読みやすくなります。
 - アノテーション: サンプル群、細胞種、処理条件などを色帯で示すことがあります。
 
 ## 読む順番
@@ -115,6 +133,15 @@ description: 遺伝子発現解析などで使われるヒートマップの色�
 4. サンプルのまとまりが実験条件と対応しているかを見ます。
 5. 遺伝子群のまとまりが、既知の経路や機能と関係しそうかを考えます。
 6. 個別の遺伝子を解釈する前に、元データや別のFigureで確認します。
+
+## 前提に戻る
+
+ヒートマップは色のまとまりが強く見えるFigureです。色の印象だけでなく、入力データ、スケール、クラスタリングの前提に戻ります。
+
+- 元データは[RNA-seq](/bioinformatics/rna-seq/)や[カウント行列](/bioinformatics/count-matrix/)で確認します。
+- 行や列の並びは[クラスタリング](/bioinformatics/clustering/)の結果であり、原因を直接示すものではありません。
+- 色が表す値は、[分布](/statistics/distribution/)や標準化の考え方と合わせて読みます。
+- 条件間の代表的な候補は、Volcano plotやqPCRなど別のFigureで確認します。
 
 ## よくある誤解
 
@@ -128,9 +155,10 @@ description: 遺伝子発現解析などで使われるヒートマップの色�
 - RNA-seqの発現量行列の可視化
 - 差次的発現遺伝子のパターン確認
 - シングルセル解析でのマーカー遺伝子表示
+- [用語: マーカー遺伝子](/glossary/marker-gene/)
 - プロテオームやメタボロームの多変量データ可視化
-- [RNA-seqとは何か](/bioinformatics/what-is-rna-seq/)
-- [差次的発現解析とは何か](/bioinformatics/what-is-differential-expression-analysis/)
+- [RNA-seqとは何か](/bioinformatics/rna-seq/)
+- [差次的発現解析とは何か](/bioinformatics/differential-expression/)
 - [用語: RNA-seq](/glossary/rna-seq/)
 - [用語: 差次的発現解析](/glossary/differential-expression-analysis/)
 
@@ -156,7 +184,8 @@ description: 遺伝子発現解析などで使われるヒートマップの色�
 
 ## 次に読む記事
 
-- [Figure legendの読み方](/figures/how-to-read-figure-legend/)
+- [Figure legendの読み方](/figures/figure-legend/)
 - [Volcano plotの読み方](/figures/how-to-read-volcano-plot/)
+- [カウント行列とは何か](/bioinformatics/count-matrix/)
 - [棒グラフの読み方](/figures/how-to-read-bar-plot/)
 - [用語: RNA-seq](/glossary/rna-seq/)

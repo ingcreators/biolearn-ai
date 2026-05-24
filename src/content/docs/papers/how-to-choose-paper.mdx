@@ -1,0 +1,100 @@
+---
+title: 最初に読む論文の選び方
+description: 初学者が読む論文を選ぶときに、テーマ、論文種別、Figureの読みやすさ、Methodsの前提を確認する方法を説明します。
+part: papers
+module: paper-discovery
+level: foundation
+priority: P1
+order: 240
+learningPaths:
+  - paper-reading
+relatedTerms:
+  - pubmed
+  - pmc
+  - doi
+  - review-paper
+  - primary-research-article
+  - figure
+  - methods
+prerequisites:
+  - /papers/pubmed/
+  - /papers/review-vs-primary-paper/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    '自分の目的に合う論文を選ぶ観点を説明できる',
+    'レビュー論文と原著論文を目的に応じて選べる',
+    'FigureとMethodsの前提を見て、読みやすさを判断できる',
+  ]}
+/>
+
+## 要点
+
+最初に読む論文は、有名さだけでなく、自分の目的、背景知識、Figureの読みやすさ、Methodsの前提に合うものを選びます。
+
+PubMedやPMCの使い分けで迷った場合は、先に [PubMed / PMC の使い分け](/resources/pubmed-pmc/) へ戻ります。このページでは、候補の中から自分の目的に合う論文を選ぶ観点に集中します。
+
+## 基礎解説
+
+初学者がいきなり専門的な原著論文を読むと、用語やMethodsで止まりやすくなります。最初は、テーマの全体像を知りたいのか、具体的な実験やFigureを読めるようになりたいのかを分けて考えます。
+
+全体像を知りたい場合はレビュー論文が向いています。実際のデータの読み方を練習したい場合は、Figureが比較的整理され、Methodsが追いやすい原著論文を選びます。
+
+読む候補を選ぶときは、TitleとAbstractを見て、対象、方法、主なFigure、使われている手法を確認します。自分がまだ知らない手法が多すぎる論文は、先に関連する基礎記事やMethods記事を読むと進めやすくなります。
+
+## 図解
+
+<LessonFigure
+  src="/figures/how-to-choose-paper-concept.jpg"
+  alt="最初に読む論文を目的、論文種別、Figureの読みやすさ、Methodsの前提から選ぶ概念図"
+  title="読む目的から論文を選ぶ"
+  caption="全体像ならレビュー、データ読解の練習ならFigureとMethodsが追いやすい原著論文を選びます。"
+/>
+
+<TermBox term="読む目的" english="reading goal">
+  論文から何を得たいかという目的です。背景理解、手法理解、Figure読解、研究アイデアの整理などがあります。
+</TermBox>
+
+## よくある誤解
+
+- もっとも有名な論文が、最初に読む論文としても最適だと思う。
+- 新しい論文ほど、必ず初心者に読みやすいと思う。
+- Abstractが分かりやすければ、MethodsやFigureも簡単だと考える。
+- 自分の目的を決めずに、検索結果の上から順に読む。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question: '最初に読む論文を選ぶとき、確認したい観点を3つ挙げてください。',
+      answer:
+        '読む目的、論文種別、対象、使われている手法、Figureの読みやすさ、Methodsの前提などです。',
+    },
+    {
+      question:
+        'テーマの全体像を知りたいとき、レビュー論文が向いている理由を説明してください。',
+      answer:
+        '複数の研究を整理して、背景、主要な考え方、未解決の問題を把握しやすいためです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'PubMed / PMC の使い分け', href: '/resources/pubmed-pmc/' },
+    {
+      title: 'レビュー論文と原著論文の違い',
+      href: '/papers/review-vs-primary-paper/',
+    },
+    { title: '論文を最初に読む手順', href: '/papers/first-pass-reading/' },
+    { title: 'PubMedの使い方', href: '/papers/pubmed/' },
+  ]}
+/>

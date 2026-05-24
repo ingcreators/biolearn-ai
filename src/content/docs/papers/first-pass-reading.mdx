@@ -1,0 +1,98 @@
+---
+title: 論文を最初に読む手順
+description: 生命科学論文を最初に読むときに、Title、Abstract、Figure、Results、Methodsをどの順に確認するかを説明します。
+part: papers
+module: reading-workflow
+level: foundation
+priority: P0
+order: 80
+learningPaths:
+  - paper-reading
+relatedTerms:
+  - title
+  - abstract
+  - figure
+  - results
+  - methods
+prerequisites:
+  - /papers/paper-structure/
+  - /figures/figure-legend/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    '初回読みに向いた順番を説明できる',
+    '深読みする前に論文の地図を作れる',
+    '分からない箇所を保留しながら読み進められる',
+  ]}
+/>
+
+## 要点
+
+最初の1回は、細部を完璧に読むより、論文全体の問い、方法、主要Figure、結論の候補をつかみます。
+
+## 基礎解説
+
+生命科学論文を初めて読むとき、AbstractからMethodsの細部まで順番に読み込むと、途中で目的を見失うことがあります。まずは全体像をつかむ読み方をします。
+
+おすすめの順番は、Title、Abstract、Figure一覧、Resultsの見出し、Methodsの必要部分、Discussionの限界です。これにより、何を調べた論文で、どのFigureが中心で、どこを後で深く読むべきかが見えます。
+
+知らない用語や手法は、初回では印をつけて保留します。すべてを一度で理解しようとせず、論文の地図を作ってから、必要な箇所に戻ります。
+
+## 図解
+
+<LessonFigure
+  src="/figures/first-pass-reading-concept.jpg"
+  alt="論文の初回読みでTitle、Abstract、Figure、Results、Methods、Discussionを順に確認する概念図"
+  title="初回読みは論文の地図を作る"
+  caption="細部に入る前に、問い、主要Figure、方法、結論の候補、限界をざっくり整理します。"
+/>
+
+<TermBox term="初回読み" english="first-pass reading">
+  論文を深く読む前に、全体像と読むべき重点をつかむための読み方です。
+</TermBox>
+
+## よくある誤解
+
+- 初回からすべてのMethodsを細かく読む必要があると思う。
+- 分からない用語が出るたびに止まり、全体像を見失う。
+- Abstractだけで論文の結論を確定してしまう。
+- Figureを見ずに本文だけで理解しようとする。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question: '初回読みで完璧な理解より優先したいことは何ですか。',
+      answer:
+        '研究の問い、主要Figure、使った方法、結論の候補、後で深く読む箇所をつかむことです。',
+    },
+    {
+      question:
+        '分からない手法が出てきたとき、初回読みではどう扱うとよいですか。',
+      answer:
+        '印をつけて保留し、全体像をつかんだ後でMethodsや手法記事に戻ります。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    {
+      title: 'Figureから論文を読む方法',
+      href: '/papers/figure-first-reading/',
+    },
+    {
+      title: 'TitleとAbstractの読み方',
+      href: '/papers/how-to-read-title-abstract/',
+    },
+    { title: 'Resultsの読み方', href: '/papers/how-to-read-results/' },
+  ]}
+/>

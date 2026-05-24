@@ -3,22 +3,91 @@ title: 統計・研究デザイン
 description: 生命科学論文の Results を読むために必要な統計と研究デザインの入口です。
 ---
 
+import ArticleList from '../../../components/ArticleList.astro';
+
 統計・研究デザインでは、Figure や Results に出てくる差、ばらつき、サンプル数、統計的な確からしさを読むための考え方を学びます。
+
+## このページの役割
+
+このページは、統計と研究デザインを概念として学び直すカテゴリトップです。Figureを読んでいる途中で確認点だけを短く見たい場合は、[Figure早見表](/resources/figures-cheatsheet/) を使います。
+
+| いまの状態                                    | 使う入口                                                               |
+| --------------------------------------------- | ---------------------------------------------------------------------- |
+| p値、効果量、反復、交絡などを順に学び直したい | このページの記事一覧                                                   |
+| Figure上の統計表示だけ素早く確認したい        | [Figure早見表](/resources/figures-cheatsheet/)                         |
+| Figureの種類から読み方を探したい              | [論文Figureの読み方](/figures/)                                        |
+| Figure読解を順番に練習したい                  | [Figureを読めるようになる](/paths/figure-reading/)                     |
+| Discussionで主張の強さを見積もりたい          | [論文読解演習](/papers/) と [批判的に読む](/papers/critical-reading/)  |
+| 統計・研究デザイン用語だけ短く確認したい      | [用語集の統計・研究デザインの用語](/glossary/#figure-statistics-terms) |
+
+## Figureで迷ったら
+
+<div class="biolearn-home-grid">
+  <a class="biolearn-home-card" href="/statistics/error-bars/">
+    <span>ばらつき</span>
+    <h3>エラーバーを読む</h3>
+    <p>
+      SD、SEM、信頼区間の違いを確認し、棒グラフや点推定の不確かさを読みます。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="/statistics/p-value/">
+    <span>有意差</span>
+    <h3>p値だけで判断しない</h3>
+    <p>p値、効果量、多重検定を分けて、Figure中の差の読みすぎを避けます。</p>
+  </a>
+  <a
+    class="biolearn-home-card"
+    href="/statistics/biological-technical-replicates/"
+  >
+    <span>実験設計</span>
+    <h3>n数と反復を確認する</h3>
+    <p>点やバーが何を単位にしているのか、反復とサンプル数から確認します。</p>
+  </a>
+</div>
 
 ## この分野で学ぶこと
 
 - 平均、ばらつき、エラーバー、信頼区間の基本
 - p値、効果量、多重検定の考え方
 - 対照群、反復、ランダム化、交絡の見方
+- Figureの軸、代表値、分布、推定の不確かさを分けて読むこと
+- 相関と因果、有意性と重要性、バイアスを区別してDiscussionを読むこと
 
-## 今後追加する記事
+## 目的別に戻る
 
-- エラーバーとは何か
-- p値とは何か
-- 生物学的反復と技術的反復
-- 多重検定とは何か
-- 研究デザインと対照群の読み方
+| Figureで困ること                         | 確認する記事                                                                                                               | 関連するFigure記事                                                                               |
+| ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| 軸や単位、何を比較しているかが分からない | [変数とは何か](/statistics/variable/)、[分布とは何か](/statistics/distribution/)                                           | [軸ラベルと単位](/figures/axis-label-unit/)、[棒グラフ](/figures/how-to-read-bar-plot/)          |
+| 平均や中央値の違いを確認したい           | [平均と中央値](/statistics/mean-median/)、[分布とは何か](/statistics/distribution/)                                        | [箱ひげ図](/figures/how-to-read-box-plot/)、[Violin plot](/figures/how-to-read-violin-plot/)     |
+| エラーバーの意味が分からない             | [エラーバー](/statistics/error-bars/)、[信頼区間](/statistics/confidence-interval/)                                        | [棒グラフ](/figures/how-to-read-bar-plot/)、[qPCRプロット](/figures/how-to-read-qpcr-plot/)      |
+| 有意差マークをどう読めばよいか迷う       | [p値](/statistics/p-value/)、[効果量](/statistics/effect-size/)、[有意性と重要性](/statistics/significance-vs-importance/) | [Volcano plot](/figures/how-to-read-volcano-plot/)、[Figureと主張](/figures/figure-to-claim/)    |
+| 多数の遺伝子を同時に見ている             | [多重検定補正](/statistics/multiple-testing-correction/)                                                                   | [Volcano plot](/figures/how-to-read-volcano-plot/)、[GSEA plot](/figures/how-to-read-gsea-plot/) |
+| 点の関係が因果に見えてよいか迷う         | [相関と因果](/statistics/correlation-causation/)、[交絡](/statistics/confounding/)                                         | [散布図](/figures/how-to-read-scatter-plot/)、[相関図](/figures/how-to-read-correlation-plot/)   |
+| 結論が強すぎるように見える               | [バイアス](/statistics/bias/)、[再現性](/statistics/reproducibility/)、[研究の限界](/statistics/limitations/)              | [Figureと主張](/figures/figure-to-claim/)、[Resultsの流れ](/figures/results-section-flow/)       |
+
+用語の意味だけを短く確認したい場合は、[用語集の統計・研究デザインの用語](/glossary/#figure-statistics-terms) に戻ります。実際の見え方を練習したい場合は、対応するFigure記事へ進みます。
+
+## 統計からFigureへ進む
+
+統計の考え方は、単独で覚えるよりもFigureの読み方と結びつけると使いやすくなります。概念を確認したら、対応するFigure記事で実際の見え方を確認します。
+
+| 統計・研究デザインの記事                                                                                      | Figureで確認する場所                                                                                 | 読むときの問い                                             |
+| ------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| [変数](/statistics/variable/)、[軸ラベルと単位](/figures/axis-label-unit/)                                    | [棒グラフ](/figures/how-to-read-bar-plot/)、[散布図](/figures/how-to-read-scatter-plot/)             | 何を横軸・縦軸にして、何を比較しているか                   |
+| [分布](/statistics/distribution/)、[平均と中央値](/statistics/mean-median/)                                   | [箱ひげ図](/figures/how-to-read-box-plot/)、[Violin plot](/figures/how-to-read-violin-plot/)         | 代表値だけでなく、データの広がりや外れ値が見えているか     |
+| [エラーバー](/statistics/error-bars/)、[信頼区間](/statistics/confidence-interval/)                           | [棒グラフ](/figures/how-to-read-bar-plot/)、[Forest plot](/figures/how-to-read-forest-plot/)         | 推定値の不確かさがどのように表示されているか               |
+| [p値](/statistics/p-value/)、[効果量](/statistics/effect-size/)                                               | [Volcano plot](/figures/how-to-read-volcano-plot/)、[Figureと主張](/figures/figure-to-claim/)        | 有意差の有無と効果の大きさを分けて読めているか             |
+| [多重検定補正](/statistics/multiple-testing-correction/)                                                      | [Volcano plot](/figures/how-to-read-volcano-plot/)、[GSEA plot](/figures/how-to-read-gsea-plot/)     | 多数の遺伝子や経路を同時に見ている前提を確認できているか   |
+| [相関と因果](/statistics/correlation-causation/)、[交絡](/statistics/confounding/)                            | [散布図](/figures/how-to-read-scatter-plot/)、[相関図](/figures/how-to-read-correlation-plot/)       | 点の関係を因果として読みすぎていないか                     |
+| [バイアス](/statistics/bias/)、[再現性](/statistics/reproducibility/)、[研究の限界](/statistics/limitations/) | [Figureと主張](/figures/figure-to-claim/)、[Resultsセクションの流れ](/figures/results-section-flow/) | Figureから言える範囲と、追加確認が必要な範囲を分けられるか |
+
+## 読む順番
+
+<ArticleList part="statistics" groupByModule />
 
 ## 次に進む
 
-統計表示に慣れたら、[論文Figureの読み方](/figures/) で実際の図の読み方へ進みます。
+まず [変数とは何か](/statistics/variable/) から入り、分布、平均と中央値、エラーバー、信頼区間、p値、効果量の順に読むと、Figure上の統計表示を読みやすくなります。実験デザイン側は、[生物学的反復と技術的反復](/statistics/biological-technical-replicates/)、[n数とは何か](/statistics/sample-size/)、[対照群とは何か](/statistics/control-group/) の順に確認します。
+
+統計表示に慣れたら、[論文Figureの読み方](/figures/) で実際の図の読み方へ進みます。順番に練習したい場合は、[Figureを読めるようになる](/paths/figure-reading/) を使います。
+Discussionを読む前には、[相関と因果の違い](/statistics/correlation-causation/)、[交絡とは何か](/statistics/confounding/)、[統計的有意性と生物学的重要性](/statistics/significance-vs-importance/)、[研究の限界の読み方](/statistics/limitations/) も確認しておくと、主張の強さを見積もりやすくなります。

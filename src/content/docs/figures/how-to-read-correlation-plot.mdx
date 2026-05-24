@@ -1,0 +1,92 @@
+---
+title: 相関図の読み方
+description: 相関図で2つの変数の関係、相関係数、外れ値、相関と因果の違いを読む基本を説明します。
+part: figures
+module: quantitative-figures
+level: foundation
+priority: P1
+order: 44
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - correlation-causation
+  - confounding
+  - p-value
+prerequisites:
+  - /figures/how-to-read-scatter-plot/
+  - /statistics/correlation-causation/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    '相関図で点の単位と軸を確認できる',
+    '相関係数とp値を区別して読める',
+    '相関と因果を混同しない読み方を身につける',
+  ]}
+/>
+
+## 要点
+
+相関図は、2つの変数が一緒に変化する傾向を、点の分布や相関係数で示すFigureです。
+
+## 基礎解説
+
+相関図は散布図の一種として示されることが多く、横軸と縦軸に別々の変数を置きます。点が右上がりに並ぶと正の相関、右下がりに並ぶと負の相関と表現されることがあります。
+
+Figureでは、相関係数 `r` や `rho`、p値、近似線が一緒に表示されることがあります。相関係数は関係の強さと向きを表し、p値はその関係が偶然だけで説明しにくいかの目安になります。両者は同じ意味ではありません。
+
+相関があることは、片方がもう片方を直接引き起こしたことを意味しません。[相関と因果の違い](/statistics/correlation-causation/)を意識し、共通の別要因、サンプルの偏り、外れ値、測定条件の影響も考える必要があります。
+
+## 図解
+
+<LessonFigure
+  src="/figures/how-to-read-correlation-plot-concept.jpg"
+  alt="相関図で点の分布、近似線、相関係数、外れ値を確認する概念図"
+  title="相関図は関係の向きと強さを読む"
+  caption="軸、点の単位、相関係数、外れ値、群の混ざり方を確認し、因果と混同しないように読みます。"
+/>
+
+<TermBox term="相関" english="correlation">
+  2つの変数が一緒に変化する傾向です。因果関係そのものを示す言葉ではありません。
+</TermBox>
+
+## よくある誤解
+
+- 相関があることを、因果関係が証明されたことと同じに読む。
+- 相関係数だけを見て、点の分布や外れ値を確認しない。
+- p値が小さいことを、関係が強いことと同じに読む。
+- 複数の群が混ざった図で、群ごとの傾向を見落とす。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question:
+        '相関図で、相関係数だけでなく点の分布を見る理由を説明してください。',
+      answer:
+        '外れ値、非線形な関係、群ごとの違いなどが、相関係数だけでは見えにくいことがあるためです。',
+    },
+    {
+      question: '相関があることは、因果関係を直接示しますか。',
+      answer:
+        '直接は示しません。共通の別要因やサンプルの偏りなど、別の説明も考える必要があります。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: '散布図の読み方', href: '/figures/how-to-read-scatter-plot/' },
+    { title: '相関と因果の違い', href: '/statistics/correlation-causation/' },
+    { title: 'p値とは何か', href: '/statistics/p-value/' },
+    { title: '軸・ラベル・単位の読み方', href: '/figures/axis-label-unit/' },
+  ]}
+/>

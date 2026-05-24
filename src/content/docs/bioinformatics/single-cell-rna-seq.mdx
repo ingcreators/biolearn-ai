@@ -1,0 +1,103 @@
+---
+title: single-cell RNA-seqとは何か
+description: single-cell RNA-seqを、1細胞ごとの遺伝子発現を読み、細胞集団の違いを調べる解析として説明します。
+part: bioinformatics
+module: single-cell-analysis
+level: intermediate
+priority: P1
+order: 40
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - single-cell-rna-seq
+  - rna-seq
+  - count-matrix
+prerequisites:
+  - /bioinformatics/rna-seq/
+  - /molecular-biology/gene-expression/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'single-cell RNA-seqが何を測る解析か説明できる',
+    'bulk RNA-seqとの違いを説明できる',
+    '細胞ごとの発現量から細胞集団を調べる流れを理解する',
+  ]}
+/>
+
+## 要点
+
+single-cell RNA-seqは、1細胞ごとのRNA量を測定し、細胞集団の違いや状態を調べる手法です。
+
+## 基礎解説
+
+通常のRNA-seqでは、試料全体からRNAを取り出し、細胞集団全体の平均的な発現を見ます。single-cell RNA-seqでは、1つ1つの細胞を区別して測定するため、同じ試料の中にある細胞集団の違いを調べやすくなります。
+
+解析では、細胞ごと、遺伝子ごとの発現量を行列として整理します。その後、品質の低い細胞を除く、正規化する、次元削減で全体像を見る、クラスタリングで似た細胞をまとめる、マーカー遺伝子で細胞型を推定する、といった流れで進みます。
+
+single-cell RNA-seqは強力ですが、1細胞の測定はノイズや欠測の影響を受けやすく、結果は前処理や解析条件にも左右されます。Figureを読むときは、UMAPの形だけでなく、細胞数、サンプル数、品質管理、バッチ補正、細胞型注釈の根拠を確認します。
+
+## 図解
+
+<LessonFigure
+  src="/figures/single-cell-rna-seq-concept.jpg"
+  alt="多数の細胞を1細胞ごとの発現量行列に変換し、UMAPやクラスタとして整理するsingle-cell RNA-seqの概念図"
+  title="single-cell RNA-seqは細胞ごとの発現量から集団構造を読む"
+  caption="細胞ごとの発現量をもとに、品質確認、次元削減、クラスタリング、細胞型注釈へ進みます。"
+/>
+
+<TermBox
+  term="single-cell RNA-seq"
+  english="single-cell RNA sequencing"
+  abbreviation="scRNA-seq"
+>
+  1細胞ごとのRNA量を測定し、細胞集団の違いや遺伝子発現のばらつきを調べる手法です。
+</TermBox>
+
+## よくある誤解
+
+- single-cell RNA-seqなら、すべての細胞状態が完全に分かると思う。
+- UMAPで近い点は、必ず生物学的に連続していると考える。
+- クラスタ名を、マーカー遺伝子や注釈方法を確認せずに受け入れる。
+- 細胞数だけを見て、個体差やサンプル差を考えない。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question:
+        'bulk RNA-seqとsingle-cell RNA-seqの大きな違いを説明してください。',
+      answer:
+        'bulk RNA-seqは試料全体の平均的な発現を見ますが、single-cell RNA-seqは1細胞ごとの発現を見て、細胞集団の違いを調べられます。',
+    },
+    {
+      question:
+        'single-cell RNA-seqのFigureでUMAP以外に確認したい情報を挙げてください。',
+      answer:
+        '細胞数、サンプル数、品質管理、バッチ補正、クラスタリング条件、マーカー遺伝子、細胞型注釈の根拠などです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'RNA-seqとは何か', href: '/bioinformatics/rna-seq/' },
+    { title: 'カウント行列とは何か', href: '/bioinformatics/count-matrix/' },
+    {
+      title: 'クラスタリングとは何か',
+      href: '/bioinformatics/clustering/',
+    },
+    {
+      title: 'single-cell解析論文の読み方',
+      href: '/papers/walkthrough-single-cell/',
+    },
+  ]}
+/>

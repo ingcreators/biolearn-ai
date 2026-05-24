@@ -1,0 +1,115 @@
+---
+title: ローディングコントロールとは何か
+description: ローディングコントロールを、Western blotなどでサンプル量や検出条件の違いを補正する基準として説明します。
+part: methods
+module: protein-and-cell-methods
+level: foundation
+priority: P1
+order: 120
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - control-group
+  - figure-legend
+  - sample-size
+  - biological-technical-replicates
+  - protein
+  - methods
+  - bias
+prerequisites:
+  - /methods/western-blot/
+  - /methods/control/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'ローディングコントロールの役割を説明できる',
+    '目的バンドと補正用バンドを分けて読める',
+    'ローディングコントロールが不安定なときの注意点を理解する',
+  ]}
+/>
+
+## 要点
+
+ローディングコントロールは、各レーンに入ったサンプル量や検出条件の違いを補正するための基準です。
+
+## 基礎解説
+
+Western blotでは、サンプルをレーンごとに流して目的タンパク質を検出します。しかし、各レーンに入った総タンパク質量や転写・検出の効率が完全に同じとは限りません。
+
+そこで、条件間で大きく変わらないと期待されるタンパク質や総タンパク質染色を基準にして、目的バンドの濃さを補正します。この基準がローディングコントロールです。
+
+## なぜ重要か
+
+目的バンドが濃く見えても、単にそのレーンに多くのサンプルが入っていた可能性があります。ローディングコントロールが安定しているか、定量値が何で割られているかを確認すると、Figureの比較を読みやすくなります。
+
+## 図解
+
+<LessonFigure
+  src="/figures/loading-control-concept.jpg"
+  alt="Western blotの目的バンドをローディングコントロールで補正し、条件間の比較へ進む流れを示す概念図"
+  title="目的バンドは補正の基準とセットで読む"
+  caption="ローディングコントロールが安定しているか、定量値が何で補正されたかを確認します。"
+/>
+
+<TermBox term="ローディングコントロール" english="loading control">
+  各レーンのサンプル量や検出条件の違いを補正するために使う基準です。
+</TermBox>
+
+## 英語表記と略語
+
+| 日本語名                 | 英語名                 | 略語 |
+| ------------------------ | ---------------------- | ---- |
+| ローディングコントロール | loading control        | -    |
+| 目的タンパク質           | target protein         | -    |
+| 総タンパク質染色         | total protein staining | -    |
+| 正規化                   | normalization          | -    |
+
+## よくある誤解
+
+- ローディングコントロールは必ず一定だと考える。
+- 目的バンドだけを見て、補正後の定量値を確認しない。
+- どのタンパク質を基準にしたかをMethodsで確認しない。
+
+## 重要用語
+
+- ローディングコントロール: レーン間のサンプル量や検出条件を補正する基準。
+- 目的タンパク質: 実験で量や修飾を見たいタンパク質。
+- 正規化: 比較しやすくするために基準で割るなどして値をそろえること。
+- 総タンパク質染色: レーン全体のタンパク質量を確認する方法。
+- [Figure legend](/glossary/figure-legend/): 何を基準に正規化したか、どのレーンを比較したかを確認する説明文。
+- [バイアス](/glossary/bias/): 基準の選び方や露光条件によって、見かけの差が偏る可能性。
+
+<Quiz
+  questions={[
+    {
+      question: 'ローディングコントロールを見る理由を説明してください。',
+      answer:
+        '各レーンのサンプル量や検出条件の違いを補正し、目的バンドの比較を妥当にするためです。',
+    },
+    {
+      question:
+        'ローディングコントロールが条件間で大きく変わっている場合、どのような注意が必要ですか。',
+      answer:
+        '目的バンドの差がサンプル量や補正方法の影響を受けている可能性があり、比較の解釈が不安定になります。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'Western blotとは何か', href: '/methods/western-blot/' },
+    {
+      title: 'Western blotの読み方',
+      href: '/figures/how-to-read-western-blot/',
+    },
+    { title: '対照群とは何か', href: '/methods/control/' },
+  ]}
+/>

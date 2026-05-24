@@ -1,0 +1,106 @@
+---
+title: 論文ノートの取り方
+description: 論文を読んだあとに、問い、方法、Figure、主張、限界、次に調べることを整理するノートの取り方を説明します。
+part: papers
+module: reading-workflow
+level: foundation
+priority: P2
+order: 105
+learningPaths:
+  - paper-reading
+relatedTerms:
+  - paper-note
+  - research-question
+  - methods
+  - figure
+  - claim
+  - limitation
+  - references
+prerequisites:
+  - /papers/first-pass-reading/
+  - /papers/critical-reading/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    '論文ノートに残す項目を説明できる',
+    'Figureごとの一言メモを作れる',
+    '主張、根拠、限界、次の疑問を分けて整理できる',
+  ]}
+/>
+
+## 要点
+
+論文ノートは、論文を要約するだけでなく、あとでFigureと主張を思い出し、次に読むものを決めるための道具です。
+
+## 基礎解説
+
+論文を読んだ直後は分かった気がしても、数日後には細かい条件やFigureの意味を忘れやすくなります。ノートには、論文の問い、対象、Methods、主要Figure、著者の主張、限界、自分の疑問を分けて残します。
+
+おすすめは、長い文章よりも短い項目で整理することです。各Figureについて「何を測ったか」「何を比較したか」「直接言えること」「Methodsで確認したこと」を一言ずつ書きます。
+
+ノートは正解を作る場所ではありません。読みながら保留した疑問や、次に読むべき基礎記事、Methods記事、関連論文への入口として使います。
+
+## 図解
+
+<LessonFigure
+  src="/figures/note-taking-concept.jpg"
+  alt="論文ノートで問い、Methods、Figure、主張、限界、次の疑問を整理する概念図"
+  title="論文ノートは主張と根拠を後で戻れる形にする"
+  caption="問い、Methods、Figure、主張、限界、次に調べることを短く分けて残します。"
+/>
+
+<TermBox term="論文ノート" english="paper note">
+  論文の問い、方法、Figure、主張、限界、自分の疑問を整理して残すメモです。
+</TermBox>
+
+## ノートの型
+
+| 項目     | 書くこと                           |
+| -------- | ---------------------------------- |
+| 問い     | この論文が何を明らかにしたいか     |
+| 対象     | 生物、細胞、組織、データ、条件     |
+| Methods  | 結果の解釈に関わる方法や解析       |
+| Figure   | 各Figureで何を測り、何を比較したか |
+| 主張     | 著者が何を言っているか             |
+| 根拠     | どのFigureやResultsが支えているか  |
+| 限界     | 残る疑問、代替説明、確認不足       |
+| 次の行動 | 調べる用語、読む論文、確認する手法 |
+
+## よくある誤解
+
+- Abstractを写せば十分なノートになると思う。
+- 自分が分からなかった点を書かない。
+- Figureごとの根拠を残さず、結論だけをメモする。
+- ノートをきれいに作ることが目的になってしまう。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question: '論文ノートでFigureごとに残したい情報を2つ挙げてください。',
+      answer:
+        '何を測ったか、何を比較したか、直接言えること、Methodsで確認したことなどです。',
+    },
+    {
+      question: '分からなかった点をノートに残す理由を説明してください。',
+      answer:
+        '次に調べる用語や読む記事を決めやすくなり、理解の保留点を見失わないためです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: '論文を最初に読む手順', href: '/papers/first-pass-reading/' },
+    { title: '論文を批判的に読む', href: '/papers/critical-reading/' },
+    { title: 'Figureと主張を対応づける', href: '/figures/figure-to-claim/' },
+  ]}
+/>

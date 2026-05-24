@@ -1,0 +1,179 @@
+---
+title: '論文読解演習: Western blotを含む論文'
+description: 架空のWestern blot論文を題材に、バンド、ローディングコントロール、定量、Methods確認をつなげて読む練習をします。
+part: papers
+module: paper-walkthrough
+level: intermediate
+priority: P1
+order: 320
+learningPaths:
+  - paper-reading
+relatedTerms:
+  - protein
+  - biological-technical-replicates
+  - reproducibility
+prerequisites:
+  - /methods/western-blot/
+  - /methods/loading-control/
+  - /figures/how-to-read-western-blot/
+  - /statistics/biological-technical-replicates/
+  - /papers/methods-checklist/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'Western blotを含む論文でFigureを読む順番を説明できる',
+    'バンド画像、定量グラフ、ローディングコントロールを対応づけられる',
+    'Methodsで確認すべき抗体、サンプル、補正方法を挙げられる',
+  ]}
+/>
+
+## 要点
+
+この演習では、実在論文ではなくBioLearn用の架空ケースを使い、Western blotを含む論文を読む手順を練習します。
+
+## 架空ケース
+
+ある研究では、条件Bでタンパク質Xが増えるかを調べたとします。Figureには、Western blotのバンド画像、ローディングコントロール、バンド強度の定量グラフが示されています。
+
+この主張を読むときは、まずバンドが予想される位置に出ているか、条件間で濃さがどう違うか、ローディングコントロールが比較可能かを確認します。
+
+## 図解
+
+<LessonFigure
+  src="/figures/walkthrough-western-blot-concept.jpg"
+  alt="Western blot論文でバンド、ローディングコントロール、定量、Methodsを確認する概念図"
+  title="Western blot論文は画像と定量をセットで読む"
+  caption="バンド位置、濃さ、ローディングコントロール、定量方法、反復をMethodsと合わせて確認します。"
+/>
+
+<TermBox term="ローディングコントロール" english="loading control">
+  各レーンに入ったサンプル量の違いを補正するための基準です。
+</TermBox>
+
+## 読む順番
+
+1. Abstractで、タンパク質Xについて何を主張しているかを拾います。
+2. Figureで、目的タンパク質のバンド位置と濃さを確認します。
+3. ローディングコントロールが条件間で大きくずれていないかを見ます。
+4. 定量グラフが何で補正された値かを確認します。
+5. Figure legendで反復数、統計表示、抗体名を探します。
+6. Methodsで、サンプル調製、抗体、露光条件、定量方法を確認します。
+
+## Methodsで確認すること
+
+| 項目         | 確認すること                         |
+| ------------ | ------------------------------------ |
+| サンプル     | 細胞や組織、処理条件、回収タイミング |
+| 抗体         | 目的タンパク質を検出する抗体の情報   |
+| ローディング | 総タンパク質量や基準タンパク質       |
+| 露光・検出   | 飽和していない範囲で比較しているか   |
+| 定量         | 何で補正し、どのレーンを基準にしたか |
+| 反復・統計   | 独立実験数、エラーバー、検定方法     |
+
+## 3段階で読む演習
+
+### 1. Methodsで確認する
+
+Western blotでは、バンドの見た目だけでなく、検出と定量の条件を先に確認します。
+
+- サンプル量、処理条件、独立実験数が示されているか。
+- 一次抗体と二次抗体の情報が書かれているか。
+- ローディングコントロールや総タンパク質染色が使われているか。
+- 露光が飽和していないこと、または定量可能な範囲であることが説明されているか。
+- バンド強度の定量方法と統計処理が書かれているか。
+
+この情報が不足している場合、バンドの濃淡は手がかりになりますが、量的な主張としては慎重に読む必要があります。
+
+### 2. Figureで確認する
+
+次に、代表画像と定量グラフを分けて読みます。
+
+- バンドの位置が、期待される分子量付近にあるか。
+- 条件間で目的タンパク質のバンド強度がどう変わるか。
+- ローディングコントロールが条件間で大きくずれていないか。
+- 定量グラフに独立実験のばらつきやエラーバーが示されているか。
+
+代表画像は直感的ですが、結論を支えるのは、再現性のある定量結果と対照の整合です。
+
+### 3. Discussionで言える範囲に戻す
+
+Western blotから言いやすいのは、「条件Bでタンパク質Xの検出量が増える傾向がある」という範囲です。
+
+一方で、追加実験なしに「タンパク質Xが表現型の原因である」「上流経路が直接変化した」とまでは言えません。Discussionでは、タンパク質量の変化と機能的な因果関係が混ざっていないかを確認します。
+
+### 自分で答える問い
+
+- 目的バンド、ローディングコントロール、定量グラフは互いに矛盾していないか。
+- 独立実験の回数とばらつきは示されているか。
+- Discussionの主張は、タンパク質量の変化から直接言える範囲に収まっているか。
+
+## よくある誤解
+
+- バンドが濃いだけで、タンパク質量が確実に多いと決める。
+- ローディングコントロールを確認せずに条件間を比べる。
+- 代表画像だけを見て、定量グラフや反復を確認しない。
+- 抗体の特異性やバンド位置を確認しない。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question:
+        'Western blot論文でローディングコントロールを見る理由を説明してください。',
+      answer:
+        'サンプル量や読み込み量の違いが、目的タンパク質の差に見えていないか確認するためです。',
+    },
+    {
+      question:
+        '定量グラフを見るときにMethodsで確認したいことを一つ挙げてください。',
+      answer:
+        '何で補正したか、どの条件を基準にしたか、反復数、統計検定、露光条件などです。',
+    },
+    {
+      question:
+        'Western blotのMethodsで、抗体以外に確認したい検出・定量条件を挙げてください。',
+      answer:
+        'サンプル量、処理条件、ローディングコントロール、露光が飽和していないか、定量方法、独立実験数などです。',
+    },
+    {
+      question:
+        '代表画像と定量グラフが食い違って見える場合、どの情報に戻って確認しますか。',
+      answer:
+        'ローディングコントロール、補正方法、反復数、エラーバー、露光条件、どのレーンを定量したかを確認します。',
+    },
+    {
+      question:
+        '「タンパク質Xが表現型の原因である」という表現を、Western blotから直接言いやすい表現に言い換えてください。',
+      answer:
+        '条件Bでタンパク質Xの検出量が増える傾向がある、というように、タンパク質量の観察結果に戻して表現します。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    {
+      title: '次の演習: 免疫染色を含む論文',
+      href: '/papers/walkthrough-immunostaining/',
+    },
+    {
+      title: '前の演習: single-cell解析論文',
+      href: '/papers/walkthrough-single-cell/',
+    },
+    {
+      title: 'Western blotの読み方',
+      href: '/figures/how-to-read-western-blot/',
+    },
+    { title: 'Western blotとは何か', href: '/methods/western-blot/' },
+    { title: 'Methods確認チェックリスト', href: '/papers/methods-checklist/' },
+    { title: '論文読解演習トップ', href: '/papers/' },
+  ]}
+/>

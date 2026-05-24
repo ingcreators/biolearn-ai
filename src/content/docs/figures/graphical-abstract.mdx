@@ -1,0 +1,95 @@
+---
+title: Graphical abstractの読み方
+description: Graphical abstractで研究の全体像、主張、実験結果との距離を確認する読み方を説明します。
+part: figures
+module: figure-basics
+level: foundation
+priority: P2
+order: 18
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - significance-vs-importance
+  - correlation-causation
+  - reproducibility
+prerequisites:
+  - /papers/how-to-read-title-abstract/
+  - /figures/figure-to-claim/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'Graphical abstractの役割を説明できる',
+    '図が示す全体像と実際のResultsを区別できる',
+    '模式図の主張をFigureや本文に戻して確認できる',
+  ]}
+/>
+
+## 要点
+
+Graphical abstractは、研究の全体像や著者の主張を視覚的にまとめた図です。結果そのものではなく、要約として読みます。
+
+## 基礎解説
+
+Graphical abstractは、論文の中心的な考えやモデルを短時間で伝えるために使われます。研究対象、方法、主な結果、提案されるモデルが1枚の模式図にまとめられることがあります。
+
+ただし、Graphical abstractは著者の解釈を含む要約です。図に描かれている矢印や因果関係が、すべてResultsで直接証明されているとは限りません。
+
+読むときは、まず何が研究対象で、どんな流れや関係が描かれているかを把握します。その後、対応するResultsやFigureに戻り、どの部分がデータで支えられているかを確認します。
+
+## 図解
+
+<LessonFigure
+  src="/figures/graphical-abstract-concept.jpg"
+  alt="Graphical abstractで研究対象、方法、結果、モデルを要約し、Resultsに戻って確認する概念図"
+  title="Graphical abstractは研究の地図として読む"
+  caption="全体像をつかむ入口として使い、主張の強さはResultsとFigureに戻って確認します。"
+/>
+
+<TermBox term="Graphical abstract" english="graphical abstract">
+  論文の内容や主張を視覚的にまとめた要約図です。
+</TermBox>
+
+## よくある誤解
+
+- Graphical abstractに描かれている関係を、すべて実験で直接証明済みと読む。
+- 模式図の矢印を、因果関係の確定として受け取る。
+- ResultsやMethodsを確認せず、要約図だけで論文を理解したと思う。
+- 著者のモデルと、実際に示されたデータを区別しない。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question:
+        'Graphical abstractを読むとき、Resultsに戻って確認したいことは何ですか。',
+      answer:
+        '図に描かれた関係や主張が、どのFigureやResultsに支えられているかです。',
+    },
+    {
+      question:
+        'Graphical abstractを結果そのものとして読まない方がよい理由を説明してください。',
+      answer:
+        '著者の解釈やモデルを含む要約図であり、実際の証拠の強さは本文やFigureで確認する必要があるためです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    {
+      title: 'TitleとAbstractの読み方',
+      href: '/papers/how-to-read-title-abstract/',
+    },
+    { title: 'Figureと主張を対応づける', href: '/figures/figure-to-claim/' },
+    { title: 'Resultsの読み方', href: '/papers/how-to-read-results/' },
+  ]}
+/>

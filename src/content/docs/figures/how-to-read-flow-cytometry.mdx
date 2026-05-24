@@ -1,0 +1,105 @@
+---
+title: フローサイトメトリーの読み方
+description: フローサイトメトリーFigureで点の分布、ゲート、陽性率、対照を確認する読み方を説明します。
+part: figures
+module: experimental-figures
+level: foundation
+priority: P1
+order: 47
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - cell
+  - biological-technical-replicates
+prerequisites:
+  - /methods/flow-cytometry/
+  - /methods/positive-negative-control/
+  - /statistics/biological-technical-replicates/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'フローサイトメトリーFigureでゲートを確認できる',
+    '点の数と独立サンプル数を区別できる',
+    '陽性率や細胞集団の比較を読む順番を説明できる',
+  ]}
+/>
+
+## 要点
+
+フローサイトメトリーFigureは、細胞集団を点の分布とゲートで示すFigureです。
+
+## 基礎解説
+
+フローサイトメトリーでは、1つの点が1つの細胞を表すことが多いです。散布図上で、どの細胞集団を解析対象にするかを囲む操作をゲーティングと呼びます。
+
+Figureを見るときは、まず軸が何を表すかを確認します。FSCやSSC、蛍光マーカー、細胞表面マーカーなどが軸になります。次に、どのゲートで細胞を選び、陽性率や細胞数をどう計算しているかを確認します。
+
+点が多くても、独立サンプル数が多いとは限りません。1つのサンプルから多数の細胞を測っている場合があるため、Figure legendでサンプル数と反復を確認します。
+
+## 前提に戻る
+
+フローサイトメトリーFigureは、点の数が多いため強く見えやすいFigureです。実験手法、対照、反復を分けて確認します。
+
+- 実験の原理は[フローサイトメトリーとは何か](/methods/flow-cytometry/)で確認します。
+- ゲートや陽性率の基準は、[陽性対照と陰性対照](/methods/positive-negative-control/)を合わせて読むと整理できます。
+- 点の分布は[散布図](/figures/how-to-read-scatter-plot/)として読み、軸が何を表すかは[軸・ラベル・単位](/figures/axis-label-unit/)で確認します。
+- 点の数と独立サンプル数は、[生物学的反復と技術的反復](/statistics/biological-technical-replicates/)で区別します。
+
+## 図解
+
+<LessonFigure
+  src="/figures/how-to-read-flow-cytometry-concept.jpg"
+  alt="フローサイトメトリーFigureで散布図のゲートと陽性率グラフを確認する概念図"
+  title="フローサイトメトリーはゲートと陽性率を読む"
+  caption="軸、ゲート、対照、陽性率、独立サンプル数を確認して細胞集団の変化を読みます。"
+/>
+
+<TermBox term="ゲート" english="gate">
+  フローサイトメトリーで、解析対象にする細胞集団を選ぶ範囲です。
+</TermBox>
+
+## よくある誤解
+
+- 点が多いことは、独立した反復が多いこととは違います。
+- ゲートの置き方によって陽性率は変わります。
+- 陽性率だけでなく、対照や補正、サンプル数を確認する必要があります。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question:
+        'フローサイトメトリーFigureでゲートを見る理由を説明してください。',
+      answer:
+        'どの細胞集団を解析対象にしているかが結果の解釈に関わるためです。',
+    },
+    {
+      question: '点の数と独立サンプル数を区別する理由を説明してください。',
+      answer: '多数の点が同じサンプル由来の細胞である可能性があるためです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'フローサイトメトリーとは何か', href: '/methods/flow-cytometry/' },
+    {
+      title: '陽性対照と陰性対照',
+      href: '/methods/positive-negative-control/',
+    },
+    { title: '散布図の読み方', href: '/figures/how-to-read-scatter-plot/' },
+    {
+      title: '生物学的反復と技術的反復',
+      href: '/statistics/biological-technical-replicates/',
+    },
+  ]}
+/>

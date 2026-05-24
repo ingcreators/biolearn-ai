@@ -1,0 +1,130 @@
+---
+title: 陽性対照と陰性対照
+description: 陽性対照と陰性対照を、実験系が期待どおり反応するか、不要な反応が出ていないかを確認する基準として説明します。
+part: methods
+module: sample-and-control
+level: foundation
+priority: P1
+order: 30
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - control-group
+  - figure-legend
+  - biological-technical-replicates
+  - sample-size
+  - methods
+  - bias
+prerequisites:
+  - /methods/control/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    '陽性対照と陰性対照の役割を区別できる',
+    'Figureで対照が実験系の確認に使われていることを読める',
+    '対照がない場合に解釈が弱くなる理由を説明できる',
+  ]}
+/>
+
+## 要点
+
+陽性対照は「反応が出るはずの条件」、陰性対照は「反応が出ないはずの条件」です。
+
+## 基礎解説
+
+実験では、目的の処理やサンプルだけを見ても、実験系が正しく動いているか判断しにくいことがあります。そこで、反応が出ることを期待する陽性対照と、反応が出ないことを期待する陰性対照を置きます。
+
+陽性対照が反応しない場合、実験系や検出方法に問題がある可能性があります。陰性対照で反応が出る場合、非特異的な反応、混入、背景シグナルなどを考える必要があります。
+
+## なぜ重要か
+
+Figureで差が見えても、陽性対照と陰性対照が適切でないと、その差が本当に目的の現象を反映しているのか判断しにくくなります。MethodsとFigure legendで、どの条件がどの対照として置かれているかを確認します。
+
+## Figureで見る場所
+
+陽性対照と陰性対照は、Figureのシグナル範囲を読む基準になります。
+
+- 陰性対照で強いシグナルがある場合、背景や非特異的反応を疑います。
+- 陽性対照で反応が弱い場合、検出系や試料処理の問題を考えます。
+- 免疫染色やflow cytometryでは、陽性・陰性の境界やゲート設定に関わります。
+- qPCRやWestern blotでは、目的の反応が期待どおり出るかを確認する助けになります。
+
+対照がFigure内に見えない場合でも、MethodsやFigure legendに条件名として書かれていることがあります。
+
+## 図解
+
+<LessonFigure
+  src="/figures/positive-negative-control-concept.jpg"
+  alt="陰性対照は低いシグナル、陽性対照は高いシグナル、試験条件はその間で評価されることを示す概念図"
+  title="陽性対照と陰性対照で実験系を確認する"
+  caption="反応が出る条件と出ない条件を置くことで、試験条件の結果を解釈しやすくします。"
+/>
+
+<TermBox term="陽性対照" english="positive control">
+  実験系で反応が出ることを期待する対照条件です。
+</TermBox>
+
+<TermBox term="陰性対照" english="negative control">
+  実験系で反応が出ないことを期待する対照条件です。
+</TermBox>
+
+## 英語表記と略語
+
+| 日本語名     | 英語名             | 略語 |
+| ------------ | ------------------ | ---- |
+| 陽性対照     | positive control   | -    |
+| 陰性対照     | negative control   | -    |
+| 背景信号     | background signal  | -    |
+| 非特異的反応 | nonspecific signal | -    |
+
+## よくある誤解
+
+- 陰性対照は「何も入れない条件」とは限りません。
+- 陽性対照があるだけで、目的の結論が証明されたわけではありません。
+- 対照が本文で説明されず、Figureだけに書かれている場合もあります。
+
+## 重要用語
+
+- 陽性対照: 反応が出るはずの条件。
+- 陰性対照: 反応が出ないはずの条件。
+- 背景信号: 目的の反応とは別に見える信号。
+- 非特異的反応: 目的の対象以外に由来する反応。
+- [Figure legend](/glossary/figure-legend/): 陽性対照や陰性対照がどの条件として置かれているかを確認する説明文。
+- [バイアス](/glossary/bias/): 対照設定、測定、解析、表示によって結果が一方向にずれる可能性。
+
+<Quiz
+  questions={[
+    {
+      question: '陽性対照が反応しない場合、何を疑いますか。',
+      answer:
+        '実験系、試薬、検出方法、サンプル処理などが期待どおり働いていない可能性を考えます。',
+    },
+    {
+      question: '陰性対照で強い反応が出た場合、何を考える必要がありますか。',
+      answer:
+        '背景信号、非特異的反応、混入、条件設定の問題などを確認する必要があります。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: '対照群とは何か', href: '/methods/control/' },
+    {
+      title: 'フローサイトメトリー図の読み方',
+      href: '/figures/how-to-read-flow-cytometry/',
+    },
+    {
+      title: '免疫染色画像の読み方',
+      href: '/figures/how-to-read-immunostaining/',
+    },
+  ]}
+/>

@@ -1,0 +1,106 @@
+---
+title: 平均と中央値
+description: 平均と中央値を、データの代表値として説明し、分布や外れ値との関係を整理します。
+part: statistics
+module: statistics-basics
+level: foundation
+priority: P1
+order: 30
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - mean-median
+  - distribution
+prerequisites:
+  - /statistics/distribution/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    '平均と中央値の違いを説明できる',
+    '外れ値や偏った分布で代表値の読み方が変わることを理解する',
+    'Figure legendで代表値の定義を確認できる',
+  ]}
+/>
+
+## 要点
+
+平均と中央値は、データの中心を表す代表値ですが、外れ値や分布の偏りへの影響が異なります。
+
+## 基礎解説
+
+平均は、すべての値を足してデータ数で割った値です。多くの棒グラフでは平均が示されます。中央値は、値を小さい順に並べたとき中央に来る値です。箱ひげ図では中央値がよく使われます。
+
+データが左右対称に近い場合、平均と中央値は近くなることがあります。一方、極端に大きい値がある場合、平均はその値に引っ張られます。中央値は外れ値の影響を受けにくい代表値です。
+
+## なぜ重要か
+
+Figureの中央の線や棒の高さが何を表しているかを確認しないと、データの中心を読み違えることがあります。平均、中央値、個々の点、エラーバーを合わせて見ると、結果の見え方が安定します。
+
+## Figureで見る場所
+
+[棒グラフの読み方](/figures/how-to-read-bar-plot/)では棒の高さが平均なのか別の代表値なのかを確認します。[箱ひげ図の読み方](/figures/how-to-read-box-plot/)では箱の中線が中央値を表すことが多く、平均とは違う見方が必要です。
+
+## 図解
+
+<LessonFigure
+  src="/figures/mean-median-concept.jpg"
+  alt="外れ値があるデータで平均が右に引かれ、中央値は中央付近に残ることを示す概念図"
+  title="平均と中央値は外れ値への影響が違う"
+  caption="代表値だけでなく、分布と個々の点も合わせて確認します。"
+/>
+
+<TermBox term="平均" english="mean">
+  すべての値を足し、データ数で割った代表値です。
+</TermBox>
+
+## 英語表記と略語
+
+| 日本語名 | 英語名            | 略語 |
+| -------- | ----------------- | ---- |
+| 平均     | mean              | -    |
+| 中央値   | median            | -    |
+| 代表値   | summary statistic | -    |
+| 外れ値   | outlier           | -    |
+
+## よくある誤解
+
+- 棒の高さが必ず平均だと思い込む。
+- 中央値を平均と同じ意味で読む。
+- 外れ値があるのに、平均だけで群全体を説明してしまう。
+
+## 重要用語
+
+- 平均: 値の合計をデータ数で割った代表値。
+- 中央値: 並べた値の中央にある代表値。
+- 外れ値: 他の値から大きく離れた値。
+- 分布: 値の集まり方。
+
+<Quiz
+  questions={[
+    {
+      question: '外れ値の影響を受けやすいのは、平均と中央値のどちらですか。',
+      answer: '平均です。',
+    },
+    {
+      question:
+        'Figureで代表値を見るとき、legendで確認したいことを一つ挙げてください。',
+      answer: '棒や線が平均、中央値、別の統計量のどれを表すかを確認します。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'エラーバーとは何か', href: '/statistics/error-bars/' },
+    { title: '箱ひげ図の読み方', href: '/figures/how-to-read-box-plot/' },
+    { title: '棒グラフの読み方', href: '/figures/how-to-read-bar-plot/' },
+  ]}
+/>

@@ -1,0 +1,93 @@
+---
+title: ROC曲線の読み方
+description: 分類モデルや判別性能を示すROC曲線で、感度、偽陽性率、AUCを読む基本を説明します。
+part: figures
+module: quantitative-figures
+level: intermediate
+priority: P1
+order: 84
+learningPaths:
+  - figure-reading
+  - paper-reading
+relatedTerms:
+  - p-value
+  - sample-size
+  - significance-vs-importance
+prerequisites:
+  - /statistics/p-value/
+  - /statistics/sample-size/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'ROC曲線の横軸と縦軸を説明できる',
+    'AUCを性能の目安として読める',
+    '研究Figureとして読むときの注意点を理解する',
+  ]}
+/>
+
+## 要点
+
+ROC曲線は、分類や判別のしきい値を変えたときに、真陽性率と偽陽性率の関係がどう変わるかを見るFigureです。
+
+## 基礎解説
+
+ROCは receiver operating characteristic の略です。生命科学論文では、遺伝子発現、画像特徴量、スコアなどを使って、2つの状態をどの程度区別できるかを示すときに使われることがあります。
+
+縦軸は真陽性率（true positive rate）または感度（sensitivity）、横軸は偽陽性率（false positive rate）を表すことが多いです。曲線が左上に近いほど、あるデータセット上では区別がよいと読みます。
+
+AUC（area under the curve）は曲線の下の面積で、1に近いほど区別性能が高い目安になります。ただし、AUCが高いことは、そのまま実用性や因果関係を意味しません。データの分け方、サンプル数、外部検証、目的に合う評価指標を確認します。
+
+## 図解
+
+<LessonFigure
+  src="/figures/how-to-read-roc-curve-concept.jpg"
+  alt="ROC曲線で左上に近い曲線、対角線、AUCを確認する概念図"
+  title="ROC曲線はしきい値を変えたときの判別性能を見る"
+  caption="真陽性率、偽陽性率、AUC、検証データの有無を確認して読みます。"
+/>
+
+<TermBox term="AUC" english="area under the curve" abbreviation="AUC">
+  ROC曲線の下の面積です。分類や判別の性能を要約する指標として使われます。
+</TermBox>
+
+## よくある誤解
+
+- AUCが高いだけで、すぐに実用できると判断する。
+- 学習に使ったデータと評価に使ったデータの違いを確認しない。
+- サンプル数やクラスの偏りを見ずに、曲線の形だけを読む。
+- ROC曲線を、診断や治療の個別判断として読んでしまう。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question: 'ROC曲線の縦軸と横軸は何を表すことが多いですか。',
+      answer: '縦軸は真陽性率または感度、横軸は偽陽性率を表すことが多いです。',
+    },
+    {
+      question:
+        'AUCが高いFigureを読むときに、追加で確認したいことを一つ挙げてください。',
+      answer:
+        '独立した検証データで評価されているか、サンプル数が十分か、クラスの偏りがないかなどを確認します。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'p値とは何か', href: '/statistics/p-value/' },
+    { title: '散布図の読み方', href: '/figures/how-to-read-scatter-plot/' },
+    {
+      title: 'multi-panel Figureの読み方',
+      href: '/figures/multi-panel-figure/',
+    },
+  ]}
+/>

@@ -1,0 +1,96 @@
+---
+title: Referencesの読み方
+description: Referencesから先行研究、レビュー論文、原著論文、次に読む文献を探す方法を説明します。
+part: papers
+module: paper-structure
+level: foundation
+priority: P2
+order: 70
+learningPaths:
+  - paper-reading
+relatedTerms:
+  - references
+  - prior-study
+  - review-paper
+  - primary-research-article
+  - pubmed
+  - doi
+prerequisites:
+  - /papers/review-vs-primary-paper/
+  - /papers/pubmed/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import TermBox from '../../../components/TermBox.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'Referencesの役割を説明できる',
+    '引用文献から次に読む論文を選べる',
+    'レビュー論文と原著論文を見分けながらたどれる',
+  ]}
+/>
+
+## 要点
+
+Referencesは、論文が依拠している先行研究のリストです。背景理解や次に読む論文を探す入口になります。
+
+## 基礎解説
+
+Referencesには、本文で引用された論文、レビュー、データベース、手法論文などが並びます。分からない背景やMethodsが出てきたとき、引用文献をたどると理解の手がかりが得られます。
+
+読むときは、すべての文献を順番に読む必要はありません。まず、Introductionで背景として何度も出てくる文献、Methodsで使われた手法の元論文、Discussionで重要な比較対象として出てくる文献を探します。
+
+レビュー論文は全体像をつかむのに役立ちます。原著論文は、具体的なデータやFigureを確認するのに向いています。目的に応じて、次に読む文献を選びます。
+
+## 図解
+
+<LessonFigure
+  src="/figures/how-to-read-references-concept.jpg"
+  alt="Referencesから背景論文、手法論文、比較対象の論文、次に読む論文を選ぶ概念図"
+  title="Referencesは次に読む文献への地図"
+  caption="背景、手法、比較対象、レビュー論文を見分けて、次に読む文献を選びます。"
+/>
+
+<TermBox term="References" english="References">
+  論文中で引用された文献の一覧です。先行研究や手法の出典を確認できます。
+</TermBox>
+
+## よくある誤解
+
+- Referencesは最後に置かれているので読まなくてよいと思う。
+- 引用されている文献は、すべて著者の主張を支持していると思う。
+- レビュー論文と原著論文を区別せずに読む。
+- 引用数や有名さだけで、次に読む論文を決める。
+
+## 確認問題
+
+<Quiz
+  questions={[
+    {
+      question:
+        'Referencesから次に読む文献を選ぶとき、注目したい文献を2種類挙げてください。',
+      answer:
+        '背景として重要なレビュー論文、Methodsで使われた手法論文、ResultsやDiscussionで比較対象になっている原著論文などです。',
+    },
+    {
+      question: '引用されている文献を読むときに注意したいことは何ですか。',
+      answer:
+        '引用された文献が著者の主張を支持しているとは限らないため、本文でどう使われているかを確認します。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    {
+      title: 'レビュー論文と原著論文の違い',
+      href: '/papers/review-vs-primary-paper/',
+    },
+    { title: 'PubMedの使い方', href: '/papers/pubmed/' },
+    { title: '最初に読む論文の選び方', href: '/papers/how-to-choose-paper/' },
+  ]}
+/>
