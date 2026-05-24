@@ -42,6 +42,19 @@ html {
   margin-top: 2.4rem;
 }
 
+.hero:not(:has(> img)):not(:has(> .hero-html)) {
+  grid-template-columns: 1fr;
+}
+
+h1[data-page-title] .biolearn-hero-brand,
+h1[data-page-title] .biolearn-hero-main {
+  display: block;
+}
+
+h1[data-page-title] .biolearn-hero-main {
+  text-wrap: balance;
+}
+
 .biolearn-box,
 .biolearn-quiz,
 .glossary-table {
