@@ -1,4 +1,22 @@
 ---
+import { getCollection } from 'astro:content';
+import {
+  learningPathLabels,
+  learningPathRoutes,
+  type LearningPathKey,
+} from '../data/learningPaths';
+
+type Part =
+  | 'fundamentals'
+  | 'molecular-biology'
+  | 'cell-biology'
+  | 'genomics'
+  | 'methods'
+  | 'bioinformatics'
+  | 'statistics'
+  | 'figures'
+  | 'papers';
+
 interface LinkItem {
   title: string;
   href: string;
@@ -9,17 +27,168 @@ interface Props {
 }
 
 const { items } = Astro.props;
+
+const normalizeHref = (href: string) => {
+  const path = href.split('#')[0].split('?')[0];
+  if (path === '/') return path;
+  return path.endsWith('/') ? path : `${path}/`;
+};
+
+const toHref = (id: string) => {
+  const pagePath = id.replace(/(^|\/)index$/, '').replace(/\/$/, '');
+  return pagePath ? `/${pagePath}/` : '/';
+};
+
+const partLabels: Record<Part, string> = {
+  fundamentals: '生命科学の基礎',
+  'molecular-biology': '分子生物学',
+  'cell-biology': '細胞生物学',
+  genomics: 'ゲノミクス',
+  methods: '実験手法',
+  bioinformatics: 'バイオインフォマティクス',
+  statistics: '統計・研究デザイン',
+  figures: '論文Figure',
+  papers: '論文読解演習',
+};
+
+const categoryParts = new Set<string>(Object.keys(partLabels));
+
+const docs = await getCollection('docs');
+const hrefTitleMap = new Map(
+  docs.map((entry) => [toHref(entry.id), entry.data.title]),
+);
+const docsWithHref = docs.map((entry) => ({
+  entry,
+  href: toHref(entry.id),
+}));
+
+const currentHref = normalizeHref(Astro.url.pathname);
+const pathNextItems = Object.entries(learningPathRoutes).flatMap(
+  ([learningPath, route]) => {
+    const currentIndex = route.indexOf(currentHref);
+    const nextHref = route[currentIndex + 1];
+    if (currentIndex === -1 || !nextHref) return [];
+
+    return [
+      {
+        learningPath: learningPath as LearningPathKey,
+        href: nextHref,
+        title:
+          hrefTitleMap.get(nextHref) ??
+          nextHref.replace(/^\/|\/$/g, '').replaceAll('/', ' / '),
+      },
+    ];
+  },
+);
+
+const currentDoc = docsWithHref.find((item) => item.href === currentHref);
+const currentPart = currentDoc?.entry.data.part;
+const categoryArticles =
+  currentPart && categoryParts.has(currentPart)
+    ? docsWithHref
+        .filter(
+          (item) =>
+            item.entry.data.part === currentPart &&
+            item.entry.data.order !== undefined &&
+            !item.entry.data.draft,
+        )
+        .sort((a, b) => {
+          const orderDiff =
+            (a.entry.data.order ?? 999) - (b.entry.data.order ?? 999);
+          if (orderDiff !== 0) return orderDiff;
+          return a.href.localeCompare(b.href);
+        })
+    : [];
+const currentCategoryIndex = categoryArticles.findIndex(
+  (item) => item.href === currentHref,
+);
+const categoryNext = categoryArticles[currentCategoryIndex + 1];
+const categoryNextItems =
+  currentPart &&
+  categoryParts.has(currentPart) &&
+  currentCategoryIndex !== -1 &&
+  categoryNext
+    ? [
+        {
+          context: partLabels[currentPart as Part],
+          href: categoryNext.href,
+          title:
+            hrefTitleMap.get(categoryNext.href) ??
+            categoryNext.href.replace(/^\/|\/$/g, '').replaceAll('/', ' / '),
+        },
+      ]
+    : [];
+
+const sequenceItemMap = new Map<
+  string,
+  { href: string; title: string; contexts: string[] }
+>();
+
+for (const item of pathNextItems) {
+  const existing = sequenceItemMap.get(item.href);
+  const context = learningPathLabels[item.learningPath];
+  if (existing) {
+    existing.contexts.push(context);
+  } else {
+    sequenceItemMap.set(item.href, {
+      href: item.href,
+      title: item.title,
+      contexts: [context],
+    });
+  }
+}
+
+for (const item of categoryNextItems) {
+  const existing = sequenceItemMap.get(item.href);
+  if (existing) {
+    existing.contexts.push(item.context);
+  } else {
+    sequenceItemMap.set(item.href, {
+      href: item.href,
+      title: item.title,
+      contexts: [item.context],
+    });
+  }
+}
+
+const sequenceItems = [...sequenceItemMap.values()];
+const sequenceHrefs = new Set(sequenceItems.map((item) => item.href));
+const relatedItems = items.filter(
+  (item) => !sequenceHrefs.has(normalizeHref(item.href)),
+);
 ---
 
 <nav class="biolearn-box biolearn-next" aria-labelledby="next-steps-title">
-  <h3 id="next-steps-title">次に読む記事</h3>
-  <ul>
-    {
-      items.map((item) => (
-        <li>
-          <a href={item.href}>{item.title}</a>
-        </li>
-      ))
-    }
-  </ul>
+  {
+    sequenceItems.length ? (
+      <section class="biolearn-next-group">
+        <h3 id="next-steps-title">順番で次に読む記事</h3>
+        <ul>
+          {sequenceItems.map((item) => (
+            <li>
+              <a href={item.href}>
+                {`${item.contexts.join(' / ')}（${item.title}）`}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ) : (
+      <h3 id="next-steps-title">次に読む記事</h3>
+    )
+  }
+  {
+    relatedItems.length ? (
+      <section class="biolearn-next-group">
+        {sequenceItems.length ? <h3>関連して次に読む記事</h3> : null}
+        <ul>
+          {relatedItems.map((item) => (
+            <li>
+              <a href={item.href}>{item.title}</a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ) : null
+  }
 </nav>

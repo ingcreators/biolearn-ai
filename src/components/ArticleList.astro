@@ -1,5 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
+import {
+  learningPathRoutes,
+  type LearningPathKey,
+} from '../data/learningPaths';
 
 type Part =
   | 'start'
@@ -109,6 +113,8 @@ const toHref = (id: string) => {
 
 const docs = await getCollection('docs');
 
+const docByHref = new Map(docs.map((entry) => [toHref(entry.id), entry]));
+
 const hrefTitleMap = new Map(
   docs.map((entry) => [toHref(entry.id), entry.data.title]),
 );
@@ -134,20 +140,29 @@ const getRelatedTermItems = (terms: string[] = []) =>
     };
   });
 
-const articles = docs
-  .filter((entry) => {
-    if (entry.data.draft) return false;
-    if (part && entry.data.part !== part) return false;
-    if (learningPath && !entry.data.learningPaths?.includes(learningPath))
-      return false;
-    return Boolean(entry.data.part && entry.data.order !== undefined);
-  })
-  .sort((a, b) => {
-    const partDiff =
-      partOrder[a.data.part as Part] - partOrder[b.data.part as Part];
-    if (partDiff !== 0) return partDiff;
-    return (a.data.order ?? 999) - (b.data.order ?? 999);
-  });
+const routeHrefs = learningPath
+  ? learningPathRoutes[learningPath as LearningPathKey]
+  : undefined;
+
+const articles = routeHrefs
+  ? routeHrefs
+      .map((href) => docByHref.get(href))
+      .filter((entry): entry is NonNullable<typeof entry> => Boolean(entry))
+      .filter((entry) => !entry.data.draft)
+  : docs
+      .filter((entry) => {
+        if (entry.data.draft) return false;
+        if (part && entry.data.part !== part) return false;
+        if (learningPath && !entry.data.learningPaths?.includes(learningPath))
+          return false;
+        return Boolean(entry.data.part && entry.data.order !== undefined);
+      })
+      .sort((a, b) => {
+        const partDiff =
+          partOrder[a.data.part as Part] - partOrder[b.data.part as Part];
+        if (partDiff !== 0) return partDiff;
+        return (a.data.order ?? 999) - (b.data.order ?? 999);
+      });
 
 const articleGroups = articles.reduce<
   { module: string; label: string; articles: typeof articles }[]
