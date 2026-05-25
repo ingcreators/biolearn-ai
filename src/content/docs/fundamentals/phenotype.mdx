@@ -1,0 +1,104 @@
+---
+title: 表現型とは何か
+description: 表現型を観察できる性質や状態として説明し、遺伝子、環境、細胞状態との関係を整理します。
+part: fundamentals
+module: life-science-overview
+level: foundation
+priority: P1
+order: 85
+learningPaths:
+  - foundations
+relatedTerms:
+  - phenotype
+  - gene
+  - gene-expression
+  - mutation
+prerequisites:
+  - /fundamentals/gene/
+  - /fundamentals/gene-expression/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    '表現型を観察できる性質や状態として説明できる',
+    '遺伝子、変異、遺伝子発現と表現型の関係を理解する',
+    '表現型を単一の原因にすぐ結びつけない読み方を身につける',
+  ]}
+/>
+
+表現型は、生物、細胞、組織などで観察できる性質や状態のことです。形、色、増殖、応答、遺伝子発現パターン、測定値として表される性質などが含まれます。
+
+<LessonFigure
+  src="/figures/phenotype-concept.jpg"
+  alt="遺伝子、環境、細胞状態などの複数の要因が観察される性質としての表現型につながる様子を示す教材イラスト"
+  title="表現型は観察される性質や状態"
+  caption="表現型は遺伝子だけで決まるとは限らず、遺伝子発現、環境、細胞状態、実験条件などの影響を受けます。"
+/>
+
+表現型という言葉は、目に見える形や色だけでなく、実験で測定される性質にも使われます。細胞の増殖速度、薬剤への応答、タンパク質の局在、遺伝子発現パターンなども、文脈によって表現型として扱われます。
+
+表現型は、遺伝子や変異と関係することがあります。たとえば、ある遺伝子の働きが変わると、細胞の形や応答が変わる場合があります。ただし、表現型は遺伝子だけで単純に決まるわけではありません。環境、細胞の種類、発生段階、実験条件、他の遺伝子の働きも関係します。
+
+論文では、「この変異が表現型に影響する」「この処理で表現型が変わる」のような表現が出てきます。そのときは、どの表現型を、どの方法で、どの条件と比べて測ったのかを確認します。
+
+## なぜ重要か
+
+[表現型](/glossary/phenotype/)は、分子レベルの変化と観察される結果をつなぐ言葉です。遺伝子発現や変異のFigureを読んだあと、「それが細胞や個体の性質にどう関係するのか」を考えるときに必要になります。
+
+一方で、分子の変化と表現型の関係は、相関だけでは原因と断定できません。操作実験、対照、再現性、追加の機能実験を合わせて読むことが大切です。
+
+## 英語表記と略語
+
+| 日本語名 | 英語名    | 略語 |
+| -------- | --------- | ---- |
+| 表現型   | phenotype | -    |
+| 遺伝型   | genotype  | -    |
+| 形質     | trait     | -    |
+
+## よくある誤解
+
+- 表現型は、見た目だけを指す言葉ではありません。
+- ある遺伝子が変化していることだけで、表現型の原因だと断定できるわけではありません。
+- 表現型は遺伝子だけでなく、環境や実験条件の影響も受けます。
+
+## 重要用語
+
+- 表現型: 観察または測定できる性質や状態。
+- 遺伝型: 個体や細胞が持つ遺伝情報の型。
+- 形質: 生物や細胞の性質として観察される特徴。
+- 機能実験: 分子や遺伝子の働きが表現型に関わるかを調べる実験。
+
+<Quiz
+  questions={[
+    {
+      question: '表現型とは何ですか。',
+      answer: '生物、細胞、組織などで観察または測定できる性質や状態です。',
+    },
+    {
+      question:
+        '表現型が遺伝子だけで決まるとは限らない理由を説明してください。',
+      answer:
+        '環境、細胞の種類、発生段階、実験条件、他の遺伝子の働きも影響するためです。',
+    },
+    {
+      question:
+        '遺伝子発現と表現型の関連が見えたとき、原因と断定する前に確認したいことを挙げてください。',
+      answer:
+        '対照、再現性、操作実験、追加の機能実験、実験条件などを確認します。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: '遺伝子発現とは何か', href: '/fundamentals/gene-expression/' },
+    { title: '変異とは何か', href: '/fundamentals/mutation/' },
+    { title: '相関と因果の違い', href: '/statistics/correlation-causation/' },
+    { title: '用語: 表現型', href: '/glossary/phenotype/' },
+  ]}
+/>

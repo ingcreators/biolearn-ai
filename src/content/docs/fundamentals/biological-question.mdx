@@ -1,0 +1,105 @@
+---
+title: 生命科学の問いとは何か
+description: 生命科学の問いを、何を明らかにしたいのかを具体化する出発点として説明します。
+part: fundamentals
+module: life-science-overview
+level: foundation
+priority: P1
+order: 90
+learningPaths:
+  - foundations
+  - paper-reading
+relatedTerms:
+  - biological-question
+  - research-question
+  - evidence
+  - claim
+prerequisites:
+  - /fundamentals/life-science/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    '生命科学の問いが研究の出発点であることを説明できる',
+    '対象、比較、測定、解釈を分けて問いを読む',
+    'FigureやMethodsを研究の問いに戻して確認する',
+  ]}
+/>
+
+生命科学の問いは、「どの生命現象について、何を明らかにしたいのか」を具体化したものです。論文を読むときは、最初に問いをつかむと、MethodsやFigureの役割が見えやすくなります。
+
+<LessonFigure
+  src="/figures/biological-question-concept.jpg"
+  alt="生命現象への疑問から、対象、比較、測定、証拠、主張へと研究の流れが整理される様子を示す教材イラスト"
+  title="生命科学の問いは研究全体の出発点"
+  caption="問いを一文で整理すると、どのサンプルを使い、何を測り、どのFigureがどの主張を支えるのかを追いやすくなります。"
+/>
+
+生命科学の研究は、観察や疑問から始まります。たとえば「この細胞は刺激にどう応答するのか」「この変異はタンパク質の働きに関係するのか」「この組織でどの細胞集団が増えているのか」といった問いです。
+
+問いを読むときは、対象、比較、測定、解釈を分けます。対象は細胞、組織、個体、データなどです。比較は条件Aと条件B、処理ありとなし、変異ありとなしなどです。測定はRNA-seq、顕微鏡、Western blot、統計解析などです。解釈は、その結果から何を言おうとしているかです。
+
+論文では、問いはTitle、Abstract、Introductionに現れることが多いです。Resultsの各Figureは、その問いに対して部分的な証拠を積み上げます。問いを見失うと、Methodsの細部やFigureの見た目に引っ張られ、何を確かめているのかが分かりにくくなります。
+
+## なぜ重要か
+
+[生命科学の問い](/glossary/biological-question/)を先に押さえると、記事や論文を「用語の集まり」としてではなく、証拠を使って問いに答える流れとして読めます。これは、Figure読解や論文読解の土台になります。
+
+問いは広すぎると読みにくくなります。「がんの原因を調べる」ではなく、「特定の細胞集団でどの遺伝子発現が変わるか」のように、測定できる形に小さくすると、MethodsとFigureを対応づけやすくなります。
+
+## 英語表記と略語
+
+| 日本語名       | 英語名              | 略語 |
+| -------------- | ------------------- | ---- |
+| 生命科学の問い | biological question | -    |
+| 研究の問い     | research question   | -    |
+| 仮説           | hypothesis          | -    |
+
+## よくある誤解
+
+- 背景説明と研究の問いは同じではありません。背景はなぜ重要か、問いは何を明らかにするかです。
+- Figureは単独で存在するのではなく、問いへの証拠として配置されます。
+- 問いが広い場合、論文内で実際に検証している範囲まで小さくして読む必要があります。
+
+## 重要用語
+
+- 生命科学の問い: 生命現象について何を明らかにしたいのかを具体化した問い。
+- 研究の問い: 個別の研究が答えようとしている中心的な問い。
+- 仮説: 問いに対する暫定的な説明や予想。
+- 証拠: 問いへの答えを支えるデータや解析。
+
+<Quiz
+  questions={[
+    {
+      question: '生命科学の問いとは何ですか。',
+      answer:
+        'どの生命現象について、何を明らかにしたいのかを具体化した問いです。',
+    },
+    {
+      question: '問いを読むときに分けたい要素を二つ挙げてください。',
+      answer: '対象、比較、測定、解釈などがあります。',
+    },
+    {
+      question: 'Figureを研究の問いに戻して読む理由を説明してください。',
+      answer:
+        'そのFigureが問いのどの部分に答える証拠なのかを確認し、言える範囲を見失わないためです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: '論文の構成', href: '/papers/paper-structure/' },
+    {
+      title: 'TitleとAbstractの読み方',
+      href: '/papers/how-to-read-title-abstract/',
+    },
+    { title: 'Figureと主張を対応づける', href: '/figures/figure-to-claim/' },
+    { title: '用語: 研究の問い', href: '/glossary/research-question/' },
+  ]}
+/>

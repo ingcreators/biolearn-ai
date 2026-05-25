@@ -79,6 +79,27 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'foundations',
   },
   {
+    term: '分子',
+    english: 'molecule',
+    description: '原子が結びついてできた物質のまとまり。',
+    href: '/glossary/molecule/',
+    category: 'foundations',
+  },
+  {
+    term: '個体',
+    english: 'organism',
+    description: '1つの生物としてのまとまり。',
+    href: '/glossary/organism/',
+    category: 'foundations',
+  },
+  {
+    term: '組織',
+    english: 'tissue',
+    description: '似た働きや構造を持つ細胞が集まったまとまり。',
+    href: '/glossary/tissue/',
+    category: 'foundations',
+  },
+  {
     term: 'DNA',
     english: 'deoxyribonucleic acid',
     abbreviation: 'DNA',
@@ -179,6 +200,13 @@ export const glossaryTerms: GlossaryTerm[] = [
       'DNA配列に生じた変化。文脈によって遺伝的変異と区別して使われる。',
     href: '/glossary/mutation/',
     category: 'genomics',
+  },
+  {
+    term: '表現型',
+    english: 'phenotype',
+    description: '生物、細胞、組織などで観察または測定できる性質や状態。',
+    href: '/glossary/phenotype/',
+    category: 'foundations',
   },
   {
     term: 'SNP',
@@ -506,6 +534,13 @@ export const glossaryTerms: GlossaryTerm[] = [
     description: 'その研究が何を明らかにしようとしているかを表す問い。',
     href: '/glossary/research-question/',
     category: 'paper-reading',
+  },
+  {
+    term: '生命科学の問い',
+    english: 'biological question',
+    description: '生命現象について何を明らかにしたいのかを具体化した問い。',
+    href: '/glossary/biological-question/',
+    category: 'foundations',
   },
   {
     term: '研究背景',

@@ -12,7 +12,9 @@ export const learningPathLabels: Record<LearningPathKey, string> = {
 export const learningPathRoutes: Record<LearningPathKey, string[]> = {
   foundations: [
     '/fundamentals/life-science/',
+    '/fundamentals/molecule/',
     '/fundamentals/cell/',
+    '/fundamentals/organism-tissue-cell/',
     '/fundamentals/dna/',
     '/fundamentals/rna/',
     '/fundamentals/protein/',
@@ -24,6 +26,8 @@ export const learningPathRoutes: Record<LearningPathKey, string[]> = {
     '/molecular-biology/translation/',
     '/fundamentals/gene-expression/',
     '/fundamentals/mutation/',
+    '/fundamentals/phenotype/',
+    '/fundamentals/biological-question/',
     '/cell-biology/cell-membrane/',
     '/cell-biology/organelles/',
     '/cell-biology/cell-signaling/',
