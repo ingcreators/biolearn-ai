@@ -19,7 +19,29 @@ prerequisites:
   - /statistics/multiple-testing-correction/
 ---
 
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+## この記事で学ぶこと
+
+<LearningGoals
+  items={[
+    'Volcano plotの横軸と縦軸の意味を分けて読める',
+    '変化量、p値、調整済みp値を混同しない',
+    '候補遺伝子を解釈する前に比較の向きと解析条件を確認できる',
+  ]}
+/>
+
 Volcano plot（ボルケーノプロット）は、差次的発現解析の結果を一覧するためのFigureです。各点が遺伝子を表し、横軸に変化の大きさ、縦軸に統計的な確からしさを置くことで、変化が大きく信頼性も高い候補を見つけやすくします。
+
+<LessonFigure
+  src="/figures/how-to-read-volcano-plot-concept.jpg"
+  alt="Volcano plotで変化量、統計的な目立ちやすさ、しきい値を確認する概念図"
+  title="Volcano plotは変化量と統計表示を同時に見る"
+  caption="左右は変化の方向と大きさ、上下は統計的な目立ちやすさとして分けて読みます。"
+/>
 
 ## このFigureで何を見るか
 
@@ -28,83 +50,6 @@ Volcano plot（ボルケーノプロット）は、差次的発現解析の結�
 ## まず一言でいうと
 
 Volcano plotは「横に離れるほど変化が大きく、上に行くほど統計的に目立つ」遺伝子を探す図です。
-
-<svg
-  role="img"
-  aria-label="Volcano plotの模式図。左右上側に注目候補の点があり、中央下に変化の小さい点が集まる。"
-  viewBox="0 0 760 420"
-  width="100%"
-  height="auto"
->
-  <rect x="0" y="0" width="760" height="420" fill="#f8fafc" rx="8" />
-  <line x1="95" y1="340" x2="670" y2="340" stroke="#334155" stroke-width="3" />
-  <line
-    x1="382"
-    y1="60"
-    x2="382"
-    y2="340"
-    stroke="#94a3b8"
-    stroke-width="2"
-    strokeDasharray="7 7"
-  />
-  <line
-    x1="95"
-    y1="110"
-    x2="670"
-    y2="110"
-    stroke="#94a3b8"
-    stroke-width="2"
-    strokeDasharray="7 7"
-  />
-  <line x1="95" y1="340" x2="95" y2="60" stroke="#334155" stroke-width="3" />
-  <g fill="#94a3b8" opacity="0.85">
-    <circle cx="350" cy="300" r="6" />
-    <circle cx="390" cy="295" r="6" />
-    <circle cx="330" cy="255" r="6" />
-    <circle cx="420" cy="250" r="6" />
-    <circle cx="300" cy="220" r="6" />
-    <circle cx="465" cy="215" r="6" />
-    <circle cx="270" cy="180" r="6" />
-    <circle cx="500" cy="175" r="6" />
-    <circle cx="230" cy="140" r="6" />
-    <circle cx="535" cy="145" r="6" />
-  </g>
-  <g fill="#2563eb">
-    <circle cx="170" cy="82" r="8" />
-    <circle cx="205" cy="95" r="8" />
-    <circle cx="225" cy="70" r="8" />
-  </g>
-  <g fill="#dc2626">
-    <circle cx="570" cy="78" r="8" />
-    <circle cx="605" cy="92" r="8" />
-    <circle cx="630" cy="65" r="8" />
-  </g>
-  <text x="235" y="385" text-anchor="middle" fill="#334155" font-size="20">
-    {'低下'}
-  </text>
-  <text x="528" y="385" text-anchor="middle" fill="#334155" font-size="20">
-    {'上昇'}
-  </text>
-  <text x="384" y="400" text-anchor="middle" fill="#334155" font-size="20">
-    {'log2 fold change'}
-  </text>
-  <text
-    x="48"
-    y="205"
-    text-anchor="middle"
-    fill="#334155"
-    font-size="20"
-    transform="rotate(-90 48 205)"
-  >
-    {'-log10 adjusted p-value'}
-  </text>
-  <text x="185" y="45" fill="#1d4ed8" font-size="20">
-    {'低下候補'}
-  </text>
-  <text x="548" y="45" fill="#b91c1c" font-size="20">
-    {'上昇候補'}
-  </text>
-</svg>
 
 ## 図の構成要素
 
@@ -151,31 +96,33 @@ Volcano plotは、変化の大きさと統計的な目立ちやすさを同時�
 - [用語: RNA-seq](/glossary/rna-seq/)
 - [用語: 差次的発現解析](/glossary/differential-expression-analysis/)
 
-## 確認問題
+<Quiz
+  questions={[
+    {
+      question:
+        'Volcano plotで横軸と縦軸は、それぞれ何を表すことが多いですか。',
+      answer:
+        '横軸はlog2 fold changeなど変化の方向と大きさ、縦軸は-log10 p値や-log10調整済みp値など統計的な目立ちやすさを表します。',
+    },
+    {
+      question: '右上の点を読むとき、最初に確認すべきことは何ですか。',
+      answer:
+        'どちらの条件を基準にした比較かを確認し、その点がどの条件で上昇しているのかを判断します。',
+    },
+  ]}
+/>
 
-1. Volcano plotで横軸と縦軸は、それぞれ何を表すことが多いですか。
-
-   <details>
-     <summary>解答例を見る</summary>
-     <p>
-       横軸はlog2 fold changeなど変化の方向と大きさ、縦軸は-log10
-       p値や-log10調整済みp値など統計的な目立ちやすさを表します。
-     </p>
-   </details>
-
-2. 右上の点を読むとき、最初に確認すべきことは何ですか。
-
-   <details>
-     <summary>解答例を見る</summary>
-     <p>
-       どちらの条件を基準にした比較かを確認し、その点がどの条件で上昇しているのかを判断します。
-     </p>
-   </details>
-
-## 次に読む記事
-
-- [Figure legendの読み方](/figures/figure-legend/)
-- [ヒートマップの読み方](/figures/how-to-read-heatmap/)
-- [多重検定補正とは何か](/statistics/multiple-testing-correction/)
-- [qPCRプロットの読み方](/figures/how-to-read-qpcr-plot/)
-- [用語: 差次的発現解析](/glossary/differential-expression-analysis/)
+<NextSteps
+  items={[
+    { title: 'ヒートマップの読み方', href: '/figures/how-to-read-heatmap/' },
+    {
+      title: '差次的発現解析とは何か',
+      href: '/bioinformatics/differential-expression/',
+    },
+    {
+      title: '多重検定補正とは何か',
+      href: '/statistics/multiple-testing-correction/',
+    },
+    { title: 'qPCRプロットの読み方', href: '/figures/how-to-read-qpcr-plot/' },
+  ]}
+/>

@@ -18,7 +18,29 @@ prerequisites:
   - /statistics/biological-technical-replicates/
 ---
 
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+## この記事で学ぶこと
+
+<LearningGoals
+  items={[
+    'qPCRプロットでCt値、しきい値、相対発現量を区別できる',
+    '内部標準遺伝子や基準条件を確認する理由を説明できる',
+    'technical replicateとbiological replicateを分けて読める',
+  ]}
+/>
+
 qPCR（quantitative PCR）は、特定のDNAやRNA由来のcDNAを増幅しながら定量する方法です。論文では、増幅曲線、Ct値、相対発現量の棒グラフや点付きグラフとして示されます。
+
+<LessonFigure
+  src="/figures/qpcr-concept.jpg"
+  alt="qPCRで増幅曲線、Ct値、しきい値、相対発現量を確認する概念図"
+  title="qPCRはCt値と基準条件をセットで読む"
+  caption="早くしきい値を超えるほど初期量が多いという原理を押さえ、補正方法も確認します。"
+/>
 
 ## このFigureで何を見るか
 
@@ -27,69 +49,6 @@ qPCR（quantitative PCR）は、特定のDNAやRNA由来のcDNAを増幅しな�
 ## まず一言でいうと
 
 qPCRは「どのサイクルで検出しきい値を超えたか」を見て、相対量を比較するFigureです。
-
-<svg
-  role="img"
-  aria-label="qPCRの増幅曲線模式図。条件Bの曲線が条件Aより早くしきい値を超える。"
-  viewBox="0 0 760 360"
-  width="100%"
-  height="auto"
->
-  <rect x="0" y="0" width="760" height="360" fill="#f8fafc" rx="8" />
-  <line x1="90" y1="290" x2="660" y2="290" stroke="#334155" stroke-width="3" />
-  <line x1="90" y1="60" x2="90" y2="290" stroke="#334155" stroke-width="3" />
-  <line
-    x1="90"
-    y1="170"
-    x2="660"
-    y2="170"
-    stroke="#64748b"
-    stroke-width="2"
-    strokeDasharray="8 8"
-  />
-  <path
-    d="M110 282 C210 282 235 270 260 230 C285 185 320 118 390 92 C450 70 555 66 650 66"
-    fill="none"
-    stroke="#f97316"
-    stroke-width="5"
-  />
-  <path
-    d="M110 283 C285 283 320 275 350 235 C382 190 430 125 505 100 C555 82 610 76 650 74"
-    fill="none"
-    stroke="#38bdf8"
-    stroke-width="5"
-  />
-  <circle cx="294" cy="170" r="7" fill="#f97316" />
-  <circle cx="405" cy="170" r="7" fill="#38bdf8" />
-  <text x="668" y="176" fill="#475569" font-size="20">
-    {'しきい値'}
-  </text>
-  <text x="294" y="205" text-anchor="middle" fill="#9a3412" font-size="20">
-    {'Ct低い'}
-  </text>
-  <text x="405" y="205" text-anchor="middle" fill="#0369a1" font-size="20">
-    {'Ct高い'}
-  </text>
-  <text x="372" y="330" text-anchor="middle" fill="#334155" font-size="22">
-    {'PCRサイクル'}
-  </text>
-  <text
-    x="48"
-    y="180"
-    text-anchor="middle"
-    fill="#334155"
-    font-size="20"
-    transform="rotate(-90 48 180)"
-  >
-    {'蛍光シグナル'}
-  </text>
-  <text x="520" y="115" fill="#9a3412" font-size="20">
-    {'量が多い条件'}
-  </text>
-  <text x="525" y="145" fill="#0369a1" font-size="20">
-    {'量が少ない条件'}
-  </text>
-</svg>
 
 ## 図の構成要素
 
@@ -135,30 +94,30 @@ qPCRプロットで迷ったら、Figureだけで判断せず、Methodsと統計
 - [差次的発現解析とは何か](/bioinformatics/differential-expression/)
 - [用語: 遺伝子発現](/glossary/gene-expression/)
 
-## 確認問題
+<Quiz
+  questions={[
+    {
+      question: 'qPCRでCt値が低いとは、一般に何を意味しますか。',
+      answer:
+        'しきい値に早く到達したという意味で、一般に初期量が多いことを示します。',
+    },
+    {
+      question:
+        '相対発現量を見るとき、内部標準遺伝子を確認する理由は何ですか。',
+      answer:
+        'サンプル量や反応条件の違いを補正する基準であり、その基準が不安定だと比較の解釈が揺らぐためです。',
+    },
+  ]}
+/>
 
-1. qPCRでCt値が低いとは、一般に何を意味しますか。
-
-   <details>
-     <summary>解答例を見る</summary>
-     <p>
-       しきい値に早く到達したという意味で、一般に初期量が多いことを示します。
-     </p>
-   </details>
-
-2. 相対発現量を見るとき、内部標準遺伝子を確認する理由は何ですか。
-
-   <details>
-     <summary>解答例を見る</summary>
-     <p>
-       サンプル量や反応条件の違いを補正する基準であり、その基準が不安定だと比較の解釈が揺らぐためです。
-     </p>
-   </details>
-
-## 次に読む記事
-
-- [Figure legendの読み方](/figures/figure-legend/)
-- [qPCRとは何か](/methods/qpcr/)
-- [棒グラフの読み方](/figures/how-to-read-bar-plot/)
-- [Volcano plotの読み方](/figures/how-to-read-volcano-plot/)
-- [用語: PCR](/glossary/pcr/)
+<NextSteps
+  items={[
+    { title: 'qPCRとは何か', href: '/methods/qpcr/' },
+    { title: 'RT-qPCRとは何か', href: '/methods/rt-qpcr/' },
+    { title: '棒グラフの読み方', href: '/figures/how-to-read-bar-plot/' },
+    {
+      title: 'Volcano plotの読み方',
+      href: '/figures/how-to-read-volcano-plot/',
+    },
+  ]}
+/>

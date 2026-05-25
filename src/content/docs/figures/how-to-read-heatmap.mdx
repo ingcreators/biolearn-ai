@@ -20,7 +20,29 @@ prerequisites:
   - /statistics/distribution/
 ---
 
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+## この記事で学ぶこと
+
+<LearningGoals
+  items={[
+    'ヒートマップの行、列、色、スケールを確認できる',
+    'クラスタリングや標準化が見え方に影響する理由を説明できる',
+    '色の印象だけで結論を出さず、元データや別Figureに戻れる',
+  ]}
+/>
+
 ヒートマップ（heatmap）は、多数の遺伝子やサンプルの値を色で表すFigureです。RNA-seqや差次的発現解析の結果をまとめるときによく使われ、全体のパターンを一目で見るのに向いています。
+
+<LessonFigure
+  src="/figures/how-to-read-heatmap-concept.jpg"
+  alt="ヒートマップで行、列、色、スケール、クラスタリングを確認する概念図"
+  title="ヒートマップは色のまとまりと前提を読む"
+  caption="色が何を表すか、行や列が何か、標準化やクラスタリングの有無を確認します。"
+/>
 
 ## このFigureで何を見るか
 
@@ -29,91 +51,6 @@ prerequisites:
 ## まず一言でいうと
 
 ヒートマップは、個々の数値よりも「色のまとまり」と「サンプルや遺伝子の並び」を読む図です。
-
-<svg
-  role="img"
-  aria-label="遺伝子発現ヒートマップの模式図。行が遺伝子、列がサンプルで、赤と青の色のまとまりがある。"
-  viewBox="0 0 760 420"
-  width="100%"
-  height="auto"
->
-  <rect x="0" y="0" width="760" height="420" fill="#f8fafc" rx="8" />
-  <g transform="translate(150 75)">
-    <rect x="0" y="0" width="60" height="45" fill="#fee2e2" />
-    <rect x="60" y="0" width="60" height="45" fill="#fecaca" />
-    <rect x="120" y="0" width="60" height="45" fill="#ef4444" />
-    <rect x="180" y="0" width="60" height="45" fill="#3b82f6" />
-    <rect x="240" y="0" width="60" height="45" fill="#bfdbfe" />
-    <rect x="300" y="0" width="60" height="45" fill="#dbeafe" />
-    <rect x="0" y="45" width="60" height="45" fill="#fecaca" />
-    <rect x="60" y="45" width="60" height="45" fill="#ef4444" />
-    <rect x="120" y="45" width="60" height="45" fill="#dc2626" />
-    <rect x="180" y="45" width="60" height="45" fill="#60a5fa" />
-    <rect x="240" y="45" width="60" height="45" fill="#bfdbfe" />
-    <rect x="300" y="45" width="60" height="45" fill="#dbeafe" />
-    <rect x="0" y="90" width="60" height="45" fill="#dbeafe" />
-    <rect x="60" y="90" width="60" height="45" fill="#bfdbfe" />
-    <rect x="120" y="90" width="60" height="45" fill="#60a5fa" />
-    <rect x="180" y="90" width="60" height="45" fill="#fca5a5" />
-    <rect x="240" y="90" width="60" height="45" fill="#ef4444" />
-    <rect x="300" y="90" width="60" height="45" fill="#dc2626" />
-    <rect x="0" y="135" width="60" height="45" fill="#bfdbfe" />
-    <rect x="60" y="135" width="60" height="45" fill="#dbeafe" />
-    <rect x="120" y="135" width="60" height="45" fill="#60a5fa" />
-    <rect x="180" y="135" width="60" height="45" fill="#fee2e2" />
-    <rect x="240" y="135" width="60" height="45" fill="#fca5a5" />
-    <rect x="300" y="135" width="60" height="45" fill="#ef4444" />
-    <rect
-      x="0"
-      y="0"
-      width="360"
-      height="180"
-      fill="none"
-      stroke="#334155"
-      stroke-width="2"
-    />
-    <line
-      x1="180"
-      y1="-20"
-      x2="180"
-      y2="200"
-      stroke="#334155"
-      stroke-width="2"
-      strokeDasharray="6 6"
-    />
-  </g>
-  <text x="330" y="45" text-anchor="middle" fill="#334155" font-size="21">
-    {'サンプル'}
-  </text>
-  <text
-    x="95"
-    y="170"
-    text-anchor="middle"
-    fill="#334155"
-    font-size="21"
-    transform="rotate(-90 95 170)"
-  >
-    {'遺伝子'}
-  </text>
-  <text x="245" y="300" text-anchor="middle" fill="#334155" font-size="19">
-    {'条件A'}
-  </text>
-  <text x="425" y="300" text-anchor="middle" fill="#334155" font-size="19">
-    {'条件B'}
-  </text>
-  <rect x="570" y="105" width="28" height="28" fill="#dc2626" />
-  <text x="610" y="127" fill="#334155" font-size="19">
-    {'高い'}
-  </text>
-  <rect x="570" y="150" width="28" height="28" fill="#fee2e2" />
-  <text x="610" y="172" fill="#334155" font-size="19">
-    {'中間'}
-  </text>
-  <rect x="570" y="195" width="28" height="28" fill="#3b82f6" />
-  <text x="610" y="217" fill="#334155" font-size="19">
-    {'低い'}
-  </text>
-</svg>
 
 ## 図の構成要素
 
@@ -161,30 +98,31 @@ prerequisites:
 - [用語: RNA-seq](/glossary/rna-seq/)
 - [用語: 差次的発現解析](/glossary/differential-expression-analysis/)
 
-## 確認問題
+<Quiz
+  questions={[
+    {
+      question:
+        'ヒートマップで、色を見る前に確認したいことを2つ挙げてください。',
+      answer:
+        '行と列が何を表すか、色のスケールが何か、z-scoreなどで標準化されているかなどです。',
+    },
+    {
+      question:
+        'z-scoreのヒートマップで赤いセルは、必ず絶対発現量が高いと言えますか。',
+      answer:
+        '必ずしも言えません。z-scoreでは、その遺伝子内で平均より相対的に高いことを示している場合があります。',
+    },
+  ]}
+/>
 
-1. ヒートマップで、色を見る前に確認したいことを2つ挙げてください。
-
-   <details>
-     <summary>解答例を見る</summary>
-     <p>
-       行と列が何を表すか、色のスケールが何か、z-scoreなどで標準化されているかなどです。
-     </p>
-   </details>
-
-2. z-scoreのヒートマップで赤いセルは、必ず絶対発現量が高いと言えますか。
-
-   <details>
-     <summary>解答例を見る</summary>
-     <p>
-       必ずしも言えません。z-scoreでは、その遺伝子内で平均より相対的に高いことを示している場合があります。
-     </p>
-   </details>
-
-## 次に読む記事
-
-- [Figure legendの読み方](/figures/figure-legend/)
-- [Volcano plotの読み方](/figures/how-to-read-volcano-plot/)
-- [カウント行列とは何か](/bioinformatics/count-matrix/)
-- [棒グラフの読み方](/figures/how-to-read-bar-plot/)
-- [用語: RNA-seq](/glossary/rna-seq/)
+<NextSteps
+  items={[
+    {
+      title: 'Volcano plotの読み方',
+      href: '/figures/how-to-read-volcano-plot/',
+    },
+    { title: 'カウント行列とは何か', href: '/bioinformatics/count-matrix/' },
+    { title: 'クラスタリングとは何か', href: '/bioinformatics/clustering/' },
+    { title: '分布とは何か', href: '/statistics/distribution/' },
+  ]}
+/>

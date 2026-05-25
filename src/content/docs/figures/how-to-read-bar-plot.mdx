@@ -15,7 +15,29 @@ prerequisites:
   - /figures/figure-legend/
 ---
 
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+## この記事で学ぶこと
+
+<LearningGoals
+  items={[
+    '棒グラフで平均、ばらつき、点、n数をセットで確認できる',
+    'エラーバーやp値だけで結論を急がない読み方を説明できる',
+    '棒グラフをFigure legendと統計の前提に戻して読める',
+  ]}
+/>
+
 棒グラフ（bar plot）は、条件ごとの測定値を比較するときによく使われるFigureです。シンプルに見えますが、平均だけを見て結論を急ぐと、ばらつきやサンプル数を見落としやすい図でもあります。
+
+<LessonFigure
+  src="/figures/how-to-read-bar-plot-concept.jpg"
+  alt="棒グラフで棒の高さ、点、エラーバー、n数を順番に確認する概念図"
+  title="棒グラフは平均だけでなく分布と前提を見る"
+  caption="棒の高さ、点の散らばり、エラーバー、n数を合わせて読み、差の意味を確認します。"
+/>
 
 ## このFigureで何を見るか
 
@@ -26,61 +48,6 @@ prerequisites:
 ## まず一言でいうと
 
 棒の高さだけでなく、エラーバー、点、n数、統計表示をセットで読む図です。
-
-<svg
-  role="img"
-  aria-label="条件A、条件B、条件Cの棒グラフ模式図。条件Bが高く、各棒に点とエラーバーがある。"
-  viewBox="0 0 720 360"
-  width="100%"
-  height="auto"
->
-  <rect x="0" y="0" width="720" height="360" fill="#f8fafc" rx="8" />
-  <line x1="90" y1="290" x2="640" y2="290" stroke="#334155" stroke-width="3" />
-  <line x1="90" y1="70" x2="90" y2="290" stroke="#334155" stroke-width="3" />
-  <rect x="150" y="185" width="86" height="105" fill="#38bdf8" />
-  <rect x="315" y="120" width="86" height="170" fill="#f97316" />
-  <rect x="480" y="160" width="86" height="130" fill="#22c55e" />
-  <line x1="193" y1="160" x2="193" y2="210" stroke="#111827" stroke-width="3" />
-  <line x1="177" y1="160" x2="209" y2="160" stroke="#111827" stroke-width="3" />
-  <line x1="177" y1="210" x2="209" y2="210" stroke="#111827" stroke-width="3" />
-  <line x1="358" y1="95" x2="358" y2="145" stroke="#111827" stroke-width="3" />
-  <line x1="342" y1="95" x2="374" y2="95" stroke="#111827" stroke-width="3" />
-  <line x1="342" y1="145" x2="374" y2="145" stroke="#111827" stroke-width="3" />
-  <line x1="523" y1="140" x2="523" y2="180" stroke="#111827" stroke-width="3" />
-  <line x1="507" y1="140" x2="539" y2="140" stroke="#111827" stroke-width="3" />
-  <line x1="507" y1="180" x2="539" y2="180" stroke="#111827" stroke-width="3" />
-  <circle cx="177" cy="198" r="5" fill="#0f172a" />
-  <circle cx="193" cy="178" r="5" fill="#0f172a" />
-  <circle cx="211" cy="188" r="5" fill="#0f172a" />
-  <circle cx="342" cy="132" r="5" fill="#0f172a" />
-  <circle cx="359" cy="112" r="5" fill="#0f172a" />
-  <circle cx="378" cy="122" r="5" fill="#0f172a" />
-  <circle cx="508" cy="166" r="5" fill="#0f172a" />
-  <circle cx="524" cy="151" r="5" fill="#0f172a" />
-  <circle cx="542" cy="174" r="5" fill="#0f172a" />
-  <text x="193" y="325" text-anchor="middle" fill="#334155" font-size="22">
-    {'A'}
-  </text>
-  <text x="358" y="325" text-anchor="middle" fill="#334155" font-size="22">
-    {'B'}
-  </text>
-  <text x="523" y="325" text-anchor="middle" fill="#334155" font-size="22">
-    {'C'}
-  </text>
-  <text
-    x="48"
-    y="182"
-    text-anchor="middle"
-    fill="#334155"
-    font-size="20"
-    transform="rotate(-90 48 182)"
-  >
-    {'測定値'}
-  </text>
-  <text x="358" y="58" text-anchor="middle" fill="#111827" font-size="24">
-    {'平均 + ばらつき + 個々の点'}
-  </text>
-</svg>
 
 ## 図の構成要素
 
@@ -117,27 +84,27 @@ prerequisites:
 - [用語: 差次的発現解析](/glossary/differential-expression-analysis/)
 - [用語: RNA-seq](/glossary/rna-seq/)
 
-## 確認問題
+<Quiz
+  questions={[
+    {
+      question:
+        '棒グラフで、棒の高さ以外に必ず確認したい要素を2つ挙げてください。',
+      answer: 'エラーバー、個々の点、n数、統計検定の方法、縦軸の単位などです。',
+    },
+    {
+      question:
+        'p値が小さい棒グラフを見たとき、なぜ効果の大きさも確認する必要がありますか。',
+      answer:
+        'p値は差が偶然では説明しにくいかを示す指標であり、差が生物学的に大きいかどうかを直接示すものではないためです。',
+    },
+  ]}
+/>
 
-1. 棒グラフで、棒の高さ以外に必ず確認したい要素を2つ挙げてください。
-
-   <details>
-     <summary>解答例を見る</summary>
-     <p>エラーバー、個々の点、n数、統計検定の方法、縦軸の単位などです。</p>
-   </details>
-
-2. p値が小さい棒グラフを見たとき、なぜ効果の大きさも確認する必要がありますか。
-
-   <details>
-     <summary>解答例を見る</summary>
-     <p>
-       p値は差が偶然では説明しにくいかを示す指標であり、差が生物学的に大きいかどうかを直接示すものではないためです。
-     </p>
-   </details>
-
-## 次に読む記事
-
-- [Figure legendの読み方](/figures/figure-legend/)
-- [qPCRプロットの読み方](/figures/how-to-read-qpcr-plot/)
-- [Western blotの読み方](/figures/how-to-read-western-blot/)
-- [用語集](/glossary/)
+<NextSteps
+  items={[
+    { title: 'Figure legendの読み方', href: '/figures/figure-legend/' },
+    { title: '箱ひげ図の読み方', href: '/figures/how-to-read-box-plot/' },
+    { title: 'qPCRプロットの読み方', href: '/figures/how-to-read-qpcr-plot/' },
+    { title: 'エラーバーとは何か', href: '/statistics/error-bars/' },
+  ]}
+/>

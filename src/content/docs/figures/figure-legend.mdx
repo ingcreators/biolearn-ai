@@ -15,7 +15,29 @@ relatedTerms:
 prerequisites: []
 ---
 
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+## この記事で学ぶこと
+
+<LearningGoals
+  items={[
+    'Figure legendで実験条件、n数、統計表示を探せる',
+    '図だけでは分からない前提を本文やMethodsに戻して確認できる',
+    'エラーバーやp値の定義を読み間違えにくくする',
+  ]}
+/>
+
 Figure legend（図の説明文）は、Figureの横や下に置かれる短い説明です。図だけでは分からない実験条件、サンプル数、統計検定、エラーバーの意味などが書かれているため、Figureを読むときの地図になります。
+
+<LessonFigure
+  src="/figures/figure-legend-concept.jpg"
+  alt="Figure legendから条件、n数、統計表示、Methodsへの手がかりを読み取る概念図"
+  title="Figure legendは図を読むための地図"
+  caption="図の見た目だけで判断せず、条件、反復、統計、補足情報をlegendから拾います。"
+/>
 
 ## Figure legendとは何か
 
@@ -89,28 +111,31 @@ Figure legendでは、次の表現を探します。
 - p値のアスタリスクだけで、効果の大きさや生物学的な重要性は判断できません。
 - Figure legendに書かれていない情報は、MethodsやSupplementary informationに分かれていることがあります。
 
-## 確認問題
+<Quiz
+  questions={[
+    {
+      question:
+        'Figure legendで、図を見る前に確認したい項目を3つ挙げてください。',
+      answer:
+        '測定対象、比較している条件、サンプルの種類、n数、反復の種類、エラーバーの定義、統計検定の方法などです。',
+    },
+    {
+      question:
+        '「n = 100 cells」と書かれているFigureで、なぜ独立した反復数を別に確認する必要がありますか。',
+      answer:
+        '100個の細胞が同じサンプルや同じ実験から得られた可能性があり、独立した生物学的反復が100あるとは限らないためです。',
+    },
+  ]}
+/>
 
-1. Figure legendで、図を見る前に確認したい項目を3つ挙げてください。
-
-   <details>
-     <summary>解答例を見る</summary>
-     <p>
-       測定対象、比較している条件、サンプルの種類、n数、反復の種類、エラーバーの定義、統計検定の方法などです。
-     </p>
-   </details>
-
-2. 「n = 100 cells」と書かれているFigureで、なぜ独立した反復数を別に確認する必要がありますか。
-
-   <details>
-     <summary>解答例を見る</summary>
-     <p>
-       100個の細胞が同じサンプルや同じ実験から得られた可能性があり、独立した生物学的反復が100あるとは限らないためです。
-     </p>
-   </details>
-
-## 次に読む記事
-
-- [棒グラフの読み方](/figures/how-to-read-bar-plot/)
-- [qPCRプロットの読み方](/figures/how-to-read-qpcr-plot/)
-- [Western blotの読み方](/figures/how-to-read-western-blot/)
+<NextSteps
+  items={[
+    { title: '軸・ラベル・単位の読み方', href: '/figures/axis-label-unit/' },
+    { title: '棒グラフの読み方', href: '/figures/how-to-read-bar-plot/' },
+    { title: 'qPCRプロットの読み方', href: '/figures/how-to-read-qpcr-plot/' },
+    {
+      title: 'Western blotの読み方',
+      href: '/figures/how-to-read-western-blot/',
+    },
+  ]}
+/>
