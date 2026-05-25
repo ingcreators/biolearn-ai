@@ -326,6 +326,52 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'cell-biology',
   },
   {
+    term: '核',
+    english: 'nucleus',
+    description:
+      '真核細胞で多くのDNAを収め、転写や遺伝情報の管理に関わる区画。',
+    href: '/glossary/nucleus/',
+    category: 'cell-biology',
+  },
+  {
+    term: 'ミトコンドリア',
+    english: 'mitochondria',
+    description: '細胞のエネルギー代謝に深く関わる細胞小器官。',
+    href: '/glossary/mitochondria/',
+    category: 'cell-biology',
+  },
+  {
+    term: '小胞体',
+    english: 'endoplasmic reticulum',
+    abbreviation: 'ER',
+    description: 'タンパク質や脂質の合成、加工、輸送に関わる膜構造。',
+    href: '/glossary/endoplasmic-reticulum/',
+    category: 'cell-biology',
+  },
+  {
+    term: 'ゴルジ体',
+    english: 'Golgi apparatus',
+    description: 'タンパク質や脂質を加工し、行き先に応じて仕分ける細胞小器官。',
+    href: '/glossary/golgi-apparatus/',
+    category: 'cell-biology',
+  },
+  {
+    term: 'リソソーム',
+    english: 'lysosome',
+    description:
+      '細胞内の不要な分子や取り込まれた物質の分解に関わる細胞小器官。',
+    href: '/glossary/lysosome/',
+    category: 'cell-biology',
+  },
+  {
+    term: '細胞骨格',
+    english: 'cytoskeleton',
+    description:
+      '細胞の形、動き、分裂、細胞内輸送を支えるタンパク質ネットワーク。',
+    href: '/glossary/cytoskeleton/',
+    category: 'cell-biology',
+  },
+  {
     term: '細胞シグナル伝達',
     english: 'cell signaling',
     description: '細胞が外からの情報を受け取り、内部の反応へ変える仕組み。',
