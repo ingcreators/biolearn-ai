@@ -1,0 +1,134 @@
+---
+title: DNA複製とは何か
+description: DNA複製の基本、半保存的複製、DNAポリメラーゼ、リーディング鎖とラギング鎖を説明します。
+part: molecular-biology
+module: information-flow
+level: foundation
+priority: P1
+order: 12
+learningPaths:
+  - foundations
+relatedTerms:
+  - dna-replication
+  - dna
+  - base-pairing
+prerequisites:
+  - /fundamentals/dna/
+  - /molecular-biology/base-pairing/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'DNA複製がDNAからDNAを作る過程であることを理解する',
+    '半保存的複製と相補的塩基対の関係を説明できる',
+    'DNAポリメラーゼ、リーディング鎖、ラギング鎖の基本を知る',
+  ]}
+/>
+
+DNA複製は、細胞が分裂する前にDNAをコピーし、同じ遺伝情報を次の細胞へ渡す過程です。
+
+<LessonFigure
+  src="/figures/dna-replication-concept.jpg"
+  alt="二本鎖DNAがほどけ、それぞれの鎖を鋳型として新しい相補鎖が作られる様子を示す教材イラスト"
+  title="DNA複製は二本鎖DNAをもとに新しいDNAを作る"
+  caption="元の各鎖が鋳型になり、相補的な塩基対を使って2つのDNA分子ができます。"
+/>
+
+DNAは二本鎖として存在し、AとT、GとCが相補的に対応します。DNA複製では、この二本鎖がほどけ、それぞれの鎖を鋳型として新しい鎖が作られます。結果として、元の鎖を1本ずつ含む2つのDNA分子ができます。この仕組みを半保存的複製と呼びます。
+
+新しいDNA鎖を伸ばす主な酵素はDNAポリメラーゼです。DNAポリメラーゼは鋳型鎖を読み取り、対応するヌクレオチドをつなげていきます。ただし、DNA鎖には向きがあるため、複製は左右対称に単純に進むわけではありません。
+
+複製フォークでは、片方の新しい鎖は進行方向に沿って連続的に作られます。これをリーディング鎖と呼びます。もう片方は短い断片として少しずつ作られ、あとでつなげられます。これをラギング鎖と呼び、短い断片は岡崎フラグメントと呼ばれます。
+
+DNA複製は非常に正確に進む必要があります。複製の間違いは修復されることが多いですが、残った変化は変異として受け継がれる場合があります。
+
+## なぜ重要か
+
+[DNA複製](/glossary/dna-replication/)は、[DNA](/glossary/dna/)に保存された遺伝情報を細胞分裂の前に受け渡すための基本過程です。複製を理解すると、細胞周期、変異、PCR、シーケンシングライブラリ調製などの実験の前提が見えやすくなります。
+
+また、DNA複製はセントラルドグマの「DNAからRNA、RNAからタンパク質」という流れとは少し別に、DNAそのものを増やす過程として理解する必要があります。
+
+## 具体例
+
+細胞が分裂する前には、染色体中のDNAが複製されます。これにより、分裂後の2つの細胞が基本的に同じ遺伝情報を持てます。
+
+実験では、PCRでDNAポリメラーゼを使って特定のDNA領域を増幅します。PCRは細胞内のDNA複製そのものではありませんが、相補的塩基対とDNAポリメラーゼという考え方を利用しています。
+
+## よく混同される概念
+
+- DNA複製と転写: DNA複製はDNAからDNAを作る過程で、転写はDNAからRNAを作る過程です。
+- 複製と細胞分裂: 複製はDNAをコピーする過程で、細胞分裂は細胞全体が分かれる過程です。
+- 半保存的複製と完全な新規合成: 半保存的複製では、できたDNA分子は元の鎖1本と新しい鎖1本を含みます。
+
+## 論文や実験ではどう出てくるか
+
+DNA複製は、細胞周期解析、DNA合成の標識実験、複製ストレスの研究、DNA修復の研究などで出てきます。論文では「DNA synthesis」「replication fork」「replication stress」「DNA polymerase」のような表現で登場します。
+
+実験手法では、PCRやシーケンシングの説明でもDNAポリメラーゼや相補鎖合成という言葉がよく出てきます。
+
+## 英語表記と略語
+
+| 日本語名         | 英語名                       | 略語 |
+| ---------------- | ---------------------------- | ---- |
+| DNA複製          | DNA replication              | -    |
+| DNAポリメラーゼ  | DNA polymerase               | -    |
+| 複製フォーク     | replication fork             | -    |
+| リーディング鎖   | leading strand               | -    |
+| ラギング鎖       | lagging strand               | -    |
+| 岡崎フラグメント | Okazaki fragment             | -    |
+| 半保存的複製     | semiconservative replication | -    |
+
+## よくある誤解
+
+- DNA複製は、DNAの情報をRNAへ読み出す転写とは別の過程です。
+- DNA複製は完全に無誤差ではありません。多くの間違いは修正されますが、残る変化もあります。
+- 片方の鎖だけが重要なのではなく、両方の鎖がそれぞれ鋳型として使われます。
+
+## 重要用語
+
+- DNA複製: DNAを鋳型として新しいDNAを作る過程。
+- 半保存的複製: 元の鎖1本と新しい鎖1本を含むDNA分子ができる複製様式。
+- DNAポリメラーゼ: DNA鎖を合成する酵素。
+- 複製フォーク: DNA二本鎖がほどけ、新しい鎖が作られている領域。
+- 岡崎フラグメント: ラギング鎖で作られる短いDNA断片。
+
+<Quiz
+  questions={[
+    {
+      question: 'DNA複製では何から何が作られますか。',
+      answer: 'DNAを鋳型として新しいDNAが作られます。',
+    },
+    {
+      question: '半保存的複製とは何ですか。',
+      answer:
+        'できたDNA分子が、元の鎖1本と新しく作られた鎖1本を含む複製様式です。',
+    },
+    {
+      question: 'DNAポリメラーゼの役割を説明してください。',
+      answer:
+        '鋳型鎖を読み取り、相補的なヌクレオチドをつなげてDNA鎖を合成します。',
+    },
+    {
+      question: 'リーディング鎖とラギング鎖の違いを説明してください。',
+      answer:
+        'リーディング鎖は連続的に作られ、ラギング鎖は短い断片として作られて後でつながれます。',
+    },
+    {
+      question: 'PCRとDNA複製に共通する考え方を一つ挙げてください。',
+      answer: '相補的塩基対やDNAポリメラーゼによるDNA鎖合成を利用する点です。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: '転写とは何か', href: '/molecular-biology/transcription/' },
+    { title: '塩基対とは何か', href: '/molecular-biology/base-pairing/' },
+    { title: 'PCRとは何か', href: '/methods/pcr/' },
+  ]}
+/>

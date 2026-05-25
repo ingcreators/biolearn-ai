@@ -1,16 +1,16 @@
 ---
 title: 分子生物学
-description: 核酸、タンパク質、セントラルドグマ、転写、翻訳、遺伝子発現を学びます。
+description: 核酸、タンパク質、DNA複製、セントラルドグマ、転写、RNAプロセシング、翻訳を学びます。
 ---
 
 import ArticleList from '../../../components/ArticleList.astro';
 
-分子生物学は、生命現象をDNA、RNA、タンパク質などの分子の働きとして理解する分野です。BioLearnでは、基礎カテゴリで学んだ分子、細胞、DNA、RNA、タンパク質を土台に、核酸やアミノ酸などの部品から、遺伝情報が読み出され、細胞の中で働きに変わる流れまでを学びます。
+分子生物学は、生命現象をDNA、RNA、タンパク質などの分子の働きとして理解する分野です。BioLearnでは、基礎カテゴリで学んだ分子、細胞、DNA、RNA、タンパク質を土台に、核酸やアミノ酸などの部品から、遺伝情報が複製され、読み出され、細胞の中で働きに変わる流れまでを学びます。
 
 ## この分野で学ぶこと
 
-- セントラルドグマ、転写、翻訳、遺伝子発現の関係
-- 核酸、ヌクレオチド、塩基対、アミノ酸、タンパク質構造、酵素の基本
+- DNA複製、セントラルドグマ、転写、RNAプロセシング、翻訳、遺伝子発現の関係
+- 核酸、ヌクレオチド、塩基対、アミノ酸、タンパク質構造、フォールディング、酵素の基本
 - DNA、RNA、タンパク質、遺伝子の知識を、情報の流れとしてつなげる見方
 - RNA-seqや差次的発現解析へ進む前提になる分子の言葉
 
@@ -29,11 +29,25 @@ import ArticleList from '../../../components/ArticleList.astro';
     <h3>セントラルドグマで流れを見る</h3>
     <p>DNA、RNA、タンパク質を、遺伝情報が読み出される流れとしてつなげます。</p>
   </a>
+  <a class="biolearn-home-card" href="/molecular-biology/dna-replication/">
+    <span>複製</span>
+    <h3>DNAからDNAへのコピー</h3>
+    <p>
+      細胞分裂の前にDNAがどう複製され、同じ遺伝情報が受け渡されるかを確認します。
+    </p>
+  </a>
   <a class="biolearn-home-card" href="/molecular-biology/transcription/">
     <span>転写</span>
     <h3>DNAからRNAへの読み出し</h3>
     <p>
       遺伝子の情報がRNAとして写し取られる過程を確認し、RNA-seqの前提につなげます。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="/molecular-biology/rna-processing/">
+    <span>RNA加工</span>
+    <h3>RNAを使える形へ整える</h3>
+    <p>
+      キャップ、ポリA尾部、スプライシングを通して、成熟mRNAができる流れを見ます。
     </p>
   </a>
   <a class="biolearn-home-card" href="/molecular-biology/translation/">
@@ -57,21 +71,21 @@ import ArticleList from '../../../components/ArticleList.astro';
   </a>
 </div>
 
-| 迷っていること                     | 入口                                                                                                                                    | 次に進む場所                                                                                                   |
-| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| DNA、RNA、タンパク質の流れを見たい | [セントラルドグマ](/molecular-biology/central-dogma/)                                                                                   | [基礎から学ぶ](/paths/foundations/)、[遺伝子発現](/fundamentals/gene-expression/)                              |
-| 核酸や塩基配列の部品を整理したい   | [核酸](/molecular-biology/nucleic-acids/)、[ヌクレオチド](/molecular-biology/nucleotide/)、[塩基対](/molecular-biology/base-pairing/)   | [DNA](/fundamentals/dna/)、[PCR](/methods/pcr/)、[シーケンシング](/methods/sequencing/)                        |
-| RNAがどこで出てくるか知りたい      | [転写](/molecular-biology/transcription/)、[RNA](/fundamentals/rna/)                                                                    | [RNA-seq](/bioinformatics/rna-seq/)、[シーケンスデータ](/bioinformatics/sequence-data/)                        |
-| タンパク質の働きへつなげたい       | [翻訳](/molecular-biology/translation/)、[タンパク質](/fundamentals/protein/)                                                           | [細胞生物学](/cell-biology/)、[Western blotの読み方](/figures/how-to-read-western-blot/)                       |
-| 酵素やタンパク質構造を知りたい     | [アミノ酸](/molecular-biology/amino-acid/)、[タンパク質構造](/molecular-biology/protein-structure/)、[酵素](/molecular-biology/enzyme/) | [PCR](/methods/pcr/)、[qPCR](/methods/qpcr/)、[細胞シグナル伝達](/cell-biology/cell-signaling/)                |
-| 発現量や発現差を読みたい           | [遺伝子発現](/fundamentals/gene-expression/)、[遺伝子](/fundamentals/gene/)                                                             | [差次的発現解析](/bioinformatics/differential-expression/)、[Volcano plot](/figures/how-to-read-volcano-plot/) |
-| 実験手法やFigureに戻りたい         | [遺伝子発現](/fundamentals/gene-expression/)、[セントラルドグマ](/molecular-biology/central-dogma/)                                     | [qPCR](/methods/qpcr/)、[RT-qPCR](/methods/rt-qpcr/)、[qPCRプロット](/figures/how-to-read-qpcr-plot/)          |
+| 迷っていること                     | 入口                                                                                                                                                                                                       | 次に進む場所                                                                                                   |
+| ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| DNA、RNA、タンパク質の流れを見たい | [セントラルドグマ](/molecular-biology/central-dogma/)、[DNA複製](/molecular-biology/dna-replication/)                                                                                                      | [基礎から学ぶ](/paths/foundations/)、[遺伝子発現](/fundamentals/gene-expression/)                              |
+| 核酸や塩基配列の部品を整理したい   | [核酸](/molecular-biology/nucleic-acids/)、[ヌクレオチド](/molecular-biology/nucleotide/)、[塩基対](/molecular-biology/base-pairing/)                                                                      | [DNA](/fundamentals/dna/)、[PCR](/methods/pcr/)、[シーケンシング](/methods/sequencing/)                        |
+| RNAがどこで出てくるか知りたい      | [転写](/molecular-biology/transcription/)、[RNAプロセシング](/molecular-biology/rna-processing/)、[RNA](/fundamentals/rna/)                                                                                | [スプライシング](/molecular-biology/splicing/)、[RNA-seq](/bioinformatics/rna-seq/)                            |
+| タンパク質の働きへつなげたい       | [翻訳](/molecular-biology/translation/)、[タンパク質](/fundamentals/protein/)                                                                                                                              | [細胞生物学](/cell-biology/)、[Western blotの読み方](/figures/how-to-read-western-blot/)                       |
+| 酵素やタンパク質構造を知りたい     | [アミノ酸](/molecular-biology/amino-acid/)、[タンパク質構造](/molecular-biology/protein-structure/)、[タンパク質フォールディング](/molecular-biology/protein-folding/)、[酵素](/molecular-biology/enzyme/) | [PCR](/methods/pcr/)、[qPCR](/methods/qpcr/)、[細胞シグナル伝達](/cell-biology/cell-signaling/)                |
+| 発現量や発現差を読みたい           | [遺伝子発現](/fundamentals/gene-expression/)、[遺伝子](/fundamentals/gene/)                                                                                                                                | [差次的発現解析](/bioinformatics/differential-expression/)、[Volcano plot](/figures/how-to-read-volcano-plot/) |
+| 実験手法やFigureに戻りたい         | [遺伝子発現](/fundamentals/gene-expression/)、[セントラルドグマ](/molecular-biology/central-dogma/)                                                                                                        | [qPCR](/methods/qpcr/)、[RT-qPCR](/methods/rt-qpcr/)、[qPCRプロット](/figures/how-to-read-qpcr-plot/)          |
 
 ## まず押さえる3つの考え方
 
 1. セントラルドグマは、遺伝情報がRNAやタンパク質へ向かう基本的な見取り図です。
-2. 転写と翻訳は、情報が段階的に読み出される過程です。
-3. 遺伝子発現は、細胞の状態や刺激に応じて変わる「情報の使われ方」です。
+2. DNA複製はDNAを受け渡す過程で、転写と翻訳は情報が段階的に読み出される過程です。
+3. RNAプロセシングやタンパク質フォールディングは、作られた分子が働ける形へ整う段階です。
 
 ## 読む順番
 
@@ -82,6 +96,7 @@ DNA、RNA、タンパク質、遺伝子があいまいな場合は、先に [生
 ## このカテゴリを終えるとできること
 
 - 転写と翻訳が、遺伝情報からタンパク質へ向かう流れのどこにあるか説明できる
+- DNA複製、RNAプロセシング、スプライシング、タンパク質フォールディングを、転写や翻訳と区別できる
 - RNA-seqや差次的発現解析に出てくる「発現量」の入口を理解できる
 
 ## 関連する用語
@@ -97,6 +112,10 @@ DNA、RNA、タンパク質、遺伝子があいまいな場合は、先に [生
 - [酵素](/glossary/enzyme/)
 - [遺伝子](/glossary/gene/)
 - [セントラルドグマ](/glossary/central-dogma/)
+- [DNA複製](/glossary/dna-replication/)
 - [転写](/glossary/transcription/)
+- [RNAプロセシング](/glossary/rna-processing/)
+- [スプライシング](/glossary/splicing/)
 - [翻訳](/glossary/translation/)
+- [タンパク質フォールディング](/glossary/protein-folding/)
 - [遺伝子発現](/glossary/gene-expression/)

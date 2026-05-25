@@ -189,6 +189,13 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'molecular-biology',
   },
   {
+    term: 'DNA複製',
+    english: 'DNA replication',
+    description: 'DNAを鋳型として新しいDNAを作る過程。',
+    href: '/glossary/dna-replication/',
+    category: 'molecular-biology',
+  },
+  {
     term: '転写',
     english: 'transcription',
     description: 'DNAの情報をもとにRNAを合成する過程。',
@@ -196,10 +203,31 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'molecular-biology',
   },
   {
+    term: 'RNAプロセシング',
+    english: 'RNA processing',
+    description: '転写されたRNAが成熟した形になるために受ける加工。',
+    href: '/glossary/rna-processing/',
+    category: 'molecular-biology',
+  },
+  {
+    term: 'スプライシング',
+    english: 'splicing',
+    description: 'pre-mRNAからイントロンを取り除き、エクソンをつなげる過程。',
+    href: '/glossary/splicing/',
+    category: 'molecular-biology',
+  },
+  {
     term: '翻訳',
     english: 'translation',
     description: 'mRNAの情報をもとにアミノ酸をつなぎ、タンパク質を作る過程。',
     href: '/glossary/translation/',
+    category: 'molecular-biology',
+  },
+  {
+    term: 'タンパク質フォールディング',
+    english: 'protein folding',
+    description: 'アミノ酸の鎖が折りたたまれて立体構造になる過程。',
+    href: '/glossary/protein-folding/',
     category: 'molecular-biology',
   },
   {
