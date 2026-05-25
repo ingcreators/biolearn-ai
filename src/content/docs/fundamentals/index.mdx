@@ -18,6 +18,8 @@ import ArticleList from '../../../components/ArticleList.astro';
 
 ## 目的別に選ぶ
 
+いま分からなくなっている前提に合わせて選びます。最初から順番に進む場合は、下の「読む順番」よりも [基礎から学ぶ](/paths/foundations/) を使うと、分子生物学やゲノミクスの記事まで含めて進めます。
+
 <div class="biolearn-home-grid">
   <a class="biolearn-home-card" href="/fundamentals/life-science/">
     <span>全体像</span>
@@ -26,23 +28,28 @@ import ArticleList from '../../../components/ArticleList.astro';
       分子、細胞、個体、データという階層を分け、BioLearn全体で何を学ぶかを確認します。
     </p>
   </a>
-  <a class="biolearn-home-card" href="/fundamentals/cell/">
-    <span>分子と細胞</span>
-    <h3>生命を成り立たせる単位を見る</h3>
+  <a class="biolearn-home-card" href="/fundamentals/molecule/">
+    <span>階層と単位</span>
+    <h3>分子、細胞、個体を分ける</h3>
     <p>
-      分子、細胞、組織、個体の関係を押さえ、生命現象を見る単位を整理します。
+      分子、細胞、組織、個体の関係を押さえ、何を観察単位として読むのかを整理します。
     </p>
   </a>
   <a class="biolearn-home-card" href="/fundamentals/dna/">
-    <span>遺伝情報</span>
+    <span>情報の流れ</span>
     <h3>DNA、RNA、タンパク質を分ける</h3>
     <p>
       遺伝情報が保存され、写し取られ、タンパク質として働く流れの入口を整理します。
     </p>
   </a>
+  <a class="biolearn-home-card" href="/fundamentals/gene/">
+    <span>遺伝子</span>
+    <h3>遺伝子と発現をつなげる</h3>
+    <p>遺伝子がDNA上の領域であり、発現として読み出されることを確認します。</p>
+  </a>
   <a class="biolearn-home-card" href="/fundamentals/genome/">
-    <span>ゲノム</span>
-    <h3>全体像と位置情報へ広げる</h3>
+    <span>ゲノムと染色体</span>
+    <h3>遺伝情報の全体像へ広げる</h3>
     <p>
       遺伝子、ゲノム、染色体の関係を押さえ、ゲノミクスやゲノムFigureへ接続します。
     </p>
@@ -86,9 +93,9 @@ import ArticleList from '../../../components/ArticleList.astro';
 
 ## 読む順番
 
-<ArticleList part="fundamentals" groupByModule />
+このカテゴリ内だけで読むなら、まず「生命科学の全体像」で階層を作り、次に「遺伝情報の基本」でDNA、RNA、タンパク質、遺伝子、遺伝子発現を分けます。その後に「ゲノムの基礎」でゲノム、染色体、変異を位置づけ、最後に表現型、モデル生物、生命科学の問いを確認すると、Figure読解や論文読解へ進みやすくなります。
 
-まず生命科学の全体像を確認し、分子、細胞、組織、個体の階層を押さえます。その後にDNA、RNA、タンパク質、遺伝子、遺伝子発現、ゲノム、染色体、変異を順に置くと、分子生物学やゲノミクスの記事を「何の詳細を学んでいるのか」と位置づけやすくなります。最後に表現型、モデル生物、生命科学の問いを確認し、Figure読解や論文読解へ接続します。
+<ArticleList part="fundamentals" groupByModule />
 
 ## このカテゴリを終えるとできること
 
