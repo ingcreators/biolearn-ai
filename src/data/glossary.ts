@@ -196,6 +196,28 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'molecular-biology',
   },
   {
+    term: 'DNA損傷',
+    english: 'DNA damage',
+    description: 'DNA分子に生じる傷、切断、化学的な変化。',
+    href: '/glossary/dna-damage/',
+    category: 'molecular-biology',
+  },
+  {
+    term: 'DNA修復',
+    english: 'DNA repair',
+    description: 'DNA損傷やミスマッチを検出して修正する細胞の仕組み。',
+    href: '/glossary/dna-repair/',
+    category: 'molecular-biology',
+  },
+  {
+    term: '組換え',
+    english: 'recombination',
+    description:
+      'DNA配列の一部が別のDNA分子や領域と交換または再配置される現象。',
+    href: '/glossary/recombination/',
+    category: 'molecular-biology',
+  },
+  {
     term: '転写',
     english: 'transcription',
     description: 'DNAの情報をもとにRNAを合成する過程。',

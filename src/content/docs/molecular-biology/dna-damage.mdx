@@ -1,0 +1,131 @@
+---
+title: DNA損傷とは何か
+description: DNA損傷をDNA分子に生じる傷や化学的な変化として説明し、変異やDNA修復との違いを整理します。
+part: molecular-biology
+module: information-flow
+level: foundation
+priority: P2
+order: 13
+learningPaths:
+  - foundations
+relatedTerms:
+  - dna-damage
+  - dna-repair
+  - mutation
+  - dna
+prerequisites:
+  - /fundamentals/dna/
+  - /molecular-biology/dna-replication/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'DNA損傷がDNA分子に生じる傷や化学的な変化であることを理解する',
+    'DNA損傷、変異、DNA修復の違いを説明できる',
+    '論文でDNA損傷を読むときの代表的な見方を知る',
+  ]}
+/>
+
+DNA損傷は、DNA分子そのものに生じる傷や化学的な変化です。
+
+<LessonFigure
+  src="/figures/dna-damage-concept.jpg"
+  alt="二本鎖DNAの一部に小さな傷や切れ目があり、細胞が異常として認識する様子を示す教材イラスト"
+  title="DNA損傷はDNA分子に生じる傷"
+  caption="損傷はDNA配列として固定された変異とは異なり、修復されることも、残って変化につながることもあります。"
+/>
+
+DNAは安定した分子ですが、細胞の中では常にさまざまな影響を受けています。紫外線、放射線、化学物質、活性酸素、DNA複製中の問題などによって、塩基が化学的に変化したり、DNA鎖が切れたり、二本鎖の構造がゆがんだりすることがあります。こうしたDNA分子上の異常をDNA損傷と呼びます。
+
+DNA損傷にはいくつかの形があります。塩基が変化する塩基損傷、片方のDNA鎖が切れる一本鎖切断、両方の鎖が近い位置で切れる二本鎖切断、紫外線で隣り合う塩基が異常につながる損傷などです。種類によって、細胞が使う修復の仕組みや、細胞への影響は異なります。
+
+大切なのは、DNA損傷と変異を分けることです。DNA損傷はDNA分子に起きた「傷」の状態です。多くの損傷はDNA修復によって直されます。一方で、修復されずにDNA複製を通過したり、修復の過程で別の配列に変わったりすると、DNA配列の変化として残ることがあります。この残った配列変化が変異として扱われます。
+
+## なぜ重要か
+
+[DNA損傷](/glossary/dna-damage/)は、[DNA](/glossary/dna/)が単に保存されているだけでなく、細胞内で維持され続けている分子であることを理解する入口です。DNA損傷を理解すると、[DNA修復](/glossary/dna-repair/)、変異、細胞周期、ゲノム安定性、複製ストレスなどの言葉がつながりやすくなります。
+
+論文では、DNA損傷は細胞のストレス応答、薬剤処理、放射線照射、老化研究、がん研究などで登場します。ただし、この教材では個人の診断や治療判断ではなく、論文やFigureを読むための基礎概念として扱います。
+
+## 具体例
+
+紫外線は、DNA中の隣り合う塩基同士を異常につなげることがあります。このような構造のゆがみは、DNA複製や転写の進行を妨げることがあります。
+
+別の例として、活性酸素によって塩基が酸化されることがあります。酸化された塩基は、本来とは違う相手と対になりやすくなる場合があり、修復されなければ変異につながることがあります。
+
+## よく混同される概念
+
+- DNA損傷と変異: DNA損傷は分子上の傷や化学変化で、変異はDNA配列として残った変化です。
+- DNA損傷とDNA修復: DNA損傷は直す対象で、DNA修復はそれを検出して修正する仕組みです。
+- 損傷の検出と影響の断定: 損傷マーカーが増えていても、その後の細胞応答や生物学的意味は実験条件と証拠を合わせて読みます。
+
+## 論文や実験ではどう出てくるか
+
+DNA損傷は、免疫染色、Western blot、コメットアッセイ、シーケンシング、細胞周期解析などで扱われます。論文では「DNA damage」「DNA lesions」「double-strand breaks」「replication stress」「genotoxic stress」のような表現が出てきます。
+
+Figureでは、DNA損傷応答に関わるタンパク質のリン酸化、核内の点状シグナル、損傷処理後の細胞生存率、修復因子の集積などとして示されることがあります。
+
+## 英語表記と略語
+
+| 日本語名         | 英語名              | 略語 |
+| ---------------- | ------------------- | ---- |
+| DNA損傷          | DNA damage          | -    |
+| DNA損傷部位      | DNA lesion          | -    |
+| 一本鎖切断       | single-strand break | SSB  |
+| 二本鎖切断       | double-strand break | DSB  |
+| 遺伝毒性ストレス | genotoxic stress    | -    |
+
+## よくある誤解
+
+- DNA損傷が起きると必ず変異になるわけではありません。多くは修復されます。
+- DNA損傷は外からの強い刺激だけでなく、通常の細胞活動や複製中の問題でも生じます。
+- DNA損傷マーカーの増加だけで、病気や治療効果を個人レベルで判断できるわけではありません。
+
+## 重要用語
+
+- DNA損傷: DNA分子に生じる傷、切断、化学的な変化。
+- DNA lesion: DNA上の損傷部位を指す表現。
+- 一本鎖切断: DNA二本鎖のうち片方の鎖が切れた状態。
+- 二本鎖切断: DNA二本鎖の両方が近い位置で切れた状態。
+- ゲノム安定性: DNA配列や染色体構造が大きく乱れず保たれる性質。
+
+<Quiz
+  questions={[
+    {
+      question: 'DNA損傷とは何ですか。',
+      answer: 'DNA分子に生じる傷、切断、化学的な変化です。',
+    },
+    {
+      question: 'DNA損傷と変異の違いを説明してください。',
+      answer:
+        'DNA損傷はDNA分子上の傷や異常で、変異はDNA配列として残った変化です。',
+    },
+    {
+      question: 'DNA損傷の例を一つ挙げてください。',
+      answer:
+        '塩基損傷、一本鎖切断、二本鎖切断、紫外線による塩基同士の異常な結合などがあります。',
+    },
+    {
+      question: 'DNA損傷が必ず変異になるわけではない理由を説明してください。',
+      answer: '多くのDNA損傷はDNA修復によって直されるからです。',
+    },
+    {
+      question: '論文でDNA損傷を読むときに注意したい点を一つ挙げてください。',
+      answer:
+        '損傷マーカー、処理条件、時間、修復応答、細胞への影響を分けて読むことです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'DNA修復とは何か', href: '/molecular-biology/dna-repair/' },
+    { title: '変異とは何か', href: '/fundamentals/mutation/' },
+    { title: 'DNA複製とは何か', href: '/molecular-biology/dna-replication/' },
+  ]}
+/>

@@ -1,6 +1,6 @@
 ---
 title: 分子生物学
-description: 核酸、タンパク質、DNA複製、セントラルドグマ、転写、発現制御、クロマチン、RNAプロセシング、翻訳を学びます。
+description: 核酸、タンパク質、DNA複製、DNA損傷、DNA修復、組換え、セントラルドグマ、転写、発現制御、クロマチン、RNAプロセシング、翻訳を学びます。
 ---
 
 import ArticleList from '../../../components/ArticleList.astro';
@@ -9,7 +9,7 @@ import ArticleList from '../../../components/ArticleList.astro';
 
 ## この分野で学ぶこと
 
-- DNA複製、セントラルドグマ、転写、RNAプロセシング、翻訳、遺伝子発現制御の関係
+- DNA複製、DNA損傷、DNA修復、組換え、セントラルドグマ、転写、RNAプロセシング、翻訳、遺伝子発現制御の関係
 - 核酸、ヌクレオチド、塩基対、アミノ酸、タンパク質構造、フォールディング、酵素の基本
 - DNA、RNA、タンパク質、遺伝子の知識を、情報の流れと発現制御としてつなげる見方
 - クロマチン、ヌクレオソーム、DNAメチル化、ヒストン修飾を、遺伝子の読み出しやすさとして読む見方
@@ -36,6 +36,23 @@ import ArticleList from '../../../components/ArticleList.astro';
     <p>
       細胞分裂の前にDNAがどう複製され、同じ遺伝情報が受け渡されるかを確認します。
     </p>
+  </a>
+  <a class="biolearn-home-card" href="/molecular-biology/dna-damage/">
+    <span>DNA維持</span>
+    <h3>DNAに起こる傷を見る</h3>
+    <p>DNA損傷を、修復される可能性がある分子上の異常として整理します。</p>
+  </a>
+  <a class="biolearn-home-card" href="/molecular-biology/dna-repair/">
+    <span>DNA維持</span>
+    <h3>DNAの傷を直す仕組みを見る</h3>
+    <p>
+      損傷の種類ごとに修復経路が異なり、変異やゲノム安定性に関わることを学びます。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="/molecular-biology/recombination/">
+    <span>組換え</span>
+    <h3>DNAをつなぎ替える考え方</h3>
+    <p>相同組換えを中心に、DNA修復や実験で出てくる組換えの意味を分けます。</p>
   </a>
   <a class="biolearn-home-card" href="/molecular-biology/transcription/">
     <span>転写</span>
@@ -99,6 +116,7 @@ import ArticleList from '../../../components/ArticleList.astro';
 | 迷っていること                      | 入口                                                                                                                                                                                                       | 次に進む場所                                                                                                   |
 | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
 | DNA、RNA、タンパク質の流れを見たい  | [セントラルドグマ](/molecular-biology/central-dogma/)、[DNA複製](/molecular-biology/dna-replication/)                                                                                                      | [基礎から学ぶ](/paths/foundations/)、[遺伝子発現](/fundamentals/gene-expression/)                              |
+| DNAの損傷や修復を知りたい           | [DNA損傷](/molecular-biology/dna-damage/)、[DNA修復](/molecular-biology/dna-repair/)、[組換え](/molecular-biology/recombination/)                                                                          | [変異](/fundamentals/mutation/)、[遺伝的変異](/genomics/genetic-variants/)                                     |
 | 核酸や塩基配列の部品を整理したい    | [核酸](/molecular-biology/nucleic-acids/)、[ヌクレオチド](/molecular-biology/nucleotide/)、[塩基対](/molecular-biology/base-pairing/)                                                                      | [DNA](/fundamentals/dna/)、[PCR](/methods/pcr/)、[シーケンシング](/methods/sequencing/)                        |
 | RNAがどこで出てくるか知りたい       | [転写](/molecular-biology/transcription/)、[RNAプロセシング](/molecular-biology/rna-processing/)、[RNA](/fundamentals/rna/)                                                                                | [スプライシング](/molecular-biology/splicing/)、[RNA-seq](/bioinformatics/rna-seq/)                            |
 | タンパク質の働きへつなげたい        | [翻訳](/molecular-biology/translation/)、[タンパク質](/fundamentals/protein/)                                                                                                                              | [細胞生物学](/cell-biology/)、[Western blotの読み方](/figures/how-to-read-western-blot/)                       |
@@ -111,7 +129,7 @@ import ArticleList from '../../../components/ArticleList.astro';
 ## まず押さえる3つの考え方
 
 1. セントラルドグマは、遺伝情報がRNAやタンパク質へ向かう基本的な見取り図です。
-2. DNA複製はDNAを受け渡す過程で、転写と翻訳は情報が段階的に読み出される過程です。
+2. DNA複製はDNAを受け渡す過程で、DNA損傷・修復・組換えはDNAを維持する仕組みとして理解できます。
 3. プロモーター、エンハンサー、転写因子、クロマチン状態、転写後制御は、遺伝子の使われ方を調節する仕組みです。
 
 ## 読む順番
@@ -123,7 +141,7 @@ DNA、RNA、タンパク質、遺伝子があいまいな場合は、先に [生
 ## このカテゴリを終えるとできること
 
 - 転写と翻訳が、遺伝情報からタンパク質へ向かう流れのどこにあるか説明できる
-- DNA複製、RNAプロセシング、スプライシング、タンパク質フォールディング、発現制御を、転写や翻訳と区別できる
+- DNA複製、DNA損傷、DNA修復、組換え、RNAプロセシング、スプライシング、タンパク質フォールディング、発現制御を、転写や翻訳と区別できる
 - RNA-seqや差次的発現解析に出てくる「発現量」の入口を理解できる
 
 ## 関連する用語
@@ -142,6 +160,9 @@ DNA、RNA、タンパク質、遺伝子があいまいな場合は、先に [生
 - [ヌクレオソーム](/glossary/nucleosome/)
 - [セントラルドグマ](/glossary/central-dogma/)
 - [DNA複製](/glossary/dna-replication/)
+- [DNA損傷](/glossary/dna-damage/)
+- [DNA修復](/glossary/dna-repair/)
+- [組換え](/glossary/recombination/)
 - [転写](/glossary/transcription/)
 - [遺伝子発現制御](/glossary/gene-expression-regulation/)
 - [プロモーター](/glossary/promoter/)
