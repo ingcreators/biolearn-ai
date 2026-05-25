@@ -20,45 +20,42 @@ import ArticleList from '../../../components/ArticleList.astro';
 分子生物学は、基礎カテゴリで学んだDNA、RNA、タンパク質、遺伝子を、細胞の中で働く情報の流れとして読み直すカテゴリです。Figure読解やRNA-seqに進む前に、何が測られ、何が「発現」と呼ばれているのかを確認します。
 
 <div class="biolearn-home-grid">
-  <a class="biolearn-home-card" href="/molecular-biology/nucleic-acids/">
-    <span>核酸</span>
-    <h3>DNAとRNAを同じ枠組みで見る</h3>
-    <p>核酸、ヌクレオチド、塩基対を整理し、配列を読む入口を作ります。</p>
-  </a>
   <a class="biolearn-home-card" href="/molecular-biology/central-dogma/">
-    <span>全体像</span>
-    <h3>セントラルドグマで流れを見る</h3>
+    <span>セントラルドグマ</span>
+    <h3>DNA、RNA、タンパク質の流れを見る</h3>
     <p>DNA、RNA、タンパク質を、遺伝情報が読み出される流れとしてつなげます。</p>
-  </a>
-  <a class="biolearn-home-card" href="/molecular-biology/dna-replication/">
-    <span>複製</span>
-    <h3>DNAからDNAへのコピー</h3>
-    <p>
-      細胞分裂の前にDNAがどう複製され、同じ遺伝情報が受け渡されるかを確認します。
-    </p>
-  </a>
-  <a class="biolearn-home-card" href="/molecular-biology/dna-damage/">
-    <span>DNA維持</span>
-    <h3>DNAに起こる傷を見る</h3>
-    <p>DNA損傷を、修復される可能性がある分子上の異常として整理します。</p>
-  </a>
-  <a class="biolearn-home-card" href="/molecular-biology/dna-repair/">
-    <span>DNA維持</span>
-    <h3>DNAの傷を直す仕組みを見る</h3>
-    <p>
-      損傷の種類ごとに修復経路が異なり、変異やゲノム安定性に関わることを学びます。
-    </p>
-  </a>
-  <a class="biolearn-home-card" href="/molecular-biology/recombination/">
-    <span>組換え</span>
-    <h3>DNAをつなぎ替える考え方</h3>
-    <p>相同組換えを中心に、DNA修復や実験で出てくる組換えの意味を分けます。</p>
   </a>
   <a class="biolearn-home-card" href="/molecular-biology/transcription/">
     <span>転写</span>
     <h3>DNAからRNAへの読み出し</h3>
     <p>
-      遺伝子の情報がRNAとして写し取られる過程を確認し、RNA-seqの前提につなげます。
+      転写、RNAプロセシング、スプライシングを通して、遺伝子の情報がRNAとして使われる流れを見ます。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="/molecular-biology/translation/">
+    <span>翻訳</span>
+    <h3>RNAからタンパク質へ進む</h3>
+    <p>
+      RNAの情報がタンパク質の配列に変換され、細胞内の働きにつながる流れを読みます。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="/fundamentals/gene-expression/">
+    <span>遺伝子発現</span>
+    <h3>発現量をFigureや解析につなげる</h3>
+    <p>
+      細胞の状態や刺激に応じて、どの遺伝子がどれくらい使われるかを確認します。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="/molecular-biology/nucleic-acids/">
+    <span>核酸と配列</span>
+    <h3>DNAとRNAを分子として見る</h3>
+    <p>核酸、ヌクレオチド、塩基対を整理し、配列を読む土台を作ります。</p>
+  </a>
+  <a class="biolearn-home-card" href="/molecular-biology/dna-replication/">
+    <span>DNA損傷・修復・組換え</span>
+    <h3>DNAを維持する仕組みを見る</h3>
+    <p>
+      DNA複製、DNA損傷、DNA修復、組換えを、変異やゲノム安定性の前提として整理します。
     </p>
   </a>
   <a
@@ -72,43 +69,17 @@ import ArticleList from '../../../components/ArticleList.astro';
     </p>
   </a>
   <a class="biolearn-home-card" href="/molecular-biology/chromatin/">
-    <span>クロマチン</span>
-    <h3>DNAの収納と読み出しやすさを見る</h3>
+    <span>クロマチンとエピジェネティクス</span>
+    <h3>読み出しやすさと調節の目印を見る</h3>
     <p>
-      クロマチン、ヌクレオソーム、アクセシビリティを、発現制御の土台として整理します。
+      クロマチン、ヌクレオソーム、エピジェネティクス、DNAメチル化、ヒストン修飾を整理します。
     </p>
   </a>
-  <a class="biolearn-home-card" href="/molecular-biology/epigenetics/">
-    <span>エピジェネティクス</span>
-    <h3>配列以外の調節の目印を読む</h3>
+  <a class="biolearn-home-card" href="/molecular-biology/amino-acid/">
+    <span>タンパク質と酵素</span>
+    <h3>タンパク質の形と働きを見る</h3>
     <p>
-      DNAメチル化やヒストン修飾を、クロマチン状態と遺伝子発現の文脈で学びます。
-    </p>
-  </a>
-  <a class="biolearn-home-card" href="/molecular-biology/rna-processing/">
-    <span>RNA加工</span>
-    <h3>RNAを使える形へ整える</h3>
-    <p>
-      キャップ、ポリA尾部、スプライシングを通して、成熟mRNAができる流れを見ます。
-    </p>
-  </a>
-  <a class="biolearn-home-card" href="/molecular-biology/translation/">
-    <span>翻訳</span>
-    <h3>RNAからタンパク質へ進む</h3>
-    <p>
-      RNAの情報がタンパク質の配列に変換され、細胞内の働きにつながる流れを読みます。
-    </p>
-  </a>
-  <a class="biolearn-home-card" href="/molecular-biology/enzyme/">
-    <span>酵素</span>
-    <h3>タンパク質が反応を動かす</h3>
-    <p>アミノ酸、タンパク質構造、酵素をつなげ、分子がどう働くかを見ます。</p>
-  </a>
-  <a class="biolearn-home-card" href="/fundamentals/gene-expression/">
-    <span>発現</span>
-    <h3>遺伝子発現をFigureにつなげる</h3>
-    <p>
-      細胞の状態や刺激に応じて、どの遺伝子がどれくらい使われるかを確認します。
+      アミノ酸、タンパク質構造、フォールディング、酵素をつなげ、分子がどう働くかを整理します。
     </p>
   </a>
 </div>
@@ -133,6 +104,8 @@ import ArticleList from '../../../components/ArticleList.astro';
 3. プロモーター、エンハンサー、転写因子、クロマチン状態、転写後制御は、遺伝子の使われ方を調節する仕組みです。
 
 ## 読む順番
+
+まず基礎カテゴリでDNA、RNA、タンパク質、遺伝子を確認し、このページでは核酸と配列の基礎を補ってから、セントラルドグマ、DNA複製、転写、RNAプロセシング、翻訳へ進みます。発現量やRNA-seqが目的なら、次に遺伝子発現制御、プロモーター、エンハンサー、転写因子、non-coding RNA、転写後制御を読みます。DNAの安定性や変異が気になる場合はDNA損傷・修復・組換えへ、発現制御の背景を厚くしたい場合はクロマチンとエピジェネティクスへ、タンパク質Figureや酵素反応を読む場合はタンパク質と酵素へ進みます。
 
 <ArticleList part="molecular-biology" groupByModule />
 
