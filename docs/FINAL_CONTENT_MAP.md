@@ -553,7 +553,7 @@ URL:
 - `/methods/sample/` サンプルとは何か [P1]
 - `/methods/control/` 対照群とは何か [P1]
 - `/methods/cell-culture/` 細胞培養とは何か [P1]
-- `/methods/model-organism/` モデル生物とは何か [P1]
+- `/methods/model-system/` モデル実験系とは何か [P1]
 - `/methods/animal-model/` 動物モデルとは何か [P2]
 - `/methods/organoid/` オルガノイドとは何か [P2]
 - `/methods/clinical-sample/` 臨床サンプルとは何か [P2]

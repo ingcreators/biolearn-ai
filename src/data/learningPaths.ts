@@ -27,6 +27,7 @@ export const learningPathRoutes: Record<LearningPathKey, string[]> = {
     '/fundamentals/gene-expression/',
     '/fundamentals/mutation/',
     '/fundamentals/phenotype/',
+    '/fundamentals/model-organisms/',
     '/fundamentals/biological-question/',
     '/cell-biology/cell-membrane/',
     '/cell-biology/organelles/',

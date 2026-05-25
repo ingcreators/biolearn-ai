@@ -209,6 +209,13 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'foundations',
   },
   {
+    term: 'モデル生物',
+    english: 'model organism',
+    description: '生命現象を調べるために研究でよく使われる生物。',
+    href: '/glossary/model-organism/',
+    category: 'foundations',
+  },
+  {
     term: 'SNP',
     english: 'single nucleotide polymorphism',
     abbreviation: 'SNP',
