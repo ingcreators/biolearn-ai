@@ -1,0 +1,122 @@
+---
+title: クロマチンアクセシビリティとは何か
+description: DNAが調節因子や酵素からどれくらいアクセスしやすいかを示すクロマチンアクセシビリティを説明します。
+part: molecular-biology
+module: gene-regulation
+level: foundation
+priority: P2
+order: 24.8
+learningPaths:
+  - foundations
+relatedTerms:
+  - chromatin-accessibility
+  - chromatin
+  - enhancer
+prerequisites:
+  - /molecular-biology/chromatin/
+  - /molecular-biology/transcription-factor/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'クロマチンアクセシビリティがDNAへのアクセスしやすさを表すことを理解する',
+    '開いたクロマチン領域が調節領域の候補になることを知る',
+    'ATAC-seqのピークを遺伝子発現や転写因子結合と区別して読める',
+  ]}
+/>
+
+クロマチンアクセシビリティは、クロマチン中のDNAが転写因子や酵素からどれくらいアクセスしやすいかを表す考え方です。
+
+<LessonFigure
+  src="/figures/chromatin-accessibility-concept.jpg"
+  alt="閉じたクロマチンではDNAに近づきにくく開いたクロマチンでは調節因子が近づきやすい様子を示す教材イラスト"
+  title="アクセシビリティはDNAへの近づきやすさ"
+  caption="開いた領域は、プロモーターやエンハンサーなどの調節領域の候補として読まれることがあります。"
+/>
+
+クロマチンがきつくまとまっている領域では、DNA配列にタンパク質が近づきにくい場合があります。反対に、開いたクロマチンでは、転写因子などがDNAに結合しやすい状態になっていることがあります。
+
+このアクセスしやすさをゲノム全体で測る代表的な方法がATAC-seqです。ATAC-seqでは、開いたクロマチン領域がピークとして見えるため、プロモーターやエンハンサーなどの調節領域候補を探すのに使われます。
+
+ただし、アクセシビリティが高いことは「その領域が重要そう」という手がかりであり、近くの遺伝子が必ず発現している、あるいはその領域が必ず機能している、という直接の証明ではありません。
+
+## なぜ重要か
+
+[クロマチンアクセシビリティ](/glossary/chromatin-accessibility/)を理解すると、ATAC-seqやsingle-cell ATAC-seqのFigureを読みやすくなります。細胞型ごとに開いている調節領域を比べることで、どの転写因子やエンハンサーが関わる可能性があるかを考えられます。
+
+## 具体例
+
+免疫細胞Aでだけ、あるエンハンサー候補にATAC-seqピークが見える場合、その細胞でその領域が使われている可能性があります。さらにH3K27acや転写因子ChIP-seq、標的遺伝子の発現変化と重なると、解釈の根拠が強くなります。
+
+single-cell ATAC-seqでは、細胞ごとのアクセシビリティパターンを使って細胞型や細胞状態を推定することがあります。
+
+## よく混同される概念
+
+- アクセシビリティと遺伝子発現: アクセシビリティはDNAの開きやすさで、発現量そのものではありません。
+- ATAC-seqピークと転写因子結合: ピークは開いた領域を示しますが、特定の転写因子が結合している証拠とは限りません。
+- 開いた領域と機能領域: 開いていることは候補の手がかりで、機能証明には追加実験が必要です。
+
+## 論文や実験ではどう出てくるか
+
+クロマチンアクセシビリティは、ATAC-seq、DNase-seq、FAIRE-seq、single-cell ATAC-seqで登場します。論文では「chromatin accessibility」「open chromatin」「accessible peaks」「differential accessibility」のように書かれます。
+
+## 英語表記と略語
+
+| 日本語名                   | 英語名                                                     | 略語     |
+| -------------------------- | ---------------------------------------------------------- | -------- |
+| クロマチンアクセシビリティ | chromatin accessibility                                    | -        |
+| 開いたクロマチン           | open chromatin                                             | -        |
+| ATAC-seq                   | assay for transposase-accessible chromatin with sequencing | ATAC-seq |
+| アクセシビリティ差異       | differential accessibility                                 | -        |
+
+## よくある誤解
+
+- ATAC-seqピークは発現量のピークではありません。
+- 開いたクロマチン領域が、必ず最も近い遺伝子を調節するとは限りません。
+- アクセシビリティだけで転写因子の活性を断定することはできません。
+
+## 重要用語
+
+- クロマチンアクセシビリティ: DNAがタンパク質や酵素からアクセスされやすい状態。
+- ATAC-seq: 開いたクロマチン領域をゲノム全体で調べる手法。
+- differential accessibility: 条件や細胞型の間でアクセシビリティが異なること。
+- モチーフ解析: 開いた領域に多いDNA配列パターンから転写因子候補を考える解析。
+
+<Quiz
+  questions={[
+    {
+      question: 'クロマチンアクセシビリティとは何ですか。',
+      answer:
+        'クロマチン中のDNAが転写因子や酵素からどれくらいアクセスしやすいかを表す考え方です。',
+    },
+    {
+      question: 'アクセシビリティを測る代表的な手法は何ですか。',
+      answer: 'ATAC-seqです。',
+    },
+    {
+      question: 'ATAC-seqピークは何を示しますか。',
+      answer: '開いたクロマチン領域の候補を示します。',
+    },
+    {
+      question: 'アクセシビリティと遺伝子発現の違いは何ですか。',
+      answer:
+        'アクセシビリティはDNAの開きやすさで、遺伝子発現はRNAやタンパク質として使われる量や状態です。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'クロマチンとは何か', href: '/molecular-biology/chromatin/' },
+    { title: 'エンハンサーとは何か', href: '/molecular-biology/enhancer/' },
+    {
+      title: 'ゲノムブラウザとは何か',
+      href: '/genomics/genome-browser/',
+    },
+  ]}
+/>

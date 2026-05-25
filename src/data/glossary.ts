@@ -319,6 +319,50 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'genomics',
   },
   {
+    term: 'クロマチン',
+    english: 'chromatin',
+    description: 'DNAとヒストンなどのタンパク質が組み合わさった核内構造。',
+    href: '/glossary/chromatin/',
+    category: 'molecular-biology',
+  },
+  {
+    term: 'ヌクレオソーム',
+    english: 'nucleosome',
+    description: 'DNAがヒストンタンパク質に巻きついたクロマチンの基本単位。',
+    href: '/glossary/nucleosome/',
+    category: 'molecular-biology',
+  },
+  {
+    term: 'エピジェネティクス',
+    english: 'epigenetics',
+    description:
+      'DNA配列を変えずに遺伝子の使われ方やクロマチン状態に関わる仕組みを扱う考え方。',
+    href: '/glossary/epigenetics/',
+    category: 'molecular-biology',
+  },
+  {
+    term: 'DNAメチル化',
+    english: 'DNA methylation',
+    description: 'DNAの塩基にメチル基が付く化学修飾。',
+    href: '/glossary/dna-methylation/',
+    category: 'molecular-biology',
+  },
+  {
+    term: 'ヒストン修飾',
+    english: 'histone modification',
+    description: 'DNAが巻きつくヒストンタンパク質に付く化学修飾。',
+    href: '/glossary/histone-modification/',
+    category: 'molecular-biology',
+  },
+  {
+    term: 'クロマチンアクセシビリティ',
+    english: 'chromatin accessibility',
+    description:
+      'クロマチン中のDNAが転写因子や酵素からどれくらいアクセスしやすいかを表す考え方。',
+    href: '/glossary/chromatin-accessibility/',
+    category: 'molecular-biology',
+  },
+  {
     term: '変異',
     english: 'mutation',
     description:

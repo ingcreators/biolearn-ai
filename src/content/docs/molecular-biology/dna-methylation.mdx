@@ -1,0 +1,127 @@
+---
+title: DNAメチル化とは何か
+description: DNAにメチル基が付く修飾であるDNAメチル化と遺伝子発現との関係を説明します。
+part: molecular-biology
+module: gene-regulation
+level: foundation
+priority: P1
+order: 24.4
+learningPaths:
+  - foundations
+relatedTerms:
+  - dna-methylation
+  - epigenetics
+  - chromatin
+prerequisites:
+  - /molecular-biology/epigenetics/
+  - /molecular-biology/chromatin/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'DNAメチル化がDNAにメチル基が付く修飾であることを理解する',
+    'プロモーター領域のメチル化と遺伝子発現の関係を説明できる',
+    'DNAメチル化の解釈には領域や文脈が重要であることを知る',
+  ]}
+/>
+
+DNAメチル化は、DNAの塩基にメチル基という小さな化学基が付く修飾です。
+
+<LessonFigure
+  src="/figures/dna-methylation-concept.jpg"
+  alt="DNAの一部に小さな化学的な目印が付き周辺の遺伝子の読み出しやすさが変わる様子を示す教材イラスト"
+  title="DNAメチル化はDNA上の化学的な目印"
+  caption="DNA配列を変えずに、特定の領域のクロマチン状態や遺伝子発現と関係することがあります。"
+/>
+
+動物細胞では、DNAメチル化は主にCpGと呼ばれる配列文脈のシトシンに見られます。DNA配列そのものが別の塩基に変わるわけではありませんが、メチル化された領域に結合するタンパク質やクロマチン状態を通じて、遺伝子発現と関係することがあります。
+
+特に、遺伝子のプロモーター近くのDNAメチル化が高い場合、その遺伝子の発現が低いことがあります。ただし、DNAメチル化の意味は場所によって変わります。遺伝子本体、エンハンサー、反復配列などでは、単純に「メチル化が高いほど発現が低い」とは言えません。
+
+## なぜ重要か
+
+[DNAメチル化](/glossary/dna-methylation/)は、エピジェネティクス研究でよく測定される代表的な修飾です。発生、細胞分化、ゲノムの安定性、疾患研究などで、どの領域がメチル化されているかが調べられます。
+
+メチル化データを読むときは、発現量、クロマチンアクセシビリティ、ヒストン修飾、細胞組成などと合わせて解釈することが重要です。
+
+## 具体例
+
+ある遺伝子のプロモーターにあるCpGアイランドが高メチル化されていると、その遺伝子の転写が抑えられている場合があります。がん研究では、特定の遺伝子のプロモーター高メチル化が発現低下と一緒に報告されることがあります。
+
+一方で、遺伝子本体のメチル化やエンハンサーのメチル化は文脈依存で、発現との関係を一つの規則だけで説明できません。
+
+## よく混同される概念
+
+- DNAメチル化とDNA変異: メチル化は化学修飾であり、塩基配列が別の配列に置き換わる変異とは異なります。
+- メチル化と発現抑制: プロモーターでは抑制と関連することがありますが、すべての領域で同じ意味ではありません。
+- CpGとCG: CpGは同じDNA鎖上でCの次にGが並ぶ配列文脈を指します。
+
+## 論文や実験ではどう出てくるか
+
+DNAメチル化は、bisulfite sequencing、WGBS、RRBS、メチル化アレイ、Nanopore sequencingなどで測定されます。論文では「DNA methylation」「CpG methylation」「promoter hypermethylation」「differentially methylated region」のように出てきます。
+
+## 英語表記と略語
+
+| 日本語名         | 英語名                           | 略語 |
+| ---------------- | -------------------------------- | ---- |
+| DNAメチル化      | DNA methylation                  | -    |
+| CpGアイランド    | CpG island                       | CGI  |
+| 高メチル化       | hypermethylation                 | -    |
+| メチル化差異領域 | differentially methylated region | DMR  |
+
+## よくある誤解
+
+- DNAメチル化はDNA配列を直接書き換えるものではありません。
+- メチル化が高いというだけで、必ず近くの遺伝子が発現していないとは限りません。
+- メチル化の変化が見つかっても、それだけで病気の原因や治療方針を判断することはできません。
+
+## 重要用語
+
+- DNAメチル化: DNAの塩基にメチル基が付く修飾。
+- CpG: Cの次にGが並ぶDNA配列文脈。
+- CpGアイランド: CpGが比較的多く集まる領域。
+- DMR: 条件間でメチル化状態が異なる領域。
+
+<Quiz
+  questions={[
+    {
+      question: 'DNAメチル化とは何ですか。',
+      answer: 'DNAの塩基にメチル基が付く化学修飾です。',
+    },
+    {
+      question: 'DNAメチル化とDNA変異の違いは何ですか。',
+      answer:
+        'DNAメチル化は塩基への化学修飾で、DNA変異は塩基配列そのものの変化です。',
+    },
+    {
+      question: 'プロモーター高メチル化は何と関連することがありますか。',
+      answer: '近くの遺伝子の発現低下と関連することがあります。',
+    },
+    {
+      question: 'DMRは何を意味しますか。',
+      answer: '条件間でメチル化状態が異なる領域です。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    {
+      title: 'エピジェネティクスとは何か',
+      href: '/molecular-biology/epigenetics/',
+    },
+    {
+      title: 'プロモーターとは何か',
+      href: '/molecular-biology/promoter/',
+    },
+    {
+      title: 'ヒストン修飾とは何か',
+      href: '/molecular-biology/histone-modification/',
+    },
+  ]}
+/>

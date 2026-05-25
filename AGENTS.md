@@ -27,6 +27,7 @@ BioLearn is a Japanese learning site for molecular biology, cell biology, genomi
 - Keep generated images free of dense embedded text; put explanations in Japanese `alt`, `title`, and `caption`.
 - Optimize generated lesson images for the web before committing.
 - When creating lesson figure images, use `scripts/build-figure-prompts.mjs` to build the shared prompt for the target lesson. Create the image with the built-in image generation tool using both the shared prompt and the lesson's article context, then optimize the result as `public/figures/{lesson-slug}-concept.jpg`.
+- Do not create lesson figure images with locally generated SVG, canvas, HTML/CSS, or hand-coded placeholder art. Local scripts may only be used to optimize, resize, convert, or apply images that were produced by the shared prompt image-generation workflow.
 
 ## Lesson structure
 

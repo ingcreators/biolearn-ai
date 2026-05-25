@@ -1,0 +1,129 @@
+---
+title: ヒストン修飾とは何か
+description: ヒストンに付く化学修飾がクロマチン状態や遺伝子発現と関係することを説明します。
+part: molecular-biology
+module: gene-regulation
+level: foundation
+priority: P1
+order: 24.6
+learningPaths:
+  - foundations
+relatedTerms:
+  - histone-modification
+  - nucleosome
+  - epigenetics
+prerequisites:
+  - /molecular-biology/nucleosome/
+  - /molecular-biology/epigenetics/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'ヒストン修飾がヒストンタンパク質に付く化学修飾であることを理解する',
+    '修飾の種類や位置がクロマチン状態の手がかりになることを知る',
+    'ヒストン修飾のピークを発現や調節領域と結びつけて読める',
+  ]}
+/>
+
+ヒストン修飾は、DNAが巻きつくヒストンタンパク質に、アセチル化やメチル化などの化学修飾が付くことです。
+
+<LessonFigure
+  src="/figures/histone-modification-concept.jpg"
+  alt="DNAが巻きついたヒストンに複数の小さな化学的な目印が付きクロマチン状態を示す様子を描いた教材イラスト"
+  title="ヒストン修飾はクロマチン状態の目印になる"
+  caption="修飾の種類や位置によって、活発なプロモーターやエンハンサーの手がかりとして使われることがあります。"
+/>
+
+ヒストンはヌクレオソームの中心になるタンパク質です。ヒストンの一部にはさまざまな化学修飾が付き、周囲のクロマチン状態や集まるタンパク質に影響することがあります。
+
+代表的な修飾には、アセチル化、メチル化、リン酸化、ユビキチン化などがあります。たとえばH3K27acは活性化したエンハンサーやプロモーター、H3K4me3は活発なプロモーター、H3K27me3は抑制的なクロマチン状態の手がかりとしてよく使われます。
+
+ただし、ヒストン修飾は単独で遺伝子発現を完全に決めるものではありません。修飾は原因として働く場合も、活性状態の結果として見える場合もあり、文脈を合わせて読む必要があります。
+
+## なぜ重要か
+
+[ヒストン修飾](/glossary/histone-modification/)を理解すると、ChIP-seqやCUT&Tagのトラックから、プロモーター、エンハンサー、抑制領域などを推定する考え方が分かります。ゲノムブラウザで複数の修飾トラックを重ねて読むと、遺伝子周辺の調節状態を把握しやすくなります。
+
+## 具体例
+
+ある遺伝子の転写開始点付近にH3K4me3のピークがあり、同時にRNA-seqでその遺伝子が発現していれば、活発なプロモーターとして解釈しやすくなります。
+
+別の領域でH3K27acとATAC-seqのピークが重なる場合、その細胞で働くエンハンサー候補として扱われることがあります。
+
+## よく混同される概念
+
+- ヒストン修飾とDNAメチル化: ヒストン修飾はタンパク質への修飾で、DNAメチル化はDNAへの修飾です。
+- H3K27acとH3K27me3: 同じH3K27でも、アセチル化とメチル化ではよく使われる解釈が異なります。
+- 修飾ピークと機能証明: ピークは候補や手がかりであり、その領域の機能を直接証明するには追加実験が必要です。
+
+## 論文や実験ではどう出てくるか
+
+ヒストン修飾は、ChIP-seq、ChIP-qPCR、CUT&Tag、CUT&RUNで測定されます。論文では「histone mark」「H3K27ac peaks」「active enhancer」「repressive chromatin」のような表現で出てきます。
+
+## 英語表記と略語
+
+| 日本語名           | 英語名               | 略語 |
+| ------------------ | -------------------- | ---- |
+| ヒストン修飾       | histone modification | -    |
+| ヒストンアセチル化 | histone acetylation  | -    |
+| ヒストンメチル化   | histone methylation  | -    |
+| ヒストンマーク     | histone mark         | -    |
+
+## よくある誤解
+
+- すべてのヒストン修飾が発現を上げるわけではありません。
+- ヒストン修飾の名前は似ていますが、修飾される位置と種類で意味が変わります。
+- ヒストン修飾だけで、その領域の機能を断定することはできません。
+
+## 重要用語
+
+- ヒストン修飾: ヒストンタンパク質に付く化学修飾。
+- H3K27ac: 活性化したエンハンサーやプロモーターの手がかりとしてよく使われる修飾。
+- H3K4me3: 活発なプロモーター付近でよく見られる修飾。
+- H3K27me3: 抑制的なクロマチン状態の手がかりとして使われる修飾。
+
+<Quiz
+  questions={[
+    {
+      question: 'ヒストン修飾とは何ですか。',
+      answer:
+        'DNAが巻きつくヒストンタンパク質に、アセチル化やメチル化などの化学修飾が付くことです。',
+    },
+    {
+      question: 'H3K27acはどのような領域の手がかりとして使われますか。',
+      answer:
+        '活性化したエンハンサーやプロモーターの手がかりとして使われます。',
+    },
+    {
+      question: 'ヒストン修飾とDNAメチル化の違いは何ですか。',
+      answer:
+        'ヒストン修飾はヒストンタンパク質への修飾で、DNAメチル化はDNAへの修飾です。',
+    },
+    {
+      question: 'ヒストン修飾を測る実験法を一つ挙げてください。',
+      answer: 'ChIP-seq、CUT&Tag、CUT&RUNなどがあります。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    {
+      title: 'ヌクレオソームとは何か',
+      href: '/molecular-biology/nucleosome/',
+    },
+    {
+      title: 'クロマチンアクセシビリティとは何か',
+      href: '/molecular-biology/chromatin-accessibility/',
+    },
+    {
+      title: 'エンハンサーとは何か',
+      href: '/molecular-biology/enhancer/',
+    },
+  ]}
+/>

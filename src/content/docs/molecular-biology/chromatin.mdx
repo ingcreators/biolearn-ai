@@ -1,0 +1,128 @@
+---
+title: クロマチンとは何か
+description: DNAとヒストンなどのタンパク質がまとまった構造であるクロマチンを説明します。
+part: molecular-biology
+module: gene-regulation
+level: foundation
+priority: P1
+order: 17
+learningPaths:
+  - foundations
+relatedTerms:
+  - chromatin
+  - nucleosome
+  - chromosome
+prerequisites:
+  - /fundamentals/dna/
+  - /fundamentals/chromosome/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'クロマチンがDNAとタンパク質からなる構造であることを理解する',
+    'クロマチンの折りたたみ方が遺伝子の読み出しやすさに関係することを知る',
+    'クロマチン、ヌクレオソーム、染色体の関係を説明できる',
+  ]}
+/>
+
+クロマチンは、真核細胞の核内でDNAがヒストンなどのタンパク質と組み合わさってできる構造です。
+
+<LessonFigure
+  src="/figures/chromatin-concept.jpg"
+  alt="長いDNAがヒストンに巻きつきクロマチンとして核内に整理される様子を示す教材イラスト"
+  title="クロマチンはDNAを収納し、読み出しやすさにも関わる"
+  caption="DNAは裸のひもとして存在するのではなく、タンパク質と組み合わさって折りたたまれています。"
+/>
+
+ヒトなどの真核生物では、DNAは非常に長い分子です。そのままでは核の中に収まりにくいため、ヒストンというタンパク質に巻きつき、さらに折りたたまれてクロマチンとして整理されます。
+
+クロマチンは単なる収納材ではありません。DNAがきつくまとまっている領域では、転写因子やRNAポリメラーゼが近づきにくく、遺伝子が読み出されにくい場合があります。逆に、比較的開いたクロマチンでは、調節因子がDNAにアクセスしやすくなることがあります。
+
+細胞分裂の時期には、クロマチンはさらに凝縮して顕微鏡で見える染色体になります。普段の核内では、染色体はいつもX字型で見えているわけではなく、よりほどけたクロマチンとして存在しています。
+
+## なぜ重要か
+
+[クロマチン](/glossary/chromatin/)を理解すると、同じDNA配列を持つ細胞でも、どの遺伝子が使われやすいかが変わる理由を考えやすくなります。遺伝子発現制御はDNA配列だけで決まるのではなく、DNAがどのような状態で核内に置かれているかにも影響されます。
+
+また、ChIP-seq、ATAC-seq、Hi-C、DNAメチル化解析など、多くのゲノム解析はクロマチン状態を背景に解釈します。
+
+## 具体例
+
+ある細胞で免疫応答に関わる遺伝子が使われるとき、その遺伝子の近くのクロマチンが開き、転写因子が結合しやすくなることがあります。別の細胞では同じ領域が閉じた状態で、同じ遺伝子があまり発現しない場合があります。
+
+発生や分化の過程では、細胞の種類に応じてクロマチンの開きやすい領域が変わり、細胞らしい遺伝子発現パターンが作られます。
+
+## よく混同される概念
+
+- クロマチンと染色体: クロマチンはDNAとタンパク質が組み合わさった基本状態で、細胞分裂時には強く凝縮して染色体として見えます。
+- クロマチンとヌクレオソーム: ヌクレオソームはDNAがヒストンに巻きついた基本単位で、クロマチンを構成する要素です。
+- 開いたクロマチンと発現: クロマチンが開いていることは発現しやすさの手がかりですが、必ずその遺伝子が高発現しているとは限りません。
+
+## 論文や実験ではどう出てくるか
+
+クロマチンは、ATAC-seq、DNase-seq、ChIP-seq、Hi-C、CUT&Tag、CUT&RUNなどで扱われます。論文では「chromatin state」「open chromatin」「chromatin remodeling」「chromatin accessibility」のような表現で登場します。
+
+Figureでは、ゲノムブラウザ上のピーク、ヒートマップ、クロマチン状態の注釈、遺伝子発現との対応として示されることがあります。
+
+## 英語表記と略語
+
+| 日本語名               | 英語名               | 略語 |
+| ---------------------- | -------------------- | ---- |
+| クロマチン             | chromatin            | -    |
+| 開いたクロマチン       | open chromatin       | -    |
+| クロマチン状態         | chromatin state      | -    |
+| クロマチンリモデリング | chromatin remodeling | -    |
+
+## よくある誤解
+
+- クロマチンはDNAをしまうだけの構造ではなく、遺伝子発現制御にも関わります。
+- クロマチンが開いている領域が、必ず遺伝子本体とは限りません。エンハンサーなどの調節領域も含まれます。
+- 染色体のX字型は、普段の核内で常に見える形ではありません。
+
+## 重要用語
+
+- クロマチン: DNAとヒストンなどのタンパク質が組み合わさった核内構造。
+- ヒストン: DNAが巻きつく主要なタンパク質。
+- ヌクレオソーム: DNAがヒストンに巻きついたクロマチンの基本単位。
+- クロマチン状態: DNAがどれくらい開いているか、どのような修飾を受けているかなどを含む状態。
+
+<Quiz
+  questions={[
+    {
+      question: 'クロマチンとは何ですか。',
+      answer: 'DNAとヒストンなどのタンパク質が組み合わさった構造です。',
+    },
+    {
+      question: 'クロマチンが遺伝子発現に関係する理由は何ですか。',
+      answer:
+        'DNAの折りたたみ方によって、転写因子などがDNAに近づきやすいかが変わるためです。',
+    },
+    {
+      question: 'ヌクレオソームとは何ですか。',
+      answer: 'DNAがヒストンに巻きついたクロマチンの基本単位です。',
+    },
+    {
+      question: 'クロマチン状態を見る解析法を一つ挙げてください。',
+      answer: 'ATAC-seq、ChIP-seq、Hi-Cなどがあります。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'ヌクレオソームとは何か', href: '/molecular-biology/nucleosome/' },
+    {
+      title: 'クロマチンアクセシビリティとは何か',
+      href: '/molecular-biology/chromatin-accessibility/',
+    },
+    {
+      title: '遺伝子発現制御とは何か',
+      href: '/molecular-biology/gene-expression-regulation/',
+    },
+  ]}
+/>
