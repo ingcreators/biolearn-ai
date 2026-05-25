@@ -67,10 +67,11 @@ h1[data-page-title] .biolearn-hero-main {
 }
 
 .biolearn-box h3,
-.biolearn-quiz h3 {
+.biolearn-quiz-title {
   color: var(--biolearn-panel-text);
   margin-top: 0;
   font-size: 1rem;
+  font-weight: 600;
 }
 
 .biolearn-box a,

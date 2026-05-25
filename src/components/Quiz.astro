@@ -12,7 +12,7 @@ const { questions } = Astro.props;
 ---
 
 <section class="biolearn-quiz" aria-labelledby="quiz-title">
-  <h3 id="quiz-title">確認問題</h3>
+  <div id="quiz-title" class="biolearn-quiz-title">確認問題</div>
   <ol>
     {
       questions.map((item) => (
