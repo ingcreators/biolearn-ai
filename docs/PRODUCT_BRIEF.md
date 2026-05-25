@@ -348,7 +348,7 @@ DNA、RNA、タンパク質、遺伝子、ゲノムは、初学者が最初に�
 /molecular-biology/central-dogma/
 /molecular-biology/transcription/
 /molecular-biology/translation/
-/molecular-biology/gene-expression/
+/fundamentals/gene-expression/
 
 /cell-biology/cell-membrane/
 /cell-biology/organelles/

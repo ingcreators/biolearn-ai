@@ -93,7 +93,7 @@ Phase 2 で実施した URL 整理は次の通りです。
 | `/molecular-biology/what-is-central-dogma/`                 | `/molecular-biology/central-dogma/`        | slug 短縮済み |
 | `/molecular-biology/what-is-transcription/`                 | `/molecular-biology/transcription/`        | slug 短縮済み |
 | `/molecular-biology/what-is-translation/`                   | `/molecular-biology/translation/`          | slug 短縮済み |
-| `/molecular-biology/what-is-gene-expression/`               | `/molecular-biology/gene-expression/`      | slug 短縮済み |
+| `/molecular-biology/what-is-gene-expression/`               | `/fundamentals/gene-expression/`           | slug 短縮済み |
 | `/methods/what-is-pcr/`                                     | `/methods/pcr/`                            | slug 短縮済み |
 | `/bioinformatics/what-is-rna-seq/`                          | `/bioinformatics/rna-seq/`                 | slug 短縮済み |
 | `/bioinformatics/what-is-sequence-data/`                    | `/bioinformatics/sequence-data/`           | slug 短縮済み |
