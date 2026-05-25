@@ -1,0 +1,125 @@
+---
+title: 塩基対とは何か
+description: DNAやRNAで塩基が対応して結合する仕組みと、相補性の考え方を説明します。
+part: molecular-biology
+module: molecular-foundations
+level: foundation
+priority: P1
+order: 7
+learningPaths:
+  - foundations
+relatedTerms:
+  - base-pairing
+  - nucleotide
+  - dna
+prerequisites:
+  - /molecular-biology/nucleotide/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    '塩基対が相補的な塩基同士の組であることを理解する',
+    'DNAではAとT、GとCが対応することを説明できる',
+    '相補性が複製、転写、PCRに関わることを知る',
+  ]}
+/>
+
+塩基対は、核酸の向かい合う塩基どうしが決まった組み合わせで対応する関係です。
+
+<LessonFigure
+  src="/figures/base-pairing-concept.jpg"
+  alt="向かい合うDNA鎖で相補的な塩基が対になり、二本鎖構造を支える様子を示す教材イラスト"
+  title="塩基は決まった相手と対になりやすい"
+  caption="DNAではAとT、GとCが対応し、この相補性が複製や転写の正確さを支えます。"
+/>
+
+DNAでは、AはTと、GはCと対になりやすい性質があります。この対応関係を塩基対と呼びます。2本のDNA鎖は、塩基対によって互いに対応しながら二重らせん構造を作ります。
+
+塩基対の考え方で重要なのは「相補性」です。片方の鎖の配列が分かると、もう片方の鎖で対応する塩基を推定できます。たとえば片方がAなら、DNAでは向かい側はTになりやすい、という見方です。
+
+RNAではTの代わりにUが使われるため、RNAが関わる場面ではAとUの対応が出てきます。転写ではDNAの情報をもとにRNAが作られ、塩基の相補性が読み出しの基本になります。
+
+## なぜ重要か
+
+[塩基対](/glossary/base-pairing/)は、DNAの二本鎖構造、DNA複製、転写、PCR、シーケンシングを理解する土台です。相補的な塩基が対応するため、細胞はDNAを複製したり、DNAからRNAを合成したりできます。
+
+論文や実験では、プライマー設計、変異の記述、配列の比較などで相補性が前提になります。塩基対を理解していると、なぜ短いDNA配列が特定の場所に結合できるのかが分かります。
+
+## 具体例
+
+PCRでは、プライマーという短いDNAが目的の配列に相補的に結合します。その場所を起点にDNAポリメラーゼが新しいDNA鎖を伸ばします。
+
+転写では、DNAの片方の鎖を鋳型としてRNAが合成されます。このときDNA上のAにはRNAのU、TにはA、GにはC、CにはGが対応します。
+
+## よく混同される概念
+
+- 塩基と塩基対: 塩基はAやTなどの一つの単位で、塩基対は向かい合う2つの塩基の組です。
+- 塩基配列と相補配列: 塩基配列は片方の鎖の並びで、相補配列はそれに対応する反対側の並びです。
+- DNAの塩基対とRNAの対応: DNAではA-T、RNAが関わる場面ではA-Uが出てきます。
+
+## 論文や実験ではどう出てくるか
+
+塩基対は、ゲノムの長さを表す単位として「bp」でも使われます。たとえば「500 bp fragment」は約500塩基対のDNA断片を意味します。
+
+Methodsでは、プライマー配列、アニーリング、ハイブリダイゼーション、プローブ設計などで相補性が重要になります。Figureでは、DNA断片の長さや変異位置がbpで示されることがあります。
+
+## 英語表記と略語
+
+| 日本語名   | 英語名                 | 略語 |
+| ---------- | ---------------------- | ---- |
+| 塩基対     | base pair              | bp   |
+| 塩基対形成 | base pairing           | -    |
+| 相補性     | complementarity        | -    |
+| 相補配列   | complementary sequence | -    |
+
+## よくある誤解
+
+- bpは「塩基1個」ではなく、二本鎖DNAで向かい合う塩基の組を数える単位として使われます。
+- 塩基対は暗記だけでなく、複製や転写が成り立つ理由として理解することが大切です。
+- 実際の細胞ではミスマッチや修復もあり、常に完全に単純な対応だけで説明できるわけではありません。
+
+## 重要用語
+
+- 塩基対: 相補的に対応する2つの塩基の組。
+- 相補性: ある塩基配列に対して、対応する塩基が決まる性質。
+- bp: base pairの略で、二本鎖DNAの長さを表す単位としてよく使われる。
+- プライマー: 相補性を利用して特定のDNA領域に結合する短い核酸。
+
+<Quiz
+  questions={[
+    {
+      question: 'DNAでAと対になりやすい塩基は何ですか。',
+      answer: 'Tです。',
+    },
+    {
+      question: 'DNAでGと対になりやすい塩基は何ですか。',
+      answer: 'Cです。',
+    },
+    {
+      question: '相補性とは何ですか。',
+      answer: '片方の塩基配列に対して、対応する塩基の並びが決まる性質です。',
+    },
+    {
+      question: 'RNAが関わる場面でAと対応する塩基は何ですか。',
+      answer: 'U、つまりウラシルです。',
+    },
+    {
+      question:
+        'PCRでプライマーが目的の場所に結合できる理由を説明してください。',
+      answer: 'プライマー配列が目的領域の配列と相補的だからです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'DNAとは何か', href: '/fundamentals/dna/' },
+    { title: '転写とは何か', href: '/molecular-biology/transcription/' },
+    { title: 'PCRとは何か', href: '/methods/pcr/' },
+  ]}
+/>

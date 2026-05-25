@@ -1,0 +1,126 @@
+---
+title: ヌクレオチドとは何か
+description: ヌクレオチドの構成要素、核酸との関係、DNAやRNAでの役割を説明します。
+part: molecular-biology
+module: molecular-foundations
+level: foundation
+priority: P1
+order: 6
+learningPaths:
+  - foundations
+relatedTerms:
+  - nucleotide
+  - nucleic-acids
+  - base-pairing
+prerequisites:
+  - /molecular-biology/nucleic-acids/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'ヌクレオチドが核酸の構成単位であることを理解する',
+    '塩基、糖、リン酸という3つの構成要素を説明できる',
+    'ヌクレオチドと塩基を区別できる',
+  ]}
+/>
+
+ヌクレオチドは、DNAやRNAを作る基本単位です。
+
+<LessonFigure
+  src="/figures/nucleotide-concept.jpg"
+  alt="塩基、糖、リン酸からなるヌクレオチドがつながって核酸の鎖になる様子を示す教材イラスト"
+  title="ヌクレオチドは核酸を作る単位である"
+  caption="塩基、糖、リン酸を持つヌクレオチドが連なることで、DNAやRNAの鎖ができます。"
+/>
+
+ヌクレオチドは、塩基、糖、リン酸からなる分子です。DNAやRNAでは、このヌクレオチドが多数つながって長い鎖を作ります。塩基の種類と並びが、遺伝情報を表す重要な部分になります。
+
+DNAを作るヌクレオチドでは糖としてデオキシリボースが使われ、RNAを作るヌクレオチドではリボースが使われます。また、DNAではA、T、G、C、RNAではA、U、G、Cという塩基が使われます。
+
+「塩基」と「ヌクレオチド」は似た文脈で出ますが、同じではありません。塩基はヌクレオチドの一部であり、ヌクレオチド全体には糖とリン酸も含まれます。
+
+## なぜ重要か
+
+[ヌクレオチド](/glossary/nucleotide/)を理解すると、[核酸](/glossary/nucleic-acids/)がどのようにできているかが分かります。塩基配列、SNP、変異、PCR、シーケンシングなどの言葉は、ヌクレオチドや塩基を単位として考えると整理しやすくなります。
+
+生命科学では「1塩基の違い」「数ヌクレオチドの挿入」「ヌクレオチド配列」のような表現がよく出ます。どの単位を指しているのかを意識すると、結果の意味を読み違えにくくなります。
+
+## 具体例
+
+DNAの配列を `A-T-G-C` のように表すとき、実際には塩基を文字で表しています。その塩基は、糖とリン酸を含むヌクレオチドの一部としてDNA鎖に組み込まれています。
+
+PCRでは、新しいDNA鎖を伸ばすためにヌクレオチドが材料として使われます。DNAポリメラーゼは、鋳型に対応するヌクレオチドを取り込みながらDNA鎖を合成します。
+
+## よく混同される概念
+
+- ヌクレオチドと塩基: 塩基はヌクレオチドの一部です。ヌクレオチドには糖とリン酸も含まれます。
+- ヌクレオチドと核酸: ヌクレオチドが多数つながった分子が核酸です。
+- ヌクレオチドとアミノ酸: ヌクレオチドは核酸の単位、アミノ酸はタンパク質の単位です。
+
+## 論文や実験ではどう出てくるか
+
+論文では「single nucleotide variant」「nucleotide sequence」「nucleotide substitution」のように出てきます。変異の記述では、どの位置のヌクレオチドが変わったのかを示すことがあります。
+
+実験では、PCRやシーケンシング、ライブラリ調製でヌクレオチドが材料または配列情報の単位として登場します。Figureでは配列の文字、変異位置、ゲノム上の座標として示されることが多いです。
+
+## 英語表記と略語
+
+| 日本語名         | 英語名              | 略語 |
+| ---------------- | ------------------- | ---- |
+| ヌクレオチド     | nucleotide          | -    |
+| 塩基             | base                | -    |
+| 糖               | sugar               | -    |
+| リン酸           | phosphate           | -    |
+| ヌクレオチド配列 | nucleotide sequence | -    |
+
+## よくある誤解
+
+- ヌクレオチドと塩基は完全な同義語ではありません。
+- ヌクレオチドはDNAだけの材料ではありません。RNAにもヌクレオチドがあります。
+- 「1塩基の違い」が必ず大きな機能差を生むわけではありません。
+
+## 重要用語
+
+- ヌクレオチド: 塩基、糖、リン酸からなる核酸の構成単位。
+- 塩基: A、T、G、C、Uなど、核酸の情報を担う部分。
+- リン酸骨格: ヌクレオチド同士をつなぎ、核酸の鎖を支える部分。
+- 塩基配列: 塩基の並びとして表される核酸の情報。
+
+<Quiz
+  questions={[
+    {
+      question: 'ヌクレオチドを構成する3つの要素は何ですか。',
+      answer: '塩基、糖、リン酸です。',
+    },
+    {
+      question: 'ヌクレオチドと塩基の違いを説明してください。',
+      answer:
+        '塩基はヌクレオチドの一部で、ヌクレオチド全体には糖とリン酸も含まれます。',
+    },
+    {
+      question: 'ヌクレオチドが多数つながると何になりますか。',
+      answer: 'DNAやRNAのような核酸になります。',
+    },
+    {
+      question: 'DNAとRNAで使われる糖の違いを説明してください。',
+      answer: 'DNAではデオキシリボース、RNAではリボースが使われます。',
+    },
+    {
+      question: 'PCRでヌクレオチドはどのように関わりますか。',
+      answer: '新しいDNA鎖を合成する材料として使われます。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: '塩基対とは何か', href: '/molecular-biology/base-pairing/' },
+    { title: '核酸とは何か', href: '/molecular-biology/nucleic-acids/' },
+    { title: 'PCRとは何か', href: '/methods/pcr/' },
+  ]}
+/>

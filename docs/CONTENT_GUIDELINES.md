@@ -53,6 +53,8 @@ Figure の読み方、論文読解、リソース、パス案内のように記�
 
 - 各レッスンでは、冒頭の短い概要の直後に `LessonFigure` を置き、基礎解説の中心概念を1枚の教材イラストで補足する。
 - 図解画像は `public/figures/{lesson-slug}-concept.jpg` に置く。ファイル名は英語小文字 kebab-case にする。
+- 新しい `LessonFigure` 画像は、原則として既存のAI生成フローを使う。記事本文、`alt`、`title`、`caption` を整えた後に `npm` スクリプトではなく `scripts/build-figure-prompts.mjs` で共通プロンプトを生成し、必要な対象だけを `tmp/figure-prompts/batch.jsonl` から抽出して画像生成にかける。生成後は `scripts/apply-generated-figures.mjs` と同じ変換条件（1536×864、JPEG quality 86、mozjpeg）で `public/figures/` に配置する。
+- 共通プロンプトは `scripts/build-figure-prompts.mjs` の `sharedPrompt` を正とする。個別に別スタイルのプロンプトを作らず、記事側の `LessonFigure` の説明で図の意図を調整する。
 - 画像内には日本語ラベルや長い説明文を入れすぎない。正確な説明は本文、`alt`、`title`、`caption` で補う。
 - 画像はオリジナル生成または利用許諾が明確なものだけを使う。外部画像や著作権不明素材は使わない。
 - 医療上の診断、治療、個別判断を連想させる画像表現は避け、学習用の概念図として作る。

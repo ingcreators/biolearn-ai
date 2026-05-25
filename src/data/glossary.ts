@@ -116,11 +116,56 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'molecular-biology',
   },
   {
+    term: '核酸',
+    english: 'nucleic acid',
+    description: 'DNAやRNAのように、ヌクレオチドが連なってできた情報分子。',
+    href: '/glossary/nucleic-acids/',
+    category: 'molecular-biology',
+  },
+  {
+    term: 'ヌクレオチド',
+    english: 'nucleotide',
+    description: '塩基、糖、リン酸からなる、DNAやRNAなど核酸の構成単位。',
+    href: '/glossary/nucleotide/',
+    category: 'molecular-biology',
+  },
+  {
+    term: '塩基対',
+    english: 'base pair',
+    abbreviation: 'bp',
+    description:
+      '相補的に対応する2つの塩基の組。DNAの長さの単位としても使われる。',
+    href: '/glossary/base-pairing/',
+    category: 'molecular-biology',
+  },
+  {
     term: 'タンパク質',
     english: 'protein',
     description: '細胞内外で構造、反応、輸送、情報伝達などを担う分子。',
     href: '/glossary/protein/',
     category: 'foundations',
+  },
+  {
+    term: 'アミノ酸',
+    english: 'amino acid',
+    description: 'タンパク質を構成する基本単位。',
+    href: '/glossary/amino-acid/',
+    category: 'molecular-biology',
+  },
+  {
+    term: 'タンパク質構造',
+    english: 'protein structure',
+    description:
+      'アミノ酸の鎖が折りたたまれてできる、タンパク質の三次元的な形。',
+    href: '/glossary/protein-structure/',
+    category: 'molecular-biology',
+  },
+  {
+    term: '酵素',
+    english: 'enzyme',
+    description: '化学反応を進みやすくする触媒として働く分子。',
+    href: '/glossary/enzyme/',
+    category: 'molecular-biology',
   },
   {
     term: '遺伝子',

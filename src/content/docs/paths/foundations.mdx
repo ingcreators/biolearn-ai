@@ -5,7 +5,7 @@ description: 生命科学の基礎から分子生物学、細胞生物学、ゲ�
 
 import ArticleList from '../../../components/ArticleList.astro';
 
-このパスでは、生命科学の全体像から始めて、分子、細胞、DNA、RNA、タンパク質、遺伝子、ゲノムを順番に学びます。
+このパスでは、生命科学の全体像から始めて、分子、細胞、核酸、DNA、RNA、タンパク質、遺伝子、ゲノムを順番に学びます。
 
 細かい用語を先に暗記するのではなく、「生命現象の階層」「遺伝情報の流れ」「ゲノム全体を見る考え方」をつなげて読みます。Figure読解や論文読解へ進む前に、何が分子で、何が細胞で、何がデータとして測られているのかを見分けるための入口です。
 
@@ -15,7 +15,7 @@ import ArticleList from '../../../components/ArticleList.astro';
 
 - 生命科学が扱う階層を説明できる
 - 分子、細胞、組織、個体の関係を説明できる
-- DNA、RNA、タンパク質、遺伝子の違いを説明できる
+- 核酸、DNA、RNA、タンパク質、遺伝子の違いを説明できる
 - 細胞の中で分子が働くイメージを持てる
 - ゲノム、染色体、遺伝的変異の関係を整理できる
 
@@ -33,7 +33,7 @@ import ArticleList from '../../../components/ArticleList.astro';
     <span>Step 2</span>
     <h3>遺伝情報の基本を押さえる</h3>
     <p>
-      DNA、RNA、タンパク質、遺伝子を分け、セントラルドグマへ進む準備をします。
+      核酸、DNA、RNA、タンパク質、遺伝子を分け、セントラルドグマへ進む準備をします。
     </p>
   </a>
   <a class="biolearn-home-card" href="/molecular-biology/central-dogma/">
@@ -56,26 +56,28 @@ import ArticleList from '../../../components/ArticleList.astro';
 
 1. [生命科学とは何か](/fundamentals/life-science/) で、生命科学が扱う階層をつかみます。
 2. [分子とは何か](/fundamentals/molecule/)、[細胞とは何か](/fundamentals/cell/)、[個体・組織・細胞の関係](/fundamentals/organism-tissue-cell/) で、分子から個体までの見取り図を作ります。
-3. [DNA](/fundamentals/dna/)、[RNA](/fundamentals/rna/)、[タンパク質](/fundamentals/protein/) を読み、遺伝情報がどのように使われるかを整理します。
-4. [遺伝子](/fundamentals/gene/) で、DNA上の機能的な領域という見方に進みます。
-5. [ゲノム](/fundamentals/genome/) と [染色体](/fundamentals/chromosome/) で、遺伝情報の全体像を確認します。
-6. [セントラルドグマ](/molecular-biology/central-dogma/)、[転写](/molecular-biology/transcription/)、[翻訳](/molecular-biology/translation/) で、遺伝情報が使われる流れを整理します。
-7. [遺伝子発現](/fundamentals/gene-expression/)、[変異](/fundamentals/mutation/)、[表現型](/fundamentals/phenotype/) で、論文読解に出てくる基本概念へ進みます。
-8. [モデル生物とは何か](/fundamentals/model-organisms/) で、研究対象の選び方と限界を確認します。
-9. [生命科学の問いとは何か](/fundamentals/biological-question/) で、FigureやMethodsを読むときの出発点を確認します。
+3. [核酸](/molecular-biology/nucleic-acids/)、[ヌクレオチド](/molecular-biology/nucleotide/)、[塩基対](/molecular-biology/base-pairing/) で、DNAやRNAを構成する部品を整理します。
+4. [DNA](/fundamentals/dna/)、[RNA](/fundamentals/rna/)、[タンパク質](/fundamentals/protein/) を読み、遺伝情報がどのように使われるかを整理します。
+5. [アミノ酸](/molecular-biology/amino-acid/)、[タンパク質構造](/molecular-biology/protein-structure/)、[酵素](/molecular-biology/enzyme/) で、タンパク質が形と反応として働く見方に進みます。
+6. [遺伝子](/fundamentals/gene/) で、DNA上の機能的な領域という見方に進みます。
+7. [ゲノム](/fundamentals/genome/) と [染色体](/fundamentals/chromosome/) で、遺伝情報の全体像を確認します。
+8. [セントラルドグマ](/molecular-biology/central-dogma/)、[転写](/molecular-biology/transcription/)、[翻訳](/molecular-biology/translation/) で、遺伝情報が使われる流れを整理します。
+9. [遺伝子発現](/fundamentals/gene-expression/)、[変異](/fundamentals/mutation/)、[表現型](/fundamentals/phenotype/) で、論文読解に出てくる基本概念へ進みます。
+10. [モデル生物とは何か](/fundamentals/model-organisms/) で、研究対象の選び方と限界を確認します。
+11. [生命科学の問いとは何か](/fundamentals/biological-question/) で、FigureやMethodsを読むときの出発点を確認します。
 
 ## 目的別に選ぶ
 
-| 知りたいこと                 | 最初に読む記事                                                                                                                | 次に進む場所                                                                                          |
-| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| 生命科学の地図を作りたい     | [生命科学とは何か](/fundamentals/life-science/)、[細胞とは何か](/fundamentals/cell/)                                          | [細胞膜](/cell-biology/cell-membrane/)、[細胞小器官](/cell-biology/organelles/)                       |
-| 分子から個体までを整理したい | [分子とは何か](/fundamentals/molecule/)、[個体・組織・細胞の関係](/fundamentals/organism-tissue-cell/)                        | [n数とは何か](/statistics/sample-size/)、[顕微鏡画像の読み方](/figures/how-to-read-microscopy-image/) |
-| DNAとRNAを区別したい         | [DNAとは何か](/fundamentals/dna/)、[RNAとは何か](/fundamentals/rna/)                                                          | [セントラルドグマ](/molecular-biology/central-dogma/)、[転写](/molecular-biology/transcription/)      |
-| タンパク質の役割を知りたい   | [タンパク質とは何か](/fundamentals/protein/)、[遺伝子とは何か](/fundamentals/gene/)                                           | [翻訳](/molecular-biology/translation/)、[遺伝子発現](/fundamentals/gene-expression/)                 |
-| ゲノムと染色体を整理したい   | [ゲノムとは何か](/fundamentals/genome/)、[染色体とは何か](/fundamentals/chromosome/)、[変異とは何か](/fundamentals/mutation/) | [遺伝的変異](/genomics/genetic-variants/)、[ゲノムブラウザ](/genomics/genome-browser/)                |
-| モデル生物の意味を知りたい   | [モデル生物とは何か](/fundamentals/model-organisms/)、[個体・組織・細胞の関係](/fundamentals/organism-tissue-cell/)           | [n数とは何か](/statistics/sample-size/)、[Methodsの読み方](/papers/how-to-read-methods/)              |
-| Figure読解へ進みたい         | [細胞](/fundamentals/cell/)、[遺伝子](/fundamentals/gene/)、[ゲノム](/fundamentals/genome/)                                   | [Figureを読めるようになる](/paths/figure-reading/)、[論文Figureの読み方](/figures/)                   |
-| 論文読解へ進みたい           | [表現型とは何か](/fundamentals/phenotype/)、[生命科学の問いとは何か](/fundamentals/biological-question/)                      | [論文を読めるようになる](/paths/paper-reading/)、[論文の構成](/papers/paper-structure/)               |
+| 知りたいこと                 | 最初に読む記事                                                                                                                               | 次に進む場所                                                                                          |
+| ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| 生命科学の地図を作りたい     | [生命科学とは何か](/fundamentals/life-science/)、[細胞とは何か](/fundamentals/cell/)                                                         | [細胞膜](/cell-biology/cell-membrane/)、[細胞小器官](/cell-biology/organelles/)                       |
+| 分子から個体までを整理したい | [分子とは何か](/fundamentals/molecule/)、[個体・組織・細胞の関係](/fundamentals/organism-tissue-cell/)                                       | [n数とは何か](/statistics/sample-size/)、[顕微鏡画像の読み方](/figures/how-to-read-microscopy-image/) |
+| DNAとRNAを区別したい         | [核酸とは何か](/molecular-biology/nucleic-acids/)、[DNAとは何か](/fundamentals/dna/)、[RNAとは何か](/fundamentals/rna/)                      | [塩基対](/molecular-biology/base-pairing/)、[転写](/molecular-biology/transcription/)                 |
+| タンパク質の役割を知りたい   | [タンパク質とは何か](/fundamentals/protein/)、[アミノ酸とは何か](/molecular-biology/amino-acid/)、[酵素とは何か](/molecular-biology/enzyme/) | [タンパク質構造](/molecular-biology/protein-structure/)、[翻訳](/molecular-biology/translation/)      |
+| ゲノムと染色体を整理したい   | [ゲノムとは何か](/fundamentals/genome/)、[染色体とは何か](/fundamentals/chromosome/)、[変異とは何か](/fundamentals/mutation/)                | [遺伝的変異](/genomics/genetic-variants/)、[ゲノムブラウザ](/genomics/genome-browser/)                |
+| モデル生物の意味を知りたい   | [モデル生物とは何か](/fundamentals/model-organisms/)、[個体・組織・細胞の関係](/fundamentals/organism-tissue-cell/)                          | [n数とは何か](/statistics/sample-size/)、[Methodsの読み方](/papers/how-to-read-methods/)              |
+| Figure読解へ進みたい         | [細胞](/fundamentals/cell/)、[遺伝子](/fundamentals/gene/)、[ゲノム](/fundamentals/genome/)                                                  | [Figureを読めるようになる](/paths/figure-reading/)、[論文Figureの読み方](/figures/)                   |
+| 論文読解へ進みたい           | [表現型とは何か](/fundamentals/phenotype/)、[生命科学の問いとは何か](/fundamentals/biological-question/)                                     | [論文を読めるようになる](/paths/paper-reading/)、[論文の構成](/papers/paper-structure/)               |
 
 ## 迷ったら戻る場所
 

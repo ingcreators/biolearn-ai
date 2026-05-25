@@ -1,15 +1,16 @@
 ---
 title: 分子生物学
-description: セントラルドグマ、転写、翻訳、遺伝子発現を学びます。
+description: 核酸、タンパク質、セントラルドグマ、転写、翻訳、遺伝子発現を学びます。
 ---
 
 import ArticleList from '../../../components/ArticleList.astro';
 
-分子生物学は、生命現象をDNA、RNA、タンパク質などの分子の働きとして理解する分野です。BioLearnでは、基礎カテゴリで学んだDNA、RNA、タンパク質、遺伝子を土台に、遺伝情報が読み出され、細胞の中で働きに変わる流れを学びます。
+分子生物学は、生命現象をDNA、RNA、タンパク質などの分子の働きとして理解する分野です。BioLearnでは、基礎カテゴリで学んだ分子、細胞、DNA、RNA、タンパク質を土台に、核酸やアミノ酸などの部品から、遺伝情報が読み出され、細胞の中で働きに変わる流れまでを学びます。
 
 ## この分野で学ぶこと
 
 - セントラルドグマ、転写、翻訳、遺伝子発現の関係
+- 核酸、ヌクレオチド、塩基対、アミノ酸、タンパク質構造、酵素の基本
 - DNA、RNA、タンパク質、遺伝子の知識を、情報の流れとしてつなげる見方
 - RNA-seqや差次的発現解析へ進む前提になる分子の言葉
 
@@ -18,6 +19,11 @@ import ArticleList from '../../../components/ArticleList.astro';
 分子生物学は、基礎カテゴリで学んだDNA、RNA、タンパク質、遺伝子を、細胞の中で働く情報の流れとして読み直すカテゴリです。Figure読解やRNA-seqに進む前に、何が測られ、何が「発現」と呼ばれているのかを確認します。
 
 <div class="biolearn-home-grid">
+  <a class="biolearn-home-card" href="/molecular-biology/nucleic-acids/">
+    <span>核酸</span>
+    <h3>DNAとRNAを同じ枠組みで見る</h3>
+    <p>核酸、ヌクレオチド、塩基対を整理し、配列を読む入口を作ります。</p>
+  </a>
   <a class="biolearn-home-card" href="/molecular-biology/central-dogma/">
     <span>全体像</span>
     <h3>セントラルドグマで流れを見る</h3>
@@ -37,6 +43,11 @@ import ArticleList from '../../../components/ArticleList.astro';
       RNAの情報がタンパク質の配列に変換され、細胞内の働きにつながる流れを読みます。
     </p>
   </a>
+  <a class="biolearn-home-card" href="/molecular-biology/enzyme/">
+    <span>酵素</span>
+    <h3>タンパク質が反応を動かす</h3>
+    <p>アミノ酸、タンパク質構造、酵素をつなげ、分子がどう働くかを見ます。</p>
+  </a>
   <a class="biolearn-home-card" href="/fundamentals/gene-expression/">
     <span>発現</span>
     <h3>遺伝子発現をFigureにつなげる</h3>
@@ -46,13 +57,15 @@ import ArticleList from '../../../components/ArticleList.astro';
   </a>
 </div>
 
-| 迷っていること                     | 入口                                                                                                | 次に進む場所                                                                                                   |
-| ---------------------------------- | --------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| DNA、RNA、タンパク質の流れを見たい | [セントラルドグマ](/molecular-biology/central-dogma/)                                               | [基礎から学ぶ](/paths/foundations/)、[遺伝子発現](/fundamentals/gene-expression/)                              |
-| RNAがどこで出てくるか知りたい      | [転写](/molecular-biology/transcription/)、[RNA](/fundamentals/rna/)                                | [RNA-seq](/bioinformatics/rna-seq/)、[シーケンスデータ](/bioinformatics/sequence-data/)                        |
-| タンパク質の働きへつなげたい       | [翻訳](/molecular-biology/translation/)、[タンパク質](/fundamentals/protein/)                       | [細胞生物学](/cell-biology/)、[Western blotの読み方](/figures/how-to-read-western-blot/)                       |
-| 発現量や発現差を読みたい           | [遺伝子発現](/fundamentals/gene-expression/)、[遺伝子](/fundamentals/gene/)                         | [差次的発現解析](/bioinformatics/differential-expression/)、[Volcano plot](/figures/how-to-read-volcano-plot/) |
-| 実験手法やFigureに戻りたい         | [遺伝子発現](/fundamentals/gene-expression/)、[セントラルドグマ](/molecular-biology/central-dogma/) | [qPCR](/methods/qpcr/)、[RT-qPCR](/methods/rt-qpcr/)、[qPCRプロット](/figures/how-to-read-qpcr-plot/)          |
+| 迷っていること                     | 入口                                                                                                                                    | 次に進む場所                                                                                                   |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| DNA、RNA、タンパク質の流れを見たい | [セントラルドグマ](/molecular-biology/central-dogma/)                                                                                   | [基礎から学ぶ](/paths/foundations/)、[遺伝子発現](/fundamentals/gene-expression/)                              |
+| 核酸や塩基配列の部品を整理したい   | [核酸](/molecular-biology/nucleic-acids/)、[ヌクレオチド](/molecular-biology/nucleotide/)、[塩基対](/molecular-biology/base-pairing/)   | [DNA](/fundamentals/dna/)、[PCR](/methods/pcr/)、[シーケンシング](/methods/sequencing/)                        |
+| RNAがどこで出てくるか知りたい      | [転写](/molecular-biology/transcription/)、[RNA](/fundamentals/rna/)                                                                    | [RNA-seq](/bioinformatics/rna-seq/)、[シーケンスデータ](/bioinformatics/sequence-data/)                        |
+| タンパク質の働きへつなげたい       | [翻訳](/molecular-biology/translation/)、[タンパク質](/fundamentals/protein/)                                                           | [細胞生物学](/cell-biology/)、[Western blotの読み方](/figures/how-to-read-western-blot/)                       |
+| 酵素やタンパク質構造を知りたい     | [アミノ酸](/molecular-biology/amino-acid/)、[タンパク質構造](/molecular-biology/protein-structure/)、[酵素](/molecular-biology/enzyme/) | [PCR](/methods/pcr/)、[qPCR](/methods/qpcr/)、[細胞シグナル伝達](/cell-biology/cell-signaling/)                |
+| 発現量や発現差を読みたい           | [遺伝子発現](/fundamentals/gene-expression/)、[遺伝子](/fundamentals/gene/)                                                             | [差次的発現解析](/bioinformatics/differential-expression/)、[Volcano plot](/figures/how-to-read-volcano-plot/) |
+| 実験手法やFigureに戻りたい         | [遺伝子発現](/fundamentals/gene-expression/)、[セントラルドグマ](/molecular-biology/central-dogma/)                                     | [qPCR](/methods/qpcr/)、[RT-qPCR](/methods/rt-qpcr/)、[qPCRプロット](/figures/how-to-read-qpcr-plot/)          |
 
 ## まず押さえる3つの考え方
 
@@ -75,7 +88,13 @@ DNA、RNA、タンパク質、遺伝子があいまいな場合は、先に [生
 
 - [DNA](/glossary/dna/)
 - [RNA](/glossary/rna/)
+- [核酸](/glossary/nucleic-acids/)
+- [ヌクレオチド](/glossary/nucleotide/)
+- [塩基対](/glossary/base-pairing/)
 - [タンパク質](/glossary/protein/)
+- [アミノ酸](/glossary/amino-acid/)
+- [タンパク質構造](/glossary/protein-structure/)
+- [酵素](/glossary/enzyme/)
 - [遺伝子](/glossary/gene/)
 - [セントラルドグマ](/glossary/central-dogma/)
 - [転写](/glossary/transcription/)

@@ -1,0 +1,126 @@
+---
+title: 核酸とは何か
+description: DNAとRNAを含む核酸の基本構造、役割、ヌクレオチドとの関係を説明します。
+part: molecular-biology
+module: molecular-foundations
+level: foundation
+priority: P1
+order: 5
+learningPaths:
+  - foundations
+relatedTerms:
+  - nucleic-acids
+  - dna
+  - rna
+prerequisites:
+  - /fundamentals/molecule/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    '核酸がDNAとRNAを含む分子の種類であることを理解する',
+    '核酸がヌクレオチドの連なりでできていることを説明できる',
+    'DNAとRNAの共通点と違いを大まかに整理できる',
+  ]}
+/>
+
+核酸は、DNAやRNAのように、遺伝情報の保存や読み出しに関わる分子の総称です。
+
+<LessonFigure
+  src="/figures/nucleic-acids-concept.jpg"
+  alt="DNAとRNAがヌクレオチドの連なりとして表され、遺伝情報の保存と利用につながる様子を示す教材イラスト"
+  title="核酸は情報を持つ長い分子である"
+  caption="DNAとRNAはどちらも核酸で、ヌクレオチドが連なった分子として細胞内の情報を支えます。"
+/>
+
+核酸は、ヌクレオチドという小さな単位が鎖のようにつながった高分子です。代表的な核酸には、遺伝情報を長期的に保存するDNAと、情報の読み出しや調節に関わるRNAがあります。
+
+DNAとRNAはどちらも塩基の並びで情報を持ちます。ただし、DNAは主に安定な情報保存に向いており、RNAは情報を使う場面で柔軟に働きます。RNAにはmRNA、rRNA、tRNAなど複数の種類があり、タンパク質合成や調節に関わります。
+
+核酸を理解すると、DNA、RNA、ヌクレオチド、塩基配列、シーケンシングといった言葉がつながります。生命科学の論文では、どの核酸を測っているのか、DNA由来なのかRNA由来なのかを区別することが大切です。
+
+## なぜ重要か
+
+[核酸](/glossary/nucleic-acids/)は、遺伝情報を分子として扱うときの基本語です。[DNA](/glossary/dna/)や[RNA](/glossary/rna/)を別々に覚える前に、どちらもヌクレオチドからできた情報分子だと理解すると、転写、PCR、RNA-seq、シーケンシングの前提が見えやすくなります。
+
+核酸は実験でも頻繁に扱われます。DNAを増幅するPCR、RNA量を測るRT-qPCR、配列を読むシーケンシングなどは、すべて核酸を対象にした方法です。
+
+## 具体例
+
+細胞の核にある染色体にはDNAが含まれています。遺伝子の一部が転写されるとRNAが作られ、そのRNAがタンパク質合成や遺伝子発現の調節に関わります。
+
+実験では、サンプルからDNAやRNAを抽出し、目的に応じてPCR、RT-qPCR、RNA-seq、DNAシーケンシングなどを行います。このとき「核酸濃度」や「核酸品質」という表現が出てくることがあります。
+
+## よく混同される概念
+
+- 核酸とヌクレオチド: 核酸はヌクレオチドが多数つながった分子で、ヌクレオチドはその構成単位です。
+- 核酸とDNA: DNAは核酸の一種です。核酸にはRNAも含まれます。
+- DNAとRNA: どちらも核酸ですが、使う糖や塩基、細胞内での役割が異なります。
+
+## 論文や実験ではどう出てくるか
+
+核酸はMethodsで「DNA/RNA extraction」「nucleic acid purification」「library preparation」のように出てきます。Resultsでは、DNA配列、RNA発現量、変異、リード数などとして表されます。
+
+Figureを読むときは、そのデータがDNAを読んだものなのか、RNA量を測ったものなのかを確認します。同じ「配列データ」でも、DNA由来とRNA由来では解釈が変わります。
+
+## 英語表記と略語
+
+| 日本語名         | 英語名                  | 略語 |
+| ---------------- | ----------------------- | ---- |
+| 核酸             | nucleic acid            | -    |
+| デオキシリボ核酸 | deoxyribonucleic acid   | DNA  |
+| リボ核酸         | ribonucleic acid        | RNA  |
+| ヌクレオチド     | nucleotide              | -    |
+| 核酸抽出         | nucleic acid extraction | -    |
+
+## よくある誤解
+
+- 核酸はDNAだけを指す言葉ではありません。RNAも核酸です。
+- RNAはDNAの単なるコピーではありません。RNAとして機能する分子も多くあります。
+- 核酸を測った結果が、すぐに細胞の機能を完全に説明するわけではありません。
+
+## 重要用語
+
+- 核酸: DNAやRNAのように、ヌクレオチドが連なってできた情報分子。
+- ヌクレオチド: 塩基、糖、リン酸からなる核酸の構成単位。
+- DNA: 遺伝情報を長期的に保存する核酸。
+- RNA: 遺伝情報の読み出しや調節に関わる核酸。
+
+<Quiz
+  questions={[
+    {
+      question: '核酸に含まれる代表的な分子を2つ挙げてください。',
+      answer: 'DNAとRNAです。',
+    },
+    {
+      question: '核酸を構成する基本単位は何ですか。',
+      answer: 'ヌクレオチドです。',
+    },
+    {
+      question: 'DNAとRNAの役割の違いを簡単に説明してください。',
+      answer:
+        'DNAは主に遺伝情報の保存に関わり、RNAは情報の読み出しや調節、タンパク質合成に関わります。',
+    },
+    {
+      question: '核酸を扱う実験法を一つ挙げてください。',
+      answer: 'PCR、RT-qPCR、RNA-seq、シーケンシングなどがあります。',
+    },
+    {
+      question: '核酸とヌクレオチドの関係を説明してください。',
+      answer: '核酸はヌクレオチドが多数つながってできた分子です。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'ヌクレオチドとは何か', href: '/molecular-biology/nucleotide/' },
+    { title: 'DNAとは何か', href: '/fundamentals/dna/' },
+    { title: 'RNAとは何か', href: '/fundamentals/rna/' },
+  ]}
+/>
