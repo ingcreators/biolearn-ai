@@ -1,0 +1,137 @@
+---
+title: miRNAとは何か
+description: mRNAの翻訳や安定性を調節する短いnon-coding RNAであるmiRNAを説明します。
+part: molecular-biology
+module: gene-regulation
+level: foundation
+priority: P2
+order: 27
+learningPaths:
+  - foundations
+relatedTerms:
+  - microrna
+  - noncoding-rna
+  - post-transcriptional-regulation
+prerequisites:
+  - /molecular-biology/noncoding-rna/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'miRNAが短いnon-coding RNAであることを理解する',
+    'miRNAがmRNAの翻訳や安定性を調節することを知る',
+    'miRNAとmRNA、siRNAを区別できる',
+  ]}
+/>
+
+miRNAは、標的mRNAに結合し、その翻訳や安定性を調節する短いnon-coding RNAです。
+
+<LessonFigure
+  src="/figures/microrna-concept.jpg"
+  alt="短いRNAがmRNAに結合してタンパク質産生を抑える様子を示す教材イラスト"
+  title="miRNAはmRNAの使われ方を抑えることがある"
+  caption="miRNAは標的mRNAに結合し、翻訳を抑えたりmRNA分解を促したりすることがあります。"
+/>
+
+miRNAはmicroRNAの略で、比較的短いRNA分子です。タンパク質を作る鋳型にはならず、主に他のRNA、特にmRNAの働きを調節します。
+
+多くの場合、miRNAは標的mRNAの一部と相補的に結合し、タンパク質への翻訳を抑えたり、mRNAの分解を促したりします。そのためmiRNAは、転写後制御の代表的な仕組みとして扱われます。
+
+1つのmiRNAが複数のmRNAに影響することもあり、逆に1つのmRNAが複数のmiRNAから調節を受けることもあります。ただし、予測された標的がすべて実際に強く制御されるとは限りません。
+
+## なぜ重要か
+
+[miRNA](/glossary/microrna/)は、mRNAが作られた後に発現を調節する仕組みを理解する入口です。mRNA量だけではタンパク質量や細胞機能を完全に説明できない理由の一つにもなります。
+
+発現解析では、mRNAとmiRNAの両方を調べ、あるmiRNAが増えたときに標的mRNAやタンパク質がどう変わるかを検討することがあります。
+
+## 具体例
+
+あるmiRNAが特定のmRNAに結合し、そのmRNAからタンパク質が作られにくくなる場合があります。このとき、mRNA量が大きく変わらなくても、タンパク質量が下がる可能性があります。
+
+実験では、miRNA mimicでmiRNAの働きを強めたり、inhibitorで働きを弱めたりして、標的候補のmRNA量やタンパク質量を調べます。
+
+## よく混同される概念
+
+- miRNAとmRNA: mRNAはタンパク質の鋳型、miRNAは主にmRNAを調節する短いRNAです。
+- miRNAとsiRNA: どちらも短いRNAですが、由来や使われ方、標的認識の文脈が異なります。
+- 標的予測と実証: 配列から標的候補を予測できますが、実際に調節しているかは実験で確認が必要です。
+
+## 論文や実験ではどう出てくるか
+
+miRNAは、小分子RNA-seq、RT-qPCR、ルシフェラーゼレポーターアッセイ、mimic/inhibitor実験、標的予測解析で扱われます。論文では「miRNA target」「miR-」「microRNA-mediated repression」のような表現で出てきます。
+
+Figureでは、miRNA発現量、標的mRNAの変化、レポーター活性の低下、タンパク質量の変化などとして示されます。
+
+## 英語表記と略語
+
+| 日本語名    | 英語名          | 略語  |
+| ----------- | --------------- | ----- |
+| マイクロRNA | microRNA        | miRNA |
+| 標的mRNA    | target mRNA     | -     |
+| miRNA模倣体 | miRNA mimic     | -     |
+| miRNA阻害剤 | miRNA inhibitor | -     |
+
+## よくある誤解
+
+- miRNAは必ずmRNA量を大きく下げるとは限らず、翻訳を抑える場合もあります。
+- 標的予測データベースに載っているだけでは、実際の制御を示したことにはなりません。
+- miRNAの発現変化だけで、生物学的な原因と断定することはできません。
+
+## 重要用語
+
+- miRNA: mRNAの翻訳や安定性を調節する短いnon-coding RNA。
+- 標的mRNA: miRNAの調節を受ける候補となるmRNA。
+- mimic: miRNAの働きを強めるために使う合成RNA。
+- inhibitor: miRNAの働きを弱めるために使う分子。
+
+<Quiz
+  questions={[
+    {
+      question: 'miRNAとは何ですか。',
+      answer:
+        '標的mRNAに結合し、翻訳や安定性を調節する短いnon-coding RNAです。',
+    },
+    {
+      question: 'miRNAは転写後制御に関わりますか。',
+      answer: 'はい。mRNAが作られた後の段階で調節に関わります。',
+    },
+    {
+      question: 'miRNAとmRNAの違いを説明してください。',
+      answer:
+        'mRNAはタンパク質を作る鋳型で、miRNAは主にmRNAの使われ方を調節するRNAです。',
+    },
+    {
+      question: 'miRNAの標的予測だけで注意が必要な理由は何ですか。',
+      answer:
+        '配列上の候補であって、実際に細胞内で機能的に調節しているかは実験で確認が必要だからです。',
+    },
+    {
+      question: 'miRNAの働きを調べる実験の例を挙げてください。',
+      answer:
+        'miRNA mimic、inhibitor、レポーターアッセイ、小分子RNA-seqなどがあります。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    {
+      title: '転写後制御とは何か',
+      href: '/molecular-biology/post-transcriptional-regulation/',
+    },
+    {
+      title: 'non-coding RNAとは何か',
+      href: '/molecular-biology/noncoding-rna/',
+    },
+    {
+      title: '遺伝子発現制御とは何か',
+      href: '/molecular-biology/gene-expression-regulation/',
+    },
+  ]}
+/>

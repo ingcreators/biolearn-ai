@@ -1,0 +1,131 @@
+---
+title: non-coding RNAとは何か
+description: タンパク質をコードしないRNAであるnon-coding RNAの役割を説明します。
+part: molecular-biology
+module: gene-regulation
+level: foundation
+priority: P2
+order: 26
+learningPaths:
+  - foundations
+relatedTerms:
+  - noncoding-rna
+  - rna
+  - microrna
+prerequisites:
+  - /fundamentals/rna/
+  - /molecular-biology/transcription/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'non-coding RNAがタンパク質をコードしないRNAであることを理解する',
+    'mRNAとnon-coding RNAを区別できる',
+    'non-coding RNAが遺伝子発現や細胞機能に関わることを説明できる',
+  ]}
+/>
+
+non-coding RNAは、タンパク質の設計図として翻訳されることを主な役割としないRNAです。
+
+<LessonFigure
+  src="/figures/noncoding-rna-concept.jpg"
+  alt="mRNAとは別に複数の機能的なRNAが細胞内で働く様子を示す教材イラスト"
+  title="non-coding RNAはタンパク質を作らずに働くRNA"
+  caption="RNAにはmRNAだけでなく、翻訳されずに構造や調節の役割を持つものがあります。"
+/>
+
+RNAというと、DNAの情報をタンパク質へつなぐmRNAを思い浮かべがちです。しかし細胞内には、タンパク質を作る鋳型ではなく、それ自体が働くRNAもあります。これらをまとめてnon-coding RNA、または非コードRNAと呼びます。
+
+代表例には、リボソームを構成するrRNA、アミノ酸を運ぶtRNA、遺伝子発現を調節するmiRNA、長い非コードRNAであるlncRNAなどがあります。役割は一つではなく、翻訳、RNA加工、発現調節、染色体構造など幅広い文脈で登場します。
+
+non-coding RNAは「タンパク質を作らないから重要でない」という意味ではありません。むしろ、タンパク質をコードしない形で細胞の仕組みに関わるRNAの総称です。
+
+## なぜ重要か
+
+[non-coding RNA](/glossary/noncoding-rna/)を理解すると、遺伝情報の使われ方が「DNAからmRNA、タンパク質」だけではないことが分かります。RNAそのものが機能を持つ場合があり、遺伝子発現制御や細胞状態の理解に関わります。
+
+RNA-seqやゲノム注釈を読むときにも、タンパク質コード遺伝子だけでなく、さまざまなRNA遺伝子が登場します。
+
+## 具体例
+
+miRNAは短いnon-coding RNAの一種で、標的mRNAに結合して翻訳を抑えたり、mRNA分解を促したりすることがあります。
+
+rRNAはリボソームの主要な構成要素で、タンパク質合成の場を作ります。tRNAはアミノ酸を運び、mRNAのコドンと対応づけます。
+
+## よく混同される概念
+
+- non-coding RNAとmRNA: mRNAはタンパク質へ翻訳されるRNAで、non-coding RNAは翻訳されることを主な役割としないRNAです。
+- non-coding RNAと非コードDNA: non-coding RNAはRNA分子で、非コードDNAはタンパク質配列をコードしないDNA領域です。
+- non-coding RNAとmiRNA: miRNAはnon-coding RNAの一種です。
+
+## 論文や実験ではどう出てくるか
+
+non-coding RNAは、RNA-seq、小分子RNA-seq、ノックダウン実験、発現解析、機能解析で出てきます。論文では「ncRNA」「lncRNA」「miRNA」「small RNA」のような表記が使われます。
+
+結果を読むときは、そのRNAがどの種類に分類され、どの細胞や条件で発現しているかを確認します。
+
+## 英語表記と略語
+
+| 日本語名        | 英語名              | 略語   |
+| --------------- | ------------------- | ------ |
+| 非コードRNA     | non-coding RNA      | ncRNA  |
+| マイクロRNA     | microRNA            | miRNA  |
+| 長鎖非コードRNA | long non-coding RNA | lncRNA |
+| リボソームRNA   | ribosomal RNA       | rRNA   |
+| 転移RNA         | transfer RNA        | tRNA   |
+
+## よくある誤解
+
+- non-coding RNAは「機能がないRNA」という意味ではありません。
+- non-coding RNAは一種類の分子ではなく、多様なRNAの総称です。
+- non-coding RNAの発現変化だけで、すぐに機能を断定することはできません。
+
+## 重要用語
+
+- non-coding RNA: タンパク質をコードしないRNAの総称。
+- miRNA: mRNAの翻訳や安定性を調節する短いRNA。
+- lncRNA: 比較的長い非コードRNAの総称。
+- rRNA: リボソームを構成するRNA。
+
+<Quiz
+  questions={[
+    {
+      question: 'non-coding RNAとは何ですか。',
+      answer: 'タンパク質へ翻訳されることを主な役割としないRNAの総称です。',
+    },
+    {
+      question: 'non-coding RNAの例を一つ挙げてください。',
+      answer: 'miRNA、lncRNA、rRNA、tRNAなどがあります。',
+    },
+    {
+      question: 'mRNAとnon-coding RNAの違いを説明してください。',
+      answer:
+        'mRNAはタンパク質を作る鋳型として使われ、non-coding RNAは翻訳されずに機能することが多いRNAです。',
+    },
+    {
+      question: 'miRNAはnon-coding RNAですか。',
+      answer: 'はい。miRNAは短いnon-coding RNAの一種です。',
+    },
+    {
+      question: 'non-coding RNAを読むときに注意したいことは何ですか。',
+      answer:
+        '種類が多いため、どのRNA種で、どの実験で検出され、どんな機能証拠があるかを確認します。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'miRNAとは何か', href: '/molecular-biology/microrna/' },
+    {
+      title: '転写後制御とは何か',
+      href: '/molecular-biology/post-transcriptional-regulation/',
+    },
+    { title: 'RNAとは何か', href: '/fundamentals/rna/' },
+  ]}
+/>

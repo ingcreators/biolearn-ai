@@ -1,6 +1,6 @@
 ---
 title: 分子生物学
-description: 核酸、タンパク質、DNA複製、セントラルドグマ、転写、RNAプロセシング、翻訳を学びます。
+description: 核酸、タンパク質、DNA複製、セントラルドグマ、転写、発現制御、RNAプロセシング、翻訳を学びます。
 ---
 
 import ArticleList from '../../../components/ArticleList.astro';
@@ -9,9 +9,9 @@ import ArticleList from '../../../components/ArticleList.astro';
 
 ## この分野で学ぶこと
 
-- DNA複製、セントラルドグマ、転写、RNAプロセシング、翻訳、遺伝子発現の関係
+- DNA複製、セントラルドグマ、転写、RNAプロセシング、翻訳、遺伝子発現制御の関係
 - 核酸、ヌクレオチド、塩基対、アミノ酸、タンパク質構造、フォールディング、酵素の基本
-- DNA、RNA、タンパク質、遺伝子の知識を、情報の流れとしてつなげる見方
+- DNA、RNA、タンパク質、遺伝子の知識を、情報の流れと発現制御としてつなげる見方
 - RNA-seqや差次的発現解析へ進む前提になる分子の言葉
 
 ## 目的別に選ぶ
@@ -41,6 +41,16 @@ import ArticleList from '../../../components/ArticleList.astro';
     <h3>DNAからRNAへの読み出し</h3>
     <p>
       遺伝子の情報がRNAとして写し取られる過程を確認し、RNA-seqの前提につなげます。
+    </p>
+  </a>
+  <a
+    class="biolearn-home-card"
+    href="/molecular-biology/gene-expression-regulation/"
+  >
+    <span>発現制御</span>
+    <h3>遺伝子をいつどれくらい使うか</h3>
+    <p>
+      プロモーター、エンハンサー、転写因子、転写後制御をつなげて整理します。
     </p>
   </a>
   <a class="biolearn-home-card" href="/molecular-biology/rna-processing/">
@@ -78,14 +88,14 @@ import ArticleList from '../../../components/ArticleList.astro';
 | RNAがどこで出てくるか知りたい      | [転写](/molecular-biology/transcription/)、[RNAプロセシング](/molecular-biology/rna-processing/)、[RNA](/fundamentals/rna/)                                                                                | [スプライシング](/molecular-biology/splicing/)、[RNA-seq](/bioinformatics/rna-seq/)                            |
 | タンパク質の働きへつなげたい       | [翻訳](/molecular-biology/translation/)、[タンパク質](/fundamentals/protein/)                                                                                                                              | [細胞生物学](/cell-biology/)、[Western blotの読み方](/figures/how-to-read-western-blot/)                       |
 | 酵素やタンパク質構造を知りたい     | [アミノ酸](/molecular-biology/amino-acid/)、[タンパク質構造](/molecular-biology/protein-structure/)、[タンパク質フォールディング](/molecular-biology/protein-folding/)、[酵素](/molecular-biology/enzyme/) | [PCR](/methods/pcr/)、[qPCR](/methods/qpcr/)、[細胞シグナル伝達](/cell-biology/cell-signaling/)                |
-| 発現量や発現差を読みたい           | [遺伝子発現](/fundamentals/gene-expression/)、[遺伝子](/fundamentals/gene/)                                                                                                                                | [差次的発現解析](/bioinformatics/differential-expression/)、[Volcano plot](/figures/how-to-read-volcano-plot/) |
+| 発現量や発現差を読みたい           | [遺伝子発現](/fundamentals/gene-expression/)、[遺伝子発現制御](/molecular-biology/gene-expression-regulation/)、[遺伝子](/fundamentals/gene/)                                                              | [差次的発現解析](/bioinformatics/differential-expression/)、[Volcano plot](/figures/how-to-read-volcano-plot/) |
 | 実験手法やFigureに戻りたい         | [遺伝子発現](/fundamentals/gene-expression/)、[セントラルドグマ](/molecular-biology/central-dogma/)                                                                                                        | [qPCR](/methods/qpcr/)、[RT-qPCR](/methods/rt-qpcr/)、[qPCRプロット](/figures/how-to-read-qpcr-plot/)          |
 
 ## まず押さえる3つの考え方
 
 1. セントラルドグマは、遺伝情報がRNAやタンパク質へ向かう基本的な見取り図です。
 2. DNA複製はDNAを受け渡す過程で、転写と翻訳は情報が段階的に読み出される過程です。
-3. RNAプロセシングやタンパク質フォールディングは、作られた分子が働ける形へ整う段階です。
+3. プロモーター、エンハンサー、転写因子、転写後制御は、遺伝子の使われ方を調節する仕組みです。
 
 ## 読む順番
 
@@ -96,7 +106,7 @@ DNA、RNA、タンパク質、遺伝子があいまいな場合は、先に [生
 ## このカテゴリを終えるとできること
 
 - 転写と翻訳が、遺伝情報からタンパク質へ向かう流れのどこにあるか説明できる
-- DNA複製、RNAプロセシング、スプライシング、タンパク質フォールディングを、転写や翻訳と区別できる
+- DNA複製、RNAプロセシング、スプライシング、タンパク質フォールディング、発現制御を、転写や翻訳と区別できる
 - RNA-seqや差次的発現解析に出てくる「発現量」の入口を理解できる
 
 ## 関連する用語
@@ -114,8 +124,15 @@ DNA、RNA、タンパク質、遺伝子があいまいな場合は、先に [生
 - [セントラルドグマ](/glossary/central-dogma/)
 - [DNA複製](/glossary/dna-replication/)
 - [転写](/glossary/transcription/)
+- [遺伝子発現制御](/glossary/gene-expression-regulation/)
+- [プロモーター](/glossary/promoter/)
+- [エンハンサー](/glossary/enhancer/)
+- [転写因子](/glossary/transcription-factor/)
 - [RNAプロセシング](/glossary/rna-processing/)
 - [スプライシング](/glossary/splicing/)
+- [転写後制御](/glossary/post-transcriptional-regulation/)
+- [non-coding RNA](/glossary/noncoding-rna/)
+- [miRNA](/glossary/microrna/)
 - [翻訳](/glossary/translation/)
 - [タンパク質フォールディング](/glossary/protein-folding/)
 - [遺伝子発現](/glossary/gene-expression/)
