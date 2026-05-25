@@ -293,8 +293,8 @@ URL:
 ### 1-1 生命科学の全体像
 
 - `/fundamentals/life-science/` 生命科学とは何か [P0]
-- `/fundamentals/cell/` 細胞とは何か [P0]
 - `/fundamentals/molecule/` 分子とは何か [P1]
+- `/fundamentals/cell/` 細胞とは何か [P0]
 - `/fundamentals/organism-tissue-cell/` 個体・組織・細胞の関係 [P1]
 
 ### 1-2 遺伝情報の基本
@@ -303,13 +303,16 @@ URL:
 - `/fundamentals/rna/` RNAとは何か [P0]
 - `/fundamentals/protein/` タンパク質とは何か [P0]
 - `/fundamentals/gene/` 遺伝子とは何か [P0]
+- `/fundamentals/gene-expression/` 遺伝子発現とは何か [P0]
+
+### 1-3 ゲノムと変異の基本
+
 - `/fundamentals/genome/` ゲノムとは何か [P0]
 - `/fundamentals/chromosome/` 染色体とは何か [P0]
-
-### 1-3 論文読解に必要な基本概念
-
 - `/fundamentals/mutation/` 変異とは何か [P0]
-- `/fundamentals/gene-expression/` 遺伝子発現とは何か [P0]
+
+### 1-4 論文読解に必要な基本概念
+
 - `/fundamentals/phenotype/` 表現型とは何か [P1]
 - `/fundamentals/model-organisms/` モデル生物とは何か [P1]
 - `/fundamentals/biological-question/` 生命科学の問いとは何か [P1]

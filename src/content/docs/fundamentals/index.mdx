@@ -1,11 +1,11 @@
 ---
 title: 生命科学の基礎
-description: 生命科学の全体像、細胞、DNA、RNA、タンパク質、遺伝子、ゲノムを学ぶ入口です。
+description: 生命科学の全体像、分子、細胞、DNA、RNA、タンパク質、遺伝子、ゲノムを学ぶ入口です。
 ---
 
 import ArticleList from '../../../components/ArticleList.astro';
 
-このカテゴリでは、生命科学を学ぶための最小限の土台を扱います。最初に生命科学がどのような階層で生命現象を見るのかを確認し、細胞、DNA、RNA、タンパク質、遺伝子、ゲノム、染色体を順に位置づけます。
+このカテゴリでは、生命科学を学ぶための最小限の土台を扱います。最初に生命科学がどのような階層で生命現象を見るのかを確認し、分子、細胞、個体、DNA、RNA、タンパク質、遺伝子、ゲノム、染色体を順に位置づけます。
 
 順番に進みたい場合は [基礎から学ぶ](/paths/foundations/) を使います。このカテゴリトップは、用語や前提に戻りたいときに、基礎記事を目的別に探す入口です。
 
@@ -14,6 +14,7 @@ import ArticleList from '../../../components/ArticleList.astro';
 - 生命科学が扱う対象と、分子、細胞、個体、データのつながり
 - 細胞が生命現象の基本単位である理由
 - DNA、RNA、タンパク質、遺伝子、ゲノム、染色体の関係
+- 遺伝子発現、変異、表現型、生命科学の問いが論文読解へつながる流れ
 
 ## 目的別に選ぶ
 
@@ -25,17 +26,17 @@ import ArticleList from '../../../components/ArticleList.astro';
       分子、細胞、個体、データという階層を分け、BioLearn全体で何を学ぶかを確認します。
     </p>
   </a>
+  <a class="biolearn-home-card" href="/fundamentals/molecule/">
+    <span>分子</span>
+    <h3>分子の視点を持つ</h3>
+    <p>DNA、RNA、タンパク質などを生命現象を支える分子として位置づけます。</p>
+  </a>
   <a class="biolearn-home-card" href="/fundamentals/cell/">
     <span>細胞</span>
     <h3>生命の基本単位へ戻る</h3>
     <p>
       分子が働く場所として細胞を押さえ、細胞生物学やsingle-cell解析へ進む土台を作ります。
     </p>
-  </a>
-  <a class="biolearn-home-card" href="/fundamentals/molecule/">
-    <span>分子</span>
-    <h3>分子の視点を持つ</h3>
-    <p>DNA、RNA、タンパク質などを生命現象を支える分子として位置づけます。</p>
   </a>
   <a class="biolearn-home-card" href="/fundamentals/organism-tissue-cell/">
     <span>階層</span>
@@ -63,6 +64,13 @@ import ArticleList from '../../../components/ArticleList.astro';
     <h3>配列の違いを読む</h3>
     <p>
       DNA配列の変化としての変異を押さえ、ゲノミクスや変異Figureへ進む準備をします。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="/fundamentals/phenotype/">
+    <span>表現型</span>
+    <h3>観察される性質につなげる</h3>
+    <p>
+      遺伝子発現や変異が、細胞や個体で観察される性質とどう関係するかを整理します。
     </p>
   </a>
   <a class="biolearn-home-card" href="/fundamentals/biological-question/">
@@ -93,13 +101,14 @@ import ArticleList from '../../../components/ArticleList.astro';
 
 <ArticleList part="fundamentals" groupByModule />
 
-まず生命科学の全体像を確認し、その後に細胞という基本単位へ進みます。DNA、RNA、タンパク質、遺伝子、ゲノム、染色体をここで押さえると、分子生物学やゲノミクスの記事を「何の詳細を学んでいるのか」と位置づけやすくなります。
+まず生命科学の全体像を確認し、分子、細胞、組織、個体の階層を押さえます。その後にDNA、RNA、タンパク質、遺伝子、遺伝子発現、ゲノム、染色体、変異を順に置くと、分子生物学やゲノミクスの記事を「何の詳細を学んでいるのか」と位置づけやすくなります。最後に表現型と生命科学の問いを確認し、Figure読解や論文読解へ接続します。
 
 ## このカテゴリを終えるとできること
 
 - 生命科学が分子、細胞、組織、個体、データをつなげて考える学問だと説明できる
 - 細胞を生命の基本単位として説明できる
 - DNA、RNA、タンパク質、遺伝子、ゲノム、染色体を混同せずに説明できる
+- 遺伝子発現、変異、表現型を、論文中のFigureや主張につながる基本概念として説明できる
 - 次に分子生物学、細胞生物学、ゲノミクスへ進むための学習地図を持てる
 
 ## 関連する用語
