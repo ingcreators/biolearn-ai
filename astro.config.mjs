@@ -87,6 +87,7 @@ export default defineConfig({
       components: {
         Footer: './src/components/BiolearnFooter.astro',
       },
+      routeMiddleware: './src/starlightRouteData.ts',
       customCss: ['./src/styles/custom.css'],
       sidebar: [
         {
