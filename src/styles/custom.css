@@ -42,6 +42,12 @@ html {
   margin-top: 2.4rem;
 }
 
+.sl-markdown-content h3 {
+  margin-top: 1.7rem;
+  font-size: 1.28rem;
+  line-height: 1.45;
+}
+
 .hero:not(:has(> img)):not(:has(> .hero-html)) {
   grid-template-columns: 1fr;
 }
