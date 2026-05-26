@@ -21,6 +21,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -30,7 +31,9 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-遺伝子発現制御は、遺伝子が必要な場所とタイミングで、適切な量だけ使われるように調節する仕組みです。
+遺伝子発現制御は、[遺伝子](/glossary/gene/)が必要な場所とタイミングで、適切な量だけ使われるように調節する仕組みです。
+
+調節は[転写](/glossary/transcription/)の段階だけでなく、[RNA](/glossary/rna/)の加工、RNAの安定性、[翻訳](/glossary/translation/)、[タンパク質](/glossary/protein/)分解など複数の段階で起こります。
 
 <LessonFigure
   src="/figures/gene-expression-regulation-concept.jpg"
@@ -39,46 +42,45 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   caption="細胞は同じゲノムを持っていても、どの遺伝子をどれくらい使うかを調節して異なる状態になります。"
 />
 
-多くの細胞は同じゲノムを持っていますが、すべての遺伝子を同じように使っているわけではありません。神経細胞、筋細胞、免疫細胞では、必要なRNAやタンパク質が異なるため、発現している遺伝子の組み合わせも変わります。
+## なぜ遺伝子発現制御の視点が重要か
 
-この違いを生み出す仕組みが遺伝子発現制御です。転写が始まりやすいか、RNAがどのように加工されるか、RNAがどれくらい安定に残るか、タンパク質へ翻訳されやすいかなど、複数の段階で調節が起こります。
+遺伝子発現制御の視点が重要なのは、同じ[DNA](/glossary/dna/)を持つ細胞が異なる性質を持つ理由を説明しやすくなるからです。[細胞](/glossary/cell/)分化、刺激応答、発生、環境変化への応答では、どの遺伝子がどの程度使われるかが大きく変わります。
 
-発現制御という言葉は、とくに転写制御を指して使われることがあります。プロモーター、エンハンサー、転写因子は、どの遺伝子がどれくらい転写されるかに関わる代表的な要素です。ただし、遺伝子発現は転写だけで完結しないため、RNA段階やタンパク質段階の調節も合わせて考える必要があります。
+[RNA-seq](/glossary/rna-seq/)やRT-qPCRで発現量の変化を見るときも、「どの段階の制御が変わったのか」を考えることが重要です。mRNA量が増えていても、転写が増えたのか、RNA分解が遅くなったのかは追加の情報がないと区別できません。
 
-## なぜ重要か
+## どんな遺伝子発現制御があるか
 
-[遺伝子発現制御](/glossary/gene-expression-regulation/)を理解すると、同じ[DNA](/glossary/dna/)を持つ細胞が異なる性質を持つ理由を説明しやすくなります。細胞分化、刺激応答、発生、環境変化への応答では、どの遺伝子がどの程度使われるかが大きく変わります。
+転写段階の制御では、[プロモーター](/glossary/promoter/)、[エンハンサー](/glossary/enhancer/)、[転写因子](/glossary/transcription-factor/)、[クロマチン](/glossary/chromatin/)状態などが関わります。どの遺伝子がどれくらい転写されるかを調節する代表的な入口です。
 
-RNA-seqやRT-qPCRで発現量の変化を見るときも、「どの段階の制御が変わったのか」を考えることが重要です。mRNA量が増えていても、転写が増えたのか、RNA分解が遅くなったのかは追加の情報がないと区別できません。
+転写後の段階では、[RNAプロセシング](/glossary/rna-processing/)、[スプライシング](/glossary/splicing/)、RNA安定性、[miRNA](/glossary/microrna/)による抑制、翻訳効率などが関わります。遺伝子発現は転写だけで完結しないため、RNA段階やタンパク質段階の調節も合わせて考えます。
 
-## 具体例
+## 遺伝子発現制御はどう調べるか
 
-細胞が炎症性の刺激を受けると、応答に関わる遺伝子の転写が増えることがあります。このとき、シグナル伝達によって転写因子が活性化し、特定のプロモーターやエンハンサーの近くで転写を促す場合があります。
+遺伝子発現制御は、RNA-seq、RT-qPCR、レポーターアッセイ、ChIP-seq、ATAC-seq、miRNA解析などで扱われます。発現量、転写因子の結合、クロマチンの開きやすさ、RNAの安定性などを別々の角度から調べます。
+
+たとえば、細胞が炎症性の刺激を受けると、応答に関わる遺伝子の転写が増えることがあります。このとき、シグナル伝達によって転写因子が活性化し、特定のプロモーターやエンハンサーの近くで転写を促す場合があります。
+
+## 遺伝子発現制御の変化は何につながるか
+
+遺伝子発現制御が変わると、細胞内のRNAやタンパク質の量、細胞の状態、刺激への応答が変わることがあります。ただし、mRNA量が増えても、タンパク質量や細胞機能が同じように増えるとは限りません。
 
 別の例として、miRNAが特定のmRNAに結合して翻訳を抑えたり、RNAの分解を促したりすることがあります。この場合、DNAからRNAが作られた後の段階で発現が調節されています。
 
-## よく混同される概念
-
-- 遺伝子発現と遺伝子発現制御: 遺伝子発現は遺伝子情報がRNAやタンパク質として使われること、発現制御はその量やタイミングを調節する仕組みです。
-- 転写制御と転写後制御: 転写制御はRNAが作られる段階、転写後制御はRNAが作られた後の段階の調節です。
-- 発現上昇と機能上昇: mRNA量が増えても、タンパク質量や細胞機能が同じように増えるとは限りません。
-
 ## 論文や実験ではどう出てくるか
 
-論文では、RNA-seq、RT-qPCR、レポーターアッセイ、ChIP-seq、ATAC-seq、miRNA解析などで発現制御が扱われます。「この転写因子が標的遺伝子の発現を調節する」「刺激により発現プログラムが変化する」「miRNAがmRNAを抑制する」のように書かれることがあります。
+論文では「この転写因子が標的遺伝子の発現を調節する」「刺激により発現プログラムが変化する」「miRNAがmRNAを抑制する」のように書かれることがあります。[Methods](/glossary/methods/)では、発現量を測ったのか、結合やクロマチン状態を測ったのかを確認します。
 
-Figureでは、発現量のヒートマップ、転写因子の結合ピーク、レポーター活性、ノックダウン後のmRNA量変化などとして示されます。
+[Figure](/glossary/figure/)では、発現量のヒートマップ、転写因子の結合ピーク、レポーター活性、ノックダウン後のmRNA量変化などとして示されます。[Results](/glossary/results/)では、発現の変化と制御の原因を分けて読むことが大切です。
 
-## 英語表記と略語
+## どんな点でつまずきやすいか
 
-| 日本語名       | 英語名                          | 略語 |
-| -------------- | ------------------------------- | ---- |
-| 遺伝子発現制御 | gene expression regulation      | -    |
-| 転写制御       | transcriptional regulation      | -    |
-| 転写後制御     | post-transcriptional regulation | -    |
-| 転写因子       | transcription factor            | TF   |
+### 似た用語との区別
 
-## よくある誤解
+- [遺伝子発現](/glossary/gene-expression/)と遺伝子発現制御: 遺伝子発現は遺伝子情報がRNAやタンパク質として使われること、発現制御はその量やタイミングを調節する仕組みです。
+- 転写制御と[転写後制御](/glossary/post-transcriptional-regulation/): 転写制御はRNAが作られる段階、転写後制御はRNAが作られた後の段階の調節です。
+- 発現上昇と機能上昇: mRNA量が増えても、タンパク質量や細胞機能が同じように増えるとは限りません。
+
+### 解釈の落とし穴
 
 - 発現制御はオン・オフだけではなく、量、場所、時間、RNAの種類も含みます。
 - 発現制御は転写だけでなく、RNA加工、RNA安定性、翻訳、タンパク質分解にも関わります。
@@ -86,10 +88,42 @@ Figureでは、発現量のヒートマップ、転写因子の結合ピーク�
 
 ## 重要用語
 
-- 遺伝子発現制御: 遺伝子の使われ方を量、場所、時間の面から調節する仕組み。
-- 転写制御: DNAからRNAが作られる段階の調節。
-- 転写後制御: RNAが作られた後の加工、安定性、翻訳などの調節。
-- 調節領域: プロモーターやエンハンサーのように、遺伝子発現に影響するDNA領域。
+<GlossaryTable
+  terms={[
+    {
+      term: '遺伝子発現制御',
+      english: 'gene expression regulation',
+      description: '遺伝子の使われ方を量、場所、時間の面から調節する仕組み。',
+      href: '/glossary/gene-expression-regulation/',
+    },
+    {
+      term: '遺伝子発現',
+      english: 'gene expression',
+      description: '遺伝子の情報がRNAやタンパク質として使われること。',
+      href: '/glossary/gene-expression/',
+    },
+    {
+      term: '転写因子',
+      english: 'transcription factor',
+      abbreviation: 'TF',
+      description:
+        'DNA上の調節領域に結合し、転写の起こりやすさに関わるタンパク質。',
+      href: '/glossary/transcription-factor/',
+    },
+    {
+      term: 'プロモーター',
+      english: 'promoter',
+      description: '転写開始に関わるDNA上の調節領域。',
+      href: '/glossary/promoter/',
+    },
+    {
+      term: '転写後制御',
+      english: 'post-transcriptional regulation',
+      description: 'RNAが作られた後の加工、安定性、翻訳などの調節。',
+      href: '/glossary/post-transcriptional-regulation/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[

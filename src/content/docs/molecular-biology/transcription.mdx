@@ -19,6 +19,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -28,7 +29,9 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-転写は、DNA上の情報をRNAとして読み出す過程です。
+転写は、[DNA](/glossary/dna/)上の情報を[RNA](/glossary/rna/)として読み出す過程です。
+
+RNAポリメラーゼがDNAを鋳型として読み取り、RNA鎖を合成します。どこからどれくらい転写されるかには、[プロモーター](/glossary/promoter/)や[転写因子](/glossary/transcription-factor/)などが関わります。
 
 <LessonFigure
   src="/figures/transcription-concept.jpg"
@@ -37,56 +40,91 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   caption="RNAポリメラーゼがDNAを鋳型として読み取り、RNAという形で情報を取り出します。"
 />
 
-遺伝子の情報を使うためには、まずDNAからRNAが作られます。この過程を転写と呼びます。RNAポリメラーゼはDNAの特定領域に結合し、鋳型となるDNA鎖を読みながらRNAを合成します。
+## なぜ転写の視点が重要か
 
-転写が始まる場所や起こりやすさには、プロモーターや転写因子などが関わります。細胞はすべての遺伝子を同じ強さで転写するわけではありません。必要な遺伝子を必要なタイミングで読み出すことで、細胞の種類や状態に合った働きを実現します。
+転写の視点が重要なのは、DNAに保存された情報がRNAとして読み出される最初の大きな段階だからです。[遺伝子発現](/glossary/gene-expression/)を考えるとき、どの[遺伝子](/glossary/gene/)がどれくらい転写されるかは、[細胞](/glossary/cell/)の状態を知る重要な手がかりになります。
 
-たとえば、同じ個体の中でも、神経細胞と筋細胞では発現している遺伝子の組み合わせが異なります。これはDNA配列が大きく違うからではなく、どの遺伝子がどの程度転写されるかが違うためです。
+転写が変わると、細胞内に存在するRNAの量や種類が変わります。その変化は[タンパク質](/glossary/protein/)産生や細胞応答につながることがありますが、転写量の変化が必ず同じ大きさのタンパク質量の変化になるとは限りません。
 
-どの遺伝子がどの程度転写されるかは、細胞の種類や状態によって変わります。そのため、転写は細胞が必要な分子を必要な量だけ作るための重要な調節点です。RNA-seqのような解析では、この転写の結果として存在するRNAを調べます。
+## どんな転写があるか
 
-## なぜ重要か
+タンパク質を作る情報を持つ遺伝子では、転写によってmRNAが作られます。一方で、rRNA、tRNA、[非コードRNA](/glossary/noncoding-rna/)のように、RNAとして働く[分子](/glossary/molecule/)を作る転写もあります。
 
-[転写](/glossary/transcription/)は、[DNA](/glossary/dna/)に保存された情報が[RNA](/glossary/rna/)として読み出される最初の大きな段階です。[遺伝子発現](/glossary/gene-expression/)を考えるとき、どの遺伝子がどれくらい転写されるかは細胞の状態を知る重要な手がかりになります。
+転写が始まる場所や起こりやすさには、プロモーター、[エンハンサー](/glossary/enhancer/)、転写因子、[クロマチン](/glossary/chromatin/)状態などが関わります。細胞はすべての遺伝子を同じ強さで転写するのではなく、必要な遺伝子を必要なタイミングで読み出します。
 
-転写が変わると、細胞内に存在するRNAの量や種類が変わります。その変化は、タンパク質産生や細胞応答につながることがあります。ただし、転写量の変化が必ず同じ大きさのタンパク質量の変化になるとは限りません。
+## 転写はどう調べるか
 
-## 具体例
+転写の結果は、RT-qPCR、[RNA-seq](/glossary/rna-seq/)、レポーターアッセイ、ChIP-seqなどで扱われます。ある遺伝子のmRNA量をRT-qPCRで測ることで、その遺伝子がどれくらい転写されたかの目安にすることがあります。
+
+RNA-seqでは、多数の遺伝子についてRNA量をまとめて調べます。ただし、観察しているRNA量は転写の強さだけでなく、RNAの安定性や分解にも影響されます。
+
+## 転写の変化は何につながるか
 
 細胞が外部刺激を受けると、応答に必要な遺伝子の転写が増えることがあります。たとえばシグナルを受けた細胞では、転写因子が特定のDNA配列に結合し、関連する遺伝子のRNAが増える場合があります。
 
-実験では、ある遺伝子のmRNA量をRT-qPCRで測ることで、その遺伝子がどれくらい転写されたかの目安にします。RNA-seqでは、多数の遺伝子についてRNA量をまとめて調べます。
-
-## よく混同される概念
-
-- 転写と翻訳: 転写はDNAからRNAを作る過程で、翻訳はmRNAからタンパク質を作る過程です。
-- 転写産物とタンパク質: 転写産物はRNAであり、タンパク質そのものではありません。
-- プロモーターと遺伝子本体: プロモーターは転写開始に関わる調節領域で、タンパク質のアミノ酸配列を直接コードする領域とは区別されます。
+同じ[個体](/glossary/organism/)の中でも、神経細胞と筋細胞では発現している遺伝子の組み合わせが異なります。これはDNA配列が大きく違うからではなく、どの遺伝子がどの程度転写されるかが違うためです。
 
 ## 論文や実験ではどう出てくるか
 
-転写は、RT-qPCR、RNA-seq、レポーターアッセイ、ChIP-seqなどで扱われます。論文では「mRNA発現が上昇した」「転写因子がプロモーター領域に結合した」「転写産物を検出した」のように、RNA量や調節因子の結合として示されることが多いです。
+論文では「mRNA発現が上昇した」「転写因子がプロモーター領域に結合した」「転写産物を検出した」のように、RNA量や調節因子の結合として示されることが多いです。[Methods](/glossary/methods/)では、RNA抽出、逆転写、ライブラリ調製、解析方法を確認します。
 
-## 英語表記と略語
+[Figure](/glossary/figure/)では、発現量の棒グラフ、RNA-seqのヒートマップ、[ゲノム](/glossary/genome/)ブラウザ上のシグナル、レポーター活性として出てきます。[Results](/glossary/results/)を読むときは、RNA量を見ているのか、転写因子の結合を見ているのかを区別します。
 
-| 日本語名        | 英語名         | 略語 |
-| --------------- | -------------- | ---- |
-| 転写            | transcription  | -    |
-| RNAポリメラーゼ | RNA polymerase | -    |
-| プロモーター    | promoter       | -    |
-| 転写産物        | transcript     | -    |
+## どんな点でつまずきやすいか
 
-## よくある誤解
+### 似た用語との区別
+
+- 転写と[翻訳](/glossary/translation/): 転写はDNAからRNAを作る過程で、翻訳はmRNAからタンパク質を作る過程です。
+- 転写産物とタンパク質: 転写産物はRNAであり、タンパク質そのものではありません。
+- プロモーターと遺伝子本体: プロモーターは転写開始に関わる調節領域で、タンパク質の[アミノ酸](/glossary/amino-acid/)配列を直接コードする領域とは区別されます。
+
+### 解釈の落とし穴
 
 - 転写されたRNAがすべてタンパク質になるわけではありません。
 - 転写は単なるコピー作業ではなく、細胞状態に応じて細かく調節されます。
+- mRNA量の増加だけで、タンパク質量や細胞機能の増加を直接断定しません。
 
 ## 重要用語
 
-- 転写: [DNA](/glossary/dna/)の塩基配列をもとにRNAを合成する過程。
-- RNAポリメラーゼ: DNAを読み取り、RNA鎖を合成する酵素。
-- プロモーター: 転写開始に関わるDNA上の領域。
-- 転写産物: 転写によって作られたRNA分子。
+<GlossaryTable
+  terms={[
+    {
+      term: '転写',
+      english: 'transcription',
+      description: 'DNAの情報をもとにRNAを合成する過程。',
+      href: '/glossary/transcription/',
+    },
+    {
+      term: 'DNA',
+      english: 'deoxyribonucleic acid',
+      abbreviation: 'DNA',
+      description: '遺伝情報を長期的に保存する分子。',
+      href: '/glossary/dna/',
+    },
+    {
+      term: 'RNA',
+      english: 'ribonucleic acid',
+      abbreviation: 'RNA',
+      description:
+        'DNAの情報の読み出し、調節、タンパク質合成などに関わる核酸。',
+      href: '/glossary/rna/',
+    },
+    {
+      term: 'プロモーター',
+      english: 'promoter',
+      description: '転写開始に関わるDNA上の調節領域。',
+      href: '/glossary/promoter/',
+    },
+    {
+      term: '転写因子',
+      english: 'transcription factor',
+      abbreviation: 'TF',
+      description:
+        'DNA上の調節領域に結合し、転写の起こりやすさに関わるタンパク質。',
+      href: '/glossary/transcription-factor/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[
@@ -116,7 +154,13 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 <NextSteps
   items={[
     { title: '翻訳とは何か', href: '/molecular-biology/translation/' },
-    { title: '用語: 転写', href: '/glossary/transcription/' },
-    { title: '用語集', href: '/glossary/' },
+    {
+      title: '遺伝子発現制御とは何か',
+      href: '/molecular-biology/gene-expression-regulation/',
+    },
+    {
+      title: 'RNAプロセシングとは何か',
+      href: '/molecular-biology/rna-processing/',
+    },
   ]}
 />
