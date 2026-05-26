@@ -21,6 +21,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -30,7 +31,9 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-セントラルドグマは、遺伝情報がDNAからRNAを経てタンパク質へ使われる基本的な流れを表す考え方です。
+セントラルドグマは、遺伝情報が[DNA](/glossary/dna/)から[RNA](/glossary/rna/)を経て[タンパク質](/glossary/protein/)へ使われる基本的な流れを表す考え方です。
+
+DNAの情報をRNAへ写す過程を[転写](/glossary/transcription/)、RNAの情報をもとにタンパク質を作る過程を[翻訳](/glossary/translation/)と呼びます。この流れは、[分子生物学](/glossary/molecular-biology/)で遺伝情報の使われ方を整理する見取り図になります。
 
 <LessonFigure
   src="/figures/central-dogma-concept.jpg"
@@ -39,56 +42,87 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   caption="セントラルドグマは、分子の種類をまたいで情報がどう使われるかを整理する基本の見取り図です。"
 />
 
-DNAの情報をRNAへ写す過程を転写、RNAの情報をもとにタンパク質を作る過程を翻訳と呼びます。この流れは分子生物学の基本です。
+## なぜセントラルドグマの視点が重要か
 
-セントラルドグマを学ぶ意義は、DNA、RNA、タンパク質を別々の用語としてではなく、情報の流れとして理解できる点にあります。DNAは情報の保存に向いており、RNAは情報の読み出しや調節に関わり、タンパク質は細胞内で多様な機能を担います。
+セントラルドグマの視点が重要なのは、DNA、RNA、タンパク質を別々の用語としてではなく、情報の流れとして理解できるからです。[遺伝子](/glossary/gene/)の情報がどのように読み出され、[細胞](/glossary/cell/)の機能へつながるかを理解する入口になります。
 
-たとえば、ある遺伝子が転写されてmRNAが作られ、そのmRNAが翻訳されてタンパク質が作られるとします。このタンパク質が酵素や受容体として働けば、細胞の性質や反応が変わります。つまり、セントラルドグマは分子の話であると同時に、細胞のふるまいを理解する入口でもあります。
+この流れを押さえると、転写、翻訳、[遺伝子発現](/glossary/gene-expression/)の違いが見えやすくなります。論文や教科書で「mRNAが増えた」「タンパク質量が変わった」と出てきたときも、どの段階の変化なのかを考えられます。
 
-ただし、細胞内の情報の使われ方は単純な一本道ではありません。RNAの加工、発現調節、非コードRNA、逆転写など、さまざまな仕組みがあります。まずは基本の流れを押さえ、そのうえで例外や調節の仕組みを学ぶと理解しやすくなります。
+## どんな情報の流れがあるか
 
-## なぜ重要か
+基本の流れは、DNAからRNA、RNAからタンパク質です。DNAは情報の保存に向いており、RNAは情報の読み出しや調節に関わり、タンパク質は細胞内で多様な機能を担います。
 
-[セントラルドグマ](/glossary/central-dogma/)は、[DNA](/glossary/dna/)、[RNA](/glossary/rna/)、[タンパク質](/glossary/protein/)を一つの流れとして整理する地図です。[遺伝子](/glossary/gene/)の情報がどのように読み出され、細胞の機能へつながるかを理解する入口になります。
+ただし、細胞内の情報の使われ方は単純な一本道ではありません。[RNAプロセシング](/glossary/rna-processing/)、発現調節、[非コードRNA](/glossary/noncoding-rna/)、逆転写など、さまざまな仕組みがあります。まずは基本の流れを押さえ、そのうえで例外や調節の仕組みを学ぶと理解しやすくなります。
 
-この流れを押さえると、[転写](/glossary/transcription/)、[翻訳](/glossary/translation/)、[遺伝子発現](/glossary/gene-expression/)の違いが見えやすくなります。論文や教科書で「mRNAが増えた」「タンパク質量が変わった」と出てきたときも、どの段階の変化なのかを考えられます。
+## セントラルドグマはどう調べるか
 
-## 具体例
+セントラルドグマそのものは実験手法名として出るより、結果の解釈の枠組みとして使われます。たとえば[RNA-seq](/glossary/rna-seq/)でmRNA量を調べ、ウェスタンブロットでタンパク質量を調べると、転写レベルの変化とタンパク質レベルの変化を分けて考えられます。
 
-ある酵素を作る遺伝子を考えると、まずDNA上の遺伝子が転写されてmRNAになります。そのmRNAが翻訳され、アミノ酸がつながってタンパク質になります。できたタンパク質が酵素として働けば、細胞内の反応が変わります。
+ある[酵素](/glossary/enzyme/)を作る遺伝子を考えると、まずDNA上の遺伝子が転写されてmRNAになります。そのmRNAが翻訳され、[アミノ酸](/glossary/amino-acid/)がつながってタンパク質になります。できたタンパク質が酵素や受容体として働けば、細胞の性質や反応が変わります。
 
-一方で、rRNAやtRNAのように、RNAとして働く分子もあります。この場合、RNAは作られてもタンパク質には翻訳されません。セントラルドグマは基本の流れを示しますが、すべてのRNAがタンパク質になるという意味ではありません。
+## 情報の流れの変化は何につながるか
 
-## よく混同される概念
+mRNA量が変わっても、タンパク質量が同じ方向に変わるとは限りません。RNAの安定性、翻訳効率、タンパク質分解など、転写後の段階で調節が入るためです。
+
+一方で、rRNAやtRNAのように、RNAとして働く[分子](/glossary/molecule/)もあります。この場合、RNAは作られてもタンパク質には翻訳されません。セントラルドグマは基本の流れを示しますが、すべてのRNAがタンパク質になるという意味ではありません。
+
+## 論文や実験ではどう出てくるか
+
+論文では、セントラルドグマは「DNAの変化がRNAやタンパク質へどうつながるか」を考える枠組みとして出てきます。[Figure](/glossary/figure/)では、DNAの[変異](/glossary/mutation/)、mRNA量、タンパク質量、細胞の[表現型](/glossary/phenotype/)が並べて示されることがあります。
+
+実験結果を読むときは、「どの段階を測っているのか」を確認します。RNA量を測った結果から、タンパク質量や機能まで直接断定しないことが大切です。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
 
 - 転写と翻訳: 転写はDNAからRNAを作る過程で、翻訳はmRNAからタンパク質を作る過程です。
 - 遺伝子発現とタンパク質産生: 遺伝子発現はRNAやタンパク質として情報が使われる広い概念で、タンパク質産生だけを指すとは限りません。
 - セントラルドグマと「一本道」: 基本の流れはありますが、RNA加工、発現制御、非コードRNA、逆転写などの例外や調節もあります。
 
-## 論文や実験ではどう出てくるか
-
-セントラルドグマそのものは実験手法名として出るより、結果の解釈の枠組みとして登場します。たとえばRNA-seqでmRNA量を調べ、ウェスタンブロットでタンパク質量を調べると、転写レベルの変化とタンパク質レベルの変化を分けて考えられます。
-
-## 英語表記と略語
-
-| 日本語名         | 英語名         | 略語  |
-| ---------------- | -------------- | ----- |
-| セントラルドグマ | central dogma  | -     |
-| 転写             | transcription  | -     |
-| 翻訳             | translation    | -     |
-| 非コードRNA      | non-coding RNA | ncRNA |
-
-## よくある誤解
+### 解釈の落とし穴
 
 - すべての情報が必ずタンパク質になるわけではありません。
 - セントラルドグマは調節機構を否定するものではありません。
+- mRNA量が変わったことだけで、タンパク質量や細胞機能が同じように変わったと断定しません。
 
 ## 重要用語
 
-- セントラルドグマ: DNA、RNA、タンパク質の間の情報の流れを示す考え方。
-- 転写: [転写](/glossary/transcription/)はDNAの情報をRNAへ写し取る過程。
-- 翻訳: [翻訳](/glossary/translation/)はmRNAの情報をもとにタンパク質を作る過程。
-- 非コードRNA: タンパク質には翻訳されないが、細胞内で機能を持つ[RNA](/glossary/rna/)。
+<GlossaryTable
+  terms={[
+    {
+      term: 'セントラルドグマ',
+      english: 'central dogma',
+      description: 'DNA、RNA、タンパク質の間で情報が使われる基本的な流れ。',
+      href: '/glossary/central-dogma/',
+    },
+    {
+      term: '転写',
+      english: 'transcription',
+      description: 'DNAの情報をもとにRNAを合成する過程。',
+      href: '/glossary/transcription/',
+    },
+    {
+      term: '翻訳',
+      english: 'translation',
+      description: 'mRNAの情報をもとにアミノ酸をつなぎ、タンパク質を作る過程。',
+      href: '/glossary/translation/',
+    },
+    {
+      term: '遺伝子発現',
+      english: 'gene expression',
+      description: '遺伝子の情報がRNAやタンパク質として使われること。',
+      href: '/glossary/gene-expression/',
+    },
+    {
+      term: '非コードRNA',
+      english: 'non-coding RNA',
+      abbreviation: 'ncRNA',
+      description: 'タンパク質をコードすることを主な役割としないRNAの総称。',
+      href: '/glossary/noncoding-rna/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[
@@ -124,7 +158,10 @@ DNAの情報をRNAへ写す過程を転写、RNAの情報をもとにタンパ�
       title: '転写とは何か',
       href: '/molecular-biology/transcription/',
     },
-    { title: '用語: セントラルドグマ', href: '/glossary/central-dogma/' },
-    { title: '用語集', href: '/glossary/' },
+    { title: '翻訳とは何か', href: '/molecular-biology/translation/' },
+    {
+      title: '遺伝子発現制御とは何か',
+      href: '/molecular-biology/gene-expression-regulation/',
+    },
   ]}
 />

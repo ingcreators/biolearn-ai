@@ -21,6 +21,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -30,7 +31,9 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-クロマチンは、真核細胞の核内でDNAがヒストンなどのタンパク質と組み合わさってできる構造です。
+クロマチンは、[真核細胞](/glossary/eukaryotic-cell/)の[核](/glossary/nucleus/)内で[DNA](/glossary/dna/)が[ヒストン](/glossary/histone/)などの[タンパク質](/glossary/protein/)と組み合わさってできる構造です。
+
+長いDNAを収納するだけでなく、DNAがどれくらい読み出されやすいかにも関わります。特に、DNAがヒストンに巻きついた[ヌクレオソーム](/glossary/nucleosome/)は、クロマチンを考えるときの基本単位です。
 
 <LessonFigure
   src="/figures/chromatin-concept.jpg"
@@ -39,46 +42,45 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   caption="DNAは裸のひもとして存在するのではなく、タンパク質と組み合わさって折りたたまれています。"
 />
 
-ヒトなどの真核生物では、DNAは非常に長い分子です。そのままでは核の中に収まりにくいため、ヒストンというタンパク質に巻きつき、さらに折りたたまれてクロマチンとして整理されます。
+## なぜクロマチンの視点が重要か
 
-クロマチンは単なる収納材ではありません。DNAがきつくまとまっている領域では、転写因子やRNAポリメラーゼが近づきにくく、遺伝子が読み出されにくい場合があります。逆に、比較的開いたクロマチンでは、調節因子がDNAにアクセスしやすくなることがあります。
+クロマチンの視点が重要なのは、同じDNA配列を持つ細胞でも、どの[遺伝子](/glossary/gene/)が使われやすいかが変わる理由を考えやすくなるからです。[遺伝子発現制御](/glossary/gene-expression-regulation/)はDNA配列だけで決まるのではなく、DNAがどのような状態で核内に置かれているかにも影響されます。
 
-細胞分裂の時期には、クロマチンはさらに凝縮して顕微鏡で見える染色体になります。普段の核内では、染色体はいつもX字型で見えているわけではなく、よりほどけたクロマチンとして存在しています。
+また、ATAC-seq、ChIP-seq、Hi-C、[DNAメチル化](/glossary/dna-methylation/)の解析など、多くの[ゲノム](/glossary/genome/)解析はクロマチン状態を背景に解釈します。クロマチンを理解すると、配列だけではなく「アクセスしやすさ」や「核内での配置」を読む入口ができます。
 
-## なぜ重要か
+## どんなクロマチンがあるか
 
-[クロマチン](/glossary/chromatin/)を理解すると、同じDNA配列を持つ細胞でも、どの遺伝子が使われやすいかが変わる理由を考えやすくなります。遺伝子発現制御はDNA配列だけで決まるのではなく、DNAがどのような状態で核内に置かれているかにも影響されます。
+DNAが比較的開いたクロマチンでは、[転写因子](/glossary/transcription-factor/)やRNAポリメラーゼがDNAにアクセスしやすくなることがあります。逆に、きつくまとまったクロマチンでは、遺伝子が読み出されにくい場合があります。
 
-また、ChIP-seq、ATAC-seq、Hi-C、DNAメチル化解析など、多くのゲノム解析はクロマチン状態を背景に解釈します。
+細胞分裂の時期には、クロマチンはさらに凝縮して顕微鏡で見える[染色体](/glossary/chromosome/)になります。普段の核内では、染色体はいつもX字型で見えているわけではなく、よりほどけたクロマチンとして存在しています。
 
-## 具体例
+## クロマチンはどう調べるか
+
+クロマチンは、ATAC-seq、DNase-seq、ChIP-seq、Hi-C、CUT&Tag、CUT&RUNなどで扱われます。これらの方法は、DNAの開きやすさ、タンパク質の結合、ヒストン修飾、核内での近さなどをそれぞれ異なる角度から調べます。
 
 ある細胞で免疫応答に関わる遺伝子が使われるとき、その遺伝子の近くのクロマチンが開き、転写因子が結合しやすくなることがあります。別の細胞では同じ領域が閉じた状態で、同じ遺伝子があまり発現しない場合があります。
 
-発生や分化の過程では、細胞の種類に応じてクロマチンの開きやすい領域が変わり、細胞らしい遺伝子発現パターンが作られます。
+## クロマチンの変化は何につながるか
 
-## よく混同される概念
+発生や分化の過程では、細胞の種類に応じてクロマチンの開きやすい領域が変わり、細胞らしい遺伝子発現パターンが作られます。[エピジェネティクス](/glossary/epigenetics/)では、DNA配列を変えずに遺伝子の使われ方に関わる仕組みとしてクロマチン状態を扱います。
+
+ただし、クロマチンが開いていることは発現しやすさの手がかりであって、必ずその遺伝子が高発現しているという意味ではありません。転写因子、[プロモーター](/glossary/promoter/)、[エンハンサー](/glossary/enhancer/)、[細胞](/glossary/cell/)の条件などを合わせて解釈します。
+
+## 論文や実験ではどう出てくるか
+
+論文では「chromatin state」「open chromatin」「chromatin remodeling」「chromatin accessibility」のような表現で登場します。[クロマチンアクセシビリティ](/glossary/chromatin-accessibility/)や[ヒストン修飾](/glossary/histone-modification/)は、遺伝子発現制御の文脈でよく一緒に読まれます。
+
+[Figure](/glossary/figure/)では、ゲノムブラウザ上のピーク、ヒートマップ、クロマチン状態の注釈、[遺伝子発現](/glossary/gene-expression/)との対応として示されることがあります。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
 
 - クロマチンと染色体: クロマチンはDNAとタンパク質が組み合わさった基本状態で、細胞分裂時には強く凝縮して染色体として見えます。
 - クロマチンとヌクレオソーム: ヌクレオソームはDNAがヒストンに巻きついた基本単位で、クロマチンを構成する要素です。
 - 開いたクロマチンと発現: クロマチンが開いていることは発現しやすさの手がかりですが、必ずその遺伝子が高発現しているとは限りません。
 
-## 論文や実験ではどう出てくるか
-
-クロマチンは、ATAC-seq、DNase-seq、ChIP-seq、Hi-C、CUT&Tag、CUT&RUNなどで扱われます。論文では「chromatin state」「open chromatin」「chromatin remodeling」「chromatin accessibility」のような表現で登場します。
-
-Figureでは、ゲノムブラウザ上のピーク、ヒートマップ、クロマチン状態の注釈、遺伝子発現との対応として示されることがあります。
-
-## 英語表記と略語
-
-| 日本語名               | 英語名               | 略語 |
-| ---------------------- | -------------------- | ---- |
-| クロマチン             | chromatin            | -    |
-| 開いたクロマチン       | open chromatin       | -    |
-| クロマチン状態         | chromatin state      | -    |
-| クロマチンリモデリング | chromatin remodeling | -    |
-
-## よくある誤解
+### 解釈の落とし穴
 
 - クロマチンはDNAをしまうだけの構造ではなく、遺伝子発現制御にも関わります。
 - クロマチンが開いている領域が、必ず遺伝子本体とは限りません。エンハンサーなどの調節領域も含まれます。
@@ -86,10 +88,42 @@ Figureでは、ゲノムブラウザ上のピーク、ヒートマップ、ク�
 
 ## 重要用語
 
-- クロマチン: DNAとヒストンなどのタンパク質が組み合わさった核内構造。
-- ヒストン: DNAが巻きつく主要なタンパク質。
-- ヌクレオソーム: DNAがヒストンに巻きついたクロマチンの基本単位。
-- クロマチン状態: DNAがどれくらい開いているか、どのような修飾を受けているかなどを含む状態。
+<GlossaryTable
+  terms={[
+    {
+      term: 'クロマチン',
+      english: 'chromatin',
+      description: 'DNAとヒストンなどのタンパク質が組み合わさった核内構造。',
+      href: '/glossary/chromatin/',
+    },
+    {
+      term: 'ヒストン',
+      english: 'histone',
+      description: 'DNAが巻きつく主要なタンパク質。',
+      href: '/glossary/histone/',
+    },
+    {
+      term: 'ヌクレオソーム',
+      english: 'nucleosome',
+      description: 'DNAがヒストンタンパク質に巻きついたクロマチンの基本単位。',
+      href: '/glossary/nucleosome/',
+    },
+    {
+      term: '染色体',
+      english: 'chromosome',
+      description:
+        'DNAとタンパク質からなる、遺伝情報の収納と受け渡しに関わる構造。',
+      href: '/glossary/chromosome/',
+    },
+    {
+      term: 'クロマチンアクセシビリティ',
+      english: 'chromatin accessibility',
+      description:
+        'クロマチン中のDNAが転写因子や酵素からどれくらいアクセスしやすいかを表す考え方。',
+      href: '/glossary/chromatin-accessibility/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[

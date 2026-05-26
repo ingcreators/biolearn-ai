@@ -20,6 +20,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -29,7 +30,9 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-ヌクレオソームは、DNAがヒストンタンパク質のまとまりに巻きついた、クロマチンの基本単位です。
+ヌクレオソームは、[DNA](/glossary/dna/)が[ヒストン](/glossary/histone/)タンパク質のまとまりに巻きついた、[クロマチン](/glossary/chromatin/)の基本単位です。
+
+この単位が繰り返し並ぶことで、長いDNAは[核](/glossary/nucleus/)内に整理されます。ヌクレオソームの位置やヒストンの状態は、DNAがどれくらい読み出されやすいかにも関わります。
 
 <LessonFigure
   src="/figures/nucleosome-concept.jpg"
@@ -38,42 +41,43 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   caption="長いDNAは、ヒストンに巻きつく単位を繰り返しながら核内に整理されます。"
 />
 
-ヌクレオソームでは、DNAがヒストンの複合体に巻きついています。この構造が何度も並ぶことで、長いDNAはよりコンパクトなクロマチンとして核内に収まります。
+## なぜヌクレオソームの視点が重要か
 
-ヌクレオソームの位置は、DNA配列がタンパク質から見えやすいかどうかに関係します。転写因子が結合したい配列がヌクレオソームに覆われている場合、その配列にはアクセスしにくいことがあります。
+ヌクレオソームの視点が重要なのは、クロマチンがどのようにDNAを収納しながら、[遺伝子発現制御](/glossary/gene-expression-regulation/)にも関わるのかを考えやすくなるからです。[転写因子](/glossary/transcription-factor/)が結合したい配列がヌクレオソームに覆われている場合、その配列にはアクセスしにくいことがあります。
 
-一方で、ヌクレオソームは固定された飾りではありません。細胞内では、ヌクレオソームの位置が変わったり、ヒストンが修飾されたりして、クロマチン状態が変化します。
+一方で、ヌクレオソームは固定された飾りではありません。[細胞](/glossary/cell/)内では、ヌクレオソームの位置が変わったり、ヒストンが修飾されたりして、クロマチン状態が変化します。
 
-## なぜ重要か
+## どんなヌクレオソームがあるか
 
-[ヌクレオソーム](/glossary/nucleosome/)を理解すると、クロマチンがどのようにDNAを収納しながら、遺伝子発現制御にも関わるのかが見えやすくなります。遺伝子のプロモーターやエンハンサーでは、ヌクレオソームの配置が転写因子の結合しやすさに影響する場合があります。
+ヌクレオソームは、ヒストンのまとまりにDNAが巻きついた構造として説明されます。[ゲノム](/glossary/genome/)上でヌクレオソームがどこに位置するかを、ヌクレオソーム配置として扱います。
 
-## 具体例
+ヌクレオソームが少ない領域は、nucleosome-depleted region、略してNDRと呼ばれることがあります。NDRは[プロモーター](/glossary/promoter/)や[エンハンサー](/glossary/enhancer/)などで、調節因子がアクセスしやすい場所として出てくることがあります。
 
-あるプロモーターの転写開始点付近でヌクレオソームが少ないと、RNAポリメラーゼや転写因子が近づきやすい状態になることがあります。逆に、調節配列がヌクレオソームに覆われていると、転写因子が結合しにくい場合があります。
-
-また、ヒストン修飾が変わることで、ヌクレオソーム周辺に集まるタンパク質が変わり、クロマチン状態が変化することがあります。
-
-## よく混同される概念
-
-- ヌクレオソームとヌクレオチド: ヌクレオチドはDNAやRNAの部品で、ヌクレオソームはDNAがヒストンに巻きついた構造です。
-- ヌクレオソームとクロマチン: ヌクレオソームが繰り返し並び、さらに折りたたまれた全体がクロマチンです。
-- ヒストンとヌクレオソーム: ヒストンはタンパク質、ヌクレオソームはDNAとヒストンが組み合わさった構造です。
-
-## 論文や実験ではどう出てくるか
+## ヌクレオソームはどう調べるか
 
 ヌクレオソームは、MNase-seq、ATAC-seq、ChIP-seq、クロマチン構造解析で登場します。論文では「nucleosome positioning」「nucleosome-depleted region」「histone octamer」のような表現が使われます。
 
-## 英語表記と略語
+あるプロモーターの転写開始点付近でヌクレオソームが少ないと、RNAポリメラーゼや転写因子が近づきやすい状態になることがあります。逆に、調節配列がヌクレオソームに覆われていると、転写因子が結合しにくい場合があります。
 
-| 日本語名               | 英語名                     | 略語 |
-| ---------------------- | -------------------------- | ---- |
-| ヌクレオソーム         | nucleosome                 | -    |
-| ヌクレオソーム配置     | nucleosome positioning     | -    |
-| ヌクレオソーム欠乏領域 | nucleosome-depleted region | NDR  |
-| ヒストン               | histone                    | -    |
+## ヌクレオソームの変化は何につながるか
 
-## よくある誤解
+ヌクレオソームの配置が変わると、DNA配列が[タンパク質](/glossary/protein/)から見えやすいかどうかが変わる場合があります。また、[ヒストン修飾](/glossary/histone-modification/)が変わることで、ヌクレオソーム周辺に集まるタンパク質が変わり、クロマチン状態が変化することがあります。
+
+ただし、ヌクレオソームが少ない領域が必ず高発現遺伝子だけにあるとは限りません。細胞の種類、調節領域、転写因子の結合、実験条件を合わせて読みます。
+
+## 論文や実験ではどう出てくるか
+
+論文では、ヌクレオソーム配置、NDR、ヒストンオクタマー、ヒストン修飾といった表現で出てきます。[Figure](/glossary/figure/)では、ゲノムブラウザ上のシグナル、ピーク、模式図、ヒートマップとして示されることがあります。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- ヌクレオソームと[ヌクレオチド](/glossary/nucleotide/): ヌクレオチドはDNAやRNAの部品で、ヌクレオソームはDNAがヒストンに巻きついた構造です。
+- ヌクレオソームとクロマチン: ヌクレオソームが繰り返し並び、さらに折りたたまれた全体がクロマチンです。
+- ヒストンとヌクレオソーム: ヒストンはタンパク質、ヌクレオソームはDNAとヒストンが組み合わさった構造です。
+
+### 解釈の落とし穴
 
 - ヌクレオソームはDNAの塩基配列そのものではありません。
 - ヌクレオソームはDNAをただ隠すだけではなく、動的に配置や修飾が変わります。
@@ -81,10 +85,41 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 ## 重要用語
 
-- ヌクレオソーム: DNAがヒストンに巻きついたクロマチンの基本単位。
-- ヒストン: DNAが巻きつく主要なタンパク質。
-- ヌクレオソーム配置: ゲノム上でヌクレオソームがどこに位置するか。
-- NDR: ヌクレオソームが少なく、調節因子がアクセスしやすいことがある領域。
+<GlossaryTable
+  terms={[
+    {
+      term: 'ヌクレオソーム',
+      english: 'nucleosome',
+      description: 'DNAがヒストンタンパク質に巻きついたクロマチンの基本単位。',
+      href: '/glossary/nucleosome/',
+    },
+    {
+      term: 'クロマチン',
+      english: 'chromatin',
+      description: 'DNAとヒストンなどのタンパク質が組み合わさった核内構造。',
+      href: '/glossary/chromatin/',
+    },
+    {
+      term: 'ヒストン',
+      english: 'histone',
+      description: 'DNAが巻きつく主要なタンパク質。',
+      href: '/glossary/histone/',
+    },
+    {
+      term: 'ヒストン修飾',
+      english: 'histone modification',
+      description: 'DNAが巻きつくヒストンタンパク質に付く化学修飾。',
+      href: '/glossary/histone-modification/',
+    },
+    {
+      term: 'クロマチンアクセシビリティ',
+      english: 'chromatin accessibility',
+      description:
+        'クロマチン中のDNAが転写因子や酵素からどれくらいアクセスしやすいかを表す考え方。',
+      href: '/glossary/chromatin-accessibility/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[
