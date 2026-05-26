@@ -1,0 +1,152 @@
+---
+title: 希少疾患ゲノミクスとは何か
+description: 希少疾患研究でゲノム情報を用いて原因候補や機構を調べる考え方を説明します。
+part: genomics
+module: applied-genomics
+level: foundation
+priority: P2
+order: 18
+learningPaths:
+  - foundations
+relatedTerms:
+  - rare-disease-genomics
+  - variant
+  - variant-annotation
+prerequisites:
+  - /genomics/variant-annotation/
+  - /genomics/somatic-germline-variant/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    '希少疾患ゲノミクスが希少疾患研究でゲノム情報を用いる分野であることを説明できる',
+    '候補バリアントの絞り込みで見る情報を理解する',
+    'ゲノム情報だけで結論を急がない注意点を説明できる',
+  ]}
+/>
+
+希少疾患ゲノミクスは、希少疾患研究でゲノム情報を用いて、原因候補や生物学的な機構を調べる分野です。
+
+エクソーム解析や全ゲノムシーケンシングから、まれなバリアント、遺伝形式、家系内の共有、表現型との一致などを組み合わせて候補を絞ります。ここでは個別の診断や治療判断ではなく、研究データを読むための基礎概念として扱います。
+
+<LessonFigure
+  src="/figures/rare-disease-genomics-concept.jpg"
+  alt="少数のサンプルから得たゲノム情報、表現型情報、家系内の共有情報を重ねて候補バリアントを絞り込む様子を示す教材イラスト"
+  title="希少疾患ゲノミクスは複数の証拠を重ねて候補を絞る"
+  caption="まれなバリアント、家系内の共有、表現型との対応、既存知識を組み合わせて慎重に読みます。"
+/>
+
+## なぜ希少疾患ゲノミクスの視点が重要か
+
+希少疾患の研究では、サンプル数が限られることが多く、統計的な関連だけで候補を見つけにくい場合があります。そこで、ゲノム情報と表現型、家系情報、機能的な知識を重ねて候補を考えます。
+
+一方で、まれなバリアントが見つかっただけで原因と断定することはできません。候補を絞ることと、証拠を積み上げて解釈することを分けて読む必要があります。
+
+## どんな希少疾患ゲノミクスがあるか
+
+家系内で共有されるバリアントを探す解析、親子の比較から新しく生じた候補を探す解析、複数の症例で同じ遺伝子や経路に候補が集まるかを見る解析などがあります。
+
+対象となる変化には、SNV、indel、コピー数変異、構造多型などがあります。コード領域だけでなく、スプライシングや調節領域が検討されることもあります。
+
+## 希少疾患ゲノミクスはどう調べるか
+
+解析では、[シーケンシング](/glossary/sequencing/)で得たデータからバリアントを検出し、[variant annotation](/glossary/variant-annotation/)で遺伝子、頻度、予測影響、既存データベース情報を付けます。その後、まれさ、遺伝形式、表現型との一致、既存研究、機能的な証拠を確認します。
+
+家系データがある場合は、どのサンプルに候補が共有されるかを見ます。単一サンプルの場合は、候補が多く残りやすく、追加情報の重要性が高くなります。
+
+## 候補バリアントの変化は何につながるか
+
+候補バリアントが遺伝子機能や発現、タンパク質の構造、スプライシングなどに関わる可能性があります。ただし、予測される影響と実際の生物学的な影響は同じではありません。
+
+希少疾患ゲノミクスでは、候補を見つけた後に、既存知識、モデル生物、細胞実験、追加症例などで証拠を重ねることがあります。論文では、候補の強さを段階的に読む姿勢が大切です。
+
+## 論文や実験ではどう出てくるか
+
+論文では、Methodsにシーケンシング、バリアントコール、annotation、フィルタ条件、家系解析が書かれます。[Results](/glossary/results/)では、候補バリアントの表、家系図、遺伝子やタンパク質上の位置、機能実験の結果として示されます。
+
+[Figure](/glossary/figure/)では、家系図、候補バリアントの絞り込みフロー、ゲノムブラウザ図、タンパク質模式図が使われることがあります。図を見るときは、どの証拠が直接データで、どれが予測や既存知識かを分けて読みます。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- 希少疾患ゲノミクスと臨床判断: BioLearnでは、研究データの読み方として扱い、個別の判断には踏み込みません。
+- まれなバリアントと原因: まれであることは候補の手がかりですが、原因の証明ではありません。
+- annotationと証明: annotationは情報を付ける解析であり、機能を直接示すものではありません。
+
+### 解釈の落とし穴
+
+- 候補が一つに絞られても、証拠の強さを確認する。
+- 予測スコアだけで機能影響を断定しない。
+- 表現型、家系情報、サンプル品質、比較対象を無視してゲノム情報だけで読むことを避ける。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: '希少疾患ゲノミクス',
+      english: 'rare disease genomics',
+      description:
+        '希少疾患研究でゲノム情報を用いて原因候補や機構を調べる分野。',
+      href: '/glossary/rare-disease-genomics/',
+    },
+    {
+      term: 'バリアント',
+      english: 'variant',
+      description: '参照配列や集団内の基準と比べて見つかる配列上の違い。',
+      href: '/glossary/variant/',
+    },
+    {
+      term: 'variant annotation',
+      english: 'variant annotation',
+      description:
+        '検出されたバリアントに位置、遺伝子、予測影響などの情報を付ける解析。',
+      href: '/glossary/variant-annotation/',
+    },
+    {
+      term: '生殖細胞系列変異',
+      english: 'germline variant',
+      description:
+        '生殖細胞系列に由来し、個体の多くの細胞に共有される配列上の違い。',
+      href: '/glossary/germline-variant/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question:
+        '希少疾患ゲノミクスでは、どのような情報を組み合わせて候補を考えますか。',
+      answer:
+        'ゲノム上のバリアント、まれさ、遺伝形式、家系内の共有、表現型との一致、既存研究や機能的証拠などを組み合わせます。',
+    },
+    {
+      question:
+        'まれなバリアントが見つかっても原因と断定できない理由を説明してください。',
+      answer:
+        'まれであることは手がかりですが、機能的な影響や表現型との関係を示す追加の証拠が必要だからです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    {
+      title: 'variant annotationとは何か',
+      href: '/genomics/variant-annotation/',
+    },
+    {
+      title: '体細胞変異と生殖細胞系列変異',
+      href: '/genomics/somatic-germline-variant/',
+    },
+    { title: 'indelとは何か', href: '/genomics/indel/' },
+  ]}
+/>

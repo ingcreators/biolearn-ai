@@ -1,0 +1,152 @@
+---
+title: GWASとは何か
+description: ゲノム全体の多型と形質の統計的な関連を調べるGWASの基本を説明します。
+part: genomics
+module: population-genomics
+level: foundation
+priority: P1
+order: 16
+learningPaths:
+  - foundations
+relatedTerms:
+  - gwas
+  - snp
+  - trait
+prerequisites:
+  - /genomics/snp-snv/
+  - /statistics/p-value/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    'GWASがゲノム全体の多型と形質の関連を調べる研究であることを説明できる',
+    '関連、効果量、p値、多重検定補正の関係を大まかに理解する',
+    'GWASの結果を原因や個人判断として読みすぎない注意点を説明できる',
+  ]}
+/>
+
+GWASは、ゲノム全体の多型と[形質](/glossary/trait/)の統計的な関連を調べる研究です。
+
+多くのサンプルについてSNPなどの多型を調べ、形質や測定値と一緒に解析します。見つかるのは「関連の手がかり」であり、その多型が直接の原因であることや個人の将来を決めることを意味しません。
+
+<LessonFigure
+  src="/figures/gwas-concept.jpg"
+  alt="多数のサンプルから得たゲノム上の多型と形質データを照合し、関連の強い領域が統計的な山として見える様子を示す教材イラスト"
+  title="GWASは多型と形質の関連をゲノム全体で探す"
+  caption="多数の多型を一度に調べるため、関連の強さだけでなく、多重検定や集団構造も確認します。"
+/>
+
+## なぜGWASの視点が重要か
+
+複雑な形質には、多数のゲノム領域が少しずつ関わる場合があります。GWASは、特定の候補遺伝子だけに絞らず、ゲノム全体から関連のある領域を探す方法として使われます。
+
+一方で、GWASは統計的な関連を調べる研究です。関連が見つかった位置の近くにある遺伝子が直接の原因とは限らず、機能的な解釈には追加の解析や実験が必要です。
+
+## どんなGWASがあるか
+
+GWASでは、量的な測定値、分類された形質、実験条件で得られた値などを対象にすることがあります。対象形質の定義や測定方法が変わると、結果の意味も変わります。
+
+解析対象には、SNPアレイで得た多型、シーケンシングから得た多型、推定で補完した多型などがあります。どの集団で、どの多型をどの品質で使ったかが重要です。
+
+## GWASはどう調べるか
+
+GWASでは、各多型について形質との関連を統計的に検定します。多くの多型を同時に検定するため、[p値](/glossary/p-value/)だけでなく、多重検定補正やFDR、ゲノムワイド有意水準を確認します。
+
+集団構造、年齢や性別のような共変量、サンプル数、品質管理も結果に影響します。論文では、主解析、再現解析、メタ解析などを組み合わせることがあります。
+
+## GWASの関連は何につながるか
+
+GWASの関連シグナルは、形質に関わる可能性のある領域を示す手がかりになります。近くの遺伝子、発現量との関連、機能アノテーション、細胞種ごとのデータなどと重ねて解釈します。
+
+ただし、関連シグナルは原因変異そのものとは限りません。連鎖不平衡により、近くの複数の多型が似た関連を示すことがあり、どの変化が機能に関わるかは別に調べます。
+
+## 論文や実験ではどう出てくるか
+
+GWASは、Methodsではサンプル、形質定義、遺伝型データ、品質管理、統計モデル、共変量として説明されます。[Results](/glossary/results/)では、関連した領域、効果量、p値、再現性が示されます。
+
+[Figure](/glossary/figure/)では、マンハッタンプロット、QQプロット、領域ズーム図、関連した座位の表として出てきます。図を読むときは、縦軸が何を表すか、しきい値、対象集団、サンプル数を確認します。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- GWASと候補遺伝子研究: GWASはゲノム全体を広く調べ、候補遺伝子研究はあらかじめ注目した領域を調べます。
+- 関連と原因: 統計的な関連は、直接の原因を証明するものではありません。
+- リードSNPと原因変異: 最も強く関連するSNPが、機能的に原因となる変化とは限りません。
+
+### 解釈の落とし穴
+
+- p値が小さいことだけで、生物学的な重要性が大きいと考えない。
+- 集団構造やサンプルの偏りを確認せずに結果を一般化しない。
+- GWASの結果を個人の健康判断や将来予測として単独で読まない。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'GWAS',
+      english: 'genome-wide association study',
+      abbreviation: 'GWAS',
+      description: 'ゲノム全体の多型と形質の統計的な関連を調べる研究。',
+      href: '/glossary/gwas/',
+    },
+    {
+      term: 'SNP',
+      english: 'single nucleotide polymorphism',
+      abbreviation: 'SNP',
+      description: '集団の中で見られる1塩基の配列多型。',
+      href: '/glossary/snp/',
+    },
+    {
+      term: '形質',
+      english: 'trait',
+      description: '生物や細胞の性質として観察される特徴。',
+      href: '/glossary/trait/',
+    },
+    {
+      term: 'p値',
+      english: 'p-value',
+      description: '帰無仮説のもとで、観察結果以上に極端な結果が得られる確率。',
+      href: '/glossary/p-value/',
+    },
+    {
+      term: '効果量',
+      english: 'effect size',
+      description: '差や関連の大きさを表す指標。',
+      href: '/glossary/effect-size/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: 'GWASは何を調べる研究ですか。',
+      answer: 'ゲノム全体の多型と形質の統計的な関連を調べる研究です。',
+    },
+    {
+      question:
+        'GWASで関連が見つかっても、すぐに原因と断定できない理由を説明してください。',
+      answer:
+        '関連は統計的な手がかりであり、連鎖不平衡や近くの別の変化、集団構造の影響を受けるため、機能的な証拠が別に必要だからです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    {
+      title: 'ポリジェニックリスクスコアとは何か',
+      href: '/genomics/polygenic-risk-score/',
+    },
+    { title: 'SNPとSNVの違い', href: '/genomics/snp-snv/' },
+    { title: 'p値とは何か', href: '/statistics/p-value/' },
+  ]}
+/>

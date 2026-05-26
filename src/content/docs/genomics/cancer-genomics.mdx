@@ -1,0 +1,158 @@
+---
+title: がんゲノミクスとは何か
+description: がん研究でゲノム変化やそのパターンを調べるがんゲノミクスの基本を説明します。
+part: genomics
+module: applied-genomics
+level: foundation
+priority: P1
+order: 19
+learningPaths:
+  - foundations
+relatedTerms:
+  - cancer-genomics
+  - somatic-variant
+  - copy-number-variation
+prerequisites:
+  - /genomics/somatic-germline-variant/
+  - /genomics/copy-number-variation/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    'がんゲノミクスががん研究でゲノム変化を調べる分野であることを説明できる',
+    '体細胞変異、コピー数変異、構造多型などの見方を区別できる',
+    'がんゲノム解析を診断や治療判断ではなく研究データとして読む注意点を理解する',
+  ]}
+/>
+
+がんゲノミクスは、がん研究でゲノム変化やそのパターンを調べる分野です。
+
+腫瘍由来サンプルに含まれる体細胞変異、コピー数変異、構造多型、変異シグネチャーなどを解析します。BioLearnでは、個別の診断や治療判断ではなく、論文や解析結果を読むための基礎概念として扱います。
+
+<LessonFigure
+  src="/figures/cancer-genomics-concept.jpg"
+  alt="腫瘍由来サンプルのゲノムデータから体細胞変異、コピー数変化、構造変化のパターンを整理して読む様子を示す教材イラスト"
+  title="がんゲノミクスは腫瘍サンプルのゲノム変化を読む"
+  caption="変異の種類、サンプルの純度、比較対象、解析法を確認しながら、研究データとして解釈します。"
+/>
+
+## なぜがんゲノミクスの視点が重要か
+
+がん研究では、細胞集団の中で蓄積したゲノム変化や、サンプルごとの違いを読む場面があります。ゲノムデータを使うと、変異の種類、コピー数の変化、構造の変化を同じサンプル内で整理できます。
+
+ただし、がんサンプルは複数の細胞集団を含むことがあり、腫瘍細胞以外の細胞も混ざります。結果を読むときは、サンプル純度、比較対象、解析法、データ品質を確認します。
+
+## どんながんゲノミクスがあるか
+
+体細胞変異の解析では、腫瘍側に見えるSNVやindelなどの候補を調べます。コピー数解析では、ゲノム領域の増幅や欠失を調べます。
+
+構造多型の解析では、領域のつながり方や向きの変化を調べます。RNA-seqやエピゲノムデータと組み合わせて、ゲノム変化と発現や細胞状態の関係を見る研究もあります。
+
+## がんゲノミクスはどう調べるか
+
+がんゲノミクスでは、全ゲノムシーケンシング、エクソーム解析、ターゲットシーケンシング、RNA-seq、単一細胞解析などが使われます。[Tumor-normal比較](/glossary/tumor-normal-comparison/)を行うと、体細胞変異候補を生殖細胞系列由来の変異と区別しやすくなります。
+
+解析では、バリアントコール、コピー数推定、構造多型検出、annotation、フィルタリングを組み合わせます。どの変化をどの解像度で見ているかは、実験設計によって変わります。
+
+## ゲノム変化は何につながるか
+
+がん研究では、ゲノム変化が細胞増殖、ゲノム不安定性、遺伝子発現、細胞集団の違いと関係するかを調べることがあります。ただし、変化が見つかっただけで機能や臨床的な意味が確定するわけではありません。
+
+ある変化がドライバー候補として扱われる場合でも、統計的な頻度、機能的な証拠、既存研究、サンプル文脈を合わせて考えます。
+
+## 論文や実験ではどう出てくるか
+
+がんゲノミクスは、Methodsではサンプルの種類、シーケンシング方法、Tumor-normal比較、バリアントコール、コピー数解析として説明されます。[Results](/glossary/results/)では、変異数、変異シグネチャー、コピー数プロファイル、候補遺伝子、サブクローン解析などが示されます。
+
+[Figure](/glossary/figure/)では、オンコプロット、CNV plot、ロリポッププロット、サーカスプロット、ゲノムブラウザ図として出てきます。図を見るときは、どのデータ層を示しているかを分けて読みます。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- がんゲノミクスとTumor-normal比較: がんゲノミクスは広い分野で、Tumor-normal比較はその中の解析設計の一つです。
+- 体細胞変異と生殖細胞系列変異: 腫瘍で見える候補がすべて体細胞由来とは限らず、比較対象が重要です。
+- ドライバー候補と証明済み機能: 候補として扱うことと、機能が確定していることは別です。
+
+### 解釈の落とし穴
+
+- がんゲノム解析の結果を、個別の診断や治療判断として読まない。
+- 腫瘍純度や細胞集団の混ざり方を無視してアリル頻度を読まない。
+- 変異の有無だけで、機能や原因を断定しない。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'がんゲノミクス',
+      english: 'cancer genomics',
+      description: 'がん研究でゲノム変化やそのパターンを調べる分野。',
+      href: '/glossary/cancer-genomics/',
+    },
+    {
+      term: '体細胞変異',
+      english: 'somatic variant',
+      description:
+        '受精後に一部の細胞系列で生じ、通常は次世代へ伝わらない配列上の違い。',
+      href: '/glossary/somatic-variant/',
+    },
+    {
+      term: 'コピー数変異',
+      english: 'copy number variation',
+      abbreviation: 'CNV',
+      description: 'ゲノム領域のコピー数が増えたり減ったりする変異。',
+      href: '/glossary/copy-number-variation/',
+    },
+    {
+      term: '構造多型',
+      english: 'structural variant',
+      abbreviation: 'SV',
+      description: '比較的大きなゲノム領域の欠失、重複、逆位、転座などの違い。',
+      href: '/glossary/structural-variant/',
+    },
+    {
+      term: 'Tumor-normal比較',
+      english: 'tumor-normal comparison',
+      description:
+        '腫瘍由来サンプルと対照サンプルを比べて体細胞変異候補を調べる解析。',
+      href: '/glossary/tumor-normal-comparison/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: 'がんゲノミクスではどのようなゲノム変化を調べますか。',
+      answer:
+        '体細胞変異、コピー数変異、構造多型、変異シグネチャーなどを調べます。',
+    },
+    {
+      question:
+        'がんゲノム解析を読むときにサンプル純度を確認する理由を説明してください。',
+      answer:
+        '腫瘍由来サンプルには腫瘍細胞以外の細胞も混ざることがあり、変異のアリル頻度やコピー数の見え方に影響するからです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    {
+      title: 'Tumor-normal比較とは何か',
+      href: '/genomics/tumor-normal-comparison/',
+    },
+    {
+      title: '体細胞変異と生殖細胞系列変異',
+      href: '/genomics/somatic-germline-variant/',
+    },
+    { title: 'コピー数変異とは何か', href: '/genomics/copy-number-variation/' },
+  ]}
+/>

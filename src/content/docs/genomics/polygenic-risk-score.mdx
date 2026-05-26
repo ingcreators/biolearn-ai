@@ -1,0 +1,143 @@
+---
+title: ポリジェニックリスクスコアとは何か
+description: 多数のバリアントの効果推定を足し合わせるポリジェニックリスクスコアの基本と限界を説明します。
+part: genomics
+module: population-genomics
+level: foundation
+priority: P2
+order: 17
+learningPaths:
+  - foundations
+relatedTerms:
+  - polygenic-risk-score
+  - gwas
+  - effect-size
+prerequisites:
+  - /genomics/gwas/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    'ポリジェニックリスクスコアが多数のバリアント情報を足し合わせた統計的なスコアであることを説明できる',
+    'GWASの効果量、アリル、対象集団がPRSに関わることを理解する',
+    'PRSを個人の確定的な予測として読まない注意点を説明できる',
+  ]}
+/>
+
+ポリジェニックリスクスコアは、多数のバリアントの効果推定を足し合わせた統計的なスコアです。
+
+[GWAS](/glossary/gwas/)などから得た効果量を重みとして使い、サンプルが持つアリルの組み合わせから計算します。研究では集団内の相対的な傾向や層別化を調べる手がかりになりますが、個人の将来を単独で決めるものではありません。
+
+<LessonFigure
+  src="/figures/polygenic-risk-score-concept.jpg"
+  alt="ゲノム上の多数の小さなバリアント情報が重み付きで集められ、一つの統計的なスコアとしてまとめられる様子を示す教材イラスト"
+  title="PRSは多数の小さな関連を足し合わせる"
+  caption="スコアは効果量、対象集団、形質定義、評価方法に依存するため、単独で確定的に解釈しません。"
+/>
+
+## なぜポリジェニックリスクスコアの視点が重要か
+
+多くの複雑な形質では、一つのバリアントだけで説明できる部分は限られます。PRSは、多数の小さな関連をまとめて、集団内での相対的な傾向を調べるために使われます。
+
+ただし、PRSはモデルとデータに依存するスコアです。学習に使った集団、測定された形質、含めたバリアント、評価した集団が変わると、性能や解釈も変わります。
+
+## どんなポリジェニックリスクスコアがあるか
+
+PRSには、疾患研究で使われるもの、連続的な形質で使われるもの、研究上の層別化に使われるものがあります。BioLearnでは、医療上の判断ではなく、論文で出てくる統計的なスコアとして扱います。
+
+スコアの作り方には、GWASで有意な多型だけを使う方法、多くの多型を重みづけして使う方法、連鎖不平衡を考慮する方法などがあります。どの方法を使ったかで結果が変わります。
+
+## ポリジェニックリスクスコアはどう調べるか
+
+PRSは、各バリアントについて、サンプルが持つリスクアリル数とGWASなどから得た[効果量](/glossary/effect-size/)を掛け合わせ、それらを足し合わせて計算します。実際には、品質管理、バリアントの照合、スケール変換、評価用データでの検証が必要です。
+
+性能評価では、説明分散、AUC、オッズ比、分位ごとの比較などが使われることがあります。どの指標も、対象集団や形質定義の影響を受けます。
+
+## ポリジェニックリスクスコアの変化は何につながるか
+
+スコアが高い群と低い群で、研究上の形質の平均や発生率が違って見えることがあります。ただし、群の傾向と個人の結果は別であり、スコアだけで個別の状態や将来を判断することはできません。
+
+PRSは、環境要因、測定誤差、集団差、未知の要因をすべて説明するものではありません。論文では、どの範囲で使えるモデルなのかを確認します。
+
+## 論文や実験ではどう出てくるか
+
+PRSは、Methodsでスコアの構築方法、GWAS summary statistics、バリアント選択、重みづけ、評価集団として説明されます。[Results](/glossary/results/)では、スコア分布、分位ごとの比較、予測性能、集団間の性能差として示されます。
+
+[Figure](/glossary/figure/)では、ヒストグラム、箱ひげ図、ROC曲線、分位別の棒グラフなどで出てきます。図を読むときは、評価指標、対象集団、比較している基準モデルを確認します。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- PRSとGWAS: GWASは関連を推定する研究で、PRSはその効果推定を使って作られることがあるスコアです。
+- リスクと確定予測: PRSは統計的な傾向を表すスコアで、個人の結果を確定するものではありません。
+- モデル性能と生物学的機構: よく予測することと、機構を説明することは同じではありません。
+
+### 解釈の落とし穴
+
+- 学習集団と評価集団の違いを見ずに一般化しない。
+- スコアの高さを、個人への診断や治療判断として読まない。
+- 環境要因や測定条件を無視して、遺伝要因だけで形質を説明しない。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'ポリジェニックリスクスコア',
+      english: 'polygenic risk score',
+      abbreviation: 'PRS',
+      description: '多数のバリアントの効果推定を足し合わせた統計的なスコア。',
+      href: '/glossary/polygenic-risk-score/',
+    },
+    {
+      term: 'GWAS',
+      english: 'genome-wide association study',
+      abbreviation: 'GWAS',
+      description: 'ゲノム全体の多型と形質の統計的な関連を調べる研究。',
+      href: '/glossary/gwas/',
+    },
+    {
+      term: '効果量',
+      english: 'effect size',
+      description: '差や関連の大きさを表す指標。',
+      href: '/glossary/effect-size/',
+    },
+    {
+      term: 'SNP',
+      english: 'single nucleotide polymorphism',
+      abbreviation: 'SNP',
+      description: '集団の中で見られる1塩基の配列多型。',
+      href: '/glossary/snp/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: 'ポリジェニックリスクスコアはどのようなスコアですか。',
+      answer:
+        '多数のバリアントの効果推定を、サンプルが持つアリル情報に基づいて足し合わせた統計的なスコアです。',
+    },
+    {
+      question: 'PRSを個人の確定的な予測として読まない理由を説明してください。',
+      answer:
+        'PRSは集団データから作られた統計モデルであり、環境要因、集団差、測定条件などに依存するため、単独で個人の結果を決めるものではないからです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'GWASとは何か', href: '/genomics/gwas/' },
+    { title: '相関と因果とは何か', href: '/statistics/correlation-causation/' },
+    { title: '効果量とは何か', href: '/statistics/effect-size/' },
+  ]}
+/>

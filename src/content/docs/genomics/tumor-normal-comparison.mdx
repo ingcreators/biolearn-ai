@@ -1,0 +1,151 @@
+---
+title: Tumor-normal比較とは何か
+description: 腫瘍由来サンプルと対照サンプルを比べて体細胞変異候補を調べるTumor-normal比較を説明します。
+part: genomics
+module: applied-genomics
+level: foundation
+priority: P2
+order: 20
+learningPaths:
+  - foundations
+relatedTerms:
+  - tumor-normal-comparison
+  - cancer-genomics
+  - somatic-variant
+prerequisites:
+  - /genomics/cancer-genomics/
+  - /genomics/somatic-germline-variant/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    'Tumor-normal比較が腫瘍由来サンプルと対照サンプルを比べる解析であることを説明できる',
+    '体細胞変異候補と生殖細胞系列変異を区別する考え方を理解する',
+    '対照サンプル、純度、カバレッジの違いが解釈に関わることを説明できる',
+  ]}
+/>
+
+Tumor-normal比較は、腫瘍由来サンプルと対照サンプルを比べて、体細胞変異候補を調べる解析です。
+
+腫瘍側に見え、対照側には見えにくいバリアント候補を探すことで、生殖細胞系列に由来する変異と区別しやすくします。対照サンプルは「完全に正常」という意味ではなく、比較の基準として扱います。
+
+<LessonFigure
+  src="/figures/tumor-normal-comparison-concept.jpg"
+  alt="腫瘍由来サンプルと対照サンプルのゲノムデータを並べ、腫瘍側にだけ見える候補バリアントを比較で絞り込む様子を示す教材イラスト"
+  title="Tumor-normal比較は腫瘍側と対照側を見比べる"
+  caption="体細胞変異候補を読むには、腫瘍サンプル、対照サンプル、純度、カバレッジを合わせて確認します。"
+/>
+
+## なぜTumor-normal比較の視点が重要か
+
+腫瘍サンプルには、体細胞変異候補だけでなく、もともと個体が持つ生殖細胞系列変異も含まれます。対照サンプルと比べることで、腫瘍側に特有に見える候補を整理しやすくなります。
+
+ただし、比較したからといって完全に分類できるわけではありません。サンプルの純度、対照サンプルの種類、カバレッジ、腫瘍内の多様性が結果に影響します。
+
+## どんなTumor-normal比較があるか
+
+代表的には、腫瘍組織由来のDNAと、血液や周辺組織などの対照サンプル由来のDNAを比べます。研究目的や入手できるサンプルによって、比較対象は変わります。
+
+比較の対象はSNVやindelだけでなく、コピー数変異や構造多型にも広がります。解析法によって、何を比較しているのかを確認します。
+
+## Tumor-normal比較はどう調べるか
+
+解析では、腫瘍と対照の両方を[シーケンシング](/glossary/sequencing/)し、それぞれをリファレンスゲノムに対応づけます。その後、腫瘍側で支持され、対照側では支持が少ない候補を体細胞変異候補として検出します。
+
+候補ごとに、腫瘍側と対照側のリード数、アリル頻度、品質、マッピングの難しさ、周辺のコピー数を確認します。対照側のデータ品質が低いと、分類が難しくなることがあります。
+
+## Tumor-normal比較の変化は何につながるか
+
+腫瘍側に特有に見える候補は、体細胞変異として研究上の解釈対象になります。どの遺伝子や領域にあるか、どの細胞集団に多そうか、コピー数変化と関係するかを調べることがあります。
+
+一方で、候補の検出は解析条件に依存します。低頻度の変異、腫瘍純度の低いサンプル、反復配列の近くでは、見落としや誤検出に注意します。
+
+## 論文や実験ではどう出てくるか
+
+Tumor-normal比較は、がんゲノム研究のMethodsで、サンプルペア、シーケンシング深度、体細胞変異検出ツール、フィルタ条件として出てきます。[Results](/glossary/results/)では、体細胞変異数、変異スペクトル、候補遺伝子、アリル頻度分布として示されます。
+
+[Figure](/glossary/figure/)では、腫瘍と対照のリード支持を並べた図、変異リスト、オンコプロット、ゲノムブラウザ図として出てきます。図では、腫瘍側と対照側のどちらのデータかを確認します。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- Tumor-normal比較とがんゲノミクス: Tumor-normal比較は、がんゲノミクスで使われる解析設計の一つです。
+- 体細胞変異候補と確定した変異: 比較で候補が出ても、品質や追加証拠の確認が必要です。
+- normalサンプルと正常性: normalは比較対象を指し、サンプルの性質を完全に保証する言葉ではありません。
+
+### 解釈の落とし穴
+
+- 対照側に見えないことだけで、腫瘍特異的と断定しない。
+- 腫瘍純度や混入、カバレッジ差を無視してアリル頻度を読まない。
+- 解析結果を個別の診断や治療判断として読まない。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'Tumor-normal比較',
+      english: 'tumor-normal comparison',
+      description:
+        '腫瘍由来サンプルと対照サンプルを比べて体細胞変異候補を調べる解析。',
+      href: '/glossary/tumor-normal-comparison/',
+    },
+    {
+      term: 'がんゲノミクス',
+      english: 'cancer genomics',
+      description: 'がん研究でゲノム変化やそのパターンを調べる分野。',
+      href: '/glossary/cancer-genomics/',
+    },
+    {
+      term: '体細胞変異',
+      english: 'somatic variant',
+      description:
+        '受精後に一部の細胞系列で生じ、通常は次世代へ伝わらない配列上の違い。',
+      href: '/glossary/somatic-variant/',
+    },
+    {
+      term: '生殖細胞系列変異',
+      english: 'germline variant',
+      description:
+        '生殖細胞系列に由来し、個体の多くの細胞に共有される配列上の違い。',
+      href: '/glossary/germline-variant/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: 'Tumor-normal比較は何を比べる解析ですか。',
+      answer:
+        '腫瘍由来サンプルと対照サンプルを比べて、腫瘍側に特有に見える体細胞変異候補を調べる解析です。',
+    },
+    {
+      question:
+        'normalサンプルを「完全に正常」と読まない方がよい理由を説明してください。',
+      answer:
+        'normalは比較対象を指す言葉であり、サンプルの種類、純度、データ品質、混入などによって解析上の見え方が変わるからです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'がんゲノミクスとは何か', href: '/genomics/cancer-genomics/' },
+    {
+      title: '体細胞変異と生殖細胞系列変異',
+      href: '/genomics/somatic-germline-variant/',
+    },
+    {
+      title: 'variant annotationとは何か',
+      href: '/genomics/variant-annotation/',
+    },
+  ]}
+/>
