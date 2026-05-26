@@ -435,6 +435,43 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'cell-biology',
   },
   {
+    term: '膜輸送',
+    english: 'membrane transport',
+    description: '細胞膜や細胞内膜を越えて物質が移動する過程の総称。',
+    href: '/glossary/membrane-transport/',
+    category: 'cell-biology',
+  },
+  {
+    term: '小胞輸送',
+    english: 'vesicle trafficking',
+    description: '膜で包まれた小胞を使って物質や膜成分を運ぶ仕組み。',
+    href: '/glossary/vesicle-trafficking/',
+    category: 'cell-biology',
+  },
+  {
+    term: 'エンドサイトーシス',
+    english: 'endocytosis',
+    description:
+      '細胞膜が内側へ小胞を作り、細胞外の物質や膜成分を取り込む過程。',
+    href: '/glossary/endocytosis/',
+    category: 'cell-biology',
+  },
+  {
+    term: 'エキソサイトーシス',
+    english: 'exocytosis',
+    description: '小胞が細胞膜と融合し、中身や膜成分を外側へ出す過程。',
+    href: '/glossary/exocytosis/',
+    category: 'cell-biology',
+  },
+  {
+    term: 'タンパク質局在',
+    english: 'protein localization',
+    description:
+      'タンパク質が細胞内外のどこに存在し、働く可能性があるかを示す考え方。',
+    href: '/glossary/protein-localization/',
+    category: 'cell-biology',
+  },
+  {
     term: '染色体',
     english: 'chromosome',
     description:
