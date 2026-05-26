@@ -1,0 +1,153 @@
+---
+title: トランスクリプトミクスとは何か
+description: RNAの種類や量を網羅的に調べるトランスクリプトミクスの基本を説明します。
+part: genomics
+module: omics
+level: foundation
+priority: P1
+order: 26
+learningPaths:
+  - foundations
+relatedTerms:
+  - transcriptomics
+  - rna-seq
+  - gene-expression
+prerequisites:
+  - /fundamentals/gene-expression/
+  - /bioinformatics/rna-seq/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    'トランスクリプトミクスがRNAを網羅的に調べる分野であることを説明できる',
+    'RNA-seq、発現量、差次的発現解析の関係を大まかに理解する',
+    'RNA量をタンパク質量や機能そのものとして読まない注意点を説明できる',
+  ]}
+/>
+
+トランスクリプトミクスは、細胞や組織でどのRNAがどれくらい存在するかを網羅的に調べる分野です。
+
+代表的には[RNA-seq](/glossary/rna-seq/)を使い、[遺伝子発現](/glossary/gene-expression/)や転写産物の違いをサンプル間で比較します。得られるデータは細胞状態を読む手がかりになりますが、RNA量がそのままタンパク質量や機能を示すわけではありません。
+
+<LessonFigure
+  src="/figures/transcriptomics-concept.jpg"
+  alt="複数の細胞やサンプルからRNAを測定し、遺伝子ごとの発現量が行列やグラフとして整理される様子を示す教材イラスト"
+  title="トランスクリプトミクスはRNAの量を網羅的に読む"
+  caption="RNA量のパターンから細胞状態の手がかりを得ますが、機能の証明には別の情報も必要です。"
+/>
+
+## なぜトランスクリプトミクスの視点が重要か
+
+トランスクリプトミクスを見ると、細胞がどの遺伝子を使っているかを広く比較できます。刺激、分化、環境変化、細胞型の違いなどを、RNA量のパターンとして読む入口になります。
+
+また、発現量表、ヒートマップ、PCA、ボルケーノプロットの意味を理解しやすくなります。どの遺伝子が変わったかだけでなく、サンプル全体の構造やばらつきも合わせて読みます。
+
+## どんなトランスクリプトミクスがあるか
+
+バルクRNA-seqでは、サンプル全体の平均的なRNA量を見ます。single-cell RNA-seqでは、細胞ごとのRNA量を比較し、細胞型や細胞状態の違いを推定することがあります。
+
+解析対象は、遺伝子単位の発現量、転写産物アイソフォーム、スプライシング、非コードRNAなどに広がります。どの単位で集計しているかによって、結果の意味が変わります。
+
+## トランスクリプトミクスはどう調べるか
+
+多くの場合、RNAを取り出し、ライブラリ調製を行い、シーケンシングでリードを読みます。解析では、リードを参照配列に対応づけ、遺伝子や転写産物ごとのカウントを作ります。
+
+その後、正規化、品質確認、クラスタリング、[差次的発現解析](/glossary/differential-expression-analysis/)などを行います。多数の遺伝子を同時に調べるため、多重検定補正も重要になります。
+
+## トランスクリプトミクスの変化は何につながるか
+
+発現パターンの変化は、細胞の応答、分化状態、ストレス、細胞型の違いを考える手がかりになります。複数の遺伝子が同じ方向に変化する場合、パスウェイや生物学的過程の候補として読むことがあります。
+
+ただし、発現が変わった遺伝子が、その現象の直接原因とは限りません。RNA量、タンパク質量、タンパク質活性、細胞のふるまいは、同じではないためです。
+
+## 論文や実験ではどう出てくるか
+
+[Methods](/glossary/methods/)では、サンプル、RNA抽出、ライブラリ調製、シーケンス条件、マッピング、カウント、正規化、統計モデルが説明されます。[Results](/glossary/results/)では、発現変動遺伝子、クラスタ、細胞型マーカー、パスウェイ解析として出てきます。
+
+[Figure](/glossary/figure/)では、ヒートマップ、PCA、UMAP、ボルケーノプロット、発現量の箱ひげ図、遺伝子リストとして示されます。図を見るときは、行と列が遺伝子なのかサンプルなのか、値がカウントなのか正規化済み量なのかを確認します。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- トランスクリプトミクスとRNA-seq: トランスクリプトミクスは分野や解析の視点、RNA-seqは代表的な測定手法です。
+- 発現量とリード数: リード数は発現量推定の材料で、正規化や集計方法を通して比較します。
+- RNA量とタンパク質量: RNAが多いことは手がかりですが、タンパク質量や活性と必ず一致するわけではありません。
+
+### 解釈の落とし穴
+
+- 発現変動遺伝子を、すぐに原因遺伝子と読まない。
+- p値だけでなく、効果量、サンプル数、実験設計を確認する。
+- バルクデータでは、細胞型の割合の違いが発現差として見えることがあります。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'トランスクリプトミクス',
+      english: 'transcriptomics',
+      description:
+        '細胞や組織でどのRNAがどれくらい存在するかを網羅的に調べる分野。',
+      href: '/glossary/transcriptomics/',
+    },
+    {
+      term: 'RNA-seq',
+      english: 'RNA sequencing',
+      abbreviation: 'RNA-seq',
+      description: 'RNAを配列決定し、遺伝子発現などを調べる手法。',
+      href: '/glossary/rna-seq/',
+    },
+    {
+      term: '遺伝子発現',
+      english: 'gene expression',
+      description: '遺伝子の情報がRNAやタンパク質として使われる過程や状態。',
+      href: '/glossary/gene-expression/',
+    },
+    {
+      term: '差次的発現解析',
+      english: 'differential expression analysis',
+      description: '条件間で遺伝子発現に差があるかを統計的に調べる解析。',
+      href: '/glossary/differential-expression-analysis/',
+    },
+    {
+      term: '多重検定補正',
+      english: 'multiple testing correction',
+      description:
+        '多数の検定を行うとき、偶然の有意を増やしすぎないための補正。',
+      href: '/glossary/multiple-testing-correction/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: 'トランスクリプトミクスは主に何を網羅的に調べますか。',
+      answer: '細胞や組織に存在するRNAの種類や量を網羅的に調べます。',
+    },
+    {
+      question:
+        'RNA量を読むとき、タンパク質量と区別する必要がある理由は何ですか。',
+      answer:
+        'RNA量、翻訳、タンパク質分解、修飾や活性は別の層であり、RNA量がそのままタンパク質量や機能を示すとは限らないからです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'RNA-seqとは何か', href: '/bioinformatics/rna-seq/' },
+    {
+      title: '差次的発現解析とは何か',
+      href: '/bioinformatics/differential-expression/',
+    },
+    { title: 'プロテオミクスとは何か', href: '/genomics/proteomics/' },
+  ]}
+/>

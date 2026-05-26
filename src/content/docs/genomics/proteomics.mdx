@@ -1,0 +1,147 @@
+---
+title: プロテオミクスとは何か
+description: タンパク質の種類、量、修飾を網羅的に調べるプロテオミクスの基本を説明します。
+part: genomics
+module: omics
+level: foundation
+priority: P2
+order: 27
+learningPaths:
+  - foundations
+relatedTerms:
+  - proteomics
+  - protein
+  - phosphorylation
+prerequisites:
+  - /fundamentals/protein/
+  - /molecular-biology/translation/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    'プロテオミクスがタンパク質を網羅的に調べる分野であることを説明できる',
+    'タンパク質量、ペプチド、翻訳後修飾の関係を大まかに理解する',
+    'RNA量とタンパク質量を同じものとして読まない注意点を説明できる',
+  ]}
+/>
+
+プロテオミクスは、細胞や組織に含まれる[タンパク質](/glossary/protein/)の種類、量、修飾などを網羅的に調べる分野です。
+
+多くの場合、タンパク質をペプチドに分解し、質量分析などで測定します。RNA量では見えない、翻訳後の調節やタンパク質修飾を考える手がかりになります。
+
+<LessonFigure
+  src="/figures/proteomics-concept.jpg"
+  alt="細胞中の多数のタンパク質がペプチド断片として測定され、量や修飾の違いがデータ表やピークとして整理される様子を示す教材イラスト"
+  title="プロテオミクスはタンパク質の層を網羅的に読む"
+  caption="タンパク質量や修飾は、RNA量とは別の情報として細胞状態の解釈に使われます。"
+/>
+
+## なぜプロテオミクスの視点が重要か
+
+タンパク質は、細胞内外で構造、反応、輸送、情報伝達などを担います。プロテオミクスを見ると、細胞の状態を実際の働きに近い分子層から考えられます。
+
+また、タンパク質は作られた後に分解されたり、場所が変わったり、[リン酸化](/glossary/phosphorylation/)などの修飾を受けたりします。そのため、RNAだけを見ていては分からない調節を読む入口になります。
+
+## どんなプロテオミクスがあるか
+
+全体のタンパク質量を調べる解析、特定の修飾を調べる解析、タンパク質間相互作用に注目する解析があります。リン酸化プロテオミクスでは、シグナル伝達に関わる変化を調べることがあります。
+
+比較では、条件間で増えるタンパク質、減るタンパク質、修飾が変わるペプチドを探します。どのタンパク質が検出できるかは、試料、前処理、測定条件に影響されます。
+
+## プロテオミクスはどう調べるか
+
+代表的には、タンパク質を抽出し、酵素でペプチドに分解して、質量分析で測定します。得られたスペクトルをデータベースと照合し、ペプチドやタンパク質を同定します。
+
+定量では、ラベルを使う方法、ラベルを使わない方法、標的を絞る方法などがあります。解析では、同定、定量、正規化、欠測値の扱い、統計比較を確認します。
+
+## プロテオミクスの変化は何につながるか
+
+タンパク質量や修飾の変化は、細胞の機能、シグナル伝達、代謝、構造変化を考える手がかりになります。たとえば、ある経路の複数のタンパク質が同じ方向に変わると、経路レベルの変化を考えることがあります。
+
+ただし、検出された量の差だけで、機能の強さや活性を断定することはできません。酵素活性、局在、相互作用、修飾部位なども別に考える必要があります。
+
+## 論文や実験ではどう出てくるか
+
+[Methods](/glossary/methods/)では、タンパク質抽出、消化、質量分析条件、同定データベース、FDR、定量方法が説明されます。[Results](/glossary/results/)では、差のあるタンパク質、修飾部位、経路解析として出てきます。
+
+[Figure](/glossary/figure/)では、ボルケーノプロット、ヒートマップ、PCA、タンパク質リスト、経路図、修飾部位の模式図として示されます。図を見るときは、タンパク質単位かペプチド単位かを確認します。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- プロテオミクスとトランスクリプトミクス: プロテオミクスはタンパク質、トランスクリプトミクスはRNAを主に見ます。
+- タンパク質量と活性: 量が増えても、活性や局在が同じとは限りません。
+- タンパク質とペプチド: 測定ではペプチドをもとにタンパク質を推定することがあります。
+
+### 解釈の落とし穴
+
+- RNA量とタンパク質量が必ず対応すると考えない。
+- 欠測値や検出限界を無視して比較しない。
+- 修飾部位の変化を、すぐに経路全体の活性化と断定しない。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'プロテオミクス',
+      english: 'proteomics',
+      description:
+        '細胞や組織に含まれるタンパク質の種類、量、修飾などを網羅的に調べる分野。',
+      href: '/glossary/proteomics/',
+    },
+    {
+      term: 'タンパク質',
+      english: 'protein',
+      description: '細胞内外で構造、反応、輸送、情報伝達などを担う分子。',
+      href: '/glossary/protein/',
+    },
+    {
+      term: '翻訳',
+      english: 'translation',
+      description: 'RNAの情報をもとにアミノ酸をつなぎ、タンパク質を作る過程。',
+      href: '/glossary/translation/',
+    },
+    {
+      term: 'リン酸化',
+      english: 'phosphorylation',
+      description: 'タンパク質などにリン酸基が付く修飾。',
+      href: '/glossary/phosphorylation/',
+    },
+    {
+      term: 'アミノ酸',
+      english: 'amino acid',
+      description: 'タンパク質を構成する基本単位。',
+      href: '/glossary/amino-acid/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: 'プロテオミクスは何を網羅的に調べる分野ですか。',
+      answer: 'タンパク質の種類、量、修飾などを網羅的に調べる分野です。',
+    },
+    {
+      question: 'RNA量とタンパク質量が必ず一致しない理由を一つ挙げてください。',
+      answer:
+        '翻訳効率、分解、局在、翻訳後修飾などがタンパク質量や働きに影響するためです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'タンパク質とは何か', href: '/fundamentals/protein/' },
+    { title: '翻訳とは何か', href: '/molecular-biology/translation/' },
+    { title: 'メタボロミクスとは何か', href: '/genomics/metabolomics/' },
+  ]}
+/>

@@ -829,6 +829,37 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'methods-and-analysis',
   },
   {
+    term: 'トランスクリプトミクス',
+    english: 'transcriptomics',
+    description:
+      '細胞や組織でどのRNAがどれくらい存在するかを網羅的に調べる分野。',
+    href: '/glossary/transcriptomics/',
+    category: 'genomics',
+  },
+  {
+    term: 'プロテオミクス',
+    english: 'proteomics',
+    description:
+      '細胞や組織に含まれるタンパク質の種類、量、修飾などを網羅的に調べる分野。',
+    href: '/glossary/proteomics/',
+    category: 'genomics',
+  },
+  {
+    term: 'メタボロミクス',
+    english: 'metabolomics',
+    description: '細胞や組織に含まれる代謝物の種類や量を網羅的に調べる分野。',
+    href: '/glossary/metabolomics/',
+    category: 'genomics',
+  },
+  {
+    term: 'マルチオミクス',
+    english: 'multiomics',
+    description:
+      '複数のオミクス層を組み合わせ、同じ現象を多面的に調べる考え方。',
+    href: '/glossary/multiomics/',
+    category: 'genomics',
+  },
+  {
     term: '遺伝的変異',
     english: 'genetic variant',
     abbreviation: 'variant',
