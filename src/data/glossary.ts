@@ -868,6 +868,13 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'genomics',
   },
   {
+    term: '反復配列',
+    english: 'repetitive sequence',
+    description: '同じまたはよく似た塩基配列がゲノム内で繰り返し現れる領域。',
+    href: '/glossary/repetitive-sequence/',
+    category: 'genomics',
+  },
+  {
     term: 'リファレンスゲノム',
     english: 'reference genome',
     description: '配列解析やゲノム表示で基準として使う代表的なゲノム配列。',
