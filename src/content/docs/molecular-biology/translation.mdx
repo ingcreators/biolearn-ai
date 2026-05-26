@@ -19,6 +19,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -28,7 +29,9 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-翻訳は、mRNAの情報をアミノ酸配列へ変換し、タンパク質を作る過程です。
+翻訳は、mRNAの情報を[アミノ酸](/glossary/amino-acid/)配列へ変換し、[タンパク質](/glossary/protein/)を作る過程です。
+
+[転写](/glossary/transcription/)で作られた[RNA](/glossary/rna/)の情報が、リボソームとtRNAの働きによってタンパク質へ変換される段階です。
 
 <LessonFigure
   src="/figures/translation-concept.jpg"
@@ -37,56 +40,87 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   caption="mRNAの塩基配列をもとに、リボソームとtRNAがアミノ酸を順番につなげます。"
 />
 
-mRNAには、3つの塩基を1組とするコドンが並んでいます。リボソームはmRNAを読み取り、tRNAが運ぶアミノ酸を順番につなげます。こうしてできたアミノ酸の鎖は折りたたまれ、タンパク質として働きます。
+## なぜ翻訳の視点が重要か
 
-翻訳では、mRNAの配列がそのままタンパク質になるのではなく、コドン表に従ってアミノ酸配列へ変換されます。開始を示すコドンや終了を示すコドンもあり、リボソームはこれらを手がかりにタンパク質合成を進めます。
+翻訳は、[セントラルドグマ](/glossary/central-dogma/)の中で、情報が[細胞](/glossary/cell/)の実際の働きへ近づく重要な位置にあります。[遺伝子発現](/glossary/gene-expression/)を考えるとき、mRNA量だけでなく、どれくらいタンパク質に変換されるかも大切です。
 
-tRNAは、特定のアミノ酸を運びながら、mRNA上のコドンと対応します。この対応関係によって、塩基配列という情報がアミノ酸配列という分子の構造へ変換されます。ここで作られたアミノ酸鎖は、その後折りたたまれたり修飾されたりして機能を持ちます。
+翻訳効率、[タンパク質フォールディング](/glossary/protein-folding/)、修飾、分解などが、最終的なタンパク質の量や働きに影響します。
 
-翻訳は、遺伝情報が細胞内の機能へつながる重要な段階です。ただし、タンパク質の働きは翻訳後の折りたたみや修飾にも影響されます。そのため、mRNAの量とタンパク質の機能は関連しますが、完全に同じ意味ではありません。
+## どんな翻訳の段階があるか
 
-## なぜ重要か
+翻訳では、mRNA上の3つの塩基を1組とするコドンが読み取られます。開始を示すコドンや終了を示すコドンもあり、リボソームはこれらを手がかりにタンパク質合成を進めます。
 
-[翻訳](/glossary/translation/)は、[RNA](/glossary/rna/)の情報を[タンパク質](/glossary/protein/)という機能分子へ変換する段階です。[セントラルドグマ](/glossary/central-dogma/)の中で、情報が細胞の実際の働きへ近づく重要な位置にあります。
+tRNAは、特定のアミノ酸を運びながら、mRNA上のコドンと対応します。作られたアミノ酸鎖は、その後折りたたまれたり修飾されたりして機能を持ちます。
 
-翻訳を理解すると、mRNA量だけではタンパク質量や機能を完全には説明できない理由も見えてきます。翻訳効率、折りたたみ、修飾、分解などが、最終的なタンパク質の量や働きに影響します。
+## 翻訳はどう調べるか
 
-## 具体例
+翻訳は、リボソームプロファイリング、ポリソーム解析、タンパク質量測定などで調べられます。これらは、mRNAがどれくらいリボソームに読まれているか、または最終的なタンパク質量がどう変わるかを見る手がかりになります。
 
-mRNA上のAUGは、多くの場合、翻訳開始の目印として働きます。リボソームがmRNAを読み、tRNAが対応するアミノ酸を運ぶことで、アミノ酸鎖が伸びていきます。
+[RNA-seq](/glossary/rna-seq/)とタンパク質量測定を組み合わせると、mRNA量の変化とタンパク質量の変化が一致するかを比較できます。
 
-分泌タンパク質や膜タンパク質の一部は、翻訳後に小胞体やゴルジ体で加工され、細胞外や細胞膜へ運ばれます。このように、翻訳はタンパク質が働くまでの流れの一部です。
+## 翻訳の変化は何につながるか
 
-## よく混同される概念
+翻訳効率が変わると、mRNA量が同じでもタンパク質量が変わることがあります。さらに、作られたタンパク質は折りたたみ、修飾、局在、分解の影響を受けるため、mRNA量とタンパク質機能は完全に同じ意味ではありません。
 
-- 翻訳と転写: 翻訳はmRNAからタンパク質を作る過程で、転写はDNAからRNAを作る過程です。
-- コドンとアミノ酸: コドンはmRNA上の3塩基の単位で、アミノ酸はタンパク質を構成する分子です。
-- タンパク質合成とタンパク質機能: タンパク質が作られても、折りたたみや修飾、局在が適切でなければ機能しないことがあります。
+分泌タンパク質や膜タンパク質の一部は、翻訳後に[小胞体](/glossary/endoplasmic-reticulum/)や[ゴルジ体](/glossary/golgi-apparatus/)で加工され、細胞外や[細胞膜](/glossary/cell-membrane/)へ運ばれます。
 
 ## 論文や実験ではどう出てくるか
 
-翻訳は、リボソームプロファイリング、ポリソーム解析、タンパク質量測定などで扱われます。論文では「mRNA量は変わらないがタンパク質量が変化した」「翻訳効率が変わった」のように、転写後の調節として示されることがあります。
+[Methods](/glossary/methods/)では、リボソームプロファイリング、ポリソーム解析、タンパク質量測定などとして扱われます。[Results](/glossary/results/)では「mRNA量は変わらないがタンパク質量が変化した」「翻訳効率が変わった」のように、[転写後制御](/glossary/post-transcriptional-regulation/)として示されることがあります。
 
-## 英語表記と略語
+[Figure](/glossary/figure/)では、mRNA量とタンパク質量の比較、リボソーム占有、翻訳効率の指標として出てくることがあります。
 
-| 日本語名   | 英語名       | 略語 |
-| ---------- | ------------ | ---- |
-| 翻訳       | translation  | -    |
-| コドン     | codon        | -    |
-| リボソーム | ribosome     | -    |
-| 転移RNA    | transfer RNA | tRNA |
+## どんな点でつまずきやすいか
 
-## よくある誤解
+### 似た用語との区別
+
+- 翻訳と転写: 翻訳はmRNAからタンパク質を作る過程で、転写は[DNA](/glossary/dna/)からRNAを作る過程です。
+- コドンとアミノ酸: コドンはmRNA上の3塩基の単位で、アミノ酸はタンパク質を構成する[分子](/glossary/molecule/)です。
+- タンパク質合成とタンパク質機能: タンパク質が作られても、折りたたみや修飾、局在が適切でなければ機能しないことがあります。
+
+### 解釈の落とし穴
 
 - 翻訳は言語の翻訳と同じ意味ではなく、RNAの情報をアミノ酸配列へ変換する生物学用語です。
 - mRNAがあれば必ず同じ量のタンパク質ができるとは限りません。
+- タンパク質が検出されても、活性や局在まで同時に分かったとは限りません。
 
 ## 重要用語
 
-- 翻訳: [mRNA](/glossary/rna/)の情報をもとにアミノ酸をつなぎ、タンパク質を作る過程。
-- コドン: mRNA上の3つの塩基からなる、アミノ酸指定の単位。
-- リボソーム: mRNAを読み取り、タンパク質合成を進める複合体。
-- tRNA: コドンに対応するアミノ酸を運ぶRNA。
+<GlossaryTable
+  terms={[
+    {
+      term: '翻訳',
+      english: 'translation',
+      description: 'mRNAの情報をもとにアミノ酸をつなぎ、タンパク質を作る過程。',
+      href: '/glossary/translation/',
+    },
+    {
+      term: 'RNA',
+      english: 'ribonucleic acid',
+      abbreviation: 'RNA',
+      description: '遺伝情報の読み出しや調節などに関わる核酸。',
+      href: '/glossary/rna/',
+    },
+    {
+      term: 'タンパク質',
+      english: 'protein',
+      description: '細胞内外で構造、反応、輸送、情報伝達などを担う分子。',
+      href: '/glossary/protein/',
+    },
+    {
+      term: 'アミノ酸',
+      english: 'amino acid',
+      description: 'タンパク質を構成する基本単位。',
+      href: '/glossary/amino-acid/',
+    },
+    {
+      term: '転写後制御',
+      english: 'post-transcriptional regulation',
+      description: 'RNAが作られた後に起こる遺伝子発現調節。',
+      href: '/glossary/post-transcriptional-regulation/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[
@@ -123,7 +157,13 @@ mRNA上のAUGは、多くの場合、翻訳開始の目印として働きます�
       title: '遺伝子発現とは何か',
       href: '/fundamentals/gene-expression/',
     },
-    { title: '用語: 翻訳', href: '/glossary/translation/' },
-    { title: '用語集', href: '/glossary/' },
+    {
+      title: 'タンパク質フォールディングとは何か',
+      href: '/molecular-biology/protein-folding/',
+    },
+    {
+      title: '転写後制御とは何か',
+      href: '/molecular-biology/post-transcriptional-regulation/',
+    },
   ]}
 />

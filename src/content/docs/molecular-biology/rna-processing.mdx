@@ -20,6 +20,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -29,7 +30,9 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-RNAプロセシングは、転写されたRNAが成熟したmRNAとして使われるために受ける加工です。
+RNAプロセシングは、[転写](/glossary/transcription/)された[RNA](/glossary/rna/)が成熟したmRNAとして使われるために受ける加工です。
+
+[真核細胞](/glossary/eukaryotic-cell/)では、5キャップの付加、ポリA尾部の付加、[スプライシング](/glossary/splicing/)などを通じて、RNAが[翻訳](/glossary/translation/)や輸送に向かう形へ整えられます。
 
 <LessonFigure
   src="/figures/rna-processing-concept.jpg"
@@ -38,49 +41,45 @@ RNAプロセシングは、転写されたRNAが成熟したmRNAとして使わ�
   caption="真核細胞では、転写されたRNAが加工されてから翻訳や輸送に使われます。"
 />
 
-真核生物では、RNAポリメラーゼによって作られた直後のRNAが、そのまますぐ翻訳されるとは限りません。多くのmRNA前駆体は、5キャップの付加、ポリA尾部の付加、スプライシングなどの加工を受けます。こうした転写後の加工をまとめてRNAプロセシングと呼びます。
+## なぜRNAプロセシングの視点が重要か
 
-5キャップはmRNAの先頭側に加わる構造で、RNAの安定性や翻訳開始に関わります。ポリA尾部はmRNAの末端側に付加され、RNAの安定性や細胞内での扱われ方に関わります。
+RNAプロセシングを理解すると、[DNA](/glossary/dna/)からRNAが作られた後に、どのように[タンパク質](/glossary/protein/)産生へ向かうのかを説明しやすくなります。[遺伝子発現](/glossary/gene-expression/)は「RNAが作られる」だけで終わらず、RNAが加工され、安定化し、使われる段階まで含みます。
 
-スプライシングでは、タンパク質を作る情報として残る部分であるエクソンがつなぎ合わされ、イントロンが取り除かれます。スプライシングの組み合わせが変わると、同じ遺伝子から異なるmRNAが作られることがあります。
+[RNA-seq](/glossary/rna-seq/)では、リードがエクソン、イントロン、スプライス junction などにどのように対応するかが解析の意味に影響します。
 
-RNAプロセシングは、転写と翻訳の間にある重要な段階です。mRNA量を測る実験やRNA-seqを読むときにも、どのRNAを測っているのか、成熟mRNAなのか、未成熟RNAも含むのかが解釈に関わります。
+## どんなRNAプロセシングがあるか
 
-## なぜ重要か
+代表的な加工には、5キャップ付加、ポリA尾部付加、スプライシングがあります。5キャップはmRNAの先頭側に加わる構造で、RNAの安定性や翻訳開始に関わります。
 
-[RNAプロセシング](/glossary/rna-processing/)を理解すると、[転写](/glossary/transcription/)されたRNAがどのように[翻訳](/glossary/translation/)へ向かうのかを説明しやすくなります。遺伝子発現は「DNAからRNAが作られる」だけで終わらず、RNAが加工され、安定化し、使われる段階まで含みます。
+ポリA尾部はmRNAの末端側に付加され、RNAの安定性や[細胞](/glossary/cell/)内での扱われ方に関わります。スプライシングでは、残る区間がつなぎ合わされ、取り除かれる区間が除去されます。
 
-RNA-seqでは、リードがエクソン、イントロン、スプライス junction などにどのように対応するかが解析の意味に影響します。
+## RNAプロセシングはどう調べるか
 
-## 具体例
+RNAプロセシングは、RNA-seq、スプライシング解析、ポリA選択、nascent RNA解析などで調べます。ライブラリ作製でpoly(A) selectionを使ったか、rRNA depletionを使ったかによって、主に見えているRNAの種類が変わります。
 
-真核細胞でタンパク質を作るmRNAは、多くの場合、転写直後に5キャップを持ち、末端にポリA尾部を持ちます。さらにイントロンが除かれ、エクソンが連結された成熟mRNAとして細胞質へ運ばれます。
+スプライシングを見る場合は、エクソン同士のつなぎ目にまたがるリードや、アイソフォームごとの発現推定が手がかりになります。
 
-同じ遺伝子でも、異なるエクソンの組み合わせでmRNAが作られると、異なるタンパク質アイソフォームにつながる場合があります。
+## RNAプロセシングの変化は何につながるか
 
-## よく混同される概念
+RNAプロセシングの変化は、成熟mRNAの量、安定性、翻訳されやすさ、作られるタンパク質アイソフォームの違いにつながることがあります。同じ[遺伝子](/glossary/gene/)でも、異なるエクソンの組み合わせでmRNAが作られると、異なるタンパク質につながる場合があります。
+
+そのため、RNA-seqや発現解析では、遺伝子全体の量だけでなく、どのRNAを測っているのか、成熟mRNAなのか、未成熟RNAも含むのかを確認することが大切です。
+
+## 論文や実験ではどう出てくるか
+
+[Methods](/glossary/methods/)では、poly(A) selection、rRNA depletion、strand-specific library などの情報が、どのRNAを主に見ているかを判断する手がかりになります。[Results](/glossary/results/)では、pre-mRNA processing、mRNA maturation、alternative polyadenylation、splicing のような表現で扱われます。
+
+[Figure](/glossary/figure/)では、エクソン使用量、junction read、成熟mRNAと未成熟RNAの比率、ポリA部位の違いとして示されることがあります。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
 
 - RNAプロセシングと転写: 転写はRNAを作る過程で、RNAプロセシングは作られたRNAを加工する過程です。
 - RNAプロセシングと翻訳: RNAプロセシングはRNA段階の加工で、翻訳はmRNAからタンパク質を作る過程です。
 - スプライシングとRNAプロセシング: スプライシングはRNAプロセシングに含まれる代表的な加工の一つです。
 
-## 論文や実験ではどう出てくるか
-
-RNAプロセシングは、RNA-seq、スプライシング解析、ポリA選択、nascent RNA解析などで出てきます。論文では「pre-mRNA processing」「mRNA maturation」「alternative polyadenylation」「splicing」のような表現で扱われます。
-
-RNA-seqの方法欄では、poly(A) selection、rRNA depletion、strand-specific library などの情報が、どのRNAを主に見ているかを判断する手がかりになります。
-
-## 英語表記と略語
-
-| 日本語名        | 英語名         | 略語     |
-| --------------- | -------------- | -------- |
-| RNAプロセシング | RNA processing | -        |
-| mRNA前駆体      | precursor mRNA | pre-mRNA |
-| 5キャップ       | 5 cap          | -        |
-| ポリA尾部       | poly(A) tail   | -        |
-| 成熟mRNA        | mature mRNA    | -        |
-
-## よくある誤解
+### 解釈の落とし穴
 
 - 転写されたRNAがすべてすぐにタンパク質へ翻訳されるわけではありません。
 - RNAプロセシングは単なる仕上げではなく、RNAの安定性、輸送、翻訳、種類に関わります。
@@ -88,11 +87,41 @@ RNA-seqの方法欄では、poly(A) selection、rRNA depletion、strand-specific
 
 ## 重要用語
 
-- RNAプロセシング: 転写後のRNAが成熟した形になるための加工。
-- pre-mRNA: 成熟mRNAになる前のRNA。
-- 5キャップ: mRNAの先頭側に付加される構造。
-- ポリA尾部: mRNAの末端側に付加されるアデニンの連なり。
-- 成熟mRNA: 加工を受け、翻訳などに使われるmRNA。
+<GlossaryTable
+  terms={[
+    {
+      term: 'RNAプロセシング',
+      english: 'RNA processing',
+      description: '転写後のRNAが成熟した形になるための加工。',
+      href: '/glossary/rna-processing/',
+    },
+    {
+      term: 'RNA',
+      english: 'ribonucleic acid',
+      abbreviation: 'RNA',
+      description: '遺伝情報の読み出しや調節などに関わる核酸。',
+      href: '/glossary/rna/',
+    },
+    {
+      term: '転写',
+      english: 'transcription',
+      description: 'DNAの情報をもとにRNAを作る過程。',
+      href: '/glossary/transcription/',
+    },
+    {
+      term: 'スプライシング',
+      english: 'splicing',
+      description: 'pre-mRNAから一部の区間を除き、残る区間をつなげる過程。',
+      href: '/glossary/splicing/',
+    },
+    {
+      term: '翻訳',
+      english: 'translation',
+      description: 'mRNAの情報をもとにタンパク質を作る過程。',
+      href: '/glossary/translation/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[

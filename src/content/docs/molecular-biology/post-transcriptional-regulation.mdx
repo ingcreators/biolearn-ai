@@ -21,6 +21,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -30,7 +31,9 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-転写後制御は、DNAからRNAが作られた後に、そのRNAの加工、安定性、翻訳などを通じて遺伝子発現を調節する仕組みです。
+転写後制御は、[DNA](/glossary/dna/)から[RNA](/glossary/rna/)が作られた後に、そのRNAの加工、安定性、[翻訳](/glossary/translation/)などを通じて[遺伝子発現](/glossary/gene-expression/)を調節する仕組みです。
+
+[転写](/glossary/transcription/)が起きた後も、RNAがどの形で残り、どこへ運ばれ、どれくらい[タンパク質](/glossary/protein/)に変換されるかは調節されます。
 
 <LessonFigure
   src="/figures/post-transcriptional-regulation-concept.jpg"
@@ -39,44 +42,45 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   caption="mRNAは作られた後も、加工、安定性、局在、翻訳効率などによって使われ方が変わります。"
 />
 
-転写によってRNAが作られても、そのRNAがどれくらい残るか、どの形に加工されるか、どこへ運ばれるか、どれくらい翻訳されるかはさらに調節されます。このようなRNAが作られた後の調節を転写後制御と呼びます。
+## なぜ転写後制御の視点が重要か
 
-代表的な例には、RNAプロセシング、スプライシング、RNA分解、RNA局在、翻訳効率の調節、miRNAによる抑制などがあります。これらは、mRNA量とタンパク質量が単純に一致しない理由にもなります。
+転写後制御を理解すると、[RNA-seq](/glossary/rna-seq/)で見えるmRNA量だけでは[細胞](/glossary/cell/)内のタンパク質量や働きを完全には説明できないことが分かります。[遺伝子発現制御](/glossary/gene-expression-regulation/)は転写段階だけではなく、RNA段階にも広がっています。
 
-転写後制御は、遺伝子発現を細かく調節するための重要な仕組みです。細胞はRNAを作るかどうかだけでなく、作ったRNAをどう扱うかによって応答を変えています。
+[スプライシング](/glossary/splicing/)の違い、RNAの安定性、[miRNA](/glossary/microrna/)による抑制は、同じ[遺伝子](/glossary/gene/)から異なる結果が生まれる理由になります。
 
-## なぜ重要か
+## どんな転写後制御があるか
 
-[転写後制御](/glossary/post-transcriptional-regulation/)を理解すると、RNA-seqで見えるmRNA量だけでは細胞内のタンパク質量や機能を完全には説明できないことが分かります。発現制御は転写段階だけではなく、RNA段階にも広がっています。
+代表的な例には、[RNAプロセシング](/glossary/rna-processing/)、スプライシング、RNA分解、RNA局在、翻訳効率の調節、miRNAによる抑制などがあります。これらは、mRNA量とタンパク質量が単純に一致しない理由にもなります。
 
-スプライシングの違い、RNAの安定性、miRNAによる抑制は、同じ遺伝子から異なる結果が生まれる理由になります。
+タンパク質をコードしない[ノンコーディングRNA](/glossary/noncoding-rna/)も、RNA段階の制御に関わることがあります。
 
-## 具体例
+## 転写後制御はどう調べるか
 
-同じ遺伝子から作られたpre-mRNAでも、スプライシングの違いによって異なるmRNAアイソフォームが作られることがあります。その結果、異なるタンパク質につながる場合があります。
+転写後制御は、RNA-seq、スプライシング解析、リボソームプロファイリング、小分子RNA-seq、RNA安定性測定、翻訳効率解析で扱われます。どの実験がRNA量を見ているのか、翻訳されているRNAを見ているのか、RNAの寿命を見ているのかを区別します。
 
-また、miRNAがmRNAに結合すると、そのmRNAが分解されやすくなったり、翻訳されにくくなったりすることがあります。
+miRNAの解析では、小分子RNA-seqや標的候補の発現変化、レポーターアッセイなどを組み合わせて読むことがあります。
 
-## よく混同される概念
+## 転写後制御の変化は何につながるか
+
+転写後制御の変化は、mRNAの安定性、アイソフォームの比率、翻訳効率、最終的なタンパク質量の違いにつながることがあります。同じ遺伝子から作られたpre-mRNAでも、スプライシングの違いによって異なるmRNAアイソフォームが作られることがあります。
+
+miRNAがmRNAに結合すると、そのmRNAが分解されやすくなったり、翻訳されにくくなったりすることがあります。
+
+## 論文や実験ではどう出てくるか
+
+[Methods](/glossary/methods/)では、RNA-seq、スプライシング解析、リボソームプロファイリング、小分子RNA-seq、RNA安定性測定、翻訳効率解析として出てきます。[Results](/glossary/results/)では、post-transcriptional regulation、mRNA stability、translation efficiency、alternative splicing のように説明されます。
+
+[Figure](/glossary/figure/)では、mRNA量とタンパク質量の対応、アイソフォーム比率、リボソーム占有、miRNA標的候補の変化として示されることがあります。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
 
 - 転写制御と転写後制御: 転写制御はRNAが作られる段階、転写後制御はRNAが作られた後の段階です。
 - RNAプロセシングと転写後制御: RNAプロセシングは転写後制御に含まれる代表的な仕組みです。
 - mRNA量とタンパク質量: mRNA量が同じでも、翻訳効率やタンパク質分解によってタンパク質量は変わります。
 
-## 論文や実験ではどう出てくるか
-
-転写後制御は、RNA-seq、スプライシング解析、リボソームプロファイリング、小分子RNA-seq、RNA安定性測定、翻訳効率解析で扱われます。論文では「post-transcriptional regulation」「mRNA stability」「translation efficiency」「alternative splicing」のように出てきます。
-
-## 英語表記と略語
-
-| 日本語名             | 英語名                          | 略語 |
-| -------------------- | ------------------------------- | ---- |
-| 転写後制御           | post-transcriptional regulation | -    |
-| RNA安定性            | RNA stability                   | -    |
-| 翻訳効率             | translation efficiency          | -    |
-| 選択的スプライシング | alternative splicing            | AS   |
-
-## よくある誤解
+### 解釈の落とし穴
 
 - 転写後制御はRNAプロセシングだけではありません。
 - mRNAが増えたら必ずタンパク質も同じ割合で増えるとは限りません。
@@ -84,10 +88,42 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 ## 重要用語
 
-- 転写後制御: RNAが作られた後に起こる遺伝子発現調節。
-- RNA安定性: RNAが細胞内でどれくらい分解されずに残るか。
-- 翻訳効率: mRNAからタンパク質が作られやすい度合い。
-- 選択的スプライシング: 同じpre-mRNAから異なるmRNAを作る仕組み。
+<GlossaryTable
+  terms={[
+    {
+      term: '転写後制御',
+      english: 'post-transcriptional regulation',
+      description: 'RNAが作られた後に起こる遺伝子発現調節。',
+      href: '/glossary/post-transcriptional-regulation/',
+    },
+    {
+      term: 'RNAプロセシング',
+      english: 'RNA processing',
+      description: '転写後のRNAが成熟した形になるための加工。',
+      href: '/glossary/rna-processing/',
+    },
+    {
+      term: 'スプライシング',
+      english: 'splicing',
+      description: 'pre-mRNAから一部の区間を除き、残る区間をつなげる過程。',
+      href: '/glossary/splicing/',
+    },
+    {
+      term: 'miRNA',
+      english: 'microRNA',
+      abbreviation: 'miRNA',
+      description:
+        '標的RNAに作用して翻訳や安定性に関わる短いノンコーディングRNA。',
+      href: '/glossary/microrna/',
+    },
+    {
+      term: '翻訳',
+      english: 'translation',
+      description: 'mRNAの情報をもとにタンパク質を作る過程。',
+      href: '/glossary/translation/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[

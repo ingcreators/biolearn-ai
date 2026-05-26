@@ -20,6 +20,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -29,7 +30,9 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-miRNAは、標的mRNAに結合し、その翻訳や安定性を調節する短いnon-coding RNAです。
+miRNAは、標的mRNAに結合し、その[翻訳](/glossary/translation/)や安定性を調節する短い[非コードRNA](/glossary/noncoding-rna/)です。
+
+microRNAの略で、[RNA](/glossary/rna/)が作られた後の段階で[遺伝子発現](/glossary/gene-expression/)を調節する仕組みの一つとして扱われます。
 
 <LessonFigure
   src="/figures/microrna-concept.jpg"
@@ -38,46 +41,45 @@ miRNAは、標的mRNAに結合し、その翻訳や安定性を調節する短�
   caption="miRNAは標的mRNAに結合し、翻訳を抑えたりmRNA分解を促したりすることがあります。"
 />
 
-miRNAはmicroRNAの略で、比較的短いRNA分子です。タンパク質を作る鋳型にはならず、主に他のRNA、特にmRNAの働きを調節します。
+## なぜmiRNAの視点が重要か
 
-多くの場合、miRNAは標的mRNAの一部と相補的に結合し、タンパク質への翻訳を抑えたり、mRNAの分解を促したりします。そのためmiRNAは、転写後制御の代表的な仕組みとして扱われます。
-
-1つのmiRNAが複数のmRNAに影響することもあり、逆に1つのmRNAが複数のmiRNAから調節を受けることもあります。ただし、予測された標的がすべて実際に強く制御されるとは限りません。
-
-## なぜ重要か
-
-[miRNA](/glossary/microrna/)は、mRNAが作られた後に発現を調節する仕組みを理解する入口です。mRNA量だけではタンパク質量や細胞機能を完全に説明できない理由の一つにもなります。
+miRNAは、mRNAが作られた後に発現を調節する[転写後制御](/glossary/post-transcriptional-regulation/)を理解する入口です。mRNA量だけでは[タンパク質](/glossary/protein/)量や[細胞](/glossary/cell/)機能を完全に説明できない理由の一つにもなります。
 
 発現解析では、mRNAとmiRNAの両方を調べ、あるmiRNAが増えたときに標的mRNAやタンパク質がどう変わるかを検討することがあります。
 
-## 具体例
+## どんなmiRNAがあるか
 
-あるmiRNAが特定のmRNAに結合し、そのmRNAからタンパク質が作られにくくなる場合があります。このとき、mRNA量が大きく変わらなくても、タンパク質量が下がる可能性があります。
+miRNAは短いRNAで、一般に `miR-` を含む名前で表されます。1つのmiRNAが複数のmRNAに影響することもあり、逆に1つのmRNAが複数のmiRNAから調節を受けることもあります。
 
-実験では、miRNA mimicでmiRNAの働きを強めたり、inhibitorで働きを弱めたりして、標的候補のmRNA量やタンパク質量を調べます。
+標的mRNAとの相補性や、[生物種](/glossary/species/)や細胞条件によって、調節の強さや見え方は変わります。
 
-## よく混同される概念
+## miRNAはどう調べるか
 
-- miRNAとmRNA: mRNAはタンパク質の鋳型、miRNAは主にmRNAを調節する短いRNAです。
-- miRNAとsiRNA: どちらも短いRNAですが、由来や使われ方、標的認識の文脈が異なります。
-- 標的予測と実証: 配列から標的候補を予測できますが、実際に調節しているかは実験で確認が必要です。
+miRNAは、小分子RNA-seq、RT-qPCR、ルシフェラーゼレポーターアッセイ、mimic/inhibitor実験、標的予測解析で扱われます。mimicはmiRNAの働きを強めるため、inhibitorは働きを弱めるために使われます。
+
+標的予測では配列の対応から候補を出しますが、実際に細胞内で調節しているかは、mRNA量、タンパク質量、レポーター活性などの[証拠](/glossary/evidence/)で確認します。
+
+## miRNAの変化は何につながるか
+
+miRNAが標的mRNAに結合すると、そのmRNAからタンパク質が作られにくくなったり、mRNAが分解されやすくなったりすることがあります。このとき、mRNA量が大きく変わらなくても、タンパク質量が変わる場合があります。
+
+ただし、予測された標的がすべて実際に強く制御されるとは限らず、発現変化だけで原因と断定することは避けます。
 
 ## 論文や実験ではどう出てくるか
 
-miRNAは、小分子RNA-seq、RT-qPCR、ルシフェラーゼレポーターアッセイ、mimic/inhibitor実験、標的予測解析で扱われます。論文では「miRNA target」「miR-」「microRNA-mediated repression」のような表現で出てきます。
+[Methods](/glossary/methods/)では、小分子RNA-seq、RT-qPCR、レポーターアッセイ、mimic/inhibitor実験、標的予測解析として出てきます。[Results](/glossary/results/)では、miRNA target、miR-、microRNA-mediated repression のような表現で説明されます。
 
-Figureでは、miRNA発現量、標的mRNAの変化、レポーター活性の低下、タンパク質量の変化などとして示されます。
+[Figure](/glossary/figure/)では、miRNA発現量、標的mRNAの変化、レポーター活性の低下、タンパク質量の変化などとして示されます。
 
-## 英語表記と略語
+## どんな点でつまずきやすいか
 
-| 日本語名    | 英語名          | 略語  |
-| ----------- | --------------- | ----- |
-| マイクロRNA | microRNA        | miRNA |
-| 標的mRNA    | target mRNA     | -     |
-| miRNA模倣体 | miRNA mimic     | -     |
-| miRNA阻害剤 | miRNA inhibitor | -     |
+### 似た用語との区別
 
-## よくある誤解
+- miRNAとmRNA: mRNAはタンパク質の鋳型、miRNAは主にmRNAを調節する短いRNAです。
+- miRNAとsiRNA: どちらも短いRNAですが、由来や使われ方、標的認識の文脈が異なります。
+- 標的予測と実証: [配列](/glossary/sequence-data/)から標的候補を予測できますが、実際に調節しているかは実験で確認が必要です。
+
+### 解釈の落とし穴
 
 - miRNAは必ずmRNA量を大きく下げるとは限らず、翻訳を抑える場合もあります。
 - 標的予測データベースに載っているだけでは、実際の制御を示したことにはなりません。
@@ -85,10 +87,43 @@ Figureでは、miRNA発現量、標的mRNAの変化、レポーター活性の�
 
 ## 重要用語
 
-- miRNA: mRNAの翻訳や安定性を調節する短いnon-coding RNA。
-- 標的mRNA: miRNAの調節を受ける候補となるmRNA。
-- mimic: miRNAの働きを強めるために使う合成RNA。
-- inhibitor: miRNAの働きを弱めるために使う分子。
+<GlossaryTable
+  terms={[
+    {
+      term: 'miRNA',
+      english: 'microRNA',
+      abbreviation: 'miRNA',
+      description: '標的mRNAに作用して翻訳や安定性に関わる短い非コードRNA。',
+      href: '/glossary/microrna/',
+    },
+    {
+      term: '非コードRNA',
+      english: 'non-coding RNA',
+      abbreviation: 'ncRNA',
+      description: 'タンパク質をコードすることを主な役割としないRNAの総称。',
+      href: '/glossary/noncoding-rna/',
+    },
+    {
+      term: '転写後制御',
+      english: 'post-transcriptional regulation',
+      description: 'RNAが作られた後に起こる遺伝子発現調節。',
+      href: '/glossary/post-transcriptional-regulation/',
+    },
+    {
+      term: '翻訳',
+      english: 'translation',
+      description: 'mRNAの情報をもとにタンパク質を作る過程。',
+      href: '/glossary/translation/',
+    },
+    {
+      term: 'RNA-seq',
+      english: 'RNA sequencing',
+      abbreviation: 'RNA-seq',
+      description: 'RNAをシーケンスして発現量や転写産物を調べる方法。',
+      href: '/glossary/rna-seq/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[

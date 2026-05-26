@@ -20,6 +20,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -31,6 +32,8 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 スプライシングは、pre-mRNAからイントロンを取り除き、エクソンをつなげる過程です。
 
+[RNAプロセシング](/glossary/rna-processing/)の代表的な一部で、[転写](/glossary/transcription/)された[RNA](/glossary/rna/)が成熟mRNAになるまでの内容を変えることがあります。
+
 <LessonFigure
   src="/figures/splicing-concept.jpg"
   alt="pre-mRNAの中から不要な区間が取り除かれ、残る区間がつながって成熟mRNAになる様子を示す教材イラスト"
@@ -38,50 +41,45 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   caption="エクソンが連結され、イントロンが除かれることで成熟mRNAが作られます。"
 />
 
-真核生物の多くの遺伝子では、タンパク質を作る情報として残る部分と、成熟mRNAから取り除かれる部分が混在しています。一般に、成熟mRNAに残る部分をエクソン、取り除かれる部分をイントロンと呼びます。
+## なぜスプライシングの視点が重要か
 
-転写直後のpre-mRNAでは、エクソンとイントロンがまだつながっています。スプライシングでは、スプライソソームという複合体がイントロンを認識して除去し、隣り合うエクソンをつなげます。
+同じ[DNA](/glossary/dna/)配列から作られたRNAでも、スプライシングのされ方によって成熟mRNAの内容が変わります。そのため、[遺伝子発現](/glossary/gene-expression/)を理解するときには「その[遺伝子](/glossary/gene/)が発現しているか」だけでなく、「どのmRNAアイソフォームが作られているか」という視点も必要になります。
 
-重要なのは、スプライシングがいつも1通りとは限らないことです。選択的スプライシングでは、どのエクソンを含めるかが変わり、同じ遺伝子から複数種類のmRNAが作られることがあります。これにより、タンパク質の構造や機能が変わる場合があります。
+アイソフォームの違いは、[タンパク質](/glossary/protein/)の構造や働きの違いにつながる場合があります。
 
-スプライシングは、転写後の遺伝子発現調節の一部です。RNA-seqや遺伝子発現解析を読むときには、遺伝子全体の発現量だけでなく、どの転写産物やアイソフォームが増減しているのかが問題になることがあります。
+## どんなスプライシングがあるか
 
-## なぜ重要か
+基本的なスプライシングでは、成熟RNAに残るエクソンがつながり、多くの場合、イントロンが取り除かれます。真核生物の多くの遺伝子では、エクソンとイントロンが転写直後のpre-mRNA上でまだ連続しています。
 
-[スプライシング](/glossary/splicing/)は、[RNAプロセシング](/glossary/rna-processing/)の中でも特に重要な過程です。同じDNA配列から作られたRNAでも、スプライシングのされ方によって成熟mRNAの内容が変わります。
+選択的スプライシングでは、どのエクソンを含めるかが変わり、同じ遺伝子から複数種類のmRNAが作られることがあります。エクソンスキッピングや、別のスプライス部位の利用などが代表的な見え方です。
 
-そのため、遺伝子発現を理解するときには「その遺伝子が発現しているか」だけでなく、「どのmRNAアイソフォームが作られているか」という視点も必要になります。
+## スプライシングはどう調べるか
 
-## 具体例
+[RNA-seq](/glossary/rna-seq/)解析では、エクソン同士のつなぎ目にまたがるリードを調べることで、どのスプライシングパターンが起きているかを推定します。RT-PCRやアイソフォーム解析も、特定のスプライシング変化を確認する方法として使われます。
 
-ある遺伝子に複数のエクソンがある場合、細胞の種類によって一部のエクソンが含まれたり、除かれたりすることがあります。その結果、同じ遺伝子から少し異なるタンパク質が作られる場合があります。
+長鎖リードのシーケンスでは、転写産物全体を読みやすいため、アイソフォーム構造の推定に役立つことがあります。
 
-RNA-seq解析では、エクソン同士のつなぎ目にまたがるリードを調べることで、どのスプライシングパターンが起きているかを推定することがあります。
+## スプライシングの変化は何につながるか
 
-## よく混同される概念
+スプライシングの変化は、mRNAの種類、量、安定性、[翻訳](/glossary/translation/)で作られるタンパク質の違いにつながることがあります。遺伝子全体の発現量が同じでも、作られるアイソフォームの比率が変われば、実験結果の意味が変わる場合があります。
+
+ただし、アイソフォームの変化が見えたことだけで、[細胞](/glossary/cell/)での機能変化をすぐに断定することはできません。
+
+## 論文や実験ではどう出てくるか
+
+[Methods](/glossary/methods/)では、RNA-seq、RT-PCR、アイソフォーム解析、スプライシング因子の研究などで登場します。[Results](/glossary/results/)では、alternative splicing、splice junction、isoform、exon skipping のような表現で示されることがあります。
+
+[Figure](/glossary/figure/)では、遺伝子モデルの模式図、エクソン使用量、junction read、アイソフォームごとの発現量として出てくることがあります。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
 
 - エクソンとイントロン: エクソンは成熟RNAに残る部分、イントロンは多くの場合取り除かれる部分です。
 - スプライシングと翻訳: スプライシングはRNAを加工する過程で、翻訳はmRNAからタンパク質を作る過程です。
 - 遺伝子発現量とアイソフォーム: 遺伝子全体の発現量が同じでも、作られるmRNAの種類が変わることがあります。
 
-## 論文や実験ではどう出てくるか
-
-スプライシングは、RNA-seq、RT-PCR、アイソフォーム解析、スプライシング因子の研究などで登場します。論文では「alternative splicing」「splice junction」「isoform」「exon skipping」のような表現で示されることがあります。
-
-Figureでは、遺伝子モデルの模式図、エクソン使用量、junction read、アイソフォームごとの発現量として出てくることがあります。
-
-## 英語表記と略語
-
-| 日本語名             | 英語名               | 略語 |
-| -------------------- | -------------------- | ---- |
-| スプライシング       | splicing             | -    |
-| 選択的スプライシング | alternative splicing | AS   |
-| エクソン             | exon                 | -    |
-| イントロン           | intron               | -    |
-| スプライソソーム     | spliceosome          | -    |
-| アイソフォーム       | isoform              | -    |
-
-## よくある誤解
+### 解釈の落とし穴
 
 - イントロンは常に「無意味な部分」と考えるべきではありません。調節や進化の文脈で重要な場合があります。
 - エクソンが必ずタンパク質配列だけを意味するわけではありません。非翻訳領域を含むこともあります。
@@ -89,11 +87,41 @@ Figureでは、遺伝子モデルの模式図、エクソン使用量、junction
 
 ## 重要用語
 
-- スプライシング: pre-mRNAからイントロンを除き、エクソンをつなげる過程。
-- エクソン: 成熟RNAに残る領域。
-- イントロン: 多くの場合、成熟mRNAから取り除かれる領域。
-- 選択的スプライシング: エクソンの組み合わせが変わるスプライシング。
-- アイソフォーム: 同じ遺伝子などから生じる、構造の異なる分子の種類。
+<GlossaryTable
+  terms={[
+    {
+      term: 'スプライシング',
+      english: 'splicing',
+      description: 'pre-mRNAから一部の区間を除き、残る区間をつなげる過程。',
+      href: '/glossary/splicing/',
+    },
+    {
+      term: 'RNAプロセシング',
+      english: 'RNA processing',
+      description: '転写後のRNAが成熟した形になるための加工。',
+      href: '/glossary/rna-processing/',
+    },
+    {
+      term: '遺伝子発現',
+      english: 'gene expression',
+      description: '遺伝子の情報がRNAやタンパク質として使われること。',
+      href: '/glossary/gene-expression/',
+    },
+    {
+      term: 'RNA-seq',
+      english: 'RNA sequencing',
+      abbreviation: 'RNA-seq',
+      description: 'RNAをシーケンスして発現量や転写産物を調べる方法。',
+      href: '/glossary/rna-seq/',
+    },
+    {
+      term: '翻訳',
+      english: 'translation',
+      description: 'mRNAの情報をもとにタンパク質を作る過程。',
+      href: '/glossary/translation/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[
