@@ -1,0 +1,152 @@
+---
+title: MAPK経路とは何か
+description: MAPK経路がキナーゼの連鎖を通じて細胞外シグナルを細胞応答へつなげる経路であることを説明します。
+part: cell-biology
+module: cell-signaling
+level: foundation
+priority: P2
+order: 35
+learningPaths:
+  - foundations
+relatedTerms:
+  - mapk-pathway
+  - signaling-pathway
+  - kinase
+prerequisites:
+  - /cell-biology/pathway/
+  - /cell-biology/kinase/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    'MAPK経路がキナーゼの連鎖でシグナルを伝える経路であることを理解する',
+    'Ras、Raf、MEK、ERKの基本的な流れを説明できる',
+    'p-ERKなどのFigureを経路活性の手がかりとして読む視点を持つ',
+  ]}
+/>
+
+MAPK経路は、複数のキナーゼが順に働き、細胞外からのシグナルを細胞内の応答へつなげる代表的な[シグナル伝達経路](/glossary/signaling-pathway/)です。
+
+ここでは特に、受容体からRas、Raf、MEK、ERKへ進む流れを中心に扱います。ERKのリン酸化は、MAPK経路の活性化を読む手がかりとしてよく使われます。
+
+<LessonFigure
+  src="/figures/mapk-pathway-concept.jpg"
+  alt="受容体からRas、Raf、MEK、ERKへシグナルが段階的に伝わり、核内応答へつながる様子を示す教材イラスト"
+  title="MAPK経路はキナーゼの段階的な連鎖で情報を伝える"
+  caption="受容体からRas、Raf、MEK、ERKへ進む流れは、刺激と遺伝子発現などの応答をつなぐ基本例です。"
+/>
+
+## なぜMAPK経路の視点が重要か
+
+MAPK経路は、増殖因子刺激、細胞分化、ストレス応答など、多くの文脈で登場します。初学者にとっては、受容体の情報がキナーゼの連鎖として細胞内へ伝わる例として理解しやすい経路です。
+
+論文では、p-ERKやp-MEKのWestern blot、阻害剤処理、レポーターアッセイとして出てくることが多いです。MAPK経路を知っていると、シグナルの入口、途中、下流応答を分けて読めます。
+
+## どんなMAPK経路があるか
+
+MAPKは mitogen-activated protein kinase の略です。代表的なERK経路では、受容体刺激の後にRasが関わり、Raf、MEK、ERKというキナーゼの流れでシグナルが伝わります。
+
+MAPKファミリーには、ERKだけでなくJNKやp38 MAPKなども含まれます。文脈によって、増殖因子への応答、ストレス応答、炎症性刺激への応答など、見ている経路の意味が変わります。
+
+この記事では、最初の入口としてERKを中心に読みます。図や論文では、どのMAPKを見ているのか、どの刺激で、何分後の状態かを確認します。
+
+## MAPK経路はどう調べるか
+
+MAPK経路は、p-ERK、p-MEK、p-p38、p-JNKなどのリン酸化をWestern blotや免疫染色で調べます。阻害剤や遺伝子ノックダウンを使い、下流応答が変わるかを見ることもあります。
+
+時間経過は特に重要です。MAPK経路は刺激後に数分から数十分で変化することがあり、1点だけの測定ではピークや持続時間を見落とすことがあります。
+
+## MAPK経路の変化は何につながるか
+
+MAPK経路の活性化は、転写因子の働き、遺伝子発現、細胞増殖、分化、移動などに関わることがあります。ただし、どの応答につながるかは細胞の種類、刺激、時間、他の経路との関係によって変わります。
+
+ERKのリン酸化が増えたことは、MAPK経路が動いた手がかりです。しかし、細胞増殖や分化の原因だと主張するには、下流応答や阻害・救済実験などの追加情報が必要です。
+
+## 論文や実験ではどう出てくるか
+
+[Results](/glossary/results/)では、p-ERK、p-MEK、Ras活性、MEK阻害剤、ERK阻害剤、下流遺伝子発現として出てきます。[Figure](/glossary/figure/)では、刺激後の時間経過Western blot、阻害剤処理の比較、免疫染色の核内シグナルとして示されます。
+
+Figure legendでは、p-ERKがERK1/2のどちらを含むか、総ERKと比較しているか、刺激時間、阻害剤の種類を確認します。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- MAPKとERK: ERKはMAPKファミリーの代表的な分子の一つです。
+- MEKとERK: MEKはERKをリン酸化する上流のキナーゼで、ERKは下流へ情報を伝えます。
+- 経路活性と細胞増殖: MAPK経路が動いたことと、細胞増殖が起きたことは別に測ります。
+
+### 解釈の落とし穴
+
+- p-ERKが増えたことだけで、MAPK経路全体や細胞応答を断定しないようにします。
+- MAPK経路は一つだけではなく、ERK、JNK、p38などを区別します。
+- 阻害剤の結果は強い手がかりになりますが、濃度や標的特異性を確認します。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'MAPK経路',
+      english: 'MAPK pathway',
+      abbreviation: 'MAPK',
+      description: 'MAPKファミリーのキナーゼを介して細胞内へ情報を伝える経路。',
+      href: '/glossary/mapk-pathway/',
+    },
+    {
+      term: 'ERK',
+      english: 'extracellular signal-regulated kinase',
+      abbreviation: 'ERK',
+      description: 'MAPKファミリーの代表的なキナーゼで、ERK経路の下流で働く。',
+      href: '/glossary/erk/',
+    },
+    {
+      term: 'キナーゼ',
+      english: 'kinase',
+      description: '基質にリン酸基を付ける酵素。',
+      href: '/glossary/kinase/',
+    },
+    {
+      term: 'シグナル伝達経路',
+      english: 'signaling pathway',
+      description: '複数の分子が連なって細胞内で情報を伝える反応の流れ。',
+      href: '/glossary/signaling-pathway/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: 'MAPK経路はどのような流れで情報を伝えますか。',
+      answer: '複数のキナーゼが順に働き、リン酸化を介して情報を伝えます。',
+    },
+    {
+      question: 'ERK経路の代表的な流れを挙げてください。',
+      answer: '受容体からRas、Raf、MEK、ERKへ進む流れです。',
+    },
+    {
+      question: 'p-ERKを見るときに総ERKも確認する理由は何ですか。',
+      answer: 'リン酸化の変化とERKタンパク質量の変化を区別するためです。',
+    },
+    {
+      question: 'MAPK経路の測定で時間経過が重要な理由は何ですか。',
+      answer:
+        '刺激後に短時間で変化し、ピークや持続時間によって解釈が変わるためです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'キナーゼとは何か', href: '/cell-biology/kinase/' },
+    { title: 'シグナル伝達経路とは何か', href: '/cell-biology/pathway/' },
+    { title: 'PI3K-AKT経路とは何か', href: '/cell-biology/pi3k-akt-pathway/' },
+  ]}
+/>

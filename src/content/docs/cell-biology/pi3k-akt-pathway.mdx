@@ -1,0 +1,156 @@
+---
+title: PI3K-AKT経路とは何か
+description: PI3K-AKT経路が受容体シグナルを代謝、生存、成長などの細胞応答へつなげる経路であることを説明します。
+part: cell-biology
+module: cell-signaling
+level: foundation
+priority: P2
+order: 36
+learningPaths:
+  - foundations
+relatedTerms:
+  - pi3k-akt-pathway
+  - signaling-pathway
+  - phosphorylation
+prerequisites:
+  - /cell-biology/pathway/
+  - /cell-biology/kinase/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    'PI3K-AKT経路が受容体シグナルを細胞応答へつなげる経路であることを理解する',
+    'PI3K、PIP3、AKT、mTORの基本的な関係を説明できる',
+    'p-AKTなどのFigureを経路活性の手がかりとして読む視点を持つ',
+  ]}
+/>
+
+PI3K-AKT経路は、受容体からのシグナルを受けて、細胞の代謝、成長、生存などに関わる反応へつなげる代表的な[シグナル伝達経路](/glossary/signaling-pathway/)です。
+
+PI3Kが膜脂質を変化させ、その情報を手がかりにAKTが活性化されます。論文では、AKTのリン酸化や下流分子の変化が経路活性の手がかりとしてよく使われます。
+
+<LessonFigure
+  src="/figures/pi3k-akt-pathway-concept.jpg"
+  alt="受容体刺激によりPI3Kが膜近くで働き、AKTが活性化されて代謝や成長に関わる応答へつながる様子を示す教材イラスト"
+  title="PI3K-AKT経路は膜近くのシグナルを細胞応答へつなげる"
+  caption="PI3Kによる膜脂質の変化を手がかりにAKTが働き、代謝や成長に関わる下流反応へ情報が伝わります。"
+/>
+
+## なぜPI3K-AKT経路の視点が重要か
+
+PI3K-AKT経路は、増殖因子や栄養状態に関わるシグナルを読むときによく登場します。細胞が外からの情報を、代謝や成長の調節へつなげる例として理解しやすい経路です。
+
+Figureでは、p-AKT、p-S6、p-4EBP1、PI3K阻害剤、AKT阻害剤などとして出てくることがあります。経路のどこを測っているかを意識すると、主張の強さを判断しやすくなります。
+
+## どんなPI3K-AKT経路があるか
+
+PI3Kは phosphoinositide 3-kinase の略で、膜脂質をリン酸化してPIP3を作る酵素として働きます。PIP3は、AKTなどのタンパク質を膜近くへ集める目印になります。
+
+AKTは protein kinase B とも呼ばれるキナーゼで、リン酸化されることで活性化状態の手がかりになります。AKTの下流には、mTORを含む代謝やタンパク質合成に関わる分子が出てくることがあります。
+
+この経路は、MAPK経路など他の経路と並行して動くことがあります。受容体刺激後に複数の経路が同時に変化することもあるため、1本だけで細胞応答を説明しきらないようにします。
+
+## PI3K-AKT経路はどう調べるか
+
+PI3K-AKT経路は、p-AKT、p-S6、p-4EBP1などのリン酸化をWestern blotや免疫染色で調べます。PI3K阻害剤、AKT阻害剤、mTOR阻害剤を使って、下流の反応が変わるかを見ることもあります。
+
+AKTには複数のリン酸化部位があり、どの部位を見ているかで意味が変わります。総AKTとリン酸化AKT、刺激時間、阻害剤、細胞状態を合わせて確認します。
+
+## PI3K-AKT経路の変化は何につながるか
+
+PI3K-AKT経路の変化は、代謝、タンパク質合成、細胞サイズ、細胞周期、ストレス応答などに関わることがあります。ただし、同じp-AKTの変化でも、細胞種や条件によって下流の応答は異なります。
+
+p-AKTが増えたことは経路が動いた手がかりですが、細胞が「生存した」「増殖した」といった表現型の原因を直接示すわけではありません。細胞応答を主張するには、機能実験や対照実験が必要です。
+
+## 論文や実験ではどう出てくるか
+
+[Results](/glossary/results/)では、p-AKT、PI3K阻害剤、AKT阻害剤、mTOR関連分子、代謝や成長に関わる下流マーカーとして出てきます。[Figure](/glossary/figure/)では、Western blot、免疫染色、阻害剤処理の比較、時間経過として示されます。
+
+Figure legendでは、AKTのリン酸化部位、総AKTとの比較、刺激条件、阻害剤の標的、下流マーカーが何を示すかを確認します。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- PI3KとAKT: PI3Kは膜脂質を変化させる上流の酵素で、AKTはその下流で働くキナーゼです。
+- AKTとmTOR: AKTはmTORなどの下流調節につながるキナーゼで、mTORは代謝やタンパク質合成の文脈でよく出ます。
+- p-AKTと総AKT: p-AKTはリン酸化状態、総AKTはAKTタンパク質量を示します。
+
+### 解釈の落とし穴
+
+- p-AKTが増えたことだけで、細胞が増殖した、または生存したとは言えません。
+- AKTのリン酸化部位によって解釈が変わるため、抗体が何を見ているかを確認します。
+- PI3K-AKT経路は他の経路と影響し合うため、単独の直線経路として読みすぎないようにします。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'PI3K-AKT経路',
+      english: 'PI3K-AKT pathway',
+      abbreviation: 'PI3K-AKT',
+      description:
+        'PI3KとAKTを中心に、受容体シグナルを代謝や成長の応答へつなげる経路。',
+      href: '/glossary/pi3k-akt-pathway/',
+    },
+    {
+      term: 'AKT',
+      english: 'AKT / protein kinase B',
+      abbreviation: 'AKT',
+      description: 'PI3K-AKT経路の下流で働くキナーゼ。',
+      href: '/glossary/akt/',
+    },
+    {
+      term: 'リン酸化',
+      english: 'phosphorylation',
+      description: 'タンパク質などの分子にリン酸基が付く化学修飾。',
+      href: '/glossary/phosphorylation/',
+    },
+    {
+      term: 'シグナル伝達経路',
+      english: 'signaling pathway',
+      description: '複数の分子が連なって細胞内で情報を伝える反応の流れ。',
+      href: '/glossary/signaling-pathway/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: 'PI3K-AKT経路はどのような応答と関係しますか。',
+      answer:
+        '代謝、成長、タンパク質合成、細胞状態の調節などに関わることがあります。',
+    },
+    {
+      question: 'PI3KとAKTの基本的な関係を説明してください。',
+      answer:
+        'PI3Kが膜脂質を変化させ、その情報を手がかりにAKTが活性化されます。',
+    },
+    {
+      question: 'p-AKTを見るときに確認したいことを一つ挙げてください。',
+      answer:
+        'リン酸化部位、総AKTとの比較、刺激時間、阻害剤の条件などを確認します。',
+    },
+    {
+      question: 'p-AKTの増加だけで表現型の原因を断定しにくい理由は何ですか。',
+      answer:
+        '経路活性の手がかりではありますが、細胞応答や因果関係には追加の機能実験が必要だからです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'シグナル伝達経路とは何か', href: '/cell-biology/pathway/' },
+    { title: 'MAPK経路とは何か', href: '/cell-biology/mapk-pathway/' },
+    { title: 'リン酸化とは何か', href: '/cell-biology/phosphorylation/' },
+  ]}
+/>

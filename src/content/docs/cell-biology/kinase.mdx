@@ -1,0 +1,152 @@
+---
+title: キナーゼとは何か
+description: キナーゼが基質にリン酸基を付け、細胞シグナル伝達を調節する酵素であることを説明します。
+part: cell-biology
+module: cell-signaling
+level: foundation
+priority: P1
+order: 33
+learningPaths:
+  - foundations
+relatedTerms:
+  - kinase
+  - phosphorylation
+  - enzyme
+prerequisites:
+  - /molecular-biology/enzyme/
+  - /cell-biology/phosphorylation/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    'キナーゼが基質にリン酸基を付ける酵素であることを理解する',
+    'タンパク質キナーゼがシグナル伝達経路で働く流れを説明できる',
+    'キナーゼ活性とキナーゼ量を区別して読む視点を持つ',
+  ]}
+/>
+
+キナーゼは、ATPなどからリン酸基を受け取り、タンパク質などの基質へ付ける[酵素](/glossary/enzyme/)です。
+
+細胞シグナル伝達では、タンパク質キナーゼが別のタンパク質をリン酸化し、その活性や相互作用を変えることで情報を次の分子へ伝えます。
+
+<LessonFigure
+  src="/figures/kinase-concept.jpg"
+  alt="キナーゼがATP由来のリン酸基を基質タンパク質へ移し、次のシグナル分子へ情報が伝わる様子を示す教材イラスト"
+  title="キナーゼはリン酸化でシグナルを次へ渡す"
+  caption="キナーゼは基質をリン酸化し、タンパク質の働きや結合相手を変えることで経路の流れを作ります。"
+/>
+
+## なぜキナーゼの視点が重要か
+
+キナーゼは、受容体から細胞内へ情報が伝わるときの中心的な分子としてよく登場します。刺激後にキナーゼが活性化し、下流のタンパク質をリン酸化することで、シグナルが段階的に広がります。
+
+キナーゼを理解すると、p-ERK、p-AKT、p-MAPKのようなFigureを読みやすくなります。見えているのがキナーゼの量なのか、リン酸化された活性化状態なのかを区別することが大切です。
+
+## どんなキナーゼがあるか
+
+タンパク質キナーゼには、セリン・スレオニンキナーゼ、チロシンキナーゼなどがあります。どのアミノ酸残基をリン酸化するか、どの基質を認識するかによって働く経路が異なります。
+
+受容体型チロシンキナーゼのように、受容体自身がキナーゼ活性を持つ場合があります。一方で、細胞質内のキナーゼが受容体やアダプタータンパク質から情報を受け取り、下流へ伝える場合もあります。
+
+MAPK経路やPI3K-AKT経路のように、複数のキナーゼが連なって働く経路もあります。キナーゼの連鎖は、シグナルを増幅したり、時間や場所に応じて調節したりする仕組みとして読めます。
+
+## キナーゼはどう調べるか
+
+キナーゼは、リン酸化特異的抗体によるWestern blot、キナーゼ活性アッセイ、阻害剤処理、変異体解析、質量分析などで調べます。[Methods](/glossary/methods/)では、キナーゼそのものを測っているのか、基質のリン酸化を見ているのかを確認します。
+
+阻害剤を使う実験では、あるキナーゼを抑えると下流のリン酸化や細胞応答が弱まるかを見ます。ただし、阻害剤は標的以外へ作用することもあるため、濃度、処理時間、別の検証法を合わせて読む必要があります。
+
+## キナーゼの変化は何につながるか
+
+キナーゼ活性が変わると、下流タンパク質のリン酸化、転写因子の働き、代謝、細胞移動、増殖、分化などが変わることがあります。シグナル伝達経路の中では、キナーゼが情報の中継点として働きます。
+
+一方で、キナーゼの量が増えたことと、キナーゼ活性が上がったことは同じではありません。活性化状態、局在、基質の有無、ホスファターゼによる脱リン酸化も含めて考えます。
+
+## 論文や実験ではどう出てくるか
+
+[Results](/glossary/results/)では、キナーゼ発現、リン酸化キナーゼ、基質リン酸化、阻害剤による下流シグナル低下として示されます。[Figure](/glossary/figure/)では、Western blot、キナーゼ活性グラフ、阻害剤処理の比較、時間経過として読むことが多いです。
+
+Figure legendでは、総キナーゼとリン酸化キナーゼのどちらを見ているか、どの阻害剤を使ったか、刺激後の時間が何分かを確認します。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- キナーゼと酵素: キナーゼは酵素の一種で、リン酸基を付ける反応を進めます。
+- キナーゼとホスファターゼ: キナーゼはリン酸基を付け、ホスファターゼは外します。
+- キナーゼ量とキナーゼ活性: 量が多いことと活性化していることは同じではありません。
+
+### 解釈の落とし穴
+
+- p-キナーゼの増加は経路活性化の手がかりですが、下流の応答まで必ず起きたとは限りません。
+- 阻害剤で変化した結果を、標的キナーゼだけの効果とすぐに決めつけないようにします。
+- キナーゼ経路は互いにつながることがあり、1本の直線としてだけ読むと見落としが出ます。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'キナーゼ',
+      english: 'kinase',
+      description: '基質にリン酸基を付ける酵素。',
+      href: '/glossary/kinase/',
+    },
+    {
+      term: 'リン酸化',
+      english: 'phosphorylation',
+      description: 'タンパク質などの分子にリン酸基が付く化学修飾。',
+      href: '/glossary/phosphorylation/',
+    },
+    {
+      term: '酵素',
+      english: 'enzyme',
+      description: '化学反応を進みやすくする触媒として働く分子。',
+      href: '/glossary/enzyme/',
+    },
+    {
+      term: 'シグナル伝達経路',
+      english: 'signaling pathway',
+      description: '複数の分子が連なって細胞内で情報を伝える反応の流れ。',
+      href: '/glossary/signaling-pathway/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: 'キナーゼはどのような酵素ですか。',
+      answer: '基質にリン酸基を付ける酵素です。',
+    },
+    {
+      question: 'キナーゼ量とキナーゼ活性の違いを説明してください。',
+      answer:
+        'キナーゼ量は分子の量で、キナーゼ活性は基質をリン酸化する働きの状態です。',
+    },
+    {
+      question: '阻害剤実験を読むときに注意することは何ですか。',
+      answer:
+        '標的以外への作用、濃度、処理時間、別の検証法の有無を確認します。',
+    },
+    {
+      question: 'キナーゼを調べる方法を一つ挙げてください。',
+      answer:
+        'リン酸化特異的抗体によるWestern blot、キナーゼ活性アッセイ、阻害剤処理などがあります。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'リン酸化とは何か', href: '/cell-biology/phosphorylation/' },
+    { title: 'MAPK経路とは何か', href: '/cell-biology/mapk-pathway/' },
+    { title: 'PI3K-AKT経路とは何か', href: '/cell-biology/pi3k-akt-pathway/' },
+  ]}
+/>
