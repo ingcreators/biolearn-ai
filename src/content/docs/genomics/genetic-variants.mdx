@@ -20,6 +20,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -29,7 +30,9 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-遺伝的変異は、個体や細胞の間で見られるゲノム配列の違いです。
+遺伝的変異は、個体や[細胞](/glossary/cell/)の間で見られる[ゲノム](/glossary/genome/)配列の違いです。
+
+1塩基だけが異なる場合もあれば、塩基が挿入されたり欠失したり、より大きな構造の違いとして見つかる場合もあります。配列の違いを見つけることと、その意味を決めることは分けて考えます。
 
 <LessonFigure
   src="/figures/genetic-variants-concept.jpg"
@@ -38,56 +41,84 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   caption="配列の違いを見つけることと、その意味を確定することは別であり、頻度や位置、証拠を合わせて考えます。"
 />
 
-ゲノム配列には、個人差や細胞ごとの差があります。1塩基だけが異なる場合もあれば、塩基が挿入されたり欠失したりする場合もあります。こうした違いを遺伝的変異と呼びます。
+## なぜ遺伝的変異の視点が重要か
 
-遺伝的変異にはさまざまな種類があります。1塩基の違いであるSNP、短い配列の挿入や欠失、より大きな構造変化などがあります。変異が遺伝子の中にあるのか、調節領域にあるのか、タンパク質のアミノ酸配列を変えるのかによって、考えるべき影響は異なります。
+同じ生物種でも配列は完全に同じではなく、その違いが形質、進化、集団解析、ゲノム研究の手がかりになることがあります。ただし、変異を見つけることと、その意味を決めることは別です。
 
-変異があるからといって、必ず大きな影響があるとは限りません。多くの変異は中立的か、影響が小さい場合があります。一方で、特定の条件では機能に影響する変異もあります。重要なのは、変異の存在と意味を分けて考えることです。
+変異の位置、頻度、[遺伝子](/glossary/gene/)や調節領域との関係、[機能実験](/glossary/functional-assay/)の証拠を合わせて考える必要があります。この教材では、個人の診断や治療判断ではなく、ゲノム配列の違いを読むための基礎概念として扱います。
 
-疾患や形質との関係を考えるには、統計的証拠、機能実験、集団頻度などを合わせて慎重に解釈します。この教材では、個人の診断や治療判断ではなく、ゲノム配列の違いを学ぶための基礎概念として扱います。
+## どんな遺伝的変異があるか
 
-## なぜ重要か
+ある位置で、多くの個体はAを持つのに、一部の個体はGを持つことがあります。このような1塩基の違いは[SNP](/glossary/snp/)として扱われることがあります。
 
-[遺伝的変異](/glossary/genetic-variant/)は、[ゲノム](/glossary/genome/)を個体差や細胞差として理解するための基本概念です。同じ生物種でも配列は完全に同じではなく、その違いが形質、進化、疾患研究、集団解析の手がかりになることがあります。
+別の例として、数塩基が挿入されたり、欠失したりする変異があります。タンパク質をコードする領域で挿入や欠失が起こると、読み枠や[アミノ酸](/glossary/amino-acid/)配列に影響する場合がありますが、常に大きな影響があるとは限りません。
 
-ただし、変異を見つけることと、その意味を決めることは別です。変異の位置、頻度、[遺伝子](/glossary/gene/)や調節領域との関係、機能実験の証拠を合わせて考える必要があります。
+## 遺伝的変異はどう調べるか
 
-## 具体例
+遺伝的変異は、[シーケンシング](/glossary/sequencing/)や[NGS](/glossary/ngs/)で得られた[シーケンスデータ](/glossary/sequence-data/)を参照配列と比べて調べます。解析では、候補となる変異を検出するバリアントコール、品質確認、アリル頻度や位置の確認などを行います。
 
-ある位置で、多くの人はAを持つのに、一部の人はGを持つことがあります。このような1塩基の違いは[SNP](/glossary/snp/)として扱われることがあります。
+## 遺伝的変異の変化は何につながるか
 
-別の例として、数塩基が挿入されたり、欠失したりする変異があります。タンパク質をコードする領域で挿入や欠失が起こると、読み枠やアミノ酸配列に影響する場合がありますが、常に大きな影響があるとは限りません。
+変異が[タンパク質](/glossary/protein/)の配列、遺伝子発現の調節領域、スプライシング、ゲノム構造などに関わる場所にある場合、細胞や個体の性質に影響する可能性があります。一方で、多くの変異は中立的か、影響が小さい場合もあります。
 
-## よく混同される概念
-
-- 変異とSNP: SNPは変異の一種で、集団内で比較的よく見られる1塩基の違いを指します。
-- 変異と病的変化: 変異は配列の違いを指す言葉で、必ず病気や悪い影響を意味するわけではありません。
-- 相関と原因: ある変異と形質が統計的に関連しても、その変異が直接の原因とは限りません。
+疾患や[形質](/glossary/trait/)との関係を考えるには、統計的な関連、集団頻度、機能実験、既存研究を合わせて慎重に解釈します。ある変異が見つかっただけで、個人の健康状態や将来を断定できるわけではありません。
 
 ## 論文や実験ではどう出てくるか
 
-遺伝的変異は、全ゲノムシーケンシング、エクソーム解析、GWAS、バリアントコールなどで登場します。論文では、変異のゲノム上の位置、アリル頻度、影響予測、集団間の頻度差、機能実験の結果として示されることがあります。
+遺伝的変異は、全ゲノムシーケンシング、エクソーム解析、GWAS、バリアントコールなどで登場します。[Methods](/glossary/methods/)では解析条件やフィルタ、[Results](/glossary/results/)や[Figure](/glossary/figure/)では変異のゲノム上の位置、アリル頻度、影響予測、集団間の頻度差、機能実験の結果として示されることがあります。
 
-## 英語表記と略語
+## どんな点でつまずきやすいか
 
-| 日本語名   | 英語名                         | 略語    |
-| ---------- | ------------------------------ | ------- |
-| 遺伝的変異 | genetic variant                | variant |
-| 一塩基多型 | single nucleotide polymorphism | SNP     |
-| 挿入       | insertion                      | INS     |
-| 欠失       | deletion                       | DEL     |
+### 似た用語との区別
 
-## よくある誤解
+- 遺伝的変異と変異: 遺伝的変異はゲノム配列に見られる違いを広く指し、[変異](/glossary/mutation/)はDNA配列に生じた変化を指す語として使われます。
+- 変異とSNP: SNPは変異の一種で、集団内で比較的よく見られる1塩基の違いを指します。
+- 相関と原因: ある変異と形質が統計的に関連しても、その変異が直接の原因とは限りません。
+
+### 解釈の落とし穴
 
 - 変異という言葉は必ず悪い意味ではありません。
-- ある変異が見つかっただけで、個人の健康状態や将来を断定できるわけではありません。
+- 変異が遺伝子内にあることだけで、機能への影響が証明されたとは言えません。
+- 解析で検出された変異は、データ品質、参照配列、フィルタ条件の影響を受けるため、証拠の強さを確認します。
 
 ## 重要用語
 
-- 遺伝的変異: [ゲノム](/glossary/genome/)配列に見られる個体間や細胞間の違い。
-- 一塩基多型: [SNP](/glossary/snp/)とも呼ばれる、集団内で比較的よく見られる1塩基の違い。
-- 挿入: 配列の一部に塩基が追加される変化。
-- 欠失: 配列の一部の塩基が失われる変化。
+<GlossaryTable
+  terms={[
+    {
+      term: '遺伝的変異',
+      english: 'genetic variant',
+      abbreviation: 'variant',
+      description: 'ゲノム配列に見られる違い。',
+      href: '/glossary/genetic-variant/',
+    },
+    {
+      term: 'ゲノム',
+      english: 'genome',
+      description: 'ある生物が持つ遺伝情報の全体。',
+      href: '/glossary/genome/',
+    },
+    {
+      term: '変異',
+      english: 'mutation',
+      description: 'DNA配列に生じた変化。',
+      href: '/glossary/mutation/',
+    },
+    {
+      term: 'SNP',
+      english: 'single nucleotide polymorphism',
+      abbreviation: 'SNP',
+      description: '集団の中で見られる1塩基の配列多型。',
+      href: '/glossary/snp/',
+    },
+    {
+      term: 'シーケンシング',
+      english: 'sequencing',
+      description: 'DNAやRNA由来の塩基配列を読み取る技術の総称。',
+      href: '/glossary/sequencing/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[
@@ -121,10 +152,11 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 <NextSteps
   items={[
-    { title: 'PCRとは何か', href: '/methods/pcr/' },
-    { title: '用語: 遺伝的変異', href: '/glossary/genetic-variant/' },
-    { title: '用語: 変異', href: '/glossary/mutation/' },
-    { title: '用語: SNP', href: '/glossary/snp/' },
-    { title: '用語集', href: '/glossary/' },
+    { title: 'ゲノムブラウザとは何か', href: '/genomics/genome-browser/' },
+    {
+      title: 'シーケンスデータとは何か',
+      href: '/bioinformatics/sequence-data/',
+    },
+    { title: 'ゲノムとは何か', href: '/fundamentals/genome/' },
   ]}
 />

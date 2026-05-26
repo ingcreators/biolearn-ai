@@ -687,6 +687,14 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'genomics',
   },
   {
+    term: 'ゲノムブラウザ',
+    english: 'genome browser',
+    description:
+      'ゲノム上の座標に沿って、遺伝子、変異、リード、注釈情報などを重ねて表示する画面。',
+    href: '/glossary/genome-browser/',
+    category: 'genomics',
+  },
+  {
     term: 'PCR',
     english: 'polymerase chain reaction',
     abbreviation: 'PCR',
