@@ -20,6 +20,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -31,6 +32,8 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 塩基対は、核酸の向かい合う塩基どうしが決まった組み合わせで対応する関係です。
 
+DNAではAとT、GとCが対になりやすく、この対応が二本鎖構造を支えます。RNAが関わる場面ではTの代わりにUが使われ、AとUの対応が出てきます。
+
 <LessonFigure
   src="/figures/base-pairing-concept.jpg"
   alt="向かい合うDNA鎖で相補的な塩基が対になり、二本鎖構造を支える様子を示す教材イラスト"
@@ -38,29 +41,29 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   caption="DNAではAとT、GとCが対応し、この相補性が複製や転写の正確さを支えます。"
 />
 
-DNAでは、AはTと、GはCと対になりやすい性質があります。この対応関係を塩基対と呼びます。2本のDNA鎖は、塩基対によって互いに対応しながら二重らせん構造を作ります。
+## なぜ塩基対の視点が重要か
 
-塩基対の考え方で重要なのは「相補性」です。片方の鎖の配列が分かると、もう片方の鎖で対応する塩基を推定できます。たとえば片方がAなら、DNAでは向かい側はTになりやすい、という見方です。
-
-RNAではTの代わりにUが使われるため、RNAが関わる場面ではAとUの対応が出てきます。転写ではDNAの情報をもとにRNAが作られ、塩基の相補性が読み出しの基本になります。
-
-## なぜ重要か
-
-[塩基対](/glossary/base-pairing/)は、DNAの二本鎖構造、DNA複製、転写、PCR、シーケンシングを理解する土台です。相補的な塩基が対応するため、細胞はDNAを複製したり、DNAからRNAを合成したりできます。
+塩基対の視点が重要なのは、DNAの二本鎖構造、DNA複製、転写、PCR、シーケンシングを同じ「相補性」の考え方でつなげられるからです。片方の鎖の配列が分かると、もう片方の鎖で対応する塩基を推定できます。
 
 論文や実験では、プライマー設計、変異の記述、配列の比較などで相補性が前提になります。塩基対を理解していると、なぜ短いDNA配列が特定の場所に結合できるのかが分かります。
 
-## 具体例
+## どんな種類があるか
+
+DNAの二本鎖では、A-TとG-Cの対応が基本です。G-C塩基対はA-T塩基対より水素結合の数が多く、配列の性質や融解温度を考えるときに話題になることがあります。
+
+RNAが関わる場面では、A-Uの対応が出てきます。たとえば転写では、DNAの片方の鎖を鋳型としてRNAが合成され、DNA上のAにはRNAのU、TにはA、GにはC、CにはGが対応します。
+
+## 塩基対はどう調べるか
 
 PCRでは、プライマーという短いDNAが目的の配列に相補的に結合します。その場所を起点にDNAポリメラーゼが新しいDNA鎖を伸ばします。
 
-転写では、DNAの片方の鎖を鋳型としてRNAが合成されます。このときDNA上のAにはRNAのU、TにはA、GにはC、CにはGが対応します。
+シーケンシングや配列解析では、塩基配列を読んだあと、相補配列、プライマー結合部位、変異位置などを確認します。ゲル電気泳動やライブラリ品質の説明では、DNA断片の長さがbp単位で示されることもあります。
 
-## よく混同される概念
+## 塩基対の変化は何につながるか
 
-- 塩基と塩基対: 塩基はAやTなどの一つの単位で、塩基対は向かい合う2つの塩基の組です。
-- 塩基配列と相補配列: 塩基配列は片方の鎖の並びで、相補配列はそれに対応する反対側の並びです。
-- DNAの塩基対とRNAの対応: DNAではA-T、RNAが関わる場面ではA-Uが出てきます。
+塩基対が正しく対応しないミスマッチは、複製エラーやDNA損傷の修復を考えるときに出てきます。細胞にはミスマッチや損傷を検出して直す仕組みがありますが、すべてを単純なA-T、G-Cの対応だけで説明できるわけではありません。
+
+塩基対の変化は、配列の違い、プライマー結合のしやすさ、タンパク質をコードする領域でのアミノ酸変化などにつながる場合があります。影響の大きさは、変化した場所や実験条件によって変わります。
 
 ## 論文や実験ではどう出てくるか
 
@@ -68,16 +71,15 @@ PCRでは、プライマーという短いDNAが目的の配列に相補的に�
 
 Methodsでは、プライマー配列、アニーリング、ハイブリダイゼーション、プローブ設計などで相補性が重要になります。Figureでは、DNA断片の長さや変異位置がbpで示されることがあります。
 
-## 英語表記と略語
+## どんな点でつまずきやすいか
 
-| 日本語名   | 英語名                 | 略語 |
-| ---------- | ---------------------- | ---- |
-| 塩基対     | base pair              | bp   |
-| 塩基対形成 | base pairing           | -    |
-| 相補性     | complementarity        | -    |
-| 相補配列   | complementary sequence | -    |
+### 似た用語との区別
 
-## よくある誤解
+- 塩基と塩基対: 塩基はAやTなどの一つの単位で、塩基対は向かい合う2つの塩基の組です。
+- 塩基配列と相補配列: 塩基配列は片方の鎖の並びで、相補配列はそれに対応する反対側の並びです。
+- DNAの塩基対とRNAの対応: DNAではA-T、RNAが関わる場面ではA-Uが出てきます。
+
+### 解釈の落とし穴
 
 - bpは「塩基1個」ではなく、二本鎖DNAで向かい合う塩基の組を数える単位として使われます。
 - 塩基対は暗記だけでなく、複製や転写が成り立つ理由として理解することが大切です。
@@ -85,10 +87,45 @@ Methodsでは、プライマー配列、アニーリング、ハイブリダイ�
 
 ## 重要用語
 
-- 塩基対: 相補的に対応する2つの塩基の組。
-- 相補性: ある塩基配列に対して、対応する塩基が決まる性質。
-- bp: base pairの略で、二本鎖DNAの長さを表す単位としてよく使われる。
-- プライマー: 相補性を利用して特定のDNA領域に結合する短い核酸。
+<GlossaryTable
+  terms={[
+    {
+      term: '塩基対',
+      english: 'base pair',
+      abbreviation: 'bp',
+      description:
+        '相補的に対応する2つの塩基の組で、二本鎖DNAの長さの単位としても使われる。',
+      href: '/glossary/base-pairing/',
+    },
+    {
+      term: 'ヌクレオチド',
+      english: 'nucleotide',
+      description: '塩基、糖、リン酸からなる、DNAやRNAなど核酸の構成単位。',
+      href: '/glossary/nucleotide/',
+    },
+    {
+      term: 'DNA',
+      english: 'deoxyribonucleic acid',
+      abbreviation: 'DNA',
+      description: '遺伝情報を長期的に保存する分子。',
+      href: '/glossary/dna/',
+    },
+    {
+      term: 'RNA',
+      english: 'ribonucleic acid',
+      abbreviation: 'RNA',
+      description: '遺伝情報の読み出しや調節に関わる分子。',
+      href: '/glossary/rna/',
+    },
+    {
+      term: 'PCR',
+      english: 'polymerase chain reaction',
+      abbreviation: 'PCR',
+      description: '特定のDNA領域を試験管内で増幅する実験法。',
+      href: '/glossary/pcr/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[
