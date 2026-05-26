@@ -86,6 +86,20 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'foundations',
   },
   {
+    term: '原子',
+    english: 'atom',
+    description: '分子を構成する基本的な粒子。',
+    href: '/glossary/atom/',
+    category: 'foundations',
+  },
+  {
+    term: '代謝物',
+    english: 'metabolite',
+    description: '細胞内の化学反応で作られたり使われたりする小さな分子。',
+    href: '/glossary/metabolite/',
+    category: 'foundations',
+  },
+  {
     term: '個体',
     english: 'organism',
     description: '1つの生物としてのまとまり。',

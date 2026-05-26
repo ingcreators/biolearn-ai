@@ -21,6 +21,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -75,14 +76,50 @@ Figureでは、分子名、濃度、処理時間、検出方法を合わせて�
 - 分子量や分子名を覚えるだけでは、論文Figureの意味を読めるとは限りません。
 - 分子の変化が見えても、それだけで表現型の原因だと断定できるわけではありません。
 
-## 押さえる用語は何か
+## 重要用語
 
-- 分子（molecule）: 原子が結びついてできた物質のまとまり。
-- 原子（atom）: 分子を構成する基本的な粒子。
-- 代謝物（metabolite）: 細胞内の化学反応で作られたり使われたりする小さな分子。
-- DNA（deoxyribonucleic acid）: 遺伝情報を保存する分子。
-- RNA（ribonucleic acid）: 遺伝情報の読み出しや調節に関わる分子。
-- タンパク質（protein）: 細胞内外で働きを担う分子。
+<GlossaryTable
+  terms={[
+    {
+      term: '分子',
+      english: 'molecule',
+      description: '原子が結びついてできた物質のまとまり。',
+      href: '/glossary/molecule/',
+    },
+    {
+      term: '原子',
+      english: 'atom',
+      description: '分子を構成する基本的な粒子。',
+      href: '/glossary/atom/',
+    },
+    {
+      term: '代謝物',
+      english: 'metabolite',
+      description: '細胞内の化学反応で作られたり使われたりする小さな分子。',
+      href: '/glossary/metabolite/',
+    },
+    {
+      term: 'DNA',
+      english: 'deoxyribonucleic acid',
+      abbreviation: 'DNA',
+      description: '遺伝情報を保存する分子。',
+      href: '/glossary/dna/',
+    },
+    {
+      term: 'RNA',
+      english: 'ribonucleic acid',
+      abbreviation: 'RNA',
+      description: '遺伝情報の読み出しや調節に関わる分子。',
+      href: '/glossary/rna/',
+    },
+    {
+      term: 'タンパク質',
+      english: 'protein',
+      description: '細胞内外で働きを担う分子。',
+      href: '/glossary/protein/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[
@@ -109,6 +146,5 @@ Figureでは、分子名、濃度、処理時間、検出方法を合わせて�
     { title: 'DNAとは何か', href: '/fundamentals/dna/' },
     { title: 'RNAとは何か', href: '/fundamentals/rna/' },
     { title: 'タンパク質とは何か', href: '/fundamentals/protein/' },
-    { title: '用語: 分子', href: '/glossary/molecule/' },
   ]}
 />
