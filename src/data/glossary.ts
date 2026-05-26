@@ -450,6 +450,13 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'molecular-biology',
   },
   {
+    term: 'ヒストン',
+    english: 'histone',
+    description: 'DNAが巻きつく主要なタンパク質。',
+    href: '/glossary/histone/',
+    category: 'molecular-biology',
+  },
+  {
     term: 'ヌクレオソーム',
     english: 'nucleosome',
     description: 'DNAがヒストンタンパク質に巻きついたクロマチンの基本単位。',
@@ -527,6 +534,28 @@ export const glossaryTerms: GlossaryTerm[] = [
     english: 'model organism',
     description: '生命現象を調べるために研究でよく使われる生物。',
     href: '/glossary/model-organism/',
+    category: 'foundations',
+  },
+  {
+    term: '生物種',
+    english: 'species',
+    description: '生物を分類するときの基本的な単位。',
+    href: '/glossary/species/',
+    category: 'foundations',
+  },
+  {
+    term: '疾患モデル',
+    english: 'disease model',
+    description: '疾患や状態の一部を再現して調べるための実験系。',
+    href: '/glossary/disease-model/',
+    category: 'foundations',
+  },
+  {
+    term: '野生型',
+    english: 'wild type',
+    abbreviation: 'WT',
+    description: '実験で比較の基準として扱われる標準的な型。',
+    href: '/glossary/wild-type/',
     category: 'foundations',
   },
   {
