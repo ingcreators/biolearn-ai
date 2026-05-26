@@ -780,6 +780,55 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'genomics',
   },
   {
+    term: 'エピゲノム',
+    english: 'epigenome',
+    description:
+      'ゲノム全体にわたるDNAメチル化、ヒストン修飾、クロマチン状態などの情報のまとまり。',
+    href: '/glossary/epigenome/',
+    category: 'genomics',
+  },
+  {
+    term: 'メチローム',
+    english: 'methylome',
+    description: 'ゲノム全体にわたるDNAメチル化パターンのまとまり。',
+    href: '/glossary/methylome/',
+    category: 'genomics',
+  },
+  {
+    term: 'ChIP-seq',
+    english: 'chromatin immunoprecipitation sequencing',
+    abbreviation: 'ChIP-seq',
+    description:
+      '特定のタンパク質やヒストン修飾が多く検出されるゲノム領域を調べる手法。',
+    href: '/glossary/chip-seq/',
+    category: 'methods-and-analysis',
+  },
+  {
+    term: 'ATAC-seq',
+    english: 'assay for transposase-accessible chromatin with sequencing',
+    abbreviation: 'ATAC-seq',
+    description: '開いたクロマチン領域をゲノム全体で調べるシーケンシング手法。',
+    href: '/glossary/atac-seq/',
+    category: 'methods-and-analysis',
+  },
+  {
+    term: '3Dゲノム',
+    english: 'three-dimensional genome',
+    description:
+      'ゲノム配列が核内でどのように折りたたまれ、近接して配置されるかを見る考え方。',
+    href: '/glossary/three-dimensional-genome/',
+    category: 'genomics',
+  },
+  {
+    term: 'Hi-C',
+    english: 'Hi-C',
+    abbreviation: 'Hi-C',
+    description:
+      'ゲノム領域どうしの核内での近さを、接触頻度としてゲノム全体で測る手法。',
+    href: '/glossary/hi-c/',
+    category: 'methods-and-analysis',
+  },
+  {
     term: '遺伝的変異',
     english: 'genetic variant',
     abbreviation: 'variant',

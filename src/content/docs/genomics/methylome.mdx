@@ -1,0 +1,150 @@
+---
+title: メチロームとは何か
+description: ゲノム全体にわたるDNAメチル化パターンとしてのメチロームを説明します。
+part: genomics
+module: functional-genomics
+level: foundation
+priority: P2
+order: 22
+learningPaths:
+  - foundations
+relatedTerms:
+  - methylome
+  - dna-methylation
+  - epigenome
+prerequisites:
+  - /genomics/epigenome/
+  - /molecular-biology/dna-methylation/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    'メチロームがゲノム全体のDNAメチル化パターンであることを説明できる',
+    'メチル化率、ゲノム座標、領域ごとの違いを大まかに理解する',
+    '高メチル化を単純に発現抑制と読まない注意点を説明できる',
+  ]}
+/>
+
+メチロームは、ゲノム全体にわたる[DNAメチル化](/glossary/dna-methylation/)パターンのまとまりです。
+
+多くの場合、CpGなどの位置ごとにメチル化の割合を測り、[ゲノム座標](/glossary/genomic-coordinate/)に沿って比較します。エピゲノムの中でも、DNAメチル化に注目したデータ層として扱えます。
+
+<LessonFigure
+  src="/figures/methylome-concept.jpg"
+  alt="ゲノムの長い線に沿ってメチル化の高い領域と低い領域が点や濃淡として並ぶ様子を示す教材イラスト"
+  title="メチロームはDNAメチル化をゲノム全体で読む"
+  caption="単一遺伝子だけでなく、領域ごとのメチル化パターンを座標に沿って比較します。"
+/>
+
+## なぜメチロームの視点が重要か
+
+メチロームを見ると、DNAメチル化を一つの遺伝子だけでなく、ゲノム全体のパターンとして比較できます。プロモーター、遺伝子本体、エンハンサー候補、反復配列など、領域ごとに意味が変わる点を意識しやすくなります。
+
+また、細胞型や発生段階の違いを、DNAメチル化の状態として読むことがあります。発現データやクロマチンデータと合わせると、調節状態を多面的に見られます。
+
+## どんなメチロームがあるか
+
+全ゲノムを広く読むデータ、特定領域を深く読むデータ、アレイで代表的な部位を測るデータがあります。手法によって、見えるCpGの範囲、分解能、コスト、比較しやすさが変わります。
+
+バルクデータではサンプル全体の平均的なメチル化率を見ます。single-cellや細胞集団を分けた解析では、細胞ごとの多様性や細胞型ごとの差を考えることがあります。
+
+## メチロームはどう調べるか
+
+代表的な方法には、全ゲノムバイサルファイトシーケンシング、縮約表現バイサルファイトシーケンシング、メチル化アレイがあります。いずれも、DNAメチル化の状態を配列上の位置に対応づけて解析します。
+
+解析では、各部位のメチル化率、領域ごとの差、サンプル間のクラスタリング、発現データとの対応を見ます。[ゲノムブラウザ](/glossary/genome-browser/)では、メチル化率をトラックとして表示することがあります。
+
+## メチロームの変化は何につながるか
+
+メチロームの変化は、細胞状態、発生段階、環境応答、ゲノム領域の調節状態を考える手がかりになります。プロモーター付近の高メチル化は、発現の低さと関連して見えることがあります。
+
+ただし、DNAメチル化の意味は領域によって異なります。遺伝子本体や遠位調節領域では、単純な「高メチル化なら抑制」という読み方が合わないことがあります。
+
+## 論文や実験ではどう出てくるか
+
+[Methods](/glossary/methods/)では、測定法、変換効率、カバレッジ、対象領域、正規化や差分解析の方法が説明されます。[Results](/glossary/results/)では、differentially methylated regions、メチル化率、クラスタ、発現との対応として出てきます。
+
+[Figure](/glossary/figure/)では、ヒートマップ、ゲノムブラウザ、箱ひげ図、散布図、領域ごとのメチル化プロファイルとして示されます。図を読むときは、点や線が部位ごとなのか領域ごとなのかを確認します。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- メチロームとエピゲノム: メチロームはDNAメチル化に注目し、エピゲノムはヒストン修飾やアクセシビリティも含む広い概念です。
+- メチル化率と発現量: メチル化率はDNA修飾の割合で、RNA量そのものではありません。
+- CpG部位と遺伝子: 測定点はゲノム上の位置であり、必ず一つの遺伝子に対応するとは限りません。
+
+### 解釈の落とし穴
+
+- 高メチル化を常に発現抑制と読まない。
+- 平均メチル化率の差が、どの細胞型の変化を反映しているかを確認する。
+- 測定法によって見えている領域が違うため、データセット間の比較では注意が必要です。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'メチローム',
+      english: 'methylome',
+      description: 'ゲノム全体にわたるDNAメチル化パターンのまとまり。',
+      href: '/glossary/methylome/',
+    },
+    {
+      term: 'DNAメチル化',
+      english: 'DNA methylation',
+      description: 'DNAの塩基にメチル基が付く化学修飾。',
+      href: '/glossary/dna-methylation/',
+    },
+    {
+      term: 'エピゲノム',
+      english: 'epigenome',
+      description:
+        'ゲノム全体にわたるDNAメチル化、ヒストン修飾、クロマチン状態などの情報のまとまり。',
+      href: '/glossary/epigenome/',
+    },
+    {
+      term: 'ゲノム座標',
+      english: 'genomic coordinate',
+      description: '染色体名と位置でゲノム上の場所を表す表記。',
+      href: '/glossary/genomic-coordinate/',
+    },
+    {
+      term: 'ゲノムブラウザ',
+      english: 'genome browser',
+      description:
+        'ゲノム上の座標に沿って、遺伝子、変異、リード、注釈情報などを重ねて表示する画面。',
+      href: '/glossary/genome-browser/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: 'メチロームは何に注目したデータ層ですか。',
+      answer: 'ゲノム全体のDNAメチル化パターンに注目したデータ層です。',
+    },
+    {
+      question: '高メチル化を読むときの注意点を一つ挙げてください。',
+      answer: '領域によって意味が変わるため、常に発現抑制と読まないことです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'エピゲノムとは何か', href: '/genomics/epigenome/' },
+    {
+      title: 'DNAメチル化とは何か',
+      href: '/molecular-biology/dna-methylation/',
+    },
+    { title: 'ゲノム座標とは何か', href: '/genomics/genomic-coordinate/' },
+  ]}
+/>

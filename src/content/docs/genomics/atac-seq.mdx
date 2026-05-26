@@ -1,0 +1,153 @@
+---
+title: ATAC-seqとは何か
+description: 開いたクロマチン領域をゲノム全体で調べるATAC-seqの基本を説明します。
+part: genomics
+module: functional-genomics
+level: foundation
+priority: P1
+order: 24
+learningPaths:
+  - foundations
+relatedTerms:
+  - atac-seq
+  - chromatin-accessibility
+  - enhancer
+prerequisites:
+  - /methods/ngs/
+  - /molecular-biology/chromatin-accessibility/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    'ATAC-seqが開いたクロマチン領域を調べる手法であることを説明できる',
+    'ATAC-seqピークとクロマチンアクセシビリティの関係を理解する',
+    'ピークを転写因子結合や発現量そのものとして読まない注意点を説明できる',
+  ]}
+/>
+
+ATAC-seqは、開いたクロマチン領域をゲノム全体で調べるシーケンシング手法です。
+
+開いた領域に入りやすい酵素を使ってDNA断片を作り、その配列を読みます。解析結果は、[クロマチンアクセシビリティ](/glossary/chromatin-accessibility/)が高い候補領域のピークとして扱われます。
+
+<LessonFigure
+  src="/figures/atac-seq-concept.jpg"
+  alt="開いたクロマチン領域に酵素が入りDNA断片を作り、その断片がゲノム上のピークとして見える様子を示す教材イラスト"
+  title="ATAC-seqは開いたクロマチン領域を探す"
+  caption="ピークはDNAへ近づきやすい領域の候補で、発現量や転写因子結合そのものではありません。"
+/>
+
+## なぜATAC-seqの視点が重要か
+
+ATAC-seqを理解すると、プロモーターやエンハンサー候補など、調節に関わりそうな領域をゲノム全体で読めます。細胞型ごとに開いている領域を比べることで、細胞状態や調節因子の候補を考えやすくなります。
+
+また、RNA-seqやChIP-seqと組み合わせると、開いた領域、発現、転写因子結合候補の関係を見られます。ただし、ATAC-seqだけで特定の転写因子が結合していると断定することはできません。
+
+## どんなATAC-seqがあるか
+
+バルクATAC-seqでは、サンプル全体の平均的なアクセシビリティを見ます。single-cell ATAC-seqでは、細胞ごとの開いた領域を比べ、細胞型や状態の違いを推定することがあります。
+
+解析では、ピークの有無、ピークの強さ、条件間で差のあるアクセシビリティ、転写因子モチーフの濃縮などを調べます。どの解析も、サンプルの品質や細胞数に影響されます。
+
+## ATAC-seqはどう調べるか
+
+実験では、開いた[クロマチン](/glossary/chromatin/)領域に入りやすい酵素でDNAを断片化し、得られた断片を[NGS](/glossary/ngs/)で読みます。解析では、リードを参照ゲノムにマッピングし、リードが集まる領域をピークとして検出します。
+
+品質確認では、ミトコンドリア由来リード、フラグメント長、重複率、TSS周辺のシグナルなどが見られることがあります。これらは、データが解釈に使えるかを判断する材料です。
+
+## ATAC-seqのピークは何につながるか
+
+ATAC-seqピークは、DNAに調節因子が近づきやすい領域の候補を示します。近くの遺伝子、[エンハンサー](/glossary/enhancer/)候補、転写因子モチーフ、ChIP-seqピークと重ねることで、調節仮説を立てられます。
+
+ただし、ピークがあることは、その領域が必ず機能していることや、最も近い遺伝子を制御していることを意味しません。機能を調べるには別の証拠が必要です。
+
+## 論文や実験ではどう出てくるか
+
+[Methods](/glossary/methods/)では、細胞数、ライブラリ調製、シーケンス条件、マッピング、ピークコール、品質指標が説明されます。[Results](/glossary/results/)では、open chromatin、accessible peaks、differential accessibilityとして出てきます。
+
+[Figure](/glossary/figure/)では、ゲノムブラウザトラック、ピークヒートマップ、モチーフ解析、UMAP、細胞型ごとのピーク比較として示されます。図を見るときは、バルクかsingle-cellかを確認します。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- ATAC-seqとChIP-seq: ATAC-seqは開いた領域、ChIP-seqは目的分子の濃縮領域を見ます。
+- ATAC-seqとRNA-seq: ATAC-seqはDNAの開きやすさ、RNA-seqはRNA量を見ます。
+- ピークと転写因子結合: モチーフがあるピークでも、実際にその転写因子が結合しているとは限りません。
+
+### 解釈の落とし穴
+
+- ATAC-seqピークを発現量のピークとして読まない。
+- 開いた領域が、必ず最も近い遺伝子を制御すると考えない。
+- single-cell ATAC-seqではデータが疎になりやすく、集約や正規化の影響を受けます。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'ATAC-seq',
+      english: 'assay for transposase-accessible chromatin with sequencing',
+      abbreviation: 'ATAC-seq',
+      description:
+        '開いたクロマチン領域をゲノム全体で調べるシーケンシング手法。',
+      href: '/glossary/atac-seq/',
+    },
+    {
+      term: 'クロマチンアクセシビリティ',
+      english: 'chromatin accessibility',
+      description: 'クロマチン中のDNAへ調節因子や酵素が近づきやすい度合い。',
+      href: '/glossary/chromatin-accessibility/',
+    },
+    {
+      term: 'クロマチン',
+      english: 'chromatin',
+      description: 'DNAとヒストンなどのタンパク質が組み合わさった核内構造。',
+      href: '/glossary/chromatin/',
+    },
+    {
+      term: 'エンハンサー',
+      english: 'enhancer',
+      description: '離れた位置からも遺伝子の転写を高めうる調節DNA領域。',
+      href: '/glossary/enhancer/',
+    },
+    {
+      term: 'ChIP-seq',
+      english: 'chromatin immunoprecipitation sequencing',
+      abbreviation: 'ChIP-seq',
+      description:
+        '特定のタンパク質やヒストン修飾が多く検出されるゲノム領域を調べる手法。',
+      href: '/glossary/chip-seq/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: 'ATAC-seqは何を調べる手法ですか。',
+      answer: '開いたクロマチン領域をゲノム全体で調べる手法です。',
+    },
+    {
+      question: 'ATAC-seqピークを転写因子結合と断定できない理由は何ですか。',
+      answer:
+        'ピークは開いた領域の候補であり、特定の転写因子が実際に結合している直接証拠ではないからです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'ChIP-seqとは何か', href: '/genomics/chip-seq/' },
+    {
+      title: 'クロマチンアクセシビリティとは何か',
+      href: '/molecular-biology/chromatin-accessibility/',
+    },
+    { title: 'ゲノムブラウザとは何か', href: '/genomics/genome-browser/' },
+  ]}
+/>

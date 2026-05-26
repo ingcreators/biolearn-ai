@@ -1,0 +1,151 @@
+---
+title: 3Dゲノムとは何か
+description: 核内でゲノムがどのように折りたたまれ近接するかを読む3Dゲノムの基本を説明します。
+part: genomics
+module: functional-genomics
+level: foundation
+priority: P2
+order: 25
+learningPaths:
+  - foundations
+relatedTerms:
+  - three-dimensional-genome
+  - hi-c
+  - chromosome
+prerequisites:
+  - /fundamentals/chromosome/
+  - /genomics/genomic-coordinate/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    '3Dゲノムが核内でのゲノム配置を読む考え方であることを説明できる',
+    'ゲノム座標上の距離と核内での近さを区別できる',
+    'Hi-Cの接触頻度を直接の機能証明として読まない注意点を説明できる',
+  ]}
+/>
+
+3Dゲノムは、ゲノム配列が核内でどのように折りたたまれ、近接して配置されるかを見る考え方です。
+
+ゲノム上では遠い領域どうしでも、核内では近くにあることがあります。こうした空間的な近さは、遺伝子発現制御やクロマチン状態を考える手がかりになります。
+
+<LessonFigure
+  src="/figures/three-dimensional-genome-concept.jpg"
+  alt="一本のゲノム配列が核内で折りたたまれ、離れた領域どうしが近くに配置される様子と接触マップを示す教材イラスト"
+  title="3Dゲノムは配列上の距離と核内の近さを分けて読む"
+  caption="接触頻度は近接の手がかりであり、調節関係を示すには追加の証拠が必要です。"
+/>
+
+## なぜ3Dゲノムの視点が重要か
+
+3Dゲノムを理解すると、[ゲノム座標](/glossary/genomic-coordinate/)上の距離だけでは説明しにくい調節関係を考えられます。エンハンサーとプロモーターのように、配列上では離れた領域が核内で近くに配置されることがあります。
+
+また、染色体の領域がどのようなまとまりを作るかを読むことで、発現制御、クロマチン状態、構造変化の解釈に役立ちます。ただし、近いことは相互作用や制御の証明そのものではありません。
+
+## どんな3Dゲノムがあるか
+
+ゲノム領域どうしの接触、染色体領域のまとまり、ループ、コンパートメントなどが3Dゲノム解析で扱われます。これらは、配列上の線形な位置とは別の情報として読みます。
+
+細胞集団の平均として見るバルク解析もあれば、単一細胞に近い解像度で多様性を見る解析もあります。細胞周期や細胞型の違いも、核内配置に影響します。
+
+## 3Dゲノムはどう調べるか
+
+代表的な方法に[Hi-C](/glossary/hi-c/)があります。Hi-Cでは、近くにあったゲノム領域どうしをペアとして読み、領域間の接触頻度を行列やヒートマップとして表します。
+
+ほかにも、特定領域に注目する方法や、顕微鏡で特定のDNA領域の位置を観察する方法があります。どの方法でも、空間的な近さをどの解像度で見ているかが重要です。
+
+## 3Dゲノムの変化は何につながるか
+
+3Dゲノムの変化は、離れた調節領域と遺伝子の関係、クロマチン状態のまとまり、構造変化の影響を考える手がかりになります。構造多型や大きなコピー数変化が、領域どうしの配置を変えることもあります。
+
+ただし、接触頻度が高いことだけで、ある領域が別の領域を制御しているとは断定できません。発現データ、ChIP-seq、ATAC-seq、摂動実験などと合わせて解釈します。
+
+## 論文や実験ではどう出てくるか
+
+[Methods](/glossary/methods/)では、Hi-Cライブラリ、解像度、マッピング、正規化、接触行列の作り方が説明されます。[Results](/glossary/results/)では、contact map、loop、domain、compartment、interactionのような表現で出てきます。
+
+[Figure](/glossary/figure/)では、三角形や正方形の接触マップ、ゲノムブラウザ上の弧、領域間接触のヒートマップとして示されます。図を見るときは、横軸と縦軸がどちらもゲノム座標であることを確認します。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- 3Dゲノムとゲノム座標: ゲノム座標は配列上の位置、3Dゲノムは核内での近さや配置を扱います。
+- 接触頻度と物理的距離: Hi-Cの値は近さの手がかりですが、単純な距離そのものではありません。
+- 近接と制御: 近くにあることは調節の候補で、直接制御の証明ではありません。
+
+### 解釈の落とし穴
+
+- 接触マップの色の強さだけで機能を断定しない。
+- 解像度が粗いデータで細かいループを読みすぎない。
+- バルクデータでは、多くの細胞の平均として見えていることを意識する。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: '3Dゲノム',
+      english: 'three-dimensional genome',
+      description:
+        'ゲノム配列が核内でどのように折りたたまれ、近接して配置されるかを見る考え方。',
+      href: '/glossary/three-dimensional-genome/',
+    },
+    {
+      term: 'Hi-C',
+      english: 'Hi-C',
+      abbreviation: 'Hi-C',
+      description:
+        'ゲノム領域どうしの核内での近さを、接触頻度としてゲノム全体で測る手法。',
+      href: '/glossary/hi-c/',
+    },
+    {
+      term: '染色体',
+      english: 'chromosome',
+      description:
+        'DNAとタンパク質からなる、遺伝情報の収納と受け渡しに関わる構造。',
+      href: '/glossary/chromosome/',
+    },
+    {
+      term: 'ゲノム座標',
+      english: 'genomic coordinate',
+      description: '染色体名と位置でゲノム上の場所を表す表記。',
+      href: '/glossary/genomic-coordinate/',
+    },
+    {
+      term: 'エンハンサー',
+      english: 'enhancer',
+      description: '離れた位置からも遺伝子の転写を高めうる調節DNA領域。',
+      href: '/glossary/enhancer/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: '3Dゲノムは何を読む考え方ですか。',
+      answer:
+        'ゲノム配列が核内でどのように折りたたまれ、近接して配置されるかを読む考え方です。',
+    },
+    {
+      question: 'Hi-Cの接触頻度を読むときの注意点を一つ挙げてください。',
+      answer:
+        '接触頻度が高いことは近接の手がかりですが、直接の制御や機能を証明するものではないことです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'ゲノム座標とは何か', href: '/genomics/genomic-coordinate/' },
+    { title: '染色体とは何か', href: '/fundamentals/chromosome/' },
+    { title: 'エピゲノムとは何か', href: '/genomics/epigenome/' },
+  ]}
+/>

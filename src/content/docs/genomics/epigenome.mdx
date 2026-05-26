@@ -1,0 +1,149 @@
+---
+title: エピゲノムとは何か
+description: ゲノム全体にわたるDNAメチル化、ヒストン修飾、クロマチン状態を読むエピゲノムの基本を説明します。
+part: genomics
+module: functional-genomics
+level: foundation
+priority: P1
+order: 21
+learningPaths:
+  - foundations
+relatedTerms:
+  - epigenome
+  - dna-methylation
+  - chromatin
+prerequisites:
+  - /fundamentals/genome/
+  - /molecular-biology/epigenetics/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    'エピゲノムがゲノム全体のクロマチン状態を読む考え方であることを説明できる',
+    'DNAメチル化、ヒストン修飾、クロマチンアクセシビリティの違いを大まかに理解する',
+    'エピゲノムデータを遺伝子発現や細胞状態と結びつけて読みすぎない注意点を説明できる',
+  ]}
+/>
+
+エピゲノムは、ゲノム全体にわたる[DNAメチル化](/glossary/dna-methylation/)、ヒストン修飾、クロマチン状態などの情報のまとまりです。
+
+DNA配列そのものではなく、どの領域が使われやすい状態にあるかを読むための層として扱います。細胞型、発生段階、実験条件によってパターンが変わることがあります。
+
+<LessonFigure
+  src="/figures/epigenome-concept.jpg"
+  alt="同じゲノム配列の上にDNAメチル化、ヒストン修飾、開いたクロマチン領域などの層が重なって見える様子を示す教材イラスト"
+  title="エピゲノムはゲノムに重なる調節状態の層"
+  caption="DNA配列を変えずに、領域ごとの使われやすさやクロマチン状態を読むためのデータとして扱います。"
+/>
+
+## なぜエピゲノムの視点が重要か
+
+エピゲノムを見ると、同じ[ゲノム](/glossary/genome/)配列を持つ細胞でも、どの遺伝子や調節領域が使われやすいかが違うことを考えやすくなります。ゲノム配列だけでは見えにくい細胞状態の違いを、クロマチンの状態として読む入口になります。
+
+また、RNA-seqなどの発現データと組み合わせることで、発現の違いがどのような調節領域やクロマチン状態と対応しているかを考えられます。ただし、対応が見えることと、直接の原因を証明することは分けて読みます。
+
+## どんなエピゲノムがあるか
+
+代表的な層には、DNAメチル化、[ヒストン修飾](/glossary/histone-modification/)、クロマチンアクセシビリティ、核内でのゲノム配置があります。それぞれ、測っている分子や現象が異なります。
+
+単一の細胞集団をまとめて測る場合もあれば、single-cell解析で細胞ごとの差を見る場合もあります。組織やサンプルが混ざっていると、観察されたパターンが細胞型の割合を反映していることもあります。
+
+## エピゲノムはどう調べるか
+
+DNAメチル化はバイサルファイトシーケンシングやメチル化アレイ、ヒストン修飾や転写因子結合は[ChIP-seq](/glossary/chip-seq/)、開いたクロマチンはATAC-seqなどで調べます。3Dゲノムの解析では、Hi-Cのような接触頻度データを使うことがあります。
+
+多くのデータは[ゲノム座標](/glossary/genomic-coordinate/)に沿って整理されます。ゲノムブラウザで遺伝子、ピーク、メチル化率、発現量を重ねると、領域ごとの状態を比較しやすくなります。
+
+## エピゲノムの変化は何につながるか
+
+エピゲノムの変化は、遺伝子発現、細胞分化、応答状態、組織ごとの違いを考える手がかりになります。たとえば、エンハンサー候補のアクセシビリティが変わると、近くまたは遠くの遺伝子の発現と関連して見えることがあります。
+
+ただし、エピゲノムの変化だけで、ある遺伝子が直接制御されたと断定することはできません。時系列、摂動実験、別のデータ層との整合性を合わせて解釈します。
+
+## 論文や実験ではどう出てくるか
+
+[Methods](/glossary/methods/)では、どのエピゲノム層を、どのサンプルで、どのライブラリ調製と解析手順で測ったかが説明されます。[Results](/glossary/results/)では、差のあるピーク、メチル化領域、クロマチン状態、発現との対応として示されます。
+
+[Figure](/glossary/figure/)では、ゲノムブラウザのトラック、ヒートマップ、クラスタリング、ピーク周辺の平均シグナル、メチル化率の分布などとして出てきます。図を見るときは、測定している層を先に確認します。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- エピゲノムとゲノム: ゲノムは配列情報、エピゲノムは配列の上に重なるクロマチン状態の情報です。
+- エピゲノムと[エピジェネティクス](/glossary/epigenetics/): エピジェネティクスは考え方や分野、エピゲノムはゲノム全体で測られるデータ層を指すことが多いです。
+- メチロームとエピゲノム: メチロームはDNAメチル化に注目した層で、エピゲノムの一部として扱えます。
+
+### 解釈の落とし穴
+
+- エピゲノムの差を、DNA配列の差と混同しない。
+- ピークやメチル化差があるだけで、機能が証明されたと読まない。
+- 組織データでは、細胞型の割合の違いがパターンに影響することがあります。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'エピゲノム',
+      english: 'epigenome',
+      description:
+        'ゲノム全体にわたるDNAメチル化、ヒストン修飾、クロマチン状態などの情報のまとまり。',
+      href: '/glossary/epigenome/',
+    },
+    {
+      term: 'DNAメチル化',
+      english: 'DNA methylation',
+      description: 'DNAの塩基にメチル基が付く化学修飾。',
+      href: '/glossary/dna-methylation/',
+    },
+    {
+      term: 'ヒストン修飾',
+      english: 'histone modification',
+      description: 'DNAが巻きつくヒストンタンパク質に付く化学修飾。',
+      href: '/glossary/histone-modification/',
+    },
+    {
+      term: 'クロマチンアクセシビリティ',
+      english: 'chromatin accessibility',
+      description: 'クロマチン中のDNAへ調節因子や酵素が近づきやすい度合い。',
+      href: '/glossary/chromatin-accessibility/',
+    },
+    {
+      term: '3Dゲノム',
+      english: 'three-dimensional genome',
+      description:
+        'ゲノム配列が核内でどのように折りたたまれ、近接して配置されるかを見る考え方。',
+      href: '/glossary/three-dimensional-genome/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: 'エピゲノムはDNA配列そのものですか。',
+      answer:
+        'いいえ。DNA配列そのものではなく、DNAメチル化やクロマチン状態など、配列の上に重なる情報のまとまりです。',
+    },
+    {
+      question: 'エピゲノムデータを読むとき、最初に確認したいことは何ですか。',
+      answer:
+        'DNAメチル化、ヒストン修飾、アクセシビリティなど、どの層を測っているデータかを確認します。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'メチロームとは何か', href: '/genomics/methylome/' },
+    { title: 'ChIP-seqとは何か', href: '/genomics/chip-seq/' },
+    { title: 'ATAC-seqとは何か', href: '/genomics/atac-seq/' },
+  ]}
+/>
