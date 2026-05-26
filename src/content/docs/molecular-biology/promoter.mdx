@@ -20,6 +20,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -29,7 +30,9 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-プロモーターは、RNAポリメラーゼなどが集まり、転写開始に関わるDNA上の領域です。
+プロモーターは、[転写](/glossary/transcription/)開始に関わる[DNA](/glossary/dna/)上の調節領域です。
+
+RNAポリメラーゼや基本転写因子が集まる足場になり、近くの[遺伝子](/glossary/gene/)がどこからどれくらい読み出されるかに関わります。
 
 <LessonFigure
   src="/figures/promoter-concept.jpg"
@@ -38,55 +41,88 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   caption="プロモーターには転写に必要な因子が集まり、遺伝子が読み出される入口を作ります。"
 />
 
-遺伝子がRNAとして読み出されるには、RNAポリメラーゼが適切な位置から転写を始める必要があります。その開始位置の近くにあり、転写開始を助けるDNA領域がプロモーターです。
+## なぜプロモーターの視点が重要か
 
-プロモーターは、タンパク質のアミノ酸配列を直接コードする領域とは別の役割を持ちます。遺伝子本体が「どのようなRNAやタンパク質につながるか」に関わるのに対し、プロモーターは「その遺伝子をどの程度読み出すか」に関わります。
+プロモーターの視点が重要なのは、[遺伝子発現制御](/glossary/gene-expression-regulation/)を「どこから転写が始まるか」という入口から考えられるからです。論文で「promoter activity」「promoter region」「promoter methylation」のような表現が出てきたときも、転写開始との関係を整理できます。
 
-真核生物では、プロモーターに基本転写因子やRNAポリメラーゼが集まり、転写開始複合体が形成されます。さらに、細胞の種類や刺激に応じて働く転写因子がプロモーター周辺に結合し、転写の起こりやすさを変えることがあります。
+プロモーターの状態は、遺伝子の発現量に影響する場合があります。ただし、発現は[エンハンサー](/glossary/enhancer/)、[クロマチン](/glossary/chromatin/)状態、RNA安定性など他の要素にも左右されます。
 
-## なぜ重要か
+## どんなプロモーターがあるか
 
-[プロモーター](/glossary/promoter/)を理解すると、遺伝子発現がDNA配列そのものだけでなく、調節領域によって制御されることが見えやすくなります。論文で「promoter activity」「promoter region」「promoter methylation」のような表現が出てきたときも、転写開始との関係を考えられます。
+[真核細胞](/glossary/eukaryotic-cell/)では、プロモーターに基本転写因子やRNAポリメラーゼが集まり、転写開始複合体が形成されます。[細胞](/glossary/cell/)の種類や刺激に応じて働く[転写因子](/glossary/transcription-factor/)が周辺に結合し、転写の起こりやすさを変えることがあります。
 
-プロモーターの変化や状態は、遺伝子の発現量に影響する場合があります。ただし、発現はエンハンサー、クロマチン状態、RNA安定性など他の要素にも左右されます。
+プロモーターは、[タンパク質](/glossary/protein/)の[アミノ酸](/glossary/amino-acid/)配列を直接コードする領域とは別の役割を持ちます。遺伝子本体が「どのような[RNA](/glossary/rna/)やタンパク質につながるか」に関わるのに対し、プロモーターは「その遺伝子をどの程度読み出すか」に関わります。
 
-## 具体例
+## プロモーターはどう調べるか
 
 ある遺伝子のプロモーターをレポーター遺伝子の前に置くと、そのプロモーターがどの条件で転写を起こしやすいかを調べられます。このような実験は、プロモーター活性を調べるためによく使われます。
 
-また、転写因子が特定のプロモーター領域に結合しているかをChIP-qPCRやChIP-seqで調べることがあります。
+また、転写因子が特定のプロモーター領域に結合しているかをChIP-qPCRやChIP-seqで調べることがあります。[DNAメチル化](/glossary/dna-methylation/)解析やATAC-seqでは、プロモーター周辺の状態を読むこともあります。
 
-## よく混同される概念
+## プロモーターの変化は何につながるか
 
-- プロモーターと遺伝子本体: プロモーターは転写開始に関わる調節領域で、タンパク質配列を直接コードする部分とは区別されます。
-- プロモーターとエンハンサー: どちらも発現制御に関わりますが、プロモーターは転写開始点の近くで入口として働くことが多く、エンハンサーは離れた位置からも転写を高めることがあります。
-- プロモーターと転写因子: プロモーターはDNA領域、転写因子はそこに結合して調節に関わるタンパク質です。
+プロモーターの配列、メチル化、クロマチンの開きやすさ、転写因子の結合が変わると、近くの遺伝子の転写量が変わることがあります。ただし、プロモーターだけで発現量が決まるわけではありません。
+
+プロモーター活性が高いという結果は、転写が起こりやすい手がかりです。実際の細胞内での発現を考えるときは、エンハンサー、クロマチン状態、RNAの分解、測定条件も合わせて見ます。
 
 ## 論文や実験ではどう出てくるか
 
-プロモーターは、レポーターアッセイ、ChIP-seq、ATAC-seq、DNAメチル化解析、遺伝子発現解析で登場します。論文では「promoter activity was increased」「the transcription factor binds the promoter」「promoter methylation is associated with reduced expression」のように書かれます。
+論文では「promoter activity was increased」「the transcription factor binds the promoter」「promoter methylation is associated with reduced expression」のように書かれます。[Methods](/glossary/methods/)では、レポーター構築、ChIP-seq、ATAC-seq、DNAメチル化解析の条件を確認します。
 
-## 英語表記と略語
+[Figure](/glossary/figure/)では、レポーター活性、ゲノムブラウザ上のピーク、転写因子結合、[Results](/glossary/results/)での発現量との対応として示されることがあります。
 
-| 日本語名        | 英語名                       | 略語 |
-| --------------- | ---------------------------- | ---- |
-| プロモーター    | promoter                     | -    |
-| 転写開始点      | transcription start site     | TSS  |
-| RNAポリメラーゼ | RNA polymerase               | -    |
-| 基本転写因子    | general transcription factor | GTF  |
+## どんな点でつまずきやすいか
 
-## よくある誤解
+### 似た用語との区別
+
+- プロモーターと遺伝子本体: プロモーターは転写開始に関わる調節領域で、タンパク質配列を直接コードする部分とは区別されます。
+- プロモーターとエンハンサー: プロモーターは転写開始点の近くで入口として働くことが多く、エンハンサーは離れた位置からも転写を高めることがあります。
+- プロモーターと転写因子: プロモーターはDNA領域、転写因子はそこに結合して調節に関わるタンパク質です。
+
+### 解釈の落とし穴
 
 - プロモーターは遺伝子のタンパク質配列をそのまま決める領域ではありません。
-- プロモーターがあれば必ず強く発現するわけではなく、細胞状態や他の調節因子にも依存します。
-- すべての遺伝子のプロモーターが同じ強さで働くわけではありません。
+- プロモーターがあれば必ず強く発現するわけではありません。
+- レポーターアッセイの結果は、実際のゲノム上の文脈と完全に同じとは限りません。
 
 ## 重要用語
 
-- プロモーター: 転写開始に関わるDNA領域。
-- 転写開始点: RNA合成が始まる位置。
-- 転写開始複合体: 転写開始に必要な因子が集まった状態。
-- プロモーター活性: プロモーターが転写を起こしやすくする働きの強さ。
+<GlossaryTable
+  terms={[
+    {
+      term: 'プロモーター',
+      english: 'promoter',
+      description: '転写開始に関わるDNA上の調節領域。',
+      href: '/glossary/promoter/',
+    },
+    {
+      term: '転写',
+      english: 'transcription',
+      description: 'DNAの情報をもとにRNAを合成する過程。',
+      href: '/glossary/transcription/',
+    },
+    {
+      term: '遺伝子発現制御',
+      english: 'gene expression regulation',
+      description: '遺伝子の使われ方を量、場所、時間の面から調節する仕組み。',
+      href: '/glossary/gene-expression-regulation/',
+    },
+    {
+      term: 'エンハンサー',
+      english: 'enhancer',
+      description: '遺伝子の転写を高めることがある調節DNA領域。',
+      href: '/glossary/enhancer/',
+    },
+    {
+      term: '転写因子',
+      english: 'transcription factor',
+      abbreviation: 'TF',
+      description:
+        'DNA上の調節領域に結合し、転写の起こりやすさに関わるタンパク質。',
+      href: '/glossary/transcription-factor/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[

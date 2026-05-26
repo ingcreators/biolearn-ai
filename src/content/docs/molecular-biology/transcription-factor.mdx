@@ -20,6 +20,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -29,7 +30,9 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-転写因子は、特定のDNA配列に結合し、遺伝子の転写を促進または抑制するタンパク質です。
+転写因子は、特定の[DNA](/glossary/dna/)配列に結合し、[遺伝子](/glossary/gene/)の[転写](/glossary/transcription/)を促進または抑制する[タンパク質](/glossary/protein/)です。
+
+[プロモーター](/glossary/promoter/)や[エンハンサー](/glossary/enhancer/)などの調節領域に結合し、RNAポリメラーゼが働きやすいかどうかに影響することがあります。
 
 <LessonFigure
   src="/figures/transcription-factor-concept.jpg"
@@ -38,46 +41,45 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   caption="転写因子はプロモーターやエンハンサーに結合し、遺伝子が読み出される強さを変えることがあります。"
 />
 
-転写因子は、DNA上の特定の配列を認識して結合するタンパク質です。結合した場所や一緒に働く因子によって、近くの遺伝子の転写を促したり、抑えたりすることがあります。
+## なぜ転写因子の視点が重要か
 
-転写因子は、プロモーターやエンハンサーなどの調節領域と深く関係します。外部刺激や細胞内シグナルによって転写因子の活性、局在、修飾状態が変わると、標的遺伝子の発現が変化することがあります。
+転写因子の視点が重要なのは、[細胞](/glossary/cell/)が外部刺激や発生段階に応じて[遺伝子発現](/glossary/gene-expression/)を変える仕組みを考えられるからです。[細胞シグナル伝達](/glossary/cell-signaling/)と遺伝子発現をつなぐ場面でもよく登場します。
 
-ただし、「転写因子がある」ことと「転写因子が働いている」ことは同じではありません。タンパク質量、核への移動、リン酸化などの修飾、DNA結合、共役因子の有無によって、実際の働きは変わります。
+転写因子を理解すると、[RNA-seq](/glossary/rna-seq/)で見える発現変化の背景に、どの調節因子が関わっている可能性があるかを考えやすくなります。ただし、発現変化だけで直接の標的関係を断定することはできません。
 
-## なぜ重要か
+## どんな転写因子があるか
 
-[転写因子](/glossary/transcription-factor/)は、細胞が外部刺激や発生段階に応じて遺伝子発現を変える中心的な仕組みの一つです。細胞シグナル伝達と遺伝子発現をつなぐ場面でもよく登場します。
+転写因子には、転写を促す方向に働くものも、抑える方向に働くものもあります。結合した場所、相手となる共役因子、[クロマチン](/glossary/chromatin/)状態、細胞条件によって働き方が変わります。
 
-転写因子を理解すると、RNA-seqで見える発現変化の背景に、どの調節因子が関わっている可能性があるかを考えやすくなります。
+また、「転写因子がある」ことと「転写因子が働いている」ことは同じではありません。タンパク質量、[核](/glossary/nucleus/)への移動、リン酸化などの修飾、DNA結合、共役因子の有無によって、実際の働きは変わります。
 
-## 具体例
+## 転写因子はどう調べるか
 
-細胞が刺激を受けると、転写因子が細胞質から核へ移動し、標的遺伝子のエンハンサーやプロモーターに結合することがあります。その結果、応答に必要なmRNAが増える場合があります。
+転写因子は、ChIP-seq、ChIP-qPCR、レポーターアッセイ、ノックダウン、過剰発現、免疫染色、RNA-seqで扱われます。結合を見る実験、量を見る実験、働きの結果を見る実験を分けて読むことが大切です。
 
-別の実験では、特定の転写因子をノックダウンし、標的遺伝子のmRNA量が下がるかをRT-qPCRやRNA-seqで調べます。
+たとえば、細胞が刺激を受けると、転写因子が細胞質から核へ移動し、標的遺伝子のエンハンサーやプロモーターに結合することがあります。別の実験では、特定の転写因子をノックダウンし、標的遺伝子のmRNA量が下がるかを調べます。
 
-## よく混同される概念
+## 転写因子の変化は何につながるか
 
-- 転写因子とRNAポリメラーゼ: RNAポリメラーゼはRNAを合成する酵素で、転写因子は転写の起こりやすさを調節するタンパク質です。
-- 転写因子とプロモーター: 転写因子はタンパク質、プロモーターはDNA領域です。
-- 転写因子の発現と活性: 転写因子のmRNAやタンパク質があるだけでは、DNA結合や転写調節が起きているとは限りません。
+転写因子の活性、局在、修飾状態、DNA結合が変わると、標的候補の遺伝子発現が変わることがあります。応答に必要なmRNAが増える場合もあれば、抑制される場合もあります。
+
+ただし、転写因子のmRNA量だけでは、転写因子の活性を直接示せません。核局在、タンパク質量、修飾状態、DNA結合、下流の発現変化を組み合わせて読みます。
 
 ## 論文や実験ではどう出てくるか
 
-転写因子は、ChIP-seq、ChIP-qPCR、レポーターアッセイ、ノックダウン、過剰発現、免疫染色、RNA-seqで扱われます。論文では「TF binding」「target genes」「transcriptional activation」「nuclear translocation」のように出てきます。
+論文では「TF binding」「target genes」「transcriptional activation」「nuclear translocation」のように出てきます。[Methods](/glossary/methods/)では、ChIP-seq、免疫染色、ノックダウン、過剰発現、レポーターアッセイの条件を確認します。
 
-Figureでは、転写因子結合ピーク、標的遺伝子の発現変化、核局在の画像、レポーター活性のグラフなどとして示されます。
+[Figure](/glossary/figure/)では、転写因子結合ピーク、標的遺伝子の発現変化、核局在の画像、レポーター活性のグラフ、[Results](/glossary/results/)でのRNA量変化として示されることがあります。
 
-## 英語表記と略語
+## どんな点でつまずきやすいか
 
-| 日本語名        | 英語名                     | 略語 |
-| --------------- | -------------------------- | ---- |
-| 転写因子        | transcription factor       | TF   |
-| 標的遺伝子      | target gene                | -    |
-| DNA結合ドメイン | DNA-binding domain         | DBD  |
-| 転写活性化      | transcriptional activation | -    |
+### 似た用語との区別
 
-## よくある誤解
+- 転写因子とRNAポリメラーゼ: RNAポリメラーゼはRNAを合成する[酵素](/glossary/enzyme/)で、転写因子は転写の起こりやすさを調節するタンパク質です。
+- 転写因子とプロモーター: 転写因子はタンパク質、プロモーターはDNA領域です。
+- 転写因子の発現と活性: 転写因子のmRNAやタンパク質があるだけでは、DNA結合や転写調節が起きているとは限りません。
+
+### 解釈の落とし穴
 
 - 転写因子は必ず発現を上げるとは限らず、抑制に関わる場合もあります。
 - 転写因子の結合が見えても、その遺伝子発現が必ず変わるとは限りません。
@@ -85,10 +87,42 @@ Figureでは、転写因子結合ピーク、標的遺伝子の発現変化、�
 
 ## 重要用語
 
-- 転写因子: DNAに結合して転写を調節するタンパク質。
-- 標的遺伝子: ある転写因子の調節を受ける可能性がある遺伝子。
-- DNA結合ドメイン: 転写因子がDNA配列を認識するための領域。
-- 共役因子: 転写因子と一緒に転写調節に関わる因子。
+<GlossaryTable
+  terms={[
+    {
+      term: '転写因子',
+      english: 'transcription factor',
+      abbreviation: 'TF',
+      description:
+        'DNA上の調節領域に結合し、転写の起こりやすさに関わるタンパク質。',
+      href: '/glossary/transcription-factor/',
+    },
+    {
+      term: '転写',
+      english: 'transcription',
+      description: 'DNAの情報をもとにRNAを合成する過程。',
+      href: '/glossary/transcription/',
+    },
+    {
+      term: 'プロモーター',
+      english: 'promoter',
+      description: '転写開始に関わるDNA上の調節領域。',
+      href: '/glossary/promoter/',
+    },
+    {
+      term: 'エンハンサー',
+      english: 'enhancer',
+      description: '遺伝子の転写を高めることがある調節DNA領域。',
+      href: '/glossary/enhancer/',
+    },
+    {
+      term: '遺伝子発現',
+      english: 'gene expression',
+      description: '遺伝子の情報がRNAやタンパク質として使われること。',
+      href: '/glossary/gene-expression/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[

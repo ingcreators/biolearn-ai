@@ -20,6 +20,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -29,7 +30,9 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-エンハンサーは、転写因子などが結合し、特定の遺伝子の転写を高めることがあるDNA上の調節領域です。
+エンハンサーは、[転写因子](/glossary/transcription-factor/)などが結合し、特定の[遺伝子](/glossary/gene/)の[転写](/glossary/transcription/)を高めることがある[DNA](/glossary/dna/)上の調節領域です。
+
+ゲノム上では[プロモーター](/glossary/promoter/)から離れていても、DNAが折りたたまれることで空間的に近づき、転写を助けることがあります。
 
 <LessonFigure
   src="/figures/enhancer-concept.jpg"
@@ -38,55 +41,88 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   caption="DNAの立体構造によって、エンハンサーはプロモーターの近くに働きかけることがあります。"
 />
 
-エンハンサーは、遺伝子の近くにあるとは限りません。ゲノム上ではプロモーターから離れていても、DNAが折りたたまれることで空間的に近づき、転写を促すことがあります。
+## なぜエンハンサーの視点が重要か
+
+エンハンサーの視点が重要なのは、[タンパク質](/glossary/protein/)をコードしないDNA領域が[遺伝子発現](/glossary/gene-expression/)に大きく関わる理由を考えられるからです。[ゲノム](/glossary/genome/)解析では、[変異](/glossary/mutation/)が遺伝子本体ではなくエンハンサー領域にある場合でも、発現に影響する可能性があります。
+
+[細胞](/glossary/cell/)種特異的な発現や発生段階ごとの発現は、どのエンハンサーが使われるかと関係することがあります。エンハンサーを理解すると、配列だけでなく、調節領域と細胞状態の関係を読みやすくなります。
+
+## どんなエンハンサーがあるか
 
 エンハンサーには、細胞の種類や状態に応じて働く転写因子が結合します。そのため、同じ遺伝子でも、どの細胞でどのエンハンサーが使われるかによって発現の強さやタイミングが変わることがあります。
 
-エンハンサーは発現制御を理解するうえで重要ですが、単独で働くというより、プロモーター、転写因子、クロマチン状態、DNAの立体構造と組み合わさって働きます。
+エンハンサーは単独で働くというより、プロモーター、転写因子、[クロマチン](/glossary/chromatin/)状態、DNAの立体構造と組み合わさって働きます。候補領域が見つかっても、どの遺伝子を調節するかは追加の[証拠](/glossary/evidence/)が必要です。
 
-## なぜ重要か
+## エンハンサーはどう調べるか
 
-[エンハンサー](/glossary/enhancer/)を理解すると、タンパク質をコードしないDNA領域が遺伝子発現に大きく関わる理由が分かります。ゲノム解析では、変異が遺伝子本体ではなくエンハンサー領域にある場合でも、発現に影響する可能性があります。
+実験では、ATAC-seqで開いたクロマチン領域を見たり、ChIP-seqで[ヒストン修飾](/glossary/histone-modification/)や転写因子結合を見たりして、エンハンサー候補を探すことがあります。Hi-Cなどでは、離れた領域どうしの近さを調べます。
 
-細胞種特異的な発現や発生段階ごとの発現は、どのエンハンサーが使われるかと関係することがあります。
+レポーターアッセイやCRISPR干渉では、候補領域が転写を高めるか、標的遺伝子の発現に関わるかを検証します。候補を見つける実験と、機能を確かめる実験は分けて考えます。
 
-## 具体例
+## エンハンサーの変化は何につながるか
 
-ある免疫細胞でだけ働くエンハンサーが、免疫応答に関わる遺伝子の発現を高めることがあります。別の細胞ではそのエンハンサーが開いておらず、同じ遺伝子があまり発現しない場合があります。
+エンハンサーの配列、クロマチン状態、転写因子結合、DNAの立体配置が変わると、標的遺伝子の発現量やタイミングが変わることがあります。ある免疫細胞でだけ働くエンハンサーが、免疫応答に関わる遺伝子の発現を高めることがあります。
 
-実験では、ATAC-seqで開いたクロマチン領域を見たり、ChIP-seqでヒストン修飾や転写因子結合を見たりして、エンハンサー候補を探すことがあります。
+ただし、エンハンサーが開いていることや転写因子が結合していることだけで、必ず特定の遺伝子の発現が変わるとは限りません。プロモーターとの関係、細胞条件、発現データを合わせて解釈します。
 
-## よく混同される概念
+## 論文や実験ではどう出てくるか
+
+論文では「candidate enhancer」「enhancer activity」「enhancer-promoter interaction」「cell-type-specific enhancer」のような表現で出てきます。[Methods](/glossary/methods/)では、ChIP-seq、ATAC-seq、Hi-C、レポーターアッセイ、CRISPR干渉などの設計を確認します。
+
+[Figure](/glossary/figure/)では、ゲノムブラウザ上のピーク、ヒストン修飾、転写因子結合、レポーター活性、[Results](/glossary/results/)での標的遺伝子の発現変化として示されることがあります。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
 
 - エンハンサーとプロモーター: プロモーターは転写開始点の近くで入口として働くことが多く、エンハンサーは離れた位置から転写を高めることがあります。
 - エンハンサーと転写因子: エンハンサーはDNA領域、転写因子はそこに結合するタンパク質です。
 - 非コード領域と不要な領域: タンパク質をコードしない領域にも、発現制御に重要な配列があります。
 
-## 論文や実験ではどう出てくるか
-
-エンハンサーは、ChIP-seq、ATAC-seq、Hi-C、レポーターアッセイ、CRISPR干渉などで扱われます。論文では「candidate enhancer」「enhancer activity」「enhancer-promoter interaction」「cell-type-specific enhancer」のような表現で出てきます。
-
-## 英語表記と略語
-
-| 日本語名                           | 英語名                        | 略語 |
-| ---------------------------------- | ----------------------------- | ---- |
-| エンハンサー                       | enhancer                      | -    |
-| エンハンサー活性                   | enhancer activity             | -    |
-| エンハンサー・プロモーター相互作用 | enhancer-promoter interaction | -    |
-| クロマチン                         | chromatin                     | -    |
-
-## よくある誤解
+### 解釈の落とし穴
 
 - エンハンサーは必ず近くの遺伝子だけを調節するとは限りません。
-- エンハンサーが見つかっても、どの遺伝子を調節するかは追加の証拠が必要です。
-- エンハンサーは単なるスイッチではなく、複数の因子と文脈に依存して働きます。
+- エンハンサー候補が見つかっても、どの遺伝子を調節するかは追加の証拠が必要です。
+- エンハンサーは単なるオン・オフスイッチではなく、複数の因子と文脈に依存して働きます。
 
 ## 重要用語
 
-- エンハンサー: 遺伝子の転写を高めることがある調節DNA領域。
-- クロマチン: DNAとタンパク質がまとまった構造。
-- エンハンサー活性: エンハンサー候補が転写を高める働き。
-- 立体ゲノム: DNAが核内でどのように折りたたまれているかという見方。
+<GlossaryTable
+  terms={[
+    {
+      term: 'エンハンサー',
+      english: 'enhancer',
+      description: '遺伝子の転写を高めることがある調節DNA領域。',
+      href: '/glossary/enhancer/',
+    },
+    {
+      term: 'プロモーター',
+      english: 'promoter',
+      description: '転写開始に関わるDNA上の調節領域。',
+      href: '/glossary/promoter/',
+    },
+    {
+      term: '転写因子',
+      english: 'transcription factor',
+      abbreviation: 'TF',
+      description:
+        'DNA上の調節領域に結合し、転写の起こりやすさに関わるタンパク質。',
+      href: '/glossary/transcription-factor/',
+    },
+    {
+      term: 'クロマチン',
+      english: 'chromatin',
+      description: 'DNAとヒストンなどのタンパク質が組み合わさった核内構造。',
+      href: '/glossary/chromatin/',
+    },
+    {
+      term: '遺伝子発現制御',
+      english: 'gene expression regulation',
+      description: '遺伝子の使われ方を量、場所、時間の面から調節する仕組み。',
+      href: '/glossary/gene-expression-regulation/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[
