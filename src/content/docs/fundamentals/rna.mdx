@@ -20,6 +20,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -38,58 +39,95 @@ RNAは、DNAの情報を使う場面で働く、柔軟な役割を持つ分子�
   caption="RNAはDNAの情報を写し取り、mRNA、tRNA、rRNAなどとして細胞内の働きを支えます。"
 />
 
-RNAはリボ核酸の略です。DNAと似ていますが、一般に一本鎖で働くことが多く、塩基としてTの代わりにUを使います。タンパク質の材料情報を運ぶmRNA、リボソームの構成要素であるrRNA、アミノ酸を運ぶtRNAなど、複数の種類があります。
-
-RNAは、DNAに保存された情報を細胞内で使うための重要な分子です。mRNAはタンパク質合成に使われる情報を運びますが、RNAの役割はそれだけではありません。rRNAはリボソームの一部として働き、tRNAは翻訳のときにアミノ酸を運びます。
-
-DNAからRNAが作られる過程を転写と呼びます。転写されたRNAは、そのまま使われる場合もあれば、加工を受けてから働く場合もあります。真核生物では、mRNAが成熟するまでに不要な部分が取り除かれたり、末端に構造が加えられたりします。
-
-RNAは単なる中継役に限らず、遺伝子発現の調節にも関わります。RNAの量や種類を調べることで、細胞がどの遺伝子をどれくらい使っているかを推定できます。この考え方は、後で学ぶRNA-seqにつながります。
-
-## なぜ重要か
+## なぜRNAの視点が重要か
 
 [RNA](/glossary/rna/)は、[DNA](/glossary/dna/)に保存された情報が細胞内で使われるときの中心的な分子です。[転写](/glossary/transcription/)によってRNAが作られ、その量や種類は細胞の状態を反映します。
 
 RNAを理解すると、[遺伝子発現](/glossary/gene-expression/)や[RNA-seq](/glossary/rna-seq/)の考え方が分かりやすくなります。多くの実験では、細胞がどの遺伝子を使っているかをRNA量から推定します。
 
-## 具体例
+## どんなRNAがあるか
 
-mRNAは、タンパク質を作るための情報をリボソームへ伝えます。rRNAはリボソームの主要な構成要素として働き、tRNAはアミノ酸を運んでコドンと対応づけます。
+RNAはリボ核酸の略です。DNAと似ていますが、一般に一本鎖で働くことが多く、塩基としてTの代わりにUを使います。タンパク質の材料情報を運ぶmRNA、リボソームの構成要素であるrRNA、アミノ酸を運ぶtRNAなど、複数の種類があります。
+
+RNAは、DNAに保存された情報を細胞内で使うための重要な分子です。mRNAはタンパク質合成に使われる情報を運びますが、RNAの役割はそれだけではありません。rRNAはリボソームの一部として働き、tRNAは翻訳のときにアミノ酸を運びます。
+
+RNAは単なる中継役に限らず、遺伝子発現の調節にも関わります。たとえば、miRNAのような短いRNAは標的mRNAの翻訳や安定性を調節します。
+
+## RNAはどう調べるか
+
+DNAからRNAが作られる過程を転写と呼びます。転写されたRNAは、そのまま使われる場合もあれば、加工を受けてから働く場合もあります。真核生物では、mRNAが成熟するまでに不要な部分が取り除かれたり、末端に構造が加えられたりします。
+
+RNAは、RT-qPCR、RNA-seq、ノーザンブロット、in situ hybridizationなどで調べます。どの方法を使うかは、「特定のRNA量を測りたいのか」「多数のRNAをまとめて見たいのか」「組織のどこで発現しているかを見たいのか」によって変わります。
+
+## RNAの変化は何につながるか
 
 細胞に刺激を与えると、ある遺伝子のmRNA量が増えることがあります。このとき研究者は、qPCRやRNA-seqでmRNA量を測り、その細胞がどのような応答をしているかを推定します。
 
-## よく混同される概念
-
-- RNAとmRNA: mRNAはRNAの一種です。RNAにはrRNA、tRNA、調節性RNAなどもあります。
-- 転写と翻訳: 転写はDNAからRNAを作る過程で、翻訳はmRNAの情報からタンパク質を作る過程です。
-- RNA量とタンパク質量: mRNAが多いからといって、必ずタンパク質も同じ割合で多いとは限りません。
+ただし、RNA量の変化は「細胞がその遺伝子を使っている可能性」を示す手がかりです。mRNAが多いからといって、必ずタンパク質も同じ割合で多いとは限りません。翻訳効率、RNAの安定性、タンパク質の分解なども関わります。
 
 ## 論文や実験ではどう出てくるか
 
 RNAは、RT-qPCR、RNA-seq、ノーザンブロット、in situ hybridizationなどで登場します。論文では「この遺伝子のmRNA発現が上昇した」「RNA-seqで発現変動遺伝子を同定した」のように、細胞状態を読むための指標として使われることが多いです。
 
-## 英語表記と略語
+## どんな点でつまずきやすいか
 
-| 日本語名          | 英語名           | 略語 |
-| ----------------- | ---------------- | ---- |
-| リボ核酸          | ribonucleic acid | RNA  |
-| メッセンジャーRNA | messenger RNA    | mRNA |
-| リボソームRNA     | ribosomal RNA    | rRNA |
-| 転移RNA           | transfer RNA     | tRNA |
-| 転写              | transcription    | -    |
+### 似た用語との区別
 
-## よくある誤解
+- RNAとmRNA: mRNAはRNAの一種です。RNAにはrRNA、tRNA、調節性RNAなどもあります。
+- 転写と翻訳: 転写はDNAからRNAを作る過程で、翻訳はmRNAの情報からタンパク質を作る過程です。
+- RNA量とタンパク質量: RNA量は細胞状態の手がかりですが、タンパク質量と常に一致するわけではありません。
+
+### 解釈の落とし穴
 
 - RNAはmRNAだけではありません。rRNA、tRNA、調節性RNAなど多様な種類があります。
 - RNAはDNAの劣化版ではなく、独自の機能を持ちます。
+- RNA-seqの発現差は重要な手がかりですが、それだけで機能の原因を断定するのではなく、追加実験や文脈と合わせて読みます。
 
 ## 重要用語
 
-- RNA: DNAの情報を読み出し、タンパク質合成や調節に関わる分子。
-- mRNA: タンパク質を作るための情報を運ぶRNA。
-- rRNA: リボソームの主要な構成要素となるRNA。
-- tRNA: アミノ酸をリボソームへ運び、コドンに対応づけるRNA。
-- 転写: [転写](/glossary/transcription/)はDNAの情報をもとにRNAを合成する過程。
+<GlossaryTable
+  terms={[
+    {
+      term: 'RNA',
+      english: 'ribonucleic acid',
+      abbreviation: 'RNA',
+      description: 'DNAの情報を読み出し、タンパク質合成や調節に関わる分子。',
+      href: '/glossary/rna/',
+    },
+    {
+      term: '転写',
+      english: 'transcription',
+      description: 'DNAの情報をもとにRNAを合成する過程。',
+      href: '/glossary/transcription/',
+    },
+    {
+      term: 'RNAプロセシング',
+      english: 'RNA processing',
+      description: '転写されたRNAが成熟した形になるために受ける加工。',
+      href: '/glossary/rna-processing/',
+    },
+    {
+      term: '翻訳',
+      english: 'translation',
+      description: 'mRNAの情報をもとにアミノ酸をつなぎ、タンパク質を作る過程。',
+      href: '/glossary/translation/',
+    },
+    {
+      term: 'miRNA',
+      english: 'microRNA',
+      abbreviation: 'miRNA',
+      description: '標的mRNAに結合して翻訳や安定性を調節する短い非コードRNA。',
+      href: '/glossary/microrna/',
+    },
+    {
+      term: 'RNA-seq',
+      english: 'RNA sequencing',
+      abbreviation: 'RNA-seq',
+      description: 'RNAを配列決定し、遺伝子発現などを調べる手法。',
+      href: '/glossary/rna-seq/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[
@@ -124,7 +162,5 @@ RNAは、RT-qPCR、RNA-seq、ノーザンブロット、in situ hybridizationな
       title: 'タンパク質とは何か',
       href: '/fundamentals/protein/',
     },
-    { title: '用語: RNA', href: '/glossary/rna/' },
-    { title: '用語集', href: '/glossary/' },
   ]}
 />
