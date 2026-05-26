@@ -31,23 +31,32 @@ BioLearn is a Japanese learning site for molecular biology, cell biology, genomi
 
 ## Lesson structure
 
-Each lesson should include:
+Before creating or reorganizing lesson content, read `docs/CONTENT_GUIDELINES.md`.
+
+Foundation concept lessons should make the learning flow understandable from the table of contents. Use this structure by default:
 
 1. この記事で学ぶこと
-2. Short overview paragraph without a heading
-3. `LessonFigure` without a 図解 heading
-4. Main explanatory text without a 基礎解説 heading
-5. なぜ重要か
-6. 具体例（概念系レッスンでは原則入れる）
-7. よく混同される概念（概念系レッスンでは原則入れる）
-8. 論文や実験ではどう出てくるか（概念系レッスンでは原則入れる）
-9. 英語表記と略語
-10. よくある誤解
-11. 重要用語
-12. 確認問題
-13. 次に読む記事
+2. Short "what it is" overview immediately after `LearningGoals`, without a heading, in 2 paragraphs and 2-4 sentences total
+3. `LessonFigure` immediately after the overview, without a 図解 heading
+4. `なぜ{概念名}の視点が重要か`
+5. `どんな{概念名}があるか` or `どんな種類があるか`
+6. `{概念名}はどう調べるか` or `どう観察・測定するか`
+7. `{概念名}の変化は何につながるか`
+8. `論文や実験ではどう出てくるか`
+9. `どんな点でつまずきやすいか`
+10. `重要用語`
+11. 確認問題
+12. 次に読む記事
 
-Figure の読み方、論文読解、リソース、パス案内のように記事の目的が明確に異なる場合は、そのカテゴリに合う構成を優先してよい。ただし、基礎概念、実験手法、統計、バイオインフォマティクス用語を説明する記事では、「具体例」「よく混同される概念」「論文や実験ではどう出てくるか」を入れる。
+Do not add a body heading like `## {概念名}とは何か` when it duplicates the page title. Do not repeat the same definition or basic overview after the figure.
+
+If `よく混同される概念` and `よくある誤解` would be close in content, combine them into `どんな点でつまずきやすいか`, using `### 似た用語との区別` and `### 解釈の落とし穴` when useful.
+
+Do not keep `英語表記と略語` as a separate section in foundation concept lessons. Put Japanese term, English term, abbreviation only when needed, one-sentence description, and glossary link in `重要用語` with `GlossaryTable`.
+
+For glossary links in normal body text, link each glossary term at its first body occurrence only. Do not repeatedly link the same term, do not link only part of a compound term, and do not force a self-link for the article's central title term; connect the central term in `GlossaryTable`. `NextSteps` should link only to lesson articles, not glossary pages.
+
+Figure reading, paper reading, resources, and path pages may use a structure that fits their purpose. For foundation concepts, experimental methods, statistics, and bioinformatics terms, keep definition, importance, connection to papers or experiments, pitfalls, and important terms unless there is a clear reason to omit one.
 
 ## Quality checks
 
