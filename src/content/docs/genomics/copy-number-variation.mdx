@@ -1,0 +1,141 @@
+---
+title: コピー数変異とは何か
+description: ゲノム領域のコピー数が増減するコピー数変異（CNV）の基本と読み方を説明します。
+part: genomics
+module: variation
+level: foundation
+priority: P1
+order: 12
+learningPaths:
+  - foundations
+relatedTerms:
+  - copy-number-variation
+  - structural-variant
+  - variant
+prerequisites:
+  - /genomics/variant/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    'コピー数変異がゲノム領域のコピー数の増減であることを説明できる',
+    '増幅、重複、欠失の見方を区別できる',
+    'CNVの解釈では領域の大きさ、測定法、比較対象を確認する必要があることを理解する',
+  ]}
+/>
+
+コピー数変異は、ゲノムのある領域のコピー数が増えたり減ったりする変異です。
+
+1塩基の違いではなく、領域としての量が変わる点が特徴です。コピー数が増える場合は重複や増幅、減る場合は欠失として見えることがあり、[ゲノム座標](/glossary/genomic-coordinate/)上の範囲とコピー数の向きを合わせて読みます。
+
+<LessonFigure
+  src="/figures/copy-number-variation-concept.jpg"
+  alt="同じゲノム領域のコピー数がサンプル間で増えたり減ったりし、横方向のゲノム位置に沿って比較される様子を示す教材イラスト"
+  title="コピー数変異はゲノム領域の量の違い"
+  caption="CNVでは、どの領域でコピー数が増えているか減っているかを、範囲と比較対象に注目して読みます。"
+/>
+
+## なぜコピー数変異の視点が重要か
+
+ゲノム上の配列は、1コピーだけでなく、重複や欠失によって数が変わることがあります。コピー数の違いは、遺伝子量や調節領域の量、ゲノム構造の解釈に関わる場合があります。
+
+ただし、CNVの見え方は測定法や解析条件に左右されます。コピー数が変わって見える領域を、生物学的な意味へ直結させる前に、データの種類、サンプル、比較対象、領域幅を確認します。
+
+## どんなコピー数変異があるか
+
+コピー数が増える変化には、同じ領域が余分に存在する重複や、より大きく増える増幅があります。コピー数が減る変化には、一部または全体が失われる欠失があります。
+
+CNVは数千塩基以上の比較的大きな領域として扱われることが多いですが、境界やサイズの基準は研究や解析法によって異なります。狭い変化と広い変化では、検出のしやすさや解釈の仕方も変わります。
+
+## コピー数変異はどう調べるか
+
+コピー数変異は、シーケンスリードの深さ、アレイのシグナル、分割されたゲノム領域の比率、ペアエンドリードの配置などから推定されます。[シーケンシング](/glossary/sequencing/)由来のデータでは、領域ごとのリード数や比率を基準と比べます。
+
+解析結果はCNV plotやセグメント表として示されることがあります。個々の点だけでなく、平滑化された線、セグメント、基準線、サンプルの種類を確認します。
+
+## コピー数変異の変化は何につながるか
+
+コピー数が変わる領域に遺伝子が含まれる場合、遺伝子量や発現量の解釈に関わることがあります。調節領域や複数の遺伝子を含む広い変化では、影響を一つの遺伝子だけに結びつけにくい場合があります。
+
+一方で、CNVがあることだけで機能や形質への影響が証明されるわけではありません。変化の大きさ、含まれる領域、他のデータ、実験的な証拠を合わせて考えます。
+
+## 論文や実験ではどう出てくるか
+
+コピー数変異は、全ゲノムシーケンシング、アレイCGH、SNPアレイ、単一細胞解析、がんゲノム研究などで登場します。[Methods](/glossary/methods/)では、コピー数推定法、正規化、セグメンテーション、閾値が説明されます。
+
+[Figure](/glossary/figure/)では、CNV plot、染色体ごとのコピー数プロファイル、増幅や欠失の領域表として示されます。図では、縦軸の意味、基準線、色の凡例、比較しているサンプルを確認します。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- コピー数変異と構造多型: コピー数変異はコピー数の増減に注目し、構造多型は欠失、重複、逆位、転座など大きな構造の違いを広く含みます。
+- CNVとSNV: CNVは領域の量の違い、SNVは1塩基の違いです。
+- 増幅と発現上昇: コピー数が増えても、必ず発現量が上がるとは限りません。
+
+### 解釈の落とし穴
+
+- CNV plotの点の揺れだけで結論を出さない。
+- 広い領域のCNVを、含まれる一つの遺伝子だけの影響として読まない。
+- 測定法によって、検出しやすいサイズや種類が違うことを確認する。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'コピー数変異',
+      english: 'copy number variation',
+      abbreviation: 'CNV',
+      description: 'ゲノム領域のコピー数が増えたり減ったりする変異。',
+      href: '/glossary/copy-number-variation/',
+    },
+    {
+      term: '構造多型',
+      english: 'structural variant',
+      abbreviation: 'SV',
+      description: '比較的大きなゲノム領域の欠失、重複、逆位、転座などの違い。',
+      href: '/glossary/structural-variant/',
+    },
+    {
+      term: 'バリアント',
+      english: 'variant',
+      description: '参照配列や集団内の基準と比べて見つかる配列上の違い。',
+      href: '/glossary/variant/',
+    },
+    {
+      term: 'ゲノム座標',
+      english: 'genomic coordinate',
+      description: '染色体名と位置でゲノム上の場所を表す表記。',
+      href: '/glossary/genomic-coordinate/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: 'コピー数変異とは何ですか。',
+      answer: 'ゲノムのある領域のコピー数が増えたり減ったりする変異です。',
+    },
+    {
+      question: 'CNVを読むとき、領域幅を確認する理由を説明してください。',
+      answer:
+        '広い領域と狭い領域では含まれる遺伝子や検出の確かさ、解釈に必要な文脈が変わるからです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: '構造多型とは何か', href: '/genomics/structural-variant/' },
+    { title: 'CNV plotの読み方', href: '/figures/how-to-read-cnv-plot/' },
+    { title: 'variantとは何か', href: '/genomics/variant/' },
+  ]}
+/>

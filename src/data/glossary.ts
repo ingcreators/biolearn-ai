@@ -694,6 +694,54 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'genomics',
   },
   {
+    term: 'indel',
+    english: 'insertion-deletion',
+    abbreviation: 'indel',
+    description: '短い挿入や欠失として見つかる配列上の違い。',
+    href: '/glossary/indel/',
+    category: 'genomics',
+  },
+  {
+    term: 'コピー数変異',
+    english: 'copy number variation',
+    abbreviation: 'CNV',
+    description: 'ゲノム領域のコピー数が増えたり減ったりする変異。',
+    href: '/glossary/copy-number-variation/',
+    category: 'genomics',
+  },
+  {
+    term: '構造多型',
+    english: 'structural variant',
+    abbreviation: 'SV',
+    description: '比較的大きなゲノム領域の欠失、重複、逆位、転座などの違い。',
+    href: '/glossary/structural-variant/',
+    category: 'genomics',
+  },
+  {
+    term: '体細胞変異',
+    english: 'somatic variant',
+    description:
+      '受精後に一部の細胞系列で生じ、通常は次世代へ伝わらない配列上の違い。',
+    href: '/glossary/somatic-variant/',
+    category: 'genomics',
+  },
+  {
+    term: '生殖細胞系列変異',
+    english: 'germline variant',
+    description:
+      '生殖細胞系列に由来し、個体の多くの細胞に共有される配列上の違い。',
+    href: '/glossary/germline-variant/',
+    category: 'genomics',
+  },
+  {
+    term: 'variant annotation',
+    english: 'variant annotation',
+    description:
+      '検出されたバリアントに位置、遺伝子、予測影響などの情報を付ける解析。',
+    href: '/glossary/variant-annotation/',
+    category: 'genomics',
+  },
+  {
     term: '遺伝的変異',
     english: 'genetic variant',
     abbreviation: 'variant',

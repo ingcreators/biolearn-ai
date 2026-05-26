@@ -1,0 +1,141 @@
+---
+title: indelとは何か
+description: 短い挿入や欠失として見つかるindelの基本、調べ方、解釈上の注意を説明します。
+part: genomics
+module: variation
+level: foundation
+priority: P1
+order: 11
+learningPaths:
+  - foundations
+relatedTerms:
+  - indel
+  - variant
+  - reference-genome
+prerequisites:
+  - /genomics/variant/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    'indelが短い挿入や欠失として見つかる配列上の違いであることを説明できる',
+    '挿入、欠失、1塩基置換との違いを区別できる',
+    'indelの解釈では位置、長さ、読み枠を確認する必要があることを理解する',
+  ]}
+/>
+
+indelは、[リファレンスゲノム](/glossary/reference-genome/)と比べて、短い塩基配列が挿入されたり欠失したりして見つかる配列上の違いです。
+
+1塩基が別の塩基に置き換わるSNVとは異なり、indelでは配列の長さが変わります。タンパク質をコードする領域では読み枠に関わる場合がありますが、意味は位置や長さ、周辺の注釈と合わせて考えます。
+
+<LessonFigure
+  src="/figures/indel-concept.jpg"
+  alt="リファレンス配列とサンプル配列を比べ、短い挿入と欠失によって配列の長さが変わる様子を示す教材イラスト"
+  title="indelは短い挿入や欠失として見つかる"
+  caption="置換とは異なり、挿入や欠失では配列の長さが変わるため、位置と長さを合わせて読みます。"
+/>
+
+## なぜindelの視点が重要か
+
+indelは、バリアント解析でSNVと並んでよく出てくる基本的な変化です。短い変化でも、コード領域、スプライシングに関わる領域、反復配列の近くなどでは解釈に注意が必要です。
+
+また、indelはアラインメントやバリアントコールの条件の影響を受けやすいことがあります。候補が見つかったら、長さ、周辺配列、リードの支持、品質指標を確認します。
+
+## どんなindelがあるか
+
+挿入は、参照配列にはない塩基がサンプル側に追加されているように見える変化です。欠失は、参照配列にある塩基がサンプル側では抜けているように見える変化です。
+
+長さが3の倍数でないindelがタンパク質コード領域にある場合、読み枠がずれる可能性があります。一方、非コード領域や影響の小さい場所では、見つかっただけで大きな意味があるとは限りません。
+
+## indelはどう調べるか
+
+indelは、[シーケンシング](/glossary/sequencing/)で得たリードをリファレンスに対応づけ、挿入や欠失の候補として検出します。出力には、[ゲノム座標](/glossary/genomic-coordinate/)、参照配列、代替配列、品質、リードの支持などが含まれます。
+
+短い反復配列の近くでは、どこを開始位置として表すかが揺れることがあります。複数のツールや表記を比べるときは、同じ変化が別の座標表記に見える場合があることを意識します。
+
+## indelの変化は何につながるか
+
+indelがコード領域にある場合、アミノ酸の挿入や欠失、読み枠の変化につながる可能性があります。調節領域やスプライシングに関わる領域では、遺伝子発現や転写産物の解釈に関わる場合があります。
+
+ただし、indelの影響は一律ではありません。配列差の検出、機能予測、実験的な証拠、集団頻度などを分けて考える必要があります。
+
+## 論文や実験ではどう出てくるか
+
+indelは、全ゲノムシーケンシング、エクソーム解析、ターゲットシーケンシング、編集実験の結果確認などで登場します。[Methods](/glossary/methods/)では、使ったバリアントコールツール、フィルタ条件、indelの長さの範囲が書かれることがあります。
+
+[Results](/glossary/results/)や[Figure](/glossary/figure/)では、バリアント表、アラインメント図、遺伝子モデル上の位置、読み枠への影響予測として示されます。図を見るときは、塩基の違いだけでなく、周辺のリード配置も確認します。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- indelとSNV: SNVは1塩基の置換で、indelは挿入や欠失により配列の長さが変わる変化です。
+- indelと構造多型: indelは短い挿入や欠失を指すことが多く、構造多型はより大きなゲノム領域の違いを含みます。
+- 欠失と「存在しない」: 欠失は参照配列との比較でそう見える表記であり、比較の基準を確認します。
+
+### 解釈の落とし穴
+
+- indelがコード領域にあることだけで、機能への影響を断定しない。
+- 反復配列周辺では、検出や表記が不安定になりやすい。
+- 同じ変化でもツールや正規化の方法によって見え方が変わる場合がある。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'indel',
+      english: 'insertion-deletion',
+      abbreviation: 'indel',
+      description: '短い挿入や欠失として見つかる配列上の違い。',
+      href: '/glossary/indel/',
+    },
+    {
+      term: 'バリアント',
+      english: 'variant',
+      description: '参照配列や集団内の基準と比べて見つかる配列上の違い。',
+      href: '/glossary/variant/',
+    },
+    {
+      term: 'SNV',
+      english: 'single nucleotide variant',
+      abbreviation: 'SNV',
+      description: '参照配列と比べて1塩基が異なるバリアント。',
+      href: '/glossary/snv/',
+    },
+    {
+      term: 'リファレンスゲノム',
+      english: 'reference genome',
+      description: '配列解析やゲノム表示で基準として使う代表的なゲノム配列。',
+      href: '/glossary/reference-genome/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: 'indelとは何ですか。',
+      answer: '短い塩基配列の挿入や欠失として見つかる配列上の違いです。',
+    },
+    {
+      question: 'indelとSNVの違いを説明してください。',
+      answer:
+        'SNVは1塩基の置換で配列の長さは変わりませんが、indelは挿入や欠失によって配列の長さが変わります。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'variantとは何か', href: '/genomics/variant/' },
+    { title: 'SNPとSNVの違い', href: '/genomics/snp-snv/' },
+    { title: '構造多型とは何か', href: '/genomics/structural-variant/' },
+  ]}
+/>

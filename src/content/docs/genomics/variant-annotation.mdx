@@ -1,0 +1,146 @@
+---
+title: variant annotationとは何か
+description: 検出されたバリアントに遺伝子、位置、予測影響などの情報を付けるvariant annotationを説明します。
+part: genomics
+module: variation
+level: foundation
+priority: P2
+order: 15
+learningPaths:
+  - foundations
+relatedTerms:
+  - variant-annotation
+  - variant
+  - genome-annotation
+prerequisites:
+  - /genomics/variant/
+  - /genomics/genome-annotation/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    'variant annotationが検出されたバリアントに追加情報を付ける解析であることを説明できる',
+    '位置、遺伝子、影響予測、頻度情報などの注釈を区別できる',
+    'annotationは意味の確定ではなく解釈の手がかりであることを理解する',
+  ]}
+/>
+
+variant annotationは、検出されたバリアントに、位置、遺伝子、予測される影響、既存データベース情報などを付ける解析です。
+
+バリアントコールで得られる候補は、座標や塩基の違いだけでは解釈しにくいことがあります。annotationでは、[ゲノムアノテーション](/glossary/genome-annotation/)や集団頻度、機能予測などを重ねて、論文や表で読みやすい情報に整理します。
+
+<LessonFigure
+  src="/figures/variant-annotation-concept.jpg"
+  alt="バリアント候補の一覧に、遺伝子モデル、ゲノム位置、頻度、予測影響などの情報が層として付け加えられる様子を示す教材イラスト"
+  title="variant annotationは配列差に情報を重ねる"
+  caption="検出されたバリアントに、位置、遺伝子、頻度、予測影響などの情報を加えて、解釈の手がかりを整理します。"
+/>
+
+## なぜvariant annotationの視点が重要か
+
+バリアントのリストには、多くの候補が含まれることがあります。annotationを使うと、どの候補が遺伝子内にあるか、タンパク質配列に関わる可能性があるか、既存データベースで見られるかを整理できます。
+
+ただし、annotationは「意味を確定する作業」ではありません。予測や既存情報を重ねることで優先順位づけや読解を助けますが、最終的な解釈には研究目的や追加の証拠が必要です。
+
+## どんなvariant annotationがあるか
+
+位置に基づくannotationでは、バリアントが遺伝子内、エクソン、イントロン、プロモーター付近、遺伝子間領域のどこにあるかを付けます。転写産物ごとに、同じバリアントの注釈が変わることもあります。
+
+影響予測では、アミノ酸置換、同義変化、フレームシフト、スプライシングへの影響候補などが示されます。頻度情報や既存データベース情報は、そのバリアントがどれくらい観察されているかを読む手がかりになります。
+
+## variant annotationはどう調べるか
+
+variant annotationでは、バリアント表を[リファレンスゲノム](/glossary/reference-genome/)とアノテーションファイルに照合します。入力には、染色体、座標、参照塩基、代替塩基などが必要です。
+
+出力には、遺伝子名、転写産物、バリアントの種類、予測影響、集団頻度、既存データベースIDなどが並びます。使うツール、参照するアノテーション版、データベースによって結果は変わります。
+
+## variant annotationの変化は何につながるか
+
+アノテーションの版が変わると、同じバリアントでも対応する遺伝子や転写産物、予測影響が変わることがあります。複数の転写産物を持つ遺伝子では、どの転写産物を基準にした注釈かを確認します。
+
+また、頻度データベースや機能予測の更新によって、表の見え方が変わることがあります。annotation結果は固定された真実ではなく、使った情報源に依存する整理結果として読みます。
+
+## 論文や実験ではどう出てくるか
+
+variant annotationは、バリアント表、Supplementary table、Methodsの解析パイプライン、Resultsの候補絞り込みで出てきます。[Methods](/glossary/methods/)では、使ったツール、リファレンス、アノテーションデータベース、頻度データベースが説明されます。
+
+[Figure](/glossary/figure/)では、遺伝子モデル上のバリアント位置、影響カテゴリの割合、候補バリアントの優先順位づけとして示されることがあります。表では、注釈列が多くなるため、どの列が実測値でどの列が予測や外部情報かを分けて読みます。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- variant annotationとゲノムアノテーション: ゲノムアノテーションはゲノム領域への意味づけで、variant annotationは検出済みバリアントに情報を付ける解析です。
+- annotationと検出: バリアントを見つける作業と、見つかった候補に情報を付ける作業は別です。
+- 予測影響と実験的証拠: 予測で影響が示されても、実験的に機能が証明されたとは限りません。
+
+### 解釈の落とし穴
+
+- annotation結果を、バリアントの意味が確定した結果として読まない。
+- 使ったアノテーション版や転写産物を確認しないまま比較しない。
+- 頻度情報、予測スコア、文献情報を同じ強さの証拠として扱わない。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'variant annotation',
+      english: 'variant annotation',
+      description:
+        '検出されたバリアントに位置、遺伝子、予測影響などの情報を付ける解析。',
+      href: '/glossary/variant-annotation/',
+    },
+    {
+      term: 'バリアント',
+      english: 'variant',
+      description: '参照配列や集団内の基準と比べて見つかる配列上の違い。',
+      href: '/glossary/variant/',
+    },
+    {
+      term: 'ゲノムアノテーション',
+      english: 'genome annotation',
+      description: 'ゲノム上の遺伝子や調節領域などに意味づけを加えた情報。',
+      href: '/glossary/genome-annotation/',
+    },
+    {
+      term: 'ゲノム座標',
+      english: 'genomic coordinate',
+      description: '染色体名と位置でゲノム上の場所を表す表記。',
+      href: '/glossary/genomic-coordinate/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: 'variant annotationとは何ですか。',
+      answer:
+        '検出されたバリアントに、位置、遺伝子、予測影響、既存データベース情報などを付ける解析です。',
+    },
+    {
+      question:
+        'annotation結果を意味の確定として読まない理由を説明してください。',
+      answer:
+        'annotationは予測や既存情報を重ねた整理結果であり、機能や原因性を直接証明するものではないからです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'variantとは何か', href: '/genomics/variant/' },
+    {
+      title: 'ゲノムアノテーションとは何か',
+      href: '/genomics/genome-annotation/',
+    },
+    { title: 'ゲノムブラウザとは何か', href: '/genomics/genome-browser/' },
+  ]}
+/>

@@ -1,0 +1,142 @@
+---
+title: 構造多型とは何か
+description: 欠失、重複、逆位、転座などの構造多型（SV）の基本と解釈上の注意を説明します。
+part: genomics
+module: variation
+level: foundation
+priority: P2
+order: 13
+learningPaths:
+  - foundations
+relatedTerms:
+  - structural-variant
+  - copy-number-variation
+  - indel
+prerequisites:
+  - /genomics/variant/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    '構造多型が大きなゲノム領域の構造的な違いであることを説明できる',
+    '欠失、重複、逆位、転座などの代表例を区別できる',
+    'SVの検出では手法ごとの得意不得意を確認する必要があることを理解する',
+  ]}
+/>
+
+構造多型は、比較的大きなゲノム領域の欠失、重複、逆位、転座など、ゲノムの構造に関わる違いです。
+
+SNVや短いindelが小さな配列差に注目するのに対し、構造多型では領域の向き、位置、コピー数、つながり方が変わる場合があります。論文ではstructural variant、structural variation、SVなどの表記が使われます。
+
+<LessonFigure
+  src="/figures/structural-variant-concept.jpg"
+  alt="ゲノム領域が欠失、重複、逆向き、別の位置へ移動する構造的な違いを抽象的に並べた教材イラスト"
+  title="構造多型は大きなゲノム構造の違い"
+  caption="欠失、重複、逆位、転座などは、領域の量や向き、つながり方の違いとして読みます。"
+/>
+
+## なぜ構造多型の視点が重要か
+
+ゲノムの違いは、1塩基の差だけではありません。大きな領域の配置やコピー数が変わると、遺伝子全体や調節領域、複数の遺伝子をまたぐ単位で解釈が必要になることがあります。
+
+構造多型は、ゲノムブラウザ図やCNV plot、長鎖シーケンシング、ペアエンドリードの解析などで出てきます。どの手法で何を検出しているのかを確認すると、図や表を読みやすくなります。
+
+## どんな構造多型があるか
+
+欠失は領域が失われる変化、重複は領域が余分に存在する変化、逆位は領域の向きが反転する変化です。転座は、領域が別の場所や別の染色体とつながる変化として扱われます。
+
+[コピー数変異](/glossary/copy-number-variation/)は、コピー数の増減に注目した構造的な変化として扱われることがあります。一方、逆位や均衡転座のように、コピー数が大きく変わらない構造多型もあります。
+
+## 構造多型はどう調べるか
+
+構造多型は、リード深度、分割リード、ペアエンドリードの距離や向き、アセンブリ、長鎖シーケンシングなどを使って調べます。検出法によって、見つけやすいサイズや種類が違います。
+
+解析結果では、ブレークポイント、影響を受ける領域、コピー数、支持するリード数などが示されます。候補を読むときは、[リファレンスゲノム](/glossary/reference-genome/)の版やマッピングの難しい領域も確認します。
+
+## 構造多型の変化は何につながるか
+
+構造多型は、遺伝子の一部または全体の欠失、遺伝子量の変化、調節領域との距離の変化、融合した転写産物の候補などにつながる場合があります。ただし、変化の種類だけで意味が決まるわけではありません。
+
+同じ種類の構造多型でも、どの領域にあるか、どの細胞や個体で見られるか、どのデータで支持されているかによって解釈が変わります。
+
+## 論文や実験ではどう出てくるか
+
+構造多型は、全ゲノムシーケンシング、長鎖シーケンシング、がんゲノム研究、集団ゲノム解析などで登場します。[Methods](/glossary/methods/)では、SV caller、フィルタ条件、検出対象のサイズ範囲、検証方法が説明されます。
+
+[Figure](/glossary/figure/)では、ゲノムブラウザ図、サーカスプロット、CNV plot、ブレークポイントを示す模式図として表れます。模式図は便利ですが、実際のデータ支持や解像度を確認して読みます。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- 構造多型とコピー数変異: コピー数変異は量の増減に注目し、構造多型は向きや位置の変化も含む広い語です。
+- 構造多型とindel: indelは短い挿入・欠失として扱われることが多く、構造多型はより大きな領域の違いを扱います。
+- ブレークポイントと領域全体: ブレークポイントは切れ目やつながり目の位置で、影響を受ける領域全体とは分けて読みます。
+
+### 解釈の落とし穴
+
+- SVの候補を、検出法の限界を確認せずに確定的に読まない。
+- コピー数が変わらない構造多型もあることを忘れない。
+- 模式図の矢印やつながりを、実際の解像度以上に細かく解釈しない。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: '構造多型',
+      english: 'structural variant',
+      abbreviation: 'SV',
+      description: '比較的大きなゲノム領域の欠失、重複、逆位、転座などの違い。',
+      href: '/glossary/structural-variant/',
+    },
+    {
+      term: 'コピー数変異',
+      english: 'copy number variation',
+      abbreviation: 'CNV',
+      description: 'ゲノム領域のコピー数が増えたり減ったりする変異。',
+      href: '/glossary/copy-number-variation/',
+    },
+    {
+      term: 'indel',
+      english: 'insertion-deletion',
+      abbreviation: 'indel',
+      description: '短い挿入や欠失として見つかる配列上の違い。',
+      href: '/glossary/indel/',
+    },
+    {
+      term: 'バリアント',
+      english: 'variant',
+      description: '参照配列や集団内の基準と比べて見つかる配列上の違い。',
+      href: '/glossary/variant/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: '構造多型の代表例を挙げてください。',
+      answer: '欠失、重複、逆位、転座などがあります。',
+    },
+    {
+      question: '構造多型の検出で手法を確認する理由を説明してください。',
+      answer:
+        '手法によって検出しやすいサイズや種類、ブレークポイントの解像度が違うからです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'コピー数変異とは何か', href: '/genomics/copy-number-variation/' },
+    { title: 'indelとは何か', href: '/genomics/indel/' },
+    { title: 'ゲノムブラウザとは何か', href: '/genomics/genome-browser/' },
+  ]}
+/>
