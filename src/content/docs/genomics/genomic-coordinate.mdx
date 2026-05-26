@@ -1,0 +1,144 @@
+---
+title: ゲノム座標とは何か
+description: 染色体名と位置でゲノム上の場所を表すゲノム座標の読み方を説明します。
+part: genomics
+module: genome-visualization
+level: foundation
+priority: P2
+order: 7
+learningPaths:
+  - foundations
+relatedTerms:
+  - genomic-coordinate
+  - reference-genome
+  - genome-browser
+prerequisites:
+  - /genomics/reference-genome/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    'ゲノム座標がゲノム上の位置を表す表記であることを説明できる',
+    '染色体名、開始位置、終了位置、リファレンスをセットで確認できる',
+    '座標表記の違いが比較や解釈に影響することを理解する',
+  ]}
+/>
+
+ゲノム座標は、[染色体](/glossary/chromosome/)名と位置を使って、ゲノム上の場所を表す表記です。
+
+座標は[リファレンスゲノム](/glossary/reference-genome/)上に置かれるため、同じ位置を正しく共有するには、染色体名、開始位置、終了位置、使ったリファレンスの版を合わせて読む必要があります。ゲノムブラウザやバリアント表では、この座標が情報を並べる共通の基準になります。
+
+<LessonFigure
+  src="/figures/genomic-coordinate-concept.jpg"
+  alt="染色体上の拡大領域に開始位置と終了位置が示され、遺伝子やバリアントが同じ座標軸上に並ぶ様子を示す教材イラスト"
+  title="ゲノム座標はゲノム上の場所を共有する表記"
+  caption="染色体名、位置、リファレンスの版をそろえることで、遺伝子やバリアントの場所を比較できます。"
+/>
+
+## なぜゲノム座標の視点が重要か
+
+ゲノム上の情報は、遺伝子名だけでは十分に指定できないことがあります。同じ遺伝子にも複数の転写産物があり、近くに別の遺伝子や調節領域がある場合もあるため、位置を座標で示すと誤解が減ります。
+
+座標を使うと、バリアント、リード、ピーク、アノテーションを同じ場所に重ねて考えられます。論文やデータベースで結果を比べるときの共通語にもなります。
+
+## どんなゲノム座標があるか
+
+基本的には、染色体名、開始位置、終了位置で領域を表します。1塩基だけを示す場合もあれば、遺伝子全体やピーク領域のように範囲で示す場合もあります。
+
+表記法には、開始位置を0から数える形式と1から数える形式があります。BED、GTF、VCFなど、ファイル形式によって扱いが違うため、ツールやデータの仕様を確認します。
+
+## ゲノム座標はどう調べるか
+
+[ゲノムブラウザ](/glossary/genome-browser/)では、表示している領域の染色体名と座標が画面上に示されます。遺伝子名で検索して領域を開き、そこから正確な座標を確認することもできます。
+
+解析ファイルでは、座標は表の列として出てきます。たとえば、バリアント表では染色体、位置、参照塩基、代替塩基が並び、ピークファイルでは染色体、開始、終了が並びます。
+
+## ゲノム座標の違いは何につながるか
+
+リファレンスゲノムの版が違うと、同じ生物学的領域でも座標がずれることがあります。別の研究やデータベースと比較するときは、必要に応じて座標変換を行います。
+
+また、同じ座標に見えても、0始まりと1始まりの違い、範囲の終点を含むかどうかの違いで、1塩基分ずれることがあります。細かい位置が重要な解析では、この違いが大きな意味を持ちます。
+
+## 論文や実験ではどう出てくるか
+
+ゲノム座標は、バリアント表、ゲノムブラウザ図、ピーク領域、プライマー設計、アノテーション表などで出てきます。[Methods](/glossary/methods/)では、使ったリファレンスゲノム、座標系、ファイル形式が説明されることがあります。
+
+[Figure](/glossary/figure/)では、横軸が染色体上の位置として表示されることがあります。図を読むときは、表示範囲、リファレンス、トラックのスケールを合わせて確認します。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- ゲノム座標と遺伝子名: 座標は場所の表記で、遺伝子名は機能単位の名前です。
+- 座標とアノテーション: 座標は位置、アノテーションはその位置に重ねた意味づけです。
+- 開始位置と終了位置: 範囲を示すときは、どちらが含まれる形式かを確認します。
+
+### 解釈の落とし穴
+
+- リファレンスの版を確認せずに座標だけを比較しない。
+- ファイル形式ごとの0始まり、1始まりの違いを見落とさない。
+- 近くにあることだけで、機能的な関係があると断定しない。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'ゲノム座標',
+      english: 'genomic coordinate',
+      description: '染色体名と位置でゲノム上の場所を表す表記。',
+      href: '/glossary/genomic-coordinate/',
+    },
+    {
+      term: 'リファレンスゲノム',
+      english: 'reference genome',
+      description: '配列解析やゲノム表示で基準として使う代表的なゲノム配列。',
+      href: '/glossary/reference-genome/',
+    },
+    {
+      term: '染色体',
+      english: 'chromosome',
+      description: 'DNAとタンパク質からなる、遺伝情報を収納する構造。',
+      href: '/glossary/chromosome/',
+    },
+    {
+      term: 'ゲノムブラウザ',
+      english: 'genome browser',
+      description: 'ゲノム上の座標に沿って複数の情報を重ねて表示する画面。',
+      href: '/glossary/genome-browser/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: 'ゲノム座標を読むときに確認したい情報を挙げてください。',
+      answer:
+        '染色体名、開始位置、終了位置、リファレンスゲノムの版、ファイル形式の座標規則などを確認します。',
+    },
+    {
+      question:
+        '座標だけでなくリファレンスの版を確認する理由を説明してください。',
+      answer:
+        'リファレンスの版が違うと、同じ領域でも座標が変わることがあるからです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    {
+      title: 'リファレンスゲノムとは何か',
+      href: '/genomics/reference-genome/',
+    },
+    { title: 'ゲノムブラウザとは何か', href: '/genomics/genome-browser/' },
+    { title: 'variantとは何か', href: '/genomics/variant/' },
+  ]}
+/>

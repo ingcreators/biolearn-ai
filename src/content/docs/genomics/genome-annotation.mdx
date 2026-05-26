@@ -1,0 +1,151 @@
+---
+title: ゲノムアノテーションとは何か
+description: ゲノム上の配列に遺伝子や調節領域などの意味づけを加えるゲノムアノテーションを説明します。
+part: genomics
+module: genome-resources
+level: foundation
+priority: P1
+order: 6
+learningPaths:
+  - foundations
+relatedTerms:
+  - genome-annotation
+  - genome
+  - gene
+  - genome-browser
+prerequisites:
+  - /fundamentals/genome/
+  - /fundamentals/gene/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    'ゲノムアノテーションが配列に意味づけを加える情報であることを説明できる',
+    '遺伝子モデル、エクソン、調節領域などのアノテーションを区別できる',
+    'アノテーションの版や根拠を確認する重要性を理解する',
+  ]}
+/>
+
+ゲノムアノテーションは、[ゲノム](/glossary/genome/)上の配列に「ここは遺伝子」「ここはエクソン」「ここは調節領域の候補」のような意味づけを加えること、またはその情報です。
+
+配列そのものはA、T、G、Cの並びですが、アノテーションを重ねることで、どの領域が[遺伝子](/glossary/gene/)や転写産物に対応するかを読みやすくなります。研究では、使ったアノテーションの種類とバージョンが解析結果の解釈に関わります。
+
+<LessonFigure
+  src="/figures/genome-annotation-concept.jpg"
+  alt="リファレンスゲノム上に遺伝子モデル、エクソン、転写産物、調節領域の情報が層として重なる様子を示す教材イラスト"
+  title="ゲノムアノテーションは配列に意味づけを重ねる"
+  caption="同じ配列上に、遺伝子モデルや調節領域などの情報を重ねることで、解析結果を読みやすくします。"
+/>
+
+## なぜゲノムアノテーションの視点が重要か
+
+ゲノム上の位置だけでは、その場所がどんな生物学的意味を持つのかは分かりません。アノテーションを使うと、バリアントがエクソン内にあるのか、RNA-seqのリードがどの遺伝子に対応するのか、ピークがプロモーター付近にあるのかを考えやすくなります。
+
+一方で、アノテーションはデータと解釈に基づく情報です。新しい実験結果や解析法によって更新されるため、どの版を使ったかを確認することが大切です。
+
+## どんなゲノムアノテーションがあるか
+
+代表的なものに、遺伝子モデル、転写産物、エクソン、イントロン、タンパク質コード領域、非コードRNA、プロモーターやエンハンサーの候補があります。生物種やデータベースによって、収録される情報や名称の付け方は異なります。
+
+RNA-seq、ChIP-seq、ATAC-seqなどのデータから推定される機能領域も、広い意味でアノテーションとして扱われることがあります。ただし、予測や候補を、確定した機能と同じ強さで読まないようにします。
+
+## ゲノムアノテーションはどう調べるか
+
+アノテーションは、[リファレンスゲノム](/glossary/reference-genome/)上の座標に対応したファイルやデータベースとして提供されます。GTF、GFF、BEDのような形式で、染色体名、開始位置、終了位置、領域の種類、遺伝子IDなどが記録されます。
+
+解析では、バリアントやリード、ピークの座標をアノテーションと重ねて、どの遺伝子や領域に対応するかを調べます。[ゲノムブラウザ](/glossary/genome-browser/)では、アノテーションをトラックとして視覚的に確認できます。
+
+## ゲノムアノテーションの変化は何につながるか
+
+アノテーションの更新によって、ある座標がどの遺伝子や転写産物に対応するかが変わることがあります。特に、複数の転写産物を持つ遺伝子や、まだ研究が進んでいる領域では、版の違いが結果の読み方に影響します。
+
+また、アノテーションに含まれない領域が「意味のない配列」とは限りません。未注釈の領域は、まだ十分に分かっていない、またはそのデータベースの目的では扱われていない場合があります。
+
+## 論文や実験ではどう出てくるか
+
+ゲノムアノテーションは、RNA-seqの遺伝子発現量の集計、バリアントの影響予測、ChIP-seqピークの近傍遺伝子解析などで登場します。[Methods](/glossary/methods/)では、使ったアノテーションのデータベース名、バージョン、ファイル形式が示されることがあります。
+
+[Figure](/glossary/figure/)では、遺伝子モデルのトラック、エクソンとイントロンの模式図、注釈された領域との重なりとして表れます。図を見るときは、注釈が実験結果そのものなのか、既存データベースから重ねた情報なのかを分けて読みます。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- ゲノムアノテーションと遺伝子名: アノテーションは座標や領域の情報を含み、遺伝子名だけではありません。
+- アノテーションと実験結果: アノテーションは既存の意味づけであり、その論文の実験で直接示された結果とは限りません。
+- 予測と確定: 計算予測や候補領域は、機能が実験的に確かめられた領域と区別します。
+
+### 解釈の落とし穴
+
+- アノテーションに重なることだけで、機能的な影響が証明されたと考えない。
+- 使ったリファレンスゲノムとアノテーションの組み合わせを確認する。
+- 古い版と新しい版の注釈を、そのまま同じものとして比較しない。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'ゲノムアノテーション',
+      english: 'genome annotation',
+      description: 'ゲノム上の遺伝子や調節領域などに意味づけを加えた情報。',
+      href: '/glossary/genome-annotation/',
+    },
+    {
+      term: 'リファレンスゲノム',
+      english: 'reference genome',
+      description: '配列解析やゲノム表示で基準として使う代表的なゲノム配列。',
+      href: '/glossary/reference-genome/',
+    },
+    {
+      term: 'ゲノム座標',
+      english: 'genomic coordinate',
+      description: '染色体名と位置でゲノム上の場所を表す表記。',
+      href: '/glossary/genomic-coordinate/',
+    },
+    {
+      term: '遺伝子',
+      english: 'gene',
+      description: 'RNAやタンパク質などの機能的な産物に関わるDNA配列の単位。',
+      href: '/glossary/gene/',
+    },
+    {
+      term: 'ゲノムブラウザ',
+      english: 'genome browser',
+      description: 'ゲノム上の座標に沿って複数の情報を重ねて表示する画面。',
+      href: '/glossary/genome-browser/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: 'ゲノムアノテーションは何をする情報ですか。',
+      answer:
+        'ゲノム上の配列に、遺伝子、エクソン、調節領域などの意味づけを加える情報です。',
+    },
+    {
+      question: 'アノテーションのバージョンを確認する理由を説明してください。',
+      answer:
+        '版によって遺伝子モデルや領域の対応が変わり、解析結果の解釈に影響することがあるからです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    {
+      title: 'リファレンスゲノムとは何か',
+      href: '/genomics/reference-genome/',
+    },
+    { title: 'ゲノム座標とは何か', href: '/genomics/genomic-coordinate/' },
+    { title: 'ゲノムブラウザとは何か', href: '/genomics/genome-browser/' },
+  ]}
+/>

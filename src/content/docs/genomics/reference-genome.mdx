@@ -1,0 +1,151 @@
+---
+title: リファレンスゲノムとは何か
+description: 配列解析やゲノム表示で基準として使うリファレンスゲノムの役割と注意点を説明します。
+part: genomics
+module: genome-resources
+level: foundation
+priority: P1
+order: 5
+learningPaths:
+  - foundations
+relatedTerms:
+  - reference-genome
+  - genome
+  - genomic-coordinate
+  - genome-browser
+prerequisites:
+  - /fundamentals/genome/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    'リファレンスゲノムが解析や表示の基準配列であることを説明できる',
+    'リファレンスと実際の個体のゲノムを区別できる',
+    'バージョンや座標系を確認する重要性を理解する',
+  ]}
+/>
+
+リファレンスゲノムは、配列解析やゲノム表示で基準として使う代表的な[ゲノム](/glossary/genome/)配列です。
+
+実験で得た配列を基準配列に対応づけることで、どの[染色体](/glossary/chromosome/)のどの位置に由来するか、既知の遺伝子や注釈とどう重なるかを考えやすくなります。ただし、リファレンスは「その種の完全な一個体」ではなく、解析のための座標系として使う標準的な配列です。
+
+<LessonFigure
+  src="/figures/reference-genome-concept.jpg"
+  alt="短い配列断片がリファレンスゲノム上の位置に並び、座標と注釈を基準に比較される様子を示す教材イラスト"
+  title="リファレンスゲノムは配列解析の基準になる"
+  caption="シーケンスデータを基準配列に対応づけることで、位置、注釈、配列差を同じ座標系で扱えます。"
+/>
+
+## なぜリファレンスゲノムの視点が重要か
+
+ゲノム解析では、読まれた短い配列をどこに置くかが出発点になります。基準がなければ、リードの位置、遺伝子との重なり、バリアントの場所を共通の言葉で表しにくくなります。
+
+同じデータでも、使うリファレンスゲノムやアセンブリのバージョンが違うと、座標や注釈との対応が変わることがあります。論文やデータベースを読むときは、解析結果だけでなく、どの基準配列を使ったかを確認します。
+
+## どんなリファレンスゲノムがあるか
+
+リファレンスゲノムには、生物種ごとの標準的な配列があります。ヒト、マウス、シロイヌナズナ、酵母、細菌など、それぞれの研究コミュニティでよく使われるバージョンがあります。
+
+同じ生物種でも、過去の版と新しい版、染色体レベルまで組み立てられたもの、未配置の足場配列を含むものなどがあります。研究では、参照したバージョン名やデータベースを明記することが重要です。
+
+## リファレンスゲノムはどう使うか
+
+[シーケンシング](/glossary/sequencing/)で得たリードは、リファレンスゲノムにアラインメントされます。その結果をもとに、[ゲノム座標](/glossary/genomic-coordinate/)、カバレッジ、バリアント候補、遺伝子や調節領域との重なりを調べます。
+
+[ゲノムブラウザ](/glossary/genome-browser/)では、リファレンス上の座標に沿って、遺伝子モデル、リード、バリアント、アノテーションをトラックとして表示します。表示されているすべての情報は、同じ基準配列に沿って並んでいるかを確認します。
+
+## リファレンスゲノムの違いは何につながるか
+
+リファレンスのバージョンが違うと、同じ領域でも座標表記が変わることがあります。ある位置を別の論文やデータベースと比べるときは、座標だけでなく、リファレンス名とバージョンをセットで扱います。
+
+また、リファレンスは多様な個体差をすべて表すものではありません。サンプルに特有の配列や構造の違いは、リファレンスへの対応づけだけでは見えにくい場合があります。
+
+## 論文や実験ではどう出てくるか
+
+リファレンスゲノムは、Methodsで「どのゲノムアセンブリにマッピングしたか」「どのアノテーション版を使ったか」として出てきます。[Results](/glossary/results/)や[Figure](/glossary/figure/)では、染色体名と座標、ゲノムブラウザ図、バリアント表の基準として現れます。
+
+補足資料では、参照配列のバージョン、アラインメント条件、座標変換の有無が書かれることがあります。複数の研究を比べるときは、同じリファレンスを使っているかを確認します。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- リファレンスゲノムとゲノム: ゲノムは遺伝情報の全体で、リファレンスゲノムは解析の基準として使う代表的な配列です。
+- リファレンスゲノムとゲノムアノテーション: リファレンスは配列の基準で、アノテーションはその上に付けられた遺伝子や領域の情報です。
+- 座標と塩基配列: 座標は場所の表記であり、その場所にある塩基そのものとは別に確認します。
+
+### 解釈の落とし穴
+
+- リファレンスと同じ配列が「正常」、違う配列が「異常」と単純に考えない。
+- 座標だけを書き写して、リファレンスのバージョンを省略しない。
+- マッピングしにくい反復配列や構造の複雑な領域では、結果が不確実になりやすいことを意識する。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'リファレンスゲノム',
+      english: 'reference genome',
+      description: '配列解析やゲノム表示で基準として使う代表的なゲノム配列。',
+      href: '/glossary/reference-genome/',
+    },
+    {
+      term: 'ゲノム',
+      english: 'genome',
+      description: 'ある生物が持つ遺伝情報の全体。',
+      href: '/glossary/genome/',
+    },
+    {
+      term: 'ゲノム座標',
+      english: 'genomic coordinate',
+      description: '染色体名と位置でゲノム上の場所を表す表記。',
+      href: '/glossary/genomic-coordinate/',
+    },
+    {
+      term: 'ゲノムアノテーション',
+      english: 'genome annotation',
+      description: 'ゲノム上の遺伝子や調節領域などに意味づけを加えた情報。',
+      href: '/glossary/genome-annotation/',
+    },
+    {
+      term: 'ゲノムブラウザ',
+      english: 'genome browser',
+      description: 'ゲノム上の座標に沿って複数の情報を重ねて表示する画面。',
+      href: '/glossary/genome-browser/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: 'リファレンスゲノムは何のために使いますか。',
+      answer:
+        'シーケンスデータを基準配列に対応づけ、ゲノム上の位置や注釈との関係を扱うために使います。',
+    },
+    {
+      question:
+        'リファレンスゲノムと実際の個体のゲノムを区別する理由を説明してください。',
+      answer:
+        'リファレンスは解析の基準となる代表的な配列であり、すべての個体差をそのまま表すものではないからです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'ゲノム座標とは何か', href: '/genomics/genomic-coordinate/' },
+    {
+      title: 'ゲノムアノテーションとは何か',
+      href: '/genomics/genome-annotation/',
+    },
+    { title: 'ゲノムブラウザとは何か', href: '/genomics/genome-browser/' },
+  ]}
+/>

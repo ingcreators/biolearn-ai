@@ -1,0 +1,151 @@
+---
+title: SNPとSNVの違い
+description: SNPとSNVを、集団内の多型と参照配列との1塩基差という視点から整理します。
+part: genomics
+module: variation
+level: foundation
+priority: P1
+order: 9
+learningPaths:
+  - foundations
+relatedTerms:
+  - snp
+  - snv
+  - variant
+  - genetic-variant
+prerequisites:
+  - /genomics/variant/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    'SNPとSNVがどちらも1塩基の違いに関わる語であることを説明できる',
+    'SNPは集団内の多型、SNVは参照配列との差を強調する語として区別できる',
+    '論文や解析結果で文脈を確認して読む必要性を理解する',
+  ]}
+/>
+
+SNPとSNVは、どちらも1塩基の違いに関わる用語ですが、強調する文脈が違います。
+
+SNPは集団内で見られる1塩基の多型を指す語として使われ、SNVは[リファレンスゲノム](/glossary/reference-genome/)と比べた1塩基の違いを広く指す語として使われます。実際の論文やツールでは使い分けが揺れることもあるため、頻度、集団、参照配列のどれを基準にしているかを確認します。
+
+<LessonFigure
+  src="/figures/snp-snv-concept.jpg"
+  alt="複数の個体の同じゲノム位置を比べ、参照配列との差としてのSNVと集団内で見られる多型としてのSNPを対比する教材イラスト"
+  title="SNPとSNVは1塩基差を見る文脈が違う"
+  caption="SNVは参照配列との差、SNPは集団内の多型という視点で使われることが多い語です。"
+/>
+
+## なぜSNPとSNVを区別する視点が重要か
+
+1塩基の違いは、ゲノム解析で非常によく出てくる情報です。しかし、同じ1塩基差でも、単に参照配列と違う候補なのか、集団内で一定の頻度で見られる多型なのかで、読み方が変わります。
+
+区別して読むと、バリアントコールの結果、集団頻度の表、GWASの結果、データベースの記載を混同しにくくなります。特に、検出された候補をすぐに一般的な多型として扱わないことが大切です。
+
+## どんな違いがあるか
+
+SNVは、あるサンプルで参照配列と比べて1塩基が異なるときに使われます。頻度が高いか低いか、集団でどれくらい見られるかを必ず含む語ではありません。
+
+SNPは、集団内で見られる1塩基の多型を指す語です。頻度の基準は文脈やデータベースによって異なるため、論文ではどの定義でSNPと呼んでいるかを確認します。
+
+## SNPとSNVはどう調べるか
+
+SNVは、シーケンスデータをリファレンスに対応づけ、1塩基の違いを検出することで候補として得られます。結果には、[ゲノム座標](/glossary/genomic-coordinate/)、参照塩基、代替塩基、品質指標などが含まれます。
+
+SNPは、複数個体や集団データの中で、同じ位置にどの塩基がどれくらいの頻度で見られるかを調べて扱います。既存データベースの頻度情報や集団ごとのアリル頻度が参照されることがあります。
+
+## SNPやSNVの変化は何につながるか
+
+1塩基差がタンパク質のアミノ酸、スプライシング、調節領域などに関わる場合、分子や細胞の性質に影響する可能性があります。一方で、多くの1塩基差は影響が小さい、または意味が不明な場合があります。
+
+SNPは集団遺伝学やGWASで、形質との統計的な関連を調べる手がかりになります。ただし、関連があることと、そのSNPが直接の原因であることは同じではありません。
+
+## 論文や実験ではどう出てくるか
+
+SNVは、バリアントコール、がんゲノム研究、個体ごとのシーケンス解析などで、参照配列との差として出てくることがあります。SNPは、GWAS、集団解析、アレイ解析、頻度データベースでよく出てきます。
+
+[Methods](/glossary/methods/)では、バリアント検出の条件、集団頻度のしきい値、使ったデータベースが説明されることがあります。[Results](/glossary/results/)や[Figure](/glossary/figure/)では、マンハッタンプロット、バリアント表、アリル頻度の比較として示されます。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- SNPとSNV: SNPは集団内の多型、SNVは参照配列との差を強調する語です。
+- SNPとvariant: SNPはvariantの一種として扱われますが、variantは1塩基差以外も含む広い語です。
+- mutationとSNV: mutationはDNA配列に生じた変化を指す語で、SNVは観察された1塩基差を表す解析上の語として使われます。
+
+### 解釈の落とし穴
+
+- あるサンプルでSNVとして検出された候補を、すぐにSNPと呼ばない。
+- SNPという語が出てきても、頻度基準や集団の定義を確認する。
+- 1塩基差が遺伝子内にあることだけで、機能への影響が証明されたと考えない。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'SNP',
+      english: 'single nucleotide polymorphism',
+      abbreviation: 'SNP',
+      description: '集団の中で見られる1塩基の配列多型。',
+      href: '/glossary/snp/',
+    },
+    {
+      term: 'SNV',
+      english: 'single nucleotide variant',
+      abbreviation: 'SNV',
+      description: '参照配列と比べて1塩基が異なるバリアント。',
+      href: '/glossary/snv/',
+    },
+    {
+      term: 'バリアント',
+      english: 'variant',
+      description: '参照配列や集団内の基準と比べて見つかる配列上の違い。',
+      href: '/glossary/variant/',
+    },
+    {
+      term: '遺伝的変異',
+      english: 'genetic variant',
+      abbreviation: 'variant',
+      description: 'ゲノム配列に見られる違い。',
+      href: '/glossary/genetic-variant/',
+    },
+    {
+      term: 'リファレンスゲノム',
+      english: 'reference genome',
+      description: '配列解析やゲノム表示で基準として使う代表的なゲノム配列。',
+      href: '/glossary/reference-genome/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: 'SNPとSNVの違いを簡潔に説明してください。',
+      answer:
+        'SNPは集団内で見られる1塩基の多型を指し、SNVは参照配列と比べた1塩基の違いを広く指します。',
+    },
+    {
+      question:
+        'SNVとして検出された候補をすぐにSNPと呼ばない方がよい理由を説明してください。',
+      answer:
+        'SNPと呼ぶには、集団内でどれくらい見られるかという頻度や多型としての文脈を確認する必要があるからです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'variantとは何か', href: '/genomics/variant/' },
+    { title: '遺伝的変異とは何か', href: '/genomics/genetic-variants/' },
+    { title: 'ゲノムブラウザとは何か', href: '/genomics/genome-browser/' },
+  ]}
+/>
