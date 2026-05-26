@@ -21,6 +21,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -30,7 +31,9 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-核は、真核細胞で多くのDNAを収め、遺伝情報の管理やRNAの合成に関わる細胞内区画です。
+核は、[真核細胞](/glossary/eukaryotic-cell/)で多くの[DNA](/glossary/dna/)を収め、遺伝情報の管理や[RNA](/glossary/rna/)の合成に関わる細胞内区画です。
+
+DNAは[クロマチン](/glossary/chromatin/)として整理され、[転写](/glossary/transcription/)や[遺伝子発現](/glossary/gene-expression/)の調節が核内の構造と結びついています。
 
 <LessonFigure
   src="/figures/nucleus-concept.jpg"
@@ -39,58 +42,88 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   caption="核ではDNAがクロマチンとして収納され、必要な遺伝子の情報がRNAとして読み出されます。"
 />
 
-核は、真核細胞を特徴づける代表的な細胞小器官です。核膜に囲まれた内部に多くのDNAがあり、DNAはヒストンなどのタンパク質と結びついてクロマチンとして整理されています。
+## なぜ核の視点が重要か
 
-核の役割は、DNAをただ保管することだけではありません。遺伝子がRNAへ読み出される転写、RNAの加工の一部、DNA複製やDNA修復など、遺伝情報に関わる多くの過程が核内で起こります。
+核は、DNAやクロマチンを[細胞](/glossary/cell/)内の区画として理解する入口です。遺伝子発現の変化を読むときも、[転写因子](/glossary/transcription-factor/)が核へ移動する、クロマチン状態が変わる、RNAが核から出る、といった場所の視点が重要になります。
 
-核膜には核膜孔があり、タンパク質やRNAなどが選択的に出入りします。たとえば、核内で作られたmRNAは加工を受けたあと細胞質へ運ばれ、細胞質のリボソームでタンパク質の材料情報として使われます。
+[細胞生物学](/glossary/cell-biology/)では、[分子](/glossary/molecule/)がどこにあるかが機能の理解に直結します。ある[タンパク質](/glossary/protein/)が核に局在するのか、細胞質にあるのかで、考えられる働きは大きく変わります。
 
-核を学ぶと、DNA、染色体、クロマチン、転写、遺伝子発現が細胞のどこで起こる話なのかを結びつけやすくなります。
+## どんな核の構造があるか
 
-## なぜ重要か
-
-[核](/glossary/nucleus/)は、[DNA](/glossary/dna/)や[クロマチン](/glossary/chromatin/)を細胞内の区画として理解する入口です。遺伝子発現の変化を読むときも、転写因子が核へ移動する、クロマチン状態が変わる、RNAが核から出る、といった場所の視点が重要になります。
-
-細胞生物学では、分子がどこにあるかが機能の理解に直結します。あるタンパク質が核に局在するのか、細胞質にあるのかで、考えられる働きは大きく変わります。
-
-## 具体例
-
-転写因子は、刺激を受けると細胞質から核へ移動し、DNA上の調節領域に結合して標的遺伝子の転写に影響することがあります。
+核膜に囲まれた内部に多くのDNAがあり、DNAは[ヒストン](/glossary/histone/)などのタンパク質と結びついてクロマチンとして整理されています。核膜には核膜孔があり、タンパク質やRNAなどが選択的に出入りします。
 
 核小体は、核の中に見られる領域で、リボソームRNAの産生やリボソームの構成要素の形成に関わります。核と核小体は同じものではありません。
 
-## よく混同される概念
+## 核はどう調べるか
 
-- 核と細胞: 核は細胞の中にある区画であり、細胞そのものではありません。
-- 核と核小体: 核はDNAを含む大きな区画で、核小体は核内の一部の領域です。
-- 核と染色体: 核は区画、染色体はDNAとタンパク質からなる構造です。
+核は、DAPIなどによる核染色、免疫染色、蛍光顕微鏡、細胞分画、[RNA-seq](/glossary/rna-seq/)、クロマチン解析などで調べます。核局在を見る実験では、目的のタンパク質が核染色の領域と重なるか、刺激後に核へ移動するかを確認します。
+
+RNA-seqやクロマチン解析では、核で起こる転写やクロマチン状態の変化を、細胞内の場所の視点と合わせて読みます。
+
+## 核の変化は何につながるか
+
+転写因子は、刺激を受けると細胞質から核へ移動し、DNA上の調節領域に結合して標的[遺伝子](/glossary/gene/)の転写に影響することがあります。
+
+核の形、核内シグナル、クロマチン状態、RNAの核外輸送の変化は、細胞状態や遺伝子発現の変化の手がかりになります。ただし、核局在だけで機能を断定せず、標的遺伝子や[機能実験](/glossary/functional-assay/)の[証拠](/glossary/evidence/)と合わせて読みます。
 
 ## 論文や実験ではどう出てくるか
 
-核は、DAPIなどによる核染色、免疫染色、蛍光顕微鏡、細胞分画、RNA-seq、クロマチン解析などで登場します。Figureでは、核内シグナル、核への移行、核の形、クロマチン状態、転写活性の変化として示されることがあります。
+[Methods](/glossary/methods/)では、核染色、免疫染色、蛍光顕微鏡、細胞分画、RNA-seq、クロマチン解析などで登場します。[Figure](/glossary/figure/)では、核内シグナル、核への移行、核の形、クロマチン状態、転写活性の変化として示されることがあります。
 
-## 英語表記と略語
+[Results](/glossary/results/)では、nuclear localization、nuclear translocation、chromatin state のような表現で、分子が核で働く可能性を説明することがあります。
 
-| 日本語名   | 英語名           | 略語 |
-| ---------- | ---------------- | ---- |
-| 核         | nucleus          | -    |
-| 核膜       | nuclear envelope | -    |
-| 核膜孔     | nuclear pore     | -    |
-| 核小体     | nucleolus        | -    |
-| クロマチン | chromatin        | -    |
+## どんな点でつまずきやすいか
 
-## よくある誤解
+### 似た用語との区別
 
-- 核はすべての細胞にあるわけではありません。細菌のような原核細胞は核を持ちません。
+- 核と細胞: 核は細胞の中にある区画であり、細胞そのものではありません。
+- 核と核小体: 核はDNAを含む大きな区画で、核小体は核内の一部の領域です。
+- 核と[染色体](/glossary/chromosome/): 核は区画、染色体はDNAとタンパク質からなる構造です。
+
+### 解釈の落とし穴
+
+- 核はすべての細胞にあるわけではありません。細菌のような[原核細胞](/glossary/prokaryotic-cell/)は核を持ちません。
 - 核の中でタンパク質が作られるわけではありません。多くのタンパク質合成は細胞質のリボソームで起こります。
+- タンパク質が核に見えることと、特定の遺伝子を直接制御していることは同じではありません。
 
 ## 重要用語
 
-- 核: 真核細胞で多くのDNAを収め、遺伝情報の管理に関わる区画。
-- 核膜: 核の内外を分ける膜構造。
-- 核膜孔: 核と細胞質の間で分子の出入りに関わる構造。
-- 核小体: リボソームRNAの産生などに関わる核内領域。
-- クロマチン: DNAとヒストンなどのタンパク質が組み合わさった核内構造。
+<GlossaryTable
+  terms={[
+    {
+      term: '核',
+      english: 'nucleus',
+      description:
+        '真核細胞で多くのDNAを収め、転写や遺伝情報の管理に関わる区画。',
+      href: '/glossary/nucleus/',
+    },
+    {
+      term: '真核細胞',
+      english: 'eukaryotic cell',
+      description: '核や細胞小器官を持つ細胞。',
+      href: '/glossary/eukaryotic-cell/',
+    },
+    {
+      term: 'クロマチン',
+      english: 'chromatin',
+      description: 'DNAとヒストンなどのタンパク質が組み合わさった核内構造。',
+      href: '/glossary/chromatin/',
+    },
+    {
+      term: '転写',
+      english: 'transcription',
+      description: 'DNAの情報をもとにRNAを作る過程。',
+      href: '/glossary/transcription/',
+    },
+    {
+      term: '転写因子',
+      english: 'transcription factor',
+      abbreviation: 'TF',
+      description: 'DNAに結合して転写の起こりやすさに関わるタンパク質。',
+      href: '/glossary/transcription-factor/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[
