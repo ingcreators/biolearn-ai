@@ -31,7 +31,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 <LearningGoals
   items={[
     'single-cell解析論文でUMAPとクラスタを読む順番を説明できる',
-    'マーカー遺伝子、細胞型注釈、差次的発現を区別できる',
+    'マーカー遺伝子、細胞タイプ注釈、差次的発現を区別できる',
     'Methodsで確認すべき前処理と解析条件を挙げられる',
   ]}
 />
@@ -49,7 +49,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 ある研究では、条件Aと条件Bの細胞を[single-cell RNA-seq](/glossary/single-cell-rna-seq/)で解析し、細胞集団の構成と[遺伝子発現](/glossary/gene-expression/)の違いを調べたとします。論文の主張は「条件Bでは特定の細胞集団が増え、その集団で応答関連遺伝子が高い」です。
 
-この主張を読むときは、[UMAP](/glossary/umap/)の見た目だけで結論を受け取らず、クラスタ、細胞型注釈、[マーカー遺伝子](/glossary/marker-gene/)、条件ごとの細胞数、差次的発現、Methodsの前処理を順に確認します。
+この主張を読むときは、[UMAP](/glossary/umap/)の見た目だけで結論を受け取らず、クラスタ、[細胞タイプ注釈](/glossary/cell-type-annotation/)、[マーカー遺伝子](/glossary/marker-gene/)、条件ごとの細胞数、差次的発現、Methodsの前処理を順に確認します。
 
 ## 読む順番
 
@@ -58,7 +58,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 3. マーカー遺伝子の図で、クラスタ名の根拠を確認します。
 4. 条件ごとの細胞割合を見て、集団の増減が示されているかを確認します。
 5. 差次的発現やpathway enrichmentで、主張に使われた遺伝子群を確認します。
-6. Methodsで、細胞フィルタ、[正規化](/glossary/normalization/)、[バッチ効果](/glossary/batch-effect/)の扱い、[クラスタリング](/glossary/clustering/)条件、細胞型注釈の方法を確認します。
+6. Methodsで、細胞フィルタ、[正規化](/glossary/normalization/)、[バッチ効果](/glossary/batch-effect/)の扱い、[クラスタリング](/glossary/clustering/)条件、細胞タイプ注釈の方法を確認します。
 
 ## Methodsで確認すること
 
@@ -93,7 +93,7 @@ single-cell論文では、細胞数だけでなく、独立したサンプルの
 - 条件ごとの個体数、サンプル数、細胞数が分けて示されているか。
 - QCで除外した細胞、低品質細胞、ダブレットの基準が書かれているか。
 - バッチ補正や統合解析の方法が、条件差を消しすぎない形で説明されているか。
-- クラスタリングの解像度と、細胞型アノテーションの根拠が示されているか。
+- クラスタリングの解像度と、細胞タイプ注釈の根拠が示されているか。
 - 統計比較の単位が、細胞なのかサンプルなのかを確認できるか。
 
 細胞数が多く見えても、独立サンプルが少ない場合は、結論を控えめに読む必要があります。
@@ -175,7 +175,7 @@ Figureから言いやすいのは、「条件Bで特定の細胞集団が多く�
     },
     { title: 'RNA-seqとは何か', href: '/bioinformatics/rna-seq/' },
     {
-      title: 'UMAP/t-SNE図の読み方',
+      title: 'UMAP / t-SNEの読み方',
       href: '/figures/how-to-read-umap-tsne/',
     },
     {

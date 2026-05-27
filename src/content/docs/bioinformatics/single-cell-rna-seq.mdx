@@ -39,14 +39,14 @@ single-cell RNA-seqは、1細胞ごとのRNA量を測定し、細胞集団の違
   src="/figures/single-cell-rna-seq-concept.jpg"
   alt="多数の細胞を1細胞ごとの発現量行列に変換し、UMAPやクラスタとして整理するsingle-cell RNA-seqの概念図"
   title="single-cell RNA-seqは細胞ごとの発現量から集団構造を読む"
-  caption="細胞ごとの発現量をもとに、品質確認、次元削減、クラスタリング、細胞型注釈へ進みます。"
+  caption="細胞ごとの発現量をもとに、品質確認、次元削減、クラスタリング、細胞タイプ注釈へ進みます。"
 />
 
 ## なぜsingle-cell RNA-seqの視点が重要か
 
 組織は多くの場合、複数の細胞タイプや状態が混ざった集団です。single-cell RNA-seqを使うと、細胞集団全体の平均では隠れてしまう少数の細胞集団や状態差を調べられます。
 
-ただし、1細胞の測定はノイズや欠測の影響を受けやすく、結果は前処理や解析条件にも左右されます。Figureを読むときは、UMAPの形だけでなく、細胞数、サンプル数、[品質管理](/glossary/quality-control/)、バッチ補正、細胞型注釈の根拠を確認します。
+ただし、1細胞の測定はノイズや欠測の影響を受けやすく、結果は前処理や解析条件にも左右されます。Figureを読むときは、UMAPの形だけでなく、細胞数、サンプル数、[品質管理](/glossary/quality-control/)、バッチ補正、[細胞タイプ注釈](/glossary/cell-type-annotation/)の根拠を確認します。
 
 ## どんなsingle-cell RNA-seqの結果があるか
 
@@ -131,7 +131,7 @@ single-cell RNA-seqでは、組織から細胞を分離し、細胞ごとのRNA�
       question:
         'single-cell RNA-seqのFigureでUMAP以外に確認したい情報を挙げてください。',
       answer:
-        '細胞数、サンプル数、品質管理、バッチ補正、クラスタリング条件、マーカー遺伝子、細胞型注釈の根拠などです。',
+        '細胞数、サンプル数、品質管理、バッチ補正、クラスタリング条件、マーカー遺伝子、細胞タイプ注釈の根拠などです。',
     },
   ]}
 />

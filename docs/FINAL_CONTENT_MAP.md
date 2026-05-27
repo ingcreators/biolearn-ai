@@ -500,13 +500,13 @@ URL:
 ### 4-2 配列の違いを読む
 
 - `/genomics/genetic-variants/` 遺伝的変異とは何か [P1]
-- `/genomics/variant/` variantとは何か [P1]
+- `/genomics/variant/` バリアントとは何か [P1]
 - `/genomics/snp-snv/` SNPとSNVの違い [P1]
 - `/genomics/indel/` indelとは何か [P1]
 - `/genomics/copy-number-variation/` コピー数変異とは何か [P1]
 - `/genomics/structural-variant/` 構造多型とは何か [P2]
 - `/genomics/somatic-germline-variant/` 体細胞変異と生殖細胞系列変異 [P1]
-- `/genomics/variant-annotation/` variant annotationとは何か [P2]
+- `/genomics/variant-annotation/` バリアントアノテーションとは何か [P2]
 
 ### 4-3 疾患との関係を読む
 
@@ -803,7 +803,7 @@ URL:
 ### 8-6 複数Figureをつなげて読む
 
 - `/figures/figure-to-claim/` Figureと主張を対応づける [P1]
-- `/figures/multi-panel-figure/` multi-panel Figureの読み方 [P1]
+- `/figures/multi-panel-figure/` 複数パネルFigureの読み方 [P1]
 - `/figures/results-section-flow/` Resultsセクションの流れを読む [P1]
 
 ---

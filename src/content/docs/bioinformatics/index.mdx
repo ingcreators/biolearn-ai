@@ -13,7 +13,7 @@ import ArticleList from '../../../components/ArticleList.astro';
 - シーケンスデータが、DNAやRNA由来の配列情報として扱われること
 - FASTQ、SAM/BAM、VCFのようなファイル形式が解析のどの段階にあるか
 - 差次的発現解析で、変化量と統計的な確からしさを分けて考えること
-- single-cell解析で、細胞ごとの発現量、クラスタ、細胞型注釈を慎重に読むこと
+- single-cell解析で、細胞ごとの発現量、クラスタ、細胞タイプ注釈を慎重に読むこと
 
 ## 目的別に選ぶ
 
@@ -63,15 +63,15 @@ import ArticleList from '../../../components/ArticleList.astro';
   </a>
 </div>
 
-| 迷っていること                     | 入口                                                                                                                                                                          | Figureで戻る場所                                                                                                                             |
-| ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| 解析Figureの全体像を知りたい       | [バイオインフォマティクス](/bioinformatics/bioinformatics/)、[シーケンスデータ](/bioinformatics/sequence-data/)                                                               | [Figureを読めるようになる](/paths/figure-reading/)、[Figure早見表](/resources/figures-cheatsheet/)                                           |
-| FASTQやBAMなどの形式で迷う         | [FASTQ](/bioinformatics/fastq/)、[マッピング](/bioinformatics/mapping/)、[SAM/BAM](/bioinformatics/sam-bam/)、[VCF](/bioinformatics/vcf/)                                     | [ゲノムブラウザ](/genomics/genome-browser/)、[Figure早見表](/resources/figures-cheatsheet/)                                                  |
-| RNA-seqが何を測るのか知りたい      | [RNA-seq](/bioinformatics/rna-seq/)、[シーケンスデータ](/bioinformatics/sequence-data/)                                                                                       | [Volcano plot](/figures/how-to-read-volcano-plot/)、[ヒートマップ](/figures/how-to-read-heatmap/)                                            |
-| 発現差の結果を読みたい             | [カウント行列](/bioinformatics/count-matrix/)、[正規化](/bioinformatics/normalization/)、[差次的発現解析](/bioinformatics/differential-expression/)                           | [Volcano plot](/figures/how-to-read-volcano-plot/)、[GSEA plot](/figures/how-to-read-gsea-plot/)                                             |
-| single-cell解析の流れを知りたい    | [single-cell RNA-seq](/bioinformatics/single-cell-rna-seq/)、[single-cell品質管理](/bioinformatics/single-cell-quality-control/)、[バッチ効果](/bioinformatics/batch-effect/) | [UMAP / t-SNE](/figures/how-to-read-umap-tsne/)、[Violin plot](/figures/how-to-read-violin-plot/)                                            |
-| クラスタや細胞型の意味を確認したい | [クラスタリング](/bioinformatics/clustering/)、[マーカー遺伝子](/bioinformatics/marker-gene/)、[細胞タイプ注釈](/bioinformatics/cell-type-annotation/)                        | [UMAP / t-SNE](/figures/how-to-read-umap-tsne/)、[Figureと主張](/figures/figure-to-claim/)                                                   |
-| 解析の偏りや条件差が気になる       | [バッチ効果](/bioinformatics/batch-effect/)、[次元削減](/bioinformatics/dimensionality-reduction/)                                                                            | [PCA plot](/figures/how-to-read-pca-plot/)、[多重検定補正](/statistics/multiple-testing-correction/)、[研究の限界](/statistics/limitations/) |
+| 迷っていること                     | 入口                                                                                                                                                                     | Figureで戻る場所                                                                                                                             |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| 解析Figureの全体像を知りたい       | [バイオインフォマティクス](/bioinformatics/bioinformatics/)、[シーケンスデータ](/bioinformatics/sequence-data/)                                                          | [Figureを読めるようになる](/paths/figure-reading/)、[Figure早見表](/resources/figures-cheatsheet/)                                           |
+| FASTQやBAMなどの形式で迷う         | [FASTQ](/bioinformatics/fastq/)、[マッピング](/bioinformatics/mapping/)、[SAM/BAM](/bioinformatics/sam-bam/)、[VCF](/bioinformatics/vcf/)                                | [ゲノムブラウザ](/genomics/genome-browser/)、[Figure早見表](/resources/figures-cheatsheet/)                                                  |
+| RNA-seqが何を測るのか知りたい      | [RNA-seq](/bioinformatics/rna-seq/)、[シーケンスデータ](/bioinformatics/sequence-data/)                                                                                  | [Volcano plot](/figures/how-to-read-volcano-plot/)、[ヒートマップ](/figures/how-to-read-heatmap/)                                            |
+| 発現差の結果を読みたい             | [カウント行列](/bioinformatics/count-matrix/)、[正規化](/bioinformatics/normalization/)、[差次的発現解析](/bioinformatics/differential-expression/)                      | [Volcano plot](/figures/how-to-read-volcano-plot/)、[GSEA plot](/figures/how-to-read-gsea-plot/)                                             |
+| single-cell解析の流れを知りたい    | [single-cell RNA-seq](/bioinformatics/single-cell-rna-seq/)、[single-cell QC](/bioinformatics/single-cell-quality-control/)、[バッチ効果](/bioinformatics/batch-effect/) | [UMAP / t-SNE](/figures/how-to-read-umap-tsne/)、[Violin plot](/figures/how-to-read-violin-plot/)                                            |
+| クラスタや細胞型の意味を確認したい | [クラスタリング](/bioinformatics/clustering/)、[マーカー遺伝子](/bioinformatics/marker-gene/)、[細胞タイプ注釈](/bioinformatics/cell-type-annotation/)                   | [UMAP / t-SNE](/figures/how-to-read-umap-tsne/)、[Figureと主張](/figures/figure-to-claim/)                                                   |
+| 解析の偏りや条件差が気になる       | [バッチ効果](/bioinformatics/batch-effect/)、[次元削減](/bioinformatics/dimensionality-reduction/)                                                                       | [PCA plot](/figures/how-to-read-pca-plot/)、[多重検定補正](/statistics/multiple-testing-correction/)、[研究の限界](/statistics/limitations/) |
 
 ## まず押さえる3つの考え方
 

@@ -1104,7 +1104,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'genomics',
   },
   {
-    term: 'variant annotation',
+    term: 'バリアントアノテーション',
     english: 'variant annotation',
     description:
       '検出されたバリアントに位置、遺伝子、予測影響などの情報を付ける解析。',
@@ -2514,7 +2514,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'paper-reading',
   },
   {
-    term: 'multi-panel Figure',
+    term: '複数パネルFigure',
     english: 'multi-panel Figure',
     description: '複数のパネルを組み合わせて研究結果を示すFigure。',
     href: '/glossary/multi-panel-figure/',

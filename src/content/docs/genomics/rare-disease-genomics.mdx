@@ -56,7 +56,7 @@ import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 ## 希少疾患ゲノミクスはどう調べるか
 
-解析では、[シーケンシング](/glossary/sequencing/)で得たデータからバリアントを検出し、[variant annotation](/glossary/variant-annotation/)で遺伝子、頻度、予測影響、既存データベース情報を付けます。その後、まれさ、遺伝形式、表現型との一致、既存研究、機能的な証拠を確認します。
+解析では、[シーケンシング](/glossary/sequencing/)で得たデータからバリアントを検出し、[バリアントアノテーション](/glossary/variant-annotation/)で遺伝子、頻度、予測影響、既存データベース情報を付けます。その後、まれさ、遺伝形式、表現型との一致、既存研究、機能的な証拠を確認します。
 
 家系データがある場合は、どのサンプルに候補が共有されるかを見ます。単一サンプルの場合は、候補が多く残りやすく、追加情報の重要性が高くなります。
 
@@ -68,7 +68,7 @@ import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 ## 論文や実験ではどう出てくるか
 
-論文では、Methodsにシーケンシング、[バリアントコール](/glossary/variant-calling/)、annotation、フィルタ条件、家系解析が書かれます。[Results](/glossary/results/)では、候補バリアントの表、家系図、遺伝子やタンパク質上の位置、機能実験の結果として示されます。
+論文では、Methodsにシーケンシング、[バリアントコール](/glossary/variant-calling/)、バリアントアノテーション、フィルタ条件、家系解析が書かれます。[Results](/glossary/results/)では、候補バリアントの表、家系図、遺伝子やタンパク質上の位置、機能実験の結果として示されます。
 
 [Figure](/glossary/figure/)では、家系図、候補バリアントの絞り込みフロー、ゲノムブラウザ図、タンパク質模式図が使われることがあります。図を見るときは、どの証拠が直接データで、どれが予測や既存知識かを分けて読みます。
 
@@ -78,7 +78,7 @@ import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 - 希少疾患ゲノミクスと臨床判断: BioLearnでは、研究データの読み方として扱い、個別の判断には踏み込みません。
 - まれなバリアントと原因: まれであることは候補の手がかりですが、原因の証明ではありません。
-- annotationと証明: annotationは情報を付ける解析であり、機能を直接示すものではありません。
+- アノテーションと証明: バリアントアノテーションは情報を付ける解析であり、機能を直接示すものではありません。
 
 ### 解釈の落とし穴
 
@@ -104,7 +104,7 @@ import GlossaryTable from '../../../components/GlossaryTable.astro';
       href: '/glossary/variant/',
     },
     {
-      term: 'variant annotation',
+      term: 'バリアントアノテーション',
       english: 'variant annotation',
       description:
         '検出されたバリアントに位置、遺伝子、予測影響などの情報を付ける解析。',
@@ -140,7 +140,7 @@ import GlossaryTable from '../../../components/GlossaryTable.astro';
 <NextSteps
   items={[
     {
-      title: 'variant annotationとは何か',
+      title: 'バリアントアノテーションとは何か',
       href: '/genomics/variant-annotation/',
     },
     {
