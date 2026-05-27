@@ -519,6 +519,14 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'cell-biology',
   },
   {
+    term: 'ATP',
+    english: 'adenosine triphosphate',
+    abbreviation: 'ATP',
+    description: '細胞内でエネルギーの受け渡しに使われる分子。',
+    href: '/glossary/atp/',
+    category: 'cell-biology',
+  },
+  {
     term: '小胞体',
     english: 'endoplasmic reticulum',
     abbreviation: 'ER',
@@ -550,6 +558,27 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'cell-biology',
   },
   {
+    term: 'アクチンフィラメント',
+    english: 'actin filament',
+    description: '細胞の形の変化、移動、収縮などに関わる細胞骨格の一種。',
+    href: '/glossary/actin-filament/',
+    category: 'cell-biology',
+  },
+  {
+    term: '微小管',
+    english: 'microtubule',
+    description: '細胞内輸送や細胞分裂に関わる管状の細胞骨格。',
+    href: '/glossary/microtubule/',
+    category: 'cell-biology',
+  },
+  {
+    term: '中間径フィラメント',
+    english: 'intermediate filament',
+    description: '細胞や組織の力学的な安定性を支える細胞骨格の一種。',
+    href: '/glossary/intermediate-filament/',
+    category: 'cell-biology',
+  },
+  {
     term: '細胞シグナル伝達',
     english: 'cell signaling',
     description: '細胞が外からの情報を受け取り、内部の反応へ変える仕組み。',
@@ -561,6 +590,28 @@ export const glossaryTerms: GlossaryTerm[] = [
     english: 'membrane transport',
     description: '細胞膜や細胞内膜を越えて物質が移動する過程の総称。',
     href: '/glossary/membrane-transport/',
+    category: 'cell-biology',
+  },
+  {
+    term: 'チャネル',
+    english: 'channel',
+    description: '膜に通り道を作り、イオンなどを通すタンパク質。',
+    href: '/glossary/channel/',
+    category: 'cell-biology',
+  },
+  {
+    term: '輸送体',
+    english: 'transporter',
+    description: '分子やイオンを結合し、膜を越えて運ぶタンパク質。',
+    href: '/glossary/transporter/',
+    category: 'cell-biology',
+  },
+  {
+    term: 'ポンプ',
+    english: 'pump',
+    description:
+      'エネルギーを使って、濃度差に逆らって物質を運ぶ輸送タンパク質。',
+    href: '/glossary/pump/',
     category: 'cell-biology',
   },
   {
@@ -579,10 +630,41 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'cell-biology',
   },
   {
+    term: 'エンドソーム',
+    english: 'endosome',
+    description:
+      'エンドサイトーシスで取り込まれた物質を仕分ける膜で囲まれた区画。',
+    href: '/glossary/endosome/',
+    category: 'cell-biology',
+  },
+  {
+    term: '内在化',
+    english: 'internalization',
+    description: '細胞表面の分子や外部の物質が細胞内へ取り込まれること。',
+    href: '/glossary/internalization/',
+    category: 'cell-biology',
+  },
+  {
+    term: 'ファゴサイトーシス',
+    english: 'phagocytosis',
+    description:
+      '細胞が大きな粒子や細胞片などを取り込むエンドサイトーシスの一種。',
+    href: '/glossary/phagocytosis/',
+    category: 'cell-biology',
+  },
+  {
     term: 'エキソサイトーシス',
     english: 'exocytosis',
     description: '小胞が細胞膜と融合し、中身や膜成分を外側へ出す過程。',
     href: '/glossary/exocytosis/',
+    category: 'cell-biology',
+  },
+  {
+    term: 'オートファジー',
+    english: 'autophagy',
+    description:
+      '細胞内の成分を膜で包み、リソソームで分解して再利用する仕組み。',
+    href: '/glossary/autophagy/',
     category: 'cell-biology',
   },
   {
@@ -591,6 +673,20 @@ export const glossaryTerms: GlossaryTerm[] = [
     description:
       'タンパク質が細胞内外のどこに存在し、働く可能性があるかを示す考え方。',
     href: '/glossary/protein-localization/',
+    category: 'cell-biology',
+  },
+  {
+    term: '細胞分画',
+    english: 'cell fractionation',
+    description: '細胞を壊して、核や細胞質、膜などの画分に分ける実験操作。',
+    href: '/glossary/cell-fractionation/',
+    category: 'cell-biology',
+  },
+  {
+    term: '共局在',
+    english: 'colocalization',
+    description: '2つ以上のシグナルが同じ場所に重なって見えること。',
+    href: '/glossary/colocalization/',
     category: 'cell-biology',
   },
   {
@@ -644,6 +740,28 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'cell-biology',
   },
   {
+    term: 'Ras',
+    english: 'Ras',
+    description: '受容体からのシグナルをRafなどへ伝える小型GTPase。',
+    href: '/glossary/ras/',
+    category: 'cell-biology',
+  },
+  {
+    term: 'Raf',
+    english: 'Raf',
+    description: 'Rasの下流で働き、MEKを活性化するキナーゼ。',
+    href: '/glossary/raf/',
+    category: 'cell-biology',
+  },
+  {
+    term: 'MEK',
+    english: 'mitogen-activated protein kinase kinase',
+    abbreviation: 'MEK',
+    description: 'MAPK経路でERKをリン酸化して活性化するキナーゼ。',
+    href: '/glossary/mek/',
+    category: 'cell-biology',
+  },
+  {
     term: 'ERK',
     english: 'extracellular signal-regulated kinase',
     abbreviation: 'ERK',
@@ -661,11 +779,36 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'cell-biology',
   },
   {
+    term: 'PI3K',
+    english: 'phosphoinositide 3-kinase',
+    abbreviation: 'PI3K',
+    description: '膜脂質をリン酸化し、PIP3を作る酵素。',
+    href: '/glossary/pi3k/',
+    category: 'cell-biology',
+  },
+  {
+    term: 'PIP3',
+    english: 'phosphatidylinositol 3,4,5-trisphosphate',
+    abbreviation: 'PIP3',
+    description: 'PI3Kによって作られ、AKTなどを膜近くへ集める膜脂質。',
+    href: '/glossary/pip3/',
+    category: 'cell-biology',
+  },
+  {
     term: 'AKT',
     english: 'AKT / protein kinase B',
     abbreviation: 'AKT',
     description: 'PI3K-AKT経路の下流で働くキナーゼ。',
     href: '/glossary/akt/',
+    category: 'cell-biology',
+  },
+  {
+    term: 'mTOR',
+    english: 'mechanistic target of rapamycin',
+    abbreviation: 'mTOR',
+    description:
+      '栄養状態や成長シグナルに応じて代謝やタンパク質合成を調節するキナーゼ。',
+    href: '/glossary/mtor/',
     category: 'cell-biology',
   },
   {
