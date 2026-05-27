@@ -72,6 +72,8 @@ PubMed、PMC、DOI、PMID、レビュー論文、原著論文をまとめて確�
 | single-cell論文        | [single-cell解析を含む論文](/papers/walkthrough-single-cell/) | [UMAP・t-SNE](/figures/how-to-read-umap-tsne/)、[Violin plot](/figures/how-to-read-violin-plot/)           |
 | Western blotを含む論文 | [Western blotを含む論文](/papers/walkthrough-western-blot/)   | [Western blot](/figures/how-to-read-western-blot/)、[棒グラフ](/figures/how-to-read-bar-plot/)             |
 | 免疫染色画像を含む論文 | [免疫染色を含む論文](/papers/walkthrough-immunostaining/)     | [免疫染色画像](/figures/how-to-read-immunostaining/)、[顕微鏡画像](/figures/how-to-read-microscopy-image/) |
+| がんゲノム論文         | [がんゲノム論文](/papers/walkthrough-cancer-genomics/)        | [CNV plot](/figures/how-to-read-cnv-plot/)、[Lollipop plot](/figures/how-to-read-lollipop-plot/)           |
+| CRISPR論文             | [CRISPR論文](/papers/walkthrough-crispr/)                     | [Western blot](/figures/how-to-read-western-blot/)、[棒グラフ](/figures/how-to-read-bar-plot/)             |
 
 ## 演習を順番に進める
 
@@ -81,8 +83,10 @@ PubMed、PMC、DOI、PMID、レビュー論文、原著論文をまとめて確�
 2. [single-cell解析を含む論文](/papers/walkthrough-single-cell/) で、UMAP、クラスタ、マーカー遺伝子、サンプル単位の確認へ進みます。
 3. [Western blotを含む論文](/papers/walkthrough-western-blot/) で、代表画像、ローディングコントロール、定量グラフを対応づけます。
 4. [免疫染色を含む論文](/papers/walkthrough-immunostaining/) で、局在、対照、撮影条件、画像定量を確認します。
+5. [がんゲノム論文](/papers/walkthrough-cancer-genomics/) で、Tumor-normal比較、変異、コピー数変化、候補遺伝子を分けて読みます。
+6. [CRISPR論文](/papers/walkthrough-crispr/) で、編集確認、表現型、対照、レスキュー実験をつなげて確認します。
 
-この順番で読むと、オミクス解析、single-cell解析、タンパク質検出、画像Figureの違いを比べながら、同じ「Methodsに戻る」読み方を練習できます。
+この順番で読むと、オミクス解析、single-cell解析、タンパク質検出、画像Figure、ゲノム解析、遺伝子機能操作の違いを比べながら、同じ「Methodsに戻る」読み方を練習できます。
 
 ## 記事群の位置づけ
 
@@ -90,12 +94,12 @@ PubMed、PMC、DOI、PMID、レビュー論文、原著論文をまとめて確�
 
 順番に読むための学習ルートは [論文を読めるようになる](/paths/paper-reading/) にまとめています。ここでは、論文の一部だけを確認したい、論文を探したい、特定の演習へ進みたい、という使い方を優先します。
 
-| 役割                 | 使いどころ                                                                                      | 代表記事                                                                                                                                                          |
-| -------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 論文の構造を知る     | Abstract、Introduction、Methods、Results、Discussionの役割を確認したいとき                      | [論文の構成](/papers/paper-structure/)、[TitleとAbstractの読み方](/papers/how-to-read-title-abstract/)                                                            |
-| 読み方を決める       | どこから読み始めるか、FigureとMethodsをどう行き来するかを決めたいとき                           | [初回読みの流れ](/papers/first-pass-reading/)、[Figureから論文を読む方法](/papers/figure-first-reading/)、[Methods確認チェックリスト](/papers/methods-checklist/) |
-| 論文を探す・選ぶ     | PubMed、PMC、DOI、レビュー論文と原著論文の違いを確認し、読む論文を選びたいとき                  | [PubMedの使い方](/papers/pubmed/)、[PMC論文の探し方](/papers/pmc/)、[読む論文の選び方](/papers/how-to-choose-paper/)                                              |
-| 架空ケースで練習する | RNA-seq、single-cell、Western blot、免疫染色のFigureを、MethodsとDiscussionに戻して読みたいとき | [RNA-seq論文](/papers/walkthrough-rna-seq/)、[single-cell解析論文](/papers/walkthrough-single-cell/)、[Western blotを含む論文](/papers/walkthrough-western-blot/) |
+| 役割                 | 使いどころ                                                                                                          | 代表記事                                                                                                                                                          |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 論文の構造を知る     | Abstract、Introduction、Methods、Results、Discussionの役割を確認したいとき                                          | [論文の構成](/papers/paper-structure/)、[TitleとAbstractの読み方](/papers/how-to-read-title-abstract/)                                                            |
+| 読み方を決める       | どこから読み始めるか、FigureとMethodsをどう行き来するかを決めたいとき                                               | [初回読みの流れ](/papers/first-pass-reading/)、[Figureから論文を読む方法](/papers/figure-first-reading/)、[Methods確認チェックリスト](/papers/methods-checklist/) |
+| 論文を探す・選ぶ     | PubMed、PMC、DOI、レビュー論文と原著論文の違いを確認し、読む論文を選びたいとき                                      | [PubMedの使い方](/papers/pubmed/)、[PMC論文の探し方](/papers/pmc/)、[読む論文の選び方](/papers/how-to-choose-paper/)                                              |
+| 架空ケースで練習する | RNA-seq、single-cell、Western blot、免疫染色、がんゲノム、CRISPRのFigureを、MethodsとDiscussionに戻して読みたいとき | [RNA-seq論文](/papers/walkthrough-rna-seq/)、[single-cell解析論文](/papers/walkthrough-single-cell/)、[Western blotを含む論文](/papers/walkthrough-western-blot/) |
 
 一覧では、論文を探す・選ぶ記事を探索系、架空ケースで練習する記事を演習系としてまとめています。探索系は読む論文を決める段階で使い、演習系は読み方の型を試す段階で使います。
 

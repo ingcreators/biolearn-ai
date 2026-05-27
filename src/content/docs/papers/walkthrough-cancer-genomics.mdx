@@ -1,0 +1,192 @@
+---
+title: '論文読解演習 - がんゲノム論文'
+description: 架空のがんゲノム論文を題材に、Tumor-normal比較、変異、コピー数変化、Methods確認をつなげて読む練習をします。
+part: papers
+module: paper-walkthrough
+level: intermediate
+priority: P2
+order: 340
+learningPaths:
+  - paper-reading
+relatedTerms:
+  - cancer-genomics
+  - tumor-normal-comparison
+  - somatic-variant
+  - copy-number-variation
+  - variant-annotation
+prerequisites:
+  - /genomics/cancer-genomics/
+  - /genomics/tumor-normal-comparison/
+  - /genomics/somatic-germline-variant/
+  - /genomics/copy-number-variation/
+  - /figures/how-to-read-cnv-plot/
+  - /figures/how-to-read-lollipop-plot/
+  - /papers/methods-checklist/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'がんゲノム論文でTumor-normal比較と変異Figureを読む順番を説明できる',
+    '体細胞変異、コピー数変化、候補遺伝子の解釈を区別できる',
+    'Methodsで確認すべきサンプル、解析条件、限界を挙げられる',
+  ]}
+/>
+
+この演習では、実在論文ではなくBioLearn用の架空ケースを使い、がんゲノム論文を読む手順を練習します。個別の診断や治療判断ではなく、研究論文のMethods、Figure、Discussionを対応づけて読む練習として扱います。
+
+<LessonFigure
+  src="/figures/walkthrough-cancer-genomics-concept.jpg"
+  alt="がんゲノム論文で腫瘍サンプル、正常対照、変異、コピー数変化、候補遺伝子、Methodsを順に確認する概念図"
+  title="がんゲノム論文は比較対象と変化の種類を分けて読む"
+  caption="Tumor-normal比較、体細胞変異、コピー数変化、候補遺伝子、サンプル品質を行き来して確認します。"
+/>
+
+## 架空ケース
+
+ある研究では、腫瘍サンプルと対応する正常サンプルを使い、ゲノム変化を調べたとします。論文の主張は「条件Bの腫瘍群では、遺伝子X周辺の変化と特定のコピー数パターンが多い」です。
+
+この主張を読むときは、まず[Tumor-normal比較](/glossary/tumor-normal-comparison/)が行われているか、[体細胞変異](/glossary/somatic-variant/)と生殖細胞系列変異がどう区別されているかを確認します。次に、oncoplot、[CNV plot](/glossary/cnv-plot/)、[Lollipop plot](/glossary/lollipop-plot/)、サンプル情報の表を分けて読みます。
+
+## 読む順番
+
+1. Abstractで、対象、サンプル数、主なゲノム変化を拾います。
+2. サンプル表で、腫瘍種、条件、サンプル数、正常対照の有無を確認します。
+3. oncoplotで、どの遺伝子にどの種類の変化が出ているかを見ます。
+4. CNV plotで、増幅や欠失がどの領域に見えるかを確認します。
+5. Lollipop plotや変異表で、変異の位置、種類、頻度を確認します。
+6. Methodsで、シーケンシング方法、[バリアントコール](/glossary/variant-calling/)、コピー数解析、フィルタ、annotation、サンプル純度の扱いを確認します。
+
+## Methodsで確認すること
+
+| 項目         | 確認すること                                  |
+| ------------ | --------------------------------------------- |
+| サンプル     | 腫瘍と正常対照、サンプル数、採取条件、品質    |
+| データ種類   | 全ゲノム、エクソーム、ターゲット、RNA-seqなど |
+| 変異検出     | variant calling、フィルタ、深さ、比較対象     |
+| コピー数解析 | 純度、ploidy、セグメント、増幅・欠失の基準    |
+| annotation   | 既存データベース、機能予測、候補遺伝子の基準  |
+| 解釈の範囲   | 頻度、再現性、独立コホート、機能実験の有無    |
+
+## 限界を読むポイント
+
+がんゲノム論文では、変異やコピー数変化が見つかっても、それだけで機能や臨床的意味が確定するわけではありません。研究データとして、どのサンプル、どの解析条件、どの基準で候補が選ばれたかを確認します。
+
+- 腫瘍サンプルには、腫瘍細胞以外の細胞が混ざることがあります。
+- 対応する正常サンプルがない場合、体細胞由来かどうかを区別しにくい変化があります。
+- 変異の頻度が高くても、それがドライバー変化とは限りません。
+- コピー数変化は、腫瘍純度や解析モデルによって見え方が変わることがあります。
+- annotationは候補を絞る助けになりますが、機能を確定するものではありません。
+- 個別の治療や検査の判断ではなく、論文の主張と証拠の対応として読みます。
+
+Discussionの強い表現は、「この研究のサンプルと解析では、どの変化がどの頻度で観察されたか」に戻して読みます。
+
+## 3段階で読む演習
+
+### 1. Methodsで確認する
+
+まず、変異やコピー数変化を比較できる設計になっているかを確認します。
+
+- 腫瘍サンプルと正常対照が対応しているか。
+- サンプル数、腫瘍純度、品質管理、除外基準が示されているか。
+- シーケンシングの種類、深さ、リードの前処理が分かるか。
+- 変異検出、コピー数推定、構造変化検出のツールや閾値が書かれているか。
+- 候補遺伝子の選び方が、頻度、機能予測、既存研究、統計基準に分けて説明されているか。
+
+Methodsが薄い場合、Figureは読めても、候補変化の信頼性や比較可能性を強く判断しにくくなります。
+
+### 2. Figureで確認する
+
+次に、Figureを「変化の種類」ごとに読み分けます。
+
+- oncoplotでは、サンプルごとの変異の有無、変異種類、並び順の基準を見る。
+- CNV plotでは、領域全体の増幅や欠失と、サンプルごとのばらつきを見る。
+- Lollipop plotでは、変異がタンパク質のどの領域に集まるかを見る。
+- 患者背景表やサンプル表では、条件差がサンプルの偏りと重なっていないかを見る。
+
+一つのFigureだけで結論を決めず、変異、コピー数、発現、サンプル情報が同じ方向を示しているかを確認します。
+
+### 3. Discussionで言える範囲に戻す
+
+がんゲノム解析から言いやすいのは、「このコホートで遺伝子X周辺の変化が観察された」「条件B群で特定領域のコピー数変化が多く見える」という範囲です。
+
+一方で、追加の機能実験や独立検証なしに「遺伝子Xが腫瘍の原因である」「特定の医療上の判断に直結する」とまでは言えません。Discussionでは、頻度、候補、機能、臨床的意味が混ざっていないかを確認します。
+
+### 自分で答える問い
+
+- この論文の中心的な主張は、変異頻度、コピー数変化、発現変化、機能解釈のどれか。
+- その主張は、Tumor-normal比較とサンプル品質の確認に支えられているか。
+- Discussionの一文を、Figureから直接言える表現に言い換えるとどうなるか。
+
+## よくある誤解
+
+- 変異が見つかっただけで、機能や原因が証明されたと読む。
+- oncoplotの色の多さを、重要性の強さとしてそのまま受け取る。
+- 対応正常サンプルやフィルタ条件を確認せずに、体細胞変異と読む。
+- コピー数変化を、腫瘍純度や解析条件の影響を考えずに解釈する。
+
+<Quiz
+  questions={[
+    {
+      question:
+        'がんゲノム論文でTumor-normal比較を確認する理由を説明してください。',
+      answer:
+        '腫瘍で見える変化が体細胞由来の候補なのか、生殖細胞系列由来の変異なのかを区別しやすくするためです。',
+    },
+    {
+      question:
+        'CNV plotを読むとき、領域の増幅や欠失以外にMethodsで確認したいことを挙げてください。',
+      answer:
+        '腫瘍純度、ploidy、コピー数推定方法、セグメント化、閾値、サンプル品質、正常対照の扱いなどです。',
+    },
+    {
+      question:
+        '「遺伝子Xが腫瘍の原因である」という表現を、ゲノムFigureから直接言いやすい表現に言い換えてください。',
+      answer:
+        'このコホートで遺伝子X周辺の変異やコピー数変化が観察された、というように、観察されたゲノム変化に戻します。',
+    },
+    {
+      question:
+        'oncoplotで候補遺伝子が目立つとき、追加で確認したい情報を2つ挙げてください。',
+      answer:
+        'サンプル数、変異種類、頻度、フィルタ条件、正常対照、既存研究、独立検証、機能実験の有無などです。',
+    },
+    {
+      question:
+        'がんゲノム論文を読むとき、医療上の判断として読まない方がよい理由を説明してください。',
+      answer:
+        '論文のFigureは研究データの解釈を示すものであり、個別の診断や治療判断には別の検証、基準、専門的判断が必要だからです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    {
+      title: '次の演習: CRISPR論文',
+      href: '/papers/walkthrough-crispr/',
+    },
+    {
+      title: '前の演習: 免疫染色を含む論文',
+      href: '/papers/walkthrough-immunostaining/',
+    },
+    { title: 'がんゲノミクスとは何か', href: '/genomics/cancer-genomics/' },
+    {
+      title: 'Tumor-normal比較とは何か',
+      href: '/genomics/tumor-normal-comparison/',
+    },
+    {
+      title: 'CNV plotの読み方',
+      href: '/figures/how-to-read-cnv-plot/',
+    },
+    {
+      title: 'Lollipop plotの読み方',
+      href: '/figures/how-to-read-lollipop-plot/',
+    },
+    { title: '論文読解演習トップ', href: '/papers/' },
+  ]}
+/>

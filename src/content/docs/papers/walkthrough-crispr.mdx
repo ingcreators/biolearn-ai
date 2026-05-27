@@ -1,0 +1,181 @@
+---
+title: '論文読解演習 - CRISPR論文'
+description: 架空のCRISPR論文を題材に、編集確認、対照、表現型、レスキュー実験、Methods確認をつなげて読む練習をします。
+part: papers
+module: paper-walkthrough
+level: intermediate
+priority: P2
+order: 350
+learningPaths:
+  - paper-reading
+relatedTerms:
+  - crispr
+  - cas9
+  - guide-rna
+  - knockout
+  - rescue-experiment
+prerequisites:
+  - /methods/crispr/
+  - /methods/knockout/
+  - /methods/positive-negative-control/
+  - /figures/how-to-read-western-blot/
+  - /papers/methods-checklist/
+  - /statistics/biological-technical-replicates/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+
+<LearningGoals
+  items={[
+    'CRISPR論文で編集確認と表現型Figureを分けて読める',
+    'ガイドRNA、Cas9、対照、レスキュー実験の確認点を説明できる',
+    'Methodsで確認すべき標的配列、クローン、オフターゲットの注意点を挙げられる',
+  ]}
+/>
+
+この演習では、実在論文ではなくBioLearn用の架空ケースを使い、CRISPRを使った遺伝子機能論文を読む手順を練習します。
+
+<LessonFigure
+  src="/figures/walkthrough-crispr-concept.jpg"
+  alt="CRISPR論文でガイドRNA、Cas9、編集確認、タンパク質確認、表現型、レスキュー実験、Methodsを順に確認する概念図"
+  title="CRISPR論文は編集確認と機能確認を分けて読む"
+  caption="標的配列、編集効率、タンパク質量、対照、表現型、レスキュー実験をMethodsと合わせて確認します。"
+/>
+
+## 架空ケース
+
+ある研究では、遺伝子XをCRISPR-Cas9でノックアウトし、細胞の増殖が低下すると主張しているとします。Figureには、標的配列の編集確認、タンパク質XのWestern blot、細胞増殖グラフ、レスキュー実験が示されています。
+
+この主張を読むときは、[CRISPR](/glossary/crispr/)を入れたことと、標的遺伝子の機能が失われたことを分けて確認します。[ガイドRNA](/glossary/guide-rna/)と[Cas9](/glossary/cas9/)の情報、[ノックアウト](/glossary/knockout/)成立の確認、対照、複数クローン、[レスキュー実験](/glossary/rescue-experiment/)を順に見ます。
+
+## 読む順番
+
+1. Abstractで、どの遺伝子を操作し、どの表現型を見たかを拾います。
+2. 編集確認Figureで、標的配列に変化が入ったかを確認します。
+3. Western blotやRT-qPCRで、タンパク質やRNAの変化を見ます。
+4. 表現型Figureで、増殖、形、シグナルなどの変化を確認します。
+5. 対照、複数ガイドRNA、複数クローン、レスキュー実験があるかを探します。
+6. Methodsで、標的配列、導入方法、選択、クローン化、genotyping、解析単位を確認します。
+
+## Methodsで確認すること
+
+| 項目     | 確認すること                               |
+| -------- | ------------------------------------------ |
+| 標的設計 | gRNA配列、標的エクソン、予想される影響     |
+| 導入方法 | Cas9、ベクター、transfection、selection    |
+| 編集確認 | シーケンシング、indel、タンパク質消失      |
+| 対照     | non-targeting gRNA、野生型、mock、複数gRNA |
+| クローン | poolか単一クローンか、クローン差の扱い     |
+| 機能確認 | 表現型測定、レスキュー、独立実験数         |
+
+## 限界を読むポイント
+
+CRISPR論文では、編集確認と表現型確認が両方そろっているかが重要です。標的配列が変わったこと、タンパク質が減ったこと、細胞の性質が変わったことは、別々の証拠として読みます。
+
+- gRNAを導入しただけでは、目的遺伝子が十分に失われたとは限りません。
+- 単一クローンでは、標的以外の変化やクローン差が表現型に混ざることがあります。
+- 表現型の変化は、導入操作、選択、増殖速度、培養条件の影響も受けます。
+- 複数のgRNAやレスキュー実験があると、標的遺伝子との関係を読みやすくなります。
+- off-target候補の確認がない場合、強い因果表現は慎重に読みます。
+- CRISPRで見えた表現型だけでは、細胞内の詳しい分子機構まで直接示したことにはなりません。
+
+Discussionでは、「遺伝子Xが必要である」と書かれていても、Figureから直接言える範囲に戻して読みます。
+
+## 3段階で読む演習
+
+### 1. Methodsで確認する
+
+まず、操作と確認の流れが十分に説明されているかを確認します。
+
+- gRNAがどのエクソンや機能領域を狙っているか。
+- Cas9や導入方法、選択方法、培養期間が書かれているか。
+- pool細胞なのか、単一クローンなのか、複数クローンを使ったのか。
+- 標的配列の編集、RNA量、タンパク質量のどれを確認したのか。
+- 表現型測定の条件、独立実験数、統計表示が分かるか。
+
+Methodsが不明な場合、表現型のFigureは読めても、それを標的遺伝子の機能としてどこまで読めるかは限定的になります。
+
+### 2. Figureで確認する
+
+次に、Figureを「編集確認」と「機能確認」に分けて読みます。
+
+- 編集確認Figureでは、標的配列にどのような変化が入ったかを見る。
+- Western blotでは、目的タンパク質が本当に減っているか、ローディングコントロールを確認する。
+- 表現型グラフでは、対照、複数gRNA、複数クローン、独立実験のばらつきを見る。
+- レスキュー実験では、遺伝子Xを戻すと表現型がどの程度戻るかを見る。
+
+CRISPR論文の結論は、一つのFigureではなく、編集確認、発現確認、表現型、レスキューのつながりで支えられます。
+
+### 3. Discussionで言える範囲に戻す
+
+CRISPR実験から言いやすいのは、「この実験条件で遺伝子Xを失わせると、表現型Yが変化した」という範囲です。
+
+一方で、追加実験なしに「遺伝子Xがすべての文脈で必須である」「特定の経路を直接制御している」とまでは言えません。Discussionでは、操作、表現型、分子機構が混ざっていないかを確認します。
+
+### 自分で答える問い
+
+- この論文では、編集確認とタンパク質確認の両方が示されているか。
+- 表現型は、複数gRNA、複数クローン、またはレスキューで支えられているか。
+- Discussionの一文を、CRISPR実験から直接言える表現に言い換えるとどうなるか。
+
+## よくある誤解
+
+- gRNAを入れたことだけで、完全なノックアウトが成立したと読む。
+- 1つのクローンの表現型を、遺伝子Xの一般的な機能として読みすぎる。
+- 編集確認Figureを見ずに、表現型だけで因果を判断する。
+- レスキュー実験や複数gRNAの有無を確認しない。
+
+<Quiz
+  questions={[
+    {
+      question:
+        'CRISPR論文で編集確認と表現型確認を分けて読む理由を説明してください。',
+      answer:
+        '標的配列が変わったこと、遺伝子産物が失われたこと、表現型が変わったことは別々の証拠であり、それぞれ確認しないと因果を読みすぎる可能性があるためです。',
+    },
+    {
+      question: '複数gRNAや複数クローンを確認する理由を説明してください。',
+      answer:
+        '単一gRNAや単一クローンに特有のoff-target、クローン差、導入操作の影響を減らして、標的遺伝子との関係を読みやすくするためです。',
+    },
+    {
+      question:
+        'レスキュー実験がCRISPR論文の解釈をどう補強するか説明してください。',
+      answer:
+        '失わせた遺伝子機能を戻したときに表現型が回復すれば、表現型が標的遺伝子の喪失と関係する可能性を補強できます。',
+    },
+    {
+      question:
+        'CRISPRのMethodsで標的設計として確認したい情報を挙げてください。',
+      answer:
+        'gRNA配列、標的エクソンや機能領域、Cas9の種類、導入方法、編集確認方法、off-target候補の扱いなどです。',
+    },
+    {
+      question:
+        '「遺伝子Xが増殖を直接制御する」という表現を、CRISPR実験から直接言いやすい表現に言い換えてください。',
+      answer:
+        'この実験条件で遺伝子Xを失わせると細胞増殖が低下した、というように、操作と観察された表現型に戻します。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    {
+      title: '前の演習: がんゲノム論文',
+      href: '/papers/walkthrough-cancer-genomics/',
+    },
+    { title: 'CRISPRとは何か', href: '/methods/crispr/' },
+    { title: 'ノックアウトとは何か', href: '/methods/knockout/' },
+    {
+      title: 'Western blotの読み方',
+      href: '/figures/how-to-read-western-blot/',
+    },
+    { title: 'Methods確認チェックリスト', href: '/papers/methods-checklist/' },
+    { title: '論文読解演習トップ', href: '/papers/' },
+    { title: '論文を読めるようになる', href: '/paths/paper-reading/' },
+  ]}
+/>

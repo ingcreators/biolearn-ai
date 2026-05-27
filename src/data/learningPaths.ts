@@ -130,5 +130,7 @@ export const learningPathRoutes: Record<LearningPathKey, string[]> = {
     '/papers/walkthrough-single-cell/',
     '/papers/walkthrough-western-blot/',
     '/papers/walkthrough-immunostaining/',
+    '/papers/walkthrough-cancer-genomics/',
+    '/papers/walkthrough-crispr/',
   ],
 };
