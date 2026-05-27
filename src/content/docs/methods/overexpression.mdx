@@ -1,0 +1,155 @@
+---
+title: 過剰発現とは何か
+description: 過剰発現を、遺伝子やタンパク質を通常より多く作らせて機能への影響を調べる実験操作として説明します。
+part: methods
+module: gene-function-assay
+level: foundation
+priority: P1
+order: 150
+relatedTerms:
+  - overexpression
+  - gene-expression
+  - transfection
+  - plasmid
+  - phenotype
+  - methods
+prerequisites:
+  - /fundamentals/gene-expression/
+  - /methods/knockdown/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    '過剰発現が遺伝子やタンパク質を多く作らせる操作であることを説明できる',
+    '過剰発現とノックダウン、ノックアウトの違いを区別できる',
+    '過剰発現実験を読むときの確認点を挙げられる',
+  ]}
+/>
+
+過剰発現は、特定の遺伝子やタンパク質を通常より多く作らせ、その分子が細胞の性質にどう影響するかを調べる実験操作です。遺伝子機能を強めたときに何が起こるかを見る、gain-of-function実験の一種として使われます。
+
+過剰発現で見えた変化は、その分子が関わる過程の手がかりになります。ただし、発現量が生理的な範囲を大きく超えると、本来の働きとは違う影響が出ることもあるため、発現確認や対照条件が重要です。
+
+<LessonFigure
+  src="/figures/overexpression-concept.jpg"
+  alt="プラスミドなどで特定遺伝子を多く発現させ、対照細胞と表現型を比較する過剰発現実験の概念図"
+  title="過剰発現は分子を多く作らせて調べる"
+  caption="発現量の確認と、細胞や表現型の変化を分けて読みます。"
+/>
+
+## なぜ過剰発現の視点が重要か
+
+[遺伝子発現](/glossary/gene-expression/)を増やすと、その遺伝子産物が細胞内でどの過程を動かし得るかを調べられます。転写因子、受容体、酵素、変異タンパク質などの機能を検証するときに使われます。
+
+過剰発現は、ノックダウンやノックアウトと反対向きの操作として読むと分かりやすくなります。働きを弱めたときと強めたときで一貫した変化が見えるか、レスキュー実験として表現型が戻るか、といった証拠を組み合わせます。
+
+## どんな過剰発現があるか
+
+細胞に[プラスミド](/glossary/plasmid/)を導入して一時的に発現させる方法、ウイルスベクターなどで安定的に発現させる方法、誘導性のシステムで必要な時間だけ発現させる方法があります。タグ付きタンパク質や変異型タンパク質を発現させることもあります。
+
+導入方法としては、[トランスフェクション](/glossary/transfection/)やウイルス導入などがあります。どの方法を使ったかによって、発現量、発現する細胞の割合、細胞への負担、対照の置き方が変わります。
+
+## 過剰発現はどう確認するか
+
+過剰発現では、目的遺伝子のRNA量やタンパク質量が増えているかを確認します。RT-qPCR、Western blot、免疫染色、蛍光タグの観察などが使われます。
+
+発現が増えたことと、細胞の[表現型](/glossary/phenotype/)が変わったことは別の証拠です。Figureを読むときは、まず発現確認を見てから、増殖、局在、シグナル、レポーター活性などの結果に進みます。
+
+## 過剰発現の変化は何につながるか
+
+過剰発現後に細胞の形、増殖、分化、シグナル応答、遺伝子発現が変われば、その分子が関連する可能性があります。変異型タンパク質を過剰発現させると、野生型との違いから機能領域の手がかりが得られることもあります。
+
+一方で、過剰発現は人工的な操作です。過剰な量のタンパク質が、本来は結合しない相手に作用したり、細胞にストレスを与えたりする可能性があります。発現量がどの程度か、対照ベクターや空ベクターがあるかを確認します。
+
+## 論文や実験ではどう出てくるか
+
+論文では、overexpression、OE、ectopic expression、transient transfection、stable expressionなどとして出てきます。Methodsでは、使ったベクター、導入方法、発現時間、タグ、選択方法、対照条件が書かれます。
+
+Figureでは、発現確認のWestern blotやRT-qPCR、蛍光画像、レポーター活性、細胞表現型のグラフとして示されます。発現している細胞の割合と、定量に使われたサンプル数を分けて読みます。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- 過剰発現と発現上昇: 過剰発現は実験的に多く作らせる操作で、発現上昇は観察された変化を指すことがあります。
+- 過剰発現とレスキュー: レスキューでは、失わせた機能を戻して表現型が回復するかを見ます。
+- 過剰発現とノックダウン: 過剰発現は働きを強める方向、ノックダウンは発現量を下げる方向の操作です。
+
+### 解釈の落とし穴
+
+- 発現量が高すぎる結果を、そのまま通常の細胞内機能として読む。
+- 空ベクターやタグだけの対照を確認しない。
+- 発現確認がないまま、表現型の違いを目的遺伝子の効果として読む。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: '過剰発現',
+      english: 'overexpression',
+      abbreviation: 'OE',
+      description: '特定の遺伝子やタンパク質を通常より多く作らせる実験操作。',
+      href: '/glossary/overexpression/',
+    },
+    {
+      term: 'トランスフェクション',
+      english: 'transfection',
+      description: '細胞にDNAやRNAなどの核酸を導入する操作。',
+      href: '/glossary/transfection/',
+    },
+    {
+      term: 'プラスミド',
+      english: 'plasmid',
+      description: '実験で遺伝子を細胞へ運ぶためによく使われる環状DNA。',
+      href: '/glossary/plasmid/',
+    },
+    {
+      term: '遺伝子発現',
+      english: 'gene expression',
+      description: '遺伝子の情報がRNAやタンパク質として使われること。',
+      href: '/glossary/gene-expression/',
+    },
+    {
+      term: '表現型',
+      english: 'phenotype',
+      description: '遺伝子や環境の影響として観察される性質や状態。',
+      href: '/glossary/phenotype/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: '過剰発現実験の目的を簡単に説明してください。',
+      answer:
+        '特定の遺伝子やタンパク質を多く作らせ、細胞や表現型にどのような変化が起こるかを調べることです。',
+    },
+    {
+      question: '過剰発現実験で空ベクター対照を見る理由を説明してください。',
+      answer:
+        '導入操作やベクターそのものの影響と、目的遺伝子を発現させた影響を分けるためです。',
+    },
+    {
+      question:
+        '過剰発現結果を通常の細胞機能として読みすぎない方がよい理由は何ですか。',
+      answer:
+        '人工的に高い発現量では、本来の量では起こりにくい相互作用や細胞ストレスが生じる可能性があるためです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'ノックダウンとは何か', href: '/methods/knockdown/' },
+    { title: 'ノックアウトとは何か', href: '/methods/knockout/' },
+    { title: 'レポーターアッセイとは何か', href: '/methods/reporter-assay/' },
+  ]}
+/>

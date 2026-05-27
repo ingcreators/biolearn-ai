@@ -1,0 +1,162 @@
+---
+title: ハウスキーピング遺伝子とは何か
+description: ハウスキーピング遺伝子を、qPCRやWestern blotなどで正規化の基準候補として使われる遺伝子として説明します。
+part: methods
+module: nucleic-acid-measurement
+level: foundation
+priority: P1
+order: 55
+relatedTerms:
+  - housekeeping-gene
+  - reference-gene
+  - normalization
+  - rt-qpcr
+  - loading-control
+  - methods
+prerequisites:
+  - /methods/rt-qpcr/
+  - /methods/loading-control/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    'ハウスキーピング遺伝子が基準候補として使われる理由を説明できる',
+    '参照遺伝子やローディングコントロールとの関係を理解する',
+    '条件によって基準が変動し得ることを説明できる',
+  ]}
+/>
+
+ハウスキーピング遺伝子は、多くの細胞で基本的な生命活動を支えるため、比較的安定して発現すると期待される遺伝子です。qPCRでは参照遺伝子、Western blotでは対応するタンパク質が補正の基準候補として使われることがあります。
+
+ただし、ハウスキーピング遺伝子は常に不変という意味ではありません。実験条件や細胞種によって変わることがあるため、基準として使ってよいかを確認して読む必要があります。
+
+<LessonFigure
+  src="/figures/housekeeping-gene-concept.jpg"
+  alt="条件間で目的遺伝子と基準候補の発現を比べ、安定した基準で正規化する考え方を示す教材イラスト"
+  title="ハウスキーピング遺伝子は正規化の基準候補"
+  caption="条件間で安定しているかを確認してから、発現量やタンパク質量の比較に使います。"
+/>
+
+## なぜハウスキーピング遺伝子の視点が重要か
+
+[RT-qPCR](/glossary/rt-qpcr/)では、サンプル量や逆転写効率の違いを補正するために[参照遺伝子](/glossary/reference-gene/)を使います。ハウスキーピング遺伝子は、その参照遺伝子の候補としてよく出てきます。
+
+Western blotでは、GAPDH、β-actin、tubulinなどのタンパク質が[ローディングコントロール](/glossary/loading-control/)として使われることがあります。どちらの場合も、基準が本当に条件間で安定しているかが解釈の土台になります。
+
+## どんなハウスキーピング遺伝子があるか
+
+よく使われる候補には、GAPDH、ACTB、TUBB、HPRT1、RPLP0などがあります。これらは代謝、細胞骨格、基本的なタンパク質合成などに関わる遺伝子です。
+
+ただし、よく使われることと、すべての実験で適切であることは同じではありません。細胞分化、ストレス、代謝変化、薬剤処理などで発現が変わることがあります。
+
+## ハウスキーピング遺伝子はどう調べるか
+
+基準として使う場合は、候補遺伝子が実験条件間で安定しているかを確認します。qPCRではCt値の変動、RNA-seqでは候補遺伝子の発現量、Western blotでは補正用バンドの強さを見ます。
+
+複数の参照遺伝子を使う場合もあります。1つの基準だけに頼るより、複数候補が同じように安定しているかを確認すると、正規化の解釈がしやすくなります。
+
+## 基準の変化は何につながるか
+
+基準遺伝子が条件間で変化していると、目的遺伝子の発現差が大きく見えたり、小さく見えたりします。[正規化](/glossary/normalization/)は便利ですが、基準が不安定だと比較の土台が揺れます。
+
+たとえば処理によってGAPDH自体が変わる場合、GAPDHで割った値は目的遺伝子だけの変化を表しているとは言いにくくなります。Figureを読むときは、何で正規化したかをFigure legendとMethodsで確認します。
+
+## 論文や実験ではどう出てくるか
+
+論文では、Methodsにreference gene、housekeeping gene、internal control、loading controlなどとして出てきます。RT-qPCRではΔCtやΔΔCt法の説明、Western blotでは目的バンドの下に補正用バンドが示されることがあります。
+
+読むときは、基準遺伝子名、条件間の安定性、何を1として示しているかを確認します。基準候補が複数あるか、補正前の値や別の検証があるかも手がかりになります。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- ハウスキーピング遺伝子と参照遺伝子: ハウスキーピング遺伝子は基準候補で、参照遺伝子は実際に正規化に使った基準です。
+- 参照遺伝子と対照群: 参照遺伝子は測定値の補正基準、対照群は比較する条件です。
+- ローディングコントロールとハウスキーピング遺伝子: 前者はWestern blotなどの補正基準で、後者は遺伝子発現の安定性に注目した呼び方です。
+
+### 解釈の落とし穴
+
+- GAPDHやACTBなら常に安定していると考える。
+- 正規化後の値だけを見て、基準が何かを確認しない。
+- 条件によって細胞数や代謝状態が変わる実験で、基準の安定性を見落とす。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'ハウスキーピング遺伝子',
+      english: 'housekeeping gene',
+      description:
+        '多くの細胞で基本機能を支えるため、安定発現が期待される遺伝子。',
+      href: '/glossary/housekeeping-gene/',
+    },
+    {
+      term: '参照遺伝子',
+      english: 'reference gene',
+      description: 'qPCRなどで正規化の基準として使う遺伝子。',
+      href: '/glossary/reference-gene/',
+    },
+    {
+      term: '正規化',
+      english: 'normalization',
+      description:
+        'サンプル間や条件間で比較しやすいように測定値の尺度を整える処理。',
+      href: '/glossary/normalization/',
+    },
+    {
+      term: 'RT-qPCR',
+      english: 'reverse transcription qPCR',
+      abbreviation: 'RT-qPCR',
+      description: 'RNAをcDNAに変換してからqPCRで測る実験手法。',
+      href: '/glossary/rt-qpcr/',
+    },
+    {
+      term: 'ローディングコントロール',
+      english: 'loading control',
+      description:
+        'Western blotなどでサンプル投入量や検出条件の違いを確認する基準。',
+      href: '/glossary/loading-control/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question:
+        'ハウスキーピング遺伝子が参照遺伝子として使われる理由を説明してください。',
+      answer:
+        '多くの細胞で基本機能を支えるため、条件間で比較的安定して発現すると期待されるからです。',
+    },
+    {
+      question:
+        'ハウスキーピング遺伝子を基準にするときに注意することは何ですか。',
+      answer:
+        '実験条件や細胞種によって変動する可能性があるため、条件間で安定しているかを確認することです。',
+    },
+    {
+      question: '参照遺伝子と対照群の違いを説明してください。',
+      answer:
+        '参照遺伝子は測定値を正規化する基準で、対照群は処理群などと比較する条件です。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'RT-qPCRとは何か', href: '/methods/rt-qpcr/' },
+    {
+      title: 'ローディングコントロールとは何か',
+      href: '/methods/loading-control/',
+    },
+    { title: '対照群とは何か', href: '/methods/control/' },
+  ]}
+/>

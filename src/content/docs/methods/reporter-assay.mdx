@@ -1,0 +1,162 @@
+---
+title: レポーターアッセイとは何か
+description: レポーターアッセイを、遺伝子発現やシグナル活性を測りやすい信号に変換して調べる実験として説明します。
+part: methods
+module: gene-function-assay
+level: foundation
+priority: P1
+order: 160
+relatedTerms:
+  - reporter-assay
+  - reporter-gene
+  - promoter
+  - enhancer
+  - gene-expression
+  - methods
+prerequisites:
+  - /molecular-biology/gene-expression-regulation/
+  - /methods/overexpression/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    'レポーターアッセイが何を測る実験か説明できる',
+    'プロモーター活性、シグナル活性、レポーター遺伝子の関係を理解する',
+    'レポーター活性を読むときの注意点を挙げられる',
+  ]}
+/>
+
+レポーターアッセイは、遺伝子発現やシグナル活性を、測りやすい報告分子の信号として調べる実験です。発光、蛍光、発色などの信号を使い、プロモーターやシグナル経路がどれくらい働いたかを推定します。
+
+この実験では、見たい制御領域や応答配列をレポーター遺伝子と組み合わせます。信号が強くなったとしても、それは実験系の中での活性の手がかりであり、実際のゲノム上の働きと完全に同じとは限りません。
+
+<LessonFigure
+  src="/figures/reporter-assay-concept.jpg"
+  alt="制御領域がレポーター遺伝子の信号を変え、発光や蛍光として測定されるレポーターアッセイの概念図"
+  title="レポーターアッセイは見えにくい活性を信号に変える"
+  caption="制御領域やシグナル応答を、発光や蛍光などの測りやすい値として読みます。"
+/>
+
+## なぜレポーターアッセイの視点が重要か
+
+[遺伝子発現](/glossary/gene-expression/)やシグナル伝達は、そのままでは見えにくい過程です。レポーターアッセイでは、[プロモーター](/glossary/promoter/)や応答配列が働くと、測定しやすい信号が出るように設計します。
+
+これにより、転写因子、エンハンサー、シグナル経路、miRNA標的配列などの働きを調べられます。Figureでは、条件ごとのレポーター活性が棒グラフなどで示されることが多いです。
+
+## どんなレポーターアッセイがあるか
+
+ルシフェラーゼを使う発光レポーター、蛍光タンパク質を使う蛍光レポーター、発色酵素を使うレポーターなどがあります。[エンハンサー](/glossary/enhancer/)候補やプロモーター領域をつないで、転写活性を比べることがあります。
+
+シグナル経路の応答配列を使う場合は、経路が活性化したときに信号が増えるように設計されます。miRNA研究では、標的候補の3' UTRをレポーターにつなぎ、miRNAによる抑制を調べることがあります。
+
+## レポーターアッセイはどう調べるか
+
+細胞にレポーター構築を導入し、刺激、阻害剤、過剰発現、ノックダウンなどの条件で信号を測ります。導入効率や細胞数の違いを補正するため、別の基準レポーターを同時に使うことがあります。
+
+結果を読むときは、何をレポーターにしたか、どの条件と比べたか、信号が何で正規化されたかを確認します。空ベクター、変異配列、陽性対照、陰性対照があるかも重要です。
+
+## レポーター活性の変化は何につながるか
+
+レポーター活性が上がると、実験系の中でその制御領域や経路が強く働いた可能性があります。活性が下がると、転写活性の低下、シグナル抑制、miRNAによる抑制などの手がかりになります。
+
+ただし、レポーター構築は人工的な文脈です。染色体上の位置、クロマチン、長距離相互作用、内在性遺伝子の制御を完全には再現しないことがあります。内在性遺伝子の発現や別の実験と合わせて読みます。
+
+## 論文や実験ではどう出てくるか
+
+論文では、luciferase assay、reporter assay、promoter activity、enhancer activity、dual-luciferase assayなどとして出てきます。Methodsには、レポーター構築、導入方法、刺激条件、測定時間、正規化方法が書かれます。
+
+Figureでは、相対レポーター活性、fold change、変異配列との比較、転写因子の過剰発現やノックダウンとの組み合わせとして示されます。どの比較が主張を支えているかを確認します。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- レポーター活性と内在性発現: レポーター信号は実験構築の活性で、内在性遺伝子の発現そのものではありません。
+- プロモーター活性とタンパク質量: 転写活性の手がかりであり、最終的なタンパク質量とは別です。
+- 導入効率と生物学的効果: 細胞に入ったレポーター量が違うと、信号も変わります。
+
+### 解釈の落とし穴
+
+- レポーター活性だけで、内在性遺伝子が同じように制御されると断定する。
+- 正規化用レポーターや空ベクター対照を確認しない。
+- 変異配列や陽性対照なしに、特定の結合部位の効果として読みすぎる。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'レポーターアッセイ',
+      english: 'reporter assay',
+      description:
+        '遺伝子発現やシグナル活性を、測りやすい報告分子の信号として調べる実験。',
+      href: '/glossary/reporter-assay/',
+    },
+    {
+      term: 'レポーター遺伝子',
+      english: 'reporter gene',
+      description: '発光や蛍光などの測りやすい信号を出すように使われる遺伝子。',
+      href: '/glossary/reporter-gene/',
+    },
+    {
+      term: 'プロモーター',
+      english: 'promoter',
+      description: '転写開始に関わるDNA上の調節領域。',
+      href: '/glossary/promoter/',
+    },
+    {
+      term: 'エンハンサー',
+      english: 'enhancer',
+      description: '遺伝子の転写を高めることがあるDNA上の調節領域。',
+      href: '/glossary/enhancer/',
+    },
+    {
+      term: '正規化',
+      english: 'normalization',
+      description:
+        'サンプル間や条件間で比較しやすいように測定値の尺度を整える処理。',
+      href: '/glossary/normalization/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: 'レポーターアッセイの目的を簡単に説明してください。',
+      answer:
+        '遺伝子発現やシグナル活性を、発光や蛍光などの測りやすい信号に変えて調べることです。',
+    },
+    {
+      question:
+        'レポーター活性と内在性遺伝子発現を区別する理由を説明してください。',
+      answer:
+        'レポーターは人工的な構築で測るため、染色体上の本来の制御環境を完全には再現しないことがあるからです。',
+    },
+    {
+      question: 'レポーターアッセイで正規化用レポーターを使う理由は何ですか。',
+      answer:
+        '導入効率や細胞数などの違いを補正し、条件間で比較しやすくするためです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: '過剰発現とは何か', href: '/methods/overexpression/' },
+    {
+      title: '遺伝子発現制御とは何か',
+      href: '/molecular-biology/gene-expression-regulation/',
+    },
+    {
+      title: '細胞シグナル伝達とは何か',
+      href: '/cell-biology/cell-signaling/',
+    },
+  ]}
+/>

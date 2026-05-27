@@ -1465,6 +1465,14 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'methods-and-analysis',
   },
   {
+    term: 'ハウスキーピング遺伝子',
+    english: 'housekeeping gene',
+    description:
+      '多くの細胞で基本機能を支えるため、安定発現が期待される遺伝子。',
+    href: '/glossary/housekeeping-gene/',
+    category: 'methods-and-analysis',
+  },
+  {
     term: '免疫染色',
     english: 'immunostaining',
     description: '抗体を使って細胞や組織内のタンパク質などを可視化する方法。',
@@ -1476,6 +1484,29 @@ export const glossaryTerms: GlossaryTerm[] = [
     english: 'antibody',
     description: '特定の分子を認識して結合するタンパク質。',
     href: '/glossary/antibody/',
+    category: 'methods-and-analysis',
+  },
+  {
+    term: '抗体検証',
+    english: 'antibody validation',
+    description: '抗体が目的分子を適切に検出しているかを確認する考え方。',
+    href: '/glossary/antibody-validation/',
+    category: 'methods-and-analysis',
+  },
+  {
+    term: 'ELISA',
+    english: 'enzyme-linked immunosorbent assay',
+    abbreviation: 'ELISA',
+    description: '抗体を使ってサンプル中の特定分子を検出・定量する実験手法。',
+    href: '/glossary/elisa/',
+    category: 'methods-and-analysis',
+  },
+  {
+    term: '標準曲線',
+    english: 'standard curve',
+    description:
+      '既知濃度の標準試料から、未知サンプルの量を推定するための曲線。',
+    href: '/glossary/standard-curve/',
     category: 'methods-and-analysis',
   },
   {
@@ -1504,6 +1535,15 @@ export const glossaryTerms: GlossaryTerm[] = [
     english: 'flow cytometry',
     description: '流れる細胞を1細胞ずつ測定し、細胞集団の特徴を調べる方法。',
     href: '/glossary/flow-cytometry/',
+    category: 'methods-and-analysis',
+  },
+  {
+    term: 'FACS',
+    english: 'fluorescence-activated cell sorting',
+    abbreviation: 'FACS',
+    description:
+      '蛍光シグナルをもとに細胞を測定し、条件に合う細胞を分取する技術。',
+    href: '/glossary/facs/',
     category: 'methods-and-analysis',
   },
   {
@@ -1551,6 +1591,28 @@ export const glossaryTerms: GlossaryTerm[] = [
     abbreviation: 'KD',
     description: '特定の遺伝子の発現量を下げる実験操作。',
     href: '/glossary/knockdown/',
+    category: 'methods-and-analysis',
+  },
+  {
+    term: '過剰発現',
+    english: 'overexpression',
+    abbreviation: 'OE',
+    description: '特定の遺伝子やタンパク質を通常より多く作らせる実験操作。',
+    href: '/glossary/overexpression/',
+    category: 'methods-and-analysis',
+  },
+  {
+    term: 'トランスフェクション',
+    english: 'transfection',
+    description: 'DNAやRNAなどの核酸を細胞へ導入する実験操作。',
+    href: '/glossary/transfection/',
+    category: 'methods-and-analysis',
+  },
+  {
+    term: 'プラスミド',
+    english: 'plasmid',
+    description: '遺伝子導入やクローニングで使われる環状DNA分子。',
+    href: '/glossary/plasmid/',
     category: 'methods-and-analysis',
   },
   {
@@ -1767,6 +1829,13 @@ export const glossaryTerms: GlossaryTerm[] = [
     description:
       '遺伝子発現やシグナル活性を、測りやすい報告分子の信号として調べる実験。',
     href: '/glossary/reporter-assay/',
+    category: 'methods-and-analysis',
+  },
+  {
+    term: 'レポーター遺伝子',
+    english: 'reporter gene',
+    description: '発光や蛍光など測りやすい信号を出すように使われる遺伝子。',
+    href: '/glossary/reporter-gene/',
     category: 'methods-and-analysis',
   },
   {

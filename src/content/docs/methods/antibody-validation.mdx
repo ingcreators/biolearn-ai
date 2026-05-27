@@ -1,0 +1,155 @@
+---
+title: 抗体検証とは何か
+description: 抗体検証を、抗体が目的分子を適切に検出しているかを確認する考え方として説明します。
+part: methods
+module: protein-cell-measurement
+level: foundation
+priority: P1
+order: 98
+relatedTerms:
+  - antibody-validation
+  - antibody
+  - immunostaining
+  - western-blot
+  - control-group
+  - methods
+prerequisites:
+  - /methods/western-blot/
+  - /methods/immunostaining/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    '抗体検証がなぜ必要か説明できる',
+    '特異性、感度、対照の役割を理解する',
+    '抗体を使ったFigureで確認する点を挙げられる',
+  ]}
+/>
+
+抗体検証は、実験に使う抗体が目的分子を適切に検出しているかを確認する考え方です。Western blot、免疫染色、ELISA、フローサイトメトリーなど、抗体を使う実験の解釈に関わります。
+
+抗体のシグナルは、目的分子だけでなく非特異的な結合や背景の影響を受けることがあります。そのため、抗体名やメーカーだけでなく、どの実験系でどう検証されたかを確認します。
+
+<LessonFigure
+  src="/figures/antibody-validation-concept.jpg"
+  alt="目的タンパク質を検出する抗体を陽性対照、陰性対照、ノックダウン条件で確認する抗体検証の概念図"
+  title="抗体検証はシグナルの信頼性を確かめる"
+  caption="目的分子を検出しているか、非特異的な背景ではないかを対照と検証実験で確認します。"
+/>
+
+## なぜ抗体検証の視点が重要か
+
+[抗体](/glossary/antibody/)は特定の分子を認識するために使われますが、実験条件によっては別の分子にも結合することがあります。抗体を使ったFigureでは、見えているシグナルが目的分子に由来するかが重要です。
+
+特に、タンパク質量や局在の主張では、抗体の特異性が結果の土台になります。抗体検証の視点があると、きれいな画像やバンドを見ても、対照や検証の有無を落ち着いて確認できます。
+
+## どんな抗体検証があるか
+
+Western blotでは、目的タンパク質の予想分子量付近にバンドが出るか、ノックダウンやノックアウトでバンドが弱くなるかを確認します。[免疫染色](/glossary/immunostaining/)では、既知の局在と合うか、陰性対照で背景が低いかを確認します。
+
+陽性対照、陰性対照、抗原ブロッキング、別抗体での再現、遺伝子操作によるシグナル低下などが検証の手がかりになります。実験の種類によって必要な検証は変わります。
+
+## 抗体検証はどう確認するか
+
+論文を読むときは、MethodsとFigure legendで抗体名、カタログ番号、希釈倍率、サンプル、検証方法を確認します。メーカーの情報だけでなく、その論文の実験条件で妥当かを見ます。
+
+[Western blot](/glossary/western-blot/)ではバンドのサイズや複数バンド、免疫染色では背景やチャンネルの重なり、ELISAでは標準曲線や交差反応に注意します。抗体を使う実験は、抗体そのものと実験条件の両方を読みます。
+
+## 抗体検証の違いは何につながるか
+
+検証が不十分だと、非特異的シグナルを目的分子の発現や局在として読んでしまう可能性があります。反対に、検証が丁寧に示されていると、Figureから言える範囲を判断しやすくなります。
+
+ただし、抗体検証があるからといって、すべての解釈が自動的に正しいわけではありません。サンプル、対照、撮影条件、定量方法、反復数も合わせて確認します。
+
+## 論文や実験ではどう出てくるか
+
+論文では、antibody validation、validated antibody、specificity、no primary antibody control、knockdown controlなどとして出てきます。Methodsには抗体情報が、Supplementaryには検証Figureが置かれることもあります。
+
+Figureでは、目的バンド、陰性対照、ノックダウン後のシグナル低下、陽性対照サンプルのシグナルなどとして示されます。抗体情報が本文に少ない場合は、SupplementaryやMethodsへ戻ります。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- 抗体検証と陽性対照: 陽性対照は反応が出る条件で、抗体検証の一部として使われます。
+- 特異性と感度: 特異性は目的分子を見分ける力、感度は少ない量でも検出できる力です。
+- 一次抗体なし対照と標的なし対照: 背景シグナルを見る対照と、標的分子に依存するかを見る対照は役割が違います。
+
+### 解釈の落とし穴
+
+- 抗体名が有名なら、どの実験でも特異的だと考える。
+- Western blotの予想サイズ以外のバンドを無視する。
+- 免疫染色の明るいシグナルを、背景や撮影条件を確認せずに発現と読む。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: '抗体検証',
+      english: 'antibody validation',
+      description: '抗体が目的分子を適切に検出しているかを確認する考え方。',
+      href: '/glossary/antibody-validation/',
+    },
+    {
+      term: '抗体',
+      english: 'antibody',
+      description: '特定の分子を認識して結合するタンパク質。',
+      href: '/glossary/antibody/',
+    },
+    {
+      term: 'Western blot',
+      english: 'Western blot',
+      abbreviation: 'WB',
+      description: '特定のタンパク質を抗体で検出し、量やサイズを見る実験手法。',
+      href: '/glossary/western-blot/',
+    },
+    {
+      term: '免疫染色',
+      english: 'immunostaining',
+      description: '抗体を使って細胞や組織内のタンパク質などを可視化する方法。',
+      href: '/glossary/immunostaining/',
+    },
+    {
+      term: '対照群',
+      english: 'control group',
+      description: '処理群や観察対象を解釈するための比較の基準。',
+      href: '/glossary/control-group/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: '抗体検証が必要な理由を説明してください。',
+      answer:
+        '抗体シグナルが目的分子ではなく非特異的結合や背景に由来する可能性があるためです。',
+    },
+    {
+      question:
+        'Western blotで抗体の特異性を見る手がかりを一つ挙げてください。',
+      answer:
+        '予想分子量付近のバンドか、ノックダウンやノックアウトでバンドが弱くなるか、陽性対照で出るかなどがあります。',
+    },
+    {
+      question: '免疫染色で一次抗体なし対照を見る理由は何ですか。',
+      answer:
+        '二次抗体やサンプル由来の背景シグナルがどれくらいあるかを確認するためです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'Western blotとは何か', href: '/methods/western-blot/' },
+    { title: '免疫染色とは何か', href: '/methods/immunostaining/' },
+    { title: 'ELISAとは何か', href: '/methods/elisa/' },
+  ]}
+/>

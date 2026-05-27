@@ -1,0 +1,155 @@
+---
+title: ELISAとは何か
+description: ELISAを、抗体を使ってサンプル中の特定タンパク質などを定量する実験手法として説明します。
+part: methods
+module: protein-cell-measurement
+level: foundation
+priority: P1
+order: 116
+relatedTerms:
+  - elisa
+  - antibody
+  - protein
+  - standard-curve
+  - assay
+  - methods
+prerequisites:
+  - /fundamentals/protein/
+  - /methods/antibody-validation/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    'ELISAが何を測る実験か説明できる',
+    '抗体、標準曲線、吸光度や発光シグナルの関係を理解する',
+    'ELISA結果を読むときの確認点を挙げられる',
+  ]}
+/>
+
+ELISAは、抗体を使ってサンプル中の特定のタンパク質などを検出・定量する実験手法です。プレート上で抗原抗体反応を起こし、発色、発光、蛍光などのシグナルとして測ります。
+
+ELISAでは、シグナルの強さを標準物質の既知濃度と比べて、サンプル中の量を推定します。結果を読むときは、抗体の特異性、標準曲線、希釈、対照、反復を確認します。
+
+<LessonFigure
+  src="/figures/elisa-concept.jpg"
+  alt="プレート上で抗体が目的タンパク質を捕まえ、標準曲線と比べて濃度を推定するELISAの概念図"
+  title="ELISAは抗体シグナルを濃度に変換する"
+  caption="標準曲線、希釈、対照、抗体の特異性を確認してサンプル中の量を読みます。"
+/>
+
+## なぜELISAの視点が重要か
+
+[タンパク質](/glossary/protein/)や分泌因子の量を知りたいとき、ELISAはよく使われます。培養上清、血清、細胞抽出液などの中に、目的分子がどれくらいあるかを比較できます。
+
+ELISAを理解すると、棒グラフや濃度表の背後にある測定の流れが見えます。シグナルが高いことと濃度が高いことはつながりますが、標準曲線の範囲や希釈条件が適切であることが前提です。
+
+## どんなELISAがあるか
+
+サンドイッチELISAでは、捕捉抗体で目的分子を固定し、検出抗体でシグナルを出します。競合法や直接法、間接法などもありますが、初学者はまず「抗体で目的分子を捕まえ、シグナルとして測る」と理解します。
+
+測定する分子やキットによって、サンプルの前処理、希釈倍率、測定範囲が変わります。サイトカイン、ホルモン様分子、抗体、タンパク質マーカーなどの測定で出てくることがあります。
+
+## ELISAはどう調べるか
+
+ELISAでは、既知濃度の標準物質を使って[標準曲線](/glossary/standard-curve/)を作ります。サンプルのシグナルをその曲線に当てはめ、濃度を推定します。
+
+[抗体](/glossary/antibody/)を使うため、抗体の特異性や交差反応も重要です。測定値が標準曲線の範囲内にあるか、サンプルを適切に希釈しているか、technical replicateが安定しているかを確認します。
+
+## ELISAの変化は何につながるか
+
+条件間でELISAの値が変わると、目的タンパク質の分泌量や存在量が変わった可能性があります。たとえば刺激後に培養上清中の目的分子の量が増える、阻害剤で分泌量が下がる、といった結果として示されます。
+
+ただし、ELISAの値はサンプル量、細胞数、希釈、抽出効率、抗体の反応性にも影響されます。必要に応じて細胞数、総タンパク質量、サンプル体積などで正規化されているかを確認します。
+
+## 論文や実験ではどう出てくるか
+
+論文では、ELISA、enzyme-linked immunosorbent assay、kit according to the manufacturer’s instructionsなどとしてMethodsに出てきます。Resultsでは、濃度、fold change、棒グラフ、標準曲線、検出限界として示されることがあります。
+
+Figure legendでは、単位、サンプル数、反復、標準曲線の範囲、測定したサンプルの種類を確認します。キット名だけでなく、何をどのサンプルから測ったかを読みます。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- ELISAとWestern blot: どちらも抗体を使いますが、ELISAは量の定量、Western blotはサイズやバンドも見ます。
+- シグナルと濃度: シグナルは測定値で、標準曲線を通して濃度に換算します。
+- technical replicateとbiological replicate: 同じサンプルを複数ウェルで測ることと、独立サンプルを増やすことは違います。
+
+### 解釈の落とし穴
+
+- 標準曲線の範囲外の値をそのまま信頼する。
+- キット名だけを見て、サンプル希釈や対照を確認しない。
+- 細胞数やサンプル量の違いを補正せずに、目的分子の量の差として読む。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'ELISA',
+      english: 'enzyme-linked immunosorbent assay',
+      abbreviation: 'ELISA',
+      description: '抗体を使ってサンプル中の特定分子を検出・定量する実験手法。',
+      href: '/glossary/elisa/',
+    },
+    {
+      term: '抗体',
+      english: 'antibody',
+      description: '特定の分子を認識して結合するタンパク質。',
+      href: '/glossary/antibody/',
+    },
+    {
+      term: '標準曲線',
+      english: 'standard curve',
+      description:
+        '既知濃度の標準物質から作り、未知サンプルの濃度推定に使う曲線。',
+      href: '/glossary/standard-curve/',
+    },
+    {
+      term: 'アッセイ',
+      english: 'assay',
+      description: '特定の性質や反応を測定する実験や試験。',
+      href: '/glossary/assay/',
+    },
+    {
+      term: '抗体検証',
+      english: 'antibody validation',
+      description: '抗体が目的分子を適切に検出しているかを確認する考え方。',
+      href: '/glossary/antibody-validation/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: 'ELISAで標準曲線を使う理由を説明してください。',
+      answer:
+        '既知濃度の標準物質のシグナルと比べることで、未知サンプル中の濃度を推定するためです。',
+    },
+    {
+      question: 'ELISAとWestern blotの違いを簡単に説明してください。',
+      answer:
+        'ELISAは主にサンプル中の量を定量する手法で、Western blotはタンパク質のサイズやバンドの位置も確認できます。',
+    },
+    {
+      question: 'ELISA結果を読むときに確認したい条件を一つ挙げてください。',
+      answer:
+        '標準曲線の範囲、希釈倍率、対照、反復数、抗体の特異性、単位などがあります。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: '抗体検証とは何か', href: '/methods/antibody-validation/' },
+    { title: 'Western blotとは何か', href: '/methods/western-blot/' },
+    { title: 'タンパク質とは何か', href: '/fundamentals/protein/' },
+  ]}
+/>

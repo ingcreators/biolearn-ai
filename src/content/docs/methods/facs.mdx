@@ -1,0 +1,159 @@
+---
+title: FACSとは何か
+description: FACSを、蛍光シグナルをもとに細胞を1つずつ測定し、必要に応じて分取する技術として説明します。
+part: methods
+module: protein-cell-measurement
+level: foundation
+priority: P1
+order: 112
+relatedTerms:
+  - facs
+  - flow-cytometry
+  - gating
+  - fluorescence
+  - sample-size
+  - methods
+prerequisites:
+  - /methods/flow-cytometry/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    'FACSがフローサイトメトリーとどう関係するか説明できる',
+    '蛍光、ゲート、ソーティングの基本を理解する',
+    'FACS由来のFigureやMethodsで確認する点を挙げられる',
+  ]}
+/>
+
+FACSは、蛍光シグナルをもとに細胞を1つずつ測定し、条件に合う細胞を分取できる技術です。言葉としては、フローサイトメトリーによる測定に加えて、細胞を物理的に分けるソーティングを指すことが多いです。
+
+論文ではFACSという語が、細胞集団の解析だけでなく、特定の細胞を取り出して次の実験に使う場面で出てきます。読むときは、測定だけなのか、分取まで行ったのかを確認します。
+
+<LessonFigure
+  src="/figures/facs-concept.jpg"
+  alt="蛍光シグナルで細胞をゲートし、条件に合う細胞を別々の容器へ分取するFACSの概念図"
+  title="FACSは細胞を測り、必要な集団を分ける"
+  caption="ゲート、蛍光マーカー、分取後の細胞集団、対照条件を確認します。"
+/>
+
+## なぜFACSの視点が重要か
+
+[フローサイトメトリー](/glossary/flow-cytometry/)では細胞を1つずつ測定します。FACSでは、その測定情報を使って、特定のマーカーを持つ細胞や蛍光が強い細胞を分取し、培養、RNA-seq、機能実験などに進めることがあります。
+
+FACSを理解すると、Methodsで「どの細胞を次の解析に使ったのか」が分かりやすくなります。Figureでは、分取前後のゲートや純度、回収した細胞数が結果の解釈に関わります。
+
+## どんなFACSがあるか
+
+蛍光標識した抗体で細胞表面マーカーを見て分ける場合、蛍光レポーターの強さで分ける場合、細胞サイズや散乱光で大まかに分ける場合があります。生きた細胞を回収して後続実験に使うこともあります。
+
+ソーティングでは、目的集団を選ぶためのゲートを設定します。[ゲーティング](/glossary/gating/)の基準が変わると、回収される細胞集団も変わるため、解析の出発点として重要です。
+
+## FACSはどう確認するか
+
+FACSでは、どのマーカーを使ったか、どのゲートで選んだか、死細胞やダブレットを除外したか、分取後の純度を確認したかを見ます。蛍光補正や陰性対照も重要です。
+
+分取後にRNA-seqや培養を行う場合は、FACSの条件が細胞状態に影響していないかも考えます。長時間の処理、圧力、温度、染色条件は、細胞の生存率や発現状態に影響することがあります。
+
+## FACSで分けた細胞は何につながるか
+
+FACSで分けた細胞集団を比べると、細胞タイプごとの遺伝子発現、タンパク質量、機能、分化状態を調べられます。たとえば特定マーカー陽性細胞だけを回収して、RNA抽出や培養実験に使うことがあります。
+
+ただし、ゲートで選んだ集団は解析上の定義です。ゲートに入ったことだけで細胞タイプが完全に証明されるわけではなく、複数マーカーや後続の確認と合わせて読みます。
+
+## 論文や実験ではどう出てくるか
+
+論文では、FACS sorting、sorted cells、FACS analysis、purified populationなどとして出てきます。Methodsには、機器名、抗体、蛍光色素、ゲート、補正、ソーティング条件、分取後の純度が書かれることがあります。
+
+Figureでは、ゲーティング戦略、分取前後の散布図、陽性率、分取した細胞集団を使った後続実験として示されます。FACSがFigureの主役でなくても、後続解析のサンプル作成に使われている場合があります。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- FACSとフローサイトメトリー: フローサイトメトリーは測定全般、FACSは蛍光に基づく細胞分取を含む文脈で使われることが多いです。
+- ゲートと細胞タイプ: ゲートは解析上の境界で、細胞タイプの証明には追加の情報が必要です。
+- 陽性率と回収細胞数: 陽性率が高くても、実際に回収できた細胞数が十分とは限りません。
+
+### 解釈の落とし穴
+
+- FACSと書かれているだけで、分取まで行ったと決めつける。
+- ゲート設定や補正を見ずに、陽性率だけを読む。
+- 分取後の純度や生存率を確認せず、後続実験の結果を読む。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'FACS',
+      english: 'fluorescence-activated cell sorting',
+      abbreviation: 'FACS',
+      description:
+        '蛍光シグナルをもとに細胞を測定し、条件に合う細胞を分取する技術。',
+      href: '/glossary/facs/',
+    },
+    {
+      term: 'フローサイトメトリー',
+      english: 'flow cytometry',
+      description: '流れる細胞を1細胞ずつ測定し、細胞集団の特徴を調べる方法。',
+      href: '/glossary/flow-cytometry/',
+    },
+    {
+      term: 'ゲーティング',
+      english: 'gating',
+      description: '解析対象や分取対象の細胞集団を条件で選ぶ操作。',
+      href: '/glossary/gating/',
+    },
+    {
+      term: '蛍光',
+      english: 'fluorescence',
+      description: '光を受けた物質が別の光を出す性質や、その信号。',
+      href: '/glossary/fluorescence/',
+    },
+    {
+      term: 'n数',
+      english: 'sample size',
+      abbreviation: 'n',
+      description: 'Figureや統計解析で数えられている単位の数。',
+      href: '/glossary/sample-size/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: 'FACSとフローサイトメトリーの関係を説明してください。',
+      answer:
+        'フローサイトメトリーは細胞を1つずつ測る方法で、FACSはその測定情報を使って蛍光に基づき細胞を分取する文脈で使われることが多いです。',
+    },
+    {
+      question: 'FACSでゲート設定を確認する理由を説明してください。',
+      answer:
+        'どの細胞集団を解析または分取したかが、後続実験のサンプルの意味を決めるためです。',
+    },
+    {
+      question:
+        'FACS後のRNA-seqを読むときに確認したいことを一つ挙げてください。',
+      answer:
+        '分取した細胞集団、純度、生存率、回収細胞数、ゲート、サンプル数などがあります。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'フローサイトメトリーとは何か', href: '/methods/flow-cytometry/' },
+    {
+      title: 'フローサイトメトリー図の読み方',
+      href: '/figures/how-to-read-flow-cytometry/',
+    },
+    { title: 'RNA抽出とは何か', href: '/methods/rna-extraction/' },
+  ]}
+/>
