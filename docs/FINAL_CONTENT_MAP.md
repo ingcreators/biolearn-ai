@@ -287,33 +287,36 @@ URL:
 記事数目安:
 
 ```text
-10〜15本
+15本
 ```
 
-### 1-1 生命科学の全体像
+### 1-1 生命の階層をつかむ
 
 - `/fundamentals/life-science/` 生命科学とは何か [P0]
 - `/fundamentals/molecule/` 分子とは何か [P1]
 - `/fundamentals/cell/` 細胞とは何か [P0]
 - `/fundamentals/organism-tissue-cell/` 個体・組織・細胞の関係 [P1]
 
-### 1-2 遺伝情報の基本
+### 1-2 DNA・RNA・タンパク質をつかむ
 
 - `/fundamentals/dna/` DNAとは何か [P0]
 - `/fundamentals/rna/` RNAとは何か [P0]
 - `/fundamentals/protein/` タンパク質とは何か [P0]
+
+### 1-3 遺伝子・ゲノム・染色体をつかむ
+
 - `/fundamentals/gene/` 遺伝子とは何か [P0]
-- `/fundamentals/gene-expression/` 遺伝子発現とは何か [P0]
-
-### 1-3 ゲノムと変異の基本
-
 - `/fundamentals/genome/` ゲノムとは何か [P0]
 - `/fundamentals/chromosome/` 染色体とは何か [P0]
+
+### 1-4 発現・変異・表現型をつなぐ
+
+- `/fundamentals/gene-expression/` 遺伝子発現とは何か [P0]
 - `/fundamentals/mutation/` 変異とは何か [P0]
-
-### 1-4 論文読解に必要な基本概念
-
 - `/fundamentals/phenotype/` 表現型とは何か [P1]
+
+### 1-5 研究対象と問いを読む
+
 - `/fundamentals/model-organisms/` モデル生物とは何か [P1]
 - `/fundamentals/biological-question/` 生命科学の問いとは何か [P1]
 
@@ -336,10 +339,10 @@ DNA、RNA、タンパク質、遺伝子発現制御を理解し、分子レベ�
 記事数目安:
 
 ```text
-20〜25本
+25〜30本
 ```
 
-### 2-1 DNA・RNA・タンパク質を分子として理解する
+### 2-1 分子の部品を理解する
 
 このモジュールは、第1部の基礎記事と強く接続する。DNA/RNA/タンパク質の基本記事は `/fundamentals/` に置き、分子機構の詳細を `/molecular-biology/` に置く。
 
@@ -347,8 +350,6 @@ DNA、RNA、タンパク質、遺伝子発現制御を理解し、分子レベ�
 - `/molecular-biology/nucleotide/` ヌクレオチドとは何か [P1]
 - `/molecular-biology/base-pairing/` 塩基対とは何か [P1]
 - `/molecular-biology/amino-acid/` アミノ酸とは何か [P1]
-- `/molecular-biology/protein-structure/` タンパク質構造とは何か [P1]
-- `/molecular-biology/enzyme/` 酵素とは何か [P1]
 
 関連する基礎記事:
 
@@ -357,17 +358,22 @@ DNA、RNA、タンパク質、遺伝子発現制御を理解し、分子レベ�
 - `/fundamentals/protein/`
 - `/fundamentals/gene/`
 
-### 2-2 セントラルドグマ
+### 2-2 遺伝情報が使われる流れ
 
 - `/molecular-biology/central-dogma/` セントラルドグマとは何か [P0]
 - `/molecular-biology/dna-replication/` DNA複製とは何か [P1]
 - `/molecular-biology/transcription/` 転写とは何か [P0]
-- `/molecular-biology/translation/` 翻訳とは何か [P0]
 - `/molecular-biology/rna-processing/` RNAプロセシングとは何か [P1]
 - `/molecular-biology/splicing/` スプライシングとは何か [P1]
-- `/molecular-biology/protein-folding/` タンパク質フォールディングとは何か [P2]
+- `/molecular-biology/translation/` 翻訳とは何か [P0]
 
-### 2-3 遺伝子発現制御
+### 2-3 タンパク質が働く形になる
+
+- `/molecular-biology/protein-structure/` タンパク質構造とは何か [P1]
+- `/molecular-biology/protein-folding/` タンパク質フォールディングとは何か [P2]
+- `/molecular-biology/enzyme/` 酵素とは何か [P1]
+
+### 2-4 発現を調節するしくみ
 
 - `/molecular-biology/gene-expression-regulation/` 遺伝子発現制御とは何か [P1]
 - `/molecular-biology/promoter/` プロモーターとは何か [P1]
@@ -377,7 +383,7 @@ DNA、RNA、タンパク質、遺伝子発現制御を理解し、分子レベ�
 - `/molecular-biology/microrna/` miRNAとは何か [P2]
 - `/molecular-biology/post-transcriptional-regulation/` 転写後制御とは何か [P2]
 
-### 2-4 クロマチンとエピジェネティクス
+### 2-5 DNAのしまわれ方とエピジェネティクス
 
 - `/molecular-biology/chromatin/` クロマチンとは何か [P1]
 - `/molecular-biology/nucleosome/` ヌクレオソームとは何か [P2]
@@ -386,7 +392,7 @@ DNA、RNA、タンパク質、遺伝子発現制御を理解し、分子レベ�
 - `/molecular-biology/histone-modification/` ヒストン修飾とは何か [P1]
 - `/molecular-biology/chromatin-accessibility/` クロマチンアクセシビリティとは何か [P2]
 
-### 2-5 DNA損傷・修復・組換え
+### 2-6 DNAを保つ・直すしくみ
 
 - `/molecular-biology/dna-damage/` DNA損傷とは何か [P2]
 - `/molecular-biology/dna-repair/` DNA修復とは何か [P2]
