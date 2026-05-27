@@ -411,10 +411,10 @@ URL:
 記事数目安:
 
 ```text
-15〜20本
+25〜30本
 ```
 
-### 3-1 細胞の構造
+### 3-1 細胞の境界と内部構造
 
 - `/cell-biology/cell-membrane/` 細胞膜とは何か [P0]
 - `/cell-biology/organelles/` 細胞小器官とは何か [P0]
@@ -424,14 +424,14 @@ URL:
 - `/cell-biology/lysosome/` リソソームとは何か [P2]
 - `/cell-biology/cytoskeleton/` 細胞骨格とは何か [P1]
 
-### 3-2 細胞膜・輸送・局在
+### 3-2 膜を越える移動と局在
 
 - `/cell-biology/membrane-transport/` 膜輸送とは何か [P1]
 - `/cell-biology/vesicle-trafficking/` 小胞輸送とは何か [P2]
 - `/cell-biology/endocytosis-exocytosis/` エンドサイトーシスとエキソサイトーシス [P2]
 - `/cell-biology/protein-localization/` タンパク質局在とは何か [P2]
 
-### 3-3 細胞シグナル伝達
+### 3-3 刺激を受け取るしくみ
 
 - `/cell-biology/cell-signaling/` 細胞シグナル伝達とは何か [P0]
 - `/cell-biology/receptor/` 受容体とは何か [P1]
@@ -476,10 +476,10 @@ URL:
 記事数目安:
 
 ```text
-15〜20本
+25〜30本
 ```
 
-### 4-1 ゲノムの基本
+### 4-1 ゲノムの地図を読む
 
 - `/genomics/reference-genome/` リファレンスゲノムとは何か [P1]
 - `/genomics/genome-annotation/` ゲノムアノテーションとは何か [P1]
@@ -491,8 +491,9 @@ URL:
 - `/fundamentals/genome/`
 - `/fundamentals/chromosome/`
 
-### 4-2 変異・多型・バリアント
+### 4-2 配列の違いを読む
 
+- `/genomics/genetic-variants/` 遺伝的変異とは何か [P1]
 - `/genomics/variant/` variantとは何か [P1]
 - `/genomics/snp-snv/` SNPとSNVの違い [P1]
 - `/genomics/indel/` indelとは何か [P1]
@@ -501,7 +502,7 @@ URL:
 - `/genomics/somatic-germline-variant/` 体細胞変異と生殖細胞系列変異 [P1]
 - `/genomics/variant-annotation/` variant annotationとは何か [P2]
 
-### 4-3 疾患ゲノミクス
+### 4-3 疾患との関係を読む
 
 - `/genomics/gwas/` GWASとは何か [P1]
 - `/genomics/polygenic-risk-score/` ポリジェニックリスクスコアとは何か [P2]
@@ -509,7 +510,7 @@ URL:
 - `/genomics/cancer-genomics/` がんゲノミクスとは何か [P1]
 - `/genomics/tumor-normal-comparison/` Tumor-normal比較とは何か [P2]
 
-### 4-4 エピゲノム・機能ゲノミクス
+### 4-4 ゲノムの働きを読む
 
 - `/genomics/epigenome/` エピゲノムとは何か [P1]
 - `/genomics/methylome/` メチロームとは何か [P2]
@@ -517,7 +518,7 @@ URL:
 - `/genomics/atac-seq/` ATAC-seqとは何か [P1]
 - `/genomics/three-dimensional-genome/` 3Dゲノムとは何か [P2]
 
-### 4-5 オミクス全体像
+### 4-5 オミクスで全体像を見る
 
 - `/genomics/transcriptomics/` トランスクリプトミクスとは何か [P1]
 - `/genomics/proteomics/` プロテオミクスとは何か [P2]
