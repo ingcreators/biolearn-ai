@@ -31,7 +31,7 @@ import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 転写は、[DNA](/glossary/dna/)上の情報を[RNA](/glossary/rna/)として読み出す過程です。
 
-RNAポリメラーゼがDNAを鋳型として読み取り、RNA鎖を合成します。どこからどれくらい転写されるかには、[プロモーター](/glossary/promoter/)や[転写因子](/glossary/transcription-factor/)などが関わります。
+[RNAポリメラーゼ](/glossary/rna-polymerase/)がDNAを鋳型として読み取り、RNA鎖を合成します。どこからどれくらい転写されるかには、[プロモーター](/glossary/promoter/)や[転写因子](/glossary/transcription-factor/)などが関わります。
 
 <LessonFigure
   src="/figures/transcription-concept.jpg"
@@ -48,13 +48,13 @@ RNAポリメラーゼがDNAを鋳型として読み取り、RNA鎖を合成し�
 
 ## どんな転写があるか
 
-タンパク質を作る情報を持つ遺伝子では、転写によってmRNAが作られます。一方で、rRNA、tRNA、[非コードRNA](/glossary/noncoding-rna/)のように、RNAとして働く[分子](/glossary/molecule/)を作る転写もあります。
+タンパク質を作る情報を持つ遺伝子では、転写によって[mRNA](/glossary/mrna/)が作られます。一方で、[rRNA](/glossary/rrna/)、[tRNA](/glossary/trna/)、[非コードRNA](/glossary/noncoding-rna/)のように、RNAとして働く[分子](/glossary/molecule/)を作る転写もあります。
 
 転写が始まる場所や起こりやすさには、プロモーター、[エンハンサー](/glossary/enhancer/)、転写因子、[クロマチン](/glossary/chromatin/)状態などが関わります。細胞はすべての遺伝子を同じ強さで転写するのではなく、必要な遺伝子を必要なタイミングで読み出します。
 
 ## 転写はどう調べるか
 
-転写の結果は、[RT-qPCR](/glossary/rt-qpcr/)、[RNA-seq](/glossary/rna-seq/)、[レポーターアッセイ](/glossary/reporter-assay/)、ChIP-seqなどで扱われます。ある遺伝子のmRNA量をRT-qPCRで測ることで、その遺伝子がどれくらい転写されたかの目安にすることがあります。
+転写の結果は、[RT-qPCR](/glossary/rt-qpcr/)、[RNA-seq](/glossary/rna-seq/)、[レポーターアッセイ](/glossary/reporter-assay/)、[ChIP-seq](/glossary/chip-seq/)などで扱われます。ある遺伝子のmRNA量をRT-qPCRで測ることで、その遺伝子がどれくらい転写されたかの目安にすることがあります。
 
 RNA-seqでは、多数の遺伝子についてRNA量をまとめて調べます。ただし、観察しているRNA量は転写の強さだけでなく、RNAの安定性や分解にも影響されます。
 
@@ -108,6 +108,19 @@ RNA-seqでは、多数の遺伝子についてRNA量をまとめて調べます�
       description:
         'DNAの情報の読み出し、調節、タンパク質合成などに関わる核酸。',
       href: '/glossary/rna/',
+    },
+    {
+      term: 'RNAポリメラーゼ',
+      english: 'RNA polymerase',
+      description: 'DNAを鋳型としてRNAを合成する酵素。',
+      href: '/glossary/rna-polymerase/',
+    },
+    {
+      term: 'mRNA',
+      english: 'messenger RNA',
+      abbreviation: 'mRNA',
+      description: 'タンパク質を作る情報をリボソームへ伝えるRNA。',
+      href: '/glossary/mrna/',
     },
     {
       term: 'プロモーター',

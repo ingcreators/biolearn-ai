@@ -30,7 +30,7 @@ import GlossaryTable from '../../../components/GlossaryTable.astro';
   ]}
 />
 
-RNAプロセシングは、[転写](/glossary/transcription/)された[RNA](/glossary/rna/)が成熟したmRNAとして使われるために受ける加工です。
+RNAプロセシングは、[転写](/glossary/transcription/)された[RNA](/glossary/rna/)が成熟した[mRNA](/glossary/mrna/)として使われるために受ける加工です。
 
 [真核細胞](/glossary/eukaryotic-cell/)では、5キャップの付加、ポリA尾部の付加、[スプライシング](/glossary/splicing/)などを通じて、RNAが[翻訳](/glossary/translation/)や輸送に向かう形へ整えられます。
 
@@ -45,7 +45,7 @@ RNAプロセシングは、[転写](/glossary/transcription/)された[RNA](/glo
 
 RNAプロセシングを理解すると、[DNA](/glossary/dna/)からRNAが作られた後に、どのように[タンパク質](/glossary/protein/)産生へ向かうのかを説明しやすくなります。[遺伝子発現](/glossary/gene-expression/)は「RNAが作られる」だけで終わらず、RNAが加工され、安定化し、使われる段階まで含みます。
 
-[RNA-seq](/glossary/rna-seq/)では、[リード](/glossary/read/)がエクソン、イントロン、スプライス junction などにどのように対応するかが解析の意味に影響します。
+[RNA-seq](/glossary/rna-seq/)では、[リード](/glossary/read/)が[エクソン](/glossary/exon/)、[イントロン](/glossary/intron/)、スプライス junction などにどのように対応するかが解析の意味に影響します。
 
 ## どんなRNAプロセシングがあるか
 
@@ -57,7 +57,7 @@ RNAプロセシングを理解すると、[DNA](/glossary/dna/)からRNAが作�
 
 RNAプロセシングは、RNA-seq、スプライシング解析、ポリA選択、nascent RNA解析などで調べます。ライブラリ作製でpoly(A) selectionを使ったか、rRNA depletionを使ったかによって、主に見えているRNAの種類が変わります。
 
-スプライシングを見る場合は、エクソン同士のつなぎ目にまたがるリードや、アイソフォームごとの発現推定が手がかりになります。
+スプライシングを見る場合は、エクソン同士のつなぎ目にまたがるリードや、[アイソフォーム](/glossary/isoform/)ごとの発現推定が手がかりになります。
 
 ## RNAプロセシングの変化は何につながるか
 
@@ -113,6 +113,31 @@ RNAプロセシングの変化は、成熟mRNAの量、安定性、翻訳され�
       english: 'splicing',
       description: 'pre-mRNAから一部の区間を除き、残る区間をつなげる過程。',
       href: '/glossary/splicing/',
+    },
+    {
+      term: 'mRNA',
+      english: 'messenger RNA',
+      abbreviation: 'mRNA',
+      description: 'タンパク質を作る情報をリボソームへ伝えるRNA。',
+      href: '/glossary/mrna/',
+    },
+    {
+      term: 'エクソン',
+      english: 'exon',
+      description: '多くの場合、成熟RNAに残る遺伝子内の領域。',
+      href: '/glossary/exon/',
+    },
+    {
+      term: 'イントロン',
+      english: 'intron',
+      description: '多くの場合、成熟RNAから取り除かれる領域。',
+      href: '/glossary/intron/',
+    },
+    {
+      term: 'アイソフォーム',
+      english: 'isoform',
+      description: '同じ遺伝子などから作られる少し異なるRNAやタンパク質の形。',
+      href: '/glossary/isoform/',
     },
     {
       term: '翻訳',
