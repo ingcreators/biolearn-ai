@@ -1,0 +1,146 @@
+---
+title: FASTQとは何か
+description: FASTQファイルに含まれるリード配列と品質スコアの基本を説明します。
+part: bioinformatics
+module: sequence-preprocessing
+level: foundation
+priority: P1
+order: 24
+relatedTerms:
+  - fastq
+  - read
+  - quality-score
+prerequisites:
+  - /bioinformatics/sequence-data/
+  - /bioinformatics/metadata/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    'FASTQがシーケンスリードと品質スコアを保存する形式であることを説明できる',
+    'リード配列、品質スコア、サンプル対応を分けて読めるようになる',
+    'FASTQが解析の出発点であり、結論そのものではないことを理解する',
+  ]}
+/>
+
+FASTQは、シーケンサーから得られたリード配列と、各塩基の読み取り信頼度を表す品質スコアを保存する代表的なテキスト形式です。
+
+RNA-seqやゲノム解析では、[シーケンスデータ](/glossary/sequence-data/)の出発点としてFASTQファイルを受け取り、品質確認、前処理、マッピングなどへ進みます。FASTQは「何が読まれたか」と「どれくらい確からしく読めたか」を一緒に持つファイルだと考えると理解しやすいです。
+
+<LessonFigure
+  src="/figures/fastq-concept.jpg"
+  alt="短いリードの束と品質の強弱を示す点が、品質確認を経て解析へ進む様子を示す教材イラスト"
+  title="FASTQはリード配列と品質の入口"
+  caption="FASTQを読むときは、配列だけでなく品質スコアやサンプル対応も合わせて確認します。"
+/>
+
+## なぜFASTQの視点が重要か
+
+FASTQは、多くのシーケンス解析で最初に扱うファイルです。ここでサンプル対応や品質の問題を見落とすと、その後のマッピング、カウント、バリアントコールの結果にも影響します。
+
+FASTQを理解すると、解析結果を「ツールが出した表」として見るだけでなく、どのような生データから出発したのかを確認できます。特に低品質なリード、アダプター配列、サンプル取り違えの可能性は、早い段階で見るほど解釈しやすくなります。
+
+## FASTQにはどんな情報があるか
+
+FASTQの1つの記録は、リード名、塩基配列、区切り行、品質スコアの4行で表されます。[リード](/glossary/read/)は、シーケンサーが読み取った短い配列断片です。
+
+品質スコアは、各塩基の読み取りにどれくらい不確かさがあるかを数値化したものです。実際のFASTQでは文字列として表されますが、解析では塩基ごとの品質分布やリード全体の品質として確認します。
+
+## FASTQはどう確認・処理するか
+
+FASTQを受け取ったら、まずサンプル表とファイル名が対応しているかを確認します。ペアエンド解析では、同じサンプルに対応する2つのFASTQファイルがそろっているかも重要です。
+
+次に、リード数、塩基ごとの品質、アダプター混入、GC含量、重複の程度などを確認します。必要に応じて、低品質な末端やアダプター配列を除く前処理を行い、その後で参照配列へのマッピングや発現量推定へ進みます。
+
+## FASTQの品質は何につながるか
+
+FASTQの品質が低いと、リードが正しい位置に対応づきにくくなったり、誤った塩基差が候補として出たりすることがあります。特にゲノム解析では、低品質な読み取りがバリアント候補に見えることがあります。
+
+一方で、品質が高いFASTQであっても、それだけで生物学的な結論が保証されるわけではありません。実験設計、メタデータ、解析条件、統計的な検証と合わせて結果を読みます。
+
+## 論文や実験ではどう出てくるか
+
+論文のMethodsでは、FASTQは「raw reads」「sequencing reads」「FASTQ files」などとして出てきます。データ公開では、SRAやENAなどからFASTQを取得できる場合があります。
+
+ResultsではFASTQそのものが図になることは少なく、品質管理図、マッピング率、カウント行列、VCFなどに処理された後の結果として現れます。Supplementaryやリポジトリでは、サンプルIDとFASTQファイルの対応表が重要になります。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- FASTQとFASTA: FASTAは主に配列を表す形式で、FASTQは配列に品質スコアを加えた形式です。
+- FASTQとBAM: FASTQはマッピング前のリードを持つことが多く、BAMはマッピング後の位置情報を持つことが多い形式です。
+- 品質スコアと生物学的な信頼性: 品質スコアは塩基読み取りの不確かさを表す指標で、研究上の結論の強さそのものではありません。
+
+### 解釈の落とし穴
+
+- FASTQのリード数が多いだけで、解析が十分とは限りません。
+- ファイル名だけから群や条件を判断せず、メタデータと対応づけます。
+- 前処理の前後でリード数や品質分布が変わるため、どの段階のFASTQを見ているか確認します。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'FASTQ',
+      english: 'FASTQ format',
+      abbreviation: 'FASTQ',
+      description:
+        'リード配列と塩基ごとの品質スコアを保存するシーケンスデータの形式。',
+      href: '/glossary/fastq/',
+    },
+    {
+      term: 'リード',
+      english: 'read',
+      description: 'シーケンサーで読み取られた短い配列断片。',
+      href: '/glossary/read/',
+    },
+    {
+      term: '品質スコア',
+      english: 'quality score',
+      abbreviation: 'Q score',
+      description: '塩基の読み取りがどれくらい信頼できるかを表す指標。',
+      href: '/glossary/quality-score/',
+    },
+    {
+      term: 'シーケンスデータ',
+      english: 'sequence data',
+      description: 'DNAやRNAの塩基配列を読み取って得られるデータ。',
+      href: '/glossary/sequence-data/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: 'FASTQには、リード配列以外に何が含まれますか。',
+      answer: '各塩基の読み取り信頼度を表す品質スコアが含まれます。',
+    },
+    {
+      question: 'FASTQを解析の最初に確認する理由を説明してください。',
+      answer:
+        'サンプル対応、リード数、品質、アダプター混入などの問題が後続解析に影響するためです。',
+    },
+    {
+      question: 'FASTQとBAMの違いを簡単に説明してください。',
+      answer:
+        'FASTQは主にリード配列と品質を持ち、BAMはマッピング後の位置情報を含む形式です。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'メタデータとは何か', href: '/bioinformatics/metadata/' },
+    { title: 'マッピングとは何か', href: '/bioinformatics/mapping/' },
+    { title: 'SAM/BAMとは何か', href: '/bioinformatics/sam-bam/' },
+  ]}
+/>

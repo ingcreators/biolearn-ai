@@ -1,0 +1,147 @@
+---
+title: SAM/BAMとは何か
+description: マッピング後のリード情報を保存するSAM/BAM形式の基本を説明します。
+part: bioinformatics
+module: sequence-preprocessing
+level: foundation
+priority: P1
+order: 28
+relatedTerms:
+  - sam-bam
+  - mapping
+  - coverage
+prerequisites:
+  - /bioinformatics/mapping/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    'SAM/BAMがマッピング後のリード情報を保存する形式であることを説明できる',
+    '位置、向き、マッピング品質、CIGARなどの情報が何を支えるか理解する',
+    'BAMを最終結論ではなく後続解析の中間データとして読めるようになる',
+  ]}
+/>
+
+SAM/BAMは、マッピング後のリードが参照配列のどこに、どのように対応したかを保存する代表的なファイル形式です。
+
+SAMは人が読めるテキスト形式、BAMは同じ情報を圧縮したバイナリ形式です。実際の解析ではBAMがよく使われ、リードの位置情報からカバレッジ、発現量、バリアント候補などを計算します。
+
+<LessonFigure
+  src="/figures/sam-bam-concept.jpg"
+  alt="マッピングされたリードが参照配列上に並び、その位置情報が圧縮された解析用ファイルとして整理される教材イラスト"
+  title="SAM/BAMはマッピング後のリード配置を保存する"
+  caption="BAMには、リード配列だけでなく、位置、向き、対応の質など後続解析に必要な情報が入ります。"
+/>
+
+## なぜSAM/BAMの視点が重要か
+
+FASTQはリード配列と品質を持つ入口のファイルですが、SAM/BAMは[マッピング](/glossary/mapping/)後の位置づけを持つ中間データです。どのリードがどこに対応したかが分かることで、ゲノム上の深さや遺伝子ごとのカウントを調べられます。
+
+SAM/BAMを理解すると、ゲノムブラウザで見えるリードの積み重なりや、バリアントコールの前提を読みやすくなります。解析結果の表だけを見るより、元になったリード配置を確認できる場面が増えます。
+
+## SAM/BAMにはどんな情報があるか
+
+SAM/BAMには、[リード](/glossary/read/)名、参照配列名、位置、向き、マッピング品質、CIGAR文字列、塩基配列、品質スコアなどが含まれます。CIGARは、リードが参照配列に対して一致、挿入、欠失、スキップなどをどう含むかを表す情報です。
+
+BAMは大きなデータを効率よく扱うために使われ、通常は座標順に並べ替えたり、インデックスを作ったりして使います。インデックスがあると、特定の染色体や領域だけを素早く表示できます。
+
+## SAM/BAMはどう確認・処理するか
+
+まず、期待したサンプルに対応するBAMか、使ったリファレンスの版が合っているかを確認します。次に、総リード数、マッピング率、重複率、挿入サイズ、染色体ごとの分布、カバレッジなどを見ます。
+
+ゲノムブラウザでは、BAMを読み込むことで特定領域のリード配置を確認できます。RNA-seqでは遺伝子領域にリードがどのように集まるか、ゲノム解析では候補変異の周辺にどのようなリードがあるかを見ます。
+
+## SAM/BAMの違いは何につながるか
+
+同じFASTQから作ったBAMでも、マッピングツール、リファレンス、重複リードの扱い、並べ替えやフィルタ条件によって後続結果が変わることがあります。バリアントコールや発現量推定では、どのBAMを使ったかが重要な前提になります。
+
+[カバレッジ](/glossary/coverage/)が低い領域では、変異候補や発現量の推定が不安定になることがあります。反対に、リードが多く見えても、重複やマッピングの曖昧さが原因の場合があります。
+
+## 論文や実験ではどう出てくるか
+
+Methodsでは、BAMはマッピング後のファイルとして、ソート、重複処理、フィルタリング、インデックス作成などと一緒に説明されることがあります。データ公開では、FASTQに加えてBAMが提供される場合もあります。
+
+Resultsでは、BAMそのものよりも、ゲノムブラウザ図、カバレッジトラック、ピーク、カウント、VCFなどの形で結果が示されます。図の元データがBAMであることを知っておくと、リード配置に戻って確認できます。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- SAMとBAM: SAMはテキスト形式、BAMは圧縮されたバイナリ形式です。情報の種類はほぼ対応します。
+- FASTQとBAM: FASTQはマッピング前の配列と品質、BAMはマッピング後の位置情報を持ちます。
+- マッピング品質と塩基品質: マッピング品質はリードの位置づけの確からしさ、塩基品質は各塩基の読み取りの確からしさです。
+
+### 解釈の落とし穴
+
+- BAMにリードが積み重なっているだけで、その領域の機能や変異の意味を断定しない。
+- インデックスやソート状態が合っていないと、表示や解析がうまく進まないことがあります。
+- リファレンスの版が違うBAMと注釈ファイルを組み合わせると、座標の解釈がずれることがあります。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'SAM/BAM',
+      english: 'Sequence Alignment/Map and Binary Alignment/Map',
+      abbreviation: 'SAM/BAM',
+      description: 'マッピング後のリード配置と関連情報を保存するファイル形式。',
+      href: '/glossary/sam-bam/',
+    },
+    {
+      term: 'マッピング',
+      english: 'mapping',
+      description: 'リードなどの配列を参照配列上の位置へ対応づける解析。',
+      href: '/glossary/mapping/',
+    },
+    {
+      term: 'カバレッジ',
+      english: 'coverage',
+      description:
+        'ある領域がシーケンシングでどれくらい読まれているかを表す指標。',
+      href: '/glossary/coverage/',
+    },
+    {
+      term: '品質スコア',
+      english: 'quality score',
+      abbreviation: 'Q score',
+      description: '塩基の読み取りがどれくらい信頼できるかを表す指標。',
+      href: '/glossary/quality-score/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: 'SAM/BAMは何を保存する形式ですか。',
+      answer:
+        'マッピング後のリードが参照配列のどこに、どのように対応したかを保存する形式です。',
+    },
+    {
+      question: 'SAMとBAMの違いを簡単に説明してください。',
+      answer:
+        'SAMはテキスト形式、BAMは同じ情報を圧縮して扱うバイナリ形式です。',
+    },
+    {
+      question:
+        'BAMを見るときにリファレンスの版を確認する理由を説明してください。',
+      answer:
+        '参照配列の版が違うと座標や注釈との対応がずれ、解釈を誤ることがあるからです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'マッピングとは何か', href: '/bioinformatics/mapping/' },
+    { title: 'VCFとは何か', href: '/bioinformatics/vcf/' },
+    { title: 'ゲノムブラウザとは何か', href: '/genomics/genome-browser/' },
+  ]}
+/>

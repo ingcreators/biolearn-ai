@@ -1,0 +1,156 @@
+---
+title: VCFとは何か
+description: バリアント候補を記録するVCF形式の基本と読み方の注意点を説明します。
+part: bioinformatics
+module: sequence-preprocessing
+level: foundation
+priority: P1
+order: 29
+relatedTerms:
+  - vcf
+  - variant
+  - variant-calling
+prerequisites:
+  - /bioinformatics/sam-bam/
+  - /genomics/variant/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    'VCFがバリアント候補を記録する形式であることを説明できる',
+    '位置、参照アリル、代替アリル、品質、フィルタの意味を理解する',
+    'VCFの記録と生物学的な解釈を分けて考えられるようになる',
+  ]}
+/>
+
+VCFは、シーケンス解析で見つかったバリアント候補を、位置、配列の違い、品質、サンプルごとの情報と一緒に記録する代表的なファイル形式です。
+
+ゲノム解析では、マッピング後のリードから参照配列と異なる候補を検出し、VCFとして整理することがあります。VCFは「候補をどう記録したか」を表す形式であり、見つかった違いの意味まで自動的に決めるものではありません。
+
+<LessonFigure
+  src="/figures/vcf-concept.jpg"
+  alt="参照配列とサンプル配列の違いが、位置、参照側、代替側、品質情報を持つカードとして整理される教材イラスト"
+  title="VCFはバリアント候補を整理して記録する"
+  caption="VCFの各行は、位置、配列差、品質、フィルタ、サンプル情報を合わせて慎重に読みます。"
+/>
+
+## なぜVCFの視点が重要か
+
+VCFを理解すると、ゲノム解析で「どこに、どんな配列の違いが候補として出たのか」を追えるようになります。[バリアント](/glossary/variant/)の数や種類だけでなく、品質やフィルタ条件を確認する入口になります。
+
+ただし、VCFに記録された候補は、解析手順で検出されたデータ上の候補です。機能への影響、形質との関係、研究上の意味は、アノテーションや追加の証拠と合わせて別に考えます。
+
+## VCFにはどんな情報があるか
+
+VCFの各行には、染色体、座標、参照アリル、代替アリル、品質、フィルタ、追加情報、サンプルごとの遺伝子型などが入ります。1つの行が、1つのバリアント候補を表すことが多いです。
+
+サンプル列には、候補がサンプル内でどのように観測されたかを示す情報が入ることがあります。たとえば、参照アリルと代替アリルの組み合わせ、各アリルを支持するリード数、深さなどが記録される場合があります。
+
+## VCFはどう確認・処理するか
+
+VCFは、[バリアントコール](/glossary/variant-calling/)の結果として作られます。確認するときは、使ったリファレンス、バリアントコールツール、フィルタ条件、品質指標、カバレッジ、サンプル対応を見ます。
+
+後続では、低品質な候補を除く[フィルタリング](/glossary/filtering/)や、遺伝子、タンパク質変化、既存データベース、集団頻度などを付けるアノテーションを行います。VCFを表計算の感覚で読むだけでなく、どの条件で作られたファイルかを確認します。
+
+## VCFの記録は何につながるか
+
+VCFは、バリアントの数、種類、ゲノム上の分布、サンプル間の違いを調べる出発点になります。研究では、候補を遺伝子や調節領域と重ねたり、集団内の頻度と比べたりして解釈します。
+
+一方で、候補の記録は解析条件に依存します。カバレッジが低い領域、マッピングが難しい領域、反復配列の多い領域では、見落としや誤検出が起こりやすくなります。
+
+## 論文や実験ではどう出てくるか
+
+Methodsでは、VCFはバリアントコール、フィルタリング、アノテーションの流れで出てきます。どのリファレンスゲノムを使ったか、どの品質条件で候補を残したか、どのツールやデータベースで注釈したかが重要です。
+
+Resultsでは、VCFの中身がバリアント表、遺伝子ごとの候補リスト、ロリポッププロット、ゲノムブラウザ表示、サンプル間比較として示されます。SupplementaryやデータリポジトリにVCFファイルが置かれることもあります。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- VCFとBAM: BAMはリード配置を保存する形式で、VCFはそこから検出したバリアント候補を記録する形式です。
+- バリアントコールとバリアントアノテーション: バリアントコールは候補を検出する処理で、アノテーションは候補に意味づけの情報を加える処理です。
+- 参照アリルと正常: 参照アリルはリファレンス配列上の表記であり、「正常」や「望ましい状態」を意味するとは限りません。
+
+### 解釈の落とし穴
+
+- VCFに載っている候補を、すぐに機能的に重要な違いだと考えない。
+- PASSと書かれていても、研究上の意味が確定したわけではありません。
+- リファレンスの版や座標系を確認せず、別のデータベースや図と単純に照合しないようにします。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'VCF',
+      english: 'Variant Call Format',
+      abbreviation: 'VCF',
+      description:
+        'バリアント候補の位置、配列差、品質、サンプル情報などを記録する形式。',
+      href: '/glossary/vcf/',
+    },
+    {
+      term: 'バリアント',
+      english: 'variant',
+      description: '参照配列や集団内の基準と比べて見つかる配列上の違い。',
+      href: '/glossary/variant/',
+    },
+    {
+      term: 'バリアントコール',
+      english: 'variant calling',
+      description: 'シーケンスデータから変異や遺伝的変異の候補を検出する解析。',
+      href: '/glossary/variant-calling/',
+    },
+    {
+      term: 'フィルタリング',
+      english: 'filtering',
+      description: '条件に合わないデータや候補を解析から除く処理。',
+      href: '/glossary/filtering/',
+    },
+    {
+      term: 'リファレンスゲノム',
+      english: 'reference genome',
+      description: '配列解析やゲノム表示で基準として使う代表的なゲノム配列。',
+      href: '/glossary/reference-genome/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: 'VCFは何を記録する形式ですか。',
+      answer:
+        'シーケンス解析で見つかったバリアント候補の位置、配列差、品質、サンプル情報などを記録する形式です。',
+    },
+    {
+      question:
+        'VCFに候補が載っているだけで意味を断定できない理由を説明してください。',
+      answer:
+        '候補は解析条件に依存して検出されたもので、機能や研究上の意味は品質、注釈、追加証拠と合わせて解釈する必要があるからです。',
+    },
+    {
+      question:
+        'VCFを別のデータベースと照合するときに確認したい前提を一つ挙げてください。',
+      answer: 'リファレンスゲノムの版や座標系を確認します。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'variantとは何か', href: '/genomics/variant/' },
+    { title: '遺伝的変異とは何か', href: '/genomics/genetic-variants/' },
+    {
+      title: 'variant annotationとは何か',
+      href: '/genomics/variant-annotation/',
+    },
+  ]}
+/>

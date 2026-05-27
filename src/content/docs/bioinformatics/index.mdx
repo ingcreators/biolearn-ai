@@ -5,12 +5,13 @@ description: 生命科学データを計算で扱うための入門カテゴリ�
 
 import ArticleList from '../../../components/ArticleList.astro';
 
-バイオインフォマティクスは、DNA配列、RNA発現、タンパク質などの生命科学データを計算機で扱う分野です。BioLearnでは、RNA-seq、シーケンスデータ、差次的発現解析、single-cell解析を入口に、測定結果をデータとして読む考え方を学びます。
+バイオインフォマティクスは、DNA配列、RNA発現、タンパク質などの生命科学データを計算機で扱う分野です。BioLearnでは、シーケンスデータ、FASTQ、マッピング、SAM/BAM、VCF、RNA-seq、差次的発現解析、single-cell解析を入口に、測定結果をデータとして読む考え方を学びます。
 
 ## この分野で学ぶこと
 
 - RNA-seqが何を測っている実験なのか
 - シーケンスデータが、DNAやRNA由来の配列情報として扱われること
+- FASTQ、SAM/BAM、VCFのようなファイル形式が解析のどの段階にあるか
 - 差次的発現解析で、変化量と統計的な確からしさを分けて考えること
 - single-cell解析で、細胞ごとの発現量、クラスタ、細胞型注釈を慎重に読むこと
 
@@ -34,6 +35,11 @@ import ArticleList from '../../../components/ArticleList.astro';
     <p>
       RNA-seq、シーケンスデータ、カウント行列、差次的発現解析の関係を確認します。
     </p>
+  </a>
+  <a class="biolearn-home-card" href="/bioinformatics/fastq/">
+    <span>ファイル形式</span>
+    <h3>解析の途中データを読む</h3>
+    <p>FASTQ、マッピング、SAM/BAM、VCFを、解析の流れの中で確認します。</p>
   </a>
   <a class="biolearn-home-card" href="/bioinformatics/single-cell-rna-seq/">
     <span>single-cell</span>
@@ -62,6 +68,7 @@ import ArticleList from '../../../components/ArticleList.astro';
 | 迷っていること                     | 入口                                                                                                                                                   | Figureで戻る場所                                                                                                                             |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | 解析Figureの全体像を知りたい       | [バイオインフォマティクス](/bioinformatics/bioinformatics/)、[シーケンスデータ](/bioinformatics/sequence-data/)                                        | [Figureを読めるようになる](/paths/figure-reading/)、[Figure早見表](/resources/figures-cheatsheet/)                                           |
+| FASTQやBAMなどの形式で迷う         | [FASTQ](/bioinformatics/fastq/)、[マッピング](/bioinformatics/mapping/)、[SAM/BAM](/bioinformatics/sam-bam/)、[VCF](/bioinformatics/vcf/)              | [ゲノムブラウザ](/genomics/genome-browser/)、[Figure早見表](/resources/figures-cheatsheet/)                                                  |
 | RNA-seqが何を測るのか知りたい      | [RNA-seq](/bioinformatics/rna-seq/)、[シーケンスデータ](/bioinformatics/sequence-data/)                                                                | [Volcano plot](/figures/how-to-read-volcano-plot/)、[ヒートマップ](/figures/how-to-read-heatmap/)                                            |
 | 発現差の結果を読みたい             | [差次的発現解析](/bioinformatics/differential-expression/)、[カウント行列](/bioinformatics/count-matrix/)                                              | [Volcano plot](/figures/how-to-read-volcano-plot/)、[GSEA plot](/figures/how-to-read-gsea-plot/)                                             |
 | single-cell解析の流れを知りたい    | [single-cell RNA-seq](/bioinformatics/single-cell-rna-seq/)、[single-cell品質管理](/bioinformatics/single-cell-quality-control/)                       | [UMAP / t-SNE](/figures/how-to-read-umap-tsne/)、[Violin plot](/figures/how-to-read-violin-plot/)                                            |
@@ -78,12 +85,13 @@ import ArticleList from '../../../components/ArticleList.astro';
 
 <ArticleList part="bioinformatics" groupByModule />
 
-RNA-seqに進む前に、DNA、RNA、遺伝子発現、ゲノムの考え方を押さえておくと理解しやすくなります。カテゴリ内では、バイオインフォマティクスの全体像、シーケンスデータ、RNA-seq、差次的発現解析で発現解析の基本を押さえ、その後single-cell RNA-seq、カウント行列、QC、次元削減、クラスタリング、マーカー遺伝子、UMAP、細胞タイプ注釈、バッチ効果へ進むのがおすすめです。
+RNA-seqに進む前に、DNA、RNA、遺伝子発現、ゲノムの考え方を押さえておくと理解しやすくなります。カテゴリ内では、バイオインフォマティクスの全体像、シーケンスデータ、メタデータ、FASTQ、マッピング、SAM/BAM、VCFで配列データの流れを押さえ、RNA-seq、差次的発現解析で発現解析の基本に進みます。その後single-cell RNA-seq、カウント行列、QC、次元削減、クラスタリング、マーカー遺伝子、UMAP、細胞タイプ注釈、バッチ効果へ進むのがおすすめです。
 
 ## このカテゴリを終えるとできること
 
 - RNA-seqが遺伝子発現を調べる実験であることを説明できる
 - シーケンスデータの基本的な位置づけを説明できる
+- FASTQ、SAM/BAM、VCFが解析のどの段階のファイルか説明できる
 - 差次的発現解析の結果を見るとき、変化量、p値、サンプル条件を分けて確認できる
 - single-cell解析のFigureで、クラスタ名、マーカー遺伝子、バッチ効果を確認できる
 
@@ -98,5 +106,8 @@ RNA-seqに進む前に、DNA、RNA、遺伝子発現、ゲノムの考え方を�
 - [バッチ効果](/glossary/batch-effect/)
 - [シーケンス](/glossary/sequencing/)
 - [シーケンスデータ](/glossary/sequence-data/)
+- [FASTQ](/glossary/fastq/)
+- [SAM/BAM](/glossary/sam-bam/)
+- [VCF](/glossary/vcf/)
 - [NGS](/glossary/ngs/)
 - [差次的発現解析](/glossary/differential-expression-analysis/)

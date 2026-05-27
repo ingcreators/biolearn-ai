@@ -1380,6 +1380,55 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'methods-and-analysis',
   },
   {
+    term: 'メタデータ',
+    english: 'metadata',
+    description:
+      '測定値やファイルの背景を説明するサンプル条件、実験条件、解析条件などの情報。',
+    href: '/glossary/metadata/',
+    category: 'methods-and-analysis',
+  },
+  {
+    term: 'FASTQ',
+    english: 'FASTQ format',
+    abbreviation: 'FASTQ',
+    description:
+      'リード配列と塩基ごとの品質スコアを保存するシーケンスデータの形式。',
+    href: '/glossary/fastq/',
+    category: 'methods-and-analysis',
+  },
+  {
+    term: '品質スコア',
+    english: 'quality score',
+    abbreviation: 'Q score',
+    description: '塩基の読み取りがどれくらい信頼できるかを表す指標。',
+    href: '/glossary/quality-score/',
+    category: 'methods-and-analysis',
+  },
+  {
+    term: 'アラインメント',
+    english: 'alignment',
+    description: '配列同士の対応する位置をそろえて並べる処理。',
+    href: '/glossary/alignment/',
+    category: 'methods-and-analysis',
+  },
+  {
+    term: 'SAM/BAM',
+    english: 'Sequence Alignment/Map and Binary Alignment/Map',
+    abbreviation: 'SAM/BAM',
+    description: 'マッピング後のリード配置と関連情報を保存するファイル形式。',
+    href: '/glossary/sam-bam/',
+    category: 'methods-and-analysis',
+  },
+  {
+    term: 'VCF',
+    english: 'Variant Call Format',
+    abbreviation: 'VCF',
+    description:
+      'バリアント候補の位置、配列差、品質、サンプル情報などを記録する形式。',
+    href: '/glossary/vcf/',
+    category: 'methods-and-analysis',
+  },
+  {
     term: '差次的発現解析',
     english: 'differential expression analysis',
     abbreviation: 'DEA',
