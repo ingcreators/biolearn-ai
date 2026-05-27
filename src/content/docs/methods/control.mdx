@@ -19,6 +19,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -43,31 +44,35 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 対照群が不適切だと、観察された差が本当に処理の効果なのか、別の条件差によるものなのか分かりにくくなります。Figureを読むときは、まず何がcontrolで、何が比較対象かを確認します。
 
-## なぜ重要か
+## なぜ対照群の視点が重要か
 
 MethodsやFigure legendでは、control、vehicle、mock、wild type、untreatedなどの語がよく出てきます。これらを読み取れると、Figureの差が何を意味するかを考えやすくなります。
 
-## 具体例
+対照群の視点は、「処理群で変わった」という文章をそのまま受け取る前の確認にもなります。比較したい要因以外がそろっているか、同じ測定条件で扱われているかを見ることで、差の解釈が安定します。
+
+## どんな対照群があるか
 
 薬剤処理の実験では、薬剤を入れない群や溶媒だけを入れた群が対照になります。遺伝子ノックダウンでは、標的を持たないコントロールsiRNAを使うことがあります。
 
-[免疫染色](/glossary/immunostaining/)では一次抗体を抜いた条件、[Western blot](/glossary/western-blot/)では[ローディングコントロール](/glossary/loading-control/)、[qPCR](/glossary/qpcr/)では基準遺伝子など、実験ごとに対照の形は変わります。
+[免疫染色](/glossary/immunostaining/)では一次抗体を抜いた条件、[qPCR](/glossary/qpcr/)では基準遺伝子、[Western blot](/glossary/western-blot/)では[ローディングコントロール](/glossary/loading-control/)のように、実験ごとに比較や補正の基準は変わります。対照群そのものと補正基準は同じではありませんが、どちらも結果を読む土台になります。
 
-## よく混同される概念
+## 対照群はどう確認するか
 
-- 対照と未処理: 未処理が常に適切な対照とは限らず、溶媒や操作の影響をそろえる必要があります。
-- 対照群と基準値: 対照群は比較対象のサンプル、基準値は解析で[正規化](/glossary/normalization/)に使う値です。
-- 陽性対照と陰性対照: 陽性対照は反応が出るはずの条件、陰性対照は反応が出ないはずの条件です。
+対照群は、Figureのラベル、Figure legend、Methodsの条件説明を行き来して確認します。棒グラフならどの群が基準か、画像ならどの条件が背景や通常状態の基準か、フローサイトメトリーならどの条件がゲート設定の基準かを見ます。
+
+対照がFigure内に明示されていなくても、Methodsにvehicle、mock、scramble、wild type、untreatedなどとして書かれていることがあります。条件名だけで判断せず、何をそろえるための対照なのかを読み取ることが大切です。
+
+## 対照群の違いは何につながるか
+
+対照群が変わると、同じデータでも解釈できる範囲が変わります。未処理群と比べるのか、溶媒だけを入れた群と比べるのか、野生型と比べるのかによって、「処理の効果」と言える範囲が異なります。
+
+対照が不十分な場合、差が見えていても、処理そのものではなく溶媒、導入操作、サンプル量、測定条件の違いを反映している可能性が残ります。
 
 ## 論文や実験ではどう出てくるか
 
 論文では、Methodsに対照条件が書かれ、Figureでは「control」「vehicle」「mock」「untreated」などのラベルで示されます。対照が適切でないと、処理の効果なのか操作や溶媒の影響なのかを分けにくくなります。
 
-読むときは、比較したい要因以外ができるだけそろっているかを確認します。
-
-## Figureで見る場所
-
-対照群は、ほぼすべてのFigureで比較の基準になります。
+読むときは、比較したい要因以外ができるだけそろっているかを確認します。Figureでは、どの条件が基準になっているかを先に見つけると読みやすくなります。
 
 - [棒グラフ](/glossary/bar-plot/)では、どの群がcontrolで、どの群との差に印が付いているかを確認します。
 - 画像Figureでは、対照群のシグナルや背景が比較の基準になります。
@@ -76,16 +81,15 @@ MethodsやFigure legendでは、control、vehicle、mock、wild type、untreated
 
 Figureを読むときは、最初に「何と何を比べているか」を確認し、次にその対照が主張に合っているかをMethodsで見ます。
 
-## 英語表記と略語
+## どんな点でつまずきやすいか
 
-| 日本語名 | 英語名           | 略語 |
-| -------- | ---------------- | ---- |
-| 対照群   | control group    | -    |
-| 陰性対照 | negative control | -    |
-| 陽性対照 | positive control | -    |
-| 溶媒対照 | vehicle control  | -    |
+### 似た用語との区別
 
-## よくある誤解
+- 対照と未処理: 未処理が常に適切な対照とは限らず、溶媒や操作の影響をそろえる必要があります。
+- 対照群と基準値: 対照群は比較対象のサンプル、基準値は解析で[正規化](/glossary/normalization/)に使う値です。
+- 陽性対照と陰性対照: 陽性対照は反応が出るはずの条件、陰性対照は反応が出ないはずの条件です。
+
+### 解釈の落とし穴
 
 - controlは「何もしない条件」とは限りません。溶媒や模擬処理を加える場合があります。
 - 対照群があるだけで実験設計が十分とは限りません。
@@ -93,12 +97,41 @@ Figureを読むときは、最初に「何と何を比べているか」を確�
 
 ## 重要用語
 
-- [対照群](/glossary/control-group/): 比較の基準になる条件。
-- 陰性対照: 反応が起きないことを期待する対照。
-- 陽性対照: 反応が起きることを期待する対照。
-- [反復](/glossary/biological-technical-replicates/): 対照群と処理群を、独立したサンプルや測定で繰り返して確認する考え方。
-- [n数](/glossary/sample-size/): Figureで比較に使われたサンプル、個体、細胞、測定点などの数。
-- vehicle control: 薬剤を溶かす溶媒の影響を確認する対照。
+<GlossaryTable
+  terms={[
+    {
+      term: '対照群',
+      english: 'control group',
+      description: '比較の基準になる条件。',
+      href: '/glossary/control-group/',
+    },
+    {
+      term: '陰性対照',
+      english: 'negative control',
+      description: '反応が起きないことを期待する対照。',
+      href: '/glossary/negative-control/',
+    },
+    {
+      term: '陽性対照',
+      english: 'positive control',
+      description: '反応が起きることを期待する対照。',
+      href: '/glossary/positive-control/',
+    },
+    {
+      term: '溶媒対照',
+      english: 'vehicle control',
+      description: '薬剤を溶かす溶媒の影響を確認する対照。',
+      href: '/glossary/solvent-control/',
+    },
+    {
+      term: '反復',
+      english: 'replicate',
+      description:
+        '対照群と処理群を、独立したサンプルや測定で繰り返して確認する考え方。',
+      href: '/glossary/biological-technical-replicates/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[

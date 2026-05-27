@@ -50,6 +50,20 @@ import ArticleList from '../../../components/ArticleList.astro';
 - 陽性対照、陰性対照、反復、サンプル調製の考え方
 - Methods と Figure legend を読むときに確認する情報
 
+## おすすめの読む順番
+
+初学者が順番に読む場合は、まずサンプルと対照で「何を何と比べるか」を押さえ、その後に核酸、シーケンス、タンパク質・細胞、遺伝子機能の順で進むと読みやすくなります。
+
+| 順番 | まとまり                     | まず読む記事                                                                                                                                                                       |
+| ---- | ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1    | 実験の組み立て               | [サンプル](/methods/sample/) → [対照群](/methods/control/) → [陽性対照と陰性対照](/methods/positive-negative-control/)                                                             |
+| 2    | 核酸を増やす・測る           | [PCR](/methods/pcr/) → [qPCR](/methods/qpcr/) → [RNA抽出](/methods/rna-extraction/) → [RT-qPCR](/methods/rt-qpcr/)                                                                 |
+| 3    | シーケンスへつなぐ           | [シーケンシング](/methods/sequencing/) → [NGS](/methods/ngs/) → [ライブラリ調製](/methods/library-preparation/)                                                                    |
+| 4    | タンパク質・細胞を見る       | [Western blot](/methods/western-blot/) → [蛍光顕微鏡](/methods/fluorescence-microscopy/) → [免疫染色](/methods/immunostaining/) → [フローサイトメトリー](/methods/flow-cytometry/) |
+| 5    | 遺伝子機能を動かして確かめる | [CRISPR](/methods/crispr/) → [ノックアウト](/methods/knockout/) → [ノックダウン](/methods/knockdown/) → [過剰発現](/methods/overexpression/)                                       |
+
+ローディングコントロール、抗体検証、ハウスキーピング遺伝子、FACS、ELISA、レポーターアッセイは、対応する基本手法を読んだあとに補足として読むと整理しやすくなります。
+
 ## 目的別に戻る
 
 | 確認したいこと                    | まず読む記事                                                                                                  | 関連するFigure・論文読解                                                                                           |

@@ -25,6 +25,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -49,31 +50,35 @@ qPCRは quantitative PCR の略で、PCRの増幅過程を蛍光シグナルと�
 
 RNAの量を比べる場合は、RNAを[cDNA](/glossary/cdna/)に変換してからqPCRを行います。この場合は[RT-qPCR](/glossary/rt-qpcr/)と呼ばれ、遺伝子発現の変化を調べる実験として論文によく出てきます。
 
-## なぜ重要か
+## なぜqPCRの視点が重要か
 
 qPCRは、[遺伝子発現](/glossary/gene-expression/)の変化を確認する実験として頻繁に使われます。RNA-seqで見つけた候補遺伝子を別の方法で確認したり、処理条件による発現変化を少数の遺伝子で調べたりします。
 
 Figureでは[棒グラフ](/glossary/bar-plot/)や折れ線、増幅曲線として示されることがあります。何を基準に正規化したか、どの条件と比べたか、反復が何を意味するかを読むことが大切です。
 
-## 具体例
+## どんなqPCRがあるか
 
-qPCRでは、特定のDNA配列やcDNAを増幅しながら[蛍光](/glossary/fluorescence/)を測定し、量を推定します。遺伝子発現を調べる場合は、RNAをcDNAに変換してから測るRT-qPCRとして使われます。
+qPCRには、DNA量を直接比べる使い方と、RNAをcDNAに変換して発現量を比べるRT-qPCRがあります。結果の出し方も、標準曲線で量を推定する場合と、対照条件に対する相対量として示す場合があります。
 
-たとえば処理群と対照群で、ある遺伝子の発現量が何倍変わったかを比較します。
+読むときは、何を鋳型にしたか、何を基準に正規化したか、Ct値からどの値に変換したかを分けて確認します。
 
-## よく混同される概念
+## qPCRはどう調べるか
 
-- qPCRとRT-qPCR: qPCRは定量PCR全般、RT-qPCRは[逆転写](/glossary/reverse-transcription/)を含むRNA由来の測定です。
-- Ct値と発現量: Ct値はしきい値に達するサイクル数で、値が小さいほど初期量が多いことを示します。
-- 技術的反復と生物学的反復: 同じサンプルの測定繰り返しと、独立したサンプルの繰り返しは意味が違います。
+qPCRでは、増幅曲線がしきい値を超えるタイミング、プライマーの特異性、融解曲線や標準曲線、陰性対照を確認します。遺伝子発現を比べる場合は、参照遺伝子で正規化したうえで条件間の相対量を見ます。
+
+技術的反復は同じ試料の測定ばらつきを見るために、生物学的反復は独立したサンプル間で傾向が再現するかを見るために使います。Figureの点が何を表しているかを確認することが重要です。
+
+## qPCRの変化は何につながるか
+
+Ct値が小さくなることは、対象核酸が多い可能性を示します。相対発現量が増えた場合は、処理や条件によってmRNA量が変わった可能性があります。
+
+ただし、qPCRの変化は、プライマー効率、参照遺伝子、RNA品質、正規化方法の影響も受けます。発現量の変化だけで、タンパク質量や細胞機能の変化まで直接示したとは読みません。
 
 ## 論文や実験ではどう出てくるか
 
 論文では、相対発現量、fold change、ΔCt、ΔΔCtなどとして示されます。Methodsでは、プライマー配列、基準遺伝子、反復数、解析方法が重要です。
 
 Figureでは棒グラフや点付きグラフとして出ることが多く、どの基準遺伝子で正規化したかを確認します。
-
-## Figureで見る場所
 
 qPCR Figureでは、棒グラフだけでなく、増幅曲線、Ct値、正規化方法、[参照遺伝子](/glossary/reference-gene/)を合わせて確認します。
 
@@ -84,16 +89,15 @@ qPCR Figureでは、棒グラフだけでなく、増幅曲線、Ct値、正規�
 
 読み方は[qPCR plot](/figures/how-to-read-qpcr-plot/)と[棒グラフ](/figures/how-to-read-bar-plot/)に戻ると整理しやすくなります。
 
-## 英語表記と略語
+## どんな点でつまずきやすいか
 
-| 日本語名     | 英語名                     | 略語    |
-| ------------ | -------------------------- | ------- |
-| 定量PCR      | quantitative PCR           | qPCR    |
-| 逆転写qPCR   | reverse transcription qPCR | RT-qPCR |
-| サイクル閾値 | cycle threshold            | Ct      |
-| 参照遺伝子   | reference gene             | -       |
+### 似た用語との区別
 
-## よくある誤解
+- qPCRとRT-qPCR: qPCRは定量PCR全般、RT-qPCRは[逆転写](/glossary/reverse-transcription/)を含むRNA由来の測定です。
+- Ct値と発現量: Ct値はしきい値に達するサイクル数で、値が小さいほど初期量が多いことを示します。
+- 技術的反復と生物学的反復: 同じサンプルの測定繰り返しと、独立したサンプルの繰り返しは意味が違います。
+
+### 解釈の落とし穴
 
 - Ct値が小さいほど、対象核酸が多い可能性があります。ただし、実験条件や正規化を確認せずに比較してはいけません。
 - qPCRは遺伝子の働きを直接証明する実験ではありません。発現量の変化を測る手法です。
@@ -101,13 +105,44 @@ qPCR Figureでは、棒グラフだけでなく、増幅曲線、Ct値、正規�
 
 ## 重要用語
 
-- qPCR: PCRの増幅をリアルタイムに測る手法。
-- Ct値: 蛍光シグナルがしきい値を超えるサイクル数。
-- 参照遺伝子: 正規化の基準として使う遺伝子。
-- RT-qPCR: RNAをcDNAに変換してからqPCRで測る方法。
-- [反復](/glossary/biological-technical-replicates/): 条件間の差が独立したサンプルでどれくらい再現されるかを見る考え方。
-- [p値](/glossary/p-value/): 条件間の差を統計的に評価するときに使われる値。
-- [効果量](/glossary/effect-size/): 発現量の差がどれくらい大きいかを見る指標。
+<GlossaryTable
+  terms={[
+    {
+      term: 'qPCR',
+      english: 'quantitative PCR',
+      abbreviation: 'qPCR',
+      description: 'PCRの増幅をリアルタイムに測る手法。',
+      href: '/glossary/qpcr/',
+    },
+    {
+      term: 'Ct値',
+      english: 'cycle threshold',
+      abbreviation: 'Ct',
+      description: '蛍光シグナルがしきい値を超えるサイクル数。',
+      href: '/glossary/ct-value/',
+    },
+    {
+      term: '参照遺伝子',
+      english: 'reference gene',
+      description: '正規化の基準として使う遺伝子。',
+      href: '/glossary/reference-gene/',
+    },
+    {
+      term: 'RT-qPCR',
+      english: 'reverse transcription qPCR',
+      abbreviation: 'RT-qPCR',
+      description: 'RNAをcDNAに変換してからqPCRで測る方法。',
+      href: '/glossary/rt-qpcr/',
+    },
+    {
+      term: '反復',
+      english: 'replicate',
+      description:
+        '条件間の差が独立したサンプルでどれくらい再現されるかを見る考え方。',
+      href: '/glossary/biological-technical-replicates/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[

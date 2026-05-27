@@ -23,6 +23,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -41,7 +42,7 @@ PCRは、特定のDNA領域を試験管内で増やす方法です。
   caption="温度変化を利用して、変性、プライマー結合、伸長を繰り返し、特定のDNA領域を増幅します。"
 />
 
-PCRでは、目的のDNA領域をはさむ[プライマー](/glossary/primer/)、DNAポリメラーゼ、材料となるヌクレオチドを使います。温度を変化させながら、DNAをほどく変性、プライマーを結合させるアニーリング、新しいDNA鎖を伸ばす伸長を繰り返します。
+PCRでは、目的のDNA領域をはさむ[プライマー](/glossary/primer/)、[DNAポリメラーゼ](/glossary/dna-polymerase/)、材料となるヌクレオチドを使います。温度を変化させながら、DNAをほどく変性、プライマーを結合させる[アニーリング](/glossary/annealing/)、新しいDNA鎖を伸ばす伸長を繰り返します。
 
 PCRのポイントは、対象となるDNA領域だけを選んで増やせることです。プライマーは増幅したい領域の両端に対応する短いDNAで、どこを増やすかを決める手がかりになります。DNAポリメラーゼは、プライマーを起点に新しいDNA鎖を伸ばします。
 
@@ -49,60 +50,93 @@ PCRを繰り返すと、目的領域のコピー数は大きく増えます。�
 
 PCRは研究、環境検査、感染症検査技術などの基礎として広く使われます。この教材では原理の理解を目的とし、個別の診断や治療判断には踏み込みません。実験手法としてのPCRを理解すると、シーケンス解析や遺伝子検出の説明も読みやすくなります。
 
-## なぜ重要か
+## なぜPCRの視点が重要か
 
-[PCR](/glossary/pcr/)は、少量の[DNA](/glossary/dna/)から目的領域を増やし、後続の解析を可能にする基本手法です。特定の[遺伝子](/glossary/gene/)領域を確認したり、シーケンシング前に対象領域を用意したりする場面で使われます。
+PCRが重要なのは、少量の[DNA](/glossary/dna/)を扱える量に増やすだけでなく、どの領域を見るかをプライマーで決める手法だからです。特定の[遺伝子](/glossary/gene/)領域を確認したり、シーケンシング前に対象領域を用意したりする場面で使われます。
 
 PCRの原理を知ると、プライマー設計、増幅の特異性、陰性対照や陽性対照の意味が理解しやすくなります。結果を読むときも、「何が増幅されたのか」「増幅されなかった理由は何か」を考えられます。
 
-## 具体例
+## どんなPCRがあるか
 
 ある遺伝子の一部を調べたい場合、その領域の両端に結合するプライマーを設計します。PCRでその領域を増やしてから、ゲル電気泳動で増幅産物のサイズを確認したり、シーケンシングで配列を読んだりします。
 
 RNA量を調べる[RT-qPCR](/glossary/rt-qpcr/)では、まずRNAを[逆転写](/glossary/reverse-transcription/)して[cDNA](/glossary/cdna/)に変換し、そのDNAをPCRで増幅します。通常のPCRとRT-qPCRは関連しますが、目的や測り方が異なります。
 
-## よく混同される概念
+## PCRはどう確認するか
 
-- PCRとシーケンシング: PCRは特定領域を増幅する手法で、シーケンシングは塩基配列を読む手法です。
-- PCRとRT-qPCR: PCRはDNA増幅の基本手法で、RT-qPCRはRNA由来のcDNAを定量的に測る用途で使われます。
-- プライマーとDNAポリメラーゼ: プライマーは増幅位置を指定する短いDNAで、DNAポリメラーゼは新しいDNA鎖を伸ばす酵素です。
+PCRの結果は、増幅産物の有無、サイズ、配列、増幅曲線などで確認します。通常のPCRではゲル画像で目的サイズの[バンド](/glossary/band/)を見ることが多く、必要に応じてシーケンシングで配列を確認します。
+
+対照も重要です。鋳型DNAを入れない陰性対照で増幅が出ないか、増幅できるはずの陽性対照で反応が出るかを確認すると、汚染や反応不良を見分けやすくなります。
+
+## PCR結果の変化は何につながるか
+
+目的サイズのバンドが出ることは、設計した領域が増幅された可能性を示します。一方で、非特異的なバンド、弱い増幅、陰性対照での増幅は、プライマー設計、反応条件、混入などを見直す手がかりになります。
+
+RT-qPCRのような定量系では、増幅の早さや[Ct値](/glossary/ct-value/)が量の比較に使われます。ただし、PCRの結果だけで遺伝子の機能や疾患の意味まで直接決めるわけではありません。
 
 ## 論文や実験ではどう出てくるか
 
-PCRは、遺伝子の有無の確認、クローニング、変異確認、シーケンシング前処理、RT-qPCRなどで登場します。論文では、プライマー配列、増幅条件、ゲル画像、[Ct値](/glossary/ct-value/)、増幅産物のサイズとして示されることがあります。
-
-## Figureで見る場所
+PCRは、遺伝子の有無の確認、クローニング、変異確認、シーケンシング前処理、RT-qPCRなどで登場します。論文では、プライマー配列、増幅条件、ゲル画像、Ct値、増幅産物のサイズとして示されることがあります。
 
 PCRそのものはMethodsに書かれることが多いですが、結果はゲル画像、qPCRグラフ、シーケンシング結果の前処理として出てきます。
 
-- ゲル画像では、目的サイズの[バンド](/glossary/band/)、陰性対照、陽性対照を確認します。
+- ゲル画像では、目的サイズのバンド、陰性対照、陽性対照を確認します。
 - RT-qPCRにつながる場合は、Ct値、[正規化](/glossary/normalization/)、[参照遺伝子](/glossary/reference-gene/)を確認します。
 - シーケンシング前処理として使われる場合は、どの領域を増幅したかをMethodsで確認します。
 
 Figureだけではプライマーや増幅条件が分からないため、[Figure legend](/figures/figure-legend/)とMethodsを合わせて読みます。
 
-## 英語表記と略語
+## どんな点でつまずきやすいか
 
-| 日本語名             | 英語名                    | 略語 |
-| -------------------- | ------------------------- | ---- |
-| ポリメラーゼ連鎖反応 | polymerase chain reaction | PCR  |
-| プライマー           | primer                    | -    |
-| DNAポリメラーゼ      | DNA polymerase            | -    |
-| アニーリング         | annealing                 | -    |
+### 似た用語との区別
 
-## よくある誤解
+- PCRとシーケンシング: PCRは特定領域を増幅する手法で、シーケンシングは塩基配列を読む手法です。
+- PCRとRT-qPCR: PCRはDNA増幅の基本手法で、RT-qPCRはRNA由来のcDNAを定量的に測る用途で使われます。
+- プライマーとDNAポリメラーゼ: プライマーは増幅位置を指定する短いDNAで、DNAポリメラーゼは新しいDNA鎖を伸ばす酵素です。
+
+### 解釈の落とし穴
 
 - PCRはDNAを「発見」する装置ではなく、対象領域を増幅して検出しやすくする方法です。
 - PCRの結果は条件設計や試料の質に影響されます。
 
 ## 重要用語
 
-- PCR: 特定のDNA領域を試験管内で増幅する手法。
-- プライマー: 増幅したい領域の端を指定する短いDNA。
-- DNAポリメラーゼ: DNA鎖を伸ばして新しいDNAを合成する酵素。
-- アニーリング: プライマーが標的DNAに結合する段階。
-- [対照群](/glossary/control-group/): 増幅が実験条件によるものか、混入や非特異的反応ではないかを確認する基準。
-- [反復](/glossary/biological-technical-replicates/): 増幅の有無や強さが一回だけの測定に依存していないかを見る考え方。
+<GlossaryTable
+  terms={[
+    {
+      term: 'PCR',
+      english: 'polymerase chain reaction',
+      abbreviation: 'PCR',
+      description: '特定のDNA領域を試験管内で増幅する手法。',
+      href: '/glossary/pcr/',
+    },
+    {
+      term: 'プライマー',
+      english: 'primer',
+      description: '増幅したい領域の端を指定する短いDNA。',
+      href: '/glossary/primer/',
+    },
+    {
+      term: 'DNAポリメラーゼ',
+      english: 'DNA polymerase',
+      description: 'DNA鎖を伸ばして新しいDNAを合成する酵素。',
+      href: '/glossary/dna-polymerase/',
+    },
+    {
+      term: 'アニーリング',
+      english: 'annealing',
+      description: 'プライマーが標的DNAに結合する段階。',
+      href: '/glossary/annealing/',
+    },
+    {
+      term: '対照群',
+      english: 'control group',
+      description:
+        '増幅が実験条件によるものか、混入や非特異的反応ではないかを確認する基準。',
+      href: '/glossary/control-group/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[
@@ -136,6 +170,6 @@ Figureだけではプライマーや増幅条件が分からないため、[Figu
   items={[
     { title: 'qPCRとは何か', href: '/methods/qpcr/' },
     { title: 'qPCR plotの読み方', href: '/figures/how-to-read-qpcr-plot/' },
-    { title: '用語: PCR', href: '/glossary/pcr/' },
+    { title: 'シーケンシングとは何か', href: '/methods/sequencing/' },
   ]}
 />

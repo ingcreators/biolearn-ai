@@ -26,6 +26,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -50,29 +51,35 @@ RT-qPCRでは、対象遺伝子に由来するcDNAがどのくらいあるかを
 
 RNA量は試料の取り扱い、逆転写効率、プライマー設計、参照遺伝子の選び方に影響されます。したがって、Figureを見るときは、どのRNAを測ったか、何で正規化したか、どの条件と比べたかを確認します。
 
-## なぜ重要か
+## なぜRT-qPCRの視点が重要か
 
 RT-qPCRは、[遺伝子発現](/glossary/gene-expression/)の変化を確認する代表的な実験です。RNA-seqで見つけた候補を検証する、刺激や遺伝子操作で発現が変わるかを調べる、といった場面でよく使われます。
 
-## 具体例
+RT-qPCRの視点を持つと、Figureの「発現が上がった」「発現が下がった」という結果を、RNA抽出、逆転写、qPCR、正規化という流れに分けて読めます。どの段階の条件が結果に影響しうるかも見えやすくなります。
+
+## どんなRT-qPCRがあるか
 
 RT-qPCRは、RNAをcDNAに逆転写してからqPCRで測る方法です。特定の遺伝子の発現量を、処理群と対照群、時間経過、組織間などで比較するときに使われます。
 
 たとえば炎症刺激後にサイトカイン遺伝子のmRNA量が増えるかを調べる実験があります。
 
-## よく混同される概念
+## RT-qPCRはどう調べるか
 
-- RT-qPCRとqPCR: RT-qPCRはRNAを測るために逆転写を含みます。qPCRだけならDNAを直接測る場合もあります。
-- mRNA量とタンパク質量: mRNAが増えても、タンパク質量や活性が同じように増えるとは限りません。
-- 基準遺伝子と対照群: 基準遺伝子は正規化に使う遺伝子、対照群は比較対象の条件です。
+RT-qPCRでは、RNAの品質、逆転写条件、プライマー、参照遺伝子、陰性対照、反復数を確認します。結果は、Ct値、ΔCt、ΔΔCt、fold change、相対mRNA発現量などとして整理されます。
+
+参照遺伝子は「常に変わらない遺伝子」ではなく、その実験条件で安定していることを期待して使う基準です。条件によっては複数の参照遺伝子や別の確認方法が必要になります。
+
+## RT-qPCRの変化は何につながるか
+
+RT-qPCRでmRNA量が変わることは、遺伝子発現の調節が変わった可能性を示します。刺激、分化、遺伝子操作、薬剤処理などの影響を調べる手がかりになります。
+
+ただし、mRNA量の変化はタンパク質量や活性の変化と同じではありません。翻訳、分解、細胞状態、サンプル組成の違いも考える必要があります。
 
 ## 論文や実験ではどう出てくるか
 
 論文では、相対mRNA発現量やfold changeとして表示されます。Methodsでは、RNA抽出、逆転写条件、[プライマー](/glossary/primer/)、基準遺伝子、ΔΔCt法などが書かれます。
 
 読むときは、生物学的反復の数、基準遺伝子の妥当性、どの条件を1として正規化しているかを確認します。
-
-## Figureで見る場所
 
 RT-qPCR Figureでは、RNA量の比較がどの基準で正規化されているかを確認します。RNA-seqの候補遺伝子を検証するFigureでは、RNA-seqの方向性とRT-qPCRの方向性が一致しているかも見ます。
 
@@ -83,16 +90,15 @@ RT-qPCR Figureでは、RNA量の比較がどの基準で正規化されている
 
 [棒グラフ](/glossary/bar-plot/)として出る場合は[棒グラフの読み方](/figures/how-to-read-bar-plot/)へ、増幅やCt値の考え方は[qPCR plot](/figures/how-to-read-qpcr-plot/)へ戻ります。
 
-## 英語表記と略語
+## どんな点でつまずきやすいか
 
-| 日本語名   | 英語名                     | 略語    |
-| ---------- | -------------------------- | ------- |
-| 逆転写qPCR | reverse transcription qPCR | RT-qPCR |
-| 逆転写     | reverse transcription      | RT      |
-| 相補的DNA  | complementary DNA          | cDNA    |
-| 参照遺伝子 | reference gene             | -       |
+### 似た用語との区別
 
-## よくある誤解
+- RT-qPCRとqPCR: RT-qPCRはRNAを測るために逆転写を含みます。qPCRだけならDNAを直接測る場合もあります。
+- mRNA量とタンパク質量: mRNAが増えても、タンパク質量や活性が同じように増えるとは限りません。
+- 基準遺伝子と対照群: 基準遺伝子は正規化に使う遺伝子、対照群は比較対象の条件です。
+
+### 解釈の落とし穴
 
 - RT-qPCRはRNAを直接増幅しているわけではありません。cDNAに変換してから測ります。
 - 参照遺伝子で正規化していても、実験条件に合った基準かは確認が必要です。
@@ -100,13 +106,44 @@ RT-qPCR Figureでは、RNA量の比較がどの基準で正規化されている
 
 ## 重要用語
 
-- 逆転写: RNAを鋳型にしてcDNAを作る反応。
-- cDNA: RNAに対応するDNA。
-- Ct値: qPCRで蛍光シグナルが[しきい値](/glossary/threshold/)を超えるサイクル数。
-- 参照遺伝子: 相対量を比較するための基準に使う遺伝子。
-- [対照群](/glossary/control-group/): 処理や条件の違いを比較するための基準。
-- [p値](/glossary/p-value/): 条件間の発現差を統計的に評価するときに使われる値。
-- [効果量](/glossary/effect-size/): 発現差の大きさを読むための指標。
+<GlossaryTable
+  terms={[
+    {
+      term: 'RT-qPCR',
+      english: 'reverse transcription qPCR',
+      abbreviation: 'RT-qPCR',
+      description: 'RNAをcDNAに変換してからqPCRで測る方法。',
+      href: '/glossary/rt-qpcr/',
+    },
+    {
+      term: '逆転写',
+      english: 'reverse transcription',
+      abbreviation: 'RT',
+      description: 'RNAを鋳型にしてcDNAを作る反応。',
+      href: '/glossary/reverse-transcription/',
+    },
+    {
+      term: 'cDNA',
+      english: 'complementary DNA',
+      abbreviation: 'cDNA',
+      description: 'RNAに対応するDNA。',
+      href: '/glossary/cdna/',
+    },
+    {
+      term: 'Ct値',
+      english: 'cycle threshold',
+      abbreviation: 'Ct',
+      description: 'qPCRで蛍光シグナルがしきい値を超えるサイクル数。',
+      href: '/glossary/ct-value/',
+    },
+    {
+      term: '参照遺伝子',
+      english: 'reference gene',
+      description: '相対量を比較するための基準に使う遺伝子。',
+      href: '/glossary/reference-gene/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[

@@ -23,6 +23,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -47,21 +48,29 @@ Western blotでは、サンプル中のタンパク質を大きさで分け、�
 
 ローディングコントロールは、各レーンに入ったサンプル量の違いを補正するための基準です。代表的な画像だけでなく、複数の独立実験と定量結果が示されているかも重要です。
 
-## なぜ重要か
+## なぜWestern blotの視点が重要か
 
 Western blotは、RNAや遺伝子発現の変化がタンパク質レベルでも見えるかを確認する場面でよく使われます。また、リン酸化などのタンパク質修飾を見るFigureにも登場します。
 
-## 具体例
+Western blotの視点を持つと、バンドの有無や濃さだけでなく、サンプル量、抗体、分子量、補正、反復を合わせて読めます。これは、画像の印象だけで結論を急がないための大事な足場になります。
+
+## どんなWestern blotがあるか
 
 Western blotでは、細胞や組織からタンパク質を抽出し、[ゲル](/glossary/gel/)で大きさごとに分け、抗体で目的タンパク質を検出します。処理によってタンパク質量が変わるか、リン酸化などの修飾が変わるかを見ることがあります。
 
 たとえば刺激前後でリン酸化ERKのバンドが強くなるかを比較する図があります。
 
-## よく混同される概念
+## Western blotはどう確認するか
 
-- Western blotと[免疫染色](/glossary/immunostaining/): どちらも抗体を使いますが、Western blotはタンパク質を分離して量やサイズを見る方法です。
-- バンドの濃さと絶対量: バンドの濃さは量の手がかりですが、[露光](/glossary/exposure/)や抗体、[正規化](/glossary/normalization/)の影響を受けます。
-- 目的タンパク質とローディングコントロール: 目的タンパク質の変化を見るには、投入量の確認も必要です。
+Western blotでは、目的バンドが予想される分子量付近に出ているか、ローディングコントロールが安定しているか、定量値がどの基準で補正されているかを確認します。抗体が目的タンパク質を特異的に検出しているかも重要です。
+
+代表画像だけでなく、複数の独立実験をまとめた定量グラフがあるかを見ます。露光が飽和していると濃さの比較が不安定になるため、MethodsやFigure legendで検出条件も確認します。
+
+## Western blotの変化は何につながるか
+
+目的バンドが強くなることは、タンパク質量や特定の修飾が増えた可能性を示します。リン酸化抗体を使う場合は、シグナル伝達が変化した手がかりとして読まれることがあります。
+
+ただし、タンパク質量の変化は、mRNA量、翻訳、分解、細胞数、サンプル調製の影響を受けます。バンドの差を生物学的な結論へつなげるには、対照や別手法の結果と合わせて考えます。
 
 ## 論文や実験ではどう出てくるか
 
@@ -69,16 +78,15 @@ Western blotでは、細胞や組織からタンパク質を抽出し、[ゲル]
 
 読むときは、分子量マーカー、ローディングコントロール、反復数、定量方法、[代表画像](/glossary/representative-image/)と定量結果の対応を確認します。
 
-## 英語表記と略語
+## どんな点でつまずきやすいか
 
-| 日本語名                 | 英語名                  | 略語 |
-| ------------------------ | ----------------------- | ---- |
-| Western blot             | Western blot            | WB   |
-| 抗体                     | antibody                | -    |
-| ローディングコントロール | loading control         | -    |
-| 分子量マーカー           | molecular weight marker | -    |
+### 似た用語との区別
 
-## よくある誤解
+- Western blotと[免疫染色](/glossary/immunostaining/): どちらも抗体を使いますが、Western blotはタンパク質を分離して量やサイズを見る方法です。
+- バンドの濃さと絶対量: バンドの濃さは量の手がかりですが、[露光](/glossary/exposure/)や抗体、[正規化](/glossary/normalization/)の影響を受けます。
+- 目的タンパク質とローディングコントロール: 目的タンパク質の変化を見るには、投入量の確認も必要です。
+
+### 解釈の落とし穴
 
 - バンドが濃いだけで、すぐにタンパク質量が増えたと断定はできません。
 - ローディングコントロールが安定していないと、目的バンドの比較も不安定になります。
@@ -86,13 +94,41 @@ Western blotでは、細胞や組織からタンパク質を抽出し、[ゲル]
 
 ## 重要用語
 
-- バンド: 検出されたタンパク質の位置と量を示す帯。
-- 抗体: 特定のタンパク質を認識する分子。
-- ローディングコントロール: サンプル量の違いを補正する基準。
-- 分子量: タンパク質の大きさの目安。
-- [対照群](/glossary/control-group/): バンドの変化を解釈するための比較基準。
-- [反復](/glossary/biological-technical-replicates/): バンドの差が独立したサンプルで再現されるかを見る考え方。
-- [Figure legend](/glossary/figure-legend/): 抗体、補正方法、n数、統計表示を確認する説明文。
+<GlossaryTable
+  terms={[
+    {
+      term: 'Western blot',
+      english: 'Western blot',
+      abbreviation: 'WB',
+      description: '特定のタンパク質を抗体でバンドとして検出する手法。',
+      href: '/glossary/western-blot/',
+    },
+    {
+      term: 'バンド',
+      english: 'band',
+      description: '検出されたタンパク質の位置と量を示す帯。',
+      href: '/glossary/band/',
+    },
+    {
+      term: '抗体',
+      english: 'antibody',
+      description: '特定のタンパク質を認識する分子。',
+      href: '/glossary/antibody/',
+    },
+    {
+      term: 'ローディングコントロール',
+      english: 'loading control',
+      description: 'サンプル量の違いを補正する基準。',
+      href: '/glossary/loading-control/',
+    },
+    {
+      term: '分子量',
+      english: 'molecular weight',
+      description: 'タンパク質の大きさの目安。',
+      href: '/glossary/molecular-weight/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[

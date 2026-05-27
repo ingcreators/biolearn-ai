@@ -5,7 +5,7 @@ part: methods
 module: sequencing-workflow
 level: foundation
 priority: P0
-order: 80
+order: 70
 relatedTerms:
   - ngs
   - sequencing
@@ -23,6 +23,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -47,29 +48,35 @@ NGSで得られる[リード](/glossary/read/)は、参照ゲノムや転写産�
 
 重要なのは、NGSは一つの実験名というより、多くの解析手法を支える測定技術だという点です。RNA-seq、ChIP-seq、ATAC-seq、[全ゲノムシーケンシング](/glossary/whole-genome-sequencing/)などは、目的と前処理、解析方法が異なります。
 
-## なぜ重要か
+## なぜNGSの視点が重要か
 
 論文Figureでは、NGS由来の結果が[ヒートマップ](/glossary/heatmap/)、[Volcano plot](/glossary/volcano-plot/)、ゲノムブラウザ、UMAPなどとして示されます。NGSの大まかな流れを知っていると、Figureが何のデータから作られているのかを追いやすくなります。
 
-## 具体例
+NGSの視点は、配列を読む工程と、その後の解析を分けるために役立ちます。同じ「NGSデータ」でも、RNA-seq、変異解析、クロマチン解析、single-cell解析では、読み取っている分子もFigureの意味も異なります。
+
+## どんなNGSがあるか
 
 NGSは、RNA-seq、全ゲノムシーケンシング、[エクソーム解析](/glossary/exome-sequencing/)、ChIP-seq、ATAC-seq、single-cell RNA-seqなどで使われます。大量の短いリードを読み、それをゲノムや転写産物に対応づけて解析します。
 
 たとえばRNA-seqでは、各遺伝子に由来するリード数を数え、発現量の比較に使います。
 
-## よく混同される概念
+## NGSはどう調べるか
 
-- NGSとRNA-seq: NGSは配列を読む技術の総称で、RNA-seqはその応用の一つです。
-- シーケンシングと解析: シーケンシングは配列を読む工程で、発現量推定や変異検出はその後の解析です。
-- リード数と生物学的意味: リードが多いことは手がかりですが、[正規化](/glossary/normalization/)や実験設計なしに結論は出せません。
+NGSでは、ライブラリ調製、シーケンシング、品質管理、マッピング、定量や検出という流れでデータが作られます。Methodsでは、サンプル、リード長、シーケンス深度、ライブラリ調製、解析パイプラインを確認します。
+
+Figureを見るときは、リード数、サンプル数、細胞数、遺伝子数などの単位を混同しないことが重要です。大量のリードがあることと、独立サンプルが多いことは同じではありません。
+
+## NGS結果の変化は何につながるか
+
+RNA-seqでは発現量の違い、ゲノム解析では変異やコピー数、ChIP-seqやATAC-seqではゲノム上のシグナルの違いとして現れます。NGSは、多くの分子や領域を同時に調べられるため、候補探索に向いています。
+
+一方で、多数の項目を同時に調べるため、正規化、バッチ効果、品質管理、[多重検定補正](/glossary/multiple-testing-correction/)が解釈に関わります。Figureのきれいさだけでなく、解析条件をMethodsで確認します。
 
 ## 論文や実験ではどう出てくるか
 
 Methodsでは、プラットフォーム、リード長、シーケンス深度、ライブラリ調製、解析パイプラインが書かれます。Resultsでは、リード数、マッピング率、発現量、変異、[ピーク](/glossary/peak/)などの形で出てきます。
 
 Figureでは、ヒートマップ、Volcano plot、ゲノムブラウザ、UMAPなど、解析後の可視化として示されることが多いです。
-
-## Figureで見る場所
 
 NGSのFigureでは、測定技術よりも「どの解析結果として見せているか」を先に確認します。
 
@@ -80,16 +87,15 @@ NGSのFigureでは、測定技術よりも「どの解析結果として見せ�
 
 まずは[シーケンスデータ](/bioinformatics/sequence-data/)でデータの流れを押さえ、Figure別に読み方を分けます。
 
-## 英語表記と略語
+## どんな点でつまずきやすいか
 
-| 日本語名             | 英語名                     | 略語 |
-| -------------------- | -------------------------- | ---- |
-| 次世代シーケンシング | next-generation sequencing | NGS  |
-| リード               | read                       | -    |
-| ライブラリ           | sequencing library         | -    |
-| マッピング           | mapping                    | -    |
+### 似た用語との区別
 
-## よくある誤解
+- NGSとRNA-seq: NGSは配列を読む技術の総称で、RNA-seqはその応用の一つです。
+- シーケンシングと解析: シーケンシングは配列を読む工程で、発現量推定や変異検出はその後の解析です。
+- リード数と生物学的意味: リードが多いことは手がかりですが、[正規化](/glossary/normalization/)や実験設計なしに結論は出せません。
+
+### 解釈の落とし穴
 
 - NGSは特定の1種類の解析だけを指す言葉ではありません。
 - NGSのFigureを読むには、測定目的と解析手順を合わせて確認する必要があります。
@@ -97,12 +103,42 @@ NGSのFigureでは、測定技術よりも「どの解析結果として見せ�
 
 ## 重要用語
 
-- NGS: 大量の配列断片を並列に読む技術。
-- ライブラリ調製: 試料をシーケンシング可能な形に整える工程。
-- リード: シーケンサーから得られる配列断片。
-- マッピング: リードを参照配列に対応づける解析。
-- [シーケンスデータ](/glossary/sequence-data/): NGSから得られる配列情報を解析に使える形で整理したデータ。
-- [多重検定補正](/glossary/multiple-testing-correction/): 多数の遺伝子や変異を同時に調べる解析で、偶然の有意を増やしすぎないための考え方。
+<GlossaryTable
+  terms={[
+    {
+      term: 'NGS',
+      english: 'next-generation sequencing',
+      abbreviation: 'NGS',
+      description: '大量の配列断片を並列に読む技術。',
+      href: '/glossary/ngs/',
+    },
+    {
+      term: 'ライブラリ調製',
+      english: 'library preparation',
+      description: '試料をシーケンシング可能な形に整える工程。',
+      href: '/glossary/library-preparation/',
+    },
+    {
+      term: 'リード',
+      english: 'read',
+      description: 'シーケンサーから得られる配列断片。',
+      href: '/glossary/read/',
+    },
+    {
+      term: 'マッピング',
+      english: 'mapping',
+      description: 'リードを参照配列に対応づける解析。',
+      href: '/glossary/mapping/',
+    },
+    {
+      term: '多重検定補正',
+      english: 'multiple testing correction',
+      description:
+        '多数の遺伝子や変異を同時に調べる解析で、偶然の有意を増やしすぎないための考え方。',
+      href: '/glossary/multiple-testing-correction/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[

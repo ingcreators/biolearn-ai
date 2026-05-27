@@ -5,7 +5,7 @@ part: methods
 module: protein-cell-measurement
 level: foundation
 priority: P1
-order: 100
+order: 105
 relatedTerms:
   - figure-legend
   - control-group
@@ -17,12 +17,14 @@ relatedTerms:
 prerequisites:
   - /fundamentals/protein/
   - /fundamentals/cell/
+  - /methods/fluorescence-microscopy/
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -47,29 +49,35 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 免疫染色は「ある場所にタンパク質がある可能性」を示す手法です。抗体の特異性、背景シグナル、[画像処理](/glossary/image-processing/)の条件が結果に影響するため、MethodsやFigure legendを合わせて読みます。
 
-## なぜ重要か
+## なぜ免疫染色の視点が重要か
 
 タンパク質がどこにあるかは、機能を考えるうえで重要です。たとえば転写因子が核に移動する、受容体が細胞膜にある、タンパク質がミトコンドリアに局在する、といった結果はFigureでよく示されます。
 
-## 具体例
+免疫染色の視点を持つと、画像の色や明るさだけでなく、局在、対照、スケール、撮影条件、定量方法を合わせて読めます。これは、代表画像から読みすぎないために重要です。
 
-免疫染色では、抗体を使って細胞や組織中のタンパク質の位置を可視化します。細胞核、細胞膜、細胞骨格、特定の細胞タイプのマーカーなどを蛍光シグナルとして観察できます。
+## どんな免疫染色があるか
+
+免疫染色には、蛍光色素で観察する免疫蛍光染色、酵素反応の発色で見る免疫組織化学、細胞を固定して見る場合や組織切片で見る場合があります。細胞核、細胞膜、細胞骨格、特定の細胞タイプのマーカーなどをシグナルとして観察できます。
 
 たとえば、核をDAPIで染め、目的タンパク質を緑色、細胞タイプマーカーを赤色で示すような図があります。
 
-## よく混同される概念
+## 免疫染色ではどう観察するか
 
-- 免疫染色と免疫組織化学: どちらも抗体で検出しますが、組織切片で酵素発色を使う場合など文脈が異なることがあります。
-- シグナルの強さとタンパク質量: 蛍光の強さは量の手がかりですが、撮影条件や抗体の特異性にも影響されます。
-- 共局在と直接結合: 同じ場所に見えることは、分子同士が直接結合する証明ではありません。
+免疫染色では、どのチャンネルがどの標識を示すか、シグナルが核・細胞膜・細胞質・細胞小器官のどこに見えるかを確認します。スケールバー、倍率、視野の選び方も画像解釈に関わります。
+
+対照として、一次抗体なし、既知の陽性サンプル、ノックダウンやノックアウトサンプルなどが使われることがあります。抗体検証があると、シグナルの意味を読みやすくなります。
+
+## 蛍光シグナルの変化は何につながるか
+
+シグナルの場所が変わることは、タンパク質の局在変化を示す手がかりになります。シグナルの強さが変わることは、発現量や修飾状態の変化を示唆する場合があります。
+
+ただし、明るさは撮影条件、抗体、背景、画像処理の影響を受けます。共局在して見える場合も、同じ領域にあることを示す手がかりであり、直接結合の証明ではありません。
 
 ## 論文や実験ではどう出てくるか
 
 論文では、顕微鏡画像として示され、拡大画像、スケールバー、チャンネルの重ね合わせ、定量グラフが添えられることがあります。Methodsでは、抗体名、希釈倍率、固定方法、画像取得条件が重要です。
 
 読むときは、対照染色、スケールバー、どのチャンネルが何を示すか、定量が画像の印象と対応しているかを確認します。
-
-## Figureで見る場所
 
 免疫染色Figureでは、[代表画像](/glossary/representative-image/)と定量グラフを分けて読みます。
 
@@ -80,16 +88,15 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 画像そのものの読み方は[免疫染色画像](/figures/how-to-read-immunostaining/)と[顕微鏡画像](/figures/how-to-read-microscopy-image/)に進むと整理できます。
 
-## 英語表記と略語
+## どんな点でつまずきやすいか
 
-| 日本語名     | 英語名             | 略語 |
-| ------------ | ------------------ | ---- |
-| 免疫染色     | immunostaining     | -    |
-| 免疫蛍光染色 | immunofluorescence | IF   |
-| 抗体         | antibody           | -    |
-| 局在         | localization       | -    |
+### 似た用語との区別
 
-## よくある誤解
+- 免疫染色と免疫組織化学: どちらも抗体で検出しますが、組織切片で酵素発色を使う場合など文脈が異なることがあります。
+- シグナルの強さとタンパク質量: 蛍光の強さは量の手がかりですが、撮影条件や抗体の特異性にも影響されます。
+- 共局在と直接結合: 同じ場所に見えることは、分子同士が直接結合する証明ではありません。
+
+### 解釈の落とし穴
 
 - 明るい画像ほど必ず発現が高いとは限りません。撮影条件や画像処理を確認します。
 - シグナルが見えるだけで、抗体が完全に特異的とは限りません。
@@ -97,12 +104,41 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 ## 重要用語
 
-- 抗体: 特定のタンパク質を認識する分子。
-- 蛍光シグナル: 蛍光色素によって可視化された信号。
-- 局在: 分子が細胞内や組織内のどこにあるか。
-- 陰性対照: 非特異的なシグナルを確認するための対照。
-- [反復](/glossary/biological-technical-replicates/): 複数のサンプル、視野、細胞で同じ傾向が見えるかを確認する考え方。
-- [Figure legend](/glossary/figure-legend/): 抗体、染色条件、スケールバー、定量方法を確認する説明文。
+<GlossaryTable
+  terms={[
+    {
+      term: '免疫染色',
+      english: 'immunostaining',
+      description: '抗体を使って細胞や組織内のタンパク質を可視化する手法。',
+      href: '/glossary/immunostaining/',
+    },
+    {
+      term: '免疫蛍光染色',
+      english: 'immunofluorescence',
+      abbreviation: 'IF',
+      description: '蛍光標識を使って抗体シグナルを観察する免疫染色。',
+      href: '/glossary/immunofluorescence/',
+    },
+    {
+      term: '抗体',
+      english: 'antibody',
+      description: '特定のタンパク質を認識する分子。',
+      href: '/glossary/antibody/',
+    },
+    {
+      term: '蛍光シグナル',
+      english: 'fluorescence signal',
+      description: '蛍光色素によって可視化された信号。',
+      href: '/glossary/fluorescence/',
+    },
+    {
+      term: '局在',
+      english: 'localization',
+      description: '分子が細胞内や組織内のどこにあるか。',
+      href: '/glossary/protein-localization/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[

@@ -1289,6 +1289,20 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'methods-and-analysis',
   },
   {
+    term: 'DNAポリメラーゼ',
+    english: 'DNA polymerase',
+    description: '既存のDNA鎖を手がかりにして新しいDNA鎖を伸ばす酵素。',
+    href: '/glossary/dna-polymerase/',
+    category: 'methods-and-analysis',
+  },
+  {
+    term: 'アニーリング',
+    english: 'annealing',
+    description: 'PCRでプライマーが標的DNA配列に結合する段階。',
+    href: '/glossary/annealing/',
+    category: 'methods-and-analysis',
+  },
+  {
     term: 'シーケンシング',
     english: 'sequencing',
     description: 'DNAやRNA由来の塩基配列を読み取る技術の総称。',
@@ -1529,6 +1543,14 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'methods-and-analysis',
   },
   {
+    term: '免疫蛍光染色',
+    english: 'immunofluorescence',
+    abbreviation: 'IF',
+    description: '蛍光標識を使って抗体シグナルを観察する免疫染色。',
+    href: '/glossary/immunofluorescence/',
+    category: 'methods-and-analysis',
+  },
+  {
     term: '抗体',
     english: 'antibody',
     description: '特定の分子を認識して結合するタンパク質。',
@@ -1584,6 +1606,13 @@ export const glossaryTerms: GlossaryTerm[] = [
     english: 'flow cytometry',
     description: '流れる細胞を1細胞ずつ測定し、細胞集団の特徴を調べる方法。',
     href: '/glossary/flow-cytometry/',
+    category: 'methods-and-analysis',
+  },
+  {
+    term: '陽性率',
+    english: 'positive rate',
+    description: '特定のマーカーや条件に陽性と判定された細胞やサンプルの割合。',
+    href: '/glossary/positive-rate/',
     category: 'methods-and-analysis',
   },
   {
@@ -1733,6 +1762,21 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'methods-and-analysis',
   },
   {
+    term: '目的タンパク質',
+    english: 'target protein',
+    description: '実験で量、修飾、局在などを調べたい対象のタンパク質。',
+    href: '/glossary/target-protein/',
+    category: 'methods-and-analysis',
+  },
+  {
+    term: '総タンパク質染色',
+    english: 'total protein staining',
+    description:
+      'レーン全体のタンパク質量を確認するために総タンパク質を染める方法。',
+    href: '/glossary/total-protein-staining/',
+    category: 'methods-and-analysis',
+  },
+  {
     term: 'バンド',
     english: 'band',
     description: 'Western blotやゲルで分離された分子が帯状に見える信号。',
@@ -1780,6 +1824,34 @@ export const glossaryTerms: GlossaryTerm[] = [
     english: 'library',
     description: 'シーケンシングで読める形に準備されたDNAやcDNA断片の集まり。',
     href: '/glossary/library/',
+    category: 'methods-and-analysis',
+  },
+  {
+    term: 'ライブラリ調製',
+    english: 'library preparation',
+    description: 'DNAやcDNAをシーケンサーで読める形に整える工程。',
+    href: '/glossary/library-preparation/',
+    category: 'methods-and-analysis',
+  },
+  {
+    term: 'アダプター',
+    english: 'sequencing adapter',
+    description: 'シーケンサーで読み取るために核酸断片の端に付ける配列。',
+    href: '/glossary/sequencing-adapter/',
+    category: 'methods-and-analysis',
+  },
+  {
+    term: 'インデックス',
+    english: 'index / sample barcode',
+    description: 'NGSでサンプルを識別するためにライブラリへ付ける短い配列。',
+    href: '/glossary/sample-index/',
+    category: 'methods-and-analysis',
+  },
+  {
+    term: '断片化',
+    english: 'fragmentation',
+    description: '核酸などの長い分子を解析しやすい長さに分ける工程。',
+    href: '/glossary/fragmentation/',
     category: 'methods-and-analysis',
   },
   {
@@ -2158,12 +2230,33 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'statistics-and-design',
   },
   {
+    term: '溶媒対照',
+    english: 'vehicle control',
+    description: '薬剤を溶かす溶媒だけを加え、溶媒の影響を確認する対照。',
+    href: '/glossary/solvent-control/',
+    category: 'statistics-and-design',
+  },
+  {
     term: '陽性対照',
     english: 'positive control',
     description:
       '変化が起こるはずの条件を置き、測定系が機能していることを確認する対照。',
     href: '/glossary/positive-control/',
     category: 'statistics-and-design',
+  },
+  {
+    term: '背景信号',
+    english: 'background signal',
+    description: '目的の反応とは別に測定系や試料から見える信号。',
+    href: '/glossary/background-signal/',
+    category: 'methods-and-analysis',
+  },
+  {
+    term: '非特異的反応',
+    english: 'non-specific reaction',
+    description: '目的の対象以外への結合や反応によって生じる信号。',
+    href: '/glossary/nonspecific-reaction/',
+    category: 'methods-and-analysis',
   },
   {
     term: '変数',

@@ -21,6 +21,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -43,21 +44,29 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 陽性対照が反応しない場合、実験系や検出方法に問題がある可能性があります。陰性対照で反応が出る場合、非特異的な反応、混入、背景シグナルなどを考える必要があります。
 
-## なぜ重要か
+## なぜ陽性対照と陰性対照の視点が重要か
 
 Figureで差が見えても、陽性対照と陰性対照が適切でないと、その差が本当に目的の現象を反映しているのか判断しにくくなります。MethodsとFigure legendで、どの条件がどの対照として置かれているかを確認します。
 
-## 具体例
+陽性対照と陰性対照の視点は、実験系が「反応できる状態か」と「余計な反応を出していないか」を分けて見るために役立ちます。結果を信じる前に、測定系そのものが期待どおり振る舞っているかを確かめます。
+
+## どんな陽性対照と陰性対照があるか
 
 PCRでは、目的配列を含むDNAを陽性対照、DNAを入れない反応を陰性対照として使うことがあります。[免疫染色](/glossary/immunostaining/)では、既知の陽性組織や一次抗体なしの条件が対照になります。
 
 薬剤反応の実験では、反応が出ることが分かっている薬剤を陽性対照、溶媒のみを陰性対照として使う場合があります。
 
-## よく混同される概念
+## 陽性対照と陰性対照はどう確認するか
 
-- 陽性対照と実験群: 陽性対照は系が反応できることを確認する条件で、主に検証したい実験群とは別です。
-- 陰性対照と未処理: 未処理が陰性対照になる場合もありますが、操作や溶媒をそろえた対照が必要なことがあります。
-- 対照の有無と結論の強さ: 対照があるだけで十分ではなく、問いに合った対照である必要があります。
+Figureでは、positive control、negative control、no template control、no primary antibody、vehicleなどのラベルを探します。Methodsでは、それぞれの対照が何を確認する目的で置かれているかを読みます。
+
+陽性対照が期待通りに反応し、陰性対照で不要なシグナルが低いと、試験条件の結果を解釈しやすくなります。どちらかが崩れている場合、主結果の前に測定系の信頼性を考える必要があります。
+
+## 対照結果の変化は何につながるか
+
+陽性対照が弱い場合、試薬、サンプル処理、検出系、測定条件に問題がある可能性があります。陰性対照が強い場合、[背景信号](/glossary/background-signal/)、[非特異的反応](/glossary/nonspecific-reaction/)、混入、ゲート設定の問題を考えます。
+
+対照の結果は、主張を直接証明するというより、主結果を読める実験系かどうかを支える情報です。対照が問いに合っているかを確認します。
 
 ## 論文や実験ではどう出てくるか
 
@@ -65,9 +74,7 @@ PCRでは、目的配列を含むDNAを陽性対照、DNAを入れない反応�
 
 読むときは、陽性対照が期待通りに反応しているか、陰性対照で不要なシグナルが出ていないかを確認します。
 
-## Figureで見る場所
-
-陽性対照と陰性対照は、Figureのシグナル範囲を読む基準になります。
+この節で見ているのは、主結果そのものではなく、測定系が期待通りに働いたかどうかです。
 
 - 陰性対照で強いシグナルがある場合、背景や非特異的反応を疑います。
 - 陽性対照で反応が弱い場合、検出系や試料処理の問題を考えます。
@@ -76,16 +83,15 @@ PCRでは、目的配列を含むDNAを陽性対照、DNAを入れない反応�
 
 対照がFigure内に見えない場合でも、MethodsやFigure legendに条件名として書かれていることがあります。
 
-## 英語表記と略語
+## どんな点でつまずきやすいか
 
-| 日本語名     | 英語名             | 略語 |
-| ------------ | ------------------ | ---- |
-| 陽性対照     | positive control   | -    |
-| 陰性対照     | negative control   | -    |
-| 背景信号     | background signal  | -    |
-| 非特異的反応 | nonspecific signal | -    |
+### 似た用語との区別
 
-## よくある誤解
+- 陽性対照と実験群: 陽性対照は系が反応できることを確認する条件で、主に検証したい実験群とは別です。
+- 陰性対照と未処理: 未処理が陰性対照になる場合もありますが、操作や溶媒をそろえた対照が必要なことがあります。
+- 対照の有無と結論の強さ: 対照があるだけで十分ではなく、問いに合った対照である必要があります。
+
+### 解釈の落とし穴
 
 - 陰性対照は「何も入れない条件」とは限りません。
 - 陽性対照があるだけで、目的の結論が証明されたわけではありません。
@@ -93,12 +99,41 @@ PCRでは、目的配列を含むDNAを陽性対照、DNAを入れない反応�
 
 ## 重要用語
 
-- 陽性対照: 反応が出るはずの条件。
-- 陰性対照: 反応が出ないはずの条件。
-- 背景信号: 目的の反応とは別に見える信号。
-- 非特異的反応: 目的の対象以外に由来する反応。
-- [Figure legend](/glossary/figure-legend/): 陽性対照や陰性対照がどの条件として置かれているかを確認する説明文。
-- [バイアス](/glossary/bias/): 対照設定、測定、解析、表示によって結果が一方向にずれる可能性。
+<GlossaryTable
+  terms={[
+    {
+      term: '陽性対照',
+      english: 'positive control',
+      description: '反応が出るはずの条件。',
+      href: '/glossary/positive-control/',
+    },
+    {
+      term: '陰性対照',
+      english: 'negative control',
+      description: '反応が出ないはずの条件。',
+      href: '/glossary/negative-control/',
+    },
+    {
+      term: '背景信号',
+      english: 'background signal',
+      description: '目的の反応とは別に見える信号。',
+      href: '/glossary/background-signal/',
+    },
+    {
+      term: '非特異的反応',
+      english: 'nonspecific signal',
+      description: '目的の対象以外に由来する反応。',
+      href: '/glossary/nonspecific-reaction/',
+    },
+    {
+      term: 'Figure legend',
+      english: 'figure legend',
+      description:
+        '陽性対照や陰性対照がどの条件として置かれているかを確認する説明文。',
+      href: '/glossary/figure-legend/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[
