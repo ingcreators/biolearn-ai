@@ -18,7 +18,29 @@ export default defineConfig({
       head: [
         {
           tag: 'link',
-          attrs: { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' },
+          attrs: {
+            rel: 'icon',
+            href: '/icon-192.png',
+            sizes: '192x192',
+            type: 'image/png',
+          },
+        },
+        {
+          tag: 'link',
+          attrs: {
+            rel: 'icon',
+            href: '/favicon.svg',
+            type: 'image/svg+xml',
+          },
+        },
+        {
+          tag: 'link',
+          attrs: {
+            rel: 'shortcut icon',
+            href: '/icon-192.png',
+            sizes: '192x192',
+            type: 'image/png',
+          },
         },
         {
           tag: 'link',
