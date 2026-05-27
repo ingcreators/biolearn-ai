@@ -1,0 +1,159 @@
+---
+title: チェックポイントとは何か
+description: 細胞周期やDNA損傷応答で次の段階へ進む条件を確認するチェックポイントの基本を説明します。
+part: cell-biology
+module: cell-state
+level: foundation
+priority: P2
+order: 41
+learningPaths:
+  - foundations
+relatedTerms:
+  - checkpoint
+  - cell-cycle
+  - dna-damage
+prerequisites:
+  - /cell-biology/cell-cycle/
+  - /molecular-biology/dna-damage/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    'チェックポイントが次の段階へ進む条件を確認する調節点であることを理解する',
+    '細胞周期チェックポイントとDNA損傷応答の関係を説明できる',
+    '停止、遅延、修復、再開を分けて読む視点を持つ',
+  ]}
+/>
+
+チェックポイントは、細胞周期や細胞応答の途中で、次の段階へ進む条件が整っているかを確認する調節点です。
+
+特に[細胞周期](/glossary/cell-cycle/)では、DNA複製の完了や[DNA損傷](/glossary/dna-damage/)の有無などを手がかりに、進行を一時的に止めたり遅らせたりします。単なる停止ではなく、確認と調節の仕組みとして理解します。
+
+<LessonFigure
+  src="/figures/checkpoint-concept.jpg"
+  alt="細胞周期の途中にチェックポイントがあり、DNA損傷や複製完了を確認して進行を止めたり進めたりする様子を示す教材イラスト"
+  title="チェックポイントは次へ進む条件を確認する"
+  caption="チェックポイントでは、DNAや染色体の状態を確認し、必要に応じて進行を一時的に調節します。"
+/>
+
+## なぜチェックポイントの視点が重要か
+
+チェックポイントの視点があると、細胞がなぜすぐに分裂へ進まないのか、なぜ特定の細胞周期段階に集まるのかを説明しやすくなります。細胞は単に時間で進むのではなく、内部状態を確認しながら進みます。
+
+DNA損傷、複製ストレス、染色体分配の異常を扱う論文では、チェックポイントの活性化が結果の読み方に直結します。停止していること、修復していること、細胞死へ向かうことは区別して読む必要があります。
+
+## どんなチェックポイントがあるか
+
+G1/Sチェックポイントでは、DNA複製へ入る前の状態が確認されます。DNA損傷がある場合、S期へ進む前に進行が抑えられることがあります。
+
+G2/Mチェックポイントでは、DNA複製の完了や損傷の有無を確認してからM期へ進みます。紡錘体チェックポイントでは、染色体が適切に分配される準備ができているかが問題になります。
+
+## チェックポイントはどう調べるか
+
+チェックポイントは、細胞周期分布、DNA損傷マーカー、[リン酸化](/glossary/phosphorylation/)されたシグナルタンパク質、細胞周期関連[タンパク質](/glossary/protein/)の量などで調べます。[Western blot](/glossary/western-blot/)や免疫染色、フローサイトメトリー、ライブイメージングがよく使われます。
+
+薬剤や遺伝子操作で損傷や複製ストレスを与え、時間経過に沿って細胞周期や修復マーカーを見ることもあります。1時点だけでは、止まったのか、回復しつつあるのかを判断しにくい場合があります。
+
+## チェックポイントの変化は何につながるか
+
+チェックポイントが強く働くと、細胞周期の進行が遅れたり、特定の段階に細胞が集まったりします。損傷が修復されると再び進む場合もありますが、状況によってはアポトーシスや細胞老化のような別の応答につながることもあります。
+
+チェックポイント関連タンパク質の変化は、進行の制御、損傷応答、細胞状態の変化を示す手がかりです。ただし、マーカーが増えたことだけで、機能的な停止や修復の成功を断定しないようにします。
+
+## 論文や実験ではどう出てくるか
+
+論文では、checkpoint activation、G1 arrest、G2/M arrest、DNA damage checkpoint のような表現で出てきます。[Methods](/glossary/methods/)では、処理時間、細胞周期解析、抗体、阻害剤、同期化の条件として書かれます。
+
+[Figure](/glossary/figure/)では、細胞周期分布、リン酸化シグナル、DNA損傷マーカー、M期細胞の割合として示されることがあります。[Results](/glossary/results/)では、どの段階で進行が抑えられたかを説明する文脈で使われます。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- チェックポイントと停止: チェックポイントは確認と調節の仕組みで、停止はその結果として見える状態の一つです。
+- チェックポイントとDNA修復: チェックポイントは進行を調節し、[DNA修復](/glossary/dna-repair/)は損傷を直す仕組みです。
+- チェックポイントと細胞死: チェックポイント活性化は必ず細胞死を意味するわけではありません。
+
+### 解釈の落とし穴
+
+- 細胞周期分布だけでは、どの分子経路が働いたかまでは分かりません。
+- チェックポイントマーカーの増加は、活性化の手がかりですが、下流の結果を必ず示すものではありません。
+- 阻害剤の結果は、標的以外の影響や処理時間にも左右されます。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'チェックポイント',
+      english: 'checkpoint',
+      description: '次の段階へ進む条件が整っているかを確認する調節点。',
+      href: '/glossary/checkpoint/',
+    },
+    {
+      term: '細胞周期',
+      english: 'cell cycle',
+      description: '細胞が成長し、DNAを複製し、分裂へ進む一連の過程。',
+      href: '/glossary/cell-cycle/',
+    },
+    {
+      term: 'DNA損傷',
+      english: 'DNA damage',
+      description: 'DNAに生じた化学的・物理的な異常。',
+      href: '/glossary/dna-damage/',
+    },
+    {
+      term: 'DNA修復',
+      english: 'DNA repair',
+      description: 'DNA損傷やミスマッチを検出して修正する細胞の仕組み。',
+      href: '/glossary/dna-repair/',
+    },
+    {
+      term: 'リン酸化',
+      english: 'phosphorylation',
+      description: 'タンパク質などの分子にリン酸基が付く化学修飾。',
+      href: '/glossary/phosphorylation/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: 'チェックポイントとは何ですか。',
+      answer: '次の段階へ進む条件が整っているかを確認する調節点です。',
+    },
+    {
+      question: 'G1/Sチェックポイントでは何が問題になりますか。',
+      answer: 'DNA複製へ入る前の状態やDNA損傷の有無などが問題になります。',
+    },
+    {
+      question: 'チェックポイントとDNA修復の違いを説明してください。',
+      answer:
+        'チェックポイントは進行を調節する仕組みで、DNA修復は損傷を直す仕組みです。',
+    },
+    {
+      question: 'チェックポイントを調べる指標を一つ挙げてください。',
+      answer: '細胞周期分布、DNA損傷マーカー、リン酸化シグナルなどがあります。',
+    },
+    {
+      question: 'チェックポイント活性化を解釈するときの注意点は何ですか。',
+      answer:
+        '停止、修復、再開、細胞死などの可能性を分けて考える必要があります。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: '細胞周期とは何か', href: '/cell-biology/cell-cycle/' },
+    { title: 'DNA損傷とは何か', href: '/molecular-biology/dna-damage/' },
+    { title: 'リン酸化とは何か', href: '/cell-biology/phosphorylation/' },
+  ]}
+/>

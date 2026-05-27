@@ -1,0 +1,163 @@
+---
+title: オートファジーとは何か
+description: 細胞内成分を分解して再利用するオートファジーの基本を説明します。
+part: cell-biology
+module: cell-state
+level: foundation
+priority: P2
+order: 43
+learningPaths:
+  - foundations
+relatedTerms:
+  - autophagy
+  - lysosome
+  - organelle
+prerequisites:
+  - /fundamentals/cell/
+  - /cell-biology/lysosome/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    'オートファジーが細胞内成分の分解と再利用に関わることを理解する',
+    'オートファゴソーム、リソソーム、分解の流れを説明できる',
+    'オートファジーフラックスを読むときの注意点を知る',
+  ]}
+/>
+
+オートファジーは、[細胞](/glossary/cell/)内の成分を膜で包み、[リソソーム](/glossary/lysosome/)で分解して再利用する仕組みです。
+
+不要になった[タンパク質](/glossary/protein/)や古くなった細胞小器官などを処理し、細胞内の材料の入れ替えや栄養状態への応答に関わります。形成、融合、分解までの流れ全体として見ることが重要です。
+
+<LessonFigure
+  src="/figures/autophagy-concept.jpg"
+  alt="細胞内成分が膜で包まれ、オートファゴソームとなり、リソソームと融合して分解される流れを示す教材イラスト"
+  title="オートファジーは細胞内成分を包み、分解して再利用する"
+  caption="オートファジーでは、細胞内成分が膜で包まれ、リソソームで分解されます。"
+/>
+
+## なぜオートファジーの視点が重要か
+
+細胞は新しい分子を作るだけでなく、不要になった成分を分解して材料を戻しています。オートファジーを見ると、細胞が内部の状態を保つために、分解と再利用を調節していることが分かります。
+
+栄養状態、ストレス、細胞小器官の品質管理、タンパク質の蓄積を扱う論文では、オートファジーが背景の仕組みとして出てきます。分解が進んでいるのか、途中で詰まっているのかを分ける視点が特に重要です。
+
+## どんなオートファジーがあるか
+
+代表的には、細胞質の一部を膜で包んでオートファゴソームを作り、リソソームと融合して分解するマクロオートファジーがよく扱われます。特定の細胞小器官を選んで分解する場合もあります。
+
+ミトコンドリアを選択的に分解する場合はマイトファジーと呼ばれます。細胞小器官ごとの選択的オートファジーでは、何が選ばれ、どこまで分解されたかが読み取りのポイントになります。
+
+## オートファジーはどう調べるか
+
+オートファジーは、LC3やp62などのマーカー、リソソームとの共局在、電子顕微鏡、蛍光レポーター、Western blotなどで調べます。オートファゴソームが多いことは、形成が増えた場合にも、分解が止まって蓄積した場合にも起こります。
+
+そのため、オートファジーフラックスという流れ全体を評価する考え方が重要です。阻害剤や時間経過を使い、形成から分解までが進んでいるかを確認します。
+
+## オートファジーの変化は何につながるか
+
+オートファジーの変化は、細胞内成分の蓄積、細胞小器官の更新、栄養状態への応答、ストレス応答の変化につながることがあります。ただし、オートファジーが増えたという表現は、形成の増加なのか分解の停滞なのかを確認する必要があります。
+
+細胞の状態によって、オートファジーは細胞の維持に関わる場合も、強いストレスの一部として観察される場合もあります。単独のマーカーから細胞の運命を断定しないことが大切です。
+
+## 論文や実験ではどう出てくるか
+
+論文では、autophagy induction、autophagic flux、LC3 puncta、p62 degradation のような表現で出てきます。[Methods](/glossary/methods/)では、抗体、阻害剤、蛍光レポーター、リソソーム阻害条件として書かれることがあります。
+
+[Figure](/glossary/figure/)では、点状シグナル、Western blotのバンド、リソソームとの重なり、電子顕微鏡画像として示されます。[Results](/glossary/results/)では、形成と分解を区別するために複数条件を比較することがあります。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- オートファジーとリソソーム: オートファジーは分解へ運ぶ仕組みで、リソソームは分解が行われる区画です。
+- オートファジーとアポトーシス: オートファジーは分解と再利用に関わり、アポトーシスは調節された細胞死です。
+- オートファゴソームとリソソーム: オートファゴソームは包み込む構造で、リソソームと融合して分解が進みます。
+
+### 解釈の落とし穴
+
+- LC3の点が増えたことだけで、オートファジーが最後まで進んだとは言えません。
+- p62の量は合成と分解の両方に影響されます。
+- オートファジーは常に細胞死を意味するわけではありません。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'オートファジー',
+      english: 'autophagy',
+      description:
+        '細胞内の成分を膜で包み、リソソームで分解して再利用する仕組み。',
+      href: '/glossary/autophagy/',
+    },
+    {
+      term: 'リソソーム',
+      english: 'lysosome',
+      description:
+        '細胞内の不要な分子や取り込まれた物質の分解に関わる細胞小器官。',
+      href: '/glossary/lysosome/',
+    },
+    {
+      term: '細胞小器官',
+      english: 'organelle',
+      description: '真核細胞の内部で特定の機能を担う構造。',
+      href: '/glossary/organelle/',
+    },
+    {
+      term: 'ミトコンドリア',
+      english: 'mitochondria',
+      description: '細胞のエネルギー代謝に深く関わる細胞小器官。',
+      href: '/glossary/mitochondria/',
+    },
+    {
+      term: 'Western blot',
+      english: 'Western blot',
+      description: 'タンパク質の量やサイズを調べる実験法。',
+      href: '/glossary/western-blot/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: 'オートファジーとは何ですか。',
+      answer:
+        '細胞内の成分を膜で包み、リソソームで分解して再利用する仕組みです。',
+    },
+    {
+      question: 'オートファゴソームとリソソームの関係を説明してください。',
+      answer:
+        'オートファゴソームが細胞内成分を包み、リソソームと融合して分解が進みます。',
+    },
+    {
+      question: 'LC3の点が増えたときに注意することは何ですか。',
+      answer:
+        '形成が増えたのか、分解が止まって蓄積したのかを分けて考えることです。',
+    },
+    {
+      question: 'オートファジーフラックスとは何を見る考え方ですか。',
+      answer: '形成から分解までの流れ全体が進んでいるかを見る考え方です。',
+    },
+    {
+      question: 'オートファジーとアポトーシスの違いを説明してください。',
+      answer:
+        'オートファジーは分解と再利用に関わり、アポトーシスは調節された細胞死です。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'リソソームとは何か', href: '/cell-biology/lysosome/' },
+    { title: 'ミトコンドリアとは何か', href: '/cell-biology/mitochondria/' },
+    { title: 'アポトーシスとは何か', href: '/cell-biology/apoptosis/' },
+  ]}
+/>

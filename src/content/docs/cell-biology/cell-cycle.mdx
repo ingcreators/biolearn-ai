@@ -1,0 +1,158 @@
+---
+title: 細胞周期とは何か
+description: 細胞が成長し、DNAを複製し、分裂へ進む細胞周期の基本を説明します。
+part: cell-biology
+module: cell-state
+level: foundation
+priority: P1
+order: 40
+learningPaths:
+  - foundations
+relatedTerms:
+  - cell-cycle
+  - dna-replication
+  - checkpoint
+prerequisites:
+  - /fundamentals/cell/
+  - /molecular-biology/dna-replication/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    '細胞周期が細胞の成長、DNA複製、分裂を順序立てる過程であることを理解する',
+    'G1期、S期、G2期、M期の大まかな違いを説明できる',
+    '細胞周期解析やチェックポイントを読むときの基本視点を持つ',
+  ]}
+/>
+
+細胞周期は、[細胞](/glossary/cell/)が成長し、[DNA](/glossary/dna/)を複製し、分裂へ進む一連の過程です。
+
+典型的にはG1期、S期、G2期、M期に分け、各段階で起こる準備や確認を順序として考えます。細胞の数が増えるだけでなく、遺伝情報を次の細胞へ正しく受け渡す仕組みとして重要です。
+
+<LessonFigure
+  src="/figures/cell-cycle-concept.jpg"
+  alt="G1期、S期、G2期、M期を順に進む細胞周期と、DNA複製や分裂準備が対応する様子を示す教材イラスト"
+  title="細胞周期は成長、DNA複製、分裂を順序立てる"
+  caption="細胞周期では、細胞の成長、DNA複製、分裂の準備、分裂が段階的に進みます。"
+/>
+
+## なぜ細胞周期の視点が重要か
+
+細胞周期を見ると、細胞が「増えている」ことを、どの段階の細胞が多いのかという状態として分けて考えられます。[DNA複製](/glossary/dna-replication/)や染色体の分配は、時間的な順序の中で理解する必要があります。
+
+同じ細胞集団でも、G1期が多いのか、S期が多いのか、M期が多いのかで、実験結果の解釈は変わります。遺伝子発現、薬剤処理、ストレス応答、単一細胞解析を読むときにも、細胞周期は背景の状態としてよく効いてきます。
+
+## どんな種類があるか
+
+G1期では細胞が成長し、DNA複製に入る準備をします。S期ではDNAが複製され、G2期では分裂に向けた確認や準備が進みます。M期では染色体の分配と細胞分裂が起こります。
+
+細胞によっては、分裂を続ける状態から離れてG0期と呼ばれる静止状態に入ることがあります。G0期は単に「何もしていない」状態ではなく、分化状態や外部環境に応じた細胞状態として扱われます。
+
+## 細胞周期はどう調べるか
+
+細胞周期は、DNA量を測る[フローサイトメトリー](/glossary/flow-cytometry/)、DNA合成を標識する実験、M期マーカーの[免疫染色](/glossary/immunostaining/)、タイムラプス顕微鏡などで調べます。単一細胞RNA-seqでは、発現パターンから細胞周期の影響を推定することもあります。
+
+実験では、細胞集団全体の割合として見る場合と、1つの細胞が時間とともに進む様子を見る場合があります。どちらを見ているかで、読み取れる情報が変わります。
+
+## 細胞周期の変化は何につながるか
+
+細胞周期の進み方が変わると、細胞数の増え方、DNA複製のタイミング、[DNA損傷](/glossary/dna-damage/)への応答、細胞の状態の割合が変わることがあります。ただし、細胞が多いことだけで細胞周期が速いとは限らず、細胞死や分化の変化も合わせて考えます。
+
+G1期やG2期に細胞が多く見えるときは、増殖の停止、チェックポイントでの足止め、細胞集団の同調など複数の可能性があります。時間経過や追加マーカーと合わせて読むことが大切です。
+
+## 論文や実験ではどう出てくるか
+
+論文では、cell cycle phase、cell cycle arrest、G1/S transition、mitotic index のような表現で出てきます。[Methods](/glossary/methods/)では、DNA染色、BrdUやEdU標識、フローサイトメトリー、細胞同調の条件として書かれることがあります。
+
+[Figure](/glossary/figure/)では、DNA量のヒストグラム、S期細胞の割合、M期マーカーの画像、細胞周期関連遺伝子の発現として示されます。[Results](/glossary/results/)では、どの段階で細胞が増えたのかを説明する文脈で使われます。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- 細胞周期と細胞分裂: 細胞周期は成長から分裂までの過程全体で、細胞分裂はその中の一部です。
+- S期とDNA複製: S期は細胞周期の段階で、DNA複製はそこで起こる主要な分子過程です。
+- 増殖と細胞周期: 増殖は細胞数が増える結果を指し、細胞周期はその背景にある進行過程です。
+
+### 解釈の落とし穴
+
+- ある段階の割合が増えたことは、その段階への進入が増えた場合にも、そこで止まった場合にも起こります。
+- 細胞周期解析は集団の平均として示されることが多く、個々の細胞の進行速度を直接示すとは限りません。
+- 細胞周期の変化だけで、細胞の運命全体を説明しきれるわけではありません。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: '細胞周期',
+      english: 'cell cycle',
+      description: '細胞が成長し、DNAを複製し、分裂へ進む一連の過程。',
+      href: '/glossary/cell-cycle/',
+    },
+    {
+      term: 'DNA複製',
+      english: 'DNA replication',
+      description: 'DNAを鋳型として新しいDNAを作る過程。',
+      href: '/glossary/dna-replication/',
+    },
+    {
+      term: 'チェックポイント',
+      english: 'checkpoint',
+      description: '次の段階へ進む条件が整っているかを確認する調節点。',
+      href: '/glossary/checkpoint/',
+    },
+    {
+      term: 'フローサイトメトリー',
+      english: 'flow cytometry',
+      description: '細胞を1つずつ流し、蛍光などを測定して分布を調べる方法。',
+      href: '/glossary/flow-cytometry/',
+    },
+    {
+      term: 'DNA損傷',
+      english: 'DNA damage',
+      description: 'DNAに生じた化学的・物理的な異常。',
+      href: '/glossary/dna-damage/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: '細胞周期とは何ですか。',
+      answer: '細胞が成長し、DNAを複製し、分裂へ進む一連の過程です。',
+    },
+    {
+      question: 'S期では主に何が起こりますか。',
+      answer: 'DNA複製が起こります。',
+    },
+    {
+      question: 'M期では何が起こりますか。',
+      answer: '染色体の分配と細胞分裂が起こります。',
+    },
+    {
+      question: '細胞周期の段階を調べる方法を一つ挙げてください。',
+      answer: 'DNA量を測るフローサイトメトリーなどがあります。',
+    },
+    {
+      question: 'ある段階の細胞が多いとき、解釈で注意する点は何ですか。',
+      answer:
+        'その段階に多く入っているのか、そこで止まっているのかを分けて考える必要があります。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'チェックポイントとは何か', href: '/cell-biology/checkpoint/' },
+    { title: 'DNA複製とは何か', href: '/molecular-biology/dna-replication/' },
+    { title: 'DNA損傷とは何か', href: '/molecular-biology/dna-damage/' },
+  ]}
+/>

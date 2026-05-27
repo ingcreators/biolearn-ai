@@ -812,6 +812,35 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'cell-biology',
   },
   {
+    term: '細胞周期',
+    english: 'cell cycle',
+    description: '細胞が成長し、DNAを複製し、分裂へ進む一連の過程。',
+    href: '/glossary/cell-cycle/',
+    category: 'cell-biology',
+  },
+  {
+    term: 'チェックポイント',
+    english: 'checkpoint',
+    description:
+      '細胞周期や細胞応答の途中で、次の段階へ進む条件を確認する調節点。',
+    href: '/glossary/checkpoint/',
+    category: 'cell-biology',
+  },
+  {
+    term: 'アポトーシス',
+    english: 'apoptosis',
+    description: '細胞が調節された手順で死へ向かうプログラムされた細胞死。',
+    href: '/glossary/apoptosis/',
+    category: 'cell-biology',
+  },
+  {
+    term: '細胞老化',
+    english: 'cellular senescence',
+    description: '細胞が分裂を長期的に停止し、特徴的な細胞状態を示す現象。',
+    href: '/glossary/cellular-senescence/',
+    category: 'cell-biology',
+  },
+  {
     term: '染色体',
     english: 'chromosome',
     description:
