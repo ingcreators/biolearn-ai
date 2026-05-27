@@ -663,8 +663,47 @@ export const glossaryTerms: GlossaryTerm[] = [
     term: 'オートファジー',
     english: 'autophagy',
     description:
-      '細胞内の成分を膜で包み、リソソームで分解して再利用する仕組み。',
+      '細胞内成分をリソソーム系で分解し、材料として再利用する仕組み。',
     href: '/glossary/autophagy/',
+    category: 'cell-biology',
+  },
+  {
+    term: 'オートファゴソーム',
+    english: 'autophagosome',
+    description:
+      '細胞内成分を包み、リソソームとの融合へ向かう膜で囲まれた構造。',
+    href: '/glossary/autophagosome/',
+    category: 'cell-biology',
+  },
+  {
+    term: 'オートファジーフラックス',
+    english: 'autophagic flux',
+    description: 'オートファゴソーム形成からリソソームでの分解までの流れ全体。',
+    href: '/glossary/autophagic-flux/',
+    category: 'cell-biology',
+  },
+  {
+    term: 'LC3',
+    english: 'microtubule-associated protein 1 light chain 3',
+    abbreviation: 'LC3',
+    description: 'オートファゴソーム膜の目印としてよく使われるタンパク質。',
+    href: '/glossary/lc3/',
+    category: 'cell-biology',
+  },
+  {
+    term: 'p62',
+    english: 'sequestosome 1',
+    abbreviation: 'p62/SQSTM1',
+    description:
+      'オートファジーで分解されることがあり、フラックス評価で使われるタンパク質。',
+    href: '/glossary/p62/',
+    category: 'cell-biology',
+  },
+  {
+    term: 'マイトファジー',
+    english: 'mitophagy',
+    description: 'ミトコンドリアを選択的に分解するオートファジーの一種。',
+    href: '/glossary/mitophagy/',
     category: 'cell-biology',
   },
   {
@@ -819,11 +858,33 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'cell-biology',
   },
   {
+    term: 'G0期',
+    english: 'G0 phase',
+    description: '細胞周期から離れて分裂を一時的または長期的に止めた状態。',
+    href: '/glossary/g0-phase/',
+    category: 'cell-biology',
+  },
+  {
+    term: '静止状態',
+    english: 'quiescence',
+    description:
+      '細胞が分裂を休止しているが、条件によって再び増殖できることがある状態。',
+    href: '/glossary/quiescence/',
+    category: 'cell-biology',
+  },
+  {
     term: 'チェックポイント',
     english: 'checkpoint',
     description:
       '細胞周期や細胞応答の途中で、次の段階へ進む条件を確認する調節点。',
     href: '/glossary/checkpoint/',
+    category: 'cell-biology',
+  },
+  {
+    term: '紡錘体チェックポイント',
+    english: 'spindle checkpoint',
+    description: '染色体が分配される準備を確認し、M期の進行を調節する仕組み。',
+    href: '/glossary/spindle-checkpoint/',
     category: 'cell-biology',
   },
   {
@@ -834,10 +895,25 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'cell-biology',
   },
   {
+    term: 'カスパーゼ',
+    english: 'caspase',
+    description:
+      'アポトーシスで重要な役割を持つことがあるタンパク質分解酵素群。',
+    href: '/glossary/caspase/',
+    category: 'cell-biology',
+  },
+  {
     term: '細胞老化',
     english: 'cellular senescence',
     description: '細胞が分裂を長期的に停止し、特徴的な細胞状態を示す現象。',
     href: '/glossary/cellular-senescence/',
+    category: 'cell-biology',
+  },
+  {
+    term: '分泌因子',
+    english: 'secreted factor',
+    description: '細胞から外へ放出され、周囲の細胞や環境に影響する分子。',
+    href: '/glossary/secreted-factor/',
     category: 'cell-biology',
   },
   {
@@ -1406,6 +1482,36 @@ export const glossaryTerms: GlossaryTerm[] = [
     english: 'flow cytometry',
     description: '流れる細胞を1細胞ずつ測定し、細胞集団の特徴を調べる方法。',
     href: '/glossary/flow-cytometry/',
+    category: 'methods-and-analysis',
+  },
+  {
+    term: 'Annexin V',
+    english: 'Annexin V',
+    description:
+      'アポトーシス早期の膜変化を検出する染色でよく使われるタンパク質。',
+    href: '/glossary/annexin-v/',
+    category: 'methods-and-analysis',
+  },
+  {
+    term: 'TUNEL staining',
+    english: 'TUNEL staining',
+    description: 'DNA断片化を検出し、細胞死の指標として使われる染色法。',
+    href: '/glossary/tunel-staining/',
+    category: 'methods-and-analysis',
+  },
+  {
+    term: 'BrdU/EdU標識',
+    english: 'BrdU/EdU labeling',
+    description: 'DNA合成中の細胞を標識し、S期の細胞を調べる方法。',
+    href: '/glossary/brdu-edu-labeling/',
+    category: 'methods-and-analysis',
+  },
+  {
+    term: 'SA-beta-gal',
+    english: 'senescence-associated beta-galactosidase',
+    abbreviation: 'SA-beta-gal',
+    description: '細胞老化の指標としてよく使われるリソソーム関連酵素活性。',
+    href: '/glossary/sa-beta-gal/',
     category: 'methods-and-analysis',
   },
   {

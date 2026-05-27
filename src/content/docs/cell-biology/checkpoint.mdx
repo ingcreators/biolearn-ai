@@ -33,7 +33,7 @@ import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 チェックポイントは、細胞周期や細胞応答の途中で、次の段階へ進む条件が整っているかを確認する調節点です。
 
-特に[細胞周期](/glossary/cell-cycle/)では、DNA複製の完了や[DNA損傷](/glossary/dna-damage/)の有無などを手がかりに、進行を一時的に止めたり遅らせたりします。単なる停止ではなく、確認と調節の仕組みとして理解します。
+特に[細胞周期](/glossary/cell-cycle/)では、[DNA複製](/glossary/dna-replication/)の完了や[DNA損傷](/glossary/dna-damage/)の有無などを手がかりに、進行を一時的に止めたり遅らせたりします。単なる停止ではなく、確認と調節の仕組みとして理解します。
 
 <LessonFigure
   src="/figures/checkpoint-concept.jpg"
@@ -52,23 +52,23 @@ DNA損傷、複製ストレス、染色体分配の異常を扱う論文では�
 
 G1/Sチェックポイントでは、DNA複製へ入る前の状態が確認されます。DNA損傷がある場合、S期へ進む前に進行が抑えられることがあります。
 
-G2/Mチェックポイントでは、DNA複製の完了や損傷の有無を確認してからM期へ進みます。紡錘体チェックポイントでは、染色体が適切に分配される準備ができているかが問題になります。
+G2/Mチェックポイントでは、DNA複製の完了や損傷の有無を確認してからM期へ進みます。[紡錘体チェックポイント](/glossary/spindle-checkpoint/)では、染色体が適切に分配される準備ができているかが問題になります。
 
 ## チェックポイントはどう調べるか
 
-チェックポイントは、細胞周期分布、DNA損傷マーカー、[リン酸化](/glossary/phosphorylation/)されたシグナルタンパク質、細胞周期関連[タンパク質](/glossary/protein/)の量などで調べます。[Western blot](/glossary/western-blot/)や免疫染色、フローサイトメトリー、ライブイメージングがよく使われます。
+チェックポイントは、細胞周期分布、DNA損傷マーカー、[リン酸化](/glossary/phosphorylation/)されたシグナルタンパク質、細胞周期関連[タンパク質](/glossary/protein/)の量などで調べます。[Western blot](/glossary/western-blot/)や[免疫染色](/glossary/immunostaining/)、[フローサイトメトリー](/glossary/flow-cytometry/)、ライブイメージングがよく使われます。
 
 薬剤や遺伝子操作で損傷や複製ストレスを与え、時間経過に沿って細胞周期や修復マーカーを見ることもあります。1時点だけでは、止まったのか、回復しつつあるのかを判断しにくい場合があります。
 
 ## チェックポイントの変化は何につながるか
 
-チェックポイントが強く働くと、細胞周期の進行が遅れたり、特定の段階に細胞が集まったりします。損傷が修復されると再び進む場合もありますが、状況によってはアポトーシスや細胞老化のような別の応答につながることもあります。
+チェックポイントが強く働くと、細胞周期の進行が遅れたり、特定の段階に細胞が集まったりします。損傷が修復されると再び進む場合もありますが、状況によっては[アポトーシス](/glossary/apoptosis/)や[細胞老化](/glossary/cellular-senescence/)のような別の応答につながることもあります。
 
 チェックポイント関連タンパク質の変化は、進行の制御、損傷応答、細胞状態の変化を示す手がかりです。ただし、マーカーが増えたことだけで、機能的な停止や修復の成功を断定しないようにします。
 
 ## 論文や実験ではどう出てくるか
 
-論文では、checkpoint activation、G1 arrest、G2/M arrest、DNA damage checkpoint のような表現で出てきます。[Methods](/glossary/methods/)では、処理時間、細胞周期解析、抗体、阻害剤、同期化の条件として書かれます。
+論文では、checkpoint activation、G1 arrest、G2/M arrest、DNA damage checkpoint のような表現で出てきます。[Methods](/glossary/methods/)では、処理時間、細胞周期解析、[抗体](/glossary/antibody/)、[阻害剤](/glossary/inhibitor/)、同期化の条件として書かれます。
 
 [Figure](/glossary/figure/)では、細胞周期分布、リン酸化シグナル、DNA損傷マーカー、M期細胞の割合として示されることがあります。[Results](/glossary/results/)では、どの段階で進行が抑えられたかを説明する文脈で使われます。
 
@@ -113,6 +113,19 @@ G2/Mチェックポイントでは、DNA複製の完了や損傷の有無を確�
       english: 'DNA repair',
       description: 'DNA損傷やミスマッチを検出して修正する細胞の仕組み。',
       href: '/glossary/dna-repair/',
+    },
+    {
+      term: 'DNA複製',
+      english: 'DNA replication',
+      description: 'DNAを鋳型として新しいDNAを作る過程。',
+      href: '/glossary/dna-replication/',
+    },
+    {
+      term: '紡錘体チェックポイント',
+      english: 'spindle checkpoint',
+      description:
+        '染色体が分配される準備を確認し、M期の進行を調節する仕組み。',
+      href: '/glossary/spindle-checkpoint/',
     },
     {
       term: 'リン酸化',

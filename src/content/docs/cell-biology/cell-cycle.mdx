@@ -44,19 +44,19 @@ import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 ## なぜ細胞周期の視点が重要か
 
-細胞周期を見ると、細胞が「増えている」ことを、どの段階の細胞が多いのかという状態として分けて考えられます。[DNA複製](/glossary/dna-replication/)や染色体の分配は、時間的な順序の中で理解する必要があります。
+細胞周期を見ると、細胞が「増えている」ことを、どの段階の細胞が多いのかという状態として分けて考えられます。[DNA複製](/glossary/dna-replication/)や[染色体](/glossary/chromosome/)の分配は、時間的な順序の中で理解する必要があります。
 
-同じ細胞集団でも、G1期が多いのか、S期が多いのか、M期が多いのかで、実験結果の解釈は変わります。遺伝子発現、薬剤処理、ストレス応答、単一細胞解析を読むときにも、細胞周期は背景の状態としてよく効いてきます。
+同じ細胞集団でも、G1期が多いのか、S期が多いのか、M期が多いのかで、実験結果の解釈は変わります。[遺伝子発現](/glossary/gene-expression/)、薬剤処理、ストレス応答、単一細胞解析を読むときにも、細胞周期は背景の状態としてよく効いてきます。
 
 ## どんな種類があるか
 
 G1期では細胞が成長し、DNA複製に入る準備をします。S期ではDNAが複製され、G2期では分裂に向けた確認や準備が進みます。M期では染色体の分配と細胞分裂が起こります。
 
-細胞によっては、分裂を続ける状態から離れてG0期と呼ばれる静止状態に入ることがあります。G0期は単に「何もしていない」状態ではなく、分化状態や外部環境に応じた細胞状態として扱われます。
+細胞によっては、分裂を続ける状態から離れて[G0期](/glossary/g0-phase/)と呼ばれる[静止状態](/glossary/quiescence/)に入ることがあります。G0期は単に「何もしていない」状態ではなく、分化状態や外部環境に応じた細胞状態として扱われます。
 
 ## 細胞周期はどう調べるか
 
-細胞周期は、DNA量を測る[フローサイトメトリー](/glossary/flow-cytometry/)、DNA合成を標識する実験、M期マーカーの[免疫染色](/glossary/immunostaining/)、タイムラプス顕微鏡などで調べます。単一細胞RNA-seqでは、発現パターンから細胞周期の影響を推定することもあります。
+細胞周期は、DNA量を測る[フローサイトメトリー](/glossary/flow-cytometry/)、DNA合成を標識する実験、M期マーカーの[免疫染色](/glossary/immunostaining/)、タイムラプス顕微鏡などで調べます。単一細胞[RNA-seq](/glossary/rna-seq/)では、発現パターンから細胞周期の影響を推定することもあります。
 
 実験では、細胞集団全体の割合として見る場合と、1つの細胞が時間とともに進む様子を見る場合があります。どちらを見ているかで、読み取れる情報が変わります。
 
@@ -64,11 +64,11 @@ G1期では細胞が成長し、DNA複製に入る準備をします。S期で�
 
 細胞周期の進み方が変わると、細胞数の増え方、DNA複製のタイミング、[DNA損傷](/glossary/dna-damage/)への応答、細胞の状態の割合が変わることがあります。ただし、細胞が多いことだけで細胞周期が速いとは限らず、細胞死や分化の変化も合わせて考えます。
 
-G1期やG2期に細胞が多く見えるときは、増殖の停止、チェックポイントでの足止め、細胞集団の同調など複数の可能性があります。時間経過や追加マーカーと合わせて読むことが大切です。
+G1期やG2期に細胞が多く見えるときは、増殖の停止、[チェックポイント](/glossary/checkpoint/)での足止め、細胞集団の同調など複数の可能性があります。時間経過や追加マーカーと合わせて読むことが大切です。
 
 ## 論文や実験ではどう出てくるか
 
-論文では、cell cycle phase、cell cycle arrest、G1/S transition、mitotic index のような表現で出てきます。[Methods](/glossary/methods/)では、DNA染色、BrdUやEdU標識、フローサイトメトリー、細胞同調の条件として書かれることがあります。
+論文では、cell cycle phase、cell cycle arrest、G1/S transition、mitotic index のような表現で出てきます。[Methods](/glossary/methods/)では、DNA染色、[BrdU/EdU標識](/glossary/brdu-edu-labeling/)、フローサイトメトリー、細胞同調の条件として書かれることがあります。
 
 [Figure](/glossary/figure/)では、DNA量のヒストグラム、S期細胞の割合、M期マーカーの画像、細胞周期関連遺伝子の発現として示されます。[Results](/glossary/results/)では、どの段階で細胞が増えたのかを説明する文脈で使われます。
 
@@ -107,6 +107,25 @@ G1期やG2期に細胞が多く見えるときは、増殖の停止、チェッ�
       english: 'checkpoint',
       description: '次の段階へ進む条件が整っているかを確認する調節点。',
       href: '/glossary/checkpoint/',
+    },
+    {
+      term: 'G0期',
+      english: 'G0 phase',
+      description: '細胞周期から離れて分裂を一時的または長期的に止めた状態。',
+      href: '/glossary/g0-phase/',
+    },
+    {
+      term: '静止状態',
+      english: 'quiescence',
+      description:
+        '細胞が分裂を休止しているが、条件によって再び増殖できることがある状態。',
+      href: '/glossary/quiescence/',
+    },
+    {
+      term: 'BrdU/EdU標識',
+      english: 'BrdU/EdU labeling',
+      description: 'DNA合成中の細胞を標識し、S期の細胞を調べる方法。',
+      href: '/glossary/brdu-edu-labeling/',
     },
     {
       term: 'フローサイトメトリー',

@@ -1,6 +1,6 @@
 ---
 title: 細胞生物学
-description: 細胞の構造、細胞小器官、細胞間コミュニケーションを学ぶカテゴリです。
+description: 細胞の構造、細胞小器官、シグナル伝達、細胞状態を学ぶカテゴリです。
 ---
 
 import ArticleList from '../../../components/ArticleList.astro';
@@ -12,6 +12,7 @@ import ArticleList from '../../../components/ArticleList.astro';
 - 細胞膜が細胞の内外を分け、情報の入口にもなること
 - 細胞小器官が、細胞内で役割分担をしていること
 - 細胞シグナル伝達が、刺激と遺伝子発現の変化をつなぐこと
+- 細胞周期、細胞死、分解系が、細胞の状態を変えること
 
 ## 目的別に選ぶ
 
@@ -44,6 +45,13 @@ import ArticleList from '../../../components/ArticleList.astro';
       外からの刺激が、タンパク質の働きや遺伝子発現の変化につながる流れを読みます。
     </p>
   </a>
+  <a class="biolearn-home-card" href="/cell-biology/cell-cycle/">
+    <span>状態</span>
+    <h3>細胞周期と細胞の運命を整理する</h3>
+    <p>
+      細胞が増える、止まる、死ぬ、分解して再利用する、といった状態変化を読みます。
+    </p>
+  </a>
 </div>
 
 | 迷っていること                | 入口                                                                                                                                                                                 | Figureや手法で戻る場所                                                                                                 |
@@ -53,25 +61,29 @@ import ArticleList from '../../../components/ArticleList.astro';
 | 細胞内の場所を整理したい      | [細胞小器官](/cell-biology/organelles/)、[核](/cell-biology/nucleus/)、[ミトコンドリア](/cell-biology/mitochondria/)、[小胞体・ゴルジ体](/cell-biology/endoplasmic-reticulum-golgi/) | [顕微鏡画像の読み方](/figures/how-to-read-microscopy-image/)、[Figure legend](/figures/figure-legend/)                 |
 | 細胞の形や移動を読みたい      | [細胞骨格](/cell-biology/cytoskeleton/)、[細胞膜](/cell-biology/cell-membrane/)                                                                                                      | [免疫染色](/methods/immunostaining/)、[顕微鏡画像の読み方](/figures/how-to-read-microscopy-image/)                     |
 | 刺激と応答の流れを読みたい    | [細胞シグナル伝達](/cell-biology/cell-signaling/)、[遺伝子発現](/fundamentals/gene-expression/)                                                                                      | [Figureと主張](/figures/figure-to-claim/)、[Resultsセクションの流れ](/figures/results-section-flow/)                   |
+| 増殖、停止、細胞死を読みたい  | [細胞周期](/cell-biology/cell-cycle/)、[チェックポイント](/cell-biology/checkpoint/)、[アポトーシス](/cell-biology/apoptosis/)                                                       | [フローサイトメトリー](/methods/flow-cytometry/)、[Western blot](/methods/western-blot/)                               |
+| 分解や品質管理を読みたい      | [リソソーム](/cell-biology/lysosome/)、[オートファジー](/cell-biology/autophagy/)、[細胞老化](/cell-biology/senescence/)                                                             | [免疫染色](/methods/immunostaining/)、[顕微鏡画像の読み方](/figures/how-to-read-microscopy-image/)                     |
 | single-cell解析の細胞型が不安 | [細胞とは何か](/fundamentals/cell/)、[細胞タイプ注釈](/bioinformatics/cell-type-annotation/)                                                                                         | [UMAP / t-SNE](/figures/how-to-read-umap-tsne/)、[マーカー遺伝子](/bioinformatics/marker-gene/)                        |
 
-## まず押さえる3つの考え方
+## まず押さえる4つの考え方
 
 1. 細胞は、分子がばらばらに存在する袋ではなく、機能が整理された場です。
 2. 細胞膜は境界であると同時に、情報を受け取る場所でもあります。
 3. シグナル伝達を見ると、外からの刺激と細胞内の応答をつなげて理解できます。
+4. 細胞周期、細胞死、分解系を見ると、細胞がどの状態へ向かっているかを読みやすくなります。
 
 ## 読む順番
 
 <ArticleList part="cell-biology" groupByModule />
 
-まず細胞の全体像を押さえ、次に細胞膜、細胞小器官、シグナル伝達へ進みます。分子生物学の記事で学んだタンパク質や遺伝子発現が、細胞の中でどう意味を持つかを意識して読むのがおすすめです。
+まず細胞の全体像を押さえ、次に細胞膜、細胞小器官、シグナル伝達、細胞周期・細胞死へ進みます。分子生物学の記事で学んだタンパク質や遺伝子発現が、細胞の中でどう意味を持つかを意識して読むのがおすすめです。
 
 ## このカテゴリを終えるとできること
 
 - 細胞膜、細胞小器官、細胞シグナル伝達の役割を説明できる
 - 分子の働きを、細胞内の場所や文脈と結びつけられる
 - 遺伝子発現の変化を、細胞の応答として考えられる
+- 細胞周期、細胞死、分解系のマーカーを、細胞状態の変化として読める
 
 ## 関連する用語
 
@@ -81,3 +93,4 @@ import ArticleList from '../../../components/ArticleList.astro';
 - 膜と輸送: [細胞膜](/glossary/cell-membrane/)、[膜輸送](/glossary/membrane-transport/)、[チャネル](/glossary/channel/)、[輸送体](/glossary/transporter/)、[小胞輸送](/glossary/vesicle-trafficking/)、[エンドサイトーシス](/glossary/endocytosis/)、[エキソサイトーシス](/glossary/exocytosis/)
 - 局在と観察: [細胞骨格](/glossary/cytoskeleton/)、[アクチンフィラメント](/glossary/actin-filament/)、[微小管](/glossary/microtubule/)、[タンパク質局在](/glossary/protein-localization/)、[細胞分画](/glossary/cell-fractionation/)、[共局在](/glossary/colocalization/)
 - シグナル伝達: [細胞シグナル伝達](/glossary/cell-signaling/)、[受容体](/glossary/receptor/)、[リガンド](/glossary/ligand/)、[リン酸化](/glossary/phosphorylation/)、[キナーゼ](/glossary/kinase/)、[MAPK経路](/glossary/mapk-pathway/)、[PI3K-AKT経路](/glossary/pi3k-akt-pathway/)
+- 細胞状態と運命: [細胞周期](/glossary/cell-cycle/)、[チェックポイント](/glossary/checkpoint/)、[アポトーシス](/glossary/apoptosis/)、[オートファジー](/glossary/autophagy/)、[細胞老化](/glossary/cellular-senescence/)
