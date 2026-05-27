@@ -20,6 +20,8 @@ import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
 import GlossaryTable from '../../../components/GlossaryTable.astro';
 
+## この記事で学ぶこと
+
 <LearningGoals
   items={[
     'SAM/BAMがマッピング後のリード情報を保存する形式であることを説明できる',
@@ -57,7 +59,7 @@ BAMは大きなデータを効率よく扱うために使われ、通常は座�
 
 ゲノムブラウザでは、BAMを読み込むことで特定領域のリード配置を確認できます。RNA-seqでは遺伝子領域にリードがどのように集まるか、ゲノム解析では候補変異の周辺にどのようなリードがあるかを見ます。
 
-## SAM/BAMの違いは何につながるか
+## SAM/BAMの作り方の違いは何につながるか
 
 同じFASTQから作ったBAMでも、マッピングツール、リファレンス、重複リードの扱い、並べ替えやフィルタ条件によって後続結果が変わることがあります。バリアントコールや発現量推定では、どのBAMを使ったかが重要な前提になります。
 

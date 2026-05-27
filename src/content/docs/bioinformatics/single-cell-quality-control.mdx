@@ -19,6 +19,9 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+## この記事で学ぶこと
 
 <LearningGoals
   items={[
@@ -30,6 +33,8 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 single-cell QCは、single-cell RNA-seqデータから低品質な細胞や解析を歪める可能性のある細胞を見つけ、扱いを決める工程です。
 
+1細胞ごとの測定では、細胞ごとにRNA量や検出効率が大きく異なります。QCは、どの細胞を解析に残すかを決める前提になるため、後のクラスタリングや細胞タイプ注釈にも影響します。
+
 <LessonFigure
   src="/figures/single-cell-quality-control-concept.jpg"
   alt="single-cell QCで低品質細胞、検出遺伝子数、ミトコンドリア比率、doubletを確認する概念図"
@@ -37,23 +42,29 @@ single-cell QCは、single-cell RNA-seqデータから低品質な細胞や解�
   caption="低品質細胞やdoubletを確認し、除外基準が結果に与える影響をMethodsで確認します。"
 />
 
-single-cell RNA-seqでは、1細胞ごとの測定を行うため、細胞ごとにデータ品質が異なります。壊れかけた細胞、RNA量が少なすぎる細胞、複数細胞が1つとして読まれたdoubletなどが混ざることがあります。
+## なぜsingle-cell QCの視点が重要か
 
-QCでは、細胞ごとの総カウント数、検出された遺伝子数、ミトコンドリア遺伝子の割合、doubletの可能性などを確認します。これらは細胞の状態を理解する手がかりですが、単純な良し悪しだけで決めるものではありません。組織や細胞型によって自然な範囲が変わることもあります。
+single-cell RNA-seqでは、壊れかけた細胞、RNA量が少なすぎる細胞、複数細胞が1つとして読まれたdoubletなどが混ざることがあります。これらをそのまま解析すると、人工的なクラスタや誤った細胞タイプ注釈につながることがあります。
 
-論文では、どの指標を使ったか、どの閾値で細胞を除外したか、除外後にサンプルや条件のバランスが崩れていないかを確認します。
+一方で、QCで除外しすぎると、珍しい細胞や特定の状態の細胞を失うこともあります。そのため、QCは機械的な掃除ではなく、データの分布と生物学的文脈を見ながら判断する工程です。
 
-## 具体例
+## どんなQC指標があるか
 
 single-cell QCでは、細胞ごとの検出遺伝子数、UMI数、ミトコンドリア遺伝子の割合などを確認します。極端に遺伝子数が少ない細胞は低品質、極端にUMI数が多い細胞はダブレットの可能性があります。
 
-QCの[しきい値](/glossary/threshold/)は、組織、細胞タイプ、実験系によって変わります。
+ほかに、リボソーム遺伝子の割合、細胞周期スコア、サンプルごとの細胞数、doublet推定スコアなどを見ることがあります。QCの[しきい値](/glossary/threshold/)は、組織、細胞タイプ、実験系によって変わります。
 
-## よく混同される概念
+## single-cell QCはどう確認するか
 
-- 低品質細胞と珍しい細胞: 珍しい細胞タイプを低品質として除いてしまう可能性があります。
-- QCと[正規化](/glossary/normalization/): QCは不適切な細胞や特徴を確認する工程で、正規化は比較しやすくする工程です。
-- しきい値と普遍的な正解: しきい値はデータの分布と実験背景に応じて決めます。
+QC指標をバイオリンプロット、散布図、ヒストグラムなどで確認し、極端な細胞を見つけます。除外基準を決めるときは、全体の分布だけでなく、サンプルや条件ごとの偏りも確認します。
+
+論文では、どの指標を使ったか、どの閾値で細胞を除外したか、除外後にサンプルや条件のバランスが崩れていないかを確認します。
+
+## single-cell QCの違いは何につながるか
+
+QC基準が変わると、残る細胞数、クラスタの数、細胞タイプ割合、差次的発現解析の結果が変わることがあります。特に条件間で細胞品質が違う場合、QC後のバランスを確認することが重要です。
+
+doubletを見落とすと、2つの細胞タイプのマーカーが同時に見える人工的なクラスタが出ることがあります。逆に、珍しい細胞を低品質として除いてしまうこともあるため、基準の根拠を見ます。
 
 ## 論文や実験ではどう出てくるか
 
@@ -61,12 +72,54 @@ QCの[しきい値](/glossary/threshold/)は、組織、細胞タイプ、実験
 
 読むときは、除外基準、除外後の細胞数、ミトコンドリア割合、ダブレット除去、サンプルごとの差を確認します。
 
-## よくある誤解
+## どんな点でつまずきやすいか
 
-- QCで除外した細胞は、すべて生物学的に意味がないと考える。
-- 閾値はどのデータでも同じでよいと思う。
-- doubletを確認せずに、珍しいクラスタを新しい細胞型だと読む。
-- QC後に条件間の細胞数バランスが変わった可能性を見落とす。
+### 似た用語との区別
+
+- 低品質細胞と珍しい細胞: 珍しい細胞タイプを低品質として除いてしまう可能性があります。
+- QCと[正規化](/glossary/normalization/): QCは不適切な細胞や特徴を確認する工程で、正規化は比較しやすくする工程です。
+- しきい値と普遍的な正解: しきい値はデータの分布と実験背景に応じて決めます。
+
+### 解釈の落とし穴
+
+- QCで除外した細胞は、すべて生物学的に意味がないと考えない。
+- 閾値はどのデータでも同じでよいと思わない。
+- doubletを確認せずに、珍しいクラスタを新しい細胞型だと読まない。
+- QC後に条件間の細胞数バランスが変わった可能性を見落とさない。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'single-cell QC',
+      english: 'single-cell quality control',
+      abbreviation: 'single-cell QC',
+      description:
+        'single-cell RNA-seqで低品質細胞やdoubletなどを確認する工程。',
+      href: '/glossary/single-cell-quality-control/',
+    },
+    {
+      term: '品質管理',
+      english: 'quality control',
+      abbreviation: 'QC',
+      description: '解析結果に影響するデータ品質を確認する工程。',
+      href: '/glossary/quality-control/',
+    },
+    {
+      term: 'しきい値',
+      english: 'threshold',
+      description: 'データを残すか除くかなどを判断するために設定する境界値。',
+      href: '/glossary/threshold/',
+    },
+    {
+      term: 'カウント行列',
+      english: 'count matrix',
+      description: '遺伝子ごとのカウントを細胞やサンプルごとに並べた表。',
+      href: '/glossary/count-matrix/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[
@@ -85,10 +138,13 @@ QCの[しきい値](/glossary/threshold/)は、組織、細胞タイプ、実験
 
 <NextSteps
   items={[
-    { title: 'カウント行列とは何か', href: '/bioinformatics/count-matrix/' },
     {
       title: 'バッチ効果とは何か',
       href: '/bioinformatics/batch-effect/',
+    },
+    {
+      title: '次元削減とは何か',
+      href: '/bioinformatics/dimensionality-reduction/',
     },
     {
       title: 'single-cell解析論文の読み方',

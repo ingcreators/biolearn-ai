@@ -1364,10 +1364,26 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'methods-and-analysis',
   },
   {
+    term: 'クラスター',
+    english: 'cluster',
+    description:
+      'クラスタリングによって得られた、似た特徴を持つデータ点のまとまり。',
+    href: '/glossary/cluster/',
+    category: 'methods-and-analysis',
+  },
+  {
     term: 'マーカー遺伝子',
     english: 'marker gene',
     description: '細胞型や状態を見分ける手がかりとして使われる遺伝子。',
     href: '/glossary/marker-gene/',
+    category: 'methods-and-analysis',
+  },
+  {
+    term: '細胞タイプ注釈',
+    english: 'cell type annotation',
+    description:
+      'single-cell解析でクラスタや細胞に、根拠にもとづいて細胞型名を付ける工程。',
+    href: '/glossary/cell-type-annotation/',
     category: 'methods-and-analysis',
   },
   {

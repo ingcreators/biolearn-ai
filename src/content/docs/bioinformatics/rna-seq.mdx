@@ -18,6 +18,9 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+## この記事で学ぶこと
 
 <LearningGoals
   items={[
@@ -29,6 +32,8 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 RNA-seqは、細胞や組織でどのRNAがどれくらい存在するかを調べる手法です。
 
+試料中のRNAを配列データとして読み、遺伝子ごとの発現量に整理します。実験でRNAを読む工程と、計算でリードを対応づけて数える工程がつながっている点が重要です。
+
 <LessonFigure
   src="/figures/rna-seq-concept.jpg"
   alt="細胞からRNAを取り出し、シーケンサーで短い配列として読み、コンピューターで発現量グラフとして解析する流れを示す教材イラスト"
@@ -36,58 +41,86 @@ RNA-seqは、細胞や組織でどのRNAがどれくらい存在するかを調�
   caption="RNAを配列データに変換し、コンピューター上で遺伝子ごとの発現量として整理します。"
 />
 
-RNA-seqでは、試料からRNAを取り出し、シーケンサーで読める形に変換して配列を読みます。その後、得られた[リード](/glossary/read/)をゲノムや転写産物に対応づけ、遺伝子ごとの発現量を推定します。
+## なぜRNA-seqの視点が重要か
 
-RNA-seqの出発点は「RNAの量を配列データとして読む」ことです。RNAが多く存在する遺伝子ほど、その遺伝子に対応するリードが多く観察されると考えます。ただし、リード数は実験条件やライブラリサイズにも影響されるため、そのまま単純に比較できるわけではありません。
-
-解析では、まずデータの品質を確認します。読み取りの質が低い部分やアダプター配列が問題になることがあり、必要に応じて前処理を行います。その後、リードをリファレンスゲノムや転写産物に対応づけ、遺伝子ごとのカウントを作ります。
-
-RNA-seqは、細胞の状態や条件の違いによって遺伝子発現がどう変わるかを調べるために使われます。解析では品質確認、[マッピング](/glossary/mapping/)、カウント、[正規化](/glossary/normalization/)、差次的発現解析などの工程があります。結果を読むときは、統計だけでなく、実験設計や生物学的な文脈も合わせて考えます。
-
-## なぜ重要か
-
-[RNA-seq](/glossary/rna-seq/)は、[遺伝子発現](/glossary/gene-expression/)を網羅的に調べる代表的な手法です。細胞や組織がどの[遺伝子](/glossary/gene/)をどれくらい使っているかを、[シーケンスデータ](/glossary/sequence-data/)として扱えます。
+RNA-seqは、[遺伝子発現](/glossary/gene-expression/)を網羅的に調べる代表的な手法です。細胞や組織がどの[遺伝子](/glossary/gene/)をどれくらい使っているかを、[シーケンスデータ](/glossary/sequence-data/)として扱えます。
 
 RNA-seqを理解すると、発現量、正規化、マッピング、[差次的発現解析](/glossary/differential-expression-analysis/)のつながりが見えます。実験で得たRNAが、どのように表やグラフになり、細胞状態の解釈に使われるのかを追えるようになります。
 
-## 具体例
+## どんなRNA-seqがあるか
+
+よく使われるbulk RNA-seqでは、組織や細胞集団全体の平均的な発現を見ます。single-cell RNA-seqでは、1細胞ごとの発現を測り、細胞集団の違いや状態を調べます。
 
 刺激ありの細胞と刺激なしの細胞でRNA-seqを行うと、刺激によって発現が増える遺伝子や減る遺伝子を探せます。免疫応答、分化、ストレス応答などの研究でよく使われます。
 
-別の例として、細胞種Aと細胞種Bを比べると、それぞれの細胞に特徴的な発現パターンが見えることがあります。結果は発現量表、[ヒートマップ](/glossary/heatmap/)、PCA plot、[Volcano plot](/glossary/volcano-plot/)などで示されます。
+## RNA-seqはどう調べるか
 
-## よく混同される概念
+解析では、まずデータの品質を確認します。読み取りの質が低い部分やアダプター配列が問題になることがあり、必要に応じて前処理を行います。その後、得られた[リード](/glossary/read/)をゲノムや転写産物に対応づけ、遺伝子ごとのカウントを作ります。
 
-- RNA-seqとDNA-seq: RNA-seqはRNA由来の配列を読み、主に発現を調べます。DNA-seqはDNA配列や変異を調べます。
-- リード数と発現量: リード数は発現量の材料ですが、ライブラリサイズや遺伝子長などの影響を考えて処理する必要があります。
-- 発現差と機能差: 発現が変わった遺伝子が、観察された現象の直接原因とは限りません。
+RNAが多く存在する遺伝子ほど、その遺伝子に対応するリードが多く観察されると考えます。ただし、リード数は実験条件やライブラリサイズにも影響されるため、そのまま単純に比較できるわけではありません。
+
+## RNA-seqの結果は何につながるか
+
+RNA-seqは、細胞の状態や条件の違いによって遺伝子発現がどう変わるかを調べるために使われます。結果は発現量表、[ヒートマップ](/glossary/heatmap/)、PCA plot、[Volcano plot](/glossary/volcano-plot/)などで示されます。
+
+結果を読むときは、統計だけでなく、実験設計や生物学的な文脈も合わせて考えます。発現量の差は重要な手がかりですが、タンパク質量や細胞機能を直接証明するものではありません。
 
 ## 論文や実験ではどう出てくるか
 
 RNA-seqは、実験方法の「library preparation」「sequencing」「mapping」「count matrix」「differential expression analysis」といった流れで登場します。結果では、発現量の表、品質管理図、[PCA](/glossary/pca/)、ヒートマップ、Volcano plot、発現変動遺伝子リストとして示されることが多いです。
 
-## 英語表記と略語
+## どんな点でつまずきやすいか
 
-| 日本語名       | 英語名                           | 略語    |
-| -------------- | -------------------------------- | ------- |
-| RNAシーケンス  | RNA sequencing                   | RNA-seq |
-| リード         | read                             | -       |
-| マッピング     | mapping                          | -       |
-| 発現量         | expression level                 | -       |
-| 差次的発現解析 | differential expression analysis | DEA     |
+### 似た用語との区別
 
-## よくある誤解
+- RNA-seqとDNA-seq: RNA-seqはRNA由来の配列を読み、主に発現を調べます。DNA-seqはDNA配列や変異を調べます。
+- リード数と発現量: リード数は発現量の材料ですが、ライブラリサイズや遺伝子長などの影響を考えて処理する必要があります。
+- 発現差と機能差: 発現が変わった遺伝子が、観察された現象の直接原因とは限りません。
 
-- RNA-seqはDNA配列そのものを読む手法ではありません。主にRNA由来の情報を読みます。
-- 発現量の差は生物学的な意味を持つ可能性がありますが、実験設計や統計的検証が必要です。
+### 解釈の落とし穴
+
+- RNA-seqをDNA配列そのものを読む手法として扱わない。
+- 発現量の差だけで機能差を断定しない。
+- 正規化やサンプル数を確認せずに条件間の差を読むことを避ける。
 
 ## 重要用語
 
-- RNA-seq: [RNA](/glossary/rna/)を配列決定し、遺伝子発現などを調べる手法。
-- リード: シーケンサーから得られる短い配列断片。
-- マッピング: リードを参照配列上の位置に対応づける処理。
-- 発現量: 遺伝子から作られたRNAの多さを表す指標。
-- 差次的発現解析: 条件間で遺伝子発現に差があるかを調べる解析。
+<GlossaryTable
+  terms={[
+    {
+      term: 'RNA-seq',
+      english: 'RNA sequencing',
+      abbreviation: 'RNA-seq',
+      description: 'RNAを配列決定し、遺伝子発現などを調べる手法。',
+      href: '/glossary/rna-seq/',
+    },
+    {
+      term: 'リード',
+      english: 'read',
+      description: 'シーケンサーで読み取られた短い配列断片。',
+      href: '/glossary/read/',
+    },
+    {
+      term: 'マッピング',
+      english: 'mapping',
+      description: 'リードを参照配列上の位置に対応づける処理。',
+      href: '/glossary/mapping/',
+    },
+    {
+      term: '発現量',
+      english: 'expression level',
+      description: '遺伝子から作られたRNAの多さを表す指標。',
+      href: '/glossary/gene-expression/',
+    },
+    {
+      term: '差次的発現解析',
+      english: 'differential expression analysis',
+      abbreviation: 'DEA',
+      description: '条件間で遺伝子発現に差があるかを統計的に調べる解析。',
+      href: '/glossary/differential-expression-analysis/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[
@@ -122,11 +155,13 @@ RNA-seqは、実験方法の「library preparation」「sequencing」「mapping�
       title: 'シーケンスデータとは何か',
       href: '/bioinformatics/sequence-data/',
     },
-    { title: '用語: RNA-seq', href: '/glossary/rna-seq/' },
     {
-      title: '用語: バイオインフォマティクス',
-      href: '/glossary/bioinformatics/',
+      title: 'カウント行列とは何か',
+      href: '/bioinformatics/count-matrix/',
     },
-    { title: '用語集', href: '/glossary/' },
+    {
+      title: '差次的発現解析とは何か',
+      href: '/bioinformatics/differential-expression/',
+    },
   ]}
 />

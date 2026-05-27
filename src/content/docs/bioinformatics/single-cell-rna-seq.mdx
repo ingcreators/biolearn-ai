@@ -19,6 +19,9 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+## この記事で学ぶこと
 
 <LearningGoals
   items={[
@@ -30,6 +33,8 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 single-cell RNA-seqは、1細胞ごとのRNA量を測定し、細胞集団の違いや状態を調べる手法です。
 
+通常のRNA-seqが試料全体の平均的な発現を見るのに対し、single-cell RNA-seqでは細胞ごとの発現パターンを分けて扱います。そのため、同じ組織の中にある細胞タイプや状態の違いを見つけやすくなります。
+
 <LessonFigure
   src="/figures/single-cell-rna-seq-concept.jpg"
   alt="多数の細胞を1細胞ごとの発現量行列に変換し、UMAPやクラスタとして整理するsingle-cell RNA-seqの概念図"
@@ -37,23 +42,29 @@ single-cell RNA-seqは、1細胞ごとのRNA量を測定し、細胞集団の違
   caption="細胞ごとの発現量をもとに、品質確認、次元削減、クラスタリング、細胞型注釈へ進みます。"
 />
 
-通常のRNA-seqでは、試料全体からRNAを取り出し、細胞集団全体の平均的な発現を見ます。single-cell RNA-seqでは、1つ1つの細胞を区別して測定するため、同じ試料の中にある細胞集団の違いを調べやすくなります。
+## なぜsingle-cell RNA-seqの視点が重要か
 
-解析では、細胞ごと、遺伝子ごとの発現量を行列として整理します。その後、品質の低い細胞を除く、[正規化](/glossary/normalization/)する、次元削減で全体像を見る、クラスタリングで似た細胞をまとめる、マーカー遺伝子で細胞型を推定する、といった流れで進みます。
+組織は多くの場合、複数の細胞タイプや状態が混ざった集団です。single-cell RNA-seqを使うと、細胞集団全体の平均では隠れてしまう少数の細胞集団や状態差を調べられます。
 
-single-cell RNA-seqは強力ですが、1細胞の測定はノイズや欠測の影響を受けやすく、結果は前処理や解析条件にも左右されます。Figureを読むときは、UMAPの形だけでなく、細胞数、サンプル数、[品質管理](/glossary/quality-control/)、バッチ補正、細胞型注釈の根拠を確認します。
+ただし、1細胞の測定はノイズや欠測の影響を受けやすく、結果は前処理や解析条件にも左右されます。Figureを読むときは、UMAPの形だけでなく、細胞数、サンプル数、[品質管理](/glossary/quality-control/)、バッチ補正、細胞型注釈の根拠を確認します。
 
-## 具体例
+## どんなsingle-cell RNA-seqの結果があるか
 
 single-cell RNA-seqでは、組織から細胞を分離し、細胞ごとのRNAをバーコード付きで測定します。得られたデータから、細胞タイプ、細胞状態、発現変化、細胞間の違いを調べます。
 
 たとえば腫瘍組織の中にどの免疫細胞がいるか、刺激後にどの細胞集団で遺伝子発現が変わるかを解析します。
 
-## よく混同される概念
+## single-cell RNA-seqはどう調べるか
 
-- single-cell RNA-seqとbulk RNA-seq: single-cellは細胞ごとの違い、bulkはサンプル全体の平均的な発現を見ます。
-- 細胞クラスターと細胞タイプ: クラスターは解析上のまとまりで、細胞タイプ注釈にはマーカー確認が必要です。
-- RNA量と細胞機能: RNA発現は手がかりですが、タンパク質量や機能を直接示すとは限りません。
+解析では、細胞ごと、遺伝子ごとの発現量を行列として整理します。その後、品質の低い細胞を除く、[正規化](/glossary/normalization/)する、次元削減で全体像を見る、クラスタリングで似た細胞をまとめる、マーカー遺伝子で細胞型を推定する、といった流れで進みます。
+
+論文では、UMAPやクラスタ名が目立ちますが、その前にカウント行列、QC、正規化、バッチ補正、次元削減があることを意識します。
+
+## single-cell RNA-seqの違いは何につながるか
+
+サンプル調製、細胞の生存率、ライブラリ調製、シーケンス深度、QC基準、バッチ補正は、残る細胞数やクラスタの見え方に影響します。条件差を読むときは、細胞数だけでなく生物学的反復の数も確認します。
+
+また、細胞タイプ名は解析結果に対する注釈です。マーカー遺伝子や既知知識で根拠を確認し、クラスタ番号そのものを生物学的な名前として受け取らないようにします。
 
 ## 論文や実験ではどう出てくるか
 
@@ -61,12 +72,52 @@ single-cell RNA-seqでは、組織から細胞を分離し、細胞ごとのRNA�
 
 読むときは、サンプル数、細胞数、QC基準、バッチ効果、注釈の根拠を確認します。
 
-## よくある誤解
+## どんな点でつまずきやすいか
 
-- single-cell RNA-seqなら、すべての細胞状態が完全に分かると思う。
-- UMAPで近い点は、必ず生物学的に連続していると考える。
-- クラスタ名を、マーカー遺伝子や注釈方法を確認せずに受け入れる。
-- 細胞数だけを見て、個体差やサンプル差を考えない。
+### 似た用語との区別
+
+- single-cell RNA-seqとbulk RNA-seq: single-cellは細胞ごとの違い、bulkはサンプル全体の平均的な発現を見ます。
+- 細胞クラスターと細胞タイプ: クラスターは解析上のまとまりで、細胞タイプ注釈にはマーカー確認が必要です。
+- RNA量と細胞機能: RNA発現は手がかりですが、タンパク質量や機能を直接示すとは限りません。
+
+### 解釈の落とし穴
+
+- single-cell RNA-seqなら、すべての細胞状態が完全に分かると思わない。
+- UMAPで近い点は、必ず生物学的に連続していると考えない。
+- クラスタ名を、マーカー遺伝子や注釈方法を確認せずに受け入れない。
+- 細胞数だけを見て、個体差やサンプル差を見落とさない。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'single-cell RNA-seq',
+      english: 'single-cell RNA sequencing',
+      abbreviation: 'scRNA-seq',
+      description: '1細胞ごとのRNA発現を測定し、細胞集団の違いを調べる手法。',
+      href: '/glossary/single-cell-rna-seq/',
+    },
+    {
+      term: 'カウント行列',
+      english: 'count matrix',
+      description: '遺伝子ごとのカウントを細胞やサンプルごとに並べた表。',
+      href: '/glossary/count-matrix/',
+    },
+    {
+      term: 'クラスタリング',
+      english: 'clustering',
+      description: '似た発現パターンの細胞を解析上のまとまりに分ける処理。',
+      href: '/glossary/clustering/',
+    },
+    {
+      term: 'マーカー遺伝子',
+      english: 'marker gene',
+      description: '細胞タイプや状態を見分ける手がかりになる遺伝子。',
+      href: '/glossary/marker-gene/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[
@@ -87,11 +138,14 @@ single-cell RNA-seqでは、組織から細胞を分離し、細胞ごとのRNA�
 
 <NextSteps
   items={[
-    { title: 'RNA-seqとは何か', href: '/bioinformatics/rna-seq/' },
     { title: 'カウント行列とは何か', href: '/bioinformatics/count-matrix/' },
     {
-      title: 'クラスタリングとは何か',
-      href: '/bioinformatics/clustering/',
+      title: 'single-cell QCとは何か',
+      href: '/bioinformatics/single-cell-quality-control/',
+    },
+    {
+      title: '次元削減とは何か',
+      href: '/bioinformatics/dimensionality-reduction/',
     },
     {
       title: 'single-cell解析論文の読み方',

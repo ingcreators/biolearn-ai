@@ -2,16 +2,17 @@
 title: バッチ効果とは何か
 description: バッチ効果を、実験日、試薬、測定機器などの違いによって生じる技術的な差として説明し、single-cell解析での注意点につなげます。
 part: bioinformatics
-module: analysis-quality
+module: single-cell-data
 level: intermediate
 priority: P1
-order: 120
+order: 65
 relatedTerms:
   - batch-effect
   - single-cell-quality-control
   - single-cell-rna-seq
 prerequisites:
   - /bioinformatics/rna-seq/
+  - /bioinformatics/metadata/
   - /statistics/biological-technical-replicates/
 ---
 
@@ -19,6 +20,9 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+## この記事で学ぶこと
 
 <LearningGoals
   items={[
@@ -30,6 +34,8 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 バッチ効果は、実験日、試薬、担当者、測定機器、処理手順などの違いによって、サンプル間に生じる技術的な差です。
 
+生命科学データでは、見えている違いが生物学的な条件差なのか、測定や処理の違いによる差なのかを分けて考える必要があります。バッチ効果は、後者の代表的な要因です。
+
 <LessonFigure
   src="/figures/batch-effect-concept.jpg"
   alt="条件差ではなく実験日ごとにサンプルが分かれて見えるバッチ効果の概念図"
@@ -37,23 +43,29 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   caption="条件とバッチが混ざっているか、補正前後で何が変わるかをMethodsとFigureで確認します。"
 />
 
-生命科学データでは、見えている違いが生物学的な条件差なのか、測定や処理の違いによる差なのかを分けて考える必要があります。バッチ効果は、後者の代表的な要因です。
+## なぜバッチ効果の視点が重要か
 
-RNA-seqやsingle-cell RNA-seqでは、同じ種類のサンプルでも、別の日に処理した、別の試薬ロットを使った、別の機器で読んだ、といった違いでデータがまとまって見えることがあります。UMAPや[PCA](/glossary/pca/)で、条件ではなく実験日ごとに点が分かれる場合、バッチ効果の可能性があります。
+バッチ効果を見落とすと、技術的な違いを生物学的な条件差として解釈してしまうことがあります。RNA-seqやsingle-cell RNA-seqでは、別の日に処理した、別の試薬ロットを使った、別の機器で読んだ、といった違いでデータがまとまって見えることがあります。
 
-バッチ補正は、技術的な差を小さくするための処理です。ただし、補正すれば常に正しいわけではありません。条件とバッチが完全に重なっていると、生物学的差と技術的差を分けにくくなります。論文では、実験デザイン、サンプルの割り付け、補正方法、補正前後の図を確認します。
+UMAPや[PCA](/glossary/pca/)で、条件ではなく実験日ごとに点が分かれる場合、バッチ効果の可能性があります。論文では、実験デザイン、サンプルの割り付け、補正方法、補正前後の図を確認します。
 
-## 具体例
+## どんなバッチ効果があるか
 
 条件Aのサンプルをすべて月曜日に処理し、条件Bをすべて火曜日に処理すると、条件差と実験日の差が重なります。この場合、UMAPやPCAで群が分かれても、生物学的差とは限りません。
 
 single-cell RNA-seqでは、サンプルごと、ライブラリ調製日ごと、シーケンスランごとに細胞がまとまって見えることがあります。
 
-## よく混同される概念
+## バッチ効果はどう確認するか
 
-- バッチ効果と条件差: バッチ効果は技術的な差で、条件差は研究で知りたい生物学的な差です。
-- 補正と解決: 補正は役立ちますが、悪い実験デザインを完全に直せるとは限りません。
-- サンプル差とバッチ差: 個体差や組織差が本物の違いとして出ている場合もあります。
+サンプルのメタデータを見て、条件、実験日、試薬ロット、担当者、シーケンスランなどがどう割り付けられているかを確認します。PCA、UMAP、クラスタ、マッピング率、ライブラリサイズなどを、条件だけでなくバッチ情報でも色分けして見ます。
+
+バッチ補正は、技術的な差を小さくするための処理です。ただし、補正すれば常に正しいわけではありません。条件とバッチが完全に重なっていると、生物学的差と技術的差を分けにくくなります。
+
+## バッチ効果の補正は何につながるか
+
+補正によって技術的なまとまりが小さくなり、条件差や細胞タイプの違いを見やすくなることがあります。一方で、補正が強すぎると本来の生物学的差まで小さく見える可能性があります。
+
+補正前後の図、補正に使った変数、条件とバッチの関係を確認します。特に条件Aがすべてバッチ1、条件Bがすべてバッチ2のようなデザインでは、補正だけで問題を解決することは難しくなります。
 
 ## 論文や実験ではどう出てくるか
 
@@ -61,12 +73,54 @@ single-cell RNA-seqでは、サンプルごと、ライブラリ調製日ごと�
 
 読むときは、条件とバッチが交絡していないか、補正前の図が示されているか、補正後に生物学的差まで消えていないかを確認します。
 
-## よくある誤解
+## どんな点でつまずきやすいか
 
-- PCAやUMAPで群が分かれていれば、必ず生物学的差だと読む。
-- バッチ補正をすれば、どんな実験デザインでも問題がなくなると思う。
+### 似た用語との区別
+
+- バッチ効果と条件差: バッチ効果は技術的な差で、条件差は研究で知りたい生物学的な差です。
+- 補正と解決: 補正は役立ちますが、悪い実験デザインを完全に直せるとは限りません。
+- サンプル差とバッチ差: 個体差や組織差が本物の違いとして出ている場合もあります。
+
+### 解釈の落とし穴
+
+- PCAやUMAPで群が分かれていれば、必ず生物学的差だと読まない。
+- バッチ補正をすれば、どんな実験デザインでも問題がなくなると思わない。
 - 補正後の図だけを見て、補正前の状態やサンプル割り付けを確認しない。
-- 条件とバッチが完全に重なっているリスクを見落とす。
+- 条件とバッチが完全に重なっているリスクを見落とさない。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'バッチ効果',
+      english: 'batch effect',
+      description: '実験日、試薬、機器などの違いによって生じる技術的な差。',
+      href: '/glossary/batch-effect/',
+    },
+    {
+      term: '交絡',
+      english: 'confounding',
+      description:
+        '知りたい条件差と別の要因が重なり、影響を分けにくくなること。',
+      href: '/glossary/confounding/',
+    },
+    {
+      term: 'PCA',
+      english: 'principal component analysis',
+      abbreviation: 'PCA',
+      description: 'データの大きなばらつきを説明する軸を見つける方法。',
+      href: '/glossary/pca/',
+    },
+    {
+      term: 'メタデータ',
+      english: 'metadata',
+      description:
+        'サンプルの条件、処理日、由来など、データを解釈するための情報。',
+      href: '/glossary/metadata/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[
@@ -87,16 +141,16 @@ single-cell RNA-seqでは、サンプルごと、ライブラリ調製日ごと�
 <NextSteps
   items={[
     {
-      title: 'single-cell RNA-seqとは何か',
-      href: '/bioinformatics/single-cell-rna-seq/',
-    },
-    {
-      title: '生物学的反復と技術的反復',
-      href: '/statistics/biological-technical-replicates/',
+      title: '次元削減とは何か',
+      href: '/bioinformatics/dimensionality-reduction/',
     },
     {
       title: 'PCA plotの読み方',
       href: '/figures/how-to-read-pca-plot/',
+    },
+    {
+      title: '生物学的反復と技術的反復',
+      href: '/statistics/biological-technical-replicates/',
     },
   ]}
 />
