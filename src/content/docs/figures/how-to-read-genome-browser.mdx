@@ -24,8 +24,6 @@ import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
 
-## この記事で学ぶこと
-
 <LearningGoals
   items={[
     'ゲノムブラウザ図で座標と表示範囲を確認できる',
@@ -36,6 +34,8 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 ゲノムブラウザ図は、ゲノム上の位置を基準に、複数のデータをトラックとして重ねて示すFigureです。
 
+ゲノムブラウザ図は「位置を基準に情報を重ねた地図」です。まず座標とトラック名を確認し、どの情報を同じ場所で比べているかを読みます。
+
 <LessonFigure
   src="/figures/how-to-read-genome-browser-concept.jpg"
   alt="ゲノムブラウザ図で座標、遺伝子モデル、変異、リード、ピークのトラックを確認する概念図"
@@ -45,11 +45,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 ## このFigureで何を見るか
 
-ゲノムブラウザ図では、ゲノム上の位置に沿って複数の情報トラックを読みます。座標、遺伝子モデル、リード、ピーク、変異、保存性などが同じ領域に並びます。
-
-## まず一言でいうと
-
-ゲノムブラウザ図は「位置を基準に情報を重ねた地図」です。まず座標とトラック名を確認し、どの情報を同じ場所で比べているかを読みます。
+このFigureでは、座標、遺伝子モデル、リード、ピーク、変異、保存性などのトラックを同じ位置で対応づけます。まず各トラックが何を示すかを確認し、同じ領域で情報が重なるかを見ます。
 
 ## 図の構成要素
 

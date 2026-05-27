@@ -24,8 +24,6 @@ import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
 
-## この記事で学ぶこと
-
 <LearningGoals
   items={[
     'Forest plotの点、横線、基準線を説明できる',
@@ -36,6 +34,8 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 Forest plotは、複数の研究やサブグループの効果量と信頼区間を並べて比較するFigureです。
 
+Forest plotは「効果の向きと不確実性」を同時に読む図です。点の位置だけでなく、横線の長さと基準線との関係を見ます。
+
 <LessonFigure
   src="/figures/how-to-read-forest-plot-concept.jpg"
   alt="Forest plotで効果量の点、信頼区間の横線、基準線を確認する概念図"
@@ -45,11 +45,7 @@ Forest plotは、複数の研究やサブグループの効果量と信頼区間
 
 ## このFigureで何を見るか
 
-Forest plotでは、研究、サブグループ、解析条件ごとの効果量と信頼区間を横に並べて読みます。基準線、点、横線、統合推定、研究間の違いを確認します。
-
-## まず一言でいうと
-
-Forest plotは「効果の向きと不確実性」を同時に読む図です。点の位置だけでなく、横線の長さと基準線との関係を見ます。
+このFigureでは、基準線、点の位置、横線の長さ、統合推定、研究間の違いを確認します。点がどちら側にあるかだけでなく、信頼区間が広いか、基準線をまたぐかを見ます。
 
 ## 図の構成要素
 

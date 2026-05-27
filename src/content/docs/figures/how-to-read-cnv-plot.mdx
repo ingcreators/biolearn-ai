@@ -25,8 +25,6 @@ import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
 
-## この記事で学ぶこと
-
 <LearningGoals
   items={[
     'CNV plotでゲノム位置とコピー数の向きを確認できる',
@@ -37,6 +35,8 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 CNV plotは、ゲノム上の位置に沿って、DNA領域のコピー数が増えているか減っているかを示すFigureです。
 
+CNV plotは「ゲノム領域のコピー数の増減」を見る図です。点が揺れている場所ではなく、連続した領域として変化しているかを見ます。
+
 <LessonFigure
   src="/figures/how-to-read-cnv-plot-concept.jpg"
   alt="CNV plotで染色体位置、増幅、欠失、セグメント、基準線を確認する概念図"
@@ -46,11 +46,7 @@ CNV plotは、ゲノム上の位置に沿って、DNA領域のコピー数が増
 
 ## このFigureで何を見るか
 
-CNV plotでは、ゲノム上の位置に沿ってコピー数が増えているか減っているかを読みます。基準線、縦軸の定義、セグメント、ノイズ、サンプル比較を確認します。
-
-## まず一言でいうと
-
-CNV plotは「ゲノム領域のコピー数の増減」を見る図です。点が揺れている場所ではなく、連続した領域として変化しているかを見ます。
+このFigureでは、基準線から外れた領域、連続したセグメント、縦軸の定義、ノイズの大きさを確認します。単発の点ではなく、ゲノム上でまとまった変化として読めるかを見ます。
 
 ## 図の構成要素
 

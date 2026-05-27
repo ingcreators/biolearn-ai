@@ -21,8 +21,6 @@ import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
 
-## この記事で学ぶこと
-
 <LearningGoals
   items={[
     'Figure legendで実験条件、n数、統計表示を探せる',
@@ -33,6 +31,8 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 Figure legend（図の説明文）は、Figureの横や下に置かれる短い説明です。図だけでは分からない実験条件、サンプル数、統計検定、[エラーバー](/glossary/error-bar/)の意味などが書かれているため、Figureを読むときの地図になります。
 
+図を見る前に全体の前提をつかみ、見たあとに条件や統計表示を確かめ、迷ったときに本文やMethodsへ戻る入口として使います。
+
 <LessonFigure
   src="/figures/figure-legend-concept.jpg"
   alt="Figure legendから条件、n数、統計表示、Methodsへの手がかりを読み取る概念図"
@@ -42,15 +42,11 @@ Figure legend（図の説明文）は、Figureの横や下に置かれる短い�
 
 ## この文章で何を見るか
 
-Figure legendでは、図に示されたデータが「何を、どの条件で、どのように測った結果なのか」を確認します。パネル、測定対象、条件、n数、統計表示、補足情報の場所を拾うのが主な目的です。
+この文章では、図に示されたデータが「何を、どの条件で、どのように測った結果なのか」を確認します。パネル、測定対象、条件、n数、統計表示、補足情報の場所を拾うのが主な目的です。
 
 たとえば、[棒グラフ](/glossary/bar-plot/)だけを見ると条件Aと条件Bの差は分かっても、細胞種、処理時間、濃度、反復数、エラーバーの定義は分からないことがあります。Figure legendを読むことで、図の見た目を実験の文脈に戻して理解できます。
 
 論文によっては、Figure legendに詳しい方法が書かれ、細かい実験手順はMethodsに分けて書かれます。Figure legendだけで分からないときは、本文とMethodsも合わせて確認します。
-
-## まず一言でいうと
-
-Figure legendは、Figureの見た目を実験・解析の前提へ戻すための手がかりです。図を見る前、見たあと、迷ったときの3回読むと、条件や統計表示の読み違いを減らせます。
 
 ## まず確認する項目
 

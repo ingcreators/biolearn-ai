@@ -24,8 +24,6 @@ import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
 
-## この記事で学ぶこと
-
 <LearningGoals
   items={[
     'フローサイトメトリーFigureでゲートを確認できる',
@@ -36,6 +34,8 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 フローサイトメトリーFigureは、細胞集団を点の分布とゲートで示すFigureです。
 
+ゲートの中の割合だけを見る図ではありません。どの対照を使ってゲートを引き、どの細胞集団を解析しているかを確認します。
+
 <LessonFigure
   src="/figures/how-to-read-flow-cytometry-concept.jpg"
   alt="フローサイトメトリーFigureで散布図のゲートと陽性率グラフを確認する概念図"
@@ -45,11 +45,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 ## このFigureで何を見るか
 
-フローサイトメトリーFigureでは、点の分布、ゲート、陽性率、対照を確認します。各点は細胞や粒子を表すことが多く、どの集団をどの基準で選んだかが読み方の中心になります。
-
-## まず一言でいうと
-
-ゲートの中の割合だけを見る図ではありません。どの対照を使ってゲートを引き、どの細胞集団を解析しているかを確認します。
+このFigureでは、各点が何を表すか、どのゲートで集団を分けたか、陽性率がどの対照に基づくかを確認します。割合の数字を見る前に、解析対象の細胞集団がどう選ばれたかを追います。
 
 ## 図の構成要素
 

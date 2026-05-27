@@ -26,8 +26,6 @@ import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
 
-## この記事で学ぶこと
-
 <LearningGoals
   items={[
     'Volcano plotの横軸と縦軸の意味を分けて読める',
@@ -38,6 +36,8 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 Volcano plotは、差次的発現解析の結果を一覧するためのFigureです。各点が遺伝子を表し、横軸に変化の大きさ、縦軸に統計的な確からしさを置くことで、変化が大きく信頼性も高い候補を見つけやすくします。
 
+Volcano plotは「横に離れるほど変化が大きく、上に行くほど統計的に目立つ」遺伝子を探す図です。
+
 <LessonFigure
   src="/figures/how-to-read-volcano-plot-concept.jpg"
   alt="Volcano plotで変化量、統計的な目立ちやすさ、しきい値を確認する概念図"
@@ -47,11 +47,7 @@ Volcano plotは、差次的発現解析の結果を一覧するためのFigure�
 
 ## このFigureで何を見るか
 
-どの遺伝子が条件間で増えているか、減っているか、そしてその変化が統計的にどの程度支持されているかを見ます。[RNA-seqとは何か](/bioinformatics/rna-seq/)と[差次的発現解析とは何か](/bioinformatics/differential-expression/)を読んでおくと、軸の意味が理解しやすくなります。
-
-## まず一言でいうと
-
-Volcano plotは「横に離れるほど変化が大きく、上に行くほど統計的に目立つ」遺伝子を探す図です。
+このFigureでは、横軸で変化の向きと大きさ、縦軸で統計的な目立ちやすさ、色やしきい値で候補遺伝子の分類を確認します。[RNA-seqとは何か](/bioinformatics/rna-seq/)と[差次的発現解析とは何か](/bioinformatics/differential-expression/)を読んでおくと、軸の意味が理解しやすくなります。
 
 ## 図の構成要素
 

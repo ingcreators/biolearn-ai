@@ -25,8 +25,6 @@ import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
 
-## この記事で学ぶこと
-
 <LearningGoals
   items={[
     '箱ひげ図の中央値と四分位範囲を読める',
@@ -37,6 +35,8 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 箱ひげ図は、データの中央値、ばらつき、外れ値をまとめて見るためのFigureです。
 
+箱の中央線だけを見る図ではありません。箱の高さ、ひげ、外れ値、群どうしの重なりを合わせて読みます。
+
 <LessonFigure
   src="/figures/box-plot-concept.jpg"
   alt="箱ひげ図で中央値、四分位範囲、ひげ、外れ値を見る概念図"
@@ -46,11 +46,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 ## このFigureで何を見るか
 
-箱ひげ図では、中央値、四分位範囲、ひげ、外れ値を使って分布の中心と広がりを読みます。平均だけでは見えにくいばらつきや分布の重なりを見るためのFigureです。
-
-## まず一言でいうと
-
-箱の中央線だけを見る図ではありません。箱の高さ、ひげ、外れ値、群どうしの重なりを合わせて読みます。
+このFigureでは、箱の中央線、箱の高さ、ひげ、外れ値、群どうしの重なりを順に確認します。代表値だけでなく、分布の広がりや少数の点が解釈に影響していないかを見ます。
 
 ## 図の構成要素
 

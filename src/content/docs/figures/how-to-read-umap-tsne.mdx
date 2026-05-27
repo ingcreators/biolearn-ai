@@ -23,8 +23,6 @@ import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
 
-## この記事で学ぶこと
-
 <LearningGoals
   items={[
     'UMAPやt-SNEで点とクラスタが何を表すか説明できる',
@@ -35,6 +33,8 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 UMAPやt-SNEは、多数の特徴を持つ細胞やサンプルを2次元に配置し、クラスタや連続性を見るFigureです。
 
+UMAPやt-SNEは「似た細胞を近くに置く可視化」です。軸の数値やクラスタ間の距離を、物理的な距離のように読みすぎないことが大切です。
+
 <LessonFigure
   src="/figures/umap-tsne-concept.jpg"
   alt="UMAPやt-SNEで細胞が複数のクラスタとして配置され、色で細胞タイプを示す概念図"
@@ -44,11 +44,7 @@ UMAPやt-SNEは、多数の特徴を持つ細胞やサンプルを2次元に配�
 
 ## このFigureで何を見るか
 
-UMAPやt-SNEでは、高次元データの近さを2次元に配置した点のまとまりを読みます。単一細胞解析では、点が細胞、色が細胞タイプや条件を表すことが多いです。
-
-## まず一言でいうと
-
-UMAPやt-SNEは「似た細胞を近くに置く可視化」です。軸の数値やクラスタ間の距離を、物理的な距離のように読みすぎないことが大切です。
+このFigureでは、1つの点が細胞なのかサンプルなのか、色が細胞タイプや条件のどれに対応するかを確認します。クラスタのまとまり、連続的な変化、外れた点を見ますが、軸の数値やクラスタ間距離を読みすぎないようにします。
 
 ## 図の構成要素
 

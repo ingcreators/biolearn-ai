@@ -25,8 +25,6 @@ import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
 
-## この記事で学ぶこと
-
 <LearningGoals
   items={[
     'qPCR plotでCt値、しきい値、相対発現量を区別できる',
@@ -37,6 +35,8 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 qPCR（quantitative PCR）は、特定のDNAやRNA由来の[cDNA](/glossary/cdna/)を増幅しながら定量する方法です。論文では、増幅曲線、[Ct値](/glossary/ct-value/)、相対発現量の[棒グラフ](/glossary/bar-plot/)や点付きグラフとして示されます。
 
+qPCRは「どのサイクルで検出しきい値を超えたか」を見て、相対量を比較するFigureです。
+
 <LessonFigure
   src="/figures/qpcr-concept.jpg"
   alt="qPCRで増幅曲線、Ct値、しきい値、相対発現量を確認する概念図"
@@ -46,11 +46,7 @@ qPCR（quantitative PCR）は、特定のDNAやRNA由来の[cDNA](/glossary/cdna
 
 ## このFigureで何を見るか
 
-目的の遺伝子や配列が、条件間でどのくらい違って検出されたかを見ます。mRNA量の比較では、[遺伝子発現とは何か](/fundamentals/gene-expression/)や[PCRとは何か](/methods/pcr/)の理解が土台になります。
-
-## まず一言でいうと
-
-qPCRは「どのサイクルで検出しきい値を超えたか」を見て、相対量を比較するFigureです。
+このFigureでは、目的の遺伝子や配列が、条件間でどのくらい違って検出されたかを見ます。mRNA量の比較では、[遺伝子発現とは何か](/fundamentals/gene-expression/)や[PCRとは何か](/methods/pcr/)の理解が土台になります。
 
 ## 図の構成要素
 

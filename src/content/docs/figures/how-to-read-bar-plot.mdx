@@ -22,8 +22,6 @@ import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
 
-## この記事で学ぶこと
-
 <LearningGoals
   items={[
     '棒グラフで平均、ばらつき、点、n数をセットで確認できる',
@@ -34,6 +32,8 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 棒グラフ（bar plot）は、条件ごとの測定値を比較するときによく使われるFigureです。シンプルに見えますが、平均だけを見て結論を急ぐと、ばらつきやサンプル数を見落としやすい図でもあります。
 
+棒の高さだけでなく、[エラーバー](/glossary/error-bar/)、点、n数、統計表示をセットで読む図です。
+
 <LessonFigure
   src="/figures/how-to-read-bar-plot-concept.jpg"
   alt="棒グラフで棒の高さ、点、エラーバー、n数を順番に確認する概念図"
@@ -43,13 +43,9 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 ## このFigureで何を見るか
 
-条件間で測定値がどのくらい違うか、ばらつきはどの程度あるか、その差が実験の目的に照らして意味を持ちそうかを見ます。
+このFigureでは、条件間で測定値がどのくらい違うか、ばらつきはどの程度あるか、その差が実験の目的に照らして意味を持ちそうかを見ます。
 
 たとえば、遺伝子発現量、タンパク質量、細胞数、生存率、蛍光強度などの比較で使われます。関連する基礎として、[遺伝子発現とは何か](/fundamentals/gene-expression/)を合わせて読むと理解しやすくなります。
-
-## まず一言でいうと
-
-棒の高さだけでなく、[エラーバー](/glossary/error-bar/)、点、n数、統計表示をセットで読む図です。
 
 ## 図の構成要素
 

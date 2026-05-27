@@ -20,8 +20,6 @@ import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
 
-## この記事で学ぶこと
-
 <LearningGoals
   items={[
     'Figureの軸とラベルを最初に確認できる',
@@ -32,6 +30,8 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 Figureを読むときは、値の大小を見る前に、軸、ラベル、単位、スケール、条件名を確認します。
 
+グラフの形を見る前に、「何を、何と比べ、どの単位で測った図か」を言葉にします。ここが曖昧なまま読むと、見た目の差をまったく違う意味に受け取ってしまいます。
+
 <LessonFigure
   src="/figures/axis-label-unit-concept.jpg"
   alt="Figureの軸、ラベル、単位、スケール、条件名を順に確認する概念図"
@@ -41,11 +41,7 @@ Figureを読むときは、値の大小を見る前に、軸、ラベル、単�
 
 ## このFigureで何を見るか
 
-軸・ラベル・単位は、すべてのFigureを読む前の入口です。値の大小や差の有無を見る前に、横軸と縦軸が何を表すか、単位は何か、値が絶対量か相対量かを確認します。
-
-## まず一言でいうと
-
-グラフの形を見る前に、「何を、何と比べ、どの単位で測った図か」を言葉にします。ここが曖昧なまま読むと、見た目の差をまったく違う意味に受け取ってしまいます。
+このFigureでは、横軸、縦軸、凡例、条件名を対応づけ、値が絶対量なのか相対量なのかを整理します。単位やスケールを先に押さえることで、見た目の差を測定の文脈に戻して読めます。
 
 ## 図の構成要素
 

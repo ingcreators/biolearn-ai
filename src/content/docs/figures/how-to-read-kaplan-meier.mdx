@@ -23,8 +23,6 @@ import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
 
-## この記事で学ぶこと
-
 <LearningGoals
   items={[
     'Kaplan-Meier曲線の曲線と横軸を説明できる',
@@ -35,6 +33,8 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 Kaplan-Meier曲線は、時間の経過にともなって、イベントがまだ起きていない割合がどう変わるかを示すFigureです。
 
+曲線の離れ方だけで判断しません。時間が進むほどリスク数が減るため、後半の見た目は特に慎重に読みます。
+
 <LessonFigure
   src="/figures/how-to-read-kaplan-meier-concept.jpg"
   alt="Kaplan-Meier曲線で2本の階段状の曲線、打ち切り、リスク数を確認する概念図"
@@ -44,11 +44,7 @@ Kaplan-Meier曲線は、時間の経過にともなって、イベントがま�
 
 ## このFigureで何を見るか
 
-Kaplan-Meier曲線では、時間の経過にともなってイベントがまだ起きていない割合がどう変わるかを読みます。曲線、打ち切り、リスク数、追跡期間、群の背景を確認します。
-
-## まず一言でいうと
-
-曲線の離れ方だけで判断しません。時間が進むほどリスク数が減るため、後半の見た目は特に慎重に読みます。
+このFigureでは、曲線がどの時点で下がるか、打ち切りがどこにあるか、各時点で残っているリスク数が十分かを確認します。群の背景や追跡期間も合わせて見ることで、曲線の離れ方を過度に読みすぎないようにします。
 
 ## 図の構成要素
 

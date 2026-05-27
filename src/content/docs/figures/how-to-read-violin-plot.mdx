@@ -25,8 +25,6 @@ import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
 
-## この記事で学ぶこと
-
 <LearningGoals
   items={[
     'Violin plotで分布の形を読める',
@@ -37,6 +35,8 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 Violin plotは、データの分布の形を、左右に広がる形として見せるFigureです。
 
+Violin plotの幅は「値の大きさ」ではなく「その値付近のデータの多さ」です。中心だけでなく、分布の形と群間の重なりを見ます。
+
 <LessonFigure
   src="/figures/how-to-read-violin-plot-concept.jpg"
   alt="Violin plotで分布の幅、中央値、群間の重なりを確認する概念図"
@@ -46,11 +46,7 @@ Violin plotは、データの分布の形を、左右に広がる形として見
 
 ## このFigureで何を見るか
 
-Violin plotでは、データがどの値域に多いかを幅の広がりとして読みます。中央値、四分位範囲、個々の点が重ねて表示されることもあるため、何が描かれているかをFigure legendで確認します。
-
-## まず一言でいうと
-
-Violin plotの幅は「値の大きさ」ではなく「その値付近のデータの多さ」です。中心だけでなく、分布の形と群間の重なりを見ます。
+このFigureでは、幅が広い値域、中央値、四分位範囲、重ねて表示された点の有無を確認します。群どうしの中心だけでなく、分布の形や重なりがどう違うかを見ます。
 
 ## 図の構成要素
 

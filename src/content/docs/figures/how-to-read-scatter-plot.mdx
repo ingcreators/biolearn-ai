@@ -25,8 +25,6 @@ import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
 
-## この記事で学ぶこと
-
 <LearningGoals
   items={[
     '散布図の横軸と縦軸が何を表すか確認できる',
@@ -37,6 +35,8 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 散布図は、2つの変数の関係を点の分布として見るFigureです。
 
+散布図は「点の集まり方」を読むFigureです。近似線や相関係数だけでなく、点そのものの分布を見ます。
+
 <LessonFigure
   src="/figures/scatter-plot-concept.jpg"
   alt="点の分布から2つの変数の関係や外れ値を読む散布図の概念図"
@@ -46,11 +46,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 ## このFigureで何を見るか
 
-散布図では、2つの変数の関係を点の分布として読みます。横軸と縦軸が何を測っているか、1つの点が何を表すか、外れ値や群ごとの違いがあるかを確認します。
-
-## まず一言でいうと
-
-散布図は「点の集まり方」を読むFigureです。近似線や相関係数だけでなく、点そのものの分布を見ます。
+このFigureでは、横軸と縦軸が何を測っているか、1つの点が何を表すかを最初に確認します。そのうえで、外れ値、群ごとのまとまり、近似線や相関係数が点の分布と合っているかを見ます。
 
 ## 図の構成要素
 

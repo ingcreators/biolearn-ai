@@ -23,8 +23,6 @@ import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
 
-## この記事で学ぶこと
-
 <LearningGoals
   items={[
     '相関図で点の単位と軸を確認できる',
@@ -35,6 +33,8 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 相関図は、2つの変数が一緒に変化する傾向を、点の分布や相関係数で示すFigureです。
 
+相関係数は便利な要約ですが、図の代わりにはなりません。係数を見る前後に、点の分布を必ず見ます。
+
 <LessonFigure
   src="/figures/how-to-read-correlation-plot-concept.jpg"
   alt="相関図で点の分布、近似線、相関係数、外れ値を確認する概念図"
@@ -44,11 +44,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 ## このFigureで何を見るか
 
-相関図では、2つの変数が一緒に変化する傾向を見ます。点の分布、相関係数、p値、外れ値、群の混ざり方を合わせて確認します。
-
-## まず一言でいうと
-
-相関係数は便利な要約ですが、図の代わりにはなりません。係数を見る前後に、点の分布を必ず見ます。
+このFigureでは、点の分布、相関係数、p値、外れ値、群の混ざり方を合わせて確認します。係数の値だけでなく、少数の点や群構造が相関を作っていないかを見ます。
 
 ## 図の構成要素
 

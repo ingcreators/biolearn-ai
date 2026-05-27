@@ -24,8 +24,6 @@ import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
 
-## この記事で学ぶこと
-
 <LearningGoals
   items={[
     'Pathway enrichment plotで点や棒が何を表すか確認できる',
@@ -36,6 +34,8 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 Pathway enrichment plotは、遺伝子リストやランキングに、特定の経路や機能に属する遺伝子が偏って含まれるかを見るFigureです。
 
+Enrichmentは「候補のまとまりを見つける解析」です。経路名が出たことだけで、細胞内でその経路が直接測定されたとは限りません。
+
 <LessonFigure
   src="/figures/how-to-read-pathway-enrichment-concept.jpg"
   alt="Pathway enrichment plotで経路名、点の大きさ、色、FDRを確認する概念図"
@@ -45,11 +45,7 @@ Pathway enrichment plotは、遺伝子リストやランキングに、特定の
 
 ## このFigureで何を見るか
 
-Pathway enrichment plotでは、差がある遺伝子リストやランキングに、どの経路や遺伝子セットが多く含まれるかを見ます。経路名、スコア、FDR、遺伝子数、背景集団を確認します。
-
-## まず一言でいうと
-
-Enrichmentは「候補のまとまりを見つける解析」です。経路名が出たことだけで、細胞内でその経路が直接測定されたとは限りません。
+このFigureでは、経路名、スコア、FDR、遺伝子数、背景集団を確認します。上位に出た経路名を結論として読む前に、どの遺伝子リストと背景から計算された結果かを見ます。
 
 ## 図の構成要素
 

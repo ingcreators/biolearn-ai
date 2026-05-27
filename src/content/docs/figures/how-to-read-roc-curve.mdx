@@ -23,8 +23,6 @@ import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
 
-## この記事で学ぶこと
-
 <LearningGoals
   items={[
     'ROC曲線の横軸と縦軸を説明できる',
@@ -35,6 +33,8 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 ROC曲線は、分類や判別の[しきい値](/glossary/threshold/)を変えたときに、真陽性率と偽陽性率の関係がどう変わるかを見るFigureです。
 
+ROC曲線は「あるデータセット上でどの程度区別できたか」を示す図です。AUCが高いことだけで、実用性や個別判断まで示すわけではありません。
+
 <LessonFigure
   src="/figures/how-to-read-roc-curve-concept.jpg"
   alt="ROC曲線で左上に近い曲線、対角線、AUCを確認する概念図"
@@ -44,11 +44,7 @@ ROC曲線は、分類や判別の[しきい値](/glossary/threshold/)を変え�
 
 ## このFigureで何を見るか
 
-ROC曲線では、しきい値を変えたときの真陽性率と偽陽性率の関係を読みます。AUC、評価データ、サンプル数、クラスの偏りを確認します。
-
-## まず一言でいうと
-
-ROC曲線は「あるデータセット上でどの程度区別できたか」を示す図です。AUCが高いことだけで、実用性や個別判断まで示すわけではありません。
+このFigureでは、曲線の位置、AUC、評価データ、サンプル数、クラスの偏りを確認します。しきい値を変えたときの性能を見ながら、別データでも同じように使えるかは区別して考えます。
 
 ## 図の構成要素
 

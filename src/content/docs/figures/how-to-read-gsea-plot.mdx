@@ -23,8 +23,6 @@ import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
 
-## この記事で学ぶこと
-
 <LearningGoals
   items={[
     'GSEA plotが遺伝子セットの偏りを見る図であることを説明できる',
@@ -35,6 +33,8 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 GSEA plotは、あらかじめ定義した遺伝子セットが、ランキングの上位や下位に偏っているかを見るFigureです。
 
+GSEA plotは「遺伝子セット全体の偏り」を見る図です。1つの遺伝子が大きく変わったかではなく、関連する遺伝子群がまとまってどちら側に寄るかを読みます。
+
 <LessonFigure
   src="/figures/gsea-plot-concept.jpg"
   alt="GSEA plotでランキングに沿ったエンリッチメントスコアの曲線と遺伝子セットの偏りを読む概念図"
@@ -44,11 +44,7 @@ GSEA plotは、あらかじめ定義した遺伝子セットが、ランキン�
 
 ## このFigureで何を見るか
 
-GSEA plotでは、順位づけられた遺伝子リストの中で、ある遺伝子セットが上位または下位に偏っているかを読みます。エンリッチメントスコア、leading edge、FDRを確認します。
-
-## まず一言でいうと
-
-GSEA plotは「遺伝子セット全体の偏り」を見る図です。1つの遺伝子が大きく変わったかではなく、関連する遺伝子群がまとまってどちら側に寄るかを読みます。
+このFigureでは、ランキングのどちら側に遺伝子セットが集まるか、エンリッチメントスコアがどこで最大になるか、leading edgeとFDRがどう示されているかを確認します。
 
 ## 図の構成要素
 

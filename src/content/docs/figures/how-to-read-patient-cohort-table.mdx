@@ -27,8 +27,6 @@ import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
 import GlossaryTable from '../../../components/GlossaryTable.astro';
 
-## この記事で学ぶこと
-
 <LearningGoals
   items={[
     '患者コホート表で対象者数と群分けを確認できる',
@@ -39,6 +37,8 @@ import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 患者コホート表は、研究に含まれる対象者の数、群分け、年齢や性別などの背景、追跡期間、欠測の有無をまとめた表です。
 
+患者コホート表は「この研究は、どんな対象者を比べているのか」を確認する表です。Figureの差を見る前に、群の人数や背景が大きく偏っていないかを見ます。
+
 <LessonFigure
   src="/figures/how-to-read-patient-cohort-table-concept.jpg"
   alt="患者コホート表で群ごとの対象者数、背景因子、欠測、追跡期間を確認する概念図"
@@ -48,13 +48,9 @@ import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 ## このFigureで何を見るか
 
-患者コホート表では、研究に含まれた対象者がどのような集団で、どの群とどの群が比較されているかを見ます。年齢、性別、病期、サンプル種別、追跡期間、欠測、除外基準などを確認します。
+このFigureでは、群ごとの人数、年齢、性別、病期、サンプル種別、追跡期間、欠測、除外基準などを確認します。比較したい群の背景が大きく違っていないかを先に見ます。
 
 この表は単独で結論を示すものではなく、Kaplan-Meier曲線、ROC曲線、Forest plotなどを読む前に、比較の前提を整えるための情報として使います。
-
-## まず一言でいうと
-
-患者コホート表は「この研究は、どんな対象者を比べているのか」を確認する表です。Figureの差を見る前に、群の人数や背景が大きく偏っていないかを見ます。
 
 ## 図の構成要素
 

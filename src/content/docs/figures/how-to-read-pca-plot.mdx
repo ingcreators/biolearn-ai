@@ -22,8 +22,6 @@ import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
 
-## この記事で学ぶこと
-
 <LearningGoals
   items={[
     'PCA plotで点が何を表すか確認できる',
@@ -34,6 +32,8 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 PCA plotは、多数の変数を持つデータで、サンプル同士の全体的な似ている・違うを可視化するFigureです。
 
+PCA plotは「全体の違いを要約した地図」です。近い理由や離れた理由は、メタデータや追加解析に戻って考えます。
+
 <LessonFigure
   src="/figures/pca-plot-concept.jpg"
   alt="PCA plotで条件ごとのサンプルがまとまり、外れ値を確認する概念図"
@@ -43,11 +43,7 @@ PCA plotは、多数の変数を持つデータで、サンプル同士の全体
 
 ## このFigureで何を見るか
 
-PCA plotでは、サンプル同士の全体的な似ている・違うを点の位置として読みます。点の単位、色分け、PC1/PC2の説明割合、外れ値、バッチの影響を確認します。
-
-## まず一言でいうと
-
-PCA plotは「全体の違いを要約した地図」です。近い理由や離れた理由は、メタデータや追加解析に戻って考えます。
+このFigureでは、1つの点が何を表すか、色分けが何に対応するか、PC1/PC2の説明割合、外れ値、バッチの影響を確認します。点の近さを読む前に、点とメタデータの対応を押さえます。
 
 ## 図の構成要素
 
