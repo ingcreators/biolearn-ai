@@ -47,11 +47,22 @@ import ArticleList from '../../../components/ArticleList.astro';
 
 ## この分野で学ぶこと
 
-- 平均、ばらつき、エラーバー、信頼区間の基本
+- 変数、分布、平均、中央値の基本
+- 反復、n数、対照群、ランダム化、盲検化の見方
+- ばらつき、エラーバー、信頼区間の基本
 - p値、効果量、多重検定の考え方
-- 対照群、反復、ランダム化、交絡の見方
 - Figureの軸、代表値、分布、推定の不確かさを分けて読むこと
 - 相関と因果、有意性と重要性、バイアスを区別してDiscussionを読むこと
+
+## おすすめの読み順
+
+初めて読む場合は、まずデータが何を表しているかを押さえ、次に比較の設計を確認し、その後でエラーバーやp値へ進むと読みやすくなります。
+
+1. [変数とは何か](/statistics/variable/) → [分布とは何か](/statistics/distribution/) → [平均と中央値](/statistics/mean-median/)
+2. [生物学的反復と技術的反復](/statistics/biological-technical-replicates/) → [n数とは何か](/statistics/sample-size/) → [対照群とは何か](/statistics/control-group/) → [ランダム化とは何か](/statistics/randomization/) → [盲検化とは何か](/statistics/blinding/)
+3. [エラーバーとは何か](/statistics/error-bars/) → [標準偏差と標準誤差とは何か](/statistics/standard-deviation-standard-error/) → [信頼区間とは何か](/statistics/confidence-interval/)
+4. [p値とは何か](/statistics/p-value/) → [効果量とは何か](/statistics/effect-size/) → [多重検定補正とは何か](/statistics/multiple-testing-correction/) → [統計的有意性と生物学的重要性](/statistics/significance-vs-importance/)
+5. [相関と因果の違い](/statistics/correlation-causation/) → [交絡とは何か](/statistics/confounding/) → [バイアスとは何か](/statistics/bias/) → [再現性とは何か](/statistics/reproducibility/) → [研究の限界の読み方](/statistics/limitations/)
 
 ## 目的別に戻る
 
@@ -65,7 +76,7 @@ import ArticleList from '../../../components/ArticleList.astro';
 | 点の関係が因果に見えてよいか迷う         | [相関と因果](/statistics/correlation-causation/)、[交絡](/statistics/confounding/)                                                                        | [散布図](/figures/how-to-read-scatter-plot/)、[相関図](/figures/how-to-read-correlation-plot/)   |
 | 結論が強すぎるように見える               | [バイアス](/statistics/bias/)、[盲検化](/statistics/blinding/)、[再現性](/statistics/reproducibility/)、[研究の限界](/statistics/limitations/)            | [Figureと主張](/figures/figure-to-claim/)、[Resultsの流れ](/figures/results-section-flow/)       |
 
-用語の意味だけを短く確認したい場合は、[用語集の統計・研究デザインの用語](/glossary/#figure-statistics-terms) に戻ります。実際の見え方を練習したい場合は、対応するFigure記事へ進みます。
+用語の意味だけを短く確認したい場合は、上の用語集への入口に戻ります。実際の見え方を練習したい場合は、対応するFigure記事へ進みます。
 
 ## 統計からFigureへ進む
 
@@ -81,13 +92,12 @@ import ArticleList from '../../../components/ArticleList.astro';
 | [相関と因果](/statistics/correlation-causation/)、[交絡](/statistics/confounding/)                                                                        | [散布図](/figures/how-to-read-scatter-plot/)、[相関図](/figures/how-to-read-correlation-plot/)       | 点の関係を因果として読みすぎていないか                     |
 | [バイアス](/statistics/bias/)、[再現性](/statistics/reproducibility/)、[研究の限界](/statistics/limitations/)                                             | [Figureと主張](/figures/figure-to-claim/)、[Resultsセクションの流れ](/figures/results-section-flow/) | Figureから言える範囲と、追加確認が必要な範囲を分けられるか |
 
-## 読む順番
+## 全記事一覧
 
 <ArticleList part="statistics" groupByModule />
 
 ## 次に進む
 
-まず [変数とは何か](/statistics/variable/) から入り、分布、平均と中央値、エラーバー、標準偏差と標準誤差、信頼区間、p値、効果量の順に読むと、Figure上の統計表示を読みやすくなります。実験デザイン側は、[生物学的反復と技術的反復](/statistics/biological-technical-replicates/)、[n数とは何か](/statistics/sample-size/)、[対照群とは何か](/statistics/control-group/)、[ランダム化とは何か](/statistics/randomization/)、[盲検化とは何か](/statistics/blinding/) の順に確認します。
+概念を一通り確認したら、[論文Figureの読み方](/figures/) で実際の図に進みます。順番に練習したい場合は、[Figureを読めるようになる](/paths/figure-reading/) を使います。
 
-統計表示に慣れたら、[論文Figureの読み方](/figures/) で実際の図の読み方へ進みます。順番に練習したい場合は、[Figureを読めるようになる](/paths/figure-reading/) を使います。
-Discussionを読む前には、[相関と因果の違い](/statistics/correlation-causation/)、[交絡とは何か](/statistics/confounding/)、[統計的有意性と生物学的重要性](/statistics/significance-vs-importance/)、[研究の限界の読み方](/statistics/limitations/) も確認しておくと、主張の強さを見積もりやすくなります。
+Discussionの主張を読む前には、[相関と因果の違い](/statistics/correlation-causation/)、[交絡とは何か](/statistics/confounding/)、[統計的有意性と生物学的重要性](/statistics/significance-vs-importance/)、[研究の限界の読み方](/statistics/limitations/) を確認しておくと、結果から言える範囲を見積もりやすくなります。

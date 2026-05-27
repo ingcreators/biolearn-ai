@@ -19,6 +19,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -30,6 +31,8 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 p値は、「差がない」という仮定のもとで、観察された差やそれ以上の差がどれくらい起こりにくいかを表す指標です。
 
+Figureのアスタリスクやp < 0.05は、結果を読む入口にはなりますが、差の大きさや生物学的な重要性そのものを示すわけではありません。効果量、信頼区間、実験デザインと合わせて読むことが大切です。
+
 <LessonFigure
   src="/figures/p-value-concept.jpg"
   alt="2つの棒グラフの差と、差がないという仮定のもとで珍しさを考える様子を示す概念図"
@@ -37,50 +40,45 @@ p値は、「差がない」という仮定のもとで、観察された差や�
   caption="p値だけで重要性を判断せず、差の大きさや実験設計と合わせて読みます。"
 />
 
-論文のFigureでは、`p < 0.05` やアスタリスクがよく出てきます。これは、統計的検定の結果としてp値が一定の基準より小さいことを示している場合があります。
+## なぜp値の視点が重要か
+
+論文のFigureでは、「p < 0.05」やアスタリスクがよく出てきます。これは、統計的検定の結果としてp値が一定の基準より小さいことを示している場合があります。
 
 大切なのは、p値が「仮説が正しい確率」や「結果が重要である確率」ではないことです。p値は、帰無仮説と呼ばれる基準の仮定のもとで、観察されたデータがどれくらい珍しいかを考えるための値です。
 
-p値が小さい結果でも、差の大きさが小さい場合があります。逆に、サンプル数が少ないと、実際には意味のある差があっても統計的に有意と示されないことがあります。そのため、p値だけではなく、効果量、信頼区間、実験設計、反復の種類も合わせて読みます。
+## どんな場面でp値が使われるか
 
-## なぜ重要か
+p値は、処理群と対照群の平均を比較する、複数群を比較する、相関が偶然だけで説明しにくいかを見る、遺伝子ごとの差を検定する、といった場面で使われます。
 
-生命科学論文では、[棒グラフ](/glossary/bar-plot/)、[箱ひげ図](/glossary/box-plot/)、[Volcano plot](/glossary/volcano-plot/)などにp値が添えられることがあります。p値の意味を誤解すると、アスタリスクの有無だけで結果を強く読みすぎてしまいます。
+処理群と対照群の平均を比較してp = 0.03と出た場合、「差がない」という仮定のもとでは、観察された差以上の結果が出る確率が小さい、という手がかりになります。ただし、差の大きさや実験の重要性を直接示すものではありません。
 
-Figureを読むときは、何と何を比べたp値なのか、どの検定を使ったのか、多重検定補正が必要な場面かを確認します。
+## p値はどう確認するか
 
-## 具体例
+Figureでは、アスタリスク、括弧、表、Volcano plotの縦軸などを確認します。Figure legendでは、どの検定を使ったか、片側か両側か、多重検定補正をしたか、どの比較に対応するp値かを見ます。
 
-処理群と対照群の平均を比較してp = 0.03と出た場合、「差がない」という仮定のもとでは、観察された差以上の結果が出る確率が小さい、という手がかりになります。
+Methodsでは、統計検定、サンプル数、除外基準、正規性の仮定、補正方法を確認します。p値だけでなく、効果量、信頼区間、実験デザイン、反復の種類も合わせて読みます。
 
-ただし、p値は差の大きさや実験の重要性を直接示すものではありません。
+## p値の大きさは何につながるか
 
-## よく混同される概念
+p値が小さい結果でも、差の大きさが小さい場合があります。逆に、サンプル数が少ないと、実際には意味のある差があっても統計的に有意と示されないことがあります。
+
+そのため、p値は「読むための入口」であって、結論そのものではありません。研究の問いに対して、その差がどれくらい大きいか、再現しているか、バイアスや交絡が残っていないかを合わせて考えます。
+
+## 論文や実験ではどう出てくるか
+
+論文では、グラフ上のアスタリスク、表、Figure legend、Methodsの統計解析に出てきます。生命科学論文では、[棒グラフ](/glossary/bar-plot/)、[箱ひげ図](/glossary/box-plot/)、[Volcano plot](/glossary/volcano-plot/)などにp値が添えられることがあります。
+
+読むときは、何と何を比べたp値なのか、どの検定を使ったのか、多重検定補正が必要な場面かを確認します。[効果量とは何か](/statistics/effect-size/)や[統計的有意性と生物学的重要性](/statistics/significance-vs-importance/)へ進むと、p値だけに頼らない読み方を練習できます。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
 
 - p値と効果量: p値は偶然では説明しにくいか、効果量は差の大きさを表します。
 - p < 0.05と真実: [しきい値](/glossary/threshold/)を超えたかどうかだけで、結果が正しいと決まるわけではありません。
 - p値と再現性: p値が小さくても、独立した実験で再現するかは別に確認が必要です。
 
-## 論文や実験ではどう出てくるか
-
-論文では、グラフ上のアスタリスク、表、Figure legend、Methodsの統計解析に出てきます。どの検定を使ったか、片側か両側か、多重検定補正をしたかが重要です。
-
-読むときは、p値だけでなく、効果量、信頼区間、n数、実験デザインを合わせて確認します。
-
-## Figureで見る場所
-
-p値は、[棒グラフの読み方](/figures/how-to-read-bar-plot/)のアスタリスク、[箱ひげ図の読み方](/figures/how-to-read-box-plot/)の群間比較、[Volcano plotの読み方](/figures/how-to-read-volcano-plot/)の縦軸などで出てきます。オミクス解析では、補正済みp値かどうかも確認します。
-
-## 英語表記と略語
-
-| 日本語名 | 英語名             | 略語 |
-| -------- | ------------------ | ---- |
-| p値      | p-value            | p    |
-| 帰無仮説 | null hypothesis    | -    |
-| 効果量   | effect size        | -    |
-| 有意水準 | significance level | -    |
-
-## よくある誤解
+### 解釈の落とし穴
 
 - p値は「仮説が正しい確率」ではありません。
 - p値が小さいことは、効果が大きいことと同じではありません。
@@ -88,10 +86,36 @@ p値は、[棒グラフの読み方](/figures/how-to-read-bar-plot/)のアスタ
 
 ## 重要用語
 
-- p値: 帰無仮説のもとで観察結果の珍しさを考える指標。
-- 帰無仮説: 比較している群の間に差がない、などの基準となる仮定。
-- 効果量: 差や関係の大きさを表す指標。
-- 多重検定補正: 多数の検定を行うときに、偶然の有意を増やしすぎないための補正。
+<GlossaryTable
+  terms={[
+    {
+      term: 'p値',
+      english: 'p-value',
+      abbreviation: 'p',
+      description: '帰無仮説のもとで観察結果の珍しさを考える指標。',
+      href: '/glossary/p-value/',
+    },
+    {
+      term: '帰無仮説',
+      english: 'null hypothesis',
+      description: '比較している群の間に差がない、などの基準となる仮定。',
+      href: '/glossary/null-hypothesis/',
+    },
+    {
+      term: '効果量',
+      english: 'effect size',
+      description: '差や関係の大きさを表す指標。',
+      href: '/glossary/effect-size/',
+    },
+    {
+      term: '多重検定補正',
+      english: 'multiple testing correction',
+      description:
+        '多数の検定を行うときに、偶然の有意を増やしすぎないための補正。',
+      href: '/glossary/multiple-testing-correction/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[
@@ -111,14 +135,14 @@ p値は、[棒グラフの読み方](/figures/how-to-read-bar-plot/)のアスタ
 
 <NextSteps
   items={[
-    { title: '棒グラフの読み方', href: '/figures/how-to-read-bar-plot/' },
-    {
-      title: 'Volcano plotの読み方',
-      href: '/figures/how-to-read-volcano-plot/',
-    },
+    { title: '効果量とは何か', href: '/statistics/effect-size/' },
     {
       title: '多重検定補正とは何か',
       href: '/statistics/multiple-testing-correction/',
+    },
+    {
+      title: 'Volcano plotの読み方',
+      href: '/figures/how-to-read-volcano-plot/',
     },
   ]}
 />

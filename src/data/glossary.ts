@@ -2037,6 +2037,13 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'statistics-and-design',
   },
   {
+    term: '帰無仮説',
+    english: 'null hypothesis',
+    description: '差や効果がない、など統計的な比較で基準として置く仮説。',
+    href: '/glossary/null-hypothesis/',
+    category: 'statistics-and-design',
+  },
+  {
     term: '信頼区間',
     english: 'confidence interval',
     abbreviation: 'CI',
@@ -2045,10 +2052,24 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'statistics-and-design',
   },
   {
+    term: '推定値',
+    english: 'estimate',
+    description: 'データから母集団の平均、差、効果量などを見積もった値。',
+    href: '/glossary/estimate/',
+    category: 'statistics-and-design',
+  },
+  {
     term: '効果量',
     english: 'effect size',
     description: '差や関係の大きさを表す指標。',
     href: '/glossary/effect-size/',
+    category: 'statistics-and-design',
+  },
+  {
+    term: 'fold change',
+    english: 'fold change',
+    description: '条件間の量の違いを比として表す値。',
+    href: '/glossary/fold-change/',
     category: 'statistics-and-design',
   },
   {
@@ -2060,10 +2081,32 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'statistics-and-design',
   },
   {
+    term: '選択バイアス',
+    english: 'selection bias',
+    description: 'サンプルや対象の選ばれ方によって結果が偏ること。',
+    href: '/glossary/selection-bias/',
+    category: 'statistics-and-design',
+  },
+  {
+    term: '測定バイアス',
+    english: 'measurement bias',
+    description: '測定方法、測定順、評価者の判断などによって結果が偏ること。',
+    href: '/glossary/measurement-bias/',
+    category: 'statistics-and-design',
+  },
+  {
     term: '交絡',
     english: 'confounding',
     description: '調べたい関係が第三の要因によって見かけ上変わって見えること。',
     href: '/glossary/confounding/',
+    category: 'statistics-and-design',
+  },
+  {
+    term: '共変量',
+    english: 'covariate',
+    description:
+      '結果との関係を調整したり説明したりするために解析へ入れる変数。',
+    href: '/glossary/covariate/',
     category: 'statistics-and-design',
   },
   {
@@ -2107,6 +2150,22 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'statistics-and-design',
   },
   {
+    term: '陰性対照',
+    english: 'negative control',
+    description:
+      '変化が起こらないはずの条件を置き、背景や非特異的な反応を確認する対照。',
+    href: '/glossary/negative-control/',
+    category: 'statistics-and-design',
+  },
+  {
+    term: '陽性対照',
+    english: 'positive control',
+    description:
+      '変化が起こるはずの条件を置き、測定系が機能していることを確認する対照。',
+    href: '/glossary/positive-control/',
+    category: 'statistics-and-design',
+  },
+  {
     term: '変数',
     english: 'variable',
     description: '研究で観察、測定、比較する値やカテゴリ。',
@@ -2114,10 +2173,53 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'statistics-and-design',
   },
   {
+    term: '量的変数',
+    english: 'quantitative variable',
+    description: '発現量、濃度、長さのように数値として扱う変数。',
+    href: '/glossary/quantitative-variable/',
+    category: 'statistics-and-design',
+  },
+  {
+    term: 'カテゴリ変数',
+    english: 'categorical variable',
+    description: '条件名、群、細胞型のように種類や分類として扱う変数。',
+    href: '/glossary/categorical-variable/',
+    category: 'statistics-and-design',
+  },
+  {
+    term: '測定値',
+    english: 'measurement',
+    description: '実験や観察によって得られた具体的な値。',
+    href: '/glossary/measurement/',
+    category: 'statistics-and-design',
+  },
+  {
     term: '分布',
     english: 'distribution',
     description: 'データがどの値の周辺にどれくらい集まっているかを表す見方。',
     href: '/glossary/distribution/',
+    category: 'statistics-and-design',
+  },
+  {
+    term: '外れ値',
+    english: 'outlier',
+    description:
+      '他の値から大きく離れ、分布や代表値の解釈に影響することがある値。',
+    href: '/glossary/outlier/',
+    category: 'statistics-and-design',
+  },
+  {
+    term: 'ばらつき',
+    english: 'variability',
+    description: 'データが値の周りにどれくらい散らばっているかという性質。',
+    href: '/glossary/variability/',
+    category: 'statistics-and-design',
+  },
+  {
+    term: 'ヒストグラム',
+    english: 'histogram',
+    description: '値の範囲ごとの個数を棒で示し、分布の形を確認する図。',
+    href: '/glossary/histogram/',
     category: 'statistics-and-design',
   },
   {
@@ -2134,6 +2236,13 @@ export const glossaryTerms: GlossaryTerm[] = [
     description:
       '同じ問いを複数のサンプルや測定で繰り返すこと。生物学的反復と技術的反復を区別する。',
     href: '/glossary/biological-technical-replicates/',
+    category: 'statistics-and-design',
+  },
+  {
+    term: '独立実験',
+    english: 'independent experiment',
+    description: '別の日、別の調製、別の個体などとして独立に行われた実験。',
+    href: '/glossary/independent-experiment/',
     category: 'statistics-and-design',
   },
   {
@@ -2158,6 +2267,15 @@ export const glossaryTerms: GlossaryTerm[] = [
     description:
       '多数の検定を行うと偶然の有意が増える問題を調整する統計的な考え方。',
     href: '/glossary/multiple-testing-correction/',
+    category: 'statistics-and-design',
+  },
+  {
+    term: 'FDR',
+    english: 'false discovery rate',
+    abbreviation: 'FDR',
+    description:
+      '有意と判断した候補の中に偽陽性がどれくらい含まれ得るかを表す考え方。',
+    href: '/glossary/false-discovery-rate/',
     category: 'statistics-and-design',
   },
   {

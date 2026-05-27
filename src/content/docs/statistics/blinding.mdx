@@ -5,14 +5,14 @@ part: statistics
 module: statistics-design
 level: foundation
 priority: P1
-order: 95
+order: 39
 relatedTerms:
   - blinding
   - bias
   - randomization
 prerequisites:
   - /statistics/randomization/
-  - /statistics/bias/
+  - /statistics/control-group/
 ---
 
 import LearningGoals from '../../../components/LearningGoals.astro';
@@ -147,7 +147,7 @@ Methodsを読むときは、盲検化された対象、盲検化された人、�
 
 <NextSteps
   items={[
-    { title: 'ランダム化とは何か', href: '/statistics/randomization/' },
+    { title: 'エラーバーとは何か', href: '/statistics/error-bars/' },
     { title: 'バイアスとは何か', href: '/statistics/bias/' },
     { title: 'Methodsの読み方', href: '/papers/how-to-read-methods/' },
   ]}

@@ -5,7 +5,7 @@ part: statistics
 module: statistics-design
 level: foundation
 priority: P1
-order: 70
+order: 35
 relatedTerms:
   - biological-technical-replicates
   - reproducibility
@@ -16,6 +16,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -27,6 +28,8 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 生物学的反復は独立したサンプルや実験単位の繰り返しで、技術的反復は同じサンプルを測定上繰り返すことです。
 
+Figureのn数を読むときは、個体、培養、サンプル、細胞、測定回数のどれを数えているかが重要です。反復の種類を分けると、結果がどの程度独立した根拠に支えられているかを見やすくなります。
+
 <LessonFigure
   src="/figures/biological-technical-replicates-concept.jpg"
   alt="独立した複数サンプルと、同じサンプルを複数回測る技術的反復の違いを示す概念図"
@@ -34,55 +37,81 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   caption="n数を見るときは、個体・培養・サンプル・測定のどれを数えているのかを確認します。"
 />
 
-生命科学論文では `n = 3` や `n = 100 cells` のような表記がよく出てきます。ただし、nが何を数えているかは必ず確認する必要があります。
+## なぜ反復の視点が重要か
 
-生物学的反復は、別々の個体、別々に培養した細胞、独立して調製したサンプルなど、実験対象のばらつきを含む繰り返しです。一方、技術的反復は、同じサンプルを複数回測ることで測定のばらつきを確認する繰り返しです。
-
-たとえば同じ培養皿から100個の細胞を測った場合、細胞数としては大きく見えても、独立した生物学的反復が100あるとは限りません。Figure legendやMethodsで、何が独立した単位なのかを確認します。
-
-## なぜ重要か
+生命科学論文では「n = 3」や「n = 100 cells」のような表記がよく出てきます。ただし、nが何を数えているかは必ず確認する必要があります。
 
 反復の種類を区別できると、Figureの信頼性を読みやすくなります。p値や[エラーバー](/glossary/error-bar/)を見る前に、そもそも比較がどの独立単位に基づいているのかを考えることが大切です。
 
-## 具体例
+## どんな反復があるか
+
+生物学的反復は、別々の個体、別々に培養した細胞、独立して調製したサンプルなど、実験対象のばらつきを含む繰り返しです。一方、技術的反復は、同じサンプルを複数回測ることで測定のばらつきを確認する繰り返しです。
 
 3匹のマウスからそれぞれ細胞を取り、同じ測定を行う場合は生物学的反復になります。一つのサンプルを同じqPCRプレートで3ウェル測る場合は技術的反復です。
 
-同じ培養皿から分けた測定を何度繰り返しても、独立した生物学的反復とは言いにくい場合があります。
+## 反復はどう確認するか
 
-## よく混同される概念
+Figure legendでは「n = 3 biological replicates」「technical triplicates」などの表現を探します。Methodsでは、独立実験の回数、サンプル数、測定の繰り返し方が説明されます。
+
+グラフ上の点が何を表すのか、統計検定でどちらの反復をnとして扱っているのかを確認します。同じ培養皿から分けた測定を何度繰り返しても、独立した生物学的反復とは言いにくい場合があります。
+
+## 反復の種類は何につながるか
+
+生物学的反復は、研究対象そのもののばらつきを見るために重要です。技術的反復は測定の安定性を見る助けになりますが、生物学的なばらつきを十分に表すとは限りません。
+
+同じ培養皿から100個の細胞を測った場合、細胞数としては大きく見えても、独立した生物学的反復が100あるとは限りません。Figure legendやMethodsで、何が独立した単位なのかを確認します。
+
+## 論文や実験ではどう出てくるか
+
+反復は、Figure legend、Methods、統計解析の説明に出てきます。「independent experiments」「biological replicates」「technical replicates」「n =」の近くに重要な情報が書かれます。
+
+読むときは、点の数、サンプル数、独立実験の回数を分けて見ます。[n数とは何か](/statistics/sample-size/)と合わせると、Figure上の数を読み違えにくくなります。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
 
 - 生物学的反復と技術的反復: 前者は独立した生物学的サンプル、後者は測定手順の繰り返しです。
 - n数と測定回数: 技術的反復を増やしても、生物学的な独立サンプル数が増えるわけではありません。
 - 再現性と反復数: 反復は再現性を支える要素ですが、設計や測定の妥当性も必要です。
 
-## 論文や実験ではどう出てくるか
-
-Figure legendでは「n = 3 biological replicates」「technical triplicates」などと書かれます。Methodsでは、独立実験の回数、サンプル数、測定の繰り返し方が説明されます。
-
-読むときは、グラフ上の点が何を表すのか、統計検定でどちらの反復をnとして扱っているのかを確認します。
-
-## 英語表記と略語
-
-| 日本語名     | 英語名                 | 略語 |
-| ------------ | ---------------------- | ---- |
-| 生物学的反復 | biological replicate   | -    |
-| 技術的反復   | technical replicate    | -    |
-| 独立実験     | independent experiment | -    |
-| サンプル数   | sample size            | n    |
-
-## よくある誤解
+### 解釈の落とし穴
 
 - 細胞をたくさん数えたことと、独立サンプルが多いことは同じではありません。
-- 技術的反復は測定の安定性を見る助けになりますが、生物学的なばらつきを十分に表すとは限りません。
+- 技術的反復だけを統計検定のnとして扱っていないか注意します。
 - n数は大きさだけでなく、何を数えたnなのかが重要です。
 
 ## 重要用語
 
-- 生物学的反復: 独立したサンプルや実験単位の繰り返し。
-- 技術的反復: 同じサンプルを測定上繰り返すこと。
-- 独立実験: 別の日や別の調製として独立に行われた実験。
-- n数: 解析や表示に使われた数。何を数えたかの確認が必要。
+<GlossaryTable
+  terms={[
+    {
+      term: '生物学的反復',
+      english: 'biological replicate',
+      description: '独立したサンプルや実験単位の繰り返し。',
+      href: '/glossary/biological-technical-replicates/',
+    },
+    {
+      term: '技術的反復',
+      english: 'technical replicate',
+      description: '同じサンプルを測定上繰り返すこと。',
+      href: '/glossary/biological-technical-replicates/',
+    },
+    {
+      term: '独立実験',
+      english: 'independent experiment',
+      description: '別の日や別の調製として独立に行われた実験。',
+      href: '/glossary/independent-experiment/',
+    },
+    {
+      term: 'n数',
+      english: 'sample size',
+      abbreviation: 'n',
+      description: '解析や表示に使われた数。何を数えたかの確認が必要。',
+      href: '/glossary/sample-size/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[
@@ -102,8 +131,8 @@ Figure legendでは「n = 3 biological replicates」「technical triplicates」�
 
 <NextSteps
   items={[
-    { title: 'エラーバーとは何か', href: '/statistics/error-bars/' },
+    { title: 'n数とは何か', href: '/statistics/sample-size/' },
+    { title: '対照群とは何か', href: '/statistics/control-group/' },
     { title: 'Figure legendの読み方', href: '/figures/figure-legend/' },
-    { title: 'Methodsの読み方', href: '/papers/how-to-read-methods/' },
   ]}
 />

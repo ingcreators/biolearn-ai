@@ -20,6 +20,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -31,6 +32,8 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 統計的有意性は、観察された差が偶然だけでは説明しにくいかを見る考え方であり、生物学的重要性は、その差が研究対象の文脈で意味を持つかを考える視点です。
 
+p値が小さいことは、差が大きいことや、生物学的に重要であることと同じではありません。Figureでは有意差の有無、効果量、信頼区間、実験文脈を分けて読みます。
+
 <LessonFigure
   src="/figures/significance-vs-importance-concept.jpg"
   alt="p値の小ささと差の大きさを別の軸として示し、統計的有意性と生物学的重要性を分けて考える概念図"
@@ -38,53 +41,81 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   caption="p値、効果量、信頼区間、実験文脈を合わせて解釈します。"
 />
 
-論文のFigureでは、`p < 0.05` やアスタリスクによって統計的有意性が示されることがあります。しかし、p値が小さいことは、差が大きいことや、生物学的に重要であることと同じではありません。
+## なぜ有意性と重要性を分ける視点が重要か
 
-生物学的重要性を考えるには、効果量、信頼区間、測定単位、サンプル数、再現性、既存知識、実験系で期待される変化の大きさを合わせて見ます。小さい差でも重要な場合もあれば、統計的に有意でも解釈に注意が必要な場合もあります。
+Resultsを読むときは、有意差マークの有無と、著者が述べる生物学的な意味づけを分けて見る必要があります。統計的に示された差でも、研究の問いに対してどれくらい重要かは別の判断です。
 
-## なぜ重要か
+この区別を意識すると、Figure上のアスタリスクを「主張の出発点」として扱い、結論の強さは効果量や文脈まで見て決められます。
 
-アスタリスクの有無だけでFigureを読むと、結論を強く読みすぎたり、逆に重要な傾向を見落としたりします。Resultsでは統計表示を確認し、Discussionではその差がどの範囲で意味を持つかを読みます。
+## どんな違いがあるか
 
-## 具体例
+統計的有意性は、p値、信頼区間、検定方法、サンプル数に関係します。サンプル数が非常に多いと、小さな差でも統計的に有意になる場合があります。
 
-サンプル数が非常に多いと、発現量が1.02倍しか違わなくても統計的に有意になることがあります。一方で、サンプル数が少ないためp値は有意でなくても、効果量が大きく追加検証に値する場合もあります。
+生物学的重要性は、効果量、測定単位、既知の生物学、実験系、疾患や表現型との関係などに依存します。小さな差でも、重要な経路や閾値に関わる場合は意味を持つことがあります。
 
-生命科学では、統計的な有意性と、生物学的に意味のある差を分けて考えます。
+## 有意性と重要性はどう確認するか
 
-## よく混同される概念
+Figureでは、p値やアスタリスクだけでなく、差の大きさ、信頼区間、点の分布、n数を確認します。Results本文では、著者が差をどの程度強く表現しているかを読みます。
 
-- 統計的有意性と効果量: 有意かどうかと、差がどれくらい大きいかは別です。
-- 有意でないことと差がないこと: データが不足して検出できない場合もあります。
-- 生物学的重要性と主観: 重要性は文脈に依存しますが、既知知識や効果量に基づいて検討します。
+Discussionでは、その差がどの生物学的文脈で意味づけられているか、限界や代替説明が書かれているかを確認します。Methodsでは、検定方法や補正、サンプルの独立性を見ます。
+
+## 読み分けは何につながるか
+
+有意性と重要性を分けると、「統計的には示されたが、生物学的な意味は慎重に読むべき結果」と「有意差は弱いが、効果量や文脈から追加検証に値する結果」を分けやすくなります。
+
+この視点は、ResultsからDiscussionへ読むときに特に重要です。Figureが示した差と、著者がそこから述べている主張の強さが見合っているかを確認できます。
 
 ## 論文や実験ではどう出てくるか
 
-論文では、p値、信頼区間、効果量、fold change、図のスケールとして出てきます。著者が小さなp値だけで強い主張をしていないかを確認します。
+論文では、Figure上のp値、Results本文、Discussionの解釈、Abstractの主張に出てきます。「significant」「substantial」「modest」「biologically relevant」などの表現に注意します。
 
-読むときは、差の大きさ、ばらつき、測定単位、実験上の意味を合わせて判断します。
+読むときは、p値、効果量、信頼区間、再現性、既存知識を合わせて見ます。[効果量とは何か](/statistics/effect-size/)と[研究の限界の読み方](/statistics/limitations/)を合わせると、主張を過不足なく読めます。
 
-## 英語表記と略語
+## どんな点でつまずきやすいか
 
-| 日本語名       | 英語名                   | 略語 |
-| -------------- | ------------------------ | ---- |
-| 統計的有意性   | statistical significance | -    |
-| 生物学的重要性 | biological importance    | -    |
-| 効果量         | effect size              | -    |
-| 信頼区間       | confidence interval      | CI   |
+### 似た用語との区別
 
-## よくある誤解
+- 統計的有意性と生物学的重要性: 前者は偶然だけでは説明しにくいか、後者は研究文脈で意味があるかです。
+- p値と効果量: p値は珍しさ、効果量は差や関係の大きさを表します。
+- 有意差なしと差がない: 有意差が示されないことは、差が完全にないことの証明ではありません。
 
-- p値が小さい結果を、必ず生物学的に重要だと読む。
-- アスタリスクがない結果を、必ず意味がないと読む。
-- 効果量や信頼区間を見ずに、p値だけでFigureを評価する。
+### 解釈の落とし穴
+
+- 「p < 0.05」だけで、結果が重要だと判断しないようにします。
+- アスタリスクがない結果を、必ず無意味だと決めつけないようにします。
+- 生物学的重要性を語るときは、効果量、再現性、実験文脈を合わせて確認します。
 
 ## 重要用語
 
-- 統計的有意性: 統計上、偶然だけでは説明しにくいかを考える判断。
-- 生物学的重要性: 研究対象の文脈で、その差や関係が意味を持つかという視点。
-- 効果量: 差や関係の大きさ。
-- 信頼区間: 推定値の不確かさを示す範囲。
+<GlossaryTable
+  terms={[
+    {
+      term: '統計的有意性',
+      english: 'statistical significance',
+      description: '偶然だけでは説明しにくいかを統計的に見る考え方。',
+      href: '/glossary/significance-vs-importance/',
+    },
+    {
+      term: '生物学的重要性',
+      english: 'biological importance',
+      description: '差や関係が研究文脈で意味を持つかを見る考え方。',
+      href: '/glossary/significance-vs-importance/',
+    },
+    {
+      term: 'p値',
+      english: 'p-value',
+      abbreviation: 'p',
+      description: '帰無仮説のもとで観察結果の珍しさを考える指標。',
+      href: '/glossary/p-value/',
+    },
+    {
+      term: '効果量',
+      english: 'effect size',
+      description: '差や関係の大きさを表す指標。',
+      href: '/glossary/effect-size/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[
@@ -104,8 +135,8 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 <NextSteps
   items={[
-    { title: '効果量とは何か', href: '/statistics/effect-size/' },
-    { title: '信頼区間とは何か', href: '/statistics/confidence-interval/' },
+    { title: '相関と因果の違い', href: '/statistics/correlation-causation/' },
+    { title: '研究の限界の読み方', href: '/statistics/limitations/' },
     { title: 'Discussionの読み方', href: '/papers/how-to-read-discussion/' },
   ]}
 />

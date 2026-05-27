@@ -18,6 +18,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -29,6 +30,8 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 多重検定補正は、多数の検定を同時に行うと偶然小さいp値が出やすくなる問題を調整する考え方です。
 
+RNA-seqやGWASのように多数の遺伝子やバリアントを調べる解析では、候補の中に偶然の有意が混ざりやすくなります。補正済みp値やFDRを見ると、候補をより慎重に選べます。
+
 <LessonFigure
   src="/figures/multiple-testing-correction-concept.jpg"
   alt="多数の検定を行うと偶然小さいp値が混ざりやすく、補正して候補を慎重に選ぶ様子を示す概念図"
@@ -36,59 +39,83 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   caption="オミクス解析では、多数の遺伝子を同時に調べるため、補正済みp値やFDRを確認します。"
 />
 
-1つの検定だけなら、p値が小さい結果は比較的珍しい出来事として扱えます。しかし、何千、何万もの遺伝子を同時に調べると、偶然小さいp値が出る遺伝子も増えます。
+## なぜ多重検定補正の視点が重要か
 
-RNA-seqの差次的発現解析では、多数の遺伝子について条件間の差を調べます。そのため、p値そのものだけでなく、補正済みp値やFDRを見ます。
+RNA-seqやGWASのような解析では、1つの比較ではなく、何千から何百万もの候補を同時に見ます。この状況では、偶然に小さいp値が混ざる前提で結果を読む必要があります。
 
-多重検定補正は、すべての誤りをなくす魔法ではありません。候補の絞り込みをより慎重にするための統計的な調整です。生物学的な意味や実験設計と合わせて解釈します。
+1つだけ検定する場合と、1万個の遺伝子を同時に検定する場合では、偶然に小さなp値が出る機会が大きく違います。補正済みp値やFDRを見ることで、候補をより慎重に選びます。
 
-## なぜ重要か
+## どんな多重検定補正があるか
 
-[Volcano plot](/glossary/volcano-plot/)や発現変動遺伝子リストでは、adjusted p-value、FDR、q-valueなどがよく登場します。これらを理解していないと、オミクス解析のFigureを読み誤りやすくなります。
+生命科学では、FDR（false discovery rate）を制御する方法がよく使われます。Benjamini-Hochberg法による補正済みp値やq値として表示されることがあります。
 
-## 具体例
+より厳しい補正としてBonferroni補正が使われることもあります。どの方法が適切かは、検定数、解析目的、探索的研究か検証的研究かによって変わります。
 
-RNA-seqでは、数千から数万の遺伝子について同時に検定します。p値0.05をそのまま使うと、偶然に有意に見える遺伝子が多く出る可能性があります。
+## 多重検定補正はどう確認するか
 
-そのため、FDRや調整済みp値を使って、多数の検定による偽陽性を抑えます。
+ResultsやFigure legendでは、「adjusted p-value」「padj」「FDR」「q-value」などの表記を探します。Volcano plotや遺伝子リストでは、補正前のp値なのか補正後の値なのかを確認します。
 
-## よく混同される概念
+Methodsでは、どの検定を何回行い、どの補正方法を使ったかを確認します。解析ソフトやパッケージの出力列名にも注意します。
 
-- p値と調整済みp値: 調整済みp値は、多数の検定を考慮した値です。
-- FDRと偽陽性率: FDRは有意と判定した中に含まれる偽陽性の割合に関する考え方です。
-- 補正後に有意でないことと効果がないこと: サンプル数やばらつきの影響で検出できない場合もあります。
+## 補正の有無は何につながるか
+
+補正をしないまま多数の候補を選ぶと、偶然の有意を重要な結果として読みすぎる可能性があります。一方で、補正を厳しくすると、真の変化を見逃す可能性もあります。
+
+そのため、多重検定補正は候補を機械的に正しい・間違いに分けるためだけのものではありません。効果量、データ品質、再現性、生物学的な文脈と合わせて読みます。
 
 ## 論文や実験ではどう出てくるか
 
-論文では、RNA-seq、proteomics、GWASなどの網羅的解析で出てきます。表では「adjusted p-value」「FDR」「q-value」として示されます。
+多重検定補正は、RNA-seq、GWAS、プロテオミクス、GSEA、単一細胞解析などでよく出てきます。Volcano plot、ヒートマップ、遺伝子リスト、Supplementary tableに補正済みp値が示されることがあります。
 
-FigureではVolcano plotやランキング表で、[しきい値](/glossary/threshold/)として使われることがあります。読むときは、生のp値ではなく補正後の値で判断しているかを確認します。
+読むときは、候補の選択基準がp値なのかFDRなのか、fold changeなどの効果量も条件に入っているかを確認します。[Volcano plotの読み方](/figures/how-to-read-volcano-plot/)では、差の大きさと補正済みp値を同時に読む練習ができます。
 
-## Figureで見る場所
+## どんな点でつまずきやすいか
 
-多重検定補正は、[Volcano plotの読み方](/figures/how-to-read-volcano-plot/)や[Pathway enrichment plotの読み方](/figures/how-to-read-pathway-enrichment/)で重要です。多数の遺伝子や経路を同時に見ている場合、p値そのものか補正済みp値かを確認します。
+### 似た用語との区別
 
-## 英語表記と略語
+- p値と補正済みp値: 補正済みp値は、多数の検定を行った前提を反映した値です。
+- FDRと偽陽性率: FDRは選んだ候補の中にどれくらい誤った発見が含まれ得るかを考える指標です。
+- 多重検定補正と正規化: 補正は統計的判定の調整で、正規化はデータの測定条件やスケールをそろえる処理です。
 
-| 日本語名     | 英語名                      | 略語 |
-| ------------ | --------------------------- | ---- |
-| 多重検定補正 | multiple testing correction | -    |
-| 補正済みp値  | adjusted p-value            | -    |
-| 偽発見率     | false discovery rate        | FDR  |
-| q値          | q-value                     | q    |
+### 解釈の落とし穴
 
-## よくある誤解
-
-- p値が小さい遺伝子が多いほど、すべてが重要とは限りません。
-- 補正済みp値だけで生物学的な意味が決まるわけではありません。
-- 多重検定補正は、実験設計やデータ品質の問題を解決するものではありません。
+- 補正前p値だけで大量の候補を重要と判断しないようにします。
+- FDRを満たした候補でも、生物学的に意味があるかは別に確認します。
+- 補正方法やしきい値がMethodsに書かれていない場合は、結果の読み方を慎重にします。
 
 ## 重要用語
 
-- 多重検定: 多数の仮説検定を同時に行うこと。
-- 補正済みp値: 多重検定の影響を考慮したp値。
-- FDR: 有意とした候補の中に含まれる誤検出の割合を考える指標。
-- 差次的発現解析: 多数の遺伝子の発現差を同時に調べる解析。
+<GlossaryTable
+  terms={[
+    {
+      term: '多重検定補正',
+      english: 'multiple testing correction',
+      description: '多数の検定で偶然の有意が増えすぎないように調整する考え方。',
+      href: '/glossary/multiple-testing-correction/',
+    },
+    {
+      term: 'p値',
+      english: 'p-value',
+      abbreviation: 'p',
+      description: '帰無仮説のもとで観察結果の珍しさを考える指標。',
+      href: '/glossary/p-value/',
+    },
+    {
+      term: 'FDR',
+      english: 'false discovery rate',
+      abbreviation: 'FDR',
+      description:
+        '選んだ候補の中に誤った発見がどの程度含まれ得るかを考える指標。',
+      href: '/glossary/false-discovery-rate/',
+    },
+    {
+      term: '効果量',
+      english: 'effect size',
+      description: '差や関係の大きさを表す指標。',
+      href: '/glossary/effect-size/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[
@@ -107,7 +134,10 @@ FigureではVolcano plotやランキング表で、[しきい値](/glossary/thre
 
 <NextSteps
   items={[
-    { title: 'p値とは何か', href: '/statistics/p-value/' },
+    {
+      title: '統計的有意性と生物学的重要性',
+      href: '/statistics/significance-vs-importance/',
+    },
     {
       title: '差次的発現解析とは何か',
       href: '/bioinformatics/differential-expression/',

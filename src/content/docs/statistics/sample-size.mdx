@@ -5,7 +5,7 @@ part: statistics
 module: statistics-design
 level: foundation
 priority: P1
-order: 60
+order: 36
 relatedTerms:
   - sample-size
   - biological-technical-replicates
@@ -18,6 +18,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -29,6 +30,8 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 n数は、Figureや統計解析で数えられている単位です。
 
+nが個体数なのか、細胞数なのか、独立実験の回数なのかで、結果の読み方は大きく変わります。数字の大きさだけでなく、何を1つとして数えたかを確認します。
+
 <LessonFigure
   src="/figures/sample-size-concept.jpg"
   alt="3つの独立サンプルと多数の細胞が描かれ、n数が何を数えるかで意味が変わることを示す概念図"
@@ -36,53 +39,81 @@ n数は、Figureや統計解析で数えられている単位です。
   caption="個体、培養、サンプル、細胞、測定点のどれを数えているかを確認します。"
 />
 
-論文のFigureでは、`n = 3`、`n = 6 mice`、`n = 120 cells` のような表記がよく出てきます。大切なのは、nの数字だけでなく、何を数えたnなのかを確認することです。
+## なぜn数の視点が重要か
 
-同じ `n = 100` でも、独立した100個体なのか、1つのサンプル内の100細胞なのかで意味は大きく変わります。細胞数が多いことは情報量を増やしますが、独立した生物学的反復が多いことと同じではありません。
+Figure legendの「n =」は目立つため、数字の大きさだけで安心したり不安になったりしがちです。しかし、nが何を1つとして数えているかを見ないと、結果を支える独立した根拠の量は判断できません。
 
-## なぜ重要か
+Figure legendに「n = 3」と書かれていても、それが3匹の個体、3回の独立実験、3つのウェル、3枚の画像のどれかで意味は変わります。n数は、反復や独立性と一緒に確認します。
 
-n数を読み違えると、Figureの確からしさを過大に見積もることがあります。p値、[エラーバー](/glossary/error-bar/)、信頼区間を読む前に、どの単位が独立しているのかをMethodsやFigure legendで確認します。
+## どんなn数があるか
 
-## 具体例
+生命科学では、個体数、サンプル数、培養の数、独立実験の回数、細胞数、視野数、遺伝子数などがnとして使われます。どれも「数」ですが、統計的な独立性は同じではありません。
 
-グラフに「n = 3」と書かれていても、それが3匹のマウスなのか、3つの培養皿なのか、同じサンプルを3回測っただけなのかで意味が変わります。
+たとえば「n = 100 cells」は細胞数としては多く見えますが、それらが1つのサンプル由来なら、独立した生物学的サンプルが100あるわけではありません。
 
-single-cell RNA-seqでは、細胞数が多くても、独立した個体やサンプル数が少ない場合があります。
+## n数はどう確認するか
 
-## よく混同される概念
+Figure legendでは、「n =」の直後だけでなく、括弧内の説明や注釈を読みます。Methodsでは、サンプルの由来、独立実験の回数、除外基準、統計検定に使った単位を確認します。
 
-- n数と点の数: 図の点が技術的反復や細胞数を表す場合、独立サンプル数とは限りません。
-- 細胞数と個体数: single-cell解析では細胞数が多くても、個体数が少ないと一般化に注意が必要です。
-- 大きなnと良い研究: nが大きくても、バイアスや交絡があれば解釈は難しくなります。
+グラフ上の点が個体なのか、細胞なのか、独立実験の平均なのかを見ます。点が多くても、独立したサンプル数が少ない場合は、結果を慎重に読みます。
+
+## n数の違いは何につながるか
+
+n数が少ないと、推定値の不確かさが大きくなりやすく、差が見えても偶然のばらつきと区別しにくいことがあります。n数が多いと小さな差でもp値が小さくなる場合があるため、効果量も合わせて読みます。
+
+n数が大きいこと自体は有用ですが、測定単位が独立していなければ、見かけほど強い根拠にならないことがあります。生物学的反復と技術的反復の違いを確認します。
 
 ## 論文や実験ではどう出てくるか
 
-Figure legendやMethodsに「n = ...」として書かれます。統計検定で何を独立単位として扱ったかが重要です。
+n数は、Figure legend、Methods、統計解析、Supplementary tableに出てきます。「n =」「independent experiments」「biological replicates」「cells analyzed」などの表現を探します。
 
-読むときは、nが生物学的反復なのか技術的反復なのか、除外されたサンプルがあるか、群ごとのnが同じかを確認します。
+読むときは、何を数えたnなのか、除外されたサンプルがあるか、統計検定に使った単位は何かを確認します。[生物学的反復と技術的反復](/statistics/biological-technical-replicates/)と合わせて読むと、n数の意味を立体的に見られます。
 
-## 英語表記と略語
+## どんな点でつまずきやすいか
 
-| 日本語名 | 英語名           | 略語 |
-| -------- | ---------------- | ---- |
-| n数      | sample size      | n    |
-| サンプル | sample           | -    |
-| 独立単位 | independent unit | -    |
-| 細胞数   | number of cells  | -    |
+### 似た用語との区別
 
-## よくある誤解
+- n数と点の数: Figure上の点の数が、統計検定の独立単位と同じとは限りません。
+- サンプル数と細胞数: 多数の細胞が同じサンプルから来ている場合、独立サンプル数は別に考えます。
+- n数と再現性: n数は根拠の一部ですが、独立検証や実験デザインも重要です。
 
-- nが大きければ、必ず独立サンプルが多いと思ってしまう。
-- `n = cells` と `n = animals` を同じ重みで読む。
-- Figure legendにn数が書かれていても、Methodsで独立単位を確認しない。
+### 解釈の落とし穴
+
+- nが大きいだけで、結果が必ず強いとは考えないようにします。
+- nが小さい結果を、必ず無意味だと決めつけないようにします。
+- 何を数えたnかが書かれていない場合は、MethodsやSupplementaryを確認します。
 
 ## 重要用語
 
-- n数: 解析や表示で数えられている単位の数。
-- 独立単位: 統計的な比較で独立とみなす単位。
-- 生物学的反復: 独立した生物学的サンプルの繰り返し。
-- 技術的反復: 同じサンプルを測定上繰り返すこと。
+<GlossaryTable
+  terms={[
+    {
+      term: 'n数',
+      english: 'sample size',
+      abbreviation: 'n',
+      description: 'Figureや統計解析で数えられている単位の数。',
+      href: '/glossary/sample-size/',
+    },
+    {
+      term: 'サンプル',
+      english: 'sample',
+      description: '実験や解析で扱う材料や観察対象の単位。',
+      href: '/glossary/sample/',
+    },
+    {
+      term: '生物学的反復',
+      english: 'biological replicate',
+      description: '独立したサンプルや実験単位の繰り返し。',
+      href: '/glossary/biological-technical-replicates/',
+    },
+    {
+      term: '技術的反復',
+      english: 'technical replicate',
+      description: '同じサンプルを測定上繰り返すこと。',
+      href: '/glossary/biological-technical-replicates/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[
@@ -103,10 +134,7 @@ Figure legendやMethodsに「n = ...」として書かれます。統計検定�
 
 <NextSteps
   items={[
-    {
-      title: '生物学的反復と技術的反復',
-      href: '/statistics/biological-technical-replicates/',
-    },
+    { title: '対照群とは何か', href: '/statistics/control-group/' },
     { title: 'エラーバーとは何か', href: '/statistics/error-bars/' },
     { title: 'Figure legendの読み方', href: '/figures/figure-legend/' },
   ]}

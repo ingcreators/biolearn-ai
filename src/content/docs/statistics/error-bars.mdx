@@ -16,6 +16,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -27,6 +28,8 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 エラーバーは、データのばらつきや平均値の不確かさを示す図上の表示です。
 
+見た目は同じ線でも、標準偏差、標準誤差、信頼区間など、表している意味は異なります。Figure legendで定義を確認すると、棒や点の高さをどの程度慎重に読むべきかが分かります。
+
 <LessonFigure
   src="/figures/error-bars-concept.jpg"
   alt="棒グラフの上にエラーバーがあり、平均値とばらつきや不確かさを示す概念図"
@@ -34,59 +37,83 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   caption="SD、SEM、信頼区間など、何を示すエラーバーかはFigure legendで確認します。"
 />
 
-[棒グラフ](/glossary/bar-plot/)や折れ線グラフには、上下に線が伸びたエラーバーが付くことがあります。ただし、同じ見た目でも意味は論文によって異なります。
+## なぜエラーバーの視点が重要か
 
-よく使われる表示には、標準偏差（SD）、標準誤差（SEM）、信頼区間（CI）があります。SDはデータそのもののばらつき、SEMは平均値の推定の不確かさ、信頼区間は推定値の範囲を考えるための表示です。
+棒や点の高さだけを見ると、データの散らばりや推定の幅を見落としやすくなります。エラーバーを読むことで、表示された平均値や推定値をどの程度慎重に受け取るべきかを考えられます。
 
-Figureを読むときは、エラーバーが何を表しているかをFigure legendで確認します。エラーバーの重なりだけで有意差の有無を判断するのではなく、統計検定や実験設計も合わせて見ます。
+同じ平均値でも、エラーバーが広い場合と狭い場合では読み方が変わります。エラーバーが何を表すかを確認しないまま、差の有無だけを判断しないことが重要です。
 
-## なぜ重要か
+## どんなエラーバーがあるか
 
-エラーバーは、平均値だけでは見えないばらつきや不確かさを伝えます。Figureの差が大きく見えても、ばらつきが大きい場合や反復が少ない場合には、解釈に注意が必要です。
+代表的なエラーバーには、標準偏差（SD）、標準誤差（SEまたはSEM）、信頼区間（CI）があります。SDはデータそのもののばらつき、SEMは平均推定の不確かさ、CIは推定値の範囲を示します。
 
-## 具体例
+Figureによっては、四分位範囲、最小値から最大値、ブートストラップによる区間などが使われることもあります。見た目が似ていても意味が違うため、Figure legendの確認が必要です。
 
-棒グラフや折れ線グラフで、平均値の上下に伸びる線がエラーバーです。標準偏差、標準誤差、信頼区間のいずれかを表すことがあります。
+## エラーバーはどう確認するか
 
-同じ見た目のエラーバーでも、何を表しているかによって解釈は変わります。
+まず、Figure legendで「mean ± SD」「mean ± SEM」「95% CI」などの表記を探します。次に、1つの点や棒が何を表しているのか、n数が何を数えているのかを確認します。
 
-## よく混同される概念
+エラーバーだけでなく、可能なら個々のデータ点も見ます。点が表示されているFigureでは、外れ値、群内のばらつき、サンプル数の偏りを合わせて確認できます。
 
-- 標準偏差と標準誤差: 標準偏差はデータのばらつき、標準誤差は平均推定の不確実性を表します。
-- エラーバーと有意差: エラーバーの重なりだけで有意差を判断することはできません。
-- エラーバーと測定ミス: エラーという名前でも、必ずしも実験の失敗を意味するわけではありません。
+## エラーバーの大きさは何につながるか
+
+エラーバーが大きい場合、データのばらつきが大きい、推定の不確かさが大きい、サンプル数が少ない、といった可能性があります。ただし、SDなのかSEMなのかで意味は変わります。
+
+エラーバーが小さい場合でも、測定単位や独立性に問題があれば安心とは限りません。技術的反復だけを多数集めた結果では、見かけ上のエラーバーが小さく見えることがあります。
 
 ## 論文や実験ではどう出てくるか
 
-Figure legendに「mean ± SD」「mean ± SEM」「95% CI」などと書かれます。どれを使ったかが書かれていない図は、解釈に注意が必要です。
+エラーバーは、棒グラフ、折れ線グラフ、点推定、qPCR plot、Forest plotなどに出てきます。Figure legendには、エラーバーの意味、n数、統計検定の方法が書かれることがあります。
 
-読むときは、エラーバーの定義、n数、点が個々のサンプルを表しているかを確認します。
+読むときは、エラーバーが何を示すか、点が何を単位にしているか、統計比較がどの独立単位に基づくかを確認します。[標準偏差と標準誤差とは何か](/statistics/standard-deviation-standard-error/)に進むと、SDとSEMの違いを詳しく整理できます。
 
-## Figureで見る場所
+## どんな点でつまずきやすいか
 
-エラーバーは、[棒グラフの読み方](/figures/how-to-read-bar-plot/)や[Forest plotの読み方](/figures/how-to-read-forest-plot/)で特に重要です。棒グラフでは平均の周りのばらつきや不確かさ、Forest plotでは推定値の信頼区間として読むことがあります。
+### 似た用語との区別
 
-## 英語表記と略語
+- SDとSEM: SDはデータのばらつき、SEMは平均推定の不確かさです。
+- エラーバーと有意差: エラーバーの重なりだけで統計的有意性を判断できるとは限りません。
+- 信頼区間と標準偏差: 信頼区間は推定値の幅、標準偏差はデータの散らばりです。
 
-| 日本語名   | 英語名                     | 略語 |
-| ---------- | -------------------------- | ---- |
-| エラーバー | error bar                  | -    |
-| 標準偏差   | standard deviation         | SD   |
-| 標準誤差   | standard error of the mean | SEM  |
-| 信頼区間   | confidence interval        | CI   |
+### 解釈の落とし穴
 
-## よくある誤解
-
-- エラーバーは常に標準偏差とは限りません。
-- エラーバーが重なっているかどうかだけで、統計的有意性を判断することはできません。
-- エラーバーが小さいからといって、実験設計が十分とは限りません。
+- エラーバーが短いことを、実験が必ず信頼できることと同一視しないようにします。
+- Figure legendを見ずに、エラーバーをSDだと思い込まないようにします。
+- n数や反復の種類を確認せず、エラーバーだけで結論を決めないようにします。
 
 ## 重要用語
 
-- SD: データのばらつきを表す指標。
-- SEM: 平均値の推定の不確かさを表す指標。
-- CI: 推定値が入りそうな範囲を考えるための表示。
-- Figure legend: エラーバーの定義が書かれることが多い説明文。
+<GlossaryTable
+  terms={[
+    {
+      term: 'エラーバー',
+      english: 'error bar',
+      description: 'ばらつきや推定の不確かさをFigure上で示す線。',
+      href: '/glossary/error-bar/',
+    },
+    {
+      term: '標準偏差',
+      english: 'standard deviation',
+      abbreviation: 'SD',
+      description: 'データそのもののばらつきを表す量。',
+      href: '/glossary/standard-deviation/',
+    },
+    {
+      term: '標準誤差',
+      english: 'standard error',
+      abbreviation: 'SE',
+      description: '平均などの推定値がどれくらい揺れやすいかを示す量。',
+      href: '/glossary/standard-error/',
+    },
+    {
+      term: '信頼区間',
+      english: 'confidence interval',
+      abbreviation: 'CI',
+      description: '推定値の不確かさを範囲として示す統計表示。',
+      href: '/glossary/confidence-interval/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[
@@ -105,8 +132,11 @@ Figure legendに「mean ± SD」「mean ± SEM」「95% CI」などと書かれ�
 
 <NextSteps
   items={[
-    { title: 'p値とは何か', href: '/statistics/p-value/' },
+    {
+      title: '標準偏差と標準誤差とは何か',
+      href: '/statistics/standard-deviation-standard-error/',
+    },
+    { title: '信頼区間とは何か', href: '/statistics/confidence-interval/' },
     { title: '棒グラフの読み方', href: '/figures/how-to-read-bar-plot/' },
-    { title: 'Forest plotの読み方', href: '/figures/how-to-read-forest-plot/' },
   ]}
 />

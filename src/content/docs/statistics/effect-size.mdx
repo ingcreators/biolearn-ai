@@ -19,6 +19,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -30,6 +31,8 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 効果量は、群間の差や変数どうしの関係がどれくらい大きいかを表す指標です。
 
+p値が偶然だけでは説明しにくいかを見る入口だとすると、効果量はその差や関係がどの程度の大きさかを読む入口です。Figureでは有意差マークだけでなく、差の大きさも一緒に確認します。
+
 <LessonFigure
   src="/figures/effect-size-concept.jpg"
   alt="p値の印と差の大きさを分けて示し、効果量は差そのものの大きさを見ることを示す概念図"
@@ -37,57 +40,82 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   caption="p値だけでなく、どれくらい変わったのかを確認します。"
 />
 
-p値は、ある仮定のもとで観察結果がどれくらい珍しいかを見る指標です。一方、効果量は「差がどれくらい大きいか」「関係がどれくらい強いか」に注目します。
+## なぜ効果量の視点が重要か
 
-生命科学のFigureでは、平均差、fold change、相関係数、オッズ比などが効果量として読まれることがあります。RNA-seqの[Volcano plot](/glossary/volcano-plot/)では、横軸のlog2 fold changeが変化の大きさを表すことが多いです。
+Figureでアスタリスクやp値が目に入ると、差が「あるかどうか」に意識が向きやすくなります。効果量を見ると、その差や関係が研究の問いに対してどれくらいの大きさなのかを考えられます。
 
-## なぜ重要か
+p値が小さくても、差がとても小さい場合があります。逆に、サンプル数が少ないためにp値は大きくても、差の大きさとしては注目すべき場合もあります。
 
-サンプル数が大きいと、小さな差でもp値が小さくなることがあります。逆にサンプル数が少ないと、差が大きく見えても不確かさが大きいことがあります。Figureを読むときは、p値、効果量、信頼区間、実験設計を合わせて見ます。
+## どんな効果量があるか
 
-## 具体例
+生命科学のFigureでは、平均差、fold change、log2 fold change、相関係数、オッズ比、ハザード比などが効果量として使われます。どの指標が使われるかは、研究の問いとデータの種類によって変わります。
 
-処理群で遺伝子発現が1.1倍になりp値が小さい場合と、3倍になりばらつきも小さい場合では、解釈の重みが違います。効果量は、差がどれくらい大きいかを考えるための指標です。
+たとえばRNA-seqのVolcano plotでは、横軸にlog2 fold change、縦軸に統計的な強さが置かれることがあります。このとき横軸は、差の大きさを読むための重要な情報です。
 
-平均差、fold change、相関係数、オッズ比など、研究の種類によって効果量の形は変わります。
+## 効果量はどう確認するか
 
-## よく混同される概念
+Figureでは、軸の値、群間差、fold change、相関係数、Forest plotの推定値などを確認します。p値やアスタリスクだけでなく、差の大きさがFigure上のどこに表れているかを見ることが大切です。
 
-- 効果量とp値: p値は偶然では説明しにくいか、効果量は差や関係の大きさを表します。
-- 統計的有意性と生物学的重要性: 有意でも差が小さすぎる場合があります。
-- fold changeと絶対差: 何倍かを見る指標と、実際の差の大きさを見る指標は別です。
+MethodsやResultsでは、効果量の計算方法、単位、変換の有無、信頼区間を確認します。効果量が同じでも、測定対象や単位が違えば意味は変わります。
+
+## 効果量の大きさは何につながるか
+
+効果量が大きいほど生物学的に重要とは限りませんが、差の大きさを考える材料になります。小さな差でも、重要な分子や経路に関わる場合は意味を持つことがあります。
+
+一方で、大きな効果量でも、サンプル数が少ない、信頼区間が広い、交絡が残る、再現性が低い場合は慎重に読みます。効果量は、信頼区間、p値、実験デザインと合わせて解釈します。
 
 ## 論文や実験ではどう出てくるか
 
-論文では、平均差、fold change、log2 fold change、相関係数、リスク比などとして出てきます。Volcano plotでは、p値と効果量が同時に示されます。
+論文では、Results本文、表、Volcano plot、Forest plot、相関図などに出てきます。「fold change」「odds ratio」「correlation coefficient」「difference in means」のような表現が手がかりになります。
 
-読むときは、p値だけでなく、効果量の大きさ、信頼区間、測定単位、実験の文脈を確認します。
+読むときは、何の差や関係を表している効果量か、単位は何か、信頼区間が示されているかを確認します。[統計的有意性と生物学的重要性](/statistics/significance-vs-importance/)と合わせると、p値だけに頼らない読み方になります。
 
-## Figureで見る場所
+## どんな点でつまずきやすいか
 
-効果量は、[Volcano plotの読み方](/figures/how-to-read-volcano-plot/)ではlog2 fold change、[相関図の読み方](/figures/how-to-read-correlation-plot/)では相関の強さ、[Forest plotの読み方](/figures/how-to-read-forest-plot/)では点推定の位置として読むことがあります。
+### 似た用語との区別
 
-## 英語表記と略語
+- 効果量とp値: 効果量は差や関係の大きさ、p値は帰無仮説のもとでの珍しさを表します。
+- 効果量と生物学的重要性: 効果量は判断材料ですが、研究文脈で意味があるかは別に考えます。
+- fold changeと差: fold changeは比、平均差は引き算による差です。
 
-| 日本語名    | 英語名                  | 略語 |
-| ----------- | ----------------------- | ---- |
-| 効果量      | effect size             | -    |
-| 平均差      | mean difference         | -    |
-| fold change | fold change             | FC   |
-| 相関係数    | correlation coefficient | r    |
+### 解釈の落とし穴
 
-## よくある誤解
-
-- p値が小さければ効果も大きいと思ってしまう。
-- 効果量が大きく見えるだけで、不確かさや反復数を確認しない。
-- fold changeの大きさだけで、生物学的重要性を断定する。
+- p値が小さいことを、効果量が大きいことと混同しないようにします。
+- 効果量だけを見て、信頼区間やサンプル数を見落とさないようにします。
+- 単位や変換を確認せずに、別のFigureの効果量と単純比較しないようにします。
 
 ## 重要用語
 
-- 効果量: 差や関係の大きさ。
-- p値: 観察結果の珍しさを考える指標。
-- 信頼区間: 推定値の不確かさを示す範囲。
-- fold change: 条件間の比として表した変化量。
+<GlossaryTable
+  terms={[
+    {
+      term: '効果量',
+      english: 'effect size',
+      description: '差や関係の大きさを表す指標。',
+      href: '/glossary/effect-size/',
+    },
+    {
+      term: 'p値',
+      english: 'p-value',
+      abbreviation: 'p',
+      description: '帰無仮説のもとで観察結果の珍しさを考える指標。',
+      href: '/glossary/p-value/',
+    },
+    {
+      term: '信頼区間',
+      english: 'confidence interval',
+      abbreviation: 'CI',
+      description: '推定値の不確かさを範囲として示す統計表示。',
+      href: '/glossary/confidence-interval/',
+    },
+    {
+      term: 'fold change',
+      english: 'fold change',
+      description: '条件間の量の違いを比として表す値。',
+      href: '/glossary/fold-change/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[
@@ -107,6 +135,10 @@ p値は、ある仮定のもとで観察結果がどれくらい珍しいかを�
 <NextSteps
   items={[
     {
+      title: '統計的有意性と生物学的重要性',
+      href: '/statistics/significance-vs-importance/',
+    },
+    {
       title: 'Volcano plotの読み方',
       href: '/figures/how-to-read-volcano-plot/',
     },
@@ -114,6 +146,5 @@ p値は、ある仮定のもとで観察結果がどれくらい珍しいかを�
       title: 'Forest plotの読み方',
       href: '/figures/how-to-read-forest-plot/',
     },
-    { title: '相関図の読み方', href: '/figures/how-to-read-correlation-plot/' },
   ]}
 />
