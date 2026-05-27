@@ -14,6 +14,15 @@ BioLearn is a Japanese learning site for molecular biology, cell biology, genomi
 - Keep content in Japanese.
 - Keep code comments in English or Japanese consistently, but user-facing text must be Japanese.
 
+## Local command notes
+
+- In this Windows Codex workspace, do not run bare `node` or `npm`. `node` may resolve to the Codex app-bundled executable and fail with access denied, and `npm` may not be on `PATH`.
+- Use the installed Node.js paths explicitly:
+  - Node scripts: `& 'C:\Program Files\nodejs\node.exe' path\to\script.mjs`
+  - npm scripts: `& 'C:\Program Files\nodejs\npm.cmd' run build`
+- If sandboxing blocks direct execution, use the approved PowerShell 7 wrapper form:
+  - `& 'C:\Program Files\PowerShell\7\pwsh.exe' -Command "& 'C:\Program Files\nodejs\npm.cmd' run check"`
+
 ## Content rules
 
 - Explain concepts accurately but clearly for beginners.
