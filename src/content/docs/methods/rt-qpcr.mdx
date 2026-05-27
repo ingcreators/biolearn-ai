@@ -35,7 +35,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-RT-qPCRは、RNAをcDNAに変換してからqPCRで測り、遺伝子発現量を比較する方法です。
+RT-qPCRは、RNAを[cDNA](/glossary/cdna/)に変換してからqPCRで測り、遺伝子発現量を比較する方法です。
 
 <LessonFigure
   src="/figures/rt-qpcr-concept.jpg"
@@ -44,9 +44,9 @@ RT-qPCRは、RNAをcDNAに変換してからqPCRで測り、遺伝子発現量�
   caption="RNAそのものではなく、逆転写で作ったcDNAをqPCRで測定し、遺伝子発現量を比較します。"
 />
 
-PCRやqPCRはDNAを増幅する手法です。そのため、RNAの量を調べたい場合は、まず逆転写によってRNAをcDNAに変換します。この逆転写の工程を含むqPCRがRT-qPCRです。
+PCRやqPCRはDNAを増幅する手法です。そのため、RNAの量を調べたい場合は、まず[逆転写](/glossary/reverse-transcription/)によってRNAをcDNAに変換します。この逆転写の工程を含むqPCRがRT-qPCRです。
 
-RT-qPCRでは、対象遺伝子に由来するcDNAがどのくらいあるかを、qPCRの増幅曲線やCt値から比較します。多くの場合、参照遺伝子で正規化し、control条件に対する相対量として示します。
+RT-qPCRでは、対象遺伝子に由来するcDNAがどのくらいあるかを、qPCRの増幅曲線や[Ct値](/glossary/ct-value/)から比較します。多くの場合、[参照遺伝子](/glossary/reference-gene/)で[正規化](/glossary/normalization/)し、control条件に対する相対量として示します。
 
 RNA量は試料の取り扱い、逆転写効率、プライマー設計、参照遺伝子の選び方に影響されます。したがって、Figureを見るときは、どのRNAを測ったか、何で正規化したか、どの条件と比べたかを確認します。
 
@@ -68,7 +68,7 @@ RT-qPCRは、RNAをcDNAに逆転写してからqPCRで測る方法です。特�
 
 ## 論文や実験ではどう出てくるか
 
-論文では、相対mRNA発現量やfold changeとして表示されます。Methodsでは、RNA抽出、逆転写条件、プライマー、基準遺伝子、ΔΔCt法などが書かれます。
+論文では、相対mRNA発現量やfold changeとして表示されます。Methodsでは、RNA抽出、逆転写条件、[プライマー](/glossary/primer/)、基準遺伝子、ΔΔCt法などが書かれます。
 
 読むときは、生物学的反復の数、基準遺伝子の妥当性、どの条件を1として正規化しているかを確認します。
 
@@ -81,7 +81,7 @@ RT-qPCR Figureでは、RNA量の比較がどの基準で正規化されている
 - biological replicateとtechnical replicateを分けて読みます。
 - 発現量の変化だけで、タンパク質量や機能変化まで示したとは読まないようにします。
 
-棒グラフとして出る場合は[棒グラフの読み方](/figures/how-to-read-bar-plot/)へ、増幅やCt値の考え方は[qPCRプロット](/figures/how-to-read-qpcr-plot/)へ戻ります。
+[棒グラフ](/glossary/bar-plot/)として出る場合は[棒グラフの読み方](/figures/how-to-read-bar-plot/)へ、増幅やCt値の考え方は[qPCR plot](/figures/how-to-read-qpcr-plot/)へ戻ります。
 
 ## 英語表記と略語
 
@@ -102,7 +102,7 @@ RT-qPCR Figureでは、RNA量の比較がどの基準で正規化されている
 
 - 逆転写: RNAを鋳型にしてcDNAを作る反応。
 - cDNA: RNAに対応するDNA。
-- Ct値: qPCRで蛍光シグナルがしきい値を超えるサイクル数。
+- Ct値: qPCRで蛍光シグナルが[しきい値](/glossary/threshold/)を超えるサイクル数。
 - 参照遺伝子: 相対量を比較するための基準に使う遺伝子。
 - [対照群](/glossary/control-group/): 処理や条件の違いを比較するための基準。
 - [p値](/glossary/p-value/): 条件間の発現差を統計的に評価するときに使われる値。
@@ -132,7 +132,7 @@ RT-qPCR Figureでは、RNA量の比較がどの基準で正規化されている
 <NextSteps
   items={[
     { title: 'qPCRとは何か', href: '/methods/qpcr/' },
-    { title: 'qPCRプロットの読み方', href: '/figures/how-to-read-qpcr-plot/' },
+    { title: 'qPCR plotの読み方', href: '/figures/how-to-read-qpcr-plot/' },
     { title: '棒グラフの読み方', href: '/figures/how-to-read-bar-plot/' },
   ]}
 />

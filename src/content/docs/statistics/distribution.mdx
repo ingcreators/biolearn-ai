@@ -22,7 +22,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   items={[
     '分布が何を表すか説明できる',
     '平均だけでは見えない広がりや偏りを意識できる',
-    '箱ひげ図、バイオリンプロット、ヒストグラムの入口を理解する',
+    '箱ひげ図、Violin plot、ヒストグラムの入口を理解する',
   ]}
 />
 
@@ -37,7 +37,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 同じ平均値を持つデータでも、値の散らばり方は大きく異なることがあります。あるデータは平均の近くに集まり、別のデータは広く散らばるかもしれません。片側に長く伸びる分布や、2つの山を持つ分布もあります。
 
-生命科学のFigureでは、点、箱ひげ図、バイオリンプロット、ヒストグラムなどで分布が示されます。平均やp値を見る前に、データがどのように広がっているかを見ると、結果を読みすぎにくくなります。
+生命科学のFigureでは、点、[箱ひげ図](/glossary/box-plot/)、Violin plot、ヒストグラムなどで分布が示されます。平均やp値を見る前に、データがどのように広がっているかを見ると、結果を読みすぎにくくなります。
 
 ## なぜ重要か
 
@@ -57,13 +57,13 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 ## 論文や実験ではどう出てくるか
 
-論文では、ヒストグラム、バイオリンプロット、箱ひげ図、密度プロット、散布図として出てきます。統計検定の選択や外れ値の扱いにも関係します。
+論文では、ヒストグラム、Violin plot、箱ひげ図、density plot、[散布図](/glossary/scatter-plot/)として出てきます。統計検定の選択や外れ値の扱いにも関係します。
 
 読むときは、代表値だけでなく、ばらつき、偏り、外れ値、サンプル数を合わせて確認します。
 
 ## Figureで見る場所
 
-分布は、[箱ひげ図の読み方](/figures/how-to-read-box-plot/)や[バイオリンプロットの読み方](/figures/how-to-read-violin-plot/)で直接読みます。平均やp値を見る前に、点の広がり、外れ値、山の数、群内のばらつきを確認すると、Figureの結論を読みすぎにくくなります。
+分布は、[箱ひげ図の読み方](/figures/how-to-read-box-plot/)や[Violin plotの読み方](/figures/how-to-read-violin-plot/)で直接読みます。平均やp値を見る前に、点の広がり、外れ値、山の数、群内のばらつきを確認すると、Figureの結論を読みすぎにくくなります。
 
 ## 英語表記と略語
 
@@ -96,7 +96,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
     {
       question: '分布を見るFigureの例を一つ挙げてください。',
       answer:
-        '箱ひげ図、バイオリンプロット、ヒストグラム、散布された点の図などがあります。',
+        '箱ひげ図、Violin plot、ヒストグラム、散布された点の図などがあります。',
     },
   ]}
 />
@@ -106,7 +106,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
     { title: '平均と中央値', href: '/statistics/mean-median/' },
     { title: '箱ひげ図の読み方', href: '/figures/how-to-read-box-plot/' },
     {
-      title: 'バイオリンプロットの読み方',
+      title: 'Violin plotの読み方',
       href: '/figures/how-to-read-violin-plot/',
     },
   ]}

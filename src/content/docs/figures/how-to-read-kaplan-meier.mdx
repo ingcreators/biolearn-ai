@@ -1,6 +1,6 @@
 ---
 title: Kaplan-Meier曲線の読み方
-description: 時間経過とイベント発生を示すKaplan-Meierプロットで、曲線、打ち切り、リスク数を読む基本を説明します。
+description: 時間経過とイベント発生を示すKaplan-Meier曲線で、曲線、打ち切り、リスク数を読む基本を説明します。
 part: figures
 module: quantitative-figures
 level: intermediate
@@ -24,22 +24,22 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 <LearningGoals
   items={[
-    'Kaplan-Meierプロットの曲線と横軸を説明できる',
+    'Kaplan-Meier曲線の曲線と横軸を説明できる',
     '打ち切りとリスク数を確認する理由を理解する',
     '研究Figureとして慎重に読む観点を身につける',
   ]}
 />
 
-Kaplan-Meierプロットは、時間の経過にともなって、イベントがまだ起きていない割合がどう変わるかを示すFigureです。
+Kaplan-Meier曲線は、時間の経過にともなって、イベントがまだ起きていない割合がどう変わるかを示すFigureです。
 
 <LessonFigure
   src="/figures/how-to-read-kaplan-meier-concept.jpg"
-  alt="Kaplan-Meierプロットで2本の階段状の曲線、打ち切り、リスク数を確認する概念図"
-  title="Kaplan-Meierプロットは時間とイベントを読む"
+  alt="Kaplan-Meier曲線で2本の階段状の曲線、打ち切り、リスク数を確認する概念図"
+  title="Kaplan-Meier曲線は時間とイベントを読む"
   caption="曲線の差だけでなく、打ち切り、リスク数、追跡期間、群の背景を確認します。"
 />
 
-Kaplan-Meierプロットは、時間-to-eventデータを可視化するために使われます。横軸は時間、縦軸はイベントが起きていない割合を表すことが多く、曲線が段階的に下がるたびにイベントが発生したことを示します。
+Kaplan-Meier曲線は、時間-to-eventデータを可視化するために使われます。横軸は時間、縦軸はイベントが起きていない割合を表すことが多く、曲線が段階的に下がるたびにイベントが発生したことを示します。
 
 曲線が2本以上ある場合、群ごとの違いを比較します。ただし、曲線が離れて見えても、サンプル数、追跡期間、打ち切り、背景因子、統計検定の方法を確認しないと、意味を判断しすぎることになります。
 
@@ -55,8 +55,7 @@ BioLearnでは、このFigureを論文読解のための教育例として扱い
 <Quiz
   questions={[
     {
-      question:
-        'Kaplan-Meierプロットで曲線が段階的に下がるのは何を表しますか。',
+      question: 'Kaplan-Meier曲線で曲線が段階的に下がるのは何を表しますか。',
       answer: 'イベントが発生した時点を表します。',
     },
     {

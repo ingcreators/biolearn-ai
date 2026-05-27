@@ -1,6 +1,6 @@
 ---
-title: PCAプロットの読み方
-description: PCAプロットでサンプル間の全体的な違い、クラスタ、外れ値を読む基本を説明します。
+title: PCA plotの読み方
+description: PCA plotでサンプル間の全体的な違い、クラスタ、外れ値を読む基本を説明します。
 part: figures
 module: bioinformatics-figures
 level: foundation
@@ -25,22 +25,22 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 <LearningGoals
   items={[
-    'PCAプロットで点が何を表すか確認できる',
+    'PCA plotで点が何を表すか確認できる',
     'サンプルのまとまりや外れ値を読める',
     'PC1/PC2の割合を確認する理由を理解する',
   ]}
 />
 
-PCAプロットは、多数の変数を持つデータで、サンプル同士の全体的な似ている・違うを可視化するFigureです。
+PCA plotは、多数の変数を持つデータで、サンプル同士の全体的な似ている・違うを可視化するFigureです。
 
 <LessonFigure
   src="/figures/pca-plot-concept.jpg"
-  alt="PCAプロットで条件ごとのサンプルがまとまり、外れ値を確認する概念図"
-  title="PCAプロットはサンプル同士の全体的な違いを見る"
+  alt="PCA plotで条件ごとのサンプルがまとまり、外れ値を確認する概念図"
+  title="PCA plotはサンプル同士の全体的な違いを見る"
   caption="点の単位、条件ごとのまとまり、外れ値、PC1/PC2の説明割合を確認します。"
 />
 
-PCAは主成分分析（principal component analysis）の略です。[RNA-seq](/glossary/rna-seq/)などでは、各サンプルが多数の遺伝子発現量を持っています。PCAプロットは、その違いを2次元に要約して示す[次元削減](/glossary/dimensionality-reduction/)の代表的な図です。
+PCAは主成分分析（principal component analysis）の略です。[RNA-seq](/glossary/rna-seq/)などでは、各サンプルが多数の遺伝子発現量を持っています。PCA plotは、その違いを2次元に要約して示す[次元削減](/glossary/dimensionality-reduction/)の代表的な図です。
 
 点はサンプルを表すことが多く、近い点ほど全体的なパターンが似ていると読みます。条件ごとに点がまとまるか、外れたサンプルがないか、[バッチ効果](/glossary/batch-effect/)が見えていないかを確認します。
 
@@ -55,12 +55,12 @@ PCAは主成分分析（principal component analysis）の略です。[RNA-seq](
 <Quiz
   questions={[
     {
-      question: 'PCAプロットで点が表すものは何であることが多いですか。',
+      question: 'PCA plotで点が表すものは何であることが多いですか。',
       answer: 'RNA-seqなどでは、各点がサンプルを表すことが多いです。',
     },
     {
       question:
-        'PCAプロットで外れた点があるときに確認したいことを一つ挙げてください。',
+        'PCA plotで外れた点があるときに確認したいことを一つ挙げてください。',
       answer:
         'サンプル品質、バッチ、処理条件、ライブラリ調製、メタデータなどがあります。',
     },

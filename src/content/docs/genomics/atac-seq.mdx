@@ -33,7 +33,7 @@ import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 ATAC-seqは、開いたクロマチン領域をゲノム全体で調べるシーケンシング手法です。
 
-開いた領域に入りやすい酵素を使ってDNA断片を作り、その配列を読みます。解析結果は、[クロマチンアクセシビリティ](/glossary/chromatin-accessibility/)が高い候補領域のピークとして扱われます。
+開いた領域に入りやすい酵素を使ってDNA断片を作り、その配列を読みます。解析結果は、[クロマチンアクセシビリティ](/glossary/chromatin-accessibility/)が高い候補領域の[ピーク](/glossary/peak/)として扱われます。
 
 <LessonFigure
   src="/figures/atac-seq-concept.jpg"
@@ -56,7 +56,7 @@ ATAC-seqを理解すると、プロモーターやエンハンサー候補など
 
 ## ATAC-seqはどう調べるか
 
-実験では、開いた[クロマチン](/glossary/chromatin/)領域に入りやすい酵素でDNAを断片化し、得られた断片を[NGS](/glossary/ngs/)で読みます。解析では、リードを参照ゲノムにマッピングし、リードが集まる領域をピークとして検出します。
+実験では、開いた[クロマチン](/glossary/chromatin/)領域に入りやすい酵素でDNAを断片化し、得られた断片を[NGS](/glossary/ngs/)で読みます。解析では、[リード](/glossary/read/)を参照ゲノムに[マッピング](/glossary/mapping/)し、リードが集まる領域をピークとして検出します。
 
 品質確認では、ミトコンドリア由来リード、フラグメント長、重複率、TSS周辺のシグナルなどが見られることがあります。これらは、データが解釈に使えるかを判断する材料です。
 
@@ -84,7 +84,7 @@ ATAC-seqピークは、DNAに調節因子が近づきやすい領域の候補を
 
 - ATAC-seqピークを発現量のピークとして読まない。
 - 開いた領域が、必ず最も近い遺伝子を制御すると考えない。
-- single-cell ATAC-seqではデータが疎になりやすく、集約や正規化の影響を受けます。
+- single-cell ATAC-seqではデータが疎になりやすく、集約や[正規化](/glossary/normalization/)の影響を受けます。
 
 ## 重要用語
 

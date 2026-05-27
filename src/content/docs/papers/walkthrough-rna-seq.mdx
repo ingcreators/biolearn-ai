@@ -49,7 +49,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 ある研究では、細胞を条件Aと条件Bで培養し、RNA-seqで遺伝子発現の違いを調べたとします。論文の主張は「条件Bではストレス応答に関わる遺伝子群が変化する」です。
 
-この主張を読むときは、まずFigure全体を見て、PCA、Volcano plot、ヒートマップ、pathway enrichment plotがどの順番で出てくるかを確認します。
+この主張を読むときは、まずFigure全体を見て、[PCA](/glossary/pca/)、[Volcano plot](/glossary/volcano-plot/)、[ヒートマップ](/glossary/heatmap/)、Pathway enrichment plotがどの順番で出てくるかを確認します。
 
 ## 読む順番
 
@@ -58,7 +58,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 3. Volcano plotで、変化の大きい遺伝子と統計表示を確認します。
 4. ヒートマップで、候補遺伝子群のパターンが条件と対応するかを見ます。
 5. pathway enrichmentで、どの経路名が出ているか、FDRや遺伝子数を確認します。
-6. Methodsで、反復数、正規化、フィルタ、差次的発現解析、多重検定補正を確認します。
+6. Methodsで、反復数、[正規化](/glossary/normalization/)、フィルタ、差次的発現解析、多重検定補正を確認します。
 
 ## Methodsで確認すること
 
@@ -78,7 +78,7 @@ RNA-seq論文では、遺伝子発現の差がきれいに見えても、その�
 - サンプル数が少ない場合、群の違いと個体差を切り分けにくくなります。
 - 同じ条件のサンプルが同じ測定日や同じ施設に偏っている場合、[バッチ効果](/bioinformatics/batch-effect/)が結果に混ざる可能性があります。
 - Volcano plotでは、p値だけでなく効果量と多重検定補正後の基準を確認します。
-- Heatmapでは、選ばれた遺伝子リストやクラスタリング条件によって見え方が変わります。
+- ヒートマップでは、選ばれた遺伝子リストやクラスタリング条件によって見え方が変わります。
 - Pathway enrichmentでは、入力遺伝子リスト、背景集合、データベースの違いで結果が変わります。
 - 発現差だけでは、直接の機能変化や医療上の効果を示したことにはなりません。
 
@@ -103,7 +103,7 @@ RNA-seq論文では、遺伝子発現の差がきれいに見えても、その�
 
 - PCAやクラスタリングで、条件ごとの全体傾向と外れ値を確認する。
 - Volcano plotで、横軸の効果量と縦軸の補正済みp値を分けて読む。
-- Heatmapで、表示された遺伝子がどの基準で選ばれたかを見る。
+- ヒートマップで、表示された遺伝子がどの基準で選ばれたかを見る。
 - Enrichment plotやGO結果では、FDR、遺伝子数、用語の広さを確認する。
 
 Figureは「差があるらしい」ではなく、「どの量に、どの程度の差があるのか」を読む場所です。
@@ -173,7 +173,7 @@ RNA-seqの結果から言いやすいのは、「条件Bで特定の遺伝子群
       href: '/figures/how-to-read-volcano-plot/',
     },
     {
-      title: 'pathway enrichment plotの読み方',
+      title: 'Pathway enrichment plotの読み方',
       href: '/figures/how-to-read-pathway-enrichment/',
     },
     {

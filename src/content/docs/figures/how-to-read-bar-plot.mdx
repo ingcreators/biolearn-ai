@@ -47,12 +47,12 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 ## まず一言でいうと
 
-棒の高さだけでなく、エラーバー、点、n数、統計表示をセットで読む図です。
+棒の高さだけでなく、[エラーバー](/glossary/error-bar/)、点、n数、統計表示をセットで読む図です。
 
 ## 図の構成要素
 
 - 横軸: 条件、群、処理、時間点などを表します。
-- 縦軸: 測定値を表します。単位、正規化の有無、対数表示かどうかを確認します。
+- 縦軸: 測定値を表します。単位、[正規化](/glossary/normalization/)の有無、対数表示かどうかを確認します。
 - 棒の高さ: 多くの場合は平均値です。ただし、中央値や代表値の場合もあります。
 - エラーバー: 標準偏差、標準誤差、信頼区間などを表します。凡例やFigure legendで定義を確認します。
 - 点: 個々のサンプルや反復を表すことがあります。点が表示されている図では、棒よりも点の分布を重視します。
@@ -76,8 +76,8 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 ## 関連する実験・解析
 
-- qPCRやRNA-seq後の遺伝子発現量比較
-- Western blotのバンド強度の定量
+- [qPCR](/glossary/qpcr/)やRNA-seq後の遺伝子発現量比較
+- [Western blot](/glossary/western-blot/)のバンド強度の定量
 - 細胞数、蛍光強度、酵素活性などの定量実験
 - [RNA-seqとは何か](/bioinformatics/rna-seq/)
 - [差次的発現解析とは何か](/bioinformatics/differential-expression/)
@@ -104,7 +104,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   items={[
     { title: 'Figure legendの読み方', href: '/figures/figure-legend/' },
     { title: '箱ひげ図の読み方', href: '/figures/how-to-read-box-plot/' },
-    { title: 'qPCRプロットの読み方', href: '/figures/how-to-read-qpcr-plot/' },
+    { title: 'qPCR plotの読み方', href: '/figures/how-to-read-qpcr-plot/' },
     { title: 'エラーバーとは何か', href: '/statistics/error-bars/' },
   ]}
 />

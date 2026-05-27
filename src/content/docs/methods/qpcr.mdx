@@ -45,25 +45,25 @@ qPCRは、PCRによる増幅の進み方をリアルタイムに測り、試料�
 
 qPCRは quantitative PCR の略で、PCRの増幅過程を蛍光シグナルとして追跡します。通常のPCRが「増幅産物があるか」を確認する場面で使われるのに対し、qPCRでは増幅がどのサイクルで検出可能になるかを見ます。
 
-よく出てくる指標がCt値です。Ct値は、蛍光シグナルが一定のしきい値を超えるサイクル数を表します。対象となる核酸が多い試料ほど早いサイクルで検出されやすく、Ct値は小さくなります。ただし、Ct値だけで結論を決めるのではなく、プライマー、対照、正規化、反復を確認します。
+よく出てくる指標が[Ct値](/glossary/ct-value/)です。Ct値は、蛍光シグナルが一定の[しきい値](/glossary/threshold/)を超えるサイクル数を表します。対象となる核酸が多い試料ほど早いサイクルで検出されやすく、Ct値は小さくなります。ただし、Ct値だけで結論を決めるのではなく、[プライマー](/glossary/primer/)、対照、[正規化](/glossary/normalization/)、反復を確認します。
 
-RNAの量を比べる場合は、RNAをcDNAに変換してからqPCRを行います。この場合はRT-qPCRと呼ばれ、遺伝子発現の変化を調べる実験として論文によく出てきます。
+RNAの量を比べる場合は、RNAを[cDNA](/glossary/cdna/)に変換してからqPCRを行います。この場合は[RT-qPCR](/glossary/rt-qpcr/)と呼ばれ、遺伝子発現の変化を調べる実験として論文によく出てきます。
 
 ## なぜ重要か
 
 qPCRは、[遺伝子発現](/glossary/gene-expression/)の変化を確認する実験として頻繁に使われます。RNA-seqで見つけた候補遺伝子を別の方法で確認したり、処理条件による発現変化を少数の遺伝子で調べたりします。
 
-Figureでは棒グラフや折れ線、増幅曲線として示されることがあります。何を基準に正規化したか、どの条件と比べたか、反復が何を意味するかを読むことが大切です。
+Figureでは[棒グラフ](/glossary/bar-plot/)や折れ線、増幅曲線として示されることがあります。何を基準に正規化したか、どの条件と比べたか、反復が何を意味するかを読むことが大切です。
 
 ## 具体例
 
-qPCRでは、特定のDNA配列やcDNAを増幅しながら蛍光を測定し、量を推定します。遺伝子発現を調べる場合は、RNAをcDNAに変換してから測るRT-qPCRとして使われます。
+qPCRでは、特定のDNA配列やcDNAを増幅しながら[蛍光](/glossary/fluorescence/)を測定し、量を推定します。遺伝子発現を調べる場合は、RNAをcDNAに変換してから測るRT-qPCRとして使われます。
 
 たとえば処理群と対照群で、ある遺伝子の発現量が何倍変わったかを比較します。
 
 ## よく混同される概念
 
-- qPCRとRT-qPCR: qPCRは定量PCR全般、RT-qPCRは逆転写を含むRNA由来の測定です。
+- qPCRとRT-qPCR: qPCRは定量PCR全般、RT-qPCRは[逆転写](/glossary/reverse-transcription/)を含むRNA由来の測定です。
 - Ct値と発現量: Ct値はしきい値に達するサイクル数で、値が小さいほど初期量が多いことを示します。
 - 技術的反復と生物学的反復: 同じサンプルの測定繰り返しと、独立したサンプルの繰り返しは意味が違います。
 
@@ -75,14 +75,14 @@ Figureでは棒グラフや点付きグラフとして出ることが多く、�
 
 ## Figureで見る場所
 
-qPCR Figureでは、棒グラフだけでなく、増幅曲線、Ct値、正規化方法、参照遺伝子を合わせて確認します。
+qPCR Figureでは、棒グラフだけでなく、増幅曲線、Ct値、正規化方法、[参照遺伝子](/glossary/reference-gene/)を合わせて確認します。
 
 - 棒グラフでは、何を1として相対量を示しているかを見ます。
-- エラーバーでは、独立サンプルのばらつきか、測定のばらつきかを確認します。
+- [エラーバー](/glossary/error-bar/)では、独立サンプルのばらつきか、測定のばらつきかを確認します。
 - 統計表示では、p値だけでなく効果量と反復数を合わせて読みます。
 - Figure legendでは、比較条件、参照遺伝子、検定方法を探します。
 
-読み方は[qPCRプロット](/figures/how-to-read-qpcr-plot/)と[棒グラフ](/figures/how-to-read-bar-plot/)に戻ると整理しやすくなります。
+読み方は[qPCR plot](/figures/how-to-read-qpcr-plot/)と[棒グラフ](/figures/how-to-read-bar-plot/)に戻ると整理しやすくなります。
 
 ## 英語表記と略語
 
@@ -132,7 +132,7 @@ qPCR Figureでは、棒グラフだけでなく、増幅曲線、Ct値、正規�
 <NextSteps
   items={[
     { title: 'PCRとは何か', href: '/methods/pcr/' },
-    { title: 'qPCRプロットの読み方', href: '/figures/how-to-read-qpcr-plot/' },
+    { title: 'qPCR plotの読み方', href: '/figures/how-to-read-qpcr-plot/' },
     { title: '棒グラフの読み方', href: '/figures/how-to-read-bar-plot/' },
   ]}
 />

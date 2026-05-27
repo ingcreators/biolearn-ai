@@ -46,7 +46,7 @@ import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 トランスクリプトミクスを見ると、細胞がどの遺伝子を使っているかを広く比較できます。刺激、分化、環境変化、細胞型の違いなどを、RNA量のパターンとして読む入口になります。
 
-また、発現量表、ヒートマップ、PCA、ボルケーノプロットの意味を理解しやすくなります。どの遺伝子が変わったかだけでなく、サンプル全体の構造やばらつきも合わせて読みます。
+また、発現量表、[ヒートマップ](/glossary/heatmap/)、[PCA](/glossary/pca/)、[Volcano plot](/glossary/volcano-plot/)の意味を理解しやすくなります。どの遺伝子が変わったかだけでなく、サンプル全体の構造やばらつきも合わせて読みます。
 
 ## どんなトランスクリプトミクスがあるか
 
@@ -56,9 +56,9 @@ import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 ## トランスクリプトミクスはどう調べるか
 
-多くの場合、RNAを取り出し、ライブラリ調製を行い、シーケンシングでリードを読みます。解析では、リードを参照配列に対応づけ、遺伝子や転写産物ごとのカウントを作ります。
+多くの場合、RNAを取り出し、ライブラリ調製を行い、シーケンシングで[リード](/glossary/read/)を読みます。解析では、リードを参照配列に対応づけ、遺伝子や転写産物ごとのカウントを作ります。
 
-その後、正規化、品質確認、クラスタリング、[差次的発現解析](/glossary/differential-expression-analysis/)などを行います。多数の遺伝子を同時に調べるため、多重検定補正も重要になります。
+その後、[正規化](/glossary/normalization/)、品質確認、クラスタリング、[差次的発現解析](/glossary/differential-expression-analysis/)などを行います。多数の遺伝子を同時に調べるため、多重検定補正も重要になります。
 
 ## トランスクリプトミクスの変化は何につながるか
 
@@ -68,9 +68,9 @@ import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 ## 論文や実験ではどう出てくるか
 
-[Methods](/glossary/methods/)では、サンプル、RNA抽出、ライブラリ調製、シーケンス条件、マッピング、カウント、正規化、統計モデルが説明されます。[Results](/glossary/results/)では、発現変動遺伝子、クラスタ、細胞型マーカー、パスウェイ解析として出てきます。
+[Methods](/glossary/methods/)では、サンプル、RNA抽出、ライブラリ調製、シーケンス条件、[マッピング](/glossary/mapping/)、カウント、正規化、統計モデルが説明されます。[Results](/glossary/results/)では、発現変動遺伝子、クラスタ、細胞型マーカー、パスウェイ解析として出てきます。
 
-[Figure](/glossary/figure/)では、ヒートマップ、PCA、UMAP、ボルケーノプロット、発現量の箱ひげ図、遺伝子リストとして示されます。図を見るときは、行と列が遺伝子なのかサンプルなのか、値がカウントなのか正規化済み量なのかを確認します。
+[Figure](/glossary/figure/)では、ヒートマップ、PCA、UMAP、Volcano plot、発現量の[箱ひげ図](/glossary/box-plot/)、遺伝子リストとして示されます。図を見るときは、行と列が遺伝子なのかサンプルなのか、値がカウントなのか正規化済み量なのかを確認します。
 
 ## どんな点でつまずきやすいか
 

@@ -33,7 +33,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-ライブラリ調製は、DNAやcDNAをシーケンサーで読める形に整える工程です。
+ライブラリ調製は、DNAや[cDNA](/glossary/cdna/)をシーケンサーで読める形に整える工程です。
 
 <LessonFigure
   src="/figures/library-preparation-concept.jpg"
@@ -66,13 +66,13 @@ DNA-seqでは、ゲノムDNAを断片化してアダプターを付け、目的�
 
 ## 論文や実験ではどう出てくるか
 
-Methodsでは、使ったキット、入力量、断片化、アダプター、PCRサイクル数、リード長などが書かれます。品質が悪いライブラリは、リード数、重複率、カバレッジ、検出遺伝子数などに影響します。
+Methodsでは、使ったキット、入力量、断片化、アダプター、PCRサイクル数、リード長などが書かれます。品質が悪いライブラリは、リード数、重複率、[カバレッジ](/glossary/coverage/)、検出遺伝子数などに影響します。
 
 FigureやSupplementaryでは、ライブラリ品質、リード数、QC指標として間接的に示されることがあります。
 
 ## Figureで見る場所
 
-ライブラリ調製の違いは、Figureの見た目に直接出ないこともあります。それでも、ヒートマップ、Volcano plot、ゲノムブラウザ図、UMAP/t-SNEなどの解釈に影響します。
+ライブラリ調製の違いは、Figureの見た目に直接出ないこともあります。それでも、[ヒートマップ](/glossary/heatmap/)、[Volcano plot](/glossary/volcano-plot/)、ゲノムブラウザ図、UMAP/t-SNEなどの解釈に影響します。
 
 - RNA-seqでは、poly(A)選択かrRNA除去かで見えるRNAの範囲が変わることがあります。
 - single-cell RNA-seqでは、捕捉できた細胞や低品質細胞の扱いがクラスタに影響します。

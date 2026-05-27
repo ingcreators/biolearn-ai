@@ -1,5 +1,5 @@
 ---
-title: qPCRプロットの読み方
+title: qPCR plotの読み方
 description: qPCRの増幅曲線、Ct値、相対発現量グラフを読むときの基本を説明します。
 part: figures
 module: experimental-figures
@@ -27,13 +27,13 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 <LearningGoals
   items={[
-    'qPCRプロットでCt値、しきい値、相対発現量を区別できる',
+    'qPCR plotでCt値、しきい値、相対発現量を区別できる',
     '内部標準遺伝子や基準条件を確認する理由を説明できる',
     'technical replicateとbiological replicateを分けて読める',
   ]}
 />
 
-qPCR（quantitative PCR）は、特定のDNAやRNA由来のcDNAを増幅しながら定量する方法です。論文では、増幅曲線、Ct値、相対発現量の棒グラフや点付きグラフとして示されます。
+qPCR（quantitative PCR）は、特定のDNAやRNA由来の[cDNA](/glossary/cdna/)を増幅しながら定量する方法です。論文では、増幅曲線、[Ct値](/glossary/ct-value/)、相対発現量の[棒グラフ](/glossary/bar-plot/)や点付きグラフとして示されます。
 
 <LessonFigure
   src="/figures/qpcr-concept.jpg"
@@ -53,11 +53,11 @@ qPCRは「どのサイクルで検出しきい値を超えたか」を見て、�
 ## 図の構成要素
 
 - 増幅曲線: PCRサイクルが進むにつれて蛍光シグナルが増える様子です。
-- しきい値: シグナルを検出したと判断する基準線です。
+- [しきい値](/glossary/threshold/): シグナルを検出したと判断する基準線です。
 - Ct値またはCq値: 曲線がしきい値を超えるサイクル数です。一般に、Ctが低いほど初期量が多いことを意味します。
 - 内部標準遺伝子: サンプル量や反応効率の違いを補正するために使われます。
 - 相対発現量: ΔΔCt法などで、基準条件に対する比として示されることがあります。
-- エラーバーと点: 反復間のばらつきを示します。
+- [エラーバー](/glossary/error-bar/)と点: 反復間のばらつきを示します。
 
 ## 読む順番
 
@@ -70,7 +70,7 @@ qPCRは「どのサイクルで検出しきい値を超えたか」を見て、�
 
 ## 前提に戻る
 
-qPCRプロットで迷ったら、Figureだけで判断せず、Methodsと統計の前提に戻ります。
+qPCR plotで迷ったら、Figureだけで判断せず、Methodsと統計の前提に戻ります。
 
 - 実験の原理は[qPCRとは何か](/methods/qpcr/)と[RT-qPCRとは何か](/methods/rt-qpcr/)で確認します。
 - 棒グラフの高さやエラーバーは、[平均と中央値](/statistics/mean-median/)と[エラーバー](/statistics/error-bars/)に戻ると読みやすくなります。
@@ -86,7 +86,7 @@ qPCRプロットで迷ったら、Figureだけで判断せず、Methodsと統計
 
 ## 関連する実験・解析
 
-- RT-qPCRによるmRNA発現量の検証
+- [RT-qPCR](/glossary/rt-qpcr/)によるmRNA発現量の検証
 - RNA-seqで見つかった候補遺伝子の確認
 - 遺伝子ノックダウンや刺激実験後の発現変化の確認
 - [PCRとは何か](/methods/pcr/)

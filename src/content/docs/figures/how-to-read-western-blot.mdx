@@ -33,7 +33,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-Western blot（ウェスタンブロット）は、特定のタンパク質を検出する実験です。論文では、バンド画像と、その濃さを定量したグラフが組み合わせて示されることがよくあります。
+Western blotは、特定のタンパク質を検出する実験です。論文では、バンド画像と、その濃さを定量したグラフが組み合わせて示されることがよくあります。
 
 <LessonFigure
   src="/figures/western-blot-concept.jpg"
@@ -53,9 +53,9 @@ Western blotは、目的タンパク質のバンド位置と濃さを、コン�
 ## 図の構成要素
 
 - レーン: 各サンプルや条件を表します。
-- バンド: 抗体が検出したタンパク質の位置です。分子量に対応する高さに出ます。
+- [バンド](/glossary/band/): [抗体](/glossary/antibody/)が検出したタンパク質の位置です。[分子量](/glossary/molecular-weight/)に対応する高さに出ます。
 - 分子量マーカー: バンドが想定サイズに近いかを確認する基準です。
-- ローディングコントロール: サンプル量の違いを補正するための基準バンドです。
+- [ローディングコントロール](/glossary/loading-control/): サンプル量の違いを補正するための基準バンドです。
 - 定量グラフ: バンドの濃さを数値化し、条件間で比較したものです。
 - Figure legend: 抗体名、サンプル、反復数、定量方法を確認する場所です。
 
@@ -75,11 +75,11 @@ Western blotは画像と定量グラフをセットで読むFigureです。ど�
 - 実験の流れは[Western blotとは何か](/methods/western-blot/)で確認します。
 - 補正の基準は[ローディングコントロール](/methods/loading-control/)で確認します。
 - 定量グラフの棒や点は、[棒グラフ](/figures/how-to-read-bar-plot/)と[エラーバー](/statistics/error-bars/)に戻って読みます。
-- 代表画像だけでなく、独立実験数は[生物学的反復と技術的反復](/statistics/biological-technical-replicates/)の観点で確認します。
+- [代表画像](/glossary/representative-image/)だけでなく、独立実験数は[生物学的反復と技術的反復](/statistics/biological-technical-replicates/)の観点で確認します。
 
 ## よくある誤解
 
-- バンドが濃いだけで、すぐに発現が増えたと断定はできません。サンプル量、露光、補正方法を確認します。
+- バンドが濃いだけで、すぐに発現が増えたと断定はできません。サンプル量、[露光](/glossary/exposure/)、補正方法を確認します。
 - ローディングコントロールが変動していると、目的バンドの比較も不安定になります。
 - 1枚の代表画像だけでは再現性は分かりません。独立した反復や定量結果が重要です。
 - バンドの位置が予想分子量と大きく違う場合、非特異的バンドの可能性も考えます。
@@ -88,12 +88,11 @@ Western blotは画像と定量グラフをセットで読むFigureです。ど�
 
 - タンパク質発現量の比較
 - リン酸化など翻訳後修飾の検出
-- RNA-seqやqPCRで見つかった発現変化がタンパク質でも見えるかの確認
+- RNA-seqや[qPCR](/glossary/qpcr/)で見つかった発現変化がタンパク質でも見えるかの確認
 - [タンパク質とは何か](/fundamentals/protein/)
 - [遺伝子発現とは何か](/fundamentals/gene-expression/)
 - [RNA-seqとは何か](/bioinformatics/rna-seq/)
 - [ローディングコントロールとは何か](/methods/loading-control/)
-- [用語: タンパク質](/glossary/protein/)
 - [用語: 遺伝子発現](/glossary/gene-expression/)
 
 <Quiz
@@ -120,6 +119,6 @@ Western blotは画像と定量グラフをセットで読むFigureです。ど�
       href: '/methods/loading-control/',
     },
     { title: '棒グラフの読み方', href: '/figures/how-to-read-bar-plot/' },
-    { title: 'qPCRプロットの読み方', href: '/figures/how-to-read-qpcr-plot/' },
+    { title: 'qPCR plotの読み方', href: '/figures/how-to-read-qpcr-plot/' },
   ]}
 />
