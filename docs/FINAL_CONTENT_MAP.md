@@ -550,22 +550,23 @@ URL:
 記事数目安:
 
 ```text
-20〜25本
+25〜30本
 ```
 
 このカテゴリは、BioLearnを「論文が読める教材」にするうえで非常に重要。
 
-### 5-1 サンプル・モデル・実験系
+### 5-1 実験の組み立てとサンプル
 
 - `/methods/sample/` サンプルとは何か [P1]
 - `/methods/control/` 対照群とは何か [P1]
+- `/methods/positive-negative-control/` 陽性対照・陰性対照とは何か [P1]
 - `/methods/cell-culture/` 細胞培養とは何か [P1]
 - `/methods/model-system/` モデル実験系とは何か [P1]
 - `/methods/animal-model/` 動物モデルとは何か [P2]
 - `/methods/organoid/` オルガノイドとは何か [P2]
 - `/methods/clinical-sample/` 臨床サンプルとは何か [P2]
 
-### 5-2 核酸を測る実験
+### 5-2 核酸を増やす・測る
 
 - `/methods/pcr/` PCRとは何か [P0]
 - `/methods/rt-pcr/` RT-PCRとは何か [P1]
@@ -573,20 +574,24 @@ URL:
 - `/methods/rt-qpcr/` RT-qPCRとは何か [P1]
 - `/methods/dna-extraction/` DNA抽出とは何か [P2]
 - `/methods/rna-extraction/` RNA抽出とは何か [P1]
+
+### 5-3 シーケンスへつなぐ
+
 - `/methods/library-preparation/` ライブラリ調製とは何か [P1]
 - `/methods/sequencing/` シーケンシングとは何か [P0]
 - `/methods/ngs/` NGSとは何か [P0]
 
-### 5-3 タンパク質・細胞を測る実験
+### 5-4 タンパク質・細胞を見る
 
 - `/methods/western-blot/` Western blotとは何か [P1]
+- `/methods/loading-control/` ローディングコントロールとは何か [P1]
 - `/methods/elisa/` ELISAとは何か [P2]
 - `/methods/immunostaining/` 免疫染色とは何か [P1]
 - `/methods/fluorescence-microscopy/` 蛍光顕微鏡とは何か [P1]
 - `/methods/flow-cytometry/` フローサイトメトリーとは何か [P1]
 - `/methods/facs/` FACSとは何か [P2]
 
-### 5-4 遺伝子機能を調べる実験
+### 5-5 遺伝子機能を動かして確かめる
 
 - `/methods/knockout/` ノックアウトとは何か [P1]
 - `/methods/knockdown/` ノックダウンとは何か [P1]
@@ -595,10 +600,8 @@ URL:
 - `/methods/reporter-assay/` レポーターアッセイとは何か [P2]
 - `/methods/screening/` スクリーニング実験とは何か [P2]
 
-### 5-5 実験の品質とコントロール
+### 5-6 実験の信頼性を確認する
 
-- `/methods/positive-negative-control/` 陽性対照・陰性対照とは何か [P1]
-- `/methods/loading-control/` ローディングコントロールとは何か [P1]
 - `/methods/housekeeping-gene/` ハウスキーピング遺伝子とは何か [P1]
 - `/methods/antibody-validation/` 抗体の検証とは何か [P2]
 - `/methods/batch-effect/` バッチ効果とは何か [P1]
@@ -622,44 +625,43 @@ URL:
 記事数目安:
 
 ```text
-20〜25本
+25〜30本
 ```
 
-### 6-1 データ形式とデータベース
+### 6-1 解析の全体像とデータの入口
 
 - `/bioinformatics/bioinformatics/` バイオインフォマティクスとは何か [P0]
-- `/bioinformatics/fasta/` FASTAとは何か [P1]
-- `/bioinformatics/fastq/` FASTQとは何か [P1]
-- `/bioinformatics/sam-bam/` SAM/BAMとは何か [P1]
-- `/bioinformatics/vcf/` VCFとは何か [P1]
+- `/bioinformatics/sequence-data/` シーケンスデータとは何か [P0]
 - `/bioinformatics/metadata/` メタデータとは何か [P1]
+- `/bioinformatics/public-dataset/` 公共データセットとは何か [P1]
 - `/bioinformatics/gene-annotation/` 遺伝子アノテーションとは何か [P1]
 
-### 6-2 シーケンスデータ処理
+### 6-2 シーケンスデータの形式と前処理
 
-- `/bioinformatics/sequence-data/` シーケンスデータとは何か [P0]
+- `/bioinformatics/fasta/` FASTAとは何か [P1]
+- `/bioinformatics/fastq/` FASTQとは何か [P1]
 - `/bioinformatics/read/` リードとは何か [P1]
 - `/bioinformatics/quality-score/` quality scoreとは何か [P1]
 - `/bioinformatics/trimming/` trimmingとは何か [P2]
 - `/bioinformatics/mapping/` マッピングとは何か [P1]
 - `/bioinformatics/alignment/` アライメントとは何か [P1]
+- `/bioinformatics/sam-bam/` SAM/BAMとは何か [P1]
+- `/bioinformatics/vcf/` VCFとは何か [P1]
 - `/bioinformatics/assembly/` アセンブリとは何か [P2]
 - `/bioinformatics/variant-calling/` variant callingとは何か [P1]
 
 ### 6-3 RNA-seqと発現解析
 
 - `/bioinformatics/rna-seq/` RNA-seqとは何か [P0]
-- `/bioinformatics/count-data/` カウントデータとは何か [P1]
+- `/bioinformatics/count-matrix/` カウント行列とは何か [P1]
 - `/bioinformatics/normalization/` 正規化とは何か [P1]
 - `/bioinformatics/differential-expression/` 差次的発現解析とは何か [P0]
-- `/bioinformatics/multiple-testing/` 多重検定補正とは何か [P1]
 - `/bioinformatics/pathway-enrichment/` pathway enrichmentとは何か [P1]
 - `/bioinformatics/gsea/` GSEAとは何か [P1]
 
 ### 6-4 single-cell解析
 
 - `/bioinformatics/single-cell-rna-seq/` single-cell RNA-seqとは何か [P1]
-- `/bioinformatics/count-matrix/` カウント行列とは何か [P1]
 - `/bioinformatics/single-cell-quality-control/` single-cell QCとは何か [P2]
 - `/bioinformatics/dimensionality-reduction/` 次元削減とは何か [P1]
 - `/bioinformatics/clustering/` クラスタリングとは何か [P1]
@@ -667,9 +669,9 @@ URL:
 - `/bioinformatics/umap/` UMAPとは何か [P1]
 - `/bioinformatics/cell-type-annotation/` 細胞タイプ注釈とは何か [P2]
 
-### 6-5 再現性と公共データ
+### 6-5 解析結果の偏りと再現性
 
-- `/bioinformatics/public-dataset/` 公共データセットとは何か [P1]
+- `/bioinformatics/batch-effect/` バッチ効果とは何か [P1]
 - `/bioinformatics/reanalysis/` 論文データの再解析とは何か [P2]
 - `/bioinformatics/workflow/` 解析ワークフローとは何か [P2]
 - `/bioinformatics/notebook/` 解析ノートブックとは何か [P2]
@@ -693,40 +695,43 @@ FigureやMethodsに出てくる統計表示・実験設計を理解する。
 記事数目安:
 
 ```text
-10〜15本
+20本前後
 ```
 
-### 7-1 統計の基本
+### 7-1 データの種類と分布を読む
 
 - `/statistics/variable/` 変数とは何か [P1]
 - `/statistics/distribution/` 分布とは何か [P1]
 - `/statistics/mean-median/` 平均と中央値 [P1]
+
+### 7-2 ばらつきと不確かさを読む
+
 - `/statistics/standard-deviation-standard-error/` 標準偏差と標準誤差 [P1]
+- `/statistics/error-bars/` エラーバーとは何か [P1]
 - `/statistics/confidence-interval/` 信頼区間とは何か [P1]
 
-### 7-2 実験デザイン
+### 7-3 比較の設計を読む
 
 - `/statistics/sample-size/` n数とは何か [P1]
 - `/statistics/biological-technical-replicates/` 生物学的反復と技術的反復 [P1]
 - `/statistics/control-group/` 対照群とは何か [P1]
 - `/statistics/randomization/` ランダム化とは何か [P2]
 - `/statistics/blinding/` ブラインド化とは何か [P2]
-- `/statistics/batch-effect/` バッチ効果とは何か [P1]
 
-### 7-3 推定・検定・解釈
+### 7-4 差の大きさと確からしさを読む
 
 - `/statistics/p-value/` p値とは何か [P1]
 - `/statistics/effect-size/` 効果量とは何か [P1]
 - `/statistics/multiple-testing-correction/` 多重検定補正とは何か [P1]
-- `/statistics/correlation-causation/` 相関と因果の違い [P1]
 - `/statistics/significance-vs-importance/` 統計的有意性と生物学的重要性 [P1]
 
-### 7-4 論文を批判的に読むために
+### 7-5 関係・因果・限界を読む
 
+- `/statistics/correlation-causation/` 相関と因果の違い [P1]
 - `/statistics/bias/` バイアスとは何か [P1]
-- `/statistics/confounding/` 交絡とは何か [P2]
+- `/statistics/confounding/` 交絡とは何か [P1]
 - `/statistics/reproducibility/` 再現性とは何か [P1]
-- `/statistics/limitations/` 研究の限界を読む [P2]
+- `/statistics/limitations/` 研究の限界を読む [P1]
 
 ---
 
