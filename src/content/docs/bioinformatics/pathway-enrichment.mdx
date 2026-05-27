@@ -1,0 +1,153 @@
+---
+title: Pathway enrichmentとは何か
+description: 変化した遺伝子リストから、経路や機能カテゴリの偏りを読むpathway enrichment解析を説明します。
+part: bioinformatics
+module: expression-analysis
+level: foundation
+priority: P1
+order: 45
+relatedTerms:
+  - pathway-enrichment
+  - enrichment
+  - gene-set
+prerequisites:
+  - /bioinformatics/differential-expression/
+  - /statistics/multiple-testing-correction/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+## この記事で学ぶこと
+
+<LearningGoals
+  items={[
+    'pathway enrichmentが遺伝子リストの偏りを見る解析であることを説明できる',
+    '入力遺伝子リスト、背景集合、FDRを確認する理由を理解する',
+    '経路名だけで機能を証明したと読まない姿勢を身につける',
+  ]}
+/>
+
+Pathway enrichmentは、ある遺伝子リストに、特定の経路や機能カテゴリに属する遺伝子が期待より多く含まれるかを調べる解析です。
+
+差次的発現解析で多数の候補遺伝子が出たとき、1つずつ遺伝子名を読むだけでは全体像をつかみにくいことがあります。Pathway enrichmentは、候補を[遺伝子セット](/glossary/gene-set/)や経路の単位で整理し、どの生物学的テーマが目立つかを見る入口になります。
+
+<LessonFigure
+  src="/figures/pathway-enrichment-concept.jpg"
+  alt="変化した遺伝子のリストから、経路ごとのまとまりに色付きの印が集まる様子を示す教材イラスト"
+  title="Pathway enrichmentは遺伝子リストを経路単位で整理する"
+  caption="入力遺伝子、背景集合、データベース、FDRを確認し、経路名を手がかりとして読みます。"
+/>
+
+## なぜpathway enrichmentの視点が重要か
+
+Pathway enrichmentの視点が重要なのは、遺伝子リストを機能や経路のまとまりとして読み直せるからです。たとえば炎症、細胞周期、代謝、シグナル伝達のようなテーマが候補リストに偏っているかを調べられます。
+
+ただし、enrichmentは「その経路が機能的に証明された」ことを意味しません。使った入力リスト、背景集合、データベース、統計補正によって結果が変わるため、解析条件を合わせて読む必要があります。
+
+## どんなpathway enrichmentがあるか
+
+よく使われる方法には、候補遺伝子リストを使うover-representation analysisがあります。これは、差次的発現解析などで選んだ遺伝子が、特定の経路やGO termに多く含まれるかを調べます。
+
+別の考え方として、遺伝子全体のランキングを使うGSEAがあります。候補をしきい値で切る前に、上位や下位に遺伝子セットが偏っているかを見るため、入力の考え方が少し違います。
+
+## Pathway enrichmentはどう調べるか
+
+解析では、まず入力遺伝子リストを決めます。たとえば、調整済みp値とlog fold changeで選んだ発現変動遺伝子を使うことがあります。このとき、しきい値の選び方が結果に影響します。
+
+次に、背景集合とデータベースを確認します。背景集合は「比較の母集団」で、実際に測定できた遺伝子全体を使うのか、ゲノム上の全遺伝子を使うのかで結果が変わります。データベースにはGO、KEGG、Reactome、MSigDBなどが使われることがあります。
+
+## Pathway enrichmentの結果は何につながるか
+
+Pathway enrichmentの結果は、次に注目する経路や遺伝子群を選ぶ手がかりになります。個別遺伝子の一覧よりも、結果全体の方向性を説明しやすくなる場合があります。
+
+一方で、経路名は広い意味を持つことがあり、同じ遺伝子が複数の経路に含まれることもあります。結果は候補の整理であり、経路の活性化や機能変化を直接証明するものではありません。
+
+## 論文や実験ではどう出てくるか
+
+論文では、Pathway enrichmentは棒グラフ、ドットプロット、ネットワーク図、Supplementary tableとして出てくることがあります。Figureでは、経路名、遺伝子数、gene ratio、p値、FDR、enrichment scoreなどが示されます。
+
+Methodsでは、入力遺伝子リストの作り方、背景集合、使ったデータベース、補正方法を確認します。Figureだけを見ると経路名が目立ちますが、どの遺伝子が寄与したかまで見ると解釈が安定します。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- Pathway enrichmentとGSEA: Pathway enrichmentは広い言い方で、候補リストを使う方法もランキングを使うGSEAも含めて語られることがあります。
+- 経路と遺伝子セット: 経路は反応や機能のまとまりで、遺伝子セットは解析用に定義された遺伝子の集合です。
+- enrichmentと発現上昇: enrichmentはリスト内の偏りであり、すべての遺伝子が上昇していることを意味するとは限りません。
+
+### 解釈の落とし穴
+
+- 経路名が有名だから重要だと判断せず、FDRや寄与遺伝子を確認します。
+- 入力遺伝子リストの作り方が変わると、上位に出る経路も変わることがあります。
+- 同じ経路名でも、データベースやバージョンによって含まれる遺伝子が違う場合があります。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'Pathway enrichment',
+      english: 'pathway enrichment',
+      description:
+        '遺伝子リストやランキングに、特定の経路に属する遺伝子が偏って含まれるかを見る解析。',
+      href: '/glossary/pathway-enrichment/',
+    },
+    {
+      term: 'エンリッチメント',
+      english: 'enrichment',
+      description:
+        'ある特徴や遺伝子セットが期待より多く含まれるかを見る考え方。',
+      href: '/glossary/enrichment/',
+    },
+    {
+      term: '遺伝子セット',
+      english: 'gene set',
+      description: '共通の機能、経路、条件などでまとめられた遺伝子の集合。',
+      href: '/glossary/gene-set/',
+    },
+    {
+      term: '多重検定補正',
+      english: 'multiple testing correction',
+      description: '多数の検定を行うと偶然の候補が増える影響を調整する処理。',
+      href: '/glossary/multiple-testing-correction/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: 'Pathway enrichmentは何を調べる解析ですか。',
+      answer:
+        '遺伝子リストやランキングに、特定の経路や機能カテゴリに属する遺伝子が偏って含まれるかを調べる解析です。',
+    },
+    {
+      question:
+        'Pathway enrichmentの結果を読むとき、経路名以外に確認したいものを2つ挙げてください。',
+      answer:
+        '入力遺伝子リスト、背景集合、データベース、遺伝子数、FDR、寄与遺伝子などです。',
+    },
+    {
+      question:
+        '経路名が出たことを機能の証明と読まない方がよい理由を説明してください。',
+      answer:
+        '解析条件やデータベースに依存する候補の整理であり、経路の機能変化を直接実験で示したわけではないからです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'GSEAとは何か', href: '/bioinformatics/gsea/' },
+    { title: 'GSEA plotの読み方', href: '/figures/how-to-read-gsea-plot/' },
+    {
+      title: 'Pathway enrichment plotの読み方',
+      href: '/figures/how-to-read-pathway-enrichment/',
+    },
+  ]}
+/>

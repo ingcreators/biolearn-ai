@@ -1,0 +1,154 @@
+---
+title: GSEAとは何か
+description: 遺伝子全体のランキングから遺伝子セットの偏りを見るGSEAを説明します。
+part: bioinformatics
+module: expression-analysis
+level: foundation
+priority: P1
+order: 46
+relatedTerms:
+  - gsea
+  - gene-set
+  - enrichment
+prerequisites:
+  - /bioinformatics/differential-expression/
+  - /bioinformatics/pathway-enrichment/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+## この記事で学ぶこと
+
+<LearningGoals
+  items={[
+    'GSEAが遺伝子ランキングを使うエンリッチメント解析であることを説明できる',
+    'ランキング、遺伝子セット、NES、FDRの役割を理解する',
+    'GSEAの結果を経路名だけで読まない理由を説明できる',
+  ]}
+/>
+
+GSEAは、Gene Set Enrichment Analysisの略で、遺伝子全体のランキングの上位または下位に、特定の遺伝子セットが偏って現れるかを調べる解析です。
+
+差次的発現解析では、しきい値で候補遺伝子を選ぶことがよくあります。一方、GSEAでは候補を先に切り出すのではなく、比較に基づいて並べた遺伝子ランキング全体を使い、経路や機能のまとまりがどちら側に偏るかを見ます。
+
+<LessonFigure
+  src="/figures/gsea-concept.jpg"
+  alt="遺伝子ランキングの片側に同じ遺伝子セットの印が集まり、曲線として偏りが見えるGSEAの概念図"
+  title="GSEAはランキング全体から遺伝子セットの偏りを見る"
+  caption="遺伝子を1つずつではなく、ランキング、遺伝子セット、NES、FDRを合わせて経路単位で読みます。"
+/>
+
+## なぜGSEAの視点が重要か
+
+GSEAの視点が重要なのは、小さな変化をする遺伝子がまとまって同じ方向に偏る場合を見つけやすいからです。個々の遺伝子だけでは強く見えなくても、経路や機能カテゴリとして見ると一貫した傾向が分かることがあります。
+
+また、しきい値で遺伝子リストを作る方法と違い、ランキング全体を使うため、候補の切り方に依存しにくい面があります。ただし、ランキングの作り方や遺伝子セットの定義には依存します。
+
+## どんなGSEAの結果があるか
+
+GSEAの結果では、遺伝子セット名、NES、p値、FDR、leading edgeなどが出てきます。NESはnormalized enrichment scoreの略で、遺伝子セットの偏りの強さを比較しやすくした指標です。
+
+Leading edgeは、偏りに強く寄与した遺伝子のまとまりです。経路名だけでなく、どの遺伝子がleading edgeに入っているかを見ると、結果の具体的な意味を考えやすくなります。
+
+## GSEAはどう調べるか
+
+GSEAでは、まず遺伝子を何らかの指標で並べます。たとえば、条件Aと条件Bの発現差、検定統計量、相関係数などを使って、遺伝子を上位から下位へランキングします。
+
+次に、あらかじめ定義した遺伝子セットが、そのランキングの上位や下位に偏るかを計算します。多数の遺伝子セットを調べるため、FDRなどの多重検定補正を合わせて確認します。
+
+## GSEAの結果は何につながるか
+
+GSEAの結果は、発現変化を経路や機能のまとまりとして解釈する手がかりになります。たとえば、細胞周期関連の遺伝子セットがランキング上位に偏る場合、その比較で細胞周期に関わる発現傾向が強い可能性を考えます。
+
+ただし、GSEAは「その経路が直接活性化した」ことを単独で証明するものではありません。RNA量の傾向を遺伝子セット単位で見ているため、タンパク質活性、代謝活性、細胞機能の証明とは分けて考えます。
+
+## 論文や実験ではどう出てくるか
+
+論文では、GSEAはGSEA plot、上位遺伝子セットの表、ドットプロット、Supplementary tableとして出てくることがあります。Figureでは、曲線の形だけでなく、ランキングの向き、遺伝子セット名、NES、FDR、leading edgeを確認します。
+
+Methodsでは、ランキング指標、使った遺伝子セット集、ソフトウェア、バージョン、FDRのしきい値を確認します。同じデータでも、遺伝子セット集やランキング方法が変わると結果が変わることがあります。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- GSEAとPathway enrichment: GSEAはランキング全体を使う代表的なエンリッチメント解析で、候補遺伝子リストだけを入力する方法とは考え方が違います。
+- NESとFDR: NESは偏りの強さ、FDRは多数の遺伝子セットを調べたときの統計的な確からしさの手がかりです。
+- Leading edgeと遺伝子セット全体: Leading edgeは結果に強く寄与した一部の遺伝子で、セット全体と同じではありません。
+
+### 解釈の落とし穴
+
+- GSEAの経路名だけで、細胞機能が直接証明されたと読まないようにします。
+- ランキングの向きを確認しないと、どちらの条件で偏っているかを逆に読むことがあります。
+- FDRが低くても、遺伝子セットが広すぎる場合は具体的な解釈が難しいことがあります。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'GSEA',
+      english: 'gene set enrichment analysis',
+      abbreviation: 'GSEA',
+      description:
+        '遺伝子セットが条件間の変化に偏って現れるかをランキング全体から調べる解析。',
+      href: '/glossary/gsea/',
+    },
+    {
+      term: '遺伝子セット',
+      english: 'gene set',
+      description: '共通の機能、経路、条件などでまとめられた遺伝子の集合。',
+      href: '/glossary/gene-set/',
+    },
+    {
+      term: 'エンリッチメント',
+      english: 'enrichment',
+      description:
+        'ある特徴や遺伝子セットが期待より多く含まれるかを見る考え方。',
+      href: '/glossary/enrichment/',
+    },
+    {
+      term: '多重検定補正',
+      english: 'multiple testing correction',
+      description: '多数の検定を行うと偶然の候補が増える影響を調整する処理。',
+      href: '/glossary/multiple-testing-correction/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: 'GSEAはどのような入力を使う解析ですか。',
+      answer:
+        '比較に基づいて並べた遺伝子ランキングと、あらかじめ定義された遺伝子セットを使います。',
+    },
+    {
+      question: 'GSEAでFDRを確認する理由を説明してください。',
+      answer:
+        '多数の遺伝子セットを同時に調べるため、偶然有意に見える候補が増える影響を考慮する必要があるからです。',
+    },
+    {
+      question: 'Leading edgeとは何ですか。',
+      answer: 'GSEAの偏りに強く寄与した遺伝子のまとまりです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    {
+      title: 'Pathway enrichmentとは何か',
+      href: '/bioinformatics/pathway-enrichment/',
+    },
+    { title: 'GSEA plotの読み方', href: '/figures/how-to-read-gsea-plot/' },
+    {
+      title: '差次的発現解析とは何か',
+      href: '/bioinformatics/differential-expression/',
+    },
+  ]}
+/>

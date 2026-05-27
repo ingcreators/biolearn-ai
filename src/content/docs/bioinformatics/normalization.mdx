@@ -1,0 +1,152 @@
+---
+title: 正規化とは何か
+description: RNA-seqやsingle-cell解析で、サンプル間の測定量を比較しやすく整える正規化を説明します。
+part: bioinformatics
+module: expression-analysis
+level: foundation
+priority: P1
+order: 35
+relatedTerms:
+  - normalization
+  - count-matrix
+  - differential-expression-analysis
+prerequisites:
+  - /bioinformatics/count-matrix/
+  - /bioinformatics/rna-seq/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+## この記事で学ぶこと
+
+<LearningGoals
+  items={[
+    '正規化が測定値の尺度を整える処理であることを説明できる',
+    'RNA-seqのカウントをそのまま単純比較しにくい理由を理解する',
+    '正規化後の値を読むときの注意点を挙げられる',
+  ]}
+/>
+
+正規化は、サンプル間や細胞間で測定量を比較しやすくするために、数値の尺度を整える処理です。
+
+[RNA-seq](/glossary/rna-seq/)やsingle-cell RNA-seqでは、ライブラリサイズ、検出効率、遺伝子長、細胞の品質などによって観測されるカウントが変わります。正規化は、こうした技術的な違いをできるだけ調整し、条件間の違いを読みやすくするための前処理として使われます。
+
+<LessonFigure
+  src="/figures/normalization-concept.jpg"
+  alt="大きさの異なるサンプル由来のカウントを、比較しやすい尺度にそろえてから発現パターンを見る教材イラスト"
+  title="正規化はカウントを比較しやすい尺度に整える"
+  caption="総リード数や検出効率の違いを考慮し、条件間の発現差を読む前に数値の前提をそろえます。"
+/>
+
+## なぜ正規化の視点が重要か
+
+正規化の視点が重要なのは、観測されたカウントの差が、そのまま生物学的な発現差とは限らないからです。たとえば、あるサンプルだけ総リード数が多いと、多くの遺伝子のカウントが全体的に大きく見えます。
+
+正規化を理解すると、ヒートマップ、PCA、Volcano plot、差次的発現解析の結果を読むときに、どの段階の値を見ているのか確認できます。[カウント行列](/glossary/count-matrix/)の値、正規化後の発現量、統計モデルに入る値は、同じ「発現データ」でも役割が違います。
+
+## どんな正規化があるか
+
+bulk RNA-seqでは、サンプルごとのライブラリサイズや組成の違いを考慮する正規化がよく使われます。代表的には、size factor、TMM、TPM、CPMのような考え方が登場しますが、どれも「何をそろえているか」が少しずつ違います。
+
+single-cell RNA-seqでは、細胞ごとの総カウントや検出遺伝子数が大きく違うため、細胞ごとのスケーリングや対数変換が使われることがあります。解析ツールによって既定の処理が異なるため、Methodsで何を行ったかを確認します。
+
+## 正規化はどう確認するか
+
+正規化の確認では、まず生カウントと正規化後の値を区別します。MethodsやFigure legendに、使ったツール、正規化方法、フィルタ条件、対数変換の有無が書かれているかを見ます。
+
+次に、正規化前後の分布、PCA、サンプル間の総量、品質指標を確認します。正規化は便利な処理ですが、極端に質の悪いサンプルや、条件とバッチが重なった実験デザインを自動的に解決するものではありません。
+
+## 正規化の違いは何につながるか
+
+正規化の方法が変わると、発現量の見え方や差次的発現解析の候補が変わることがあります。特に、少数の遺伝子だけが非常に強く発現するサンプルや、細胞品質の差が大きいデータでは、正規化の前提が結果に影響しやすくなります。
+
+一方で、正規化後の値がきれいに見えても、それだけで生物学的な結論が証明されるわけではありません。実験設計、反復、バッチ効果、統計的な検定、既存知識と合わせて解釈します。
+
+## 論文や実験ではどう出てくるか
+
+論文では、正規化はMethodsの「normalization」「data processing」「preprocessing」などに書かれます。Resultsでは、正規化済み発現量を使ったヒートマップ、PCA、クラスタリング、差次的発現解析として現れることが多いです。
+
+読むときは、表示されている値がraw counts、normalized counts、TPM、log-transformed expressionのどれなのかを確認します。図の色や軸が何を表すかを見ないまま、値の大小だけで結論を決めないようにします。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- 正規化と品質管理: 品質管理は使えるデータかを確認する工程で、正規化は比較しやすい尺度に数値を整える処理です。
+- 正規化と標準化: 近い意味で使われることもありますが、統計では平均0、分散1のような尺度変換を指す場合があります。
+- 生カウントと正規化後の値: 生カウントは観測された数で、正規化後の値は解析目的に合わせて変換された値です。
+
+### 解釈の落とし穴
+
+- 正規化すれば、すべての技術的な偏りが消えるわけではありません。
+- 正規化方法が違う結果を、同じ尺度の値として直接比較しないようにします。
+- 正規化後の値が高いことと、条件差が統計的に確かであることは同じではありません。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: '正規化',
+      english: 'normalization',
+      description:
+        'サンプル間や条件間で比較しやすいように測定値の尺度を整える処理。',
+      href: '/glossary/normalization/',
+    },
+    {
+      term: 'カウント行列',
+      english: 'count matrix',
+      description: '遺伝子とサンプルまたは細胞ごとのカウントを並べた表。',
+      href: '/glossary/count-matrix/',
+    },
+    {
+      term: 'ライブラリ',
+      english: 'library',
+      description:
+        'シーケンシングで読める形に準備されたDNAやcDNA断片の集まり。',
+      href: '/glossary/library/',
+    },
+    {
+      term: '差次的発現解析',
+      english: 'differential expression analysis',
+      abbreviation: 'DEA',
+      description: '条件間で遺伝子発現に差があるかを統計的に調べる解析。',
+      href: '/glossary/differential-expression-analysis/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: 'RNA-seqで正規化が必要になる理由を説明してください。',
+      answer:
+        'サンプルごとの総リード数、検出効率、技術的ばらつきなどがカウントに影響するため、比較しやすい尺度に整える必要があるからです。',
+    },
+    {
+      question: '生カウントと正規化後の値の違いを簡単に説明してください。',
+      answer:
+        '生カウントは観測された数で、正規化後の値は比較しやすいように尺度を調整した値です。',
+    },
+    {
+      question: '正規化後の値を見るときに確認したいことを一つ挙げてください。',
+      answer:
+        '正規化方法、対数変換の有無、フィルタ条件、品質管理の結果、バッチ効果の扱いなどです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    {
+      title: '差次的発現解析とは何か',
+      href: '/bioinformatics/differential-expression/',
+    },
+    { title: 'カウント行列とは何か', href: '/bioinformatics/count-matrix/' },
+    { title: 'バッチ効果とは何か', href: '/bioinformatics/batch-effect/' },
+  ]}
+/>

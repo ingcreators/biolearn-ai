@@ -1977,10 +1977,48 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'methods-and-analysis',
   },
   {
+    term: 'Pathway enrichment',
+    english: 'pathway enrichment',
+    description:
+      '遺伝子リストやランキングに、特定の経路に属する遺伝子が偏って含まれるかを見る解析。',
+    href: '/glossary/pathway-enrichment/',
+    category: 'methods-and-analysis',
+  },
+  {
     term: 'エンリッチメント',
     english: 'enrichment',
     description: 'ある特徴や遺伝子セットが期待より多く含まれるかを見る考え方。',
     href: '/glossary/enrichment/',
+    category: 'methods-and-analysis',
+  },
+  {
+    term: '遺伝子セット',
+    english: 'gene set',
+    description: '共通の機能、経路、条件などでまとめられた遺伝子の集合。',
+    href: '/glossary/gene-set/',
+    category: 'methods-and-analysis',
+  },
+  {
+    term: '解析ワークフロー',
+    english: 'analysis workflow',
+    description: '生データから図表や結果に至るまでの一連の解析手順。',
+    href: '/glossary/analysis-workflow/',
+    category: 'methods-and-analysis',
+  },
+  {
+    term: '解析ノートブック',
+    english: 'analysis notebook',
+    description:
+      'コード、説明文、表、図、実行結果を1つの文書としてまとめた解析記録。',
+    href: '/glossary/analysis-notebook/',
+    category: 'methods-and-analysis',
+  },
+  {
+    term: '再解析',
+    english: 'reanalysis',
+    description:
+      '公開データや既存データを使い、解析条件を確認しながら結果を再検討すること。',
+    href: '/glossary/reanalysis/',
     category: 'methods-and-analysis',
   },
   {
