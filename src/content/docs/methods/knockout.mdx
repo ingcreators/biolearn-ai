@@ -1,0 +1,155 @@
+---
+title: ノックアウトとは何か
+description: ノックアウトを、遺伝子の機能を失わせて、その遺伝子が何に必要かを調べる実験操作として説明します。
+part: methods
+module: gene-function-assay
+level: foundation
+priority: P1
+order: 130
+relatedTerms:
+  - knockout
+  - crispr
+  - gene
+  - phenotype
+  - control-group
+  - methods
+prerequisites:
+  - /methods/crispr/
+  - /fundamentals/gene/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    'ノックアウトが遺伝子機能を失わせる操作であることを説明できる',
+    'ノックアウトとノックダウンの違いを理解する',
+    'ノックアウト実験を読むときの確認点を挙げられる',
+  ]}
+/>
+
+ノックアウトは、特定の遺伝子の機能を失わせ、その遺伝子が細胞や個体で何に必要かを調べる実験操作です。CRISPRなどを使ってDNA配列に変化を入れ、機能しない遺伝子にする場合があります。
+
+ノックアウトで見える変化は、その遺伝子が関わる働きを考える手がかりになります。ただし、遺伝子が本当に失われたか、別の変化が影響していないか、対照とどう比べているかを確認する必要があります。
+
+<LessonFigure
+  src="/figures/knockout-concept.jpg"
+  alt="特定の遺伝子が働かない細胞を作り、対照細胞と表現型を比較するノックアウト実験の概念図"
+  title="ノックアウトは遺伝子機能を失わせて調べる"
+  caption="遺伝子の機能喪失を確認し、対照と比べて細胞や表現型の変化を読みます。"
+/>
+
+## なぜノックアウトの視点が重要か
+
+ある[遺伝子](/glossary/gene/)が何に必要かを知るには、その遺伝子を働かなくして何が変わるかを見る方法が有効です。ノックアウトは、機能喪失の実験としてよく使われます。
+
+論文では、ノックアウト細胞やノックアウト個体を使って、増殖、分化、シグナル伝達、タンパク質量、[表現型](/glossary/phenotype/)などを比較します。Figureを読むときは、どの遺伝子が、どのレベルで失われたかを確認します。
+
+## どんなノックアウトがあるか
+
+細胞株で作るノックアウト、動物個体で作るノックアウト、特定の組織や時期だけで遺伝子を失わせる条件付きノックアウトなどがあります。CRISPRを使う場合は、標的配列に小さな挿入や欠失を入れて機能を壊すことがあります。
+
+完全に機能が失われる場合もあれば、一部のアイソフォームだけに影響する場合や、タンパク質が残る場合もあります。どのレベルのノックアウトなのかをMethodsと検証Figureで確認します。
+
+## ノックアウトはどう確認するか
+
+ノックアウトの確認には、DNA配列の確認、RNA量の確認、タンパク質の確認、機能アッセイなどがあります。配列が変わっていても、タンパク質が完全に消えているとは限らないため、複数の証拠が重要です。
+
+[CRISPR](/glossary/crispr/)で作ったクローンでは、標的部位の変化、Western blotでのタンパク質消失、レスキュー実験などが示されることがあります。対照には野生型細胞、編集操作だけを受けた細胞、別クローンなどが使われます。
+
+## ノックアウトの変化は何につながるか
+
+ノックアウトで細胞の形や増殖、遺伝子発現、シグナル応答が変われば、その遺伝子がそれらの過程に関わる可能性を示します。変化が見えない場合も、遺伝子が不要という単純な結論ではなく、補償機構や条件の違いを考えます。
+
+ノックアウトは強い操作なので、細胞が長期的に適応することもあります。結果を読むときは、急性の操作であるノックダウンや阻害剤実験と合わせて確認されているかも手がかりになります。
+
+## 論文や実験ではどう出てくるか
+
+論文では、KO、knockout、gene-deficient、null mutantなどの表現で出てきます。Methodsには、gRNA配列、クローン選別、genotyping、検証方法が書かれることがあります。
+
+Figureでは、ノックアウト確認の配列図、Western blot、RT-qPCR、細胞画像、定量グラフが並びます。最初に「ノックアウトが成立しているか」を見てから、その後の表現型Figureを読みます。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- ノックアウトとノックダウン: ノックアウトは遺伝子機能を失わせる操作、ノックダウンは発現量を下げる操作です。
+- 遺伝子型と表現型: 遺伝子配列の変化と、観察される性質の変化は別の情報です。
+- 単一クローンと遺伝子効果: 1つのクローン固有の性質が結果に混ざることがあります。
+
+### 解釈の落とし穴
+
+- タンパク質の確認なしに、機能が完全に消えたと考える。
+- 変化がない結果を、その遺伝子が一切関係ない証明として読む。
+- レスキューや複数クローンでの確認がないまま、強い因果関係として読みすぎる。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'ノックアウト',
+      english: 'knockout',
+      abbreviation: 'KO',
+      description: '特定の遺伝子の機能を失わせる実験操作。',
+      href: '/glossary/knockout/',
+    },
+    {
+      term: 'CRISPR',
+      english: 'clustered regularly interspaced short palindromic repeats',
+      abbreviation: 'CRISPR',
+      description: 'ガイドRNAなどで特定のDNA領域を狙う実験技術群。',
+      href: '/glossary/crispr/',
+    },
+    {
+      term: '遺伝子',
+      english: 'gene',
+      description: '機能を持つRNAやタンパク質の産生に関わるDNA領域。',
+      href: '/glossary/gene/',
+    },
+    {
+      term: '表現型',
+      english: 'phenotype',
+      description: '遺伝子や環境の影響として観察される性質や状態。',
+      href: '/glossary/phenotype/',
+    },
+    {
+      term: 'レスキュー実験',
+      english: 'rescue experiment',
+      description: '失わせた遺伝子機能を戻し、表現型が回復するかを見る実験。',
+      href: '/glossary/rescue-experiment/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: 'ノックアウト実験の目的を簡単に説明してください。',
+      answer:
+        '特定の遺伝子の機能を失わせ、細胞や個体にどのような変化が起こるかを調べることです。',
+    },
+    {
+      question: 'ノックアウト成立を確認する方法を一つ挙げてください。',
+      answer:
+        '標的DNA配列の確認、RNA量の確認、Western blotなどによるタンパク質の確認、機能アッセイなどがあります。',
+    },
+    {
+      question: 'ノックアウトとノックダウンの違いを説明してください。',
+      answer:
+        'ノックアウトは遺伝子機能を失わせる操作で、ノックダウンは遺伝子発現量を下げる操作です。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'CRISPRとは何か', href: '/methods/crispr/' },
+    { title: 'ノックダウンとは何か', href: '/methods/knockdown/' },
+    { title: '表現型とは何か', href: '/fundamentals/phenotype/' },
+  ]}
+/>

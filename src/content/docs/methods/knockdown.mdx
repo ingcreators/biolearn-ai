@@ -1,0 +1,158 @@
+---
+title: ノックダウンとは何か
+description: ノックダウンを、遺伝子発現を下げて機能への影響を調べる実験操作として説明します。
+part: methods
+module: gene-function-assay
+level: foundation
+priority: P1
+order: 140
+relatedTerms:
+  - knockdown
+  - sirna
+  - shrna
+  - gene-expression
+  - rt-qpcr
+  - methods
+prerequisites:
+  - /fundamentals/gene-expression/
+  - /methods/rt-qpcr/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    'ノックダウンが遺伝子発現を下げる操作であることを説明できる',
+    'siRNA、shRNA、CRISPRiなどの関係を大まかに理解する',
+    'ノックダウン効率と表現型を分けて読む理由を説明できる',
+  ]}
+/>
+
+ノックダウンは、特定の遺伝子の発現量を下げ、その遺伝子が細胞の性質にどう関わるかを調べる実験操作です。遺伝子を完全に壊すのではなく、RNAや転写の段階で量を減らす場合が多いです。
+
+ノックダウンで結果を読むときは、発現がどれくらい下がったかと、細胞の表現型がどう変わったかを分けて確認します。対照、複数の標的配列、時間経過、オフターゲットの可能性も重要です。
+
+<LessonFigure
+  src="/figures/knockdown-concept.jpg"
+  alt="特定遺伝子のRNA量を下げ、対照細胞と表現型を比較するノックダウン実験の概念図"
+  title="ノックダウンは遺伝子発現を下げて調べる"
+  caption="発現低下の確認と、細胞や表現型の変化を分けて読みます。"
+/>
+
+## なぜノックダウンの視点が重要か
+
+[遺伝子発現](/glossary/gene-expression/)を下げると、その遺伝子が細胞で担っている役割を調べる手がかりになります。ノックアウトより短い時間で効果を見たい場合や、完全に失わせると細胞が生きにくい遺伝子を調べる場合に使われます。
+
+論文では、siRNA、shRNA、CRISPRiなどを使ったloss-of-function実験として出てきます。Figureを見るときは、発現低下の確認と表現型の変化が対応しているかを確認します。
+
+## どんなノックダウンがあるか
+
+[siRNA](/glossary/sirna/)は短いRNAを使い、標的mRNAを減らす方法です。[shRNA](/glossary/shrna/)は細胞内で短いヘアピンRNAを作らせ、長めの実験や安定発現系で使われることがあります。
+
+CRISPRiは、DNAを切らないCasタンパク質を使って転写を抑える方法です。方法によって、効き始める時間、持続性、標的の選び方、確認すべき対照が変わります。
+
+## ノックダウンはどう確認するか
+
+ノックダウンでは、標的遺伝子の[RNA](/glossary/rna/)量やタンパク質量が下がったかを確認します。RT-qPCR、Western blot、免疫染色、レポーターアッセイなどが使われます。
+
+発現低下が不十分な場合、表現型が見えなくても遺伝子が関係ないとは言えません。逆に、発現が下がっていても、表現型がオフターゲットや導入操作による可能性もあります。
+
+## ノックダウンの変化は何につながるか
+
+ノックダウン後に増殖、分化、細胞死、シグナル応答、形態、発現パターンが変われば、その遺伝子がそれらの過程に関わる可能性があります。変化の大きさは、発現低下の効率や観察時間にも左右されます。
+
+ノックダウンは部分的な操作なので、残った発現が機能を支えることがあります。そのため、ノックアウト、阻害剤、レスキュー実験などと合わせて、複数の角度から読むことがあります。
+
+## 論文や実験ではどう出てくるか
+
+論文では、KD、knockdown、silencing、siRNA-mediated knockdown、shRNAなどとして出てきます。Methodsでは、標的配列、導入方法、処理時間、control siRNA、確認方法が書かれます。
+
+Figureでは、RT-qPCRやWestern blotでノックダウン効率を示し、その後に細胞表現型や機能アッセイを示す流れが多いです。効率確認のFigureを飛ばさず、表現型Figureとつなげて読みます。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- ノックダウンとノックアウト: ノックダウンは発現量を下げる操作、ノックアウトは遺伝子機能を失わせる操作です。
+- mRNA低下とタンパク質低下: mRNAが下がっても、タンパク質が同じ時間で下がるとは限りません。
+- control siRNAと未処理: 導入操作そのものの影響を見るには、標的を持たないcontrol siRNAが必要になることがあります。
+
+### 解釈の落とし穴
+
+- ノックダウン効率を確認せずに、表現型だけを見る。
+- 1種類のsiRNAだけで、標的遺伝子の効果として読みすぎる。
+- mRNA量の低下を、すぐにタンパク質機能の完全な喪失と読む。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'ノックダウン',
+      english: 'knockdown',
+      abbreviation: 'KD',
+      description: '特定の遺伝子の発現量を下げる実験操作。',
+      href: '/glossary/knockdown/',
+    },
+    {
+      term: 'siRNA',
+      english: 'small interfering RNA',
+      abbreviation: 'siRNA',
+      description: '標的mRNAを減らすために使われる短いRNA。',
+      href: '/glossary/sirna/',
+    },
+    {
+      term: 'shRNA',
+      english: 'short hairpin RNA',
+      abbreviation: 'shRNA',
+      description: '細胞内でsiRNA様の作用につながる短いヘアピンRNA。',
+      href: '/glossary/shrna/',
+    },
+    {
+      term: '遺伝子発現',
+      english: 'gene expression',
+      description: '遺伝子の情報がRNAやタンパク質として使われること。',
+      href: '/glossary/gene-expression/',
+    },
+    {
+      term: 'RT-qPCR',
+      english: 'reverse transcription qPCR',
+      abbreviation: 'RT-qPCR',
+      description: 'RNAをcDNAに変換してからqPCRで測る実験手法。',
+      href: '/glossary/rt-qpcr/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: 'ノックダウン実験の目的を簡単に説明してください。',
+      answer:
+        '特定の遺伝子の発現量を下げ、細胞や表現型にどのような変化が起こるかを調べることです。',
+    },
+    {
+      question:
+        'ノックダウン効率と表現型を分けて確認する理由を説明してください。',
+      answer:
+        '発現が十分に下がったかという操作の確認と、その結果として細胞がどう変わったかという機能の確認は別だからです。',
+    },
+    {
+      question: 'ノックダウンとノックアウトの違いを説明してください。',
+      answer:
+        'ノックダウンは発現量を下げる操作で、ノックアウトは遺伝子機能を失わせる操作です。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'ノックアウトとは何か', href: '/methods/knockout/' },
+    { title: 'CRISPRとは何か', href: '/methods/crispr/' },
+    { title: 'RT-qPCRとは何か', href: '/methods/rt-qpcr/' },
+  ]}
+/>

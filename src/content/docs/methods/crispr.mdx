@@ -1,0 +1,157 @@
+---
+title: CRISPRとは何か
+description: CRISPRを、ガイドRNAとCasタンパク質を使って特定のDNA領域を狙う実験技術として説明します。
+part: methods
+module: gene-function-assay
+level: foundation
+priority: P1
+order: 120
+relatedTerms:
+  - crispr
+  - gene-editing
+  - guide-rna
+  - cas9
+  - dna
+  - methods
+prerequisites:
+  - /fundamentals/dna/
+  - /fundamentals/gene/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    'CRISPRが特定のDNA領域を狙う技術であることを説明できる',
+    'ガイドRNA、Cas9、標的配列の関係を理解する',
+    'CRISPR実験の結果を読むときの注意点を挙げられる',
+  ]}
+/>
+
+CRISPRは、ガイドRNAを手がかりにして、特定のDNA領域を狙う実験技術です。代表的にはCas9というタンパク質と組み合わせ、遺伝子の働きを調べる実験に使われます。
+
+CRISPRは「狙った場所に変化を入れやすくする道具」として理解すると入りやすいです。実際の結果は、標的配列、導入方法、細胞の修復、対照実験、確認方法によって解釈が変わります。
+
+<LessonFigure
+  src="/figures/crispr-concept.jpg"
+  alt="ガイドRNAがCas9を標的DNAへ導き、遺伝子機能を調べる実験につながることを示す教材イラスト"
+  title="CRISPRは標的DNAを狙う実験技術"
+  caption="ガイドRNAで場所を指定し、Casタンパク質の働きと細胞の修復を利用して遺伝子機能を調べます。"
+/>
+
+## なぜCRISPRの視点が重要か
+
+CRISPRを使うと、[遺伝子](/glossary/gene/)の機能を調べるために、その遺伝子を壊したり、配列を変えたり、発現を調節したりできます。生命科学論文では、ある遺伝子が表現型に関わるかを検証する実験としてよく登場します。
+
+CRISPRの視点を持つと、Figureで示された表現型が「遺伝子を操作した結果」としてどこまで読めるかを考えやすくなります。標的が狙い通り変わったか、複数のガイドRNAで再現したか、レスキュー実験があるかなどを確認します。
+
+## どんな種類があるか
+
+CRISPR-Cas9では、[ガイドRNA](/glossary/guide-rna/)が標的配列を指定し、[Cas9](/glossary/cas9/)がDNAを切断します。その後、細胞のDNA修復によって小さな挿入や欠失が生じ、遺伝子の機能が失われることがあります。
+
+ほかにも、切らないCasタンパク質を使って転写を抑えるCRISPRi、転写を高めるCRISPRa、特定の塩基を変える塩基編集などがあります。この記事ではまず、CRISPRを「標的を指定する仕組み」として理解します。
+
+## CRISPRはどう調べるか
+
+CRISPR実験では、標的配列に変化が入ったかを確認します。PCR、シーケンシング、Western blot、RT-qPCR、表現型解析などが組み合わされます。
+
+重要なのは、操作そのものと結果を分けて読むことです。標的配列が変わったこと、タンパク質やRNAが変わったこと、細胞の表現型が変わったことは、それぞれ別の証拠として確認します。
+
+## CRISPRによる変化は何につながるか
+
+CRISPRで遺伝子機能を変えると、細胞の増殖、形、シグナル伝達、遺伝子発現、タンパク質量などが変わることがあります。これらは、その遺伝子が細胞内で何に関わるかを考える手がかりになります。
+
+ただし、オフターゲット効果、クローン差、導入操作の影響、細胞の適応なども考える必要があります。単一のガイドRNAや単一クローンだけで強い結論を出しすぎないように読みます。
+
+## 論文や実験ではどう出てくるか
+
+論文では、MethodsにgRNA sequence、Cas9、transfection、selection、clonal isolation、genotypingなどとして出ることがあります。Resultsでは、[ノックアウト](/glossary/knockout/)細胞、CRISPR screen、遺伝子編集後の表現型として示されます。
+
+Figureでは、編集確認のシーケンス、タンパク質消失のWestern blot、細胞表現型の画像やグラフが並ぶことがあります。どの証拠が「編集の確認」で、どの証拠が「機能の結果」なのかを分けて読みます。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- CRISPRと遺伝子編集: CRISPRは標的を指定する技術群で、遺伝子編集はDNA配列を変える操作全体を指します。
+- ノックアウトとノックダウン: ノックアウトは遺伝子機能を失わせる操作、ノックダウンは発現量を下げる操作です。
+- 編集確認と機能確認: 配列変化の確認と、表現型の変化の確認は別の段階です。
+
+### 解釈の落とし穴
+
+- ガイドRNAを入れたことだけで、標的遺伝子が完全に失われたと考える。
+- 1つのクローンの結果を、遺伝子一般の効果として読みすぎる。
+- オフターゲットや導入操作の影響を確認せずに、表現型を標的遺伝子だけに結びつける。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'CRISPR',
+      english: 'clustered regularly interspaced short palindromic repeats',
+      abbreviation: 'CRISPR',
+      description: 'ガイドRNAなどで特定のDNA領域を狙う実験技術群。',
+      href: '/glossary/crispr/',
+    },
+    {
+      term: 'ガイドRNA',
+      english: 'guide RNA',
+      abbreviation: 'gRNA',
+      description: 'Casタンパク質を標的DNA配列へ導くRNA。',
+      href: '/glossary/guide-rna/',
+    },
+    {
+      term: 'Cas9',
+      english: 'CRISPR-associated protein 9',
+      abbreviation: 'Cas9',
+      description: 'ガイドRNAに導かれてDNAを切断するCasタンパク質の一つ。',
+      href: '/glossary/cas9/',
+    },
+    {
+      term: '遺伝子編集',
+      english: 'gene editing',
+      description: 'DNA配列を狙って変化させる実験操作。',
+      href: '/glossary/gene-editing/',
+    },
+    {
+      term: 'ノックアウト',
+      english: 'knockout',
+      abbreviation: 'KO',
+      description: '遺伝子機能を失わせる実験操作。',
+      href: '/glossary/knockout/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: 'CRISPR-Cas9でガイドRNAが担う役割を説明してください。',
+      answer: '標的DNA配列に対応し、Cas9を狙った場所へ導く役割を担います。',
+    },
+    {
+      question:
+        'CRISPR実験で、配列の確認と表現型の確認を分けて読む理由を説明してください。',
+      answer:
+        '標的配列が変わったことと、その変化が細胞の性質にどう影響したかは別の証拠だからです。',
+    },
+    {
+      question: 'CRISPR結果を読むときの注意点を一つ挙げてください。',
+      answer:
+        'オフターゲット効果、クローン差、複数gRNAでの再現、レスキュー実験の有無などがあります。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'ノックアウトとは何か', href: '/methods/knockout/' },
+    { title: 'ノックダウンとは何か', href: '/methods/knockdown/' },
+    { title: '遺伝子とは何か', href: '/fundamentals/gene/' },
+  ]}
+/>

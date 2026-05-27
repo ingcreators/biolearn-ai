@@ -1,0 +1,164 @@
+---
+title: 蛍光顕微鏡とは何か
+description: 蛍光顕微鏡を、蛍光シグナルを使って細胞や組織内の分子や構造を観察する方法として説明します。
+part: methods
+module: protein-cell-measurement
+level: foundation
+priority: P1
+order: 105
+relatedTerms:
+  - fluorescence-microscopy
+  - fluorescence
+  - microscopy-image
+  - scale-bar
+  - representative-image
+  - methods
+prerequisites:
+  - /fundamentals/cell/
+  - /methods/immunostaining/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    '蛍光顕微鏡が何を可視化する方法か説明できる',
+    '蛍光シグナル、チャンネル、スケールバーの意味を理解する',
+    '蛍光画像を読むときの確認点を挙げられる',
+  ]}
+/>
+
+蛍光顕微鏡は、蛍光を出す分子や標識を使って、細胞や組織の中の構造や分子の位置を見る方法です。核、細胞骨格、特定のタンパク質、細胞内小器官などを色のシグナルとして観察できます。
+
+蛍光画像では、明るさや色が見えますが、それだけで量や機能を断定することはできません。撮影条件、対照、スケールバー、画像処理、定量方法を合わせて読む必要があります。
+
+<LessonFigure
+  src="/figures/fluorescence-microscopy-concept.jpg"
+  alt="蛍光で標識された細胞を顕微鏡で観察し、複数チャンネルのシグナルとスケールバーを確認する様子を示す教材イラスト"
+  title="蛍光顕微鏡は細胞内の場所を光で見る"
+  caption="色の重なり、シグナルの場所、撮影条件、対照を確認しながら画像を読みます。"
+/>
+
+## なぜ蛍光顕微鏡の視点が重要か
+
+[蛍光](/glossary/fluorescence/)を使うと、透明に近い細胞の中で、見たい構造や分子だけを目立たせることができます。[免疫染色](/glossary/immunostaining/)や蛍光タンパク質を使った実験では、局在や形の変化をFigureで示すことがよくあります。
+
+一方で、蛍光シグナルは撮影条件や背景、退色、画像処理の影響を受けます。論文を読むときは、きれいな画像として見るだけでなく、何をどう検出した画像なのかを確認します。
+
+## どんな種類があるか
+
+蛍光顕微鏡には、広視野蛍光顕微鏡、共焦点顕微鏡、ライブセルイメージング、超解像顕微鏡などがあります。初学者はまず、蛍光で標識した対象をチャンネルごとに撮影し、重ね合わせて読むという基本を押さえます。
+
+蛍光標識には、蛍光色素で標識した抗体、DNAを染める色素、蛍光タンパク質などがあります。どの標識が何を示しているかは、Figure legendで確認します。
+
+## 蛍光顕微鏡ではどう観察するか
+
+サンプルを固定して染色する場合と、生きた細胞で蛍光タンパク質などを観察する場合があります。撮影では、励起光を当て、出てきた蛍光をカメラや検出器で記録します。
+
+画像を見るときは、[顕微鏡画像](/glossary/microscopy-image/)としての基本を確認します。どの色がどの分子を示すか、[スケールバー](/glossary/scale-bar/)はどれくらいの長さか、同じ条件で撮影されているかを見ます。
+
+## 蛍光シグナルの変化は何につながるか
+
+蛍光の場所が変わると、タンパク質の局在変化や細胞構造の変化を示す手がかりになります。蛍光の強さが変わると、標識対象の量や状態が変わった可能性があります。
+
+ただし、蛍光強度は撮影設定、背景補正、飽和、サンプルの厚みなどにも影響されます。量を比較する場合は、同じ撮影条件、適切な対照、定量方法が必要です。
+
+## 論文や実験ではどう出てくるか
+
+論文では、蛍光顕微鏡画像、拡大画像、チャンネル別画像、マージ画像、定量グラフとして出てきます。[代表画像](/glossary/representative-image/)だけでなく、複数視野や複数サンプルからの定量が添えられることがあります。
+
+Methodsでは、顕微鏡の種類、対物レンズ、撮影条件、画像処理、定量手順が書かれます。Figure legendでは、色、スケールバー、n数、統計表示を確認します。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- 蛍光顕微鏡と免疫染色: 蛍光顕微鏡は観察方法、免疫染色は抗体で標識する方法です。
+- 共局在と直接結合: 同じ場所に見えることは、分子同士が直接結合する証明ではありません。
+- 代表画像と定量: 代表画像は例であり、全体のばらつきは定量や反復で確認します。
+
+### 解釈の落とし穴
+
+- 明るい画像を、撮影条件を確認せずに発現量が高いと読む。
+- 色の重なりを、すぐに機能的な相互作用と読む。
+- スケールバーや倍率を見ずに、構造の大きさを判断する。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: '蛍光顕微鏡',
+      english: 'fluorescence microscopy',
+      description:
+        '蛍光シグナルを使って細胞や組織内の構造や分子を観察する方法。',
+      href: '/glossary/fluorescence-microscopy/',
+    },
+    {
+      term: '蛍光',
+      english: 'fluorescence',
+      description: '光を受けた物質が別の光を出す性質や、その信号。',
+      href: '/glossary/fluorescence/',
+    },
+    {
+      term: '顕微鏡画像',
+      english: 'microscopy image',
+      description: '顕微鏡で細胞や組織などを観察して得られる画像。',
+      href: '/glossary/microscopy-image/',
+    },
+    {
+      term: 'スケールバー',
+      english: 'scale bar',
+      description: '画像上で実際の長さを示す線や目盛り。',
+      href: '/glossary/scale-bar/',
+    },
+    {
+      term: '代表画像',
+      english: 'representative image',
+      description: '複数の観察結果の例として示される画像。',
+      href: '/glossary/representative-image/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: '蛍光顕微鏡で色のチャンネルを確認する理由を説明してください。',
+      answer:
+        'どの色がどの分子や構造を示しているかを確認しないと、シグナルの意味を取り違えるためです。',
+    },
+    {
+      question:
+        '蛍光画像で明るさだけを見て判断しにくい理由を説明してください。',
+      answer:
+        '蛍光強度は対象分子の量だけでなく、撮影条件、背景、画像処理、サンプルの厚みなどにも影響されるためです。',
+    },
+    {
+      question: '蛍光画像でスケールバーを見る理由は何ですか。',
+      answer:
+        '細胞や構造の実際の大きさを確認し、倍率や切り出しの印象だけで判断しないためです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    {
+      title: '免疫染色とは何か',
+      href: '/methods/immunostaining/',
+    },
+    {
+      title: '顕微鏡画像の読み方',
+      href: '/figures/how-to-read-microscopy-image/',
+    },
+    {
+      title: '免疫染色画像の読み方',
+      href: '/figures/how-to-read-immunostaining/',
+    },
+  ]}
+/>

@@ -1,0 +1,158 @@
+---
+title: RNA抽出とは何か
+description: RNA抽出を、細胞や組織からRNAを取り出し、RT-qPCRやRNA-seqに使える状態にする前処理として説明します。
+part: methods
+module: nucleic-acid-measurement
+level: foundation
+priority: P1
+order: 25
+relatedTerms:
+  - rna-extraction
+  - rna
+  - quality-control
+  - rt-qpcr
+  - rna-seq
+  - methods
+prerequisites:
+  - /fundamentals/rna/
+  - /methods/sample/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    'RNA抽出が何のための前処理か説明できる',
+    'RNAの分解、純度、品質管理が重要な理由を理解する',
+    'RT-qPCRやRNA-seqの結果とRNA抽出の関係を説明できる',
+  ]}
+/>
+
+RNA抽出は、細胞や組織などのサンプルからRNAを取り出し、後続の測定に使える状態にする前処理です。[RT-qPCR](/glossary/rt-qpcr/)や[RNA-seq](/glossary/rna-seq/)の多くは、RNA抽出から始まります。
+
+RNAは分解されやすいため、抽出の質は測定結果に強く影響します。どのRNAを測るかだけでなく、サンプルの保存、分解の有無、混入物、量や純度を確認することが大切です。
+
+<LessonFigure
+  src="/figures/rna-extraction-concept.jpg"
+  alt="細胞や組織からRNAを取り出し、品質確認を経てRT-qPCRやRNA-seqへ進む流れを示す教材イラスト"
+  title="RNA抽出は発現解析の入口"
+  caption="抽出したRNAの量、純度、分解の程度を確認してから、RT-qPCRやRNA-seqなどの測定に進みます。"
+/>
+
+## なぜRNA抽出の視点が重要か
+
+RNA量の差を読む実験では、測定前のRNAの状態が結果の土台になります。[RNA](/glossary/rna/)が分解していたり、DNAやタンパク質、試薬成分が混ざっていたりすると、後続の測定がうまくいかないことがあります。
+
+RNA抽出の視点を持つと、発現差が本当に生物学的な違いなのか、サンプルの扱いや抽出効率の違いなのかを考えやすくなります。Methodsでは、抽出キットや試薬名だけでなく、品質確認の方法も確認します。
+
+## どんなRNA抽出があるか
+
+RNA抽出には、フェノール系試薬を使う方法、カラムで精製する方法、磁気ビーズを使う方法などがあります。研究室やサンプルの種類によって、使われる方法は変わります。
+
+全RNAを取り出す場合もあれば、小さなRNAに注目する場合、mRNAを濃縮する場合もあります。どのRNAを残し、どの分子を取り除く設計なのかを確認すると、実験の目的が読みやすくなります。
+
+## RNA抽出はどう確認するか
+
+抽出後は、RNA量、純度、分解の程度を確認します。吸光度、蛍光測定、電気泳動や専用装置によるサイズ分布の確認などが使われます。
+
+RT-qPCRでは、RNAを[cDNA](/glossary/cdna/)に変換してから測ります。RNA-seqでは、抽出したRNAからライブラリを作るため、RNA品質や量が[ライブラリ](/glossary/library/)調製の成否に関わります。
+
+## RNA抽出の違いは何につながるか
+
+抽出効率がサンプル間で大きく違うと、測定値の比較が難しくなります。RNAが分解していると、遺伝子ごとの量や長さに偏りが出ることがあります。
+
+また、DNA混入が残ると、RNA由来ではないシグナルが測定に入ることがあります。実験ではDNase処理や、逆転写なしの対照などで確認することがあります。
+
+## 論文や実験ではどう出てくるか
+
+論文では、MethodsにRNA extraction、total RNA isolation、RNA purificationなどとして書かれます。抽出試薬、サンプル量、DNase処理、品質評価、保存条件が説明されることがあります。
+
+FigureにはRNA抽出そのものが出ないことも多いですが、RT-qPCRの棒グラフ、RNA-seqの品質管理図、発現量表の前提として重要です。Resultsを読むときは、必要に応じてMethodsに戻り、RNAの品質が確認されているかを見ます。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- RNA抽出とRT-qPCR: RNA抽出は測定前の準備、RT-qPCRはRNA由来のcDNAを定量する測定です。
+- RNA抽出とライブラリ調製: RNA抽出はRNAを取り出す工程、ライブラリ調製はシーケンサーで読める形にする工程です。
+- RNA量とRNA品質: 量が十分でも、分解が進んでいれば測定に適さない場合があります。
+
+### 解釈の落とし穴
+
+- 発現差だけを見て、RNA品質や抽出条件を確認しない。
+- サンプルごとに保存条件や抽出日が違う可能性を見落とす。
+- DNA混入や分解によるシグナルを、生物学的な発現変化として読んでしまう。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'RNA抽出',
+      english: 'RNA extraction',
+      description:
+        'サンプルからRNAを取り出し、後続の測定に使える状態にする前処理。',
+      href: '/glossary/rna-extraction/',
+    },
+    {
+      term: 'RNA',
+      english: 'ribonucleic acid',
+      abbreviation: 'RNA',
+      description: '遺伝情報の読み出しや調節に関わる分子。',
+      href: '/glossary/rna/',
+    },
+    {
+      term: '品質管理',
+      english: 'quality control',
+      abbreviation: 'QC',
+      description: 'サンプルやデータが解析に使える状態かを確認する工程。',
+      href: '/glossary/quality-control/',
+    },
+    {
+      term: 'cDNA',
+      english: 'complementary DNA',
+      abbreviation: 'cDNA',
+      description: 'RNAを鋳型に逆転写で作られるDNA。',
+      href: '/glossary/cdna/',
+    },
+    {
+      term: 'RT-qPCR',
+      english: 'reverse transcription qPCR',
+      abbreviation: 'RT-qPCR',
+      description: 'RNAをcDNAに変換してからqPCRで測る実験手法。',
+      href: '/glossary/rt-qpcr/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question:
+        'RNA抽出がRT-qPCRやRNA-seqの結果に影響する理由を説明してください。',
+      answer:
+        '抽出したRNAの量、純度、分解の程度が、後続の逆転写、ライブラリ調製、測定値に影響するためです。',
+    },
+    {
+      question: 'RNA抽出後に確認したいことを一つ挙げてください。',
+      answer: 'RNA量、純度、分解の程度、DNA混入の有無などがあります。',
+    },
+    {
+      question: 'RNA抽出とライブラリ調製の違いを説明してください。',
+      answer:
+        'RNA抽出はRNAをサンプルから取り出す工程で、ライブラリ調製はそのRNA由来分子をシーケンサーで読める形にする工程です。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'RT-qPCRとは何か', href: '/methods/rt-qpcr/' },
+    { title: 'RNA-seqとは何か', href: '/bioinformatics/rna-seq/' },
+    { title: 'ライブラリ調製とは何か', href: '/methods/library-preparation/' },
+  ]}
+/>

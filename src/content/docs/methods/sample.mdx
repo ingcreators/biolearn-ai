@@ -1,0 +1,156 @@
+---
+title: サンプルとは何か
+description: 実験で扱うサンプルを、細胞、組織、個体、抽出物などの測定対象として説明します。
+part: methods
+module: method-design
+level: foundation
+priority: P1
+order: 5
+relatedTerms:
+  - sample
+  - control-group
+  - biological-technical-replicates
+  - sample-size
+  - methods
+prerequisites: []
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    'サンプルが実験で測定・処理される材料であることを説明できる',
+    '細胞、組織、抽出物、データ上のサンプルを区別できる',
+    'MethodsやFigure legendでサンプル情報を確認する理由を理解する',
+  ]}
+/>
+
+サンプルは、実験で処理したり測定したりする材料や単位のことです。細胞、組織、個体由来の材料、抽出したDNAやRNA、解析に入るデータなど、文脈によって指す範囲が変わります。
+
+生命科学のFigureでは、何をサンプルとして数えたかが結果の解釈に直結します。同じ「n = 3」でも、3つの独立培養なのか、同じ材料から作った3本の測定なのかで、言えることは大きく変わります。
+
+<LessonFigure
+  src="/figures/sample-concept.jpg"
+  alt="個体、組織、細胞、抽出物、データ点が実験サンプルとして段階的に扱われることを示す教材イラスト"
+  title="サンプルは実験で扱う材料や単位"
+  caption="何をサンプルとして扱ったかをMethodsとFigure legendで確認すると、比較の意味が読みやすくなります。"
+/>
+
+## なぜサンプルの視点が重要か
+
+サンプルの定義が曖昧だと、Figureの比較が何を意味するのか分かりにくくなります。たとえば、[細胞](/glossary/cell/)を多数測っていても、それらが1つの培養皿から来ているなら、独立したサンプルが多いとは限りません。
+
+サンプル情報は、[対照群](/glossary/control-group/)、[反復](/glossary/biological-technical-replicates/)、[n数](/glossary/sample-size/)の読み方にも関わります。Methodsでは、由来、処理条件、採取時点、除外条件、保存や前処理の方法を確認します。
+
+## どんなサンプルがあるか
+
+実験サンプルには、培養細胞、組織切片、血液や抽出液、精製したタンパク質、抽出した[DNA](/glossary/dna/)や[RNA](/glossary/rna/)などがあります。解析では、1つの列が1サンプルを表す表や、1つの点が1細胞を表す図もあります。
+
+大切なのは、サンプルの階層を混同しないことです。個体、器官、[組織](/glossary/tissue/)、細胞、分子抽出物、測定値はつながっていますが、同じ単位ではありません。
+
+## サンプルはどう扱うか
+
+サンプルは、採取、分注、処理、保存、測定、解析の各段階で条件が加わります。温度、時間、試薬、測定順、プレート位置、バッチなどが結果に影響することがあります。
+
+そのため、研究ではサンプル名だけでなく、どの条件で扱われたかを記録します。論文を読むときも、Figureに出た差が実験処理によるものか、サンプルの由来や扱いの違いによるものかをMethodsで確認します。
+
+## サンプルの違いは何につながるか
+
+サンプルの違いは、測定値のばらつきやFigureの見え方につながります。細胞株、組織部位、採取時点、培養条件が違うと、同じ手法を使っても結果が変わることがあります。
+
+また、サンプル数が少ない場合や、条件ごとのサンプルが偏っている場合は、結果の一般化に注意が必要です。サンプルの扱いは、実験手法そのものと同じくらい、結論の範囲を決めます。
+
+## 論文や実験ではどう出てくるか
+
+論文では、Methodsに `samples were collected`、`cells were harvested`、`RNA was extracted from samples` のように出てきます。Figure legendでは、`n = 3 samples`、`three independent experiments`、`120 cells from 4 biological replicates` のような表記として現れます。
+
+読むときは、サンプルの由来、群ごとの数、独立性、除外基準、どの段階で混ぜたかを確認します。特に、点の数と独立サンプル数を分けて読むことが重要です。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- サンプルとデータ点: データ点が多数あっても、同じサンプル由来の測定値かもしれません。
+- サンプルと反復: 反復はサンプルや測定を繰り返す設計で、サンプルそのものとは別の考え方です。
+- サンプルと対照群: サンプルは材料や単位、対照群は比較の基準になる条件です。
+
+### 解釈の落とし穴
+
+- `n =` の数字だけを見て、何を数えたかを確認しない。
+- 1つのサンプルから得た多数の細胞を、独立サンプルが多いように読む。
+- サンプルの採取条件や前処理の違いを、実験処理の効果として読んでしまう。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'サンプル',
+      english: 'sample',
+      description: '実験で処理・測定・解析される材料や単位。',
+      href: '/glossary/sample/',
+    },
+    {
+      term: '対照群',
+      english: 'control group',
+      description: '処理群や観察対象を解釈するための比較の基準。',
+      href: '/glossary/control-group/',
+    },
+    {
+      term: '反復',
+      english: 'replicate',
+      description: '同じ問いを複数のサンプルや測定で繰り返すこと。',
+      href: '/glossary/biological-technical-replicates/',
+    },
+    {
+      term: 'n数',
+      english: 'sample size',
+      abbreviation: 'n',
+      description: 'Figureや統計解析で数えられている単位の数。',
+      href: '/glossary/sample-size/',
+    },
+    {
+      term: 'Methods',
+      english: 'Methods',
+      description: 'サンプル、条件、測定、解析の手順を説明する論文の部分。',
+      href: '/glossary/methods/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question:
+        'サンプルという言葉を読むとき、最初に確認したいことは何ですか。',
+      answer:
+        '何をサンプルとして扱っているか、つまり個体、組織、細胞、抽出物、測定値のどれを指すかを確認します。',
+    },
+    {
+      question:
+        '多数の細胞を測ったFigureでも、独立サンプル数を確認する理由を説明してください。',
+      answer:
+        '多数の細胞が同じ培養や同じ個体に由来する場合、独立した生物学的サンプルが多いとは限らないためです。',
+    },
+    {
+      question: 'サンプルの前処理が結果に影響する例を一つ挙げてください。',
+      answer:
+        '保存時間、温度、試薬、測定順、バッチ、細胞の採取時点などが測定値に影響することがあります。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: '対照群とは何か', href: '/methods/control/' },
+    {
+      title: '生物学的反復と技術的反復',
+      href: '/statistics/biological-technical-replicates/',
+    },
+    { title: 'n数とは何か', href: '/statistics/sample-size/' },
+  ]}
+/>
