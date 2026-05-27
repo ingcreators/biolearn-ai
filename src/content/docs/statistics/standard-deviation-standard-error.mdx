@@ -1,0 +1,167 @@
+---
+title: 標準偏差と標準誤差とは何か
+description: 標準偏差（SD）と標準誤差（SEM）を、データのばらつきと平均推定の不確かさとして区別します。
+part: statistics
+module: statistics-uncertainty
+level: foundation
+priority: P1
+order: 45
+relatedTerms:
+  - standard-deviation
+  - standard-error
+  - error-bar
+prerequisites:
+  - /statistics/mean-median/
+  - /statistics/error-bars/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+<LearningGoals
+  items={[
+    '標準偏差と標準誤差が何を表すか説明できる',
+    'SDとSEMをFigure legendで区別できる',
+    'SEMが小さいことをデータのばらつきが小さいことと混同しない',
+  ]}
+/>
+
+標準偏差は、データが平均値の周りにどれくらい散らばっているかを表す指標で、標準誤差はサンプルから推定した平均値がどれくらい不確かかを表す指標です。
+
+どちらもばらつきに関係しますが、SDはデータそのもの、SEMは平均推定の不確かさを見るために使います。Figureで `mean ± SD` と `mean ± SEM` が同じ形に見えても、読むべき意味は違います。
+
+<LessonFigure
+  src="/figures/standard-deviation-standard-error-concept.jpg"
+  alt="点の散らばりとしての標準偏差と、平均値の推定の不確かさとしての標準誤差を対比する教材イラスト"
+  title="標準偏差と標準誤差は見ているものが違う"
+  caption="SDはデータの散らばり、SEMは平均値の推定の不確かさを表します。Figure legendでどちらかを確認します。"
+/>
+
+## なぜ標準偏差と標準誤差の視点が重要か
+
+Figureの[エラーバー](/glossary/error-bar/)を読むとき、SDとSEMを混同すると結果の印象が大きく変わります。SEMはサンプル数が増えると小さくなりやすいため、SEMが小さい図を見て「個々のデータのばらつきが小さい」と読むと誤解につながります。
+
+生命科学では、細胞、個体、サンプル、独立実験など、何を測ったデータなのかによってばらつきの意味が変わります。平均値だけでなく、データの[分布](/glossary/distribution/)と推定の不確かさを分けて見ると、Figureから言える範囲を落ち着いて判断できます。
+
+## どんな違いがあるか
+
+標準偏差（standard deviation、SD）は、観測されたデータが平均値の周りにどれくらい広がっているかを表します。たとえば同じ条件で測った細胞の蛍光強度が大きく散らばる場合、SDは大きくなります。
+
+標準誤差（standard error of the mean、SEM）は、平均値を推定するときの不確かさを表します。よく使われる形では、SEMはSDをサンプル数の平方根で割った値として計算されます。
+
+SDは「データの散らばり」を見る指標、SEMは「平均値をどれくらい精度よく推定できているか」を見る指標です。個々のサンプルのばらつきを見たい場面では、SEMよりもSDや点の分布を見る方が適していることがあります。
+
+## 標準偏差と標準誤差はどう計算・確認するか
+
+計算の前に、何を1つのデータ点として数えているかを確認します。[n数](/glossary/sample-size/)が個体なのか、独立した培養なのか、同じサンプル内の細胞なのかによって、SDやSEMの意味は変わります。
+
+平均、SD、SEMを計算すること自体は多くの表計算ソフトや統計ソフトでできます。ただし、技術的反復だけをnとして扱う、同じサンプル由来の多数の細胞を独立サンプルのように扱う、といった設計上の問題は、計算式だけでは直せません。
+
+Figureでは、点が個々のデータを表しているか、バーが平均値を表しているか、エラーバーがSD、SEM、[信頼区間](/glossary/confidence-interval/)のどれかを確認します。
+
+## 標準偏差と標準誤差の変化は何につながるか
+
+SDが大きい場合、測定対象の個体差、細胞間の違い、測定条件の違いなど、データそのものの広がりが大きい可能性があります。これは必ずしも悪いことではなく、生命現象の多様性を反映している場合もあります。
+
+SEMが大きい場合、平均値の推定が不確かであることを示します。サンプル数が少ない、データのばらつきが大きい、独立した反復が限られている、といった要因が関係します。
+
+一方で、SEMが小さいからといって実験設計が十分だとは限りません。サンプルの独立性、対照群、ランダム化、測定の偏りも合わせて読む必要があります。
+
+## 論文や実験ではどう出てくるか
+
+論文では、Figure legendに `mean ± SD`、`mean ± SEM`、`mean with 95% CI` のように書かれます。Methodsには、どのサンプルをnとして扱ったか、何回の独立実験を行ったかが書かれることがあります。
+
+読むときは、エラーバーの定義、n数、データ点の意味、統計検定で使った単位を合わせて確認します。SDやSEMの表示だけで有意差や生物学的重要性を判断するのではなく、効果量や研究デザインも見ます。
+
+## どんな点でつまずきやすいか
+
+### 似た用語との区別
+
+- 標準偏差と標準誤差: SDはデータのばらつき、SEMは平均値の推定の不確かさです。
+- SEMと信頼区間: どちらも推定の不確かさに関わりますが、表示される範囲や読み方は同じではありません。
+- ばらつきと測定ミス: ばらつきは生命現象やサンプル差を含むことがあり、単に失敗を意味するわけではありません。
+
+### 解釈の落とし穴
+
+- SEMのエラーバーはSDより小さく見えやすいため、データの散らばりが小さいと読み違えないようにします。
+- エラーバーが重なるかどうかだけで、統計的有意性を判断することはできません。
+- n数が大きく見えても、独立した生物学的反復が多いとは限りません。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: '標準偏差',
+      english: 'standard deviation',
+      abbreviation: 'SD',
+      description:
+        'データが平均値の周りにどれくらい散らばっているかを表す指標。',
+      href: '/glossary/standard-deviation/',
+    },
+    {
+      term: '標準誤差',
+      english: 'standard error of the mean',
+      abbreviation: 'SEM',
+      description: 'サンプルから推定した平均値の不確かさを表す指標。',
+      href: '/glossary/standard-error/',
+    },
+    {
+      term: 'エラーバー',
+      english: 'error bar',
+      description: 'グラフ上でばらつきや不確かさを線で示す表示。',
+      href: '/glossary/error-bar/',
+    },
+    {
+      term: '信頼区間',
+      english: 'confidence interval',
+      abbreviation: 'CI',
+      description: '推定値の不確かさを範囲として示す統計表示。',
+      href: '/glossary/confidence-interval/',
+    },
+    {
+      term: 'n数',
+      english: 'sample size',
+      abbreviation: 'n',
+      description:
+        'Figureや統計解析で数えられているサンプル、個体、細胞、測定点などの数。',
+      href: '/glossary/sample-size/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question: '標準偏差と標準誤差は、それぞれ何を表しますか。',
+      answer:
+        '標準偏差はデータそのもののばらつき、標準誤差は平均値の推定の不確かさを表します。',
+    },
+    {
+      question:
+        'SEMのエラーバーが小さい図を読むとき、どんな誤解に注意しますか。',
+      answer:
+        'SEMが小さいことを、個々のデータのばらつきが小さいことと混同しないようにします。',
+    },
+    {
+      question:
+        'Figure legendで `mean ± SD` と `mean ± SEM` を確認する理由を説明してください。',
+      answer:
+        '同じ見た目のエラーバーでも、SDならデータの散らばり、SEMなら平均推定の不確かさを表し、解釈が変わるからです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    { title: 'エラーバーとは何か', href: '/statistics/error-bars/' },
+    { title: '信頼区間とは何か', href: '/statistics/confidence-interval/' },
+    {
+      title: '生物学的反復と技術的反復',
+      href: '/statistics/biological-technical-replicates/',
+    },
+  ]}
+/>

@@ -1734,6 +1734,22 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'statistics-and-design',
   },
   {
+    term: '標準偏差',
+    english: 'standard deviation',
+    abbreviation: 'SD',
+    description: 'データが平均値の周りにどれくらい散らばっているかを表す指標。',
+    href: '/glossary/standard-deviation/',
+    category: 'statistics-and-design',
+  },
+  {
+    term: '標準誤差',
+    english: 'standard error of the mean',
+    abbreviation: 'SEM',
+    description: 'サンプルから推定した平均値の不確かさを表す指標。',
+    href: '/glossary/standard-error/',
+    category: 'statistics-and-design',
+  },
+  {
     term: 'PCA',
     english: 'principal component analysis',
     abbreviation: 'PCA',
@@ -1878,6 +1894,14 @@ export const glossaryTerms: GlossaryTerm[] = [
     description:
       'サンプルや処理順を無作為に割り付け、偏りを減らす研究デザインの考え方。',
     href: '/glossary/randomization/',
+    category: 'statistics-and-design',
+  },
+  {
+    term: '盲検化',
+    english: 'blinding',
+    description:
+      '評価者や解析者が条件を知らないようにして、判断に入る偏りを減らす手順。',
+    href: '/glossary/blinding/',
     category: 'statistics-and-design',
   },
   {
