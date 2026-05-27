@@ -4,10 +4,12 @@ description: 遺伝子発現解析などで使われるヒートマップの色�
 part: figures
 module: bioinformatics-figures
 level: foundation
-order: 60
+priority: P1
+order: 92
 learningPaths:
   - figure-reading
 relatedTerms:
+  - heatmap
   - rna-seq
   - gene-expression
   - clustering
@@ -46,7 +48,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 ## このFigureで何を見るか
 
-サンプル間で似たパターンがあるか、特定の遺伝子群が条件ごとに高いか低いか、クラスタが実験条件と対応しているかを見ます。[RNA-seqとは何か](/bioinformatics/rna-seq/)や[用語: 遺伝子発現](/glossary/gene-expression/)と関係が深いFigureです。
+サンプル間で似たパターンがあるか、特定の遺伝子群が条件ごとに高いか低いか、クラスタが実験条件と対応しているかを見ます。[RNA-seqとは何か](/bioinformatics/rna-seq/)と関係が深いFigureです。
 
 ## まず一言でいうと
 
@@ -58,7 +60,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 - 列: サンプル、条件、時間点などを表します。
 - 色: 値の大小を表します。赤が高い、青が低いとは限らないため、カラーバーを確認します。
 - スケール: 生の発現量、正規化値、z-scoreなど、色に変換する前の値の扱いです。
-- クラスタリング: 似たパターンの行や列を近くに並べる処理です。用語としては[クラスタリング](/glossary/clustering/)も確認しておくと読みやすくなります。
+- クラスタリング: 似たパターンの行や列を近くに並べる処理です。考え方は[クラスタリングとは何か](/bioinformatics/clustering/)で確認できます。
 - アノテーション: サンプル群、細胞種、処理条件などを色帯で示すことがあります。
 
 ## 読む順番
@@ -77,7 +79,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 - 元データは[RNA-seq](/bioinformatics/rna-seq/)や[カウント行列](/bioinformatics/count-matrix/)で確認します。
 - 行や列の並びは[クラスタリング](/bioinformatics/clustering/)の結果であり、原因を直接示すものではありません。
 - 色が表す値は、[分布](/statistics/distribution/)や標準化の考え方と合わせて読みます。
-- 条件間の代表的な候補は、[Volcano plot](/glossary/volcano-plot/)や[qPCR](/glossary/qpcr/)など別のFigureで確認します。
+- 条件間の代表的な候補は、[Volcano plot](/figures/how-to-read-volcano-plot/)や[qPCR plot](/figures/how-to-read-qpcr-plot/)など別のFigureで確認します。
 
 ## よくある誤解
 
@@ -91,12 +93,9 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 - RNA-seqの発現量行列の可視化
 - 差次的発現遺伝子のパターン確認
 - シングルセル解析でのマーカー遺伝子表示
-- [用語: マーカー遺伝子](/glossary/marker-gene/)
 - プロテオームやメタボロームの多変量データ可視化
 - [RNA-seqとは何か](/bioinformatics/rna-seq/)
 - [差次的発現解析とは何か](/bioinformatics/differential-expression/)
-- [用語: RNA-seq](/glossary/rna-seq/)
-- [用語: 差次的発現解析](/glossary/differential-expression-analysis/)
 
 <Quiz
   questions={[

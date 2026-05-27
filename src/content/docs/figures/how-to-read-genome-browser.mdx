@@ -5,10 +5,11 @@ part: figures
 module: bioinformatics-figures
 level: intermediate
 priority: P2
-order: 94
+order: 102
 learningPaths:
   - figure-reading
 relatedTerms:
+  - genome-browser
   - genome
   - genetic-variant
   - sequencing
@@ -42,20 +43,40 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   caption="座標、表示範囲、トラックの種類、スケール、サンプルを確認して解釈します。"
 />
 
-論文では、特定の遺伝子領域や変異周辺を示すために、ゲノムブラウザ風のFigureが使われることがあります。横方向はゲノム上の位置を表し、縦に並ぶトラックが異なるデータを示します。
+## このFigureで何を見るか
 
-まず、どの染色体や領域を見ているか、表示範囲がどれくらいかを確認します。次に、各トラックが遺伝子モデル、変異、RNA-seqリード、[ピーク](/glossary/peak/)、保存性などのどれを表すかを確認します。
+ゲノムブラウザ図では、ゲノム上の位置に沿って複数の情報トラックを読みます。座標、遺伝子モデル、リード、ピーク、変異、保存性などが同じ領域に並びます。
 
-トラックが同じ位置に重なって見えると、関係がありそうに見えます。ただし、表示範囲、スケール、サンプル、解析条件によって見え方は変わるため、Figure legendとMethodsに戻って確認します。
+## まず一言でいうと
 
-変異やバリアントのトラックを読むときは、[遺伝的変異](/glossary/genetic-variant/) という広い言葉と、[変異](/glossary/mutation/) や [SNP](/glossary/snp/) との違いを分けておくと、Figureの表現を読み違えにくくなります。
+ゲノムブラウザ図は「位置を基準に情報を重ねた地図」です。まず座標とトラック名を確認し、どの情報を同じ場所で比べているかを読みます。
+
+## 図の構成要素
+
+- 座標: 染色体名、開始位置、終了位置、ゲノムビルドを確認します。
+- トラック: RNA-seq、ChIP-seq、ATAC-seq、変異、注釈などの情報層です。
+- 遺伝子モデル: エクソン、イントロン、転写方向、アイソフォームを示します。
+- シグナル: リードの積み上がり、ピーク、高さ、カバレッジを読みます。
+- 変異表示: SNP、SNV、indel、CNVなど、何の種類かを確認します。
+
+## 読む順番
+
+1. 染色体、座標、ゲノムビルドを確認します。
+2. 各トラックがどのデータを表すかを読みます。
+3. 遺伝子モデルとシグナルの位置関係を確認します。
+4. 条件間でシグナルや変異の有無がどう違うかを見ます。
+5. 解析条件、正規化、スケール、表示範囲をMethodsに戻って確認します。
+
+## 前提に戻る
+
+基本は[ゲノムブラウザとは何か](/genomics/genome-browser/)で確認します。座標や遺伝子モデルが読みにくい場合は、[ゲノムとは何か](/fundamentals/genome/)と[ゲノム座標](/genomics/genomic-coordinate/)に戻ります。
 
 ## よくある誤解
 
-- 表示範囲の違いを確認せず、複数の図を直接比較する。
-- ピークや[リード](/glossary/read/)の高さを、スケール確認なしに条件間で比べる。
-- 遺伝子の近くに変異があるだけで、機能影響が証明されたと読む。
-- どのサンプルや解析から作られたトラックかを確認しない。
+- 表示範囲を確認せず、広い領域の変化と狭い領域の変化を混同する。
+- トラックの高さを、異なるデータ間でそのまま比較する。
+- ゲノムビルドや座標系を確認しない。
+- 変異やピークが見えるだけで、機能的な意味を断定する。
 
 <Quiz
   questions={[
@@ -76,7 +97,6 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 <NextSteps
   items={[
     { title: 'ゲノムブラウザとは何か', href: '/genomics/genome-browser/' },
-    { title: '遺伝的変異の用語整理', href: '/glossary/genetic-variant/' },
     { title: '遺伝的変異の記事', href: '/genomics/genetic-variants/' },
     {
       title: 'シーケンスデータとは何か',

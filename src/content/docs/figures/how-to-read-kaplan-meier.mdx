@@ -2,14 +2,17 @@
 title: Kaplan-Meier曲線の読み方
 description: 時間経過とイベント発生を示すKaplan-Meier曲線で、曲線、打ち切り、リスク数を読む基本を説明します。
 part: figures
-module: quantitative-figures
+module: advanced-quantitative-figures
 level: intermediate
 priority: P1
-order: 86
+order: 112
+learningPaths:
+  - figure-reading
 relatedTerms:
-  - p-value
+  - kaplan-meier-curve
   - sample-size
   - confidence-interval
+  - p-value
 prerequisites:
   - /statistics/p-value/
   - /statistics/sample-size/
@@ -39,11 +42,33 @@ Kaplan-Meier曲線は、時間の経過にともなって、イベントがま�
   caption="曲線の差だけでなく、打ち切り、リスク数、追跡期間、群の背景を確認します。"
 />
 
-Kaplan-Meier曲線は、時間-to-eventデータを可視化するために使われます。横軸は時間、縦軸はイベントが起きていない割合を表すことが多く、曲線が段階的に下がるたびにイベントが発生したことを示します。
+## このFigureで何を見るか
 
-曲線が2本以上ある場合、群ごとの違いを比較します。ただし、曲線が離れて見えても、サンプル数、追跡期間、打ち切り、背景因子、統計検定の方法を確認しないと、意味を判断しすぎることになります。
+Kaplan-Meier曲線では、時間の経過にともなってイベントがまだ起きていない割合がどう変わるかを読みます。曲線、打ち切り、リスク数、追跡期間、群の背景を確認します。
 
-BioLearnでは、このFigureを論文読解のための教育例として扱います。個別の健康状態、診断、治療選択を判断するための情報ではありません。
+## まず一言でいうと
+
+曲線の離れ方だけで判断しません。時間が進むほどリスク数が減るため、後半の見た目は特に慎重に読みます。
+
+## 図の構成要素
+
+- 横軸: 時間を表します。単位は日、月、年などです。
+- 縦軸: イベントが起きていない割合を表すことが多いです。
+- 階段状の曲線: イベントが起きた時点で下がります。
+- 打ち切り: 追跡終了や観察不能になった点を示す記号です。
+- at risk表: 各時点で解析対象として残っている数です。
+
+## 読む順番
+
+1. 何のイベントを見ている曲線か確認します。
+2. 横軸の時間単位と縦軸の定義を確認します。
+3. 群ごとの曲線の離れ方とタイミングを見ます。
+4. 打ち切りとat riskの数を確認します。
+5. p値、信頼区間、群の背景、研究デザインを確認します。
+
+## 前提に戻る
+
+BioLearnでは、このFigureを論文読解のための教育例として扱います。個別の健康状態、診断、治療選択を判断する情報ではありません。統計表示では[p値とは何か](/statistics/p-value/)と[n数とは何か](/statistics/sample-size/)に戻ります。
 
 ## よくある誤解
 

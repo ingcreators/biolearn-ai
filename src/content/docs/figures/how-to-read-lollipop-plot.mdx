@@ -5,13 +5,13 @@ part: figures
 module: bioinformatics-figures
 level: intermediate
 priority: P2
-order: 96
+order: 104
 learningPaths:
   - figure-reading
 relatedTerms:
+  - lollipop-plot
   - genetic-variant
   - mutation
-  - gene
   - protein
 prerequisites:
   - /glossary/genetic-variant/
@@ -44,20 +44,40 @@ Lollipop plotは、遺伝子、タンパク質、ゲノム領域などの位置�
   caption="横軸の対象、ドメイン、丸の大きさや色の意味を確認してから、変異の集中を慎重に解釈します。"
 />
 
-生命科学論文では、変異がタンパク質のどの位置に多いか、特定のドメインに集中しているかを示すためにLollipop plotが使われることがあります。横軸はアミノ酸位置、塩基位置、またはゲノム座標を表します。
+## このFigureで何を見るか
 
-丸の大きさ、高さ、色は、変異の頻度、種類、サンプル群、影響予測などを表すことがあります。まずFigure legendで、何が大きさで、何が色で、何が棒の高さなのかを確認します。
+Lollipop plotでは、タンパク質やゲノム上の位置に沿って、変異やバリアントの位置と頻度を読みます。どの領域に変化が集まるか、機能ドメインと重なるかを確認します。
 
-変異が特定領域に集まって見えると、その領域が重要そうに見えます。ただし、サンプルの偏り、検出方法、表示対象、ドメイン注釈の違いで見え方は変わります。位置の集中は手がかりであり、それだけで機能影響や原因を証明するものではありません。
+## まず一言でいうと
 
-Lollipop plotでは、論文によって「mutation」「variant」「alteration」などの言葉が使い分けられます。まず [遺伝的変異](/glossary/genetic-variant/) と [変異](/glossary/mutation/) の違いを確認してから、Figure legendの定義に合わせて読みます。
+Lollipop plotは「どこに変異があるか」を見る図です。棒の高さや丸の大きさだけでなく、位置、ドメイン、サンプル背景を合わせて読みます。
+
+## 図の構成要素
+
+- 横軸: タンパク質のアミノ酸位置、またはゲノム座標を示します。
+- 丸や棒: 変異の位置、頻度、種類を表します。
+- ドメイン: 機能領域、結合領域、活性部位などが下に示されることがあります。
+- 色や形: 変異タイプ、サンプル群、影響予測を示すことがあります。
+- 注釈: hot spot、known variantなどの説明が付くことがあります。
+
+## 読む順番
+
+1. 横軸がタンパク質位置かゲノム位置かを確認します。
+2. 丸の大きさや棒の高さが何を表すかFigure legendで確認します。
+3. 変異が特定の領域やドメインに集まるかを見ます。
+4. 変異タイプやサンプル数を確認します。
+5. 機能的意味は、実験や既知知識に戻して慎重に解釈します。
+
+## 前提に戻る
+
+タンパク質上の位置を読む場合は[タンパク質とは何か](/fundamentals/protein/)と[タンパク質構造](/molecular-biology/protein-structure/)が役に立ちます。変異の言葉は[遺伝的変異とは何か](/genomics/genetic-variants/)と[変異とは何か](/fundamentals/mutation/)で整理します。
 
 ## よくある誤解
 
-- 丸が大きい位置を、必ず機能的に重要な位置だと読む。
-- 横軸がアミノ酸位置なのか、塩基位置なのかを確認しない。
-- 色の意味を確認せず、変異の種類やサンプル群を混同する。
-- ドメイン内にある変異だけを重視し、サンプル数や検出条件を見落とす。
+- 丸が大きい変異を、必ず機能的に重要だと読む。
+- ドメイン上にあるだけで、機能への影響が証明されたと考える。
+- サンプル数やデータベース由来を確認しない。
+- mutation、variant、alterationなどの用語の違いを見落とす。
 
 <Quiz
   questions={[
@@ -77,7 +97,6 @@ Lollipop plotでは、論文によって「mutation」「variant」「alteration
 
 <NextSteps
   items={[
-    { title: '遺伝的変異の用語整理', href: '/glossary/genetic-variant/' },
     { title: '遺伝的変異の記事', href: '/genomics/genetic-variants/' },
     { title: 'タンパク質とは何か', href: '/fundamentals/protein/' },
     {

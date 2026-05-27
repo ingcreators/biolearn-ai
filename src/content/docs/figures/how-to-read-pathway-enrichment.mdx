@@ -5,10 +5,11 @@ part: figures
 module: bioinformatics-figures
 level: intermediate
 priority: P1
-order: 92
+order: 100
 learningPaths:
   - figure-reading
 relatedTerms:
+  - pathway-enrichment
   - differential-expression-analysis
   - rna-seq
   - multiple-testing-correction
@@ -42,18 +43,40 @@ Pathway enrichment plotは、遺伝子リストやランキングに、特定の
   caption="経路名、スコア、遺伝子数、FDR、入力遺伝子リストを確認して読みます。"
 />
 
-RNA-seqなどで多数の遺伝子が変化したとき、1つずつ遺伝子を読むだけでは全体像がつかみにくいことがあります。pathway enrichment解析では、変化した遺伝子が、どの経路や機能カテゴリに多く含まれるかを調べます。
+## このFigureで何を見るか
 
-Figureでは、縦軸に経路名、横軸にenrichment scoreやgene ratio、点の大きさに遺伝子数、色にFDRやp値が使われることがあります。何がどの見た目に対応しているかを、凡例とFigure legendで確認します。
+Pathway enrichment plotでは、差がある遺伝子リストやランキングに、どの経路や遺伝子セットが多く含まれるかを見ます。経路名、スコア、FDR、遺伝子数、背景集団を確認します。
 
-経路名は便利ですが、広い意味を持つことがあります。経路名だけで機能が直接証明されたと読まず、入力遺伝子、解析方法、データベース、FDR、代表的な遺伝子を合わせて確認します。
+## まず一言でいうと
+
+Enrichmentは「候補のまとまりを見つける解析」です。経路名が出たことだけで、細胞内でその経路が直接測定されたとは限りません。
+
+## 図の構成要素
+
+- 経路名: GO、KEGG、Reactomeなど、どのデータベース由来かを確認します。
+- スコアや比率: enrichment score、gene ratio、odds ratioなど、指標の意味を読みます。
+- FDR: 多数の経路を調べるため、多重検定補正後の値を見ます。
+- 遺伝子数: その経路に何個の候補遺伝子が含まれたか。
+- 色や点の大きさ: 統計値、遺伝子数、スコアを表すことがあります。
+
+## 読む順番
+
+1. どの遺伝子リストや比較から作られた図か確認します。
+2. 経路名とデータベースを確認します。
+3. 軸、色、点の大きさが何を表すか読みます。
+4. FDRや遺伝子数を見て、候補の強さと広さを確認します。
+5. 経路名から生物学的結論を急がず、元の遺伝子や実験結果に戻ります。
+
+## 前提に戻る
+
+このFigureは[Pathway enrichmentとは何か](/bioinformatics/pathway-enrichment/)と[差次的発現解析](/bioinformatics/differential-expression/)を理解していると読みやすくなります。FDRが出る場合は[多重検定補正](/statistics/multiple-testing-correction/)に戻ります。
 
 ## よくある誤解
 
-- 経路名が出たことを、その経路が機能的に証明されたことと同じに読む。
-- 点が大きいほど、必ず重要度が高いと考える。
-- FDRと遺伝子数を区別せず、色やサイズの印象だけで判断する。
-- どのデータベースを使ったかを確認しない。
+- 経路名が出ただけで、その経路が直接測定されたと読む。
+- FDRや背景遺伝子集合を確認しない。
+- 遺伝子数が多い経路を、必ず最も重要な経路だと読む。
+- 上位の経路名だけを見て、元の遺伝子リストを確認しない。
 
 <Quiz
   questions={[

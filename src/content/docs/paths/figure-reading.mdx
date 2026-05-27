@@ -26,8 +26,10 @@ Figure を「きれいな図」として眺めるのではなく、何を測っ�
 
 - Figure legend から条件、反復、統計表示を探せる
 - 軸、ラベル、単位、サンプル数、ばらつきを確認できる
-- 棒グラフ、箱ひげ図、散布図、qPCR、Western blot、Volcano plot、ヒートマップの基本を読める
-- 顕微鏡画像、フローサイトメトリー、PCA、UMAP、enrichment、ゲノム系Figureを目的に応じて読める
+- 棒グラフ、箱ひげ図、Violin plot、散布図、相関図の基本を読める
+- qPCR、Western blot、顕微鏡画像、免疫染色、フローサイトメトリーを対照や反復と合わせて読める
+- Volcano plot、ヒートマップ、PCA、UMAP、enrichment、ゲノム系Figureを解析条件に戻して読める
+- ROC曲線、Kaplan-Meier曲線、Forest plotのような発展的なFigureを研究Figureとして慎重に読める
 - Figure の見た目だけでなく、何を測り、何を比較しているかを確認できる
 - Results本文の主張を、対応する Figure とデータに戻して確かめられる
 
@@ -59,22 +61,25 @@ Figure を「きれいな図」として眺めるのではなく、何を測っ�
 
 1. [Figure legendの読み方](/figures/figure-legend/) で、条件、n数、反復、統計表示を探します。
 2. [軸・ラベル・単位の読み方](/figures/axis-label-unit/) と [複数パネルFigureの読み方](/figures/multi-panel-figure/) で、図の構造を確認します。
-3. [棒グラフ](/figures/how-to-read-bar-plot/)、[箱ひげ図](/figures/how-to-read-box-plot/)、[散布図](/figures/how-to-read-scatter-plot/)、[Violin plot](/figures/how-to-read-violin-plot/) で、分布、ばらつき、関係を読む練習をします。
-4. [qPCR plot](/figures/how-to-read-qpcr-plot/) と [Western blot](/figures/how-to-read-western-blot/) で、実験Figureをコントロールとセットで読みます。
-5. [バイオインフォマティクス](/bioinformatics/bioinformatics/) と [RNA-seq](/bioinformatics/rna-seq/) で解析Figureの前提を確認し、[Volcano plot](/figures/how-to-read-volcano-plot/)、[ヒートマップ](/figures/how-to-read-heatmap/)、[PCA plot](/figures/how-to-read-pca-plot/)、[UMAP・t-SNE](/figures/how-to-read-umap-tsne/) で、オミクス解析Figureを読みます。
-6. [Figureと主張を対応づける](/figures/figure-to-claim/) と [Results内のFigureの流れ](/figures/results-section-flow/) で、論文本文とFigureを行き来します。
+3. [棒グラフ](/figures/how-to-read-bar-plot/)、[箱ひげ図](/figures/how-to-read-box-plot/)、[Violin plot](/figures/how-to-read-violin-plot/)、[散布図](/figures/how-to-read-scatter-plot/)、[相関図](/figures/how-to-read-correlation-plot/) で、分布、ばらつき、関係を読む練習をします。
+4. [qPCR plot](/figures/how-to-read-qpcr-plot/)、[Western blot](/figures/how-to-read-western-blot/)、[顕微鏡画像](/figures/how-to-read-microscopy-image/)、[免疫染色](/figures/how-to-read-immunostaining/)、[フローサイトメトリー](/figures/how-to-read-flow-cytometry/) で、実験Figureをコントロールとセットで読みます。
+5. [バイオインフォマティクス](/bioinformatics/bioinformatics/) と [RNA-seq](/bioinformatics/rna-seq/) で解析Figureの前提を確認し、[Volcano plot](/figures/how-to-read-volcano-plot/)、[ヒートマップ](/figures/how-to-read-heatmap/)、[PCA plot](/figures/how-to-read-pca-plot/)、[UMAP・t-SNE](/figures/how-to-read-umap-tsne/)、[GSEA plot](/figures/how-to-read-gsea-plot/)、[Pathway enrichment plot](/figures/how-to-read-pathway-enrichment/) で、オミクス解析Figureを読みます。
+6. ゲノム上の位置を読むFigureとして、[ゲノムブラウザ図](/figures/how-to-read-genome-browser/)、[Lollipop plot](/figures/how-to-read-lollipop-plot/)、[CNV plot](/figures/how-to-read-cnv-plot/) を確認します。
+7. [ROC曲線](/figures/how-to-read-roc-curve/)、[Kaplan-Meier曲線](/figures/how-to-read-kaplan-meier/)、[Forest plot](/figures/how-to-read-forest-plot/)、[患者コホート表](/figures/how-to-read-patient-cohort-table/) で、発展的な定量Figureや表を研究Figureとして慎重に読みます。
+8. [Figureと主張を対応づける](/figures/figure-to-claim/)、[Results内のFigureの流れ](/figures/results-section-flow/)、[Graphical abstract](/figures/graphical-abstract/) で、論文本文とFigureを行き来します。
 
 ## 練習の進め方
 
 このパスでは、Figureの種類を網羅的に探すよりも、読むときの確認手順を段階的に身につけます。特定のFigureだけを探したい場合は、[論文Figureの読み方](/figures/) の目的別入口を使います。
 
-| 段階                 | 練習すること                                                    | 代表記事                                                                                                                                                                                                       |
-| -------------------- | --------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 前提を読む           | Figure legend、軸、単位、複数パネルから、何を測ったかを確認する | [Figure legend](/figures/figure-legend/)、[軸・ラベル・単位](/figures/axis-label-unit/)、[複数パネルFigure](/figures/multi-panel-figure/)                                                                      |
-| ばらつきと関係を見る | 平均、分布、外れ値、相関、n数を確認する                         | [棒グラフ](/figures/how-to-read-bar-plot/)、[箱ひげ図](/figures/how-to-read-box-plot/)、[散布図](/figures/how-to-read-scatter-plot/)                                                                           |
-| 対照と測定条件へ戻る | 実験FigureをMethods、対照、反復とセットで読む                   | [qPCR plot](/figures/how-to-read-qpcr-plot/)、[Western blot](/figures/how-to-read-western-blot/)、[免疫染色](/figures/how-to-read-immunostaining/)                                                             |
-| 解析条件へ戻る       | オミクスFigureを前処理、統計表示、サンプル単位と合わせて読む    | [バイオインフォマティクス](/bioinformatics/bioinformatics/)、[Volcano plot](/figures/how-to-read-volcano-plot/)、[ヒートマップ](/figures/how-to-read-heatmap/)、[UMAP・t-SNE](/figures/how-to-read-umap-tsne/) |
-| 主張の範囲を確かめる | Results本文、Figure、Methodsを行き来し、言える範囲を分ける      | [Figureと主張を対応づける](/figures/figure-to-claim/)、[Results内のFigureの流れ](/figures/results-section-flow/)、[論文読解演習](/papers/)                                                                     |
+| 段階                     | 練習すること                                                           | 代表記事                                                                                                                                                                                                                                 |
+| ------------------------ | ---------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 前提を読む               | Figure legend、軸、単位、複数パネルから、何を測ったかを確認する        | [Figure legend](/figures/figure-legend/)、[軸・ラベル・単位](/figures/axis-label-unit/)、[複数パネルFigure](/figures/multi-panel-figure/)                                                                                                |
+| ばらつきと関係を見る     | 平均、分布、外れ値、相関、n数を確認する                                | [棒グラフ](/figures/how-to-read-bar-plot/)、[箱ひげ図](/figures/how-to-read-box-plot/)、[Violin plot](/figures/how-to-read-violin-plot/)、[散布図](/figures/how-to-read-scatter-plot/)、[相関図](/figures/how-to-read-correlation-plot/) |
+| 対照と測定条件へ戻る     | 実験FigureをMethods、対照、反復とセットで読む                          | [qPCR plot](/figures/how-to-read-qpcr-plot/)、[Western blot](/figures/how-to-read-western-blot/)、[顕微鏡画像](/figures/how-to-read-microscopy-image/)、[免疫染色](/figures/how-to-read-immunostaining/)                                 |
+| 解析条件へ戻る           | オミクスFigureを前処理、統計表示、サンプル単位と合わせて読む           | [バイオインフォマティクス](/bioinformatics/bioinformatics/)、[Volcano plot](/figures/how-to-read-volcano-plot/)、[ヒートマップ](/figures/how-to-read-heatmap/)、[UMAP・t-SNE](/figures/how-to-read-umap-tsne/)                           |
+| 発展的な定量Figureを読む | 予測性能、時間経過、効果量、信頼区間、対象者背景を研究Figureとして読む | [ROC曲線](/figures/how-to-read-roc-curve/)、[Kaplan-Meier曲線](/figures/how-to-read-kaplan-meier/)、[Forest plot](/figures/how-to-read-forest-plot/)、[患者コホート表](/figures/how-to-read-patient-cohort-table/)                       |
+| 主張の範囲を確かめる     | Results本文、Figure、Methodsを行き来し、言える範囲を分ける             | [Figureと主張を対応づける](/figures/figure-to-claim/)、[Results内のFigureの流れ](/figures/results-section-flow/)、[Graphical abstract](/figures/graphical-abstract/)                                                                     |
 
 ## Figureから論文へ進むタイミング
 

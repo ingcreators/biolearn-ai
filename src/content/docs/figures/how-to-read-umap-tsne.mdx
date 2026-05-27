@@ -5,11 +5,12 @@ part: figures
 module: bioinformatics-figures
 level: foundation
 priority: P1
-order: 80
+order: 96
 learningPaths:
   - figure-reading
 relatedTerms:
   - umap
+  - t-sne
   - clustering
   - marker-gene
 prerequisites:
@@ -41,17 +42,40 @@ UMAPやt-SNEは、多数の特徴を持つ細胞やサンプルを2次元に配�
   caption="点の単位、色の意味、クラスタ注釈、サンプル由来を確認し、形を読みすぎないようにします。"
 />
 
-[single-cell RNA-seq](/glossary/single-cell-rna-seq/)の論文では、[UMAP](/glossary/umap/)やt-SNEの図がよく登場します。多くの場合、1つの点が1つの細胞を表し、似た発現パターンを持つ細胞が近くに配置されます。
+## このFigureで何を見るか
 
-色は細胞タイプ、クラスタ、サンプル条件、遺伝子発現量などを表します。まず、点が何を表すか、色が何を表すかを確認します。
+UMAPやt-SNEでは、高次元データの近さを2次元に配置した点のまとまりを読みます。単一細胞解析では、点が細胞、色が細胞タイプや条件を表すことが多いです。
 
-UMAPやt-SNEは可視化の方法であり、距離や形をそのまま物理的な距離として読むものではありません。[クラスタリング](/glossary/clustering/)の結果やクラスタの意味は、[マーカー遺伝子](/glossary/marker-gene/)、注釈方法、サンプル情報と合わせて解釈します。
+## まず一言でいうと
+
+UMAPやt-SNEは「似た細胞を近くに置く可視化」です。軸の数値やクラスタ間の距離を、物理的な距離のように読みすぎないことが大切です。
+
+## 図の構成要素
+
+- 点: 多くの場合、1つの細胞やサンプルを表します。
+- 色: 細胞タイプ、クラスタ、条件、遺伝子発現量などを示します。
+- クラスタ: 似た特徴を持つ点のまとまりです。
+- 凡例: 色とラベルの対応を確認します。
+- 解析条件: 前処理、特徴量、パラメータ、バッチ補正の影響を受けます。
+
+## 読む順番
+
+1. 点が何を表すかを確認します。
+2. 色がクラスタ、細胞タイプ、条件、発現量のどれかを確認します。
+3. どのクラスタがどの注釈に対応するかを見ます。
+4. 条件ごとの偏りや混ざり方を確認します。
+5. 距離や分離の意味を、解析条件とマーカー遺伝子に戻して判断します。
+
+## 前提に戻る
+
+単一細胞解析では、[single-cell RNA-seqとは何か](/bioinformatics/single-cell-rna-seq/)と[細胞タイプ注釈](/bioinformatics/cell-type-annotation/)が土台になります。可視化の性質は[UMAPとは何か](/bioinformatics/umap/)と[次元削減とは何か](/bioinformatics/dimensionality-reduction/)で確認します。
 
 ## よくある誤解
 
-- UMAP上で近いことは、必ず生物学的に同じという意味ではありません。
-- クラスタ名は解析者が注釈したものなので、根拠となるマーカーを確認します。
-- 点の数が多いことと、独立サンプル数が多いことは同じではありません。
+- UMAP上で近いことを、必ず生物学的に近いと断定する。
+- クラスタの数や境界を、解析条件に依存しない固定事実として読む。
+- 色の違いだけで、細胞タイプや状態を確定する。
+- 軸の向きや距離を、物理的な座標のように読む。
 
 <Quiz
   questions={[
@@ -71,7 +95,6 @@ UMAPやt-SNEは可視化の方法であり、距離や形をそのまま物理�
 <NextSteps
   items={[
     { title: 'UMAPとは何か', href: '/bioinformatics/umap/' },
-    { title: '用語: UMAP', href: '/glossary/umap/' },
     { title: 'PCA plotの読み方', href: '/figures/how-to-read-pca-plot/' },
     { title: 'ヒートマップの読み方', href: '/figures/how-to-read-heatmap/' },
   ]}

@@ -4,10 +4,12 @@ description: RNA-seqなどの差次的発現解析で使われるVolcano plotの
 part: figures
 module: bioinformatics-figures
 level: foundation
-order: 50
+priority: P1
+order: 90
 learningPaths:
   - figure-reading
 relatedTerms:
+  - volcano-plot
   - differential-expression-analysis
   - rna-seq
   - multiple-testing-correction
@@ -76,7 +78,7 @@ Volcano plotは、変化の大きさと統計的な目立ちやすさを同時�
 - 解析の流れは[差次的発現解析](/bioinformatics/differential-expression/)で確認します。
 - 横軸の変化量は[効果量](/statistics/effect-size/)として読み、縦軸のp値とは分けて考えます。
 - 縦軸がp値か補正済みp値かは、[p値](/statistics/p-value/)と[多重検定補正](/statistics/multiple-testing-correction/)で確認します。
-- 候補遺伝子を選んだあとも、[qPCR](/glossary/qpcr/)や[Western blot](/glossary/western-blot/)など別手法で確認されているかをMethodsに戻って見ます。
+- 候補遺伝子を選んだあとも、[qPCR](/methods/qpcr/)や[Western blot](/methods/western-blot/)など別手法で確認されているかをMethodsに戻って見ます。
 
 ## よくある誤解
 
@@ -93,8 +95,6 @@ Volcano plotは、変化の大きさと統計的な目立ちやすさを同時�
 - 候補遺伝子をqPCRやWestern blotで検証する実験
 - [RNA-seqとは何か](/bioinformatics/rna-seq/)
 - [差次的発現解析とは何か](/bioinformatics/differential-expression/)
-- [用語: RNA-seq](/glossary/rna-seq/)
-- [用語: 差次的発現解析](/glossary/differential-expression-analysis/)
 
 <Quiz
   questions={[

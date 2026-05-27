@@ -5,10 +5,11 @@ part: figures
 module: bioinformatics-figures
 level: foundation
 priority: P1
-order: 90
+order: 98
 learningPaths:
   - figure-reading
 relatedTerms:
+  - gsea
   - differential-expression-analysis
   - multiple-testing-correction
   - significance-vs-importance
@@ -41,17 +42,40 @@ GSEA plotは、あらかじめ定義した遺伝子セットが、ランキン�
   caption="ランキングの向き、遺伝子セット名、NES、FDR、leading edgeを確認して経路単位で読みます。"
 />
 
-GSEAは Gene Set Enrichment Analysis の略です。差次的発現解析のように遺伝子を1つずつ見るだけでなく、経路や機能に属する遺伝子群が全体として偏っているかを見ます。
+## このFigureで何を見るか
 
-GSEA plotでは、横軸に遺伝子ランキング、縦軸にエンリッチメントスコアが示されることがあります。遺伝子セットに含まれる遺伝子がランキングのどこに多いかを確認します。
+GSEA plotでは、順位づけられた遺伝子リストの中で、ある遺伝子セットが上位または下位に偏っているかを読みます。エンリッチメントスコア、leading edge、FDRを確認します。
 
-読み取るときは、どの比較のランキングか、遺伝子セット名、NES、FDR、leading edgeを確認します。経路名だけで結論を決めず、どの遺伝子が寄与しているかも見ます。
+## まず一言でいうと
+
+GSEA plotは「遺伝子セット全体の偏り」を見る図です。1つの遺伝子が大きく変わったかではなく、関連する遺伝子群がまとまってどちら側に寄るかを読みます。
+
+## 図の構成要素
+
+- ランキング: 遺伝子が統計量や発現変化の大きさで並べられています。
+- エンリッチメント曲線: 遺伝子セットがどちら側に偏るかを示します。
+- ヒット位置: 遺伝子セットに含まれる遺伝子がランキング上のどこにあるか。
+- leading edge: 偏りに強く寄与する遺伝子群です。
+- FDR: 多数の遺伝子セットを調べたときの統計的な注意点です。
+
+## 読む順番
+
+1. どの比較で遺伝子を順位づけたか確認します。
+2. 対象の遺伝子セット名と生物学的意味を確認します。
+3. 曲線が上位側・下位側のどちらに偏るか見ます。
+4. NES、FDR、p値などの統計表示を確認します。
+5. leading edgeや関連する個別遺伝子を、過度に断定せず確認します。
+
+## 前提に戻る
+
+GSEA plotは[差次的発現解析](/bioinformatics/differential-expression/)や[Pathway enrichment](/bioinformatics/pathway-enrichment/)とつながります。統計表示では[多重検定補正](/statistics/multiple-testing-correction/)を確認します。
 
 ## よくある誤解
 
-- GSEAの経路名だけで、機能が直接証明されたとは言えません。
-- FDRやNESを確認せずに、曲線の形だけで判断してはいけません。
-- 遺伝子セットの定義や比較条件によって結果の意味は変わります。
+- 遺伝子セット名だけを見て、経路全体が確定的に活性化したと読む。
+- FDRや比較条件を確認しない。
+- leading edgeの遺伝子を、すべて同じ意味で重要だと読む。
+- GSEAの結果を、個別遺伝子の発現量そのものと混同する。
 
 <Quiz
   questions={[

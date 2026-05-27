@@ -22,7 +22,7 @@ import ArticleList from '../../../components/ArticleList.astro';
 ## この分野で学ぶこと
 
 - 軸、条件、サンプル数、ばらつき、コントロールを確認しながらFigureを読むこと
-- Figure legend、軸・ラベル、複数パネル、相関図、Violin plot、qPCR、Western blot、Volcano plot、ヒートマップ、Pathway enrichment plot、ゲノム系Figureの基本的な見方
+- Figure legend、軸・ラベル、複数パネル、相関図、Violin plot、qPCR、Western blot、Volcano plot、ヒートマップ、Pathway enrichment plot、ゲノム系Figure、発展的な定量Figureの基本的な見方
 - Figureを見た目だけで判断せず、実験や解析の文脈と結びつけること
 
 ## まず押さえる3つの考え方
@@ -41,7 +41,7 @@ import ArticleList from '../../../components/ArticleList.astro';
     <h3>分布、ばらつき、関係を読む</h3>
     <p>
       棒グラフ、箱ひげ図、散布図、Violin plot、ROC曲線、Forest
-      plotなどを、軸、n数、効果量、信頼区間から確認します。
+      plot、患者コホート表などを、軸、n数、効果量、信頼区間、対象者背景から確認します。
     </p>
   </a>
   <a class="biolearn-home-card" href="/figures/how-to-read-qpcr-plot/">
@@ -70,14 +70,14 @@ import ArticleList from '../../../components/ArticleList.astro';
   </a>
 </div>
 
-| 目的                     | 入口                                                                                                                                                                 | 戻る前提                                                                                                                                                  |
-| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 平均やばらつきを読む     | [棒グラフ](/figures/how-to-read-bar-plot/)、[箱ひげ図](/figures/how-to-read-box-plot/)、[Violin plot](/figures/how-to-read-violin-plot/)                             | [エラーバー](/statistics/error-bars/)、[分布](/statistics/distribution/)、[n数](/statistics/sample-size/)                                                 |
-| 関係や予測性能を見る     | [散布図](/figures/how-to-read-scatter-plot/)、[相関図](/figures/how-to-read-correlation-plot/)、[ROC曲線](/figures/how-to-read-roc-curve/)                           | [相関と因果](/statistics/correlation-causation/)、[効果量](/statistics/effect-size/)、[有意性と重要性](/statistics/significance-vs-importance/)           |
-| 実験Figureを読む         | [qPCR plot](/figures/how-to-read-qpcr-plot/)、[Western blot](/figures/how-to-read-western-blot/)、[免疫染色](/figures/how-to-read-immunostaining/)                   | [実験手法](/methods/)、[対照実験](/methods/control/)、[反復](/statistics/biological-technical-replicates/)                                                |
-| オミクス解析Figureを読む | [Volcano plot](/figures/how-to-read-volcano-plot/)、[ヒートマップ](/figures/how-to-read-heatmap/)、[GSEA plot](/figures/how-to-read-gsea-plot/)                      | [RNA-seq](/bioinformatics/rna-seq/)、[差次的発現解析](/bioinformatics/differential-expression/)、[多重検定補正](/statistics/multiple-testing-correction/) |
-| ゲノム上の位置を見る     | [ゲノムブラウザ図](/figures/how-to-read-genome-browser/)、[Lollipop plot](/figures/how-to-read-lollipop-plot/)、[CNV plot](/figures/how-to-read-cnv-plot/)           | [ゲノム](/glossary/genome/)、[遺伝的変異](/glossary/genetic-variant/)、[ゲノムブラウザ](/genomics/genome-browser/)                                        |
-| 論文本文と対応づける     | [Figureと主張を対応づける](/figures/figure-to-claim/)、[Resultsセクションの流れ](/figures/results-section-flow/)、[Graphical abstract](/figures/graphical-abstract/) | [Resultsの読み方](/papers/how-to-read-results/)、[Methods確認チェックリスト](/papers/methods-checklist/)、[研究の限界](/statistics/limitations/)          |
+| 目的                     | 入口                                                                                                                                                                                                     | 戻る前提                                                                                                                                                  |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 平均やばらつきを読む     | [棒グラフ](/figures/how-to-read-bar-plot/)、[箱ひげ図](/figures/how-to-read-box-plot/)、[Violin plot](/figures/how-to-read-violin-plot/)                                                                 | [エラーバー](/statistics/error-bars/)、[分布](/statistics/distribution/)、[n数](/statistics/sample-size/)                                                 |
+| 関係や予測性能を見る     | [散布図](/figures/how-to-read-scatter-plot/)、[相関図](/figures/how-to-read-correlation-plot/)、[ROC曲線](/figures/how-to-read-roc-curve/)、[患者コホート表](/figures/how-to-read-patient-cohort-table/) | [相関と因果](/statistics/correlation-causation/)、[効果量](/statistics/effect-size/)、[有意性と重要性](/statistics/significance-vs-importance/)           |
+| 実験Figureを読む         | [qPCR plot](/figures/how-to-read-qpcr-plot/)、[Western blot](/figures/how-to-read-western-blot/)、[免疫染色](/figures/how-to-read-immunostaining/)                                                       | [実験手法](/methods/)、[対照実験](/methods/control/)、[反復](/statistics/biological-technical-replicates/)                                                |
+| オミクス解析Figureを読む | [Volcano plot](/figures/how-to-read-volcano-plot/)、[ヒートマップ](/figures/how-to-read-heatmap/)、[GSEA plot](/figures/how-to-read-gsea-plot/)                                                          | [RNA-seq](/bioinformatics/rna-seq/)、[差次的発現解析](/bioinformatics/differential-expression/)、[多重検定補正](/statistics/multiple-testing-correction/) |
+| ゲノム上の位置を見る     | [ゲノムブラウザ図](/figures/how-to-read-genome-browser/)、[Lollipop plot](/figures/how-to-read-lollipop-plot/)、[CNV plot](/figures/how-to-read-cnv-plot/)                                               | [ゲノム](/glossary/genome/)、[遺伝的変異](/glossary/genetic-variant/)、[ゲノムブラウザ](/genomics/genome-browser/)                                        |
+| 論文本文と対応づける     | [Figureと主張を対応づける](/figures/figure-to-claim/)、[Resultsセクションの流れ](/figures/results-section-flow/)、[Graphical abstract](/figures/graphical-abstract/)                                     | [Resultsの読み方](/papers/how-to-read-results/)、[Methods確認チェックリスト](/papers/methods-checklist/)、[研究の限界](/statistics/limitations/)          |
 
 ## 統計表示で迷ったら
 
@@ -95,7 +95,7 @@ Figureの見た目は分かっても、ばらつき、n数、有意差、効果�
 
 <ArticleList part="figures" groupByModule />
 
-この一覧は、Figureの種類から記事を探すための入口です。順番に練習したい場合は、[Figureを読めるようになる](/paths/figure-reading/) で基本構造、基本グラフ、実験Figure、オミクスFigure、論文本文との対応づけへ進みます。
+この一覧は、Figureの種類から記事を探すための入口です。順番に練習したい場合は、[Figureを読めるようになる](/paths/figure-reading/) で基本構造、基本グラフ、実験Figure、解析Figure、発展的な定量Figure、論文本文との対応づけへ進みます。
 
 ## このカテゴリを終えるとできること
 
@@ -104,7 +104,7 @@ Figureの見た目は分かっても、ばらつき、n数、有意差、効果�
 - 複数パネルFigureで、各パネルが全体の主張をどう支えているかを確認できる
 - qPCRやWestern blotの結果を、コントロールとセットで読める
 - Volcano plotやヒートマップを、差次的発現解析やRNA-seqの結果として読める
-- enrichmentやForest plotなど、より発展的なFigureでも、軸、凡例、統計表示を確認しながら読める
+- enrichmentやForest plot、患者コホート表など、より発展的なFigureや表でも、軸、凡例、統計表示、対象者背景を確認しながら読める
 - ゲノムブラウザ図、Lollipop plot、CNV plotで、位置、スケール、凡例、解析条件を確認できる
 - Results内でFigureがどのように主張を積み上げているかを整理できる
 
@@ -116,8 +116,12 @@ Figureの見た目は分かっても、ばらつき、n数、有意差、効果�
 
 ## 関連する用語
 
-- [遺伝子発現](/glossary/gene-expression/)
-- [RNA-seq](/glossary/rna-seq/)
-- [差次的発現解析](/glossary/differential-expression-analysis/)
-- [PCR](/glossary/pcr/)
-- [タンパク質](/glossary/protein/)
+- [Figure](/glossary/figure/)
+- [Figure legend](/glossary/figure-legend/)
+- [エラーバー](/glossary/error-bar/)
+- [分布](/glossary/distribution/)
+- [相関図](/glossary/correlation-plot/)
+- [Volcano plot](/glossary/volcano-plot/)
+- [ROC曲線](/glossary/roc-curve/)
+- [患者コホート表](/glossary/patient-cohort-table/)
+- [Graphical abstract](/glossary/graphical-abstract/)

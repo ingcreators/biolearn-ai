@@ -4,13 +4,15 @@ description: qPCRの増幅曲線、Ct値、相対発現量グラフを読むと�
 part: figures
 module: experimental-figures
 level: foundation
-order: 30
+priority: P1
+order: 70
 learningPaths:
   - figure-reading
 relatedTerms:
+  - qpcr
+  - ct-value
   - pcr
   - gene-expression
-  - biological-technical-replicates
 prerequisites:
   - /methods/pcr/
   - /methods/qpcr/
@@ -44,7 +46,7 @@ qPCR（quantitative PCR）は、特定のDNAやRNA由来の[cDNA](/glossary/cdna
 
 ## このFigureで何を見るか
 
-目的の遺伝子や配列が、条件間でどのくらい違って検出されたかを見ます。mRNA量の比較では、[遺伝子発現とは何か](/fundamentals/gene-expression/)や[用語: PCR](/glossary/pcr/)の理解が土台になります。
+目的の遺伝子や配列が、条件間でどのくらい違って検出されたかを見ます。mRNA量の比較では、[遺伝子発現とは何か](/fundamentals/gene-expression/)や[PCRとは何か](/methods/pcr/)の理解が土台になります。
 
 ## まず一言でいうと
 
@@ -86,13 +88,12 @@ qPCR plotで迷ったら、Figureだけで判断せず、Methodsと統計の前�
 
 ## 関連する実験・解析
 
-- [RT-qPCR](/glossary/rt-qpcr/)によるmRNA発現量の検証
+- [RT-qPCR](/methods/rt-qpcr/)によるmRNA発現量の検証
 - RNA-seqで見つかった候補遺伝子の確認
 - 遺伝子ノックダウンや刺激実験後の発現変化の確認
 - [PCRとは何か](/methods/pcr/)
 - [RNA-seqとは何か](/bioinformatics/rna-seq/)
 - [差次的発現解析とは何か](/bioinformatics/differential-expression/)
-- [用語: 遺伝子発現](/glossary/gene-expression/)
 
 <Quiz
   questions={[

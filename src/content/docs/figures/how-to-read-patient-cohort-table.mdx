@@ -1,0 +1,148 @@
+---
+title: 患者コホート表の読み方
+description: 患者コホート表で、対象者数、群分け、背景因子、欠測、追跡期間を確認する基本を説明します。
+part: figures
+module: advanced-quantitative-figures
+level: intermediate
+priority: P2
+order: 116
+learningPaths:
+  - figure-reading
+relatedTerms:
+  - patient-cohort-table
+  - sample-size
+  - confounding
+  - bias
+  - limitation
+prerequisites:
+  - /statistics/sample-size/
+  - /statistics/confounding/
+  - /statistics/bias/
+  - /papers/how-to-read-results/
+---
+
+import LearningGoals from '../../../components/LearningGoals.astro';
+import Quiz from '../../../components/Quiz.astro';
+import NextSteps from '../../../components/NextSteps.astro';
+import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
+
+## この記事で学ぶこと
+
+<LearningGoals
+  items={[
+    '患者コホート表で対象者数と群分けを確認できる',
+    '背景因子、欠測、追跡期間を読み落とさない',
+    'Kaplan-Meier曲線やROC曲線の前提として慎重に読める',
+  ]}
+/>
+
+患者コホート表は、研究に含まれる対象者の数、群分け、年齢や性別などの背景、追跡期間、欠測の有無をまとめた表です。
+
+<LessonFigure
+  src="/figures/how-to-read-patient-cohort-table-concept.jpg"
+  alt="患者コホート表で群ごとの対象者数、背景因子、欠測、追跡期間を確認する概念図"
+  title="患者コホート表は研究対象の前提を読む"
+  caption="対象者数、群分け、背景因子、欠測、追跡期間を確認して、後続Figureの解釈につなげます。"
+/>
+
+## このFigureで何を見るか
+
+患者コホート表では、研究に含まれた対象者がどのような集団で、どの群とどの群が比較されているかを見ます。年齢、性別、病期、サンプル種別、追跡期間、欠測、除外基準などを確認します。
+
+この表は単独で結論を示すものではなく、Kaplan-Meier曲線、ROC曲線、Forest plotなどを読む前に、比較の前提を整えるための情報として使います。
+
+## まず一言でいうと
+
+患者コホート表は「この研究は、どんな対象者を比べているのか」を確認する表です。Figureの差を見る前に、群の人数や背景が大きく偏っていないかを見ます。
+
+## 図の構成要素
+
+- 行: 年齢、性別、病期、サンプル種別、追跡期間、治療歴などの項目です。
+- 列: 全体、群A、群B、解析対象、除外対象などの集団を表します。
+- n数: 各群に何人、何サンプル、何例が含まれるかを示します。
+- 要約値: 平均、中央値、範囲、割合など、項目ごとの表し方が異なります。
+- 欠測: unknown、not available、NAなどとして、情報がない対象が示されることがあります。
+
+## 読む順番
+
+1. 研究全体の対象者数と、解析に使われた人数を確認します。
+2. 群分けが何を基準にしているかを確認します。
+3. 各群の年齢、性別、病期、サンプル種別などの背景を比べます。
+4. 欠測、除外、追跡期間、解析対象の減り方を確認します。
+5. 後続のFigureで示される差が、群の背景や解析対象の違いに影響されていないか考えます。
+
+## 前提に戻る
+
+人数やサンプル単位が読みにくい場合は、[n数とは何か](/statistics/sample-size/)に戻ります。群の背景差が結果の解釈に影響しそうなときは、[交絡](/statistics/confounding/)と[バイアス](/statistics/bias/)を確認します。
+
+この表は研究Figureを読むための教育用の入口です。個別の診断、治療選択、健康状態の判断には使いません。論文本文では、対象者の集め方、除外基準、追跡方法をMethodsとResultsに戻して確認します。
+
+## よくある誤解
+
+- 全体の人数だけを見て、各群の人数差を確認しない。
+- p値が付いている背景項目だけを見て、実際の偏りや欠測を見落とす。
+- unknownやNAを、重要ではない情報として読み飛ばす。
+- コホート表を見ずに、Kaplan-Meier曲線やROC曲線の見た目だけで強く解釈する。
+- 患者コホート表を個別の医療判断に直接使える表として読んでしまう。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: '患者コホート表',
+      english: 'patient cohort table',
+      description:
+        '研究対象者の人数、群分け、背景因子、追跡期間、欠測などをまとめた表。',
+      href: '/glossary/patient-cohort-table/',
+    },
+    {
+      term: 'n数',
+      english: 'sample size',
+      abbreviation: 'n',
+      description: 'Figureや表で数えられている対象者、サンプル、測定単位の数。',
+      href: '/glossary/sample-size/',
+    },
+    {
+      term: '交絡',
+      english: 'confounding',
+      description: '比較したい要因とは別の要因が、結果の見え方に影響すること。',
+      href: '/glossary/confounding/',
+    },
+    {
+      term: 'バイアス',
+      english: 'bias',
+      description: 'データの集め方や解析の過程で、結果が一方向にずれること。',
+      href: '/glossary/bias/',
+    },
+  ]}
+/>
+
+<Quiz
+  questions={[
+    {
+      question:
+        '患者コホート表で、後続のFigureを見る前に確認したい項目を3つ挙げてください。',
+      answer:
+        '対象者数、群分け、年齢や性別などの背景、病期、欠測、追跡期間、除外基準などです。',
+    },
+    {
+      question:
+        'Kaplan-Meier曲線やROC曲線を読む前に、患者コホート表を確認する理由を説明してください。',
+      answer:
+        '群の人数、背景、欠測、追跡期間などがFigureの見え方や解釈に影響するためです。',
+    },
+  ]}
+/>
+
+<NextSteps
+  items={[
+    {
+      title: 'Kaplan-Meier曲線の読み方',
+      href: '/figures/how-to-read-kaplan-meier/',
+    },
+    { title: 'ROC曲線の読み方', href: '/figures/how-to-read-roc-curve/' },
+    { title: 'Forest plotの読み方', href: '/figures/how-to-read-forest-plot/' },
+  ]}
+/>

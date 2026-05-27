@@ -9,6 +9,7 @@ order: 10
 learningPaths:
   - figure-reading
 relatedTerms:
+  - figure-legend
   - variable
   - sample-size
   - biological-technical-replicates
@@ -39,13 +40,17 @@ Figure legend（図の説明文）は、Figureの横や下に置かれる短い�
   caption="図の見た目だけで判断せず、条件、反復、統計、補足情報をlegendから拾います。"
 />
 
-## Figure legendとは何か
+## この文章で何を見るか
 
-Figure legendは、図に示されたデータが「何を、どの条件で、どのように測った結果なのか」を説明する文章です。
+Figure legendでは、図に示されたデータが「何を、どの条件で、どのように測った結果なのか」を確認します。パネル、測定対象、条件、n数、統計表示、補足情報の場所を拾うのが主な目的です。
 
 たとえば、[棒グラフ](/glossary/bar-plot/)だけを見ると条件Aと条件Bの差は分かっても、細胞種、処理時間、濃度、反復数、エラーバーの定義は分からないことがあります。Figure legendを読むことで、図の見た目を実験の文脈に戻して理解できます。
 
 論文によっては、Figure legendに詳しい方法が書かれ、細かい実験手順はMethodsに分けて書かれます。Figure legendだけで分からないときは、本文とMethodsも合わせて確認します。
+
+## まず一言でいうと
+
+Figure legendは、Figureの見た目を実験・解析の前提へ戻すための手がかりです。図を見る前、見たあと、迷ったときの3回読むと、条件や統計表示の読み違いを減らせます。
 
 ## まず確認する項目
 
@@ -59,6 +64,14 @@ Figure legendは、図に示されたデータが「何を、どの条件で、�
 - 補足の場所: Methods、Supplementary Figure、Source Dataに追加情報がないか。
 
 特に複数パネルのFigureでは、A、B、Cの説明を取り違えないことが大切です。
+
+## 読む順番
+
+1. Figure全体のタイトルや最初の文から、何を示す図かを確認します。
+2. パネル名を追い、A、B、Cなどの説明を図中の場所と対応づけます。
+3. 測定対象、サンプル、条件、処理時間、単位を拾います。
+4. n数、反復の種類、統計検定、エラーバーの定義を確認します。
+5. 分からない条件や手順は、MethodsやSupplementary informationに戻ります。
 
 ## 実験条件の読み方
 
@@ -102,6 +115,15 @@ Figure legendでは、次の表現を探します。
 - ns: not significantの略で、統計的に有意とはいえないことを示す場合があります。
 
 アスタリスクがあるときは、どの2群の比較に対する記号なのかを確認します。棒の上に線がある場合は線で結ばれた群、Figure legendに説明がある場合はその記述に従います。
+
+## 前提に戻る
+
+Figure legendで読める情報には限りがあります。条件や統計表示が曖昧なときは、本文とMethodsに戻って確認します。
+
+- 実験手順や解析条件は[Methodsの読み方](/papers/how-to-read-methods/)で確認します。
+- FigureがResults本文のどの主張を支えているかは[Resultsの読み方](/papers/how-to-read-results/)で確認します。
+- エラーバーやp値の表示は[エラーバーの読み方](/statistics/error-bars/)と[p値とは何か](/statistics/p-value/)に戻ります。
+- 複数パネルの対応が分かりにくい場合は[multi-panel Figureの読み方](/figures/multi-panel-figure/)で整理します。
 
 ## よくある誤解
 

@@ -4,10 +4,12 @@ description: 生命科学論文に出てくる棒グラフで、平均、ばら�
 part: figures
 module: quantitative-figures
 level: foundation
+priority: P1
 order: 20
 learningPaths:
   - figure-reading
 relatedTerms:
+  - bar-plot
   - gene-expression
   - mean-median
   - biological-technical-replicates
@@ -43,7 +45,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 条件間で測定値がどのくらい違うか、ばらつきはどの程度あるか、その差が実験の目的に照らして意味を持ちそうかを見ます。
 
-たとえば、遺伝子発現量、タンパク質量、細胞数、生存率、蛍光強度などの比較で使われます。関連する基礎として、[遺伝子発現とは何か](/fundamentals/gene-expression/)や[用語: 遺伝子発現](/glossary/gene-expression/)も合わせて読むと理解しやすくなります。
+たとえば、遺伝子発現量、タンパク質量、細胞数、生存率、蛍光強度などの比較で使われます。関連する基礎として、[遺伝子発現とは何か](/fundamentals/gene-expression/)を合わせて読むと理解しやすくなります。
 
 ## まず一言でいうと
 
@@ -67,6 +69,15 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 5. n数、反復の種類、生物学的反復か技術的反復かをFigure legendで確認します。
 6. 統計表示がある場合は、検定方法と比較対象を確認します。
 
+## 前提に戻る
+
+棒グラフは読みやすく見えますが、平均値だけでは分布や不確かさが隠れます。迷ったら、棒の高さを読む前提に戻ります。
+
+- エラーバーの意味は[エラーバーの読み方](/statistics/error-bars/)で確認します。
+- 平均と中央値の違いは[平均と中央値](/statistics/mean-median/)に戻ります。
+- n数や反復の意味は[生物学的反復と技術的反復](/statistics/biological-technical-replicates/)で確認します。
+- 図に出ていない条件や統計検定は[Figure legendの読み方](/figures/figure-legend/)で探します。
+
 ## よくある誤解
 
 - 棒が高いほど必ず重要、とは限りません。差の大きさ、ばらつき、測定の文脈を合わせて考えます。
@@ -76,13 +87,11 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 ## 関連する実験・解析
 
-- [qPCR](/glossary/qpcr/)やRNA-seq後の遺伝子発現量比較
-- [Western blot](/glossary/western-blot/)のバンド強度の定量
+- [qPCR](/methods/qpcr/)やRNA-seq後の遺伝子発現量比較
+- [Western blot](/methods/western-blot/)のバンド強度の定量
 - 細胞数、蛍光強度、酵素活性などの定量実験
 - [RNA-seqとは何か](/bioinformatics/rna-seq/)
 - [差次的発現解析とは何か](/bioinformatics/differential-expression/)
-- [用語: 差次的発現解析](/glossary/differential-expression-analysis/)
-- [用語: RNA-seq](/glossary/rna-seq/)
 
 <Quiz
   questions={[

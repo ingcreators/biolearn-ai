@@ -1395,6 +1395,15 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'methods-and-analysis',
   },
   {
+    term: 't-SNE',
+    english: 't-distributed stochastic neighbor embedding',
+    abbreviation: 't-SNE',
+    description:
+      '高次元データを2次元などに配置して近い点のまとまりを見る可視化手法。',
+    href: '/glossary/t-sne/',
+    category: 'methods-and-analysis',
+  },
+  {
     term: 'バッチ効果',
     english: 'batch effect',
     description:
@@ -2004,10 +2013,24 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'statistics-and-design',
   },
   {
+    term: 'Violin plot',
+    english: 'violin plot',
+    description: '分布の形と群間の重なりを左右の幅で示すグラフ。',
+    href: '/glossary/violin-plot/',
+    category: 'statistics-and-design',
+  },
+  {
     term: '散布図',
     english: 'scatter plot',
     description: '2つの変数の関係を点で示すグラフ。',
     href: '/glossary/scatter-plot/',
+    category: 'statistics-and-design',
+  },
+  {
+    term: '相関図',
+    english: 'correlation plot',
+    description: '2つの変数が一緒に変化する傾向を示す図。',
+    href: '/glossary/correlation-plot/',
     category: 'statistics-and-design',
   },
   {
@@ -2022,6 +2045,43 @@ export const glossaryTerms: GlossaryTerm[] = [
     english: 'volcano plot',
     description: '差の大きさと統計的な強さを同時に示す散布図。',
     href: '/glossary/volcano-plot/',
+    category: 'statistics-and-design',
+  },
+  {
+    term: 'ROC曲線',
+    english: 'receiver operating characteristic curve',
+    abbreviation: 'ROC curve',
+    description: 'しきい値を変えたときの真陽性率と偽陽性率の関係を示す曲線。',
+    href: '/glossary/roc-curve/',
+    category: 'statistics-and-design',
+  },
+  {
+    term: 'Kaplan-Meier曲線',
+    english: 'Kaplan-Meier curve',
+    description: '時間経過にともなうイベント未発生割合を階段状に示す曲線。',
+    href: '/glossary/kaplan-meier-curve/',
+    category: 'statistics-and-design',
+  },
+  {
+    term: 'Forest plot',
+    english: 'forest plot',
+    description: '効果量と信頼区間を複数の研究やサブグループで並べて示す図。',
+    href: '/glossary/forest-plot/',
+    category: 'statistics-and-design',
+  },
+  {
+    term: 'Lollipop plot',
+    english: 'lollipop plot',
+    description: '遺伝子やタンパク質上の位置に沿って変異やイベントを示す図。',
+    href: '/glossary/lollipop-plot/',
+    category: 'statistics-and-design',
+  },
+  {
+    term: 'CNV plot',
+    english: 'copy number variation plot',
+    abbreviation: 'CNV plot',
+    description: 'ゲノム上の位置に沿ってコピー数の増減を示す図。',
+    href: '/glossary/cnv-plot/',
     category: 'statistics-and-design',
   },
   {
@@ -2451,6 +2511,35 @@ export const glossaryTerms: GlossaryTerm[] = [
     description:
       'Figureの条件、記号、サンプル、統計表示などを説明する図の説明文。',
     href: '/glossary/figure-legend/',
+    category: 'paper-reading',
+  },
+  {
+    term: 'multi-panel Figure',
+    english: 'multi-panel Figure',
+    description: '複数のパネルを組み合わせて研究結果を示すFigure。',
+    href: '/glossary/multi-panel-figure/',
+    category: 'paper-reading',
+  },
+  {
+    term: '補足Figure',
+    english: 'supplementary figure',
+    description: '本文Figureを支える追加データ、対照、解析詳細を示すFigure。',
+    href: '/glossary/supplementary-figure/',
+    category: 'paper-reading',
+  },
+  {
+    term: 'Graphical abstract',
+    english: 'graphical abstract',
+    description: '論文の全体像や主張を視覚的にまとめた要約図。',
+    href: '/glossary/graphical-abstract/',
+    category: 'paper-reading',
+  },
+  {
+    term: '患者コホート表',
+    english: 'patient cohort table',
+    description:
+      '研究対象者の人数、群分け、背景因子、追跡期間、欠測などをまとめた表。',
+    href: '/glossary/patient-cohort-table/',
     category: 'paper-reading',
   },
   {

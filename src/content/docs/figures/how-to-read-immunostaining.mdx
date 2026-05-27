@@ -5,13 +5,14 @@ part: figures
 module: experimental-figures
 level: foundation
 priority: P1
-order: 45
+order: 76
 learningPaths:
   - figure-reading
 relatedTerms:
+  - immunostaining
+  - antibody
   - protein
   - cell
-  - biological-technical-replicates
 prerequisites:
   - /methods/immunostaining/
   - /methods/positive-negative-control/
@@ -43,26 +44,40 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   caption="色の意味、局在、対照、撮影条件、定量方法をFigure legendとMethodsで確認します。"
 />
 
-免疫染色画像では、[蛍光](/glossary/fluorescence/)や発色のシグナルが目的タンパク質の存在場所を示します。まず、どの色が何を表すか、核、細胞膜、細胞質、細胞小器官のどこにシグナルがあるかを確認します。
+## このFigureで何を見るか
 
-次に、条件間でシグナルの強さや局在が変わるかを見ます。ただし、画像の明るさは撮影条件や[画像処理](/glossary/image-processing/)に影響されます。Figure legendやMethodsで、同じ条件で撮影されたか、陰性対照や二次抗体のみの対照があるかを確認します。
+免疫染色画像では、シグナルの場所、強さ、細胞内局在、対照、撮影条件を確認します。見た目の明るさだけでなく、背景シグナルや定量方法も合わせて読みます。
 
-[代表画像](/glossary/representative-image/)だけでは再現性やばらつきが分かりにくいため、定量グラフ、解析した細胞数、視野数、独立実験数も合わせて読みます。
+## まず一言でいうと
+
+きれいに光っているかではなく、「どこに、どの条件で、対照と比べてどう見えるか」を読みます。
+
+## 図の構成要素
+
+- チャネル: DAPI、標的タンパク質、細胞骨格マーカーなど、色が何を示すか。
+- スケールバー: 細胞や構造の大きさを読む基準です。
+- 対照: 抗体なし、二次抗体のみ、ノックダウン、既知陽性条件など。
+- 代表画像: 画像が一例か、複数サンプルの傾向を代表しているかを確認します。
+- 定量: 蛍光強度、陽性細胞率、共局在などが別パネルに出ることがあります。
+
+## 読む順番
+
+1. 色とチャネルが何を示すかをFigure legendで確認します。
+2. スケールバーと倍率を見て、細胞内か組織内かを把握します。
+3. 対照画像と比べて、背景や非特異的シグナルを確認します。
+4. 局在、強度、陽性率のどれを主張しているかを分けます。
+5. 定量グラフ、n数、撮影条件があるか確認します。
 
 ## 前提に戻る
 
-免疫染色画像は見た目の印象が強いFigureです。画像の明るさや色だけでなく、実験条件と定量の前提を確認します。
-
-- 実験の原理は[免疫染色とは何か](/methods/immunostaining/)で確認します。
-- 背景シグナルや非特異的反応は、[陽性対照と陰性対照](/methods/positive-negative-control/)の観点で確認します。
-- 代表画像と定量グラフの関係は、[顕微鏡画像](/figures/how-to-read-microscopy-image/)と[棒グラフ](/figures/how-to-read-bar-plot/)を行き来して読みます。
-- 視野数や細胞数だけでなく、独立実験数を[生物学的反復と技術的反復](/statistics/biological-technical-replicates/)で確認します。
+実験の原理は[免疫染色とは何か](/methods/immunostaining/)で確認します。画像の代表性を考えるときは、[顕微鏡画像の読み方](/figures/how-to-read-microscopy-image/)と[Figure legendの読み方](/figures/figure-legend/)に戻ります。
 
 ## よくある誤解
 
-- 明るい画像ほど発現が高いとは限りません。撮影条件や画像処理を確認します。
-- シグナルが重なって見えても、完全に同じ場所にあるとは限りません。
-- 代表画像だけで結論を決めず、定量と反復を確認します。
+- 明るい画像を、必ず強い発現と読む。
+- スケールバーや撮影条件を確認しない。
+- 対照を見ずに、シグナルが特異的だと判断する。
+- 代表画像だけで、群全体の傾向を決める。
 
 <Quiz
   questions={[

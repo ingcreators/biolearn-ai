@@ -9,6 +9,7 @@ order: 16
 learningPaths:
   - figure-reading
 relatedTerms:
+  - supplementary-figure
   - control-group
   - reproducibility
 prerequisites:
@@ -42,11 +43,33 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   caption="追加対照、品質管理、別条件、詳細データが本文のどの主張を支えているかを見ます。"
 />
 
-Supplementary Figure（補足Figure）は、本文に入りきらない詳細データを示すために使われます。重要でない図という意味ではなく、本文Figureの信頼性や解釈を確認する手がかりになることがあります。
+## このFigureで何を見るか
 
-たとえば、[代表画像](/glossary/representative-image/)の追加例、別条件での確認、[品質管理](/glossary/quality-control/)、対照実験、追加サンプル、解析パラメータの違いなどが補足に置かれることがあります。本文Figureだけを見て分からない疑問があるときは、対応する補足Figureを探します。
+補足Figureでは、本文Figureを支える追加対照、品質管理、別条件、追加サンプル、解析の詳細を確認します。本文に入らなかったから重要でない、という意味ではありません。
 
-読むときは、本文のどの主張やFigureを支えている補足なのかを確認します。補足Figureだけで独立した大きな結論を作るのではなく、本文FigureやMethodsと合わせて読みます。
+## まず一言でいうと
+
+補足Figureは「本文Figureをどう支えているか」を読む図です。単独で大きな結論を作るより、本文FigureやMethodsに戻して位置づけます。
+
+## 図の構成要素
+
+- 対応先: 本文のどのFigure、どの主張、どのMethodsに対応する補足か。
+- 追加対照: negative control、positive control、別抗体、別サンプルなど。
+- 品質管理: シーケンス品質、フィルタリング、ゲーティング、代表画像の追加例など。
+- 別条件: 時間、濃度、細胞種、解析パラメータを変えた確認です。
+- 詳細データ: 本文では要約された値や全リストが補足に置かれることがあります。
+
+## 読む順番
+
+1. 本文FigureやResults本文から、補足Figureへの参照を探します。
+2. 補足Figureが何を補っているのかを一文で整理します。
+3. 対照、品質管理、追加サンプル、解析条件のどれに当たるか分類します。
+4. 本文Figureの主張を強めるのか、条件つきにするのかを見ます。
+5. 補足Figureだけから本文にない主張を作っていないか確認します。
+
+## 前提に戻る
+
+補足Figureを読むときは、[multi-panel Figureの読み方](/figures/multi-panel-figure/)と[Methods確認チェックリスト](/papers/methods-checklist/)が役に立ちます。補足に対照や追加検証がある場合は、[再現性](/statistics/reproducibility/)や[研究の限界](/statistics/limitations/)も合わせて見ます。
 
 ## よくある誤解
 
@@ -54,12 +77,6 @@ Supplementary Figure（補足Figure）は、本文に入りきらない詳細デ
 - 本文Figureとの対応を確認せず、単独の図として読む。
 - 対照実験や品質管理が補足にある可能性を見落とす。
 - 補足Figureだけから、本文にない大きな結論を作ってしまう。
-
-## 前提に戻る
-
-補足Figureは、本文Figureの主張を支える対照、品質管理、追加サンプル、解析条件を確認する場所です。対応する本文Figureを見つけたうえで、[Methods確認チェックリスト](/papers/methods-checklist/) に戻り、何を補っているのかを整理します。
-
-補足に対照や追加検証がある場合は、[対照群](/statistics/control-group/) と [再現性](/statistics/reproducibility/) を確認します。補足Figureだけから本文にない大きな結論を作るのではなく、[研究の限界](/statistics/limitations/) と合わせて主張の範囲を考えます。
 
 <Quiz
   questions={[

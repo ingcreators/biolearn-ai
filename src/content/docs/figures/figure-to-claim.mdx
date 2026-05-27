@@ -5,13 +5,14 @@ part: figures
 module: figure-synthesis
 level: intermediate
 priority: P1
-order: 110
+order: 120
 learningPaths:
   - figure-reading
 relatedTerms:
+  - claim
+  - evidence
   - significance-vs-importance
   - correlation-causation
-  - control-group
 prerequisites:
   - /figures/multi-panel-figure/
   - /papers/how-to-read-results/
@@ -42,11 +43,33 @@ Figureを読む目的は、見た目を理解するだけでなく、論文の�
   caption="本文の文、対応パネル、測定値、対照、統計表示をつなげて、どこまで言えるかを考えます。"
 />
 
-Results本文には、「増加した」「低下した」「関連した」「必要である」「示唆された」などの表現が出てきます。これらの文を読んだら、対応するFigureやパネルに戻り、どのデータがその文を支えているかを確認します。
+## この読み方で何を見るか
 
-まず、主張の対象を分解します。何が、どの条件で、何と比べて、どの方向に変化したのかを見ます。次に、その主張に対応するパネルで、軸、条件、対照、ばらつき、反復、統計表示を確認します。
+Figureと主張を対応づけるときは、Results本文の一文が、どのFigure、どのパネル、どの測定値、どの比較条件に支えられているかを確認します。
 
-Figureから直接言えることと、解釈として一歩進んでいることは分けて読みます。たとえば「相関した」はFigureから読みやすい一方で、「原因である」は追加実験やデザインが必要です。
+## まず一言でいうと
+
+「本文にそう書いてある」から一歩戻り、「その文はどのデータから言えるのか」を探します。
+
+## 構成要素
+
+- 主張の文: 増加した、低下した、関連した、必要である、示唆された、などの表現です。
+- 対応パネル: その文を支えるFigure番号とパネル記号を探します。
+- 比較条件: 何と何を比べているかを確認します。
+- 測定値: 軸、単位、正規化、統計表示を読みます。
+- 主張の強さ: 直接の結果か、解釈として一歩進んだ文かを分けます。
+
+## 読む順番
+
+1. Results本文から、データを述べている文を1つ選びます。
+2. 文中の対象、条件、比較、方向を分解します。
+3. 対応するFigureやパネルに戻ります。
+4. 軸、条件、対照、n数、ばらつき、統計表示を確認します。
+5. Figureから直接言えることと、追加解釈を分けます。
+
+## 前提に戻る
+
+この読み方は、[multi-panel Figureの読み方](/figures/multi-panel-figure/)と[Resultsの読み方](/papers/how-to-read-results/)の間をつなぎます。主張が強く見えるときは、[統計的有意性と生物学的重要性](/statistics/significance-vs-importance/)や[相関と因果](/statistics/correlation-causation/)に戻ります。
 
 ## よくある誤解
 

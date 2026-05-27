@@ -2,12 +2,15 @@
 title: ROC曲線の読み方
 description: 分類モデルや判別性能を示すROC曲線で、感度、偽陽性率、AUCを読む基本を説明します。
 part: figures
-module: quantitative-figures
+module: advanced-quantitative-figures
 level: intermediate
 priority: P1
-order: 84
+order: 110
+learningPaths:
+  - figure-reading
 relatedTerms:
-  - p-value
+  - roc-curve
+  - threshold
   - sample-size
   - significance-vs-importance
 prerequisites:
@@ -39,11 +42,33 @@ ROC曲線は、分類や判別の[しきい値](/glossary/threshold/)を変え�
   caption="真陽性率、偽陽性率、AUC、検証データの有無を確認して読みます。"
 />
 
-ROCは receiver operating characteristic の略です。生命科学論文では、遺伝子発現、画像特徴量、スコアなどを使って、2つの状態をどの程度区別できるかを示すときに使われることがあります。
+## このFigureで何を見るか
 
-縦軸は真陽性率（true positive rate）または感度（sensitivity）、横軸は偽陽性率（false positive rate）を表すことが多いです。曲線が左上に近いほど、あるデータセット上では区別がよいと読みます。
+ROC曲線では、しきい値を変えたときの真陽性率と偽陽性率の関係を読みます。AUC、評価データ、サンプル数、クラスの偏りを確認します。
 
-AUC（area under the curve）は曲線の下の面積で、1に近いほど区別性能が高い目安になります。ただし、AUCが高いことは、そのまま実用性や因果関係を意味しません。データの分け方、サンプル数、外部検証、目的に合う評価指標を確認します。
+## まず一言でいうと
+
+ROC曲線は「あるデータセット上でどの程度区別できたか」を示す図です。AUCが高いことだけで、実用性や個別判断まで示すわけではありません。
+
+## 図の構成要素
+
+- 縦軸: 真陽性率、感度、sensitivityなどを表します。
+- 横軸: 偽陽性率、1-specificityなどを表します。
+- 対角線: ランダムに近い性能の目安として描かれることがあります。
+- AUC: 曲線の下の面積で、判別性能の要約です。
+- データ分割: 学習データ、検証データ、外部検証の違いを確認します。
+
+## 読む順番
+
+1. 何を分類・判別しようとしている図か確認します。
+2. 縦軸と横軸の定義を読みます。
+3. 曲線が対角線や左上とどの程度離れているかを見ます。
+4. AUCと信頼区間があれば確認します。
+5. 評価データ、サンプル数、クラスの偏り、外部検証の有無を確認します。
+
+## 前提に戻る
+
+ROC曲線は研究Figureとして読み、個別の診断や治療判断には使いません。統計表示を読むときは[p値とは何か](/statistics/p-value/)や[サンプルサイズ](/statistics/sample-size/)に戻り、モデル評価の限界を確認します。
 
 ## よくある誤解
 

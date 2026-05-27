@@ -5,14 +5,14 @@ part: figures
 module: bioinformatics-figures
 level: intermediate
 priority: P2
-order: 98
+order: 106
 learningPaths:
   - figure-reading
 relatedTerms:
+  - cnv-plot
+  - copy-number-variation
   - genome
-  - chromosome
   - genetic-variant
-  - mutation
 prerequisites:
   - /fundamentals/genome/
   - /fundamentals/chromosome/
@@ -44,13 +44,33 @@ CNV plotは、ゲノム上の位置に沿って、DNA領域のコピー数が増
   caption="縦軸の定義、増幅と欠失の向き、セグメントの幅、ノイズと閾値を分けて確認します。"
 />
 
-コピー数変化（copy number variation, CNV）は、ゲノムの一部が通常より多く存在したり、少なく存在したりする変化です。CNV plotでは、横軸に染色体やゲノム位置、縦軸にコピー数やlog ratioを置くことが多くあります。
+## このFigureで何を見るか
 
-上方向の変化は増幅、下方向の変化は欠失として示されることがあります。ただし、縦軸の定義はFigureごとに異なるため、0が基準なのか、2コピーが基準なのか、正規化後の値なのかを確認します。
+CNV plotでは、ゲノム上の位置に沿ってコピー数が増えているか減っているかを読みます。基準線、縦軸の定義、セグメント、ノイズ、サンプル比較を確認します。
 
-CNV plotは点が細かく揺れて見えることがあります。個々の点だけでなく、平滑化された線、セグメント、閾値、サンプル数を確認します。広い領域の変化と狭い領域の変化では、解釈に必要な文脈も変わります。
+## まず一言でいうと
 
-CNVは、1塩基の違いだけでなく、ゲノム領域のコピー数が変わるタイプの [遺伝的変異](/glossary/genetic-variant/) として扱われます。Figureでは、どの種類の変化を検出しているのかをMethodsに戻って確認します。
+CNV plotは「ゲノム領域のコピー数の増減」を見る図です。点が揺れている場所ではなく、連続した領域として変化しているかを見ます。
+
+## 図の構成要素
+
+- 横軸: 染色体やゲノム位置を示します。
+- 縦軸: コピー数、log ratio、正規化値などを表します。
+- 基準線: 0や2コピーなど、通常状態の基準です。
+- セグメント: 連続した増幅や欠失をまとめた線として表示されることがあります。
+- サンプルラベル: tumor、normal、clone、cell lineなど、比較対象を確認します。
+
+## 読む順番
+
+1. 横軸の染色体やゲノム範囲を確認します。
+2. 縦軸がコピー数か、log ratioか、正規化値かを確認します。
+3. 基準線より上が増幅か、下が欠失かを読みます。
+4. 点の揺れではなく、連続したセグメントや領域幅を見ます。
+5. どの解析手法でCNVを推定したか、Methodsに戻って確認します。
+
+## 前提に戻る
+
+CNVは[コピー数変化](/genomics/copy-number-variation/)や[遺伝的変異とは何か](/genomics/genetic-variants/)とつながります。ゲノム位置が読みにくい場合は、[ゲノムとは何か](/fundamentals/genome/)と[染色体とは何か](/fundamentals/chromosome/)に戻ります。
 
 ## よくある誤解
 
@@ -79,7 +99,6 @@ CNVは、1塩基の違いだけでなく、ゲノム領域のコピー数が変�
   items={[
     { title: 'ゲノムとは何か', href: '/fundamentals/genome/' },
     { title: '染色体とは何か', href: '/fundamentals/chromosome/' },
-    { title: '遺伝的変異の用語整理', href: '/glossary/genetic-variant/' },
     { title: '遺伝的変異の記事', href: '/genomics/genetic-variants/' },
   ]}
 />

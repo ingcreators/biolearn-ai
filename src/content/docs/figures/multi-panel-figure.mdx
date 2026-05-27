@@ -9,6 +9,7 @@ order: 14
 learningPaths:
   - figure-reading
 relatedTerms:
+  - multi-panel-figure
   - control-group
   - biological-technical-replicates
   - significance-vs-importance
@@ -43,11 +44,33 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   caption="代表画像、定量、対照、追加検証がどのように主張を支えているかを確認します。"
 />
 
-生命科学論文のFigureでは、`Figure 1A`、`Figure 1B`、`Figure 1C` のように複数のパネルが並びます。各パネルは独立した小図でありながら、全体として1つの主張を支える構成になっています。
+## このFigureで何を見るか
 
-読み始めるときは、まずFigure legendの冒頭や本文で、このFigure全体が何を示したいのかを確認します。そのうえで、各パネルが「実験デザイン」「代表画像」「定量グラフ」「追加実験」「統計的な比較」のどれに近い役割かを見分けます。
+multi-panel Figureでは、各パネルが単独で何を示すかだけでなく、A、B、C、Dが組み合わさってどの主張を支えているかを見ます。代表画像、定量グラフ、対照、追加検証が分担して置かれることが多いです。
 
-1つの見栄えのよい画像だけで結論を決めず、定量結果、反復、対照、別手法での確認が同じ方向を示しているかを確認します。
+## まず一言でいうと
+
+複数パネルFigureは、1枚の図の中に小さな実験の流れが入っています。最初に全体の問いをつかみ、そのあと各パネルの役割を分けて読みます。
+
+## 図の構成要素
+
+- パネル記号: A、B、Cなどの記号とFigure legendの説明を対応づけます。
+- 実験デザイン: 条件、時間、処理、サンプルの違いがどのパネルにあるかを見ます。
+- 代表画像: 顕微鏡画像やブロットなど、例として示された画像です。
+- 定量結果: 平均、分布、エラーバー、統計表示が主張を支えるか確認します。
+- 追加検証: 別手法、別条件、補足Figureが同じ方向を示すかを見ます。
+
+## 読む順番
+
+1. Figure legendの冒頭とResults本文から、このFigure全体の問いを確認します。
+2. 各パネルを「デザイン」「観察」「定量」「対照」「検証」に分類します。
+3. 代表画像と定量グラフが同じ主張を支えているか見ます。
+4. 対照、反復、統計表示がどのパネルで示されているか確認します。
+5. 1つのパネルから言えることと、全体で初めて言えることを分けます。
+
+## 前提に戻る
+
+multi-panel Figureでは、[Figure legendの読み方](/figures/figure-legend/)と[Resultsの読み方](/papers/how-to-read-results/)が土台になります。対照や反復が別パネルに置かれることも多いため、[対照群](/statistics/control-group/)と[生物学的反復と技術的反復](/statistics/biological-technical-replicates/)も確認します。
 
 ## よくある誤解
 
@@ -55,12 +78,6 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 - 代表画像と定量グラフの役割を区別しない。
 - パネルの順番が、必ずしも実験の時間順だと思い込む。
 - 補足Figureに重要な対照がある可能性を見落とす。
-
-## 前提に戻る
-
-multi-panel Figureでは、各パネルが何を支えているかを [Resultsの読み方](/papers/how-to-read-results/) と合わせて確認します。代表画像、定量、対照、追加検証が同じ主張を支えているかを、パネルごとに分けて読みます。
-
-対照や反復が別パネルに置かれていることも多いため、[対照群](/statistics/control-group/) と [生物学的反復と技術的反復](/statistics/biological-technical-replicates/) に戻って、比較の基準と独立性を確認します。アスタリスクがあるパネルでは、[統計的有意性と生物学的重要性](/statistics/significance-vs-importance/) も合わせて見ます。
 
 <Quiz
   questions={[
