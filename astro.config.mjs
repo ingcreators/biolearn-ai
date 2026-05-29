@@ -124,6 +124,11 @@ export default defineConfig({
           items: [
             { label: '基礎から学ぶ', link: '/paths/foundations/' },
             {
+              label: '実験・統計を確認する',
+              link: '/paths/methods-statistics/',
+            },
+            { label: 'オミクス解析を読む', link: '/paths/omics-analysis/' },
+            {
               label: 'Figureを読めるようになる',
               link: '/paths/figure-reading/',
             },

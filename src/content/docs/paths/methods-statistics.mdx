@@ -1,0 +1,62 @@
+---
+title: 実験・統計を確認する
+description: Methods、Figure legend、Resultsを読むために、実験設計・統計表示・代表的な実験手法を順番に確認する学習パスです。
+---
+
+import ArticleList from '../../../components/ArticleList.astro';
+
+このパスでは、生命科学論文の Methods や Figure legend に出てくる「何を、何と比べ、どのくらい確からしく言えるのか」を読むための土台を作ります。
+
+手法の手順を細かく覚えることが目的ではありません。サンプル、対照、反復、n数、ばらつき、統計表示、測定対象を分けて確認し、Figureや論文本文へ戻れるようにします。
+
+## このパスで身につけること
+
+- 変数、分布、平均、中央値を使って、Figureの軸や値を読む
+- n数、反復、対照、ランダム化、盲検化をMethodsの確認点として扱う
+- エラーバー、信頼区間、p値、効果量、多重検定補正を分けて読む
+- PCR、qPCR、Western blot、免疫染色、フローサイトメトリー、NGSなどが何を測る手法か説明する
+- 結果から言える範囲と、Discussionで追加された解釈を区別する
+
+## 推奨ルート
+
+| 順番 | まとまり                | まず読む記事                                                                                                                                                                                                                              |
+| ---- | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1    | データの見方            | [変数](/statistics/variable/) → [分布](/statistics/distribution/) → [平均と中央値](/statistics/mean-median/)                                                                                                                              |
+| 2    | 比較の設計              | [生物学的反復と技術的反復](/statistics/biological-technical-replicates/) → [n数](/statistics/sample-size/) → [対照群](/statistics/control-group/) → [ランダム化](/statistics/randomization/) → [盲検化](/statistics/blinding/)            |
+| 3    | 対照とサンプル          | [対照](/methods/control/) → [陽性対照と陰性対照](/methods/positive-negative-control/) → [サンプル](/methods/sample/)                                                                                                                      |
+| 4    | ばらつきと推定          | [エラーバー](/statistics/error-bars/) → [標準偏差と標準誤差](/statistics/standard-deviation-standard-error/) → [信頼区間](/statistics/confidence-interval/)                                                                               |
+| 5    | 有意差と主張の強さ      | [p値](/statistics/p-value/) → [効果量](/statistics/effect-size/) → [多重検定補正](/statistics/multiple-testing-correction/) → [統計的有意性と生物学的重要性](/statistics/significance-vs-importance/)                                     |
+| 6    | 読みすぎを避ける確認点  | [相関と因果](/statistics/correlation-causation/) → [交絡](/statistics/confounding/) → [バイアス](/statistics/bias/) → [再現性](/statistics/reproducibility/) → [研究の限界](/statistics/limitations/)                                     |
+| 7    | 基本的な実験Figure      | [PCR](/methods/pcr/) → [qPCR](/methods/qpcr/) → [RT-qPCR](/methods/rt-qpcr/) → [Western blot](/methods/western-blot/) → [ローディングコントロール](/methods/loading-control/)                                                             |
+| 8    | 細胞・タンパク質を見る  | [免疫染色](/methods/immunostaining/) → [蛍光顕微鏡](/methods/fluorescence-microscopy/) → [フローサイトメトリー](/methods/flow-cytometry/) → [FACS](/methods/facs/) → [抗体検証](/methods/antibody-validation/) → [ELISA](/methods/elisa/) |
+| 9    | 遺伝子機能と配列データ  | [CRISPR](/methods/crispr/) → [ノックアウト](/methods/knockout/) → [ノックダウン](/methods/knockdown/) → [過剰発現](/methods/overexpression/) → [レポーターアッセイ](/methods/reporter-assay/)                                             |
+| 10   | NGSへ進むための実験前提 | [RNA抽出](/methods/rna-extraction/) → [ライブラリ調製](/methods/library-preparation/) → [シーケンシング](/methods/sequencing/) → [NGS](/methods/ngs/)                                                                                     |
+| 11   | 論文本文で確認する      | [Methodsの読み方](/papers/how-to-read-methods/) → [Methods確認チェックリスト](/papers/methods-checklist/) → [批判的に読む](/papers/critical-reading/)                                                                                     |
+
+## 目的別に戻る
+
+| つまずいていること                      | 戻る場所                                                                                                                                 | 次に進む場所                                                                                      |
+| --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| Figureの棒や点が何を表すか分からない    | [変数](/statistics/variable/)、[分布](/statistics/distribution/)、[軸・ラベル・単位](/figures/axis-label-unit/)                          | [棒グラフ](/figures/how-to-read-bar-plot/)、[散布図](/figures/how-to-read-scatter-plot/)          |
+| n数や反復を読み落としやすい             | [生物学的反復と技術的反復](/statistics/biological-technical-replicates/)、[n数](/statistics/sample-size/)                                | [Figure legend](/figures/figure-legend/)、[Methods確認チェックリスト](/papers/methods-checklist/) |
+| 有意差マークだけで判断してしまう        | [p値](/statistics/p-value/)、[効果量](/statistics/effect-size/)、[統計的有意性と生物学的重要性](/statistics/significance-vs-importance/) | [Figureと主張](/figures/figure-to-claim/)、[Resultsの読み方](/papers/how-to-read-results/)        |
+| Methodsの条件をどこから見ればよいか迷う | [対照](/methods/control/)、[サンプル](/methods/sample/)、[Methodsの読み方](/papers/how-to-read-methods/)                                 | [論文を読めるようになる](/paths/paper-reading/)                                                   |
+| 手法名がFigureでどう見えるか知りたい    | [実験手法](/methods/)                                                                                                                    | [論文Figureの読み方](/figures/)、[Figureを読めるようになる](/paths/figure-reading/)               |
+| 解析Figureの統計が読みにくい            | [多重検定補正](/statistics/multiple-testing-correction/)、[研究の限界](/statistics/limitations/)                                         | [オミクス解析を読む](/paths/omics-analysis/)、[Volcano plot](/figures/how-to-read-volcano-plot/)  |
+
+## どこまで読めば次へ進めるか
+
+最初から全記事を暗記する必要はありません。まずは次の問いに答えられれば、Figure読解や論文読解へ進めます。
+
+- Figureの点やバーが、何の単位を表しているか確認できる
+- 対照群、n数、反復、ばらつきをMethodsやlegendから探せる
+- p値と効果量、統計的有意性と生物学的重要性を分けて説明できる
+- 手法名を見たとき、DNA、RNA、タンパク質、細胞のどれを測る方法か見当をつけられる
+
+## 記事一覧
+
+<ArticleList learningPath="methods-statistics" />
+
+## 次に進む
+
+実験・統計の確認点が見えてきたら、[Figureを読めるようになる](/paths/figure-reading/) で実際の図を読みます。RNA-seq、single-cell解析、変異解析などのデータ解析に進む場合は、[オミクス解析を読む](/paths/omics-analysis/) を使います。論文全体を読む練習に進む場合は、[論文を読めるようになる](/paths/paper-reading/) へ進みます。
