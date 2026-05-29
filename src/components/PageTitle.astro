@@ -1,0 +1,45 @@
+---
+import { getExactSearchToken, getSearchSubject } from '../lib/search-metadata';
+
+const PAGE_TITLE_ID = '_top';
+const { entry } = Astro.locals.starlightRoute;
+const title = entry.data.title;
+const isGlossaryEntry = entry.id.startsWith('glossary/');
+const exactTitleToken = isGlossaryEntry
+  ? undefined
+  : getExactSearchToken(getSearchSubject(title));
+---
+
+{
+  exactTitleToken && (
+    <span
+      class="biolearn-search-exact-title"
+      data-pagefind-meta="exact_title"
+      data-pagefind-ignore
+    >
+      {exactTitleToken}
+    </span>
+  )
+}
+<h1 id={PAGE_TITLE_ID}>{title}</h1>
+
+<style>
+  @layer starlight.core {
+    .biolearn-search-exact-title {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+
+    h1 {
+      margin-top: 1rem;
+      font-size: var(--sl-text-h1);
+      line-height: var(--sl-line-height-headings);
+      font-weight: 600;
+      color: var(--sl-color-white);
+    }
+  }
+</style>

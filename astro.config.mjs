@@ -107,6 +107,8 @@ export default defineConfig({
         alt: 'BioLearn',
       },
       components: {
+        PageTitle: './src/components/PageTitle.astro',
+        Search: './src/components/Search.astro',
         Footer: './src/components/BiolearnFooter.astro',
       },
       routeMiddleware: './src/starlightRouteData.ts',
