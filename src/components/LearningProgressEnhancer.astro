@@ -50,12 +50,81 @@
     badge.classList.add(`is-${summary.status}`);
   };
 
-  const ensureLinkBadge = (link) => {
-    const parent = link.closest('li, td, .biolearn-home-card');
-    if (!parent) return undefined;
+  const canTrackPath = (href) =>
+    href &&
+    href.startsWith('/') &&
+    !href.startsWith('/paths/') &&
+    !href.startsWith('/glossary/');
 
-    const existing = parent.querySelector(
-      `:scope > [data-biolearn-progress-badge], :scope [data-biolearn-generated-badge]`,
+  const getTrackedLinks = (container) =>
+    Array.from(container.querySelectorAll('a[href^="/"]')).filter((link) =>
+      canTrackPath(link.getAttribute('href')),
+    );
+
+  const summarizePaths = (paths) => {
+    const summaries = paths.map((path) => store.getLessonSummary(path));
+    const total = summaries.length;
+    const reviewCount = summaries.filter(
+      (summary) => summary.status === 'review',
+    ).length;
+    const completedCount = summaries.filter(
+      (summary) => summary.status === 'completed',
+    ).length;
+    const startedCount = summaries.filter(
+      (summary) => summary.status !== 'not-started',
+    ).length;
+    const completedLikeCount = reviewCount + completedCount;
+
+    if (total === 1) return summaries[0];
+
+    if (reviewCount > 0) {
+      return {
+        status: 'review',
+        label: `復習あり ${completedLikeCount}/${total}`,
+      };
+    }
+
+    if (completedLikeCount === total) {
+      return {
+        status: 'completed',
+        label: `学習済 ${total}/${total}`,
+      };
+    }
+
+    if (startedCount > 0) {
+      return {
+        status: 'in-progress',
+        label: `進行中 ${startedCount}/${total}`,
+      };
+    }
+
+    return {
+      status: 'not-started',
+      label: `未学習 0/${total}`,
+    };
+  };
+
+  const ensureContainerBadge = (container) => {
+    const existing = container.querySelector(
+      ':scope > [data-biolearn-generated-badge]',
+    );
+    if (existing) return existing;
+
+    const badge = document.createElement('span');
+    badge.className =
+      'biolearn-status-badge biolearn-path-status-badge is-not-started';
+    badge.dataset.biolearnGeneratedBadge = '';
+    badge.dataset.biolearnProgressBadge = '';
+    badge.textContent = '未学習';
+
+    container.append(badge);
+
+    return badge;
+  };
+
+  const ensureCardBadge = (link) => {
+    const existing = link.querySelector(
+      ':scope > [data-biolearn-generated-badge]',
     );
     if (existing) return existing;
 
@@ -64,12 +133,7 @@
     badge.dataset.biolearnGeneratedBadge = '';
     badge.dataset.biolearnProgressBadge = '';
     badge.textContent = '未学習';
-
-    if (link.classList.contains('biolearn-home-card')) {
-      link.insertBefore(badge, link.firstChild);
-    } else {
-      link.insertAdjacentElement('afterend', badge);
-    }
+    link.insertBefore(badge, link.firstChild);
 
     return badge;
   };
@@ -90,19 +154,28 @@
 
     document
       .querySelectorAll(
-        '.sl-markdown-content ol a[href^="/"], .sl-markdown-content table a[href^="/"], .biolearn-home-card[href^="/"]',
+        '.sl-markdown-content ol:not(.biolearn-article-list) > li, .sl-markdown-content td',
       )
+      .forEach((container) => {
+        if (container.matches('[data-biolearn-article-item]')) return;
+
+        const links = getTrackedLinks(container);
+        if (links.length === 0) return;
+
+        const badge = ensureContainerBadge(container);
+        applyBadgeState(
+          badge,
+          summarizePaths(links.map((link) => link.getAttribute('href'))),
+        );
+      });
+
+    document
+      .querySelectorAll('.biolearn-home-card[href^="/"]')
       .forEach((link) => {
         const href = link.getAttribute('href');
-        if (
-          !href ||
-          href.startsWith('/paths/') ||
-          href.startsWith('/glossary/')
-        )
-          return;
+        if (!canTrackPath(href)) return;
 
-        const badge = ensureLinkBadge(link);
-        if (!badge) return;
+        const badge = ensureCardBadge(link);
         applyBadgeState(badge, store.getLessonSummary(href));
       });
   };

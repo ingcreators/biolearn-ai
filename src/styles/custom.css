@@ -513,16 +513,46 @@ h1[data-page-title] .biolearn-hero-main {
 .biolearn-status-badge.is-completed {
   color: #bdeee6;
   border-color: #54c6b7;
+  background: color-mix(in srgb, var(--biolearn-panel-bg) 78%, #54c6b7);
 }
 
 .biolearn-status-badge.is-review {
   color: #ffe0a3;
   border-color: #e6a93b;
+  background: color-mix(in srgb, var(--biolearn-panel-bg) 80%, #e6a93b);
 }
 
 .biolearn-status-badge.is-in-progress {
   color: var(--sl-color-text-accent);
   border-color: var(--sl-color-accent);
+}
+
+:root[data-theme="light"] .biolearn-status-badge.is-completed {
+  color: #063f3a;
+  border-color: #087b73;
+  background: #d9f1ec;
+}
+
+:root[data-theme="light"] .biolearn-status-badge.is-review {
+  color: #6b4300;
+  border-color: #b47a10;
+  background: #fff1cf;
+}
+
+:root[data-theme="light"] .biolearn-status-badge.is-in-progress {
+  color: #07524d;
+  border-color: #087b73;
+  background: #e5f6f2;
+}
+
+.biolearn-path-status-badge {
+  font-size: 0.74rem;
+  white-space: nowrap;
+}
+
+.sl-markdown-content li > .biolearn-path-status-badge,
+.sl-markdown-content td > .biolearn-path-status-badge {
+  margin-left: 0.55rem;
 }
 
 .biolearn-home-card > .biolearn-status-badge {
