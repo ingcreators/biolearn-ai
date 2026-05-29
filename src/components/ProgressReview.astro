@@ -1,0 +1,193 @@
+<section class="biolearn-progress" data-biolearn-progress>
+  <div class="biolearn-progress-actions">
+    <button type="button" data-progress-refresh>更新</button>
+    <button type="button" data-progress-clear>すべての履歴をリセット</button>
+  </div>
+
+  <div
+    class="biolearn-progress-summary"
+    data-progress-summary
+    aria-live="polite"
+  >
+    学習履歴はまだありません。
+  </div>
+
+  <div class="biolearn-progress-grid">
+    <section>
+      <h2>学習した記事</h2>
+      <div class="biolearn-progress-list" data-progress-lessons></div>
+    </section>
+
+    <section>
+      <h2>間違えた問題の復習</h2>
+      <div class="biolearn-progress-list" data-progress-review></div>
+    </section>
+  </div>
+</section>
+
+<script>
+  import { createLearningProgressStore } from '../lib/learning-progress';
+
+  const store = createLearningProgressStore();
+  const root = document.querySelector<HTMLElement>('[data-biolearn-progress]');
+
+  const createElement = <K extends keyof HTMLElementTagNameMap>(
+    tagName: K,
+    className?: string,
+    textContent?: string,
+  ) => {
+    const element = document.createElement(tagName);
+    if (className) element.className = className;
+    if (textContent) element.textContent = textContent;
+    return element;
+  };
+
+  const renderLessons = (target: HTMLElement) => {
+    const lessons = store.getLessons();
+    target.replaceChildren();
+
+    if (lessons.length === 0) {
+      target.append(
+        createElement(
+          'p',
+          'biolearn-progress-empty',
+          '学習履歴はまだありません。',
+        ),
+      );
+      return;
+    }
+
+    for (const lesson of lessons) {
+      const item = createElement('article', 'biolearn-progress-item');
+      const title = createElement('h3');
+      const link = createElement('a', undefined, lesson.title);
+      link.href = lesson.path;
+      title.append(link);
+
+      const reviewCount = Object.values(lesson.questions).filter(
+        (question) => question.needsReview,
+      ).length;
+      const meta = createElement(
+        'p',
+        'biolearn-progress-meta',
+        `前回 ${lesson.latestScore}/${lesson.totalQuestions}問・最高 ${lesson.bestScore}/${lesson.totalQuestions}問・復習 ${reviewCount}問`,
+      );
+
+      item.append(title, meta);
+      target.append(item);
+    }
+  };
+
+  const renderReviewQuestions = (target: HTMLElement) => {
+    const questions = store.getReviewQuestions();
+    target.replaceChildren();
+
+    if (questions.length === 0) {
+      target.append(
+        createElement(
+          'p',
+          'biolearn-progress-empty',
+          '復習対象の問題はありません。',
+        ),
+      );
+      return;
+    }
+
+    for (const question of questions) {
+      const item = createElement('article', 'biolearn-progress-question');
+      const lessonLink = createElement(
+        'a',
+        'biolearn-progress-lesson',
+        question.lessonTitle,
+      );
+      lessonLink.href = question.lessonPath;
+      const heading = createElement('h3', undefined, question.question);
+      const choices = createElement('div', 'biolearn-progress-choices');
+      const feedback = createElement('p', 'biolearn-progress-feedback');
+      feedback.hidden = true;
+
+      for (const choice of question.choices) {
+        const label = createElement('label', 'biolearn-choice');
+        const input = document.createElement('input');
+        input.type = 'radio';
+        input.name = `review-${question.lessonId}-${question.id}`;
+        input.value = choice.id;
+        const text = createElement('span', undefined, choice.text);
+        label.append(input, text);
+        choices.append(label);
+      }
+
+      const button = createElement('button', undefined, '採点する');
+      button.type = 'button';
+      button.addEventListener('click', () => {
+        const selected =
+          choices.querySelector<HTMLInputElement>('input:checked');
+        if (!selected) {
+          feedback.hidden = false;
+          feedback.textContent = '選択肢を選んでください。';
+          feedback.className = 'biolearn-progress-feedback is-incorrect';
+          return;
+        }
+
+        const lesson = store.recordQuestionReview({
+          lessonId: question.lessonId,
+          path: question.lessonPath,
+          title: question.lessonTitle,
+          question,
+          choiceId: selected.value,
+        });
+        const isCorrect = selected.value === question.correctChoice;
+        feedback.hidden = false;
+        feedback.textContent = `${isCorrect ? '正解' : '不正解'}: ${question.explanation}`;
+        feedback.className = `biolearn-progress-feedback ${
+          isCorrect ? 'is-correct' : 'is-incorrect'
+        }`;
+
+        if (lesson.questions[question.id]?.needsReview === false) {
+          render();
+        }
+      });
+
+      item.append(lessonLink, heading, choices, button, feedback);
+      target.append(item);
+    }
+  };
+
+  const render = () => {
+    if (!root) return;
+
+    const summary = root.querySelector<HTMLElement>('[data-progress-summary]');
+    const lessonsTarget = root.querySelector<HTMLElement>(
+      '[data-progress-lessons]',
+    );
+    const reviewTarget = root.querySelector<HTMLElement>(
+      '[data-progress-review]',
+    );
+    const lessons = store.getLessons();
+    const reviewCount = store.getReviewQuestions().length;
+
+    if (summary) {
+      const completedCount = lessons.filter(
+        (lesson) => lesson.completed,
+      ).length;
+      summary.textContent =
+        lessons.length > 0
+          ? `学習済み ${lessons.length}記事・完了 ${completedCount}記事・復習 ${reviewCount}問`
+          : '学習履歴はまだありません。';
+    }
+    if (lessonsTarget) renderLessons(lessonsTarget);
+    if (reviewTarget) renderReviewQuestions(reviewTarget);
+  };
+
+  root
+    ?.querySelector('[data-progress-refresh]')
+    ?.addEventListener('click', render);
+  root
+    ?.querySelector('[data-progress-clear]')
+    ?.addEventListener('click', () => {
+      store.clearAll();
+      render();
+    });
+  window.addEventListener('biolearn-progress-updated', render);
+  render();
+</script>

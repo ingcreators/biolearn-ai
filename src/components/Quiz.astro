@@ -1,29 +1,317 @@
 ---
 interface Question {
+  id?: string;
   question: string;
   answer: string;
+  explanation?: string;
+  correctChoice?: string;
+  choices?: (string | { id: string; text: string })[];
 }
 
 interface Props {
   questions: Question[];
+  lessonId?: string;
+  lessonTitle?: string;
 }
 
-const { questions } = Astro.props;
+const { questions, lessonId, lessonTitle } = Astro.props;
+const derivedLessonId = (lessonId ?? Astro.url.pathname)
+  .replace(/^\/|\/$/g, '')
+  .replaceAll('/', '-');
+const derivedLessonTitle = lessonTitle ?? '';
+const choiceIds = ['a', 'b', 'c', 'd', 'e', 'f'];
+const normalizedQuestions = questions.map((item, questionIndex) => {
+  const choices = item.choices?.map((choice, choiceIndex) =>
+    typeof choice === 'string'
+      ? { id: choiceIds[choiceIndex] ?? String(choiceIndex + 1), text: choice }
+      : choice,
+  );
+
+  return {
+    ...item,
+    id: item.id ?? `${derivedLessonId}-q${questionIndex + 1}`,
+    choices,
+    correctChoice: item.correctChoice ?? (choices ? item.answer : undefined),
+    explanation: item.explanation ?? item.answer,
+  };
+});
+
+const scorableQuestions = normalizedQuestions.filter((item) => item.choices);
 ---
 
-<section class="biolearn-quiz" aria-labelledby="quiz-title">
-  <div id="quiz-title" class="biolearn-quiz-title">確認問題</div>
-  <ol>
+<section
+  class="biolearn-quiz"
+  aria-labelledby="quiz-title"
+  data-biolearn-quiz
+  data-lesson-id={derivedLessonId}
+  data-lesson-path={Astro.url.pathname}
+  data-lesson-title={derivedLessonTitle}
+  data-questions={JSON.stringify(scorableQuestions)}
+>
+  <div class="biolearn-quiz-heading">
+    <div id="quiz-title" class="biolearn-quiz-title">確認問題</div>
     {
-      questions.map((item) => (
-        <li>
-          <p>{item.question}</p>
-          <details class="biolearn-answer">
-            <summary>解答例を見る</summary>
-            <p>{item.answer}</p>
-          </details>
+      scorableQuestions.length > 0 && (
+        <p class="biolearn-quiz-status" data-quiz-status aria-live="polite">
+          未回答
+        </p>
+      )
+    }
+  </div>
+  <ol class="biolearn-quiz-list">
+    {
+      normalizedQuestions.map((item) => (
+        <li class:list={['biolearn-quiz-item', item.choices && 'is-scorable']}>
+          {item.choices ? (
+            <fieldset data-question-id={item.id}>
+              <legend>{item.question}</legend>
+              <div class="biolearn-choice-list">
+                {item.choices.map((choice) => (
+                  <label class="biolearn-choice">
+                    <input
+                      type="radio"
+                      name={item.id}
+                      value={choice.id}
+                      data-correct={
+                        choice.id === item.correctChoice ? 'true' : 'false'
+                      }
+                    />
+                    <span>{choice.text}</span>
+                  </label>
+                ))}
+              </div>
+              <p class="biolearn-quiz-feedback" data-quiz-feedback hidden>
+                {item.explanation}
+              </p>
+            </fieldset>
+          ) : (
+            <>
+              <p>{item.question}</p>
+              <details class="biolearn-answer">
+                <summary>解答例を見る</summary>
+                <p>{item.answer}</p>
+              </details>
+            </>
+          )}
         </li>
       ))
     }
   </ol>
+  {
+    scorableQuestions.length > 0 && (
+      <div class="biolearn-quiz-actions">
+        <button type="button" data-quiz-submit>
+          採点する
+        </button>
+        <button type="button" data-quiz-review-wrong>
+          間違えた問題だけ復習
+        </button>
+        <button type="button" data-quiz-retry>
+          もう一度解く
+        </button>
+        <button type="button" data-quiz-reset>
+          履歴をリセット
+        </button>
+      </div>
+    )
+  }
 </section>
+
+<script>
+  import { createLearningProgressStore } from '../lib/learning-progress';
+
+  const store = createLearningProgressStore();
+
+  const getLessonTitle = (root: HTMLElement) =>
+    root.dataset.lessonTitle ||
+    document.querySelector('h1')?.textContent?.trim() ||
+    'BioLearn';
+
+  const getQuestions = (root: HTMLElement) => {
+    try {
+      return JSON.parse(root.dataset.questions ?? '[]') as {
+        id: string;
+        question: string;
+        choices: { id: string; text: string }[];
+        correctChoice: string;
+        explanation: string;
+      }[];
+    } catch {
+      return [];
+    }
+  };
+
+  const setStatus = (root: HTMLElement, text: string) => {
+    const status = root.querySelector<HTMLElement>('[data-quiz-status]');
+    if (status) status.textContent = text;
+  };
+
+  const clearFeedback = (root: HTMLElement) => {
+    root
+      .querySelectorAll<HTMLElement>('[data-quiz-feedback]')
+      .forEach((feedback) => {
+        feedback.hidden = true;
+        feedback.textContent = '';
+        feedback.classList.remove('is-correct', 'is-incorrect');
+      });
+    root
+      .querySelectorAll<HTMLElement>('.biolearn-quiz-item')
+      .forEach((item) => {
+        item.hidden = false;
+        item.classList.remove('is-correct', 'is-incorrect');
+      });
+  };
+
+  const updateStatusFromStore = (root: HTMLElement) => {
+    const lessonId = root.dataset.lessonId;
+    if (!lessonId) return;
+
+    const lesson = store.getLesson(lessonId);
+    if (!lesson) {
+      setStatus(root, '未回答');
+      return;
+    }
+
+    const reviewCount = Object.values(lesson.questions).filter(
+      (question) => question.needsReview,
+    ).length;
+    const reviewText = reviewCount > 0 ? `・復習 ${reviewCount}問` : '';
+    setStatus(
+      root,
+      `前回 ${lesson.latestScore}/${lesson.totalQuestions}問 ${reviewText}`,
+    );
+  };
+
+  const initQuiz = (root: HTMLElement) => {
+    const questions = getQuestions(root);
+    if (questions.length === 0) return;
+
+    updateStatusFromStore(root);
+
+    root.querySelector('[data-quiz-submit]')?.addEventListener('click', () => {
+      const answers = [];
+      clearFeedback(root);
+
+      for (const question of questions) {
+        const selected = root.querySelector<HTMLInputElement>(
+          `input[name="${CSS.escape(question.id)}"]:checked`,
+        );
+
+        if (!selected) {
+          setStatus(root, '未回答の問題があります');
+          return;
+        }
+
+        answers.push({ question, choiceId: selected.value });
+      }
+
+      const lesson = store.recordQuizAttempt({
+        lessonId: root.dataset.lessonId ?? location.pathname,
+        path: root.dataset.lessonPath ?? location.pathname,
+        title: getLessonTitle(root),
+        totalQuestions: questions.length,
+        answers,
+      });
+
+      for (const answer of answers) {
+        const fieldset = root.querySelector<HTMLElement>(
+          `[data-question-id="${CSS.escape(answer.question.id)}"]`,
+        );
+        const feedback = fieldset?.querySelector<HTMLElement>(
+          '[data-quiz-feedback]',
+        );
+        const listItem = fieldset?.closest<HTMLElement>('.biolearn-quiz-item');
+        const selectedChoice = answer.question.choices.find(
+          (choice) => choice.id === answer.choiceId,
+        );
+        const isCorrect = answer.choiceId === answer.question.correctChoice;
+        const prefix = isCorrect
+          ? '正解'
+          : `不正解（選択: ${selectedChoice?.text ?? ''}）`;
+
+        feedback?.classList.add(isCorrect ? 'is-correct' : 'is-incorrect');
+        if (feedback) {
+          feedback.hidden = false;
+          feedback.textContent = `${prefix}: ${answer.question.explanation}`;
+        }
+        listItem?.classList.add(isCorrect ? 'is-correct' : 'is-incorrect');
+      }
+
+      const reviewCount = Object.values(lesson.questions).filter(
+        (question) => question.needsReview,
+      ).length;
+      const reviewText = reviewCount > 0 ? `・復習 ${reviewCount}問` : '';
+      setStatus(
+        root,
+        `今回 ${lesson.latestScore}/${lesson.totalQuestions}問 ${reviewText}`,
+      );
+    });
+
+    root
+      .querySelector('[data-quiz-review-wrong]')
+      ?.addEventListener('click', () => {
+        const lessonId = root.dataset.lessonId;
+        const lesson = lessonId ? store.getLesson(lessonId) : undefined;
+        if (!lesson) {
+          setStatus(root, 'まだ復習対象はありません');
+          return;
+        }
+
+        let visibleCount = 0;
+        root
+          .querySelectorAll<HTMLElement>('.biolearn-quiz-item.is-scorable')
+          .forEach((item) => {
+            const questionId =
+              item.querySelector<HTMLElement>('[data-question-id]')?.dataset
+                .questionId;
+            const shouldShow = Boolean(
+              questionId && lesson.questions[questionId]?.needsReview,
+            );
+            item.hidden = !shouldShow;
+            if (shouldShow) visibleCount += 1;
+          });
+
+        clearFeedback(root);
+        root
+          .querySelectorAll<HTMLElement>('.biolearn-quiz-item.is-scorable')
+          .forEach((item) => {
+            const questionId =
+              item.querySelector<HTMLElement>('[data-question-id]')?.dataset
+                .questionId;
+            item.hidden = !(
+              questionId && lesson.questions[questionId]?.needsReview
+            );
+          });
+        setStatus(
+          root,
+          visibleCount > 0 ? `復習 ${visibleCount}問` : '復習対象はありません',
+        );
+      });
+
+    root.querySelector('[data-quiz-retry]')?.addEventListener('click', () => {
+      root
+        .querySelectorAll<HTMLInputElement>('input[type="radio"]')
+        .forEach((input) => {
+          input.checked = false;
+        });
+      clearFeedback(root);
+      updateStatusFromStore(root);
+    });
+
+    root.querySelector('[data-quiz-reset]')?.addEventListener('click', () => {
+      const lessonId = root.dataset.lessonId;
+      if (lessonId) store.clearLesson(lessonId);
+      root
+        .querySelectorAll<HTMLInputElement>('input[type="radio"]')
+        .forEach((input) => {
+          input.checked = false;
+        });
+      clearFeedback(root);
+      setStatus(root, '未回答');
+    });
+  };
+
+  document
+    .querySelectorAll<HTMLElement>('[data-biolearn-quiz]')
+    .forEach(initQuiz);
+</script>

@@ -123,8 +123,207 @@ h1[data-page-title] .biolearn-hero-main {
   padding-left: 1.35rem;
 }
 
+.biolearn-quiz-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.biolearn-quiz-status {
+  color: var(--biolearn-panel-muted);
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.biolearn-quiz-list {
+  margin-bottom: 0;
+}
+
+.biolearn-quiz-item fieldset {
+  min-width: 0;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.biolearn-quiz-item legend {
+  color: var(--biolearn-panel-text);
+  padding: 0;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+.biolearn-choice-list {
+  display: grid;
+  gap: 0.6rem;
+  margin-top: 0.7rem;
+}
+
+.biolearn-choice {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.55rem;
+  align-items: start;
+  border: 1px solid var(--biolearn-panel-border);
+  border-radius: 8px;
+  padding: 0.65rem 0.75rem;
+  background: color-mix(in srgb, var(--biolearn-panel-bg) 86%, black);
+  cursor: pointer;
+}
+
+:root[data-theme="light"] .biolearn-choice {
+  background: color-mix(in srgb, var(--biolearn-panel-bg) 88%, white);
+}
+
+.biolearn-choice:hover,
+.biolearn-choice:focus-within {
+  border-color: var(--sl-color-accent);
+}
+
+.biolearn-choice input {
+  margin-top: 0.45rem;
+  accent-color: var(--sl-color-accent);
+}
+
+.biolearn-choice span {
+  color: var(--biolearn-panel-text);
+  line-height: 1.75;
+}
+
+.biolearn-quiz-feedback {
+  border-left: 4px solid var(--biolearn-panel-border);
+  margin: 0.8rem 0 0;
+  padding: 0.65rem 0.8rem;
+  background: color-mix(in srgb, var(--biolearn-panel-bg) 90%, black);
+  color: var(--biolearn-panel-text);
+}
+
+:root[data-theme="light"] .biolearn-quiz-feedback {
+  background: color-mix(in srgb, var(--biolearn-panel-bg) 90%, white);
+}
+
+.biolearn-quiz-feedback.is-correct {
+  border-left-color: #54c6b7;
+}
+
+.biolearn-quiz-feedback.is-incorrect {
+  border-left-color: #e6a93b;
+}
+
+.biolearn-quiz-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.biolearn-quiz-actions button,
+.biolearn-progress-actions button,
+.biolearn-progress-question button {
+  border: 1px solid var(--biolearn-panel-border);
+  border-radius: 8px;
+  padding: 0.55rem 0.75rem;
+  background: var(--biolearn-table-head);
+  color: var(--biolearn-panel-text);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.biolearn-quiz-actions button:hover,
+.biolearn-progress-actions button:hover,
+.biolearn-progress-question button:hover {
+  border-color: var(--sl-color-accent);
+}
+
 .biolearn-answer {
   margin-top: 0.75rem;
+}
+
+.biolearn-progress {
+  display: grid;
+  gap: 1rem;
+  margin: 1.25rem 0 2rem;
+}
+
+.biolearn-progress-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.biolearn-progress-summary,
+.biolearn-progress-item,
+.biolearn-progress-question {
+  color: var(--biolearn-panel-text);
+  border: 1px solid var(--biolearn-panel-border);
+  border-radius: 8px;
+  padding: 1rem;
+  background: var(--biolearn-panel-bg);
+}
+
+.biolearn-progress-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1rem;
+}
+
+.biolearn-progress-grid h2 {
+  margin-top: 1rem;
+}
+
+.biolearn-progress-list {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.biolearn-progress-item h3,
+.biolearn-progress-question h3 {
+  color: var(--biolearn-panel-text);
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.biolearn-progress-meta,
+.biolearn-progress-empty,
+.biolearn-progress-feedback {
+  color: var(--biolearn-panel-muted);
+  margin: 0;
+}
+
+.biolearn-progress-lesson {
+  display: inline-block;
+  margin-bottom: 0.45rem;
+  color: var(--sl-color-text-accent);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.biolearn-progress-choices {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0.7rem 0;
+}
+
+.biolearn-progress-feedback {
+  border-left: 4px solid var(--biolearn-panel-border);
+  margin-top: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  background: color-mix(in srgb, var(--biolearn-panel-bg) 90%, black);
+}
+
+:root[data-theme="light"] .biolearn-progress-feedback {
+  background: color-mix(in srgb, var(--biolearn-panel-bg) 90%, white);
+}
+
+.biolearn-progress-feedback.is-correct {
+  border-left-color: #54c6b7;
+}
+
+.biolearn-progress-feedback.is-incorrect {
+  border-left-color: #e6a93b;
 }
 
 .glossary-table {

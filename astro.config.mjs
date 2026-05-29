@@ -117,6 +117,7 @@ export default defineConfig({
           items: [
             { label: 'はじめに', link: '/start/' },
             { label: '学習ロードマップ', link: '/roadmap/' },
+            { label: '学習履歴と復習', link: '/review/' },
           ],
         },
         {

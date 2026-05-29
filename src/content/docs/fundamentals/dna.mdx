@@ -136,26 +136,70 @@ DNAは、PCR、ゲル電気泳動、サンガーシーケンシング、次世�
 <Quiz
   questions={[
     {
+      id: 'dna-information-sequence',
       question: 'DNAの情報は何の並びとして表されますか。',
-      answer: 'A、T、G、Cの4種類の塩基の並びとして表されます。',
+      choices: [
+        'アミノ酸の並び',
+        'A、T、G、Cという塩基の並び',
+        '細胞小器官の並び',
+        '脂質の種類の並び',
+      ],
+      answer: 'b',
+      explanation:
+        'DNAの情報は、A、T、G、Cという4種類の塩基の並びとして表されます。',
     },
     {
+      id: 'dna-gene-relationship',
       question: 'DNAと遺伝子の関係を簡単に説明してください。',
-      answer:
-        '遺伝子はDNA上にある、機能を持つRNAやタンパク質の産生に関わる領域です。',
+      choices: [
+        'DNA全体が必ず1つの遺伝子として働く',
+        '遺伝子はDNA上にある機能的な領域である',
+        '遺伝子はDNAとは別の細胞小器官である',
+        'DNAはタンパク質だけでできている',
+      ],
+      answer: 'b',
+      explanation:
+        '遺伝子はDNA上の機能的な領域です。DNAには遺伝子以外の調節領域なども含まれます。',
     },
     {
+      id: 'dna-replication-before-division',
       question: 'DNAが細胞分裂の前に複製される理由を説明してください。',
-      answer: '次の細胞へ遺伝情報を受け継ぐためです。',
+      choices: [
+        '次の細胞へ遺伝情報を受け継ぐため',
+        '細胞膜を直接作るため',
+        'すべてのタンパク質を分解するため',
+        '塩基配列を毎回完全に消すため',
+      ],
+      answer: 'a',
+      explanation:
+        '細胞分裂では、次の細胞が遺伝情報を受け継げるようにDNAが複製されます。',
     },
     {
+      id: 'dna-noncoding-region-example',
       question:
         'DNA上でタンパク質の設計図ではない領域の例を一つ挙げてください。',
-      answer: '遺伝子発現を調節する領域や反復配列などがあります。',
+      choices: [
+        '遺伝子発現を調節する領域',
+        '細胞外に分泌された抗体',
+        'ミトコンドリアの内膜だけ',
+        '培地中の糖だけ',
+      ],
+      answer: 'a',
+      explanation:
+        'DNAには、タンパク質を作る領域だけでなく、遺伝子発現を調節する領域などもあります。',
     },
     {
+      id: 'dna-sequencing-target',
       question: 'シーケンシングではDNAの何を調べますか。',
-      answer: 'A、T、G、Cという塩基の並びを調べます。',
+      choices: [
+        '細胞の形だけ',
+        'A、T、G、Cという塩基の並び',
+        'タンパク質の立体構造だけ',
+        '培養温度だけ',
+      ],
+      answer: 'b',
+      explanation:
+        'シーケンシングでは、DNAを構成する塩基がどの順番で並ぶかを調べます。',
     },
   ]}
 />
