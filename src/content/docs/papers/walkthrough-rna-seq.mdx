@@ -11,6 +11,12 @@ learningPaths:
 relatedTerms:
   - rna-seq
   - differential-expression-analysis
+  - pca
+  - volcano-plot
+  - heatmap
+  - pathway-enrichment
+  - normalization
+  - multiple-testing-correction
   - batch-effect
   - reproducibility
 prerequisites:
@@ -36,7 +42,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-この演習では、実在論文ではなくBioLearn用の架空ケースを使い、RNA-seq論文を読む手順を練習します。
+この演習では、BioLearn用の架空ケースを使い、RNA-seq論文で発現差のFigureをMethodsへ戻して読む練習をします。
 
 <LessonFigure
   src="/figures/walkthrough-rna-seq-concept.jpg"
@@ -118,7 +124,7 @@ RNA-seqの結果から言いやすいのは、「条件Bで特定の遺伝子群
 
 - 最も中心的な結論を支えるFigureはどれか。
 - そのFigureの軸、色、サンプル数、多重検定補正は確認できるか。
-- Discussionの一文を、Figureから直接言える表現に言い換えるとどうなるか。
+- Discussionの経路名や発現差の表現を、どのサンプルと解析条件に限定して言い換えられるか。
 
 ## よくある誤解
 

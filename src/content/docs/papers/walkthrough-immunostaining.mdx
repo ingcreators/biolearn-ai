@@ -9,8 +9,14 @@ order: 330
 learningPaths:
   - paper-reading
 relatedTerms:
+  - immunostaining
+  - representative-image
   - protein
   - cell
+  - antibody
+  - exposure
+  - threshold
+  - image-processing
   - biological-technical-replicates
 prerequisites:
   - /methods/immunostaining/
@@ -34,7 +40,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-この演習では、BioLearn用の架空ケースを使い、免疫染色画像を含む論文を読む手順を練習します。
+この演習では、BioLearn用の架空ケースを使い、免疫染色論文で代表画像、局在、対照、定量結果を分けて読む練習をします。
 
 <LessonFigure
   src="/figures/walkthrough-immunostaining-concept.jpg"
@@ -97,9 +103,9 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 ### 3. Discussionで言える範囲に戻す
 
-免疫染色から言いやすいのは、「条件Bでタンパク質Xのシグナルが核内で高く見える」「局在が変わった可能性がある」という範囲です。
+免疫染色から言いやすいのは、「条件Bでタンパク質Yのシグナルが核内で高く見える」「局在が変わった可能性がある」という範囲です。
 
-一方で、追加実験なしに「タンパク質Xがその現象を直接制御している」とまでは言えません。Discussionでは、局在の観察と機能的な因果関係が混ざっていないかを確認します。
+一方で、追加実験なしに「タンパク質Yがその現象を直接制御している」とまでは言えません。Discussionでは、局在の観察と機能的な因果関係が混ざっていないかを確認します。
 
 ### 自分で答える問い
 

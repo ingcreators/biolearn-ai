@@ -12,6 +12,8 @@ relatedTerms:
   - cancer-genomics
   - tumor-normal-comparison
   - somatic-variant
+  - germline-variant
+  - oncoplot
   - copy-number-variation
   - variant-annotation
 prerequisites:
@@ -37,7 +39,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-この演習では、実在論文ではなくBioLearn用の架空ケースを使い、がんゲノム論文を読む手順を練習します。個別の診断や治療判断ではなく、研究論文のMethods、Figure、Discussionを対応づけて読む練習として扱います。
+この演習では、BioLearn用の架空ケースを使い、がんゲノム論文で比較対象、変化の種類、候補遺伝子の解釈を分けて読む練習をします。個別の診断や治療判断ではなく、研究論文のMethods、Figure、Discussionを対応づけて読む練習として扱います。
 
 <LessonFigure
   src="/figures/walkthrough-cancer-genomics-concept.jpg"
@@ -50,7 +52,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 
 ある研究では、腫瘍サンプルと対応する正常サンプルを使い、ゲノム変化を調べたとします。論文の主張は「条件Bの腫瘍群では、遺伝子X周辺の変化と特定のコピー数パターンが多い」です。
 
-この主張を読むときは、まず[Tumor-normal比較](/glossary/tumor-normal-comparison/)が行われているか、[体細胞変異](/glossary/somatic-variant/)と生殖細胞系列変異がどう区別されているかを確認します。次に、oncoplot、[CNV plot](/glossary/cnv-plot/)、[Lollipop plot](/glossary/lollipop-plot/)、サンプル情報の表を分けて読みます。
+この主張を読むときは、まず[Tumor-normal比較](/glossary/tumor-normal-comparison/)が行われているか、[体細胞変異](/glossary/somatic-variant/)と[生殖細胞系列変異](/glossary/germline-variant/)がどう区別されているかを確認します。次に、[oncoplot](/glossary/oncoplot/)、[CNV plot](/glossary/cnv-plot/)、[Lollipop plot](/glossary/lollipop-plot/)、サンプル情報の表を分けて読みます。
 
 ## 読む順番
 
@@ -120,7 +122,7 @@ Methodsが薄い場合、Figureは読めても、候補変化の信頼性や比�
 
 - この論文の中心的な主張は、変異頻度、コピー数変異、発現変化、機能解釈のどれか。
 - その主張は、Tumor-normal比較とサンプル品質の確認に支えられているか。
-- Discussionの一文を、Figureから直接言える表現に言い換えるとどうなるか。
+- Discussionの一文を、変異頻度、コピー数変化、候補遺伝子のどの範囲まで言える表現に戻せるか。
 
 ## よくある誤解
 

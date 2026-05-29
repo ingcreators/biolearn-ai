@@ -22,6 +22,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -48,12 +49,55 @@ DOIは、論文を引用したり、文献管理ツールに登録したり、�
 
 DOIがあることは、論文の内容が正しいことを保証するものではありません。DOIは識別子であり、論文の質や解釈はResults、Methods、Figure、研究デザインを読んで判断します。
 
+## DOIを確認する場面
+
+| 場面             | DOIが役立つ理由                         | 注意すること                   |
+| ---------------- | --------------------------------------- | ------------------------------ |
+| 論文を引用する   | 同じ文献を正確に示しやすい              | DOIだけで内容を評価しない      |
+| 文献管理する     | タイトル、著者、雑誌情報を取得しやすい  | 取得情報が正しいか確認する     |
+| 論文を探し直す   | 出版社URLが変わっても文献をたどりやすい | 本文アクセス可否とは別に考える |
+| Referencesを読む | 引用文献を特定しやすい                  | PMIDやPMC IDとは区別する       |
+
 ## よくある誤解
 
 - DOIがある論文は、内容が必ず信頼できると考える。
 - DOIとPubMed IDを同じものだと思う。
 - 論文タイトルだけで十分で、DOIを確認しなくてよいと思う。
 - DOIを本文への無料アクセスリンクそのものだと考える。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'DOI',
+      english: 'digital object identifier',
+      abbreviation: 'DOI',
+      description: '論文やデータなどを識別するための恒久的なID。',
+      href: '/glossary/doi/',
+    },
+    {
+      term: 'PMID',
+      english: 'PubMed identifier',
+      abbreviation: 'PMID',
+      description: 'PubMed上の文献情報に付く識別番号。',
+      href: '/glossary/pmid/',
+    },
+    {
+      term: 'PMC',
+      english: 'PubMed Central',
+      abbreviation: 'PMC',
+      description: '本文が公開されている論文を読めるアーカイブ。',
+      href: '/glossary/pmc/',
+    },
+    {
+      term: 'References',
+      english: 'references',
+      description: '論文が引用している文献のリスト。',
+      href: '/glossary/references/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[
@@ -73,8 +117,6 @@ DOIがあることは、論文の内容が正しいことを保証するもの�
 <NextSteps
   items={[
     { title: 'PubMed / PMC の使い分け', href: '/resources/pubmed-pmc/' },
-    { title: 'DOI', href: '/glossary/doi/' },
-    { title: 'PMID', href: '/glossary/pmid/' },
     { title: 'PubMedの使い方', href: '/papers/pubmed/' },
     {
       title: 'レビュー論文と原著論文の違い',

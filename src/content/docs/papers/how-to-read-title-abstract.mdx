@@ -23,6 +23,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -47,18 +48,18 @@ Abstractは、論文全体を短くまとめた文章です。多くの場合、
 
 ただし、Abstractは著者が強調したい結論を短くまとめたものです。実際にどこまで支持されているかは、Results、Figure、Methodsを読んで確認します。
 
-## なぜ重要か
+## なぜTitleとAbstractを先に読むか
 
 論文を読む前にTitleとAbstractで全体像をつかむと、途中で知らない用語に出会っても、何のための説明なのかを見失いにくくなります。
 
-## 英語表記と略語
+## 何を拾うか
 
-| 日本語名 | 英語名     | 略語 |
-| -------- | ---------- | ---- |
-| 題名     | Title      | -    |
-| 要旨     | Abstract   | -    |
-| 背景     | Background | -    |
-| 結論     | Conclusion | -    |
+| 見る場所 | 拾うこと                         | まだ判断しないこと                  |
+| -------- | -------------------------------- | ----------------------------------- |
+| Title    | 対象、現象、手法、主題           | 結論がどこまで強いか                |
+| Abstract | 背景、問い、方法、結果、結論候補 | FigureやMethodsで根拠が十分かどうか |
+| Keywords | 分野名、手法名、対象             | 論文全体の重要性                    |
+| 最後の文 | 著者が強調したい結論             | 代替説明や限界がどれだけ残るか      |
 
 ## よくある誤解
 
@@ -68,10 +69,34 @@ Abstractは、論文全体を短くまとめた文章です。多くの場合、
 
 ## 重要用語
 
-- Title: 論文の主題を示す題名。
-- Abstract: 論文全体を短くまとめた要旨。
-- 研究の問い: 論文が答えようとしている中心的な問題。
-- 主な結論: 著者が結果から言えると考えている内容。
+<GlossaryTable
+  terms={[
+    {
+      term: 'Title',
+      english: 'title',
+      description: '論文の主題を示す題名。',
+      href: '/glossary/title/',
+    },
+    {
+      term: 'Abstract',
+      english: 'abstract',
+      description: '論文全体を短くまとめた要旨。',
+      href: '/glossary/abstract/',
+    },
+    {
+      term: '研究の問い',
+      english: 'research question',
+      description: '論文が答えようとしている中心的な問題。',
+      href: '/glossary/research-question/',
+    },
+    {
+      term: '主張',
+      english: 'claim',
+      description: '著者が結果から言えると考えている内容。',
+      href: '/glossary/claim/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[
@@ -89,8 +114,11 @@ Abstractは、論文全体を短くまとめた文章です。多くの場合、
 
 <NextSteps
   items={[
-    { title: '生命科学論文の構成', href: '/papers/paper-structure/' },
+    {
+      title: 'Introductionの読み方',
+      href: '/papers/how-to-read-introduction/',
+    },
     { title: 'Resultsの読み方', href: '/papers/how-to-read-results/' },
-    { title: 'Methodsの読み方', href: '/papers/how-to-read-methods/' },
+    { title: '論文を最初に読む手順', href: '/papers/first-pass-reading/' },
   ]}
 />

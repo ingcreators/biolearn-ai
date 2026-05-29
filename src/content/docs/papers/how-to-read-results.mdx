@@ -24,6 +24,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -48,18 +49,17 @@ Results本文は、Figureの順番に沿って結果を説明することが多�
 
 Resultsには著者の解釈が混じることもあります。「示した」「増加した」「関連した」といった表現と、「示唆する」「重要である」といった解釈寄りの表現を分けて読むと、証拠の強さを考えやすくなります。
 
-## なぜ重要か
+## なぜResultsをFigureに戻して読むか
 
 生命科学論文の中心的な証拠は、ResultsとFigureにあります。Discussionだけを読むと、著者の解釈に引っ張られやすくなります。ResultsをFigureに戻して読むことで、主張がどの程度データに支えられているかを確認できます。
 
-## 英語表記と略語
+## Resultsで見る順番
 
-| 日本語名     | 英語名                   | 略語 |
-| ------------ | ------------------------ | ---- |
-| 結果         | Results                  | -    |
-| 図           | Figure                   | Fig. |
-| パネル       | panel                    | -    |
-| 統計的有意性 | statistical significance | -    |
+1. Resultsの小見出しを見て、Figureの流れを大まかにつかみます。
+2. 本文の「増えた」「低下した」「関連した」などの記述を、対応するFigureやパネルに戻して確認します。
+3. Figure legendで比較条件、n数、統計表示、記号の意味を確認します。
+4. Methodsでサンプル、測定方法、解析条件を確認します。
+5. Discussionへ進む前に、「Figureから直接言えること」と「著者の解釈」を分けます。
 
 ## よくある誤解
 
@@ -69,10 +69,41 @@ Resultsには著者の解釈が混じることもあります。「示した」�
 
 ## 重要用語
 
-- Results: 実験や解析で得られた結果を示すセクション。
-- Figure: 結果を図や画像として示したもの。
-- パネル: Figure内のA、B、Cなどに分かれた部分。
-- 統計表示: p値、信頼区間、[エラーバー](/glossary/error-bar/)など、結果の不確かさを読む手がかり。
+<GlossaryTable
+  terms={[
+    {
+      term: 'Results',
+      english: 'results',
+      description: '実験や解析で得られた結果を示すセクション。',
+      href: '/glossary/results/',
+    },
+    {
+      term: 'Figure',
+      english: 'figure',
+      abbreviation: 'Fig.',
+      description: '結果を図、画像、表の形で示したもの。',
+      href: '/glossary/figure/',
+    },
+    {
+      term: 'Figure legend',
+      english: 'figure legend',
+      description: 'Figureの条件、記号、n数、統計表示を確認する説明文。',
+      href: '/glossary/figure-legend/',
+    },
+    {
+      term: '主張',
+      english: 'claim',
+      description: '著者が結果から言えると考えている内容。',
+      href: '/glossary/claim/',
+    },
+    {
+      term: 'エラーバー',
+      english: 'error bar',
+      description: 'ばらつきや推定の不確かさを図上に示す表示。',
+      href: '/glossary/error-bar/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[

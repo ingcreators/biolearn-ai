@@ -27,6 +27,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -51,21 +52,19 @@ Methodsには細かい条件が多く書かれているため、最初からす�
 
 Methodsを読む目的は、手順を暗記することではありません。Resultsで示された差やパターンが、どのような条件と手順から得られたのかを確認し、解釈の範囲を考えることです。
 
-## なぜ重要か
+## なぜMethodsを読むことが重要か
 
 同じFigureに見えても、サンプル数、対照群、測定方法、[正規化](/glossary/normalization/)、統計検定が違えば、読み取れる意味は変わります。Methodsを読むと、結果の強さや限界を判断するための材料が得られます。
 
 Methodsは診断や治療の手順を示すものではなく、研究でどのように証拠を作ったかを説明する部分として読みます。
 
-## 英語表記と略語
+## Methodsで見る順番
 
-| 日本語名 | 英語名           | 略語 |
-| -------- | ---------------- | ---- |
-| 方法     | Methods          | -    |
-| サンプル | sample           | -    |
-| 対照群   | control          | -    |
-| 反復     | replicate        | -    |
-| 統計検定 | statistical test | -    |
+1. どのサンプル、細胞、組織、個体、データを使ったかを確認します。
+2. 何と何を比べたか、対照群や処理条件を確認します。
+3. 何を測ったか、どの実験手法や解析手法を使ったかを確認します。
+4. n数、生物学的反復、技術的反復、除外基準、品質管理を確認します。
+5. 統計検定、正規化、多重検定補正など、Figureの表示に関わる解析条件を確認します。
 
 ## よくある誤解
 
@@ -75,12 +74,48 @@ Methodsは診断や治療の手順を示すものではなく、研究でどの�
 
 ## 重要用語
 
-- サンプル: 実験や解析に使われた細胞、組織、個体、データなど。
-- [対照群](/glossary/control-group/): 比較の基準になる条件。
-- [反復](/glossary/biological-technical-replicates/): 実験や測定の繰り返し。生物学的反復と技術的反復を区別することがあります。
-- [n数](/glossary/sample-size/): Figureや統計解析で数えられているサンプル、個体、細胞、測定点などの数。
-- [Figure legend](/glossary/figure-legend/): Figureの条件、記号、n数、統計表示を確認する説明文。
-- 統計検定: 観察された差を統計的に評価する方法。
+<GlossaryTable
+  terms={[
+    {
+      term: 'Methods',
+      english: 'methods',
+      description: 'サンプル、実験、解析、統計の方法を説明する部分。',
+      href: '/glossary/methods/',
+    },
+    {
+      term: 'サンプル',
+      english: 'sample',
+      description: '実験や解析に使われた細胞、組織、個体、データなど。',
+      href: '/glossary/sample/',
+    },
+    {
+      term: '対照群',
+      english: 'control group',
+      description: '比較の基準になる条件。',
+      href: '/glossary/control-group/',
+    },
+    {
+      term: '反復',
+      english: 'replicate',
+      description:
+        '実験や測定の繰り返し。生物学的反復と技術的反復を区別することがあります。',
+      href: '/glossary/biological-technical-replicates/',
+    },
+    {
+      term: 'n数',
+      english: 'sample size',
+      description:
+        'Figureや統計解析で数えられているサンプル、個体、細胞、測定点などの数。',
+      href: '/glossary/sample-size/',
+    },
+    {
+      term: 'Figure legend',
+      english: 'figure legend',
+      description: 'Figureの条件、記号、n数、統計表示を確認する説明文。',
+      href: '/glossary/figure-legend/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[
@@ -110,6 +145,6 @@ Methodsは診断や治療の手順を示すものではなく、研究でどの�
     { title: 'Figure legendの読み方', href: '/figures/figure-legend/' },
     { title: '実験手法', href: '/methods/' },
     { title: '実験手法早見表', href: '/resources/methods-cheatsheet/' },
-    { title: 'PCRとは何か', href: '/methods/pcr/' },
+    { title: 'Methods確認チェックリスト', href: '/papers/methods-checklist/' },
   ]}
 />

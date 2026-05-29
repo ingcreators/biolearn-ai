@@ -12,10 +12,15 @@ relatedTerms:
   - single-cell-rna-seq
   - umap
   - marker-gene
+  - cell-type-annotation
+  - clustering
+  - quality-control
+  - normalization
   - batch-effect
   - confounding
 prerequisites:
   - /bioinformatics/rna-seq/
+  - /bioinformatics/single-cell-rna-seq/
   - /bioinformatics/batch-effect/
   - /figures/how-to-read-umap-tsne/
   - /papers/critical-reading/
@@ -36,7 +41,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   ]}
 />
 
-この演習では、実在論文ではなくBioLearn用の架空ケースを使い、single-cell解析論文を読む手順を練習します。
+この演習では、BioLearn用の架空ケースを使い、single-cell解析論文でUMAPの見た目、クラスタ注釈、サンプル単位の根拠を分けて読む練習をします。
 
 <LessonFigure
   src="/figures/walkthrough-single-cell-concept.jpg"
@@ -173,14 +178,14 @@ Figureから言いやすいのは、「条件Bで特定の細胞集団が多く�
       title: '前の演習: RNA-seq論文',
       href: '/papers/walkthrough-rna-seq/',
     },
+    {
+      title: 'single-cell RNA-seqとは何か',
+      href: '/bioinformatics/single-cell-rna-seq/',
+    },
     { title: 'RNA-seqとは何か', href: '/bioinformatics/rna-seq/' },
     {
       title: 'UMAP / t-SNEの読み方',
       href: '/figures/how-to-read-umap-tsne/',
-    },
-    {
-      title: '用語: single-cell RNA-seq',
-      href: '/glossary/single-cell-rna-seq/',
     },
     { title: '批判的に読む', href: '/papers/critical-reading/' },
     { title: '交絡', href: '/statistics/confounding/' },

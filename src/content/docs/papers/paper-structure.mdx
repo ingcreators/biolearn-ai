@@ -24,6 +24,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -48,19 +49,20 @@ Discussionは、結果から何が言えるか、どこまでが限界かを述�
 
 生命科学論文ではFigureが中心的な証拠になることが多いため、Figure、Results本文、Figure legend、Methodsを行き来しながら読むのが大切です。
 
-## なぜ重要か
+## なぜ論文の構成を知ることが重要か
 
 論文の構成を知っていると、分からない用語があっても「今どの役割の文章を読んでいるのか」を見失いにくくなります。特に初学者は、Methodsの細部で止まりすぎず、まず研究の問いと主要なFigureの流れをつかむことが大切です。
 
-## 英語表記と略語
+## 各セクションで何を読むか
 
-| 日本語名 | 英語名       | 略語 |
-| -------- | ------------ | ---- |
-| 要旨     | Abstract     | -    |
-| 導入     | Introduction | -    |
-| 結果     | Results      | -    |
-| 方法     | Methods      | -    |
-| 考察     | Discussion   | -    |
+| セクション   | まず見ること                           | 深読みするときに戻る場所 |
+| ------------ | -------------------------------------- | ------------------------ |
+| Title        | 研究対象、主題、中心となる現象         | Abstract、Introduction   |
+| Abstract     | 背景、問い、方法、結果、結論の候補     | Results、Methods         |
+| Introduction | 既知のこと、未解決の点、この論文の問い | References、レビュー論文 |
+| Results      | どのFigureがどの結果を支えるか         | Figure legend、Methods   |
+| Methods      | サンプル、条件、対照、解析、統計       | Figure legend、Results   |
+| Discussion   | 解釈、限界、今後の課題                 | Results、Figure、Methods |
 
 ## よくある誤解
 
@@ -70,10 +72,46 @@ Discussionは、結果から何が言えるか、どこまでが限界かを述�
 
 ## 重要用語
 
-- Abstract: 研究の背景、方法、主な結果、結論を短くまとめた部分。
-- Results: 実験や解析で得られた結果を示す部分。
-- Methods: サンプル、実験、解析、統計の方法を説明する部分。
-- Discussion: 結果の解釈、意義、限界を述べる部分。
+<GlossaryTable
+  terms={[
+    {
+      term: 'Title',
+      english: 'title',
+      description: '論文の主題を示す題名。',
+      href: '/glossary/title/',
+    },
+    {
+      term: 'Abstract',
+      english: 'abstract',
+      description: '研究の背景、方法、主な結果、結論を短くまとめた部分。',
+      href: '/glossary/abstract/',
+    },
+    {
+      term: 'Introduction',
+      english: 'introduction',
+      description: '研究背景、先行研究、未解決の問いを説明する部分。',
+      href: '/glossary/introduction/',
+    },
+    {
+      term: 'Results',
+      english: 'results',
+      description: '実験や解析で得られた結果を示す部分。',
+      href: '/glossary/results/',
+    },
+    {
+      term: 'Methods',
+      english: 'methods',
+      description: 'サンプル、実験、解析、統計の方法を説明する部分。',
+      href: '/glossary/methods/',
+    },
+    {
+      term: 'Discussion',
+      english: 'discussion',
+      description: '結果の解釈、意義、限界を述べる部分。',
+      href: '/glossary/discussion/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[
@@ -92,8 +130,11 @@ Discussionは、結果から何が言えるか、どこまでが限界かを述�
 
 <NextSteps
   items={[
-    { title: 'Methodsの読み方', href: '/papers/how-to-read-methods/' },
+    {
+      title: 'TitleとAbstractの読み方',
+      href: '/papers/how-to-read-title-abstract/',
+    },
+    { title: '論文を最初に読む手順', href: '/papers/first-pass-reading/' },
     { title: 'Figure legendの読み方', href: '/figures/figure-legend/' },
-    { title: '論文を読めるようになる', href: '/paths/paper-reading/' },
   ]}
 />

@@ -2085,6 +2085,13 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'statistics-and-design',
   },
   {
+    term: 'oncoplot',
+    english: 'oncoplot',
+    description: 'がんゲノム解析で、サンプルごとの遺伝子変化を一覧する図。',
+    href: '/glossary/oncoplot/',
+    category: 'statistics-and-design',
+  },
+  {
     term: 'エラーバー',
     english: 'error bar',
     description: 'グラフ上でばらつきや不確かさを線で示す表示。',

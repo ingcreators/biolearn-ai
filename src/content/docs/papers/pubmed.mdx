@@ -23,6 +23,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -49,12 +50,56 @@ PubMedでは、キーワード、著者名、雑誌名、年などを手がか�
 
 PubMedは本文そのものを必ず提供する場所ではありません。本文を読むには、出版社ページ、PMC、所属機関のアクセス、オープンアクセスリンクなどへ進む必要があります。
 
+## 検索結果で確認すること
+
+| 見る場所         | 確認すること                    | 次の行動                        |
+| ---------------- | ------------------------------- | ------------------------------- |
+| Title            | 対象、現象、方法、論文の主題    | 関係ありそうならAbstractへ進む  |
+| Abstract         | 背景、方法、結果、結論の候補    | FigureやMethodsを読む候補にする |
+| Publication type | レビュー論文か原著論文か        | 目的に合う読み方を選ぶ          |
+| Journalと年      | 分野、出版時期、文献の位置づけ  | 新しさだけで判断しない          |
+| Full text links  | 本文、PMC、出版社ページへの導線 | 読める本文へ進む                |
+
 ## よくある誤解
 
 - PubMedにある論文は、すべて本文まで無料で読めると思う。
 - 検索結果の上位にある論文が、必ず自分の目的に最適だと思う。
 - Abstractだけで、研究の根拠まで十分に確認できたと考える。
 - 論文種別を見ずに、レビュー論文と原著論文を同じように読む。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'PubMed',
+      english: 'PubMed',
+      description: '生命科学・医学系の文献情報を検索するためのデータベース。',
+      href: '/glossary/pubmed/',
+    },
+    {
+      term: 'PMC',
+      english: 'PubMed Central',
+      abbreviation: 'PMC',
+      description: '本文が公開されている論文を読めるアーカイブ。',
+      href: '/glossary/pmc/',
+    },
+    {
+      term: 'PMID',
+      english: 'PubMed identifier',
+      abbreviation: 'PMID',
+      description: 'PubMed上の文献情報に付く識別番号。',
+      href: '/glossary/pmid/',
+    },
+    {
+      term: 'DOI',
+      english: 'digital object identifier',
+      abbreviation: 'DOI',
+      description: '論文やデータなどを識別するための恒久的なID。',
+      href: '/glossary/doi/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[
@@ -77,7 +122,6 @@ PubMedは本文そのものを必ず提供する場所ではありません。�
     { title: 'PubMed / PMC の使い分け', href: '/resources/pubmed-pmc/' },
     { title: 'PMC論文の探し方', href: '/papers/pmc/' },
     { title: 'DOIとは何か', href: '/papers/doi/' },
-    { title: 'PubMedとは何か', href: '/glossary/pubmed/' },
     {
       title: 'TitleとAbstractの読み方',
       href: '/papers/how-to-read-title-abstract/',

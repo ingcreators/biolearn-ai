@@ -24,6 +24,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 import Quiz from '../../../components/Quiz.astro';
 import NextSteps from '../../../components/NextSteps.astro';
 import LessonFigure from '../../../components/LessonFigure.astro';
+import GlossaryTable from '../../../components/GlossaryTable.astro';
 
 <LearningGoals
   items={[
@@ -50,12 +51,56 @@ PMCで本文を読むときは、まずAbstractで全体像を確認し、Figure
 
 すべての論文がPMCで読めるわけではありません。論文の公開条件や出版社の方針によって、本文の入手方法は異なります。
 
+## PMCで本文を開いたら見ること
+
+| 見る場所   | 確認すること                       | 読み方                         |
+| ---------- | ---------------------------------- | ------------------------------ |
+| Abstract   | 研究の問い、方法、結果、結論の候補 | 全体像だけをつかむ             |
+| Figure     | 何を測り、何を比較しているか       | legendとResultsへ戻る          |
+| Results    | Figureの説明と主張の流れ           | Figureのパネルに対応づける     |
+| Methods    | サンプル、条件、対照、解析、統計   | Figureの解釈に必要な部分を読む |
+| References | 背景論文、手法論文、次に読む文献   | 目的に応じてたどる             |
+
 ## よくある誤解
 
 - PubMedにある論文は、必ずPMCにもあると思う。
 - PMCで読める論文だけが重要だと考える。
 - Figureだけを見て、MethodsやResultsを確認しない。
 - 本文が読めることと、内容が正しいことを同じに考える。
+
+## 重要用語
+
+<GlossaryTable
+  terms={[
+    {
+      term: 'PMC',
+      english: 'PubMed Central',
+      abbreviation: 'PMC',
+      description:
+        '本文が公開されている生命科学・医学系論文を読めるアーカイブ。',
+      href: '/glossary/pmc/',
+    },
+    {
+      term: 'Figure',
+      english: 'figure',
+      abbreviation: 'Fig.',
+      description: '結果を図、画像、表の形で示したもの。',
+      href: '/glossary/figure/',
+    },
+    {
+      term: 'Methods',
+      english: 'methods',
+      description: 'サンプル、実験、解析、統計の方法を説明する部分。',
+      href: '/glossary/methods/',
+    },
+    {
+      term: 'References',
+      english: 'references',
+      description: '論文が引用している文献のリスト。',
+      href: '/glossary/references/',
+    },
+  ]}
+/>
 
 <Quiz
   questions={[
@@ -76,7 +121,6 @@ PMCで本文を読むときは、まずAbstractで全体像を確認し、Figure
 <NextSteps
   items={[
     { title: 'PubMed / PMC の使い分け', href: '/resources/pubmed-pmc/' },
-    { title: 'PMCとは何か', href: '/glossary/pmc/' },
     {
       title: 'Figureから論文を読む方法',
       href: '/papers/figure-first-reading/',
