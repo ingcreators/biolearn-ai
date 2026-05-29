@@ -6,6 +6,16 @@
   --biolearn-panel-muted: #d2e4df;
   --biolearn-table-head: #214a44;
   --biolearn-table-rule: #3f625c;
+  --biolearn-primary-bg: #54c6b7;
+  --biolearn-primary-bg-hover: #7dded2;
+  --biolearn-primary-text: #06211f;
+  --biolearn-secondary-bg: #214a44;
+  --biolearn-secondary-bg-hover: #285a53;
+  --biolearn-secondary-disabled-bg: #1c3b37;
+  --biolearn-secondary-disabled-text: #9ab3ad;
+  --biolearn-reset-text: #ffd2bf;
+  --biolearn-reset-border: #8a5544;
+  --biolearn-reset-bg-hover: #412a24;
 }
 
 :root,
@@ -27,6 +37,16 @@
   --biolearn-panel-muted: #4f625d;
   --biolearn-table-head: #e3f3ee;
   --biolearn-table-rule: #c9d9d3;
+  --biolearn-primary-bg: #087b73;
+  --biolearn-primary-bg-hover: #06655f;
+  --biolearn-primary-text: #ffffff;
+  --biolearn-secondary-bg: #ffffff;
+  --biolearn-secondary-bg-hover: #eef8f5;
+  --biolearn-secondary-disabled-bg: #eef5f2;
+  --biolearn-secondary-disabled-text: #72847f;
+  --biolearn-reset-text: #7a4738;
+  --biolearn-reset-border: #d8b9ae;
+  --biolearn-reset-bg-hover: #fff4ef;
 }
 
 html {
@@ -59,6 +79,18 @@ h1[data-page-title] .biolearn-hero-main {
 
 h1[data-page-title] .biolearn-hero-main {
   text-wrap: balance;
+}
+
+.biolearn-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .biolearn-box,
@@ -119,55 +151,184 @@ h1[data-page-title] .biolearn-hero-main {
   font-size: 0.9rem;
 }
 
-.biolearn-quiz ol {
-  padding-left: 1.35rem;
-}
-
 .biolearn-quiz-heading {
   display: flex;
-  align-items: baseline;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
+}
+
+.biolearn-quiz-lead {
+  color: var(--biolearn-panel-muted);
+  margin: 0.25rem 0 0;
+  line-height: 1.7;
+  font-size: 0.95rem;
 }
 
 .biolearn-quiz-status {
   color: var(--biolearn-panel-muted);
   margin: 0;
   font-size: 0.9rem;
+  white-space: nowrap;
 }
 
-.biolearn-quiz-list {
-  margin-bottom: 0;
+.biolearn-quiz-overview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
 }
 
-.biolearn-quiz-item fieldset {
+.biolearn-quiz-overview span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  border: 1px solid var(--biolearn-panel-border);
+  border-radius: 999px;
+  padding: 0.18rem 0.65rem;
+  color: var(--biolearn-panel-muted);
+  background: color-mix(in srgb, var(--biolearn-panel-bg) 88%, black);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+:root[data-theme="light"] .biolearn-quiz-overview span {
+  background: color-mix(in srgb, var(--biolearn-panel-bg) 88%, white);
+}
+
+.biolearn-quiz-overview strong {
+  color: var(--biolearn-panel-text);
+  margin-right: 0.18rem;
+}
+
+.biolearn-quiz-dialog {
+  width: min(42rem, calc(100vw - 2rem));
+  max-height: min(42rem, calc(100vh - 2rem));
+  margin: auto;
+  border: 1px solid var(--biolearn-panel-border);
+  border-radius: 8px;
+  padding: 0;
+  background: var(--biolearn-panel-bg);
+  color: var(--biolearn-panel-text);
+  box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 0.42);
+}
+
+.biolearn-quiz-dialog::backdrop {
+  background: rgb(6 21 19 / 0.72);
+}
+
+.biolearn-quiz-modal {
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr) auto;
+  max-height: inherit;
+}
+
+.biolearn-quiz-modal-header,
+.biolearn-quiz-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem;
+  padding: 0.9rem 1rem;
+}
+
+.biolearn-quiz-modal-header {
+  border-bottom: 1px solid var(--biolearn-panel-border);
+}
+
+.biolearn-quiz-modal-header h3 {
+  color: var(--biolearn-panel-text);
+  margin: 0.15rem 0 0;
+  font-size: 1.08rem;
+  line-height: 1.55;
+}
+
+.biolearn-quiz-kicker {
+  color: var(--sl-color-text-accent);
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.biolearn-quiz-close {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid var(--biolearn-panel-border);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--biolearn-panel-text);
+  font: inherit;
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.biolearn-quiz-progress-row {
+  display: grid;
+  gap: 0.45rem;
+  padding: 0.75rem 1rem 0;
+  color: var(--biolearn-panel-muted);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.biolearn-quiz-progress-track {
+  height: 0.45rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--biolearn-panel-bg) 82%, black);
+}
+
+:root[data-theme="light"] .biolearn-quiz-progress-track {
+  background: color-mix(in srgb, var(--biolearn-panel-bg) 85%, white);
+}
+
+.biolearn-quiz-progress-track span {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--sl-color-accent);
+  transition: width 160ms ease;
+}
+
+.biolearn-quiz-modal-body {
+  overflow: auto;
+  padding: 0.85rem 1rem;
+}
+
+.biolearn-quiz-step {
   min-width: 0;
   border: 0;
   margin: 0;
   padding: 0;
 }
 
-.biolearn-quiz-item legend {
+.biolearn-quiz-step legend {
   color: var(--biolearn-panel-text);
   padding: 0;
-  font-weight: 600;
-  line-height: 1.7;
+  font-size: 1.12rem;
+  font-weight: 700;
+  line-height: 1.65;
 }
 
 .biolearn-choice-list {
   display: grid;
-  gap: 0.6rem;
-  margin-top: 0.7rem;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
 }
 
 .biolearn-choice {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 0.55rem;
+  gap: 0.65rem;
   align-items: start;
   border: 1px solid var(--biolearn-panel-border);
   border-radius: 8px;
-  padding: 0.65rem 0.75rem;
+  padding: 0.55rem 0.75rem;
   background: color-mix(in srgb, var(--biolearn-panel-bg) 86%, black);
   cursor: pointer;
 }
@@ -181,22 +342,33 @@ h1[data-page-title] .biolearn-hero-main {
   border-color: var(--sl-color-accent);
 }
 
+.biolearn-choice.is-correct {
+  border-color: #54c6b7;
+  background: color-mix(in srgb, var(--biolearn-panel-bg) 78%, #54c6b7);
+}
+
+.biolearn-choice.is-incorrect {
+  border-color: #e6a93b;
+  background: color-mix(in srgb, var(--biolearn-panel-bg) 80%, #e6a93b);
+}
+
 .biolearn-choice input {
-  margin-top: 0.45rem;
+  margin-top: 0.35rem;
   accent-color: var(--sl-color-accent);
 }
 
 .biolearn-choice span {
   color: var(--biolearn-panel-text);
-  line-height: 1.75;
+  line-height: 1.6;
 }
 
 .biolearn-quiz-feedback {
   border-left: 4px solid var(--biolearn-panel-border);
-  margin: 0.8rem 0 0;
-  padding: 0.65rem 0.8rem;
+  margin: 0.15rem 0 0;
+  padding: 0.6rem 0.8rem;
   background: color-mix(in srgb, var(--biolearn-panel-bg) 90%, black);
   color: var(--biolearn-panel-text);
+  line-height: 1.65;
 }
 
 :root[data-theme="light"] .biolearn-quiz-feedback {
@@ -212,19 +384,20 @@ h1[data-page-title] .biolearn-hero-main {
 }
 
 .biolearn-quiz-actions {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.6rem;
   margin-top: 1rem;
 }
 
 .biolearn-quiz-actions button,
+.biolearn-quiz-modal-footer button,
 .biolearn-progress-actions button,
 .biolearn-progress-question button {
   border: 1px solid var(--biolearn-panel-border);
   border-radius: 8px;
   padding: 0.55rem 0.75rem;
-  background: var(--biolearn-table-head);
+  background: var(--biolearn-secondary-bg);
   color: var(--biolearn-panel-text);
   font: inherit;
   font-weight: 600;
@@ -232,13 +405,88 @@ h1[data-page-title] .biolearn-hero-main {
 }
 
 .biolearn-quiz-actions button:hover,
+.biolearn-quiz-modal-footer button:hover,
 .biolearn-progress-actions button:hover,
 .biolearn-progress-question button:hover {
   border-color: var(--sl-color-accent);
+  background: var(--biolearn-secondary-bg-hover);
 }
 
-.biolearn-answer {
-  margin-top: 0.75rem;
+.biolearn-quiz-actions button:disabled,
+.biolearn-quiz-modal-footer button:disabled {
+  border-color: var(--biolearn-panel-border);
+  background: var(--biolearn-secondary-disabled-bg);
+  color: var(--biolearn-secondary-disabled-text);
+  cursor: not-allowed;
+}
+
+.biolearn-quiz-actions [data-quiz-reset] {
+  border-color: var(--biolearn-reset-border);
+  background: transparent;
+  color: var(--biolearn-reset-text);
+}
+
+.biolearn-quiz-actions [data-quiz-reset]:hover {
+  border-color: var(--biolearn-reset-text);
+  background: var(--biolearn-reset-bg-hover);
+}
+
+.biolearn-quiz-actions .is-primary,
+.biolearn-quiz-modal-footer .is-primary {
+  border-color: var(--biolearn-primary-bg);
+  background: var(--biolearn-primary-bg);
+  color: var(--biolearn-primary-text);
+}
+
+.biolearn-quiz-actions .is-primary {
+  grid-column: 1 / -1;
+  min-height: 3rem;
+  font-size: 1.05rem;
+}
+
+.biolearn-quiz-actions .is-primary:hover,
+.biolearn-quiz-modal-footer .is-primary:hover {
+  border-color: var(--biolearn-primary-bg-hover);
+  background: var(--biolearn-primary-bg-hover);
+  color: var(--biolearn-primary-text);
+}
+
+.biolearn-quiz-modal-footer {
+  display: grid;
+  grid-template-columns: minmax(5rem, auto) minmax(8rem, auto);
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--biolearn-panel-border);
+}
+
+.biolearn-quiz-modal-footer button:not(.is-primary) {
+  grid-column: 1;
+  justify-self: start;
+}
+
+.biolearn-quiz-modal-footer .is-primary {
+  grid-column: 2;
+  justify-self: end;
+  min-width: 8rem;
+}
+
+.biolearn-quiz-result {
+  display: grid;
+  gap: 0.55rem;
+  align-content: center;
+  min-height: 12rem;
+  text-align: center;
+}
+
+.biolearn-quiz-result p {
+  margin: 0;
+  color: var(--biolearn-panel-muted);
+}
+
+.biolearn-quiz-score {
+  color: var(--biolearn-panel-text) !important;
+  font-size: 1.8rem;
+  font-weight: 800;
 }
 
 .biolearn-status-badge {
@@ -752,6 +1000,45 @@ h1[data-page-title] .biolearn-hero-main {
 }
 
 @media (max-width: 34rem) {
+  .biolearn-quiz-heading {
+    display: grid;
+  }
+
+  .biolearn-quiz-status {
+    white-space: normal;
+  }
+
+  .biolearn-quiz-actions,
+  .biolearn-quiz-modal-footer {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .biolearn-quiz-modal-footer button:not(.is-primary),
+  .biolearn-quiz-modal-footer .is-primary {
+    grid-column: auto;
+    justify-self: stretch;
+  }
+
+  .biolearn-quiz-dialog {
+    width: 100vw;
+    max-width: none;
+    max-height: calc(100vh - 1rem);
+    margin: auto 0 0;
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 0;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .biolearn-quiz-modal-header,
+  .biolearn-quiz-modal-body,
+  .biolearn-quiz-modal-footer,
+  .biolearn-quiz-progress-row {
+    padding-right: 0.9rem;
+    padding-left: 0.9rem;
+  }
+
   .biolearn-article-status {
     grid-template-columns: 1fr;
   }

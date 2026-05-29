@@ -119,13 +119,53 @@ Methodsや統計解析の説明では、信頼区間の水準、計算方法、�
 <Quiz
   questions={[
     {
+      id: 'confidence-interval-q1',
       question: '信頼区間は何の不確かさを示す範囲ですか。',
-      answer: '平均、差、比率などの推定値の不確かさを示す範囲です。',
+      choices: [
+        {
+          id: 'a',
+          text: '信頼区間は、研究の結論が正しい確率をそのまま示す。',
+        },
+        {
+          id: 'b',
+          text: '信頼区間は、すべての個々の測定値が必ず入る範囲である。',
+        },
+        {
+          id: 'c',
+          text: '信頼区間を見れば、実験デザインや反復の確認は不要になる。',
+        },
+        {
+          id: 'd',
+          text: '平均、差、比率などの推定値の不確かさを示す範囲です。',
+        },
+      ],
+      answer: 'd',
+      explanation: '平均、差、比率などの推定値の不確かさを示す範囲です。',
     },
     {
+      id: 'confidence-interval-q2',
       question:
         'Figureでエラーバーを見たとき、信頼区間かどうかをどこで確認しますか。',
-      answer: 'Figure legendやMethodsで確認します。',
+      choices: [
+        {
+          id: 'a',
+          text: 'Figure legendやMethodsで確認します。',
+        },
+        {
+          id: 'b',
+          text: '信頼区間は、研究の結論が正しい確率をそのまま示す。',
+        },
+        {
+          id: 'c',
+          text: '信頼区間は、すべての個々の測定値が必ず入る範囲である。',
+        },
+        {
+          id: 'd',
+          text: '信頼区間を見れば、実験デザインや反復の確認は不要になる。',
+        },
+      ],
+      answer: 'a',
+      explanation: 'Figure legendやMethodsで確認します。',
     },
   ]}
 />

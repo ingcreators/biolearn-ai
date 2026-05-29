@@ -135,26 +135,69 @@ RNAは、RT-qPCR、RNA-seq、ノーザンブロット、in situ hybridizationな
 <Quiz
   questions={[
     {
+      id: 'rna-uracil-base',
       question: 'RNAでTの代わりに使われる塩基は何ですか。',
-      answer: 'U、つまりウラシルです。',
+      choices: [
+        'U、つまりウラシル',
+        'A、つまりアデニン',
+        'G、つまりグアニン',
+        'C、つまりシトシン',
+      ],
+      answer: 'a',
+      explanation:
+        'RNAでは、DNAで使われるT（チミン）の代わりにU（ウラシル）が使われます。',
     },
     {
+      id: 'rna-mrna-role',
       question: 'mRNAの主な役割を説明してください。',
-      answer:
-        'タンパク質合成に使われる情報をDNAからリボソームへ伝えることです。',
+      choices: [
+        'タンパク質合成に使われる情報をDNAからリボソームへ伝える',
+        'DNAを細胞膜へ運び、膜脂質に変える',
+        'すべてのアミノ酸を分解してエネルギーだけにする',
+        '染色体を常にX字型に固定する',
+      ],
+      answer: 'a',
+      explanation:
+        'mRNAは、DNAの情報を写し取って、タンパク質合成の場であるリボソームへ伝えるRNAです。',
     },
     {
+      id: 'rna-transcription-definition',
       question: '転写とは何ですか。',
-      answer: 'DNAの情報をもとにRNAを合成する過程です。',
+      choices: [
+        'DNAの情報をもとにRNAを合成する過程',
+        'RNAの情報をもとに脂質を合成する過程',
+        'タンパク質をDNA配列へ戻す過程',
+        '細胞膜を二重らせんへ変える過程',
+      ],
+      answer: 'a',
+      explanation:
+        '転写は、DNA配列を鋳型としてRNAを作る過程です。翻訳はRNAの情報からタンパク質を作る過程です。',
     },
     {
+      id: 'rna-rrna-trna-roles',
       question: 'rRNAとtRNAの役割をそれぞれ簡単に説明してください。',
-      answer:
-        'rRNAはリボソームの構成要素となり、tRNAはアミノ酸をリボソームへ運びます。',
+      choices: [
+        'rRNAはリボソームの構成要素となり、tRNAはアミノ酸をリボソームへ運ぶ',
+        'rRNAはDNAを修復し、tRNAは細胞膜を構成する',
+        'rRNAは脂質を保存し、tRNAはゲノム全体を複製する',
+        'rRNAとtRNAはいずれもタンパク質の立体構造そのものである',
+      ],
+      answer: 'a',
+      explanation:
+        'rRNAはリボソームの構成と働きに関わり、tRNAは対応するアミノ酸を運んで翻訳を助けます。',
     },
     {
+      id: 'rna-seq-target',
       question: 'RNA-seqで主に何を調べますか。',
-      answer: '細胞や試料中のRNAの種類や量を調べ、遺伝子発現を推定します。',
+      choices: [
+        '細胞や試料中のRNAの種類や量を調べ、遺伝子発現を推定する',
+        '細胞膜の厚さだけを測り、膜タンパク質をすべて同定する',
+        'タンパク質の三次構造だけを直接決定する',
+        '培養温度だけからゲノム配列を推定する',
+      ],
+      answer: 'a',
+      explanation:
+        'RNA-seqではRNAの配列と量を読み取り、どの遺伝子がどれくらい発現しているかを推定します。',
     },
   ]}
 />

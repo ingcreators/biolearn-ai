@@ -130,25 +130,126 @@ import GlossaryTable from '../../../components/GlossaryTable.astro';
 <Quiz
   questions={[
     {
+      id: 'noncoding-rna-q1',
       question: '非コードRNAとは何ですか。',
-      answer: 'タンパク質へ翻訳されることを主な役割としないRNAの総称です。',
+      choices: [
+        {
+          id: 'a',
+          text: '「非コードRNA」は、分子の量だけで機能まで常に決まる。',
+        },
+        {
+          id: 'b',
+          text: 'タンパク質へ翻訳されることを主な役割としないRNAの総称です。',
+        },
+        {
+          id: 'c',
+          text: '「非コードRNA」は、細胞内の場所や相互作用とは関係しない。',
+        },
+        {
+          id: 'd',
+          text: '「非コードRNA」は、配列や構造が変わっても働きは常に同じである。',
+        },
+      ],
+      answer: 'b',
+      explanation:
+        'タンパク質へ翻訳されることを主な役割としないRNAの総称です。',
     },
     {
+      id: 'noncoding-rna-q2',
       question: '非コードRNAの例を一つ挙げてください。',
-      answer: 'miRNA、lncRNA、rRNA、tRNAなどがあります。',
+      choices: [
+        {
+          id: 'a',
+          text: '比較対象や条件を確認せず、結論だけを読む。',
+        },
+        {
+          id: 'b',
+          text: '軸、単位、凡例、Methodsを確認せず、表示された差だけを見る。',
+        },
+        {
+          id: 'c',
+          text: 'miRNA、lncRNA、rRNA、tRNAなどがあります。',
+        },
+        {
+          id: 'd',
+          text: 'サンプルや対照を見なくても、用語名だけで判断する。',
+        },
+      ],
+      answer: 'c',
+      explanation: 'miRNA、lncRNA、rRNA、tRNAなどがあります。',
     },
     {
+      id: 'noncoding-rna-q3',
       question: 'mRNAと非コードRNAの違いを説明してください。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: '両者は完全に同じ意味なので、論文では区別して読む必要はない。',
+        },
+        {
+          id: 'b',
+          text: '一方だけを見れば、もう一方の情報も常に完全に分かる。',
+        },
+        {
+          id: 'c',
+          text: '名前が似ているだけで、本文や実験結果の解釈には関係しない。',
+        },
+        {
+          id: 'd',
+          text: 'mRNAはタンパク質を作る鋳型として使われ、非コードRNAは翻訳されずに機能することが多いRNAです。',
+        },
+      ],
+      answer: 'd',
+      explanation:
         'mRNAはタンパク質を作る鋳型として使われ、非コードRNAは翻訳されずに機能することが多いRNAです。',
     },
     {
+      id: 'noncoding-rna-q4',
       question: 'miRNAは非コードRNAですか。',
-      answer: 'はい。miRNAは短い非コードRNAの一種です。',
+      choices: [
+        {
+          id: 'a',
+          text: 'はい。miRNAは短い非コードRNAの一種です。',
+        },
+        {
+          id: 'b',
+          text: '条件や比較対象を確認しなくても、常に同じ結論になる。',
+        },
+        {
+          id: 'c',
+          text: '本文や実験条件に関係なく、用語名だけで判断できる。',
+        },
+        {
+          id: 'd',
+          text: 'Figureの表示だけで、対照や限界を確認せずに判断できる。',
+        },
+      ],
+      answer: 'a',
+      explanation: 'はい。miRNAは短い非コードRNAの一種です。',
     },
     {
+      id: 'noncoding-rna-q5',
       question: '非コードRNAを読むときに注意したいことは何ですか。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: '「非コードRNA」は、分子の量だけで機能まで常に決まる。',
+        },
+        {
+          id: 'b',
+          text: '種類が多いため、どのRNA種で、どの実験で検出され、どんな機能証拠があるかを確認します。',
+        },
+        {
+          id: 'c',
+          text: '「非コードRNA」は、細胞内の場所や相互作用とは関係しない。',
+        },
+        {
+          id: 'd',
+          text: '「非コードRNA」は、配列や構造が変わっても働きは常に同じである。',
+        },
+      ],
+      answer: 'b',
+      explanation:
         '種類が多いため、どのRNA種で、どの実験で検出され、どんな機能証拠があるかを確認します。',
     },
   ]}

@@ -118,15 +118,55 @@ import GlossaryTable from '../../../components/GlossaryTable.astro';
 <Quiz
   questions={[
     {
+      id: 'how-to-read-patient-cohort-table-q1',
       question:
         '患者コホート表で、後続のFigureを見る前に確認したい項目を3つ挙げてください。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: '対象者数、群分け、年齢や性別などの背景、病期、欠測、追跡期間、除外基準などです。',
+        },
+        {
+          id: 'b',
+          text: '比較対象や条件を確認せず、結論だけを読む。',
+        },
+        {
+          id: 'c',
+          text: '軸、単位、凡例、Methodsを確認せず、表示された差だけを見る。',
+        },
+        {
+          id: 'd',
+          text: 'サンプルや対照を見なくても、用語名だけで判断する。',
+        },
+      ],
+      answer: 'a',
+      explanation:
         '対象者数、群分け、年齢や性別などの背景、病期、欠測、追跡期間、除外基準などです。',
     },
     {
+      id: 'how-to-read-patient-cohort-table-q2',
       question:
         'Kaplan-Meier曲線やROC曲線を読む前に、患者コホート表を確認する理由を説明してください。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: '比較対象や条件を確認しなくても、常に同じ結論になるから。',
+        },
+        {
+          id: 'b',
+          text: '群の人数、背景、欠測、追跡期間などがFigureの見え方や解釈に影響するためです。',
+        },
+        {
+          id: 'c',
+          text: '1つの測定値だけで、背景や文脈まで完全に判断できるから。',
+        },
+        {
+          id: 'd',
+          text: 'この概念は結果の解釈には関係しないため、確認する必要がないから。',
+        },
+      ],
+      answer: 'b',
+      explanation:
         '群の人数、背景、欠測、追跡期間などがFigureの見え方や解釈に影響するためです。',
     },
   ]}

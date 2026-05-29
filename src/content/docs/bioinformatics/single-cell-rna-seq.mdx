@@ -122,15 +122,55 @@ single-cell RNA-seqでは、組織から細胞を分離し、細胞ごとのRNA�
 <Quiz
   questions={[
     {
+      id: 'single-cell-rna-seq-q1',
       question:
         'bulk RNA-seqとsingle-cell RNA-seqの大きな違いを説明してください。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: '両者は完全に同じ意味なので、論文では区別して読む必要はない。',
+        },
+        {
+          id: 'b',
+          text: '一方だけを見れば、もう一方の情報も常に完全に分かる。',
+        },
+        {
+          id: 'c',
+          text: '名前が似ているだけで、本文や実験結果の解釈には関係しない。',
+        },
+        {
+          id: 'd',
+          text: 'bulk RNA-seqは試料全体の平均的な発現を見ますが、single-cell RNA-seqは1細胞ごとの発現を見て、細胞集団の違いを調べられます。',
+        },
+      ],
+      answer: 'd',
+      explanation:
         'bulk RNA-seqは試料全体の平均的な発現を見ますが、single-cell RNA-seqは1細胞ごとの発現を見て、細胞集団の違いを調べられます。',
     },
     {
+      id: 'single-cell-rna-seq-q2',
       question:
         'single-cell RNA-seqのFigureでUMAP以外に確認したい情報を挙げてください。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: '細胞数、サンプル数、品質管理、バッチ補正、クラスタリング条件、マーカー遺伝子、細胞タイプ注釈の根拠などです。',
+        },
+        {
+          id: 'b',
+          text: '比較対象や条件を確認せず、結論だけを読む。',
+        },
+        {
+          id: 'c',
+          text: '軸、単位、凡例、Methodsを確認せず、表示された差だけを見る。',
+        },
+        {
+          id: 'd',
+          text: 'サンプルや対照を見なくても、用語名だけで判断する。',
+        },
+      ],
+      answer: 'a',
+      explanation:
         '細胞数、サンプル数、品質管理、バッチ補正、クラスタリング条件、マーカー遺伝子、細胞タイプ注釈の根拠などです。',
     },
   ]}

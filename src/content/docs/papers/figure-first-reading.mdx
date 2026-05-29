@@ -77,14 +77,54 @@ Figure first readingは、Figureを先に見て、論文がどんな証拠を出
 <Quiz
   questions={[
     {
+      id: 'figure-first-reading-q1',
       question:
         'Figureから論文を読むとき、Figureの次に確認したい場所を2つ挙げてください。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: 'Figure legend、Results本文、Methods、必要に応じてDiscussionなどです。',
+        },
+        {
+          id: 'b',
+          text: '比較対象や条件を確認せず、結論だけを読む。',
+        },
+        {
+          id: 'c',
+          text: '軸、単位、凡例、Methodsを確認せず、表示された差だけを見る。',
+        },
+        {
+          id: 'd',
+          text: 'サンプルや対照を見なくても、用語名だけで判断する。',
+        },
+      ],
+      answer: 'a',
+      explanation:
         'Figure legend、Results本文、Methods、必要に応じてDiscussionなどです。',
     },
     {
+      id: 'figure-first-reading-q2',
       question: 'Figureだけで結論を決めない方がよい理由を説明してください。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: '細胞数や測定回数が多ければ、独立サンプル数は確認しなくてよい。',
+        },
+        {
+          id: 'b',
+          text: '条件、反復、統計表示、解析方法、著者の解釈を確認しないと、図の意味を読み違える可能性があるためです。',
+        },
+        {
+          id: 'c',
+          text: '技術的反復と生物学的反復は同じ意味なので区別しなくてよい。',
+        },
+        {
+          id: 'd',
+          text: 'nが大きければ、偏りや実験設計の問題は常に解決する。',
+        },
+      ],
+      answer: 'b',
+      explanation:
         '条件、反復、統計表示、解析方法、著者の解釈を確認しないと、図の意味を読み違える可能性があるためです。',
     },
   ]}

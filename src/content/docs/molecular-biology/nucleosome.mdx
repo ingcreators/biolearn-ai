@@ -124,22 +124,103 @@ import GlossaryTable from '../../../components/GlossaryTable.astro';
 <Quiz
   questions={[
     {
+      id: 'nucleosome-q1',
       question: 'ヌクレオソームとは何ですか。',
-      answer: 'DNAがヒストンタンパク質に巻きついたクロマチンの基本単位です。',
+      choices: [
+        {
+          id: 'a',
+          text: '「ヌクレオソーム」は、分子の量だけで機能まで常に決まる。',
+        },
+        {
+          id: 'b',
+          text: '「ヌクレオソーム」は、細胞内の場所や相互作用とは関係しない。',
+        },
+        {
+          id: 'c',
+          text: 'DNAがヒストンタンパク質に巻きついたクロマチンの基本単位です。',
+        },
+        {
+          id: 'd',
+          text: '「ヌクレオソーム」は、配列や構造が変わっても働きは常に同じである。',
+        },
+      ],
+      answer: 'c',
+      explanation:
+        'DNAがヒストンタンパク質に巻きついたクロマチンの基本単位です。',
     },
     {
+      id: 'nucleosome-q2',
       question: 'ヌクレオソームとヌクレオチドの違いは何ですか。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: '両者は完全に同じ意味なので、論文では区別して読む必要はない。',
+        },
+        {
+          id: 'b',
+          text: '一方だけを見れば、もう一方の情報も常に完全に分かる。',
+        },
+        {
+          id: 'c',
+          text: '名前が似ているだけで、本文や実験結果の解釈には関係しない。',
+        },
+        {
+          id: 'd',
+          text: 'ヌクレオチドはDNAやRNAの構成単位で、ヌクレオソームはDNAとヒストンからなる構造です。',
+        },
+      ],
+      answer: 'd',
+      explanation:
         'ヌクレオチドはDNAやRNAの構成単位で、ヌクレオソームはDNAとヒストンからなる構造です。',
     },
     {
+      id: 'nucleosome-q3',
       question: 'ヌクレオソーム配置が発現制御に関係する理由は何ですか。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: '調節配列がタンパク質から見えやすいか、アクセスしやすいかに影響するためです。',
+        },
+        {
+          id: 'b',
+          text: '両者は完全に同じ意味なので、論文では区別して読む必要はない。',
+        },
+        {
+          id: 'c',
+          text: '一方だけを見れば、もう一方の情報も常に完全に分かる。',
+        },
+        {
+          id: 'd',
+          text: '名前が似ているだけで、本文や実験結果の解釈には関係しない。',
+        },
+      ],
+      answer: 'a',
+      explanation:
         '調節配列がタンパク質から見えやすいか、アクセスしやすいかに影響するためです。',
     },
     {
+      id: 'nucleosome-q4',
       question: 'NDRは何の略ですか。',
-      answer: 'nucleosome-depleted regionです。',
+      choices: [
+        {
+          id: 'a',
+          text: '「ヌクレオソーム」は、分子の量だけで機能まで常に決まる。',
+        },
+        {
+          id: 'b',
+          text: 'nucleosome-depleted regionです。',
+        },
+        {
+          id: 'c',
+          text: '「ヌクレオソーム」は、細胞内の場所や相互作用とは関係しない。',
+        },
+        {
+          id: 'd',
+          text: '「ヌクレオソーム」は、配列や構造が変わっても働きは常に同じである。',
+        },
+      ],
+      answer: 'b',
+      explanation: 'nucleosome-depleted regionです。',
     },
   ]}
 />

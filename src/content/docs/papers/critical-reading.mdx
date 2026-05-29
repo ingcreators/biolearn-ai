@@ -77,13 +77,53 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 <Quiz
   questions={[
     {
+      id: 'critical-reading-q1',
       question: '批判的に読むとき、主張の次に確認したいものは何ですか。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: 'その主張を支えるFigure、Results、Methods、対照、反復、統計表示などです。',
+        },
+        {
+          id: 'b',
+          text: '細胞数や測定回数が多ければ、独立サンプル数は確認しなくてよい。',
+        },
+        {
+          id: 'c',
+          text: '技術的反復と生物学的反復は同じ意味なので区別しなくてよい。',
+        },
+        {
+          id: 'd',
+          text: 'nが大きければ、偏りや実験設計の問題は常に解決する。',
+        },
+      ],
+      answer: 'a',
+      explanation:
         'その主張を支えるFigure、Results、Methods、対照、反復、統計表示などです。',
     },
     {
+      id: 'critical-reading-q2',
       question: '代替説明を考える理由を説明してください。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: '比較対象や条件を確認しなくても、常に同じ結論になるから。',
+        },
+        {
+          id: 'b',
+          text: '観察された結果が、著者の解釈以外の要因でも説明できる可能性があるためです。',
+        },
+        {
+          id: 'c',
+          text: '1つの測定値だけで、背景や文脈まで完全に判断できるから。',
+        },
+        {
+          id: 'd',
+          text: 'この概念は結果の解釈には関係しないため、確認する必要がないから。',
+        },
+      ],
+      answer: 'b',
+      explanation:
         '観察された結果が、著者の解釈以外の要因でも説明できる可能性があるためです。',
     },
   ]}

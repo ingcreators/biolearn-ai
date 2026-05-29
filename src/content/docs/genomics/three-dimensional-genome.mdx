@@ -130,13 +130,53 @@ import GlossaryTable from '../../../components/GlossaryTable.astro';
 <Quiz
   questions={[
     {
+      id: 'three-dimensional-genome-q1',
       question: '3Dゲノムは何を読む考え方ですか。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: 'ゲノム配列が核内でどのように折りたたまれ、近接して配置されるかを読む考え方です。',
+        },
+        {
+          id: 'b',
+          text: '「3Dゲノム」は、ゲノム上の位置だけで機能や影響が完全に分かる。',
+        },
+        {
+          id: 'c',
+          text: '「3Dゲノム」は、参照ゲノムやアノテーションを確認しなくても解釈できる。',
+        },
+        {
+          id: 'd',
+          text: '「3Dゲノム」は、すべての細胞や個体で同じ意味を持つ。',
+        },
+      ],
+      answer: 'a',
+      explanation:
         'ゲノム配列が核内でどのように折りたたまれ、近接して配置されるかを読む考え方です。',
     },
     {
+      id: 'three-dimensional-genome-q2',
       question: 'Hi-Cの接触頻度を読むときの注意点を一つ挙げてください。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: '比較対象や条件を確認せず、結論だけを読む。',
+        },
+        {
+          id: 'b',
+          text: '接触頻度が高いことは近接の手がかりですが、直接の制御や機能を証明するものではないことです。',
+        },
+        {
+          id: 'c',
+          text: '軸、単位、凡例、Methodsを確認せず、表示された差だけを見る。',
+        },
+        {
+          id: 'd',
+          text: 'サンプルや対照を見なくても、用語名だけで判断する。',
+        },
+      ],
+      answer: 'b',
+      explanation:
         '接触頻度が高いことは近接の手がかりですが、直接の制御や機能を証明するものではないことです。',
     },
   ]}

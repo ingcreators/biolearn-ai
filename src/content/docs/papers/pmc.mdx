@@ -105,14 +105,54 @@ PMCで本文を読むときは、まずAbstractで全体像を確認し、Figure
 <Quiz
   questions={[
     {
+      id: 'pmc-q1',
       question:
         'PMCで本文を開いたあと、Figureを読むときに行き来したい場所を2つ挙げてください。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: '「PMC論文の探し方」は、Abstractの一文だけで十分に判断できる。',
+        },
+        {
+          id: 'b',
+          text: '「PMC論文の探し方」は、Methodsや限界を確認しなくても結論を受け取れる。',
+        },
+        {
+          id: 'c',
+          text: '「PMC論文の探し方」は、どの研究デザインでも同じ強さの証拠になる。',
+        },
+        {
+          id: 'd',
+          text: 'Figure legend、Results本文、Methods、必要に応じて補足Figureなどです。',
+        },
+      ],
+      answer: 'd',
+      explanation:
         'Figure legend、Results本文、Methods、必要に応じて補足Figureなどです。',
     },
     {
+      id: 'pmc-q2',
       question: 'すべての論文がPMCで読めるわけではない理由を説明してください。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: '論文の公開条件、出版社の方針、オープンアクセスの有無などによって本文の公開状況が異なるためです。',
+        },
+        {
+          id: 'b',
+          text: '比較対象や条件を確認しなくても、常に同じ結論になるから。',
+        },
+        {
+          id: 'c',
+          text: '1つの測定値だけで、背景や文脈まで完全に判断できるから。',
+        },
+        {
+          id: 'd',
+          text: 'この概念は結果の解釈には関係しないため、確認する必要がないから。',
+        },
+      ],
+      answer: 'a',
+      explanation:
         '論文の公開条件、出版社の方針、オープンアクセスの有無などによって本文の公開状況が異なるためです。',
     },
   ]}

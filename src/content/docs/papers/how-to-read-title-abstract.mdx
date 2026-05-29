@@ -101,12 +101,52 @@ Abstractは、論文全体を短くまとめた文章です。多くの場合、
 <Quiz
   questions={[
     {
+      id: 'how-to-read-title-abstract-q1',
       question: 'Abstractを読むときに分けて拾いたい要素を3つ挙げてください。',
-      answer: '背景、目的、方法、結果、結論などがあります。',
+      choices: [
+        {
+          id: 'a',
+          text: '「TitleとAbstract」は、Abstractの一文だけで十分に判断できる。',
+        },
+        {
+          id: 'b',
+          text: '「TitleとAbstract」は、Methodsや限界を確認しなくても結論を受け取れる。',
+        },
+        {
+          id: 'c',
+          text: '背景、目的、方法、結果、結論などがあります。',
+        },
+        {
+          id: 'd',
+          text: '「TitleとAbstract」は、どの研究デザインでも同じ強さの証拠になる。',
+        },
+      ],
+      answer: 'c',
+      explanation: '背景、目的、方法、結果、結論などがあります。',
     },
     {
+      id: 'how-to-read-title-abstract-q2',
       question: 'Abstractだけで論文を判断しきれない理由を説明してください。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: '比較対象や条件を確認しなくても、常に同じ結論になるから。',
+        },
+        {
+          id: 'b',
+          text: '1つの測定値だけで、背景や文脈まで完全に判断できるから。',
+        },
+        {
+          id: 'c',
+          text: 'この概念は結果の解釈には関係しないため、確認する必要がないから。',
+        },
+        {
+          id: 'd',
+          text: '要約には著者の強調が含まれ、根拠の詳細はResults、Figure、Methodsにあるからです。',
+        },
+      ],
+      answer: 'd',
+      explanation:
         '要約には著者の強調が含まれ、根拠の詳細はResults、Figure、Methodsにあるからです。',
     },
   ]}

@@ -136,19 +136,43 @@ Figureでは、組織切片画像、細胞集団の[UMAP](/glossary/umap/)、細
 <Quiz
   questions={[
     {
+      id: 'tissue-definition',
       question: '組織とは何ですか。',
-      answer: '似た働きや構造を持つ細胞が集まった構造です。',
+      choices: [
+        '似た働きや構造を持つ細胞が集まった構造',
+        '1つのDNA塩基だけでできた分子',
+        '細胞を含まない培地だけの構造',
+        'タンパク質の一次構造だけを指す用語',
+      ],
+      answer: 'a',
+      explanation: '組織は、似た働きや構造を持つ細胞が集まってできる構造です。',
     },
     {
+      id: 'n-cells-caution',
       question: '`n = 100 cells` を読むときに注意することは何ですか。',
-      answer:
-        '100個の細胞を測ったという意味であり、独立した100個体や100サンプルを測ったとは限らない点です。',
+      choices: [
+        '100個の細胞を測ったという意味で、独立した100個体や100サンプルを測ったとは限らない点',
+        '100 cells と書かれていれば、必ず100人のヒト個体を調べたという点',
+        'n は常に遺伝子数だけを表し、細胞数や個体数とは関係しない点',
+        '細胞数が多ければ、生物学的反復の数を確認しなくてよい点',
+      ],
+      answer: 'a',
+      explanation:
+        '`n = 100 cells` は細胞数を表すことがあり、独立した個体やサンプルの数とは限りません。',
     },
     {
+      id: 'bulk-vs-single-cell-rna-seq',
       question:
         '組織全体のRNA-seqとsingle-cell RNA-seqの違いを説明してください。',
-      answer:
-        '組織全体のRNA-seqは多くの細胞の平均的な発現を見やすく、single-cell RNA-seqは細胞ごとの違いを見やすい方法です。',
+      choices: [
+        '組織全体のRNA-seqは平均的な発現を見やすく、single-cell RNA-seqは細胞ごとの違いを見やすい',
+        '組織全体のRNA-seqもsingle-cell RNA-seqも、必ず1細胞だけを測る',
+        'single-cell RNA-seqでは細胞ごとの差は見えず、平均値だけしか見えない',
+        '組織全体のRNA-seqはRNAを測らず、タンパク質の形だけを直接見る',
+      ],
+      answer: 'a',
+      explanation:
+        '組織全体のRNA-seqは混ざった細胞集団の平均像を見やすく、single-cell RNA-seqは細胞ごとの違いを見やすい方法です。',
     },
   ]}
 />

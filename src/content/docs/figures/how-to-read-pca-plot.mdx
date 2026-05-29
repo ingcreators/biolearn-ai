@@ -75,13 +75,53 @@ PCA plotは[次元削減とは何か](/bioinformatics/dimensionality-reduction/)
 <Quiz
   questions={[
     {
+      id: 'how-to-read-pca-plot-q1',
       question: 'PCA plotで点が表すものは何であることが多いですか。',
-      answer: 'RNA-seqなどでは、各点がサンプルを表すことが多いです。',
+      choices: [
+        {
+          id: 'a',
+          text: 'RNA-seqなどでは、各点がサンプルを表すことが多いです。',
+        },
+        {
+          id: 'b',
+          text: '「PCA plot」は、軸、単位、凡例、Figure legendを確認しなくても読める。',
+        },
+        {
+          id: 'c',
+          text: '「PCA plot」は、点や棒の見た目だけで結論を決められる。',
+        },
+        {
+          id: 'd',
+          text: '「PCA plot」は、何を比較している図かを確認しなくても解釈できる。',
+        },
+      ],
+      answer: 'a',
+      explanation: 'RNA-seqなどでは、各点がサンプルを表すことが多いです。',
     },
     {
+      id: 'how-to-read-pca-plot-q2',
       question:
         'PCA plotで外れた点があるときに確認したいことを一つ挙げてください。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: '比較対象や条件を確認せず、結論だけを読む。',
+        },
+        {
+          id: 'b',
+          text: 'サンプル品質、バッチ、処理条件、ライブラリ調製、メタデータなどがあります。',
+        },
+        {
+          id: 'c',
+          text: '軸、単位、凡例、Methodsを確認せず、表示された差だけを見る。',
+        },
+        {
+          id: 'd',
+          text: 'サンプルや対照を見なくても、用語名だけで判断する。',
+        },
+      ],
+      answer: 'b',
+      explanation:
         'サンプル品質、バッチ、処理条件、ライブラリ調製、メタデータなどがあります。',
     },
   ]}

@@ -77,14 +77,54 @@ Results全体を読む前に、[Figureと主張を対応づける](/figures/figu
 <Quiz
   questions={[
     {
+      id: 'results-section-flow-q1',
       question:
         'Results内で各Figureを読むとき、単独の内容以外に確認したいことは何ですか。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: '前のFigureからどんな問いを受け取り、次のFigureへどんな疑問を渡しているかを確認します。',
+        },
+        {
+          id: 'b',
+          text: '比較対象や条件を確認せず、結論だけを読む。',
+        },
+        {
+          id: 'c',
+          text: '軸、単位、凡例、Methodsを確認せず、表示された差だけを見る。',
+        },
+        {
+          id: 'd',
+          text: 'サンプルや対照を見なくても、用語名だけで判断する。',
+        },
+      ],
+      answer: 'a',
+      explanation:
         '前のFigureからどんな問いを受け取り、次のFigureへどんな疑問を渡しているかを確認します。',
     },
     {
+      id: 'results-section-flow-q2',
       question: 'Figureの並びがきれいでも注意が必要な理由を説明してください。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: '細胞数や測定回数が多ければ、独立サンプル数は確認しなくてよい。',
+        },
+        {
+          id: 'b',
+          text: 'ストーリーとして自然でも、対照、反復、代替説明、実験デザインが十分とは限らないためです。',
+        },
+        {
+          id: 'c',
+          text: '技術的反復と生物学的反復は同じ意味なので区別しなくてよい。',
+        },
+        {
+          id: 'd',
+          text: 'nが大きければ、偏りや実験設計の問題は常に解決する。',
+        },
+      ],
+      answer: 'b',
+      explanation:
         'ストーリーとして自然でも、対照、反復、代替説明、実験デザインが十分とは限らないためです。',
     },
   ]}

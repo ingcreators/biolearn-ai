@@ -127,26 +127,126 @@ import GlossaryTable from '../../../components/GlossaryTable.astro';
 <Quiz
   questions={[
     {
+      id: 'transcription-factor-q1',
       question: '転写因子とは何ですか。',
-      answer: 'DNAに結合して遺伝子の転写を調節するタンパク質です。',
+      choices: [
+        {
+          id: 'a',
+          text: 'DNAに結合して遺伝子の転写を調節するタンパク質です。',
+        },
+        {
+          id: 'b',
+          text: '「転写因子」は、分子の量だけで機能まで常に決まる。',
+        },
+        {
+          id: 'c',
+          text: '「転写因子」は、細胞内の場所や相互作用とは関係しない。',
+        },
+        {
+          id: 'd',
+          text: '「転写因子」は、配列や構造が変わっても働きは常に同じである。',
+        },
+      ],
+      answer: 'a',
+      explanation: 'DNAに結合して遺伝子の転写を調節するタンパク質です。',
     },
     {
+      id: 'transcription-factor-q2',
       question: '転写因子が結合する代表的なDNA領域を挙げてください。',
-      answer: 'プロモーターやエンハンサーなどがあります。',
+      choices: [
+        {
+          id: 'a',
+          text: '「転写因子」は、分子の量だけで機能まで常に決まる。',
+        },
+        {
+          id: 'b',
+          text: 'プロモーターやエンハンサーなどがあります。',
+        },
+        {
+          id: 'c',
+          text: '「転写因子」は、細胞内の場所や相互作用とは関係しない。',
+        },
+        {
+          id: 'd',
+          text: '「転写因子」は、配列や構造が変わっても働きは常に同じである。',
+        },
+      ],
+      answer: 'b',
+      explanation: 'プロモーターやエンハンサーなどがあります。',
     },
     {
+      id: 'transcription-factor-q3',
       question: '転写因子とRNAポリメラーゼの違いを説明してください。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: '両者は完全に同じ意味なので、論文では区別して読む必要はない。',
+        },
+        {
+          id: 'b',
+          text: '一方だけを見れば、もう一方の情報も常に完全に分かる。',
+        },
+        {
+          id: 'c',
+          text: 'RNAポリメラーゼはRNAを合成する酵素で、転写因子は転写の起こりやすさを調節するタンパク質です。',
+        },
+        {
+          id: 'd',
+          text: '名前が似ているだけで、本文や実験結果の解釈には関係しない。',
+        },
+      ],
+      answer: 'c',
+      explanation:
         'RNAポリメラーゼはRNAを合成する酵素で、転写因子は転写の起こりやすさを調節するタンパク質です。',
     },
     {
+      id: 'transcription-factor-q4',
       question:
         '転写因子の活性を見るとき、mRNA量以外に確認したいことを挙げてください。',
-      answer: '核局在、タンパク質量、修飾状態、DNA結合などです。',
+      choices: [
+        {
+          id: 'a',
+          text: '比較対象や条件を確認せず、結論だけを読む。',
+        },
+        {
+          id: 'b',
+          text: '軸、単位、凡例、Methodsを確認せず、表示された差だけを見る。',
+        },
+        {
+          id: 'c',
+          text: 'サンプルや対照を見なくても、用語名だけで判断する。',
+        },
+        {
+          id: 'd',
+          text: '核局在、タンパク質量、修飾状態、DNA結合などです。',
+        },
+      ],
+      answer: 'd',
+      explanation: '核局在、タンパク質量、修飾状態、DNA結合などです。',
     },
     {
+      id: 'transcription-factor-q5',
       question: '転写因子結合を調べる実験法を一つ挙げてください。',
-      answer: 'ChIP-seqやChIP-qPCRなどがあります。',
+      choices: [
+        {
+          id: 'a',
+          text: 'ChIP-seqやChIP-qPCRなどがあります。',
+        },
+        {
+          id: 'b',
+          text: '目的の対象とは別の分子だけを測って、同じ結論にする方法。',
+        },
+        {
+          id: 'c',
+          text: '対照や条件を置かずに、測定値だけで原因まで断定する方法。',
+        },
+        {
+          id: 'd',
+          text: '手法名だけを見て、測定対象や限界を確認しない方法。',
+        },
+      ],
+      answer: 'a',
+      explanation: 'ChIP-seqやChIP-qPCRなどがあります。',
     },
   ]}
 />

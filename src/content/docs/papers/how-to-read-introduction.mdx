@@ -72,14 +72,54 @@ Introductionを読み終えたら、「この論文は何を明らかにした�
 <Quiz
   questions={[
     {
+      id: 'how-to-read-introduction-q1',
       question: 'Introductionでまず拾いたい要素を3つ挙げてください。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: '背景、既に分かっていること、未解決の問題、この論文の目的や問いなどがあります。',
+        },
+        {
+          id: 'b',
+          text: '「Introduction」は、Abstractの一文だけで十分に判断できる。',
+        },
+        {
+          id: 'c',
+          text: '「Introduction」は、Methodsや限界を確認しなくても結論を受け取れる。',
+        },
+        {
+          id: 'd',
+          text: '「Introduction」は、どの研究デザインでも同じ強さの証拠になる。',
+        },
+      ],
+      answer: 'a',
+      explanation:
         '背景、既に分かっていること、未解決の問題、この論文の目的や問いなどがあります。',
     },
     {
+      id: 'how-to-read-introduction-q2',
       question:
         'Introductionを読んだあとResultsへ進む前に確認したいことは何ですか。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: '比較対象や条件を確認せず、結論だけを読む。',
+        },
+        {
+          id: 'b',
+          text: 'この論文が何を明らかにしようとしているのか、どの問いに答えようとしているのかを確認します。',
+        },
+        {
+          id: 'c',
+          text: '軸、単位、凡例、Methodsを確認せず、表示された差だけを見る。',
+        },
+        {
+          id: 'd',
+          text: 'サンプルや対照を見なくても、用語名だけで判断する。',
+        },
+      ],
+      answer: 'b',
+      explanation:
         'この論文が何を明らかにしようとしているのか、どの問いに答えようとしているのかを確認します。',
     },
   ]}

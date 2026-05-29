@@ -114,14 +114,55 @@ Figureでは、軸ラベル、単位、凡例、色分け、点の形、パネ�
 <Quiz
   questions={[
     {
+      id: 'variable-q1',
       question:
         'Figureで変数を確認するとき、軸以外に見る場所を一つ挙げてください。',
-      answer: '凡例、色分け、点の形、Figure legend、Methodsなどがあります。',
+      choices: [
+        {
+          id: 'a',
+          text: '凡例、色分け、点の形、Figure legend、Methodsなどがあります。',
+        },
+        {
+          id: 'b',
+          text: '比較対象や条件を確認せず、結論だけを読む。',
+        },
+        {
+          id: 'c',
+          text: '軸、単位、凡例、Methodsを確認せず、表示された差だけを見る。',
+        },
+        {
+          id: 'd',
+          text: 'サンプルや対照を見なくても、用語名だけで判断する。',
+        },
+      ],
+      answer: 'a',
+      explanation:
+        '凡例、色分け、点の形、Figure legend、Methodsなどがあります。',
     },
     {
+      id: 'variable-q2',
       question:
         '条件A/条件Bのような群分けは、量的変数とカテゴリ変数のどちらですか。',
-      answer: 'カテゴリ変数です。',
+      choices: [
+        {
+          id: 'a',
+          text: '量的変数です。',
+        },
+        {
+          id: 'b',
+          text: 'カテゴリ変数です。',
+        },
+        {
+          id: 'c',
+          text: 'p値です。',
+        },
+        {
+          id: 'd',
+          text: '標準誤差です。',
+        },
+      ],
+      answer: 'b',
+      explanation: 'カテゴリ変数です。',
     },
   ]}
 />

@@ -76,13 +76,53 @@ UMAPやt-SNEは、多数の特徴を持つ細胞やサンプルを2次元に配�
 <Quiz
   questions={[
     {
+      id: 'how-to-read-umap-tsne-q1',
       question: 'single-cellのUMAPで1つの点は何を表すことが多いですか。',
-      answer: '1つの細胞を表すことが多いです。',
+      choices: [
+        {
+          id: 'a',
+          text: '「UMAP / t-SNE」は、軸、単位、凡例、Figure legendを確認しなくても読める。',
+        },
+        {
+          id: 'b',
+          text: '1つの細胞を表すことが多いです。',
+        },
+        {
+          id: 'c',
+          text: '「UMAP / t-SNE」は、点や棒の見た目だけで結論を決められる。',
+        },
+        {
+          id: 'd',
+          text: '「UMAP / t-SNE」は、何を比較している図かを確認しなくても解釈できる。',
+        },
+      ],
+      answer: 'b',
+      explanation: '1つの細胞を表すことが多いです。',
     },
     {
+      id: 'how-to-read-umap-tsne-q2',
       question:
         'UMAPのクラスタ名を読むときに確認したい根拠を一つ挙げてください。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: '比較対象や条件を確認せず、結論だけを読む。',
+        },
+        {
+          id: 'b',
+          text: '軸、単位、凡例、Methodsを確認せず、表示された差だけを見る。',
+        },
+        {
+          id: 'c',
+          text: 'マーカー遺伝子、注釈方法、サンプル情報、既知の細胞タイプとの対応などです。',
+        },
+        {
+          id: 'd',
+          text: 'サンプルや対照を見なくても、用語名だけで判断する。',
+        },
+      ],
+      answer: 'c',
+      explanation:
         'マーカー遺伝子、注釈方法、サンプル情報、既知の細胞タイプとの対応などです。',
     },
   ]}

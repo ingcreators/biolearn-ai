@@ -74,14 +74,54 @@ Referencesには、本文で引用された論文、レビュー、データベ�
 <Quiz
   questions={[
     {
+      id: 'how-to-read-references-q1',
       question:
         'Referencesから次に読む文献を選ぶとき、注目したい文献を2種類挙げてください。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: '「References」は、Abstractの一文だけで十分に判断できる。',
+        },
+        {
+          id: 'b',
+          text: '「References」は、Methodsや限界を確認しなくても結論を受け取れる。',
+        },
+        {
+          id: 'c',
+          text: '背景として重要なレビュー論文、Methodsで使われた手法論文、ResultsやDiscussionで比較対象になっている原著論文などです。',
+        },
+        {
+          id: 'd',
+          text: '「References」は、どの研究デザインでも同じ強さの証拠になる。',
+        },
+      ],
+      answer: 'c',
+      explanation:
         '背景として重要なレビュー論文、Methodsで使われた手法論文、ResultsやDiscussionで比較対象になっている原著論文などです。',
     },
     {
+      id: 'how-to-read-references-q2',
       question: '引用されている文献を読むときに注意したいことは何ですか。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: '「References」は、Abstractの一文だけで十分に判断できる。',
+        },
+        {
+          id: 'b',
+          text: '「References」は、Methodsや限界を確認しなくても結論を受け取れる。',
+        },
+        {
+          id: 'c',
+          text: '「References」は、どの研究デザインでも同じ強さの証拠になる。',
+        },
+        {
+          id: 'd',
+          text: '引用された文献が著者の主張を支持しているとは限らないため、本文でどう使われているかを確認します。',
+        },
+      ],
+      answer: 'd',
+      explanation:
         '引用された文献が著者の主張を支持しているとは限らないため、本文でどう使われているかを確認します。',
     },
   ]}

@@ -76,12 +76,52 @@ GSEA plotは[差次的発現解析](/bioinformatics/differential-expression/)や
 <Quiz
   questions={[
     {
+      id: 'how-to-read-gsea-plot-q1',
       question: 'GSEA plotで横軸は何を表すことが多いですか。',
-      answer: '比較に基づいて並べた遺伝子ランキングを表すことが多いです。',
+      choices: [
+        {
+          id: 'a',
+          text: '「GSEA plot」は、軸、単位、凡例、Figure legendを確認しなくても読める。',
+        },
+        {
+          id: 'b',
+          text: '比較に基づいて並べた遺伝子ランキングを表すことが多いです。',
+        },
+        {
+          id: 'c',
+          text: '「GSEA plot」は、点や棒の見た目だけで結論を決められる。',
+        },
+        {
+          id: 'd',
+          text: '「GSEA plot」は、何を比較している図かを確認しなくても解釈できる。',
+        },
+      ],
+      answer: 'b',
+      explanation: '比較に基づいて並べた遺伝子ランキングを表すことが多いです。',
     },
     {
+      id: 'how-to-read-gsea-plot-q2',
       question: 'GSEAの結果でFDRを見る理由を説明してください。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: '比較対象や条件を確認しなくても、常に同じ結論になるから。',
+        },
+        {
+          id: 'b',
+          text: '1つの測定値だけで、背景や文脈まで完全に判断できるから。',
+        },
+        {
+          id: 'c',
+          text: '多数の遺伝子セットを調べるため、多重検定の影響を考慮する必要があるからです。',
+        },
+        {
+          id: 'd',
+          text: 'この概念は結果の解釈には関係しないため、確認する必要がないから。',
+        },
+      ],
+      answer: 'c',
+      explanation:
         '多数の遺伝子セットを調べるため、多重検定の影響を考慮する必要があるからです。',
     },
   ]}

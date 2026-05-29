@@ -78,13 +78,53 @@ Violin plotは[分布](/statistics/distribution/)を読むFigureです。中央�
 <Quiz
   questions={[
     {
+      id: 'how-to-read-violin-plot-q1',
       question: 'Violin plotで幅が広い部分は何を表しますか。',
-      answer: 'その値の付近にデータが多いことを表します。',
+      choices: [
+        {
+          id: 'a',
+          text: '「Violin plot」は、軸、単位、凡例、Figure legendを確認しなくても読める。',
+        },
+        {
+          id: 'b',
+          text: '「Violin plot」は、点や棒の見た目だけで結論を決められる。',
+        },
+        {
+          id: 'c',
+          text: '「Violin plot」は、何を比較している図かを確認しなくても解釈できる。',
+        },
+        {
+          id: 'd',
+          text: 'その値の付近にデータが多いことを表します。',
+        },
+      ],
+      answer: 'd',
+      explanation: 'その値の付近にデータが多いことを表します。',
     },
     {
+      id: 'how-to-read-violin-plot-q2',
       question:
         '2つの群の中央値が違って見えるとき、ほかに確認したいことを一つ挙げてください。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: '分布の重なり、ばらつき、サンプル数、個々の点、統計表示などを確認します。',
+        },
+        {
+          id: 'b',
+          text: '比較対象や条件を確認せず、結論だけを読む。',
+        },
+        {
+          id: 'c',
+          text: '軸、単位、凡例、Methodsを確認せず、表示された差だけを見る。',
+        },
+        {
+          id: 'd',
+          text: 'サンプルや対照を見なくても、用語名だけで判断する。',
+        },
+      ],
+      answer: 'a',
+      explanation:
         '分布の重なり、ばらつき、サンプル数、個々の点、統計表示などを確認します。',
     },
   ]}

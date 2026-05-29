@@ -74,14 +74,54 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 <Quiz
   questions={[
     {
+      id: 'first-pass-reading-q1',
       question: '初回読みで完璧な理解より優先したいことは何ですか。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: '比較対象や条件を確認せず、結論だけを読む。',
+        },
+        {
+          id: 'b',
+          text: '軸、単位、凡例、Methodsを確認せず、表示された差だけを見る。',
+        },
+        {
+          id: 'c',
+          text: '研究の問い、主要Figure、使った方法、結論の候補、後で深く読む箇所をつかむことです。',
+        },
+        {
+          id: 'd',
+          text: 'サンプルや対照を見なくても、用語名だけで判断する。',
+        },
+      ],
+      answer: 'c',
+      explanation:
         '研究の問い、主要Figure、使った方法、結論の候補、後で深く読む箇所をつかむことです。',
     },
     {
+      id: 'first-pass-reading-q2',
       question:
         '分からない手法が出てきたとき、初回読みではどう扱うとよいですか。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: '比較対象や条件を確認せず、結論だけを読む。',
+        },
+        {
+          id: 'b',
+          text: '軸、単位、凡例、Methodsを確認せず、表示された差だけを見る。',
+        },
+        {
+          id: 'c',
+          text: 'サンプルや対照を見なくても、用語名だけで判断する。',
+        },
+        {
+          id: 'd',
+          text: '印をつけて保留し、全体像をつかんだ後でMethodsや手法記事に戻ります。',
+        },
+      ],
+      answer: 'd',
+      explanation:
         '印をつけて保留し、全体像をつかんだ後でMethodsや手法記事に戻ります。',
     },
   ]}

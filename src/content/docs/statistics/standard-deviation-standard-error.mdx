@@ -136,20 +136,80 @@ SEMが大きい場合、平均値の推定が不確かであることを示し�
 <Quiz
   questions={[
     {
+      id: 'standard-deviation-standard-error-q1',
       question: '標準偏差と標準誤差は、それぞれ何を表しますか。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: 'エラーバーは常にp値そのものを表す。',
+        },
+        {
+          id: 'b',
+          text: '標準偏差はデータそのもののばらつき、標準誤差は平均値の推定の不確かさを表します。',
+        },
+        {
+          id: 'c',
+          text: 'エラーバーが短ければ、反復の種類や定義は確認しなくてよい。',
+        },
+        {
+          id: 'd',
+          text: 'SDとSEMは同じ意味なので区別しなくてよい。',
+        },
+      ],
+      answer: 'b',
+      explanation:
         '標準偏差はデータそのもののばらつき、標準誤差は平均値の推定の不確かさを表します。',
     },
     {
+      id: 'standard-deviation-standard-error-q2',
       question:
         'SEMのエラーバーが小さい図を読むとき、どんな誤解に注意しますか。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: 'エラーバーは常にp値そのものを表す。',
+        },
+        {
+          id: 'b',
+          text: 'エラーバーが短ければ、反復の種類や定義は確認しなくてよい。',
+        },
+        {
+          id: 'c',
+          text: 'SEMが小さいことを、個々のデータのばらつきが小さいことと混同しないようにします。',
+        },
+        {
+          id: 'd',
+          text: 'SDとSEMは同じ意味なので区別しなくてよい。',
+        },
+      ],
+      answer: 'c',
+      explanation:
         'SEMが小さいことを、個々のデータのばらつきが小さいことと混同しないようにします。',
     },
     {
+      id: 'standard-deviation-standard-error-q3',
       question:
         'Figure legendで `mean ± SD` と `mean ± SEM` を確認する理由を説明してください。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: 'エラーバーは常にp値そのものを表す。',
+        },
+        {
+          id: 'b',
+          text: 'エラーバーが短ければ、反復の種類や定義は確認しなくてよい。',
+        },
+        {
+          id: 'c',
+          text: 'SDとSEMは同じ意味なので区別しなくてよい。',
+        },
+        {
+          id: 'd',
+          text: '同じ見た目のエラーバーでも、SDならデータの散らばり、SEMなら平均推定の不確かさを表し、解釈が変わるからです。',
+        },
+      ],
+      answer: 'd',
+      explanation:
         '同じ見た目のエラーバーでも、SDならデータの散らばり、SEMなら平均推定の不確かさを表し、解釈が変わるからです。',
     },
   ]}

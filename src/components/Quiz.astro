@@ -19,19 +19,91 @@ interface Props {
 const { questions, lessonId, lessonTitle } = Astro.props;
 const derivedLessonId = lessonId ?? lessonIdFromPath(Astro.url.pathname);
 const derivedLessonTitle = lessonTitle ?? '';
+const quizTitleId = `quiz-title-${derivedLessonId}`;
+const dialogTitleId = `quiz-dialog-title-${derivedLessonId}`;
 const choiceIds = ['a', 'b', 'c', 'd', 'e', 'f'];
+
+const buildQuestionAwareDistractors = (question: string) => {
+  if (question.includes('違い') || question.includes('関係')) {
+    return [
+      '両者は完全に同じ意味なので、区別して読む必要はない。',
+      '一方だけを見れば、もう一方の情報も常に完全にわかる。',
+      '名前が似ているだけで、本文や実験結果の解釈には関係しない。',
+    ];
+  }
+
+  if (question.includes('理由') || question.includes('なぜ')) {
+    return [
+      '比較対象や条件を確認しなくても、常に同じ結論になるから。',
+      '1つの測定値だけで、背景や文脈まで完全に判断できるから。',
+      'この概念は結果の解釈には関係しないため、確認する必要がないから。',
+    ];
+  }
+
+  if (question.includes('実験') || question.includes('調べる')) {
+    return [
+      '測定対象を決めずに、どの手法でも同じ情報が得られる。',
+      '対照や条件を確認しなくても、結果の意味は常に一つに決まる。',
+      '目的の分子や現象を見ずに、手法名だけで結論を決められる。',
+    ];
+  }
+
+  if (question.includes('挙げて') || question.includes('例')) {
+    return [
+      '対象や比較を確認せず、名前だけを暗記すればよい。',
+      '測定対象が違っていても、似た名前の手法なら同じ例として扱えばよい。',
+      '測定や観察の対象を区別しなくても、どの例も同じ意味になる。',
+    ];
+  }
+
+  return [
+    '名前が似た別概念と同じものとして扱えばよい。',
+    'どの細胞や条件でも常に同じ量・状態で存在するものだけを指す。',
+    '測定対象や文脈に関係なく、常に一つの意味だけで使われる。',
+  ];
+};
+
+const buildGeneratedChoices = (
+  question: string,
+  answer: string,
+  questionIndex: number,
+) => {
+  const correctIndex = (questionIndex + derivedLessonId.length) % 4;
+  const distractors = buildQuestionAwareDistractors(question);
+  const choices = [...distractors.slice(0, 3)];
+  choices.splice(correctIndex, 0, answer);
+
+  return choices.map((text, choiceIndex) => ({
+    id: choiceIds[choiceIndex] ?? String(choiceIndex + 1),
+    text,
+  }));
+};
+
 const normalizedQuestions = questions.map((item, questionIndex) => {
-  const choices = item.choices?.map((choice, choiceIndex) =>
-    typeof choice === 'string'
-      ? { id: choiceIds[choiceIndex] ?? String(choiceIndex + 1), text: choice }
-      : choice,
-  );
+  const choices = (
+    item.choices
+      ? item.choices.map((choice, choiceIndex) =>
+          typeof choice === 'string'
+            ? {
+                id: choiceIds[choiceIndex] ?? String(choiceIndex + 1),
+                text: choice,
+              }
+            : choice,
+        )
+      : buildGeneratedChoices(item.question, item.answer, questionIndex)
+  ).filter((choice) => choice.text.trim().length > 0);
+
+  const correctChoice =
+    item.correctChoice ??
+    (item.choices
+      ? item.answer
+      : choices.find((choice) => choice.text === item.answer)?.id);
 
   return {
     ...item,
     id: item.id ?? `${derivedLessonId}-q${questionIndex + 1}`,
     choices,
-    correctChoice: item.correctChoice ?? (choices ? item.answer : undefined),
+    correctChoice,
     explanation: item.explanation ?? item.answer,
   };
 });
@@ -41,7 +113,7 @@ const scorableQuestions = normalizedQuestions.filter((item) => item.choices);
 
 <section
   class="biolearn-quiz"
-  aria-labelledby="quiz-title"
+  aria-labelledby={quizTitleId}
   data-biolearn-quiz
   data-lesson-id={derivedLessonId}
   data-lesson-path={Astro.url.pathname}
@@ -49,7 +121,12 @@ const scorableQuestions = normalizedQuestions.filter((item) => item.choices);
   data-questions={JSON.stringify(scorableQuestions)}
 >
   <div class="biolearn-quiz-heading">
-    <div id="quiz-title" class="biolearn-quiz-title">確認問題</div>
+    <div>
+      <div id={quizTitleId} class="biolearn-quiz-title">確認問題</div>
+      <p class="biolearn-quiz-lead">
+        読み終えた内容を、1問ずつ選択式で確認します。
+      </p>
+    </div>
     {
       scorableQuestions.length > 0 && (
         <p class="biolearn-quiz-status" data-quiz-status aria-live="polite">
@@ -58,67 +135,97 @@ const scorableQuestions = normalizedQuestions.filter((item) => item.choices);
       )
     }
   </div>
-  <ol class="biolearn-quiz-list">
-    {
-      normalizedQuestions.map((item) => (
-        <li class:list={['biolearn-quiz-item', item.choices && 'is-scorable']}>
-          {item.choices ? (
-            <fieldset data-question-id={item.id}>
-              <legend>{item.question}</legend>
-              <div class="biolearn-choice-list">
-                {item.choices.map((choice) => (
-                  <label class="biolearn-choice">
-                    <input
-                      type="radio"
-                      name={item.id}
-                      value={choice.id}
-                      data-correct={
-                        choice.id === item.correctChoice ? 'true' : 'false'
-                      }
-                    />
-                    <span>{choice.text}</span>
-                  </label>
-                ))}
-              </div>
-              <p class="biolearn-quiz-feedback" data-quiz-feedback hidden>
-                {item.explanation}
-              </p>
-            </fieldset>
-          ) : (
-            <>
-              <p>{item.question}</p>
-              <details class="biolearn-answer">
-                <summary>解答例を見る</summary>
-                <p>{item.answer}</p>
-              </details>
-            </>
-          )}
-        </li>
-      ))
-    }
-  </ol>
+
   {
     scorableQuestions.length > 0 && (
-      <div class="biolearn-quiz-actions">
-        <button type="button" data-quiz-submit>
-          採点する
-        </button>
-        <button type="button" data-quiz-review-wrong>
-          間違えた問題だけ復習
-        </button>
-        <button type="button" data-quiz-retry>
-          もう一度解く
-        </button>
-        <button type="button" data-quiz-reset>
-          履歴をリセット
-        </button>
-      </div>
+      <>
+        <div class="biolearn-quiz-overview" aria-label="確認問題の概要">
+          <span>
+            <strong>{scorableQuestions.length}</strong>問
+          </span>
+          <span data-quiz-best-score>最高記録なし</span>
+          <span data-quiz-review-count>復習なし</span>
+        </div>
+        <div class="biolearn-quiz-actions">
+          <button type="button" class="is-primary" data-quiz-open>
+            確認する
+          </button>
+          <button type="button" data-quiz-review-wrong>
+            間違えた問題を復習
+          </button>
+          <button type="button" data-quiz-reset>
+            履歴をリセット
+          </button>
+        </div>
+      </>
+    )
+  }
+
+  {
+    scorableQuestions.length > 0 && (
+      <dialog
+        class="biolearn-quiz-dialog"
+        data-quiz-dialog
+        aria-labelledby={dialogTitleId}
+      >
+        <div class="biolearn-quiz-modal" data-quiz-modal>
+          <header class="biolearn-quiz-modal-header">
+            <div>
+              <p class="biolearn-quiz-kicker" data-quiz-mode-label>
+                確認問題
+              </p>
+              <h3 id={dialogTitleId} data-quiz-dialog-title>
+                確認問題
+              </h3>
+            </div>
+            <button
+              type="button"
+              class="biolearn-quiz-close"
+              data-quiz-close
+              aria-label="確認問題を閉じる"
+            >
+              ×
+            </button>
+          </header>
+
+          <div class="biolearn-quiz-progress-row">
+            <span data-quiz-progress-text>1/{scorableQuestions.length}</span>
+            <div class="biolearn-quiz-progress-track" aria-hidden="true">
+              <span data-quiz-progress-bar />
+            </div>
+          </div>
+
+          <div class="biolearn-quiz-modal-body" data-quiz-screen />
+
+          <footer class="biolearn-quiz-modal-footer">
+            <button type="button" data-quiz-prev>
+              前へ
+            </button>
+            <button type="button" class="is-primary" data-quiz-next>
+              回答する
+            </button>
+          </footer>
+        </div>
+      </dialog>
     )
   }
 </section>
 
 <script>
   import { createLearningProgressStore } from '../lib/learning-progress';
+
+  type QuizQuestion = {
+    id: string;
+    question: string;
+    choices: { id: string; text: string }[];
+    correctChoice: string;
+    explanation: string;
+  };
+
+  type QuizAnswer = {
+    question: QuizQuestion;
+    choiceId: string;
+  };
 
   const store = createLearningProgressStore();
 
@@ -129,186 +236,354 @@ const scorableQuestions = normalizedQuestions.filter((item) => item.choices);
 
   const getQuestions = (root: HTMLElement) => {
     try {
-      return JSON.parse(root.dataset.questions ?? '[]') as {
-        id: string;
-        question: string;
-        choices: { id: string; text: string }[];
-        correctChoice: string;
-        explanation: string;
-      }[];
+      return JSON.parse(root.dataset.questions ?? '[]') as QuizQuestion[];
     } catch {
       return [];
     }
   };
 
-  const setStatus = (root: HTMLElement, text: string) => {
-    const status = root.querySelector<HTMLElement>('[data-quiz-status]');
-    if (status) status.textContent = text;
+  const getSelectedChoice = (screen: HTMLElement) =>
+    screen.querySelector<HTMLInputElement>(
+      'input[name="biolearn-quiz-choice"]:checked',
+    )?.value;
+
+  const setText = (root: HTMLElement, selector: string, text: string) => {
+    const element = root.querySelector<HTMLElement>(selector);
+    if (element) element.textContent = text;
   };
 
-  const clearFeedback = (root: HTMLElement) => {
-    root
-      .querySelectorAll<HTMLElement>('[data-quiz-feedback]')
-      .forEach((feedback) => {
-        feedback.hidden = true;
-        feedback.textContent = '';
-        feedback.classList.remove('is-correct', 'is-incorrect');
-      });
-    root
-      .querySelectorAll<HTMLElement>('.biolearn-quiz-item')
-      .forEach((item) => {
-        item.hidden = false;
-        item.classList.remove('is-correct', 'is-incorrect');
-      });
-  };
-
-  const updateStatusFromStore = (root: HTMLElement) => {
+  const updateEntryState = (root: HTMLElement) => {
     const lessonId = root.dataset.lessonId;
     if (!lessonId) return;
 
     const lesson = store.getLesson(lessonId);
-    if (!lesson) {
-      setStatus(root, '未回答');
-      return;
+    const reviewCount = lesson
+      ? Object.values(lesson.questions).filter(
+          (question) => question.needsReview,
+        ).length
+      : 0;
+
+    setText(
+      root,
+      '[data-quiz-status]',
+      lesson
+        ? `前回 ${lesson.latestScore}/${lesson.totalQuestions}問`
+        : '未回答',
+    );
+    setText(
+      root,
+      '[data-quiz-best-score]',
+      lesson
+        ? `最高 ${lesson.bestScore}/${lesson.totalQuestions}問`
+        : '最高記録なし',
+    );
+    setText(
+      root,
+      '[data-quiz-review-count]',
+      reviewCount > 0 ? `復習 ${reviewCount}問` : '復習なし',
+    );
+
+    const reviewButton = root.querySelector<HTMLButtonElement>(
+      '[data-quiz-review-wrong]',
+    );
+    if (reviewButton) {
+      reviewButton.disabled = reviewCount === 0;
+      reviewButton.textContent =
+        reviewCount > 0
+          ? `間違えた問題を復習 (${reviewCount})`
+          : '間違えた問題を復習';
+    }
+  };
+
+  const buildChoice = (
+    question: QuizQuestion,
+    choice: QuizQuestion['choices'][number],
+    selectedChoiceId?: string,
+    revealed = false,
+  ) => {
+    const label = document.createElement('label');
+    label.className = 'biolearn-choice';
+    if (revealed && choice.id === question.correctChoice) {
+      label.classList.add('is-correct');
+    }
+    if (
+      revealed &&
+      selectedChoiceId === choice.id &&
+      selectedChoiceId !== question.correctChoice
+    ) {
+      label.classList.add('is-incorrect');
     }
 
-    const reviewCount = Object.values(lesson.questions).filter(
-      (question) => question.needsReview,
-    ).length;
-    const reviewText = reviewCount > 0 ? `・復習 ${reviewCount}問` : '';
-    setStatus(
-      root,
-      `前回 ${lesson.latestScore}/${lesson.totalQuestions}問 ${reviewText}`,
-    );
+    const input = document.createElement('input');
+    input.type = 'radio';
+    input.name = 'biolearn-quiz-choice';
+    input.value = choice.id;
+    input.checked = choice.id === selectedChoiceId;
+    input.disabled = revealed;
+
+    const span = document.createElement('span');
+    span.textContent = choice.text;
+
+    label.append(input, span);
+    return label;
   };
 
   const initQuiz = (root: HTMLElement) => {
     const questions = getQuestions(root);
     if (questions.length === 0) return;
 
-    updateStatusFromStore(root);
+    const dialog = root.querySelector<HTMLDialogElement>('[data-quiz-dialog]');
+    const screen = root.querySelector<HTMLElement>('[data-quiz-screen]');
+    const progressBar = root.querySelector<HTMLElement>(
+      '[data-quiz-progress-bar]',
+    );
+    const nextButton =
+      root.querySelector<HTMLButtonElement>('[data-quiz-next]');
+    const prevButton =
+      root.querySelector<HTMLButtonElement>('[data-quiz-prev]');
+    const dialogTitle = root.querySelector<HTMLElement>(
+      '[data-quiz-dialog-title]',
+    );
 
-    root.querySelector('[data-quiz-submit]')?.addEventListener('click', () => {
-      const answers = [];
-      clearFeedback(root);
+    if (!dialog || !screen || !nextButton || !prevButton) return;
 
-      for (const question of questions) {
-        const selected = root.querySelector<HTMLInputElement>(
-          `input[name="${CSS.escape(question.id)}"]:checked`,
-        );
+    let activeQuestions = questions;
+    let currentIndex = 0;
+    let revealed = false;
+    let mode: 'all' | 'review' = 'all';
+    const answers = new Map<string, string>();
 
-        if (!selected) {
-          setStatus(root, '未回答の問題があります');
-          return;
-        }
+    const getCurrentQuestion = () => activeQuestions[currentIndex];
 
-        answers.push({ question, choiceId: selected.value });
-      }
-
-      const lesson = store.recordQuizAttempt({
-        lessonId: root.dataset.lessonId ?? location.pathname,
-        path: root.dataset.lessonPath ?? location.pathname,
-        title: getLessonTitle(root),
-        totalQuestions: questions.length,
-        answers,
-      });
-
-      for (const answer of answers) {
-        const fieldset = root.querySelector<HTMLElement>(
-          `[data-question-id="${CSS.escape(answer.question.id)}"]`,
-        );
-        const feedback = fieldset?.querySelector<HTMLElement>(
-          '[data-quiz-feedback]',
-        );
-        const listItem = fieldset?.closest<HTMLElement>('.biolearn-quiz-item');
-        const selectedChoice = answer.question.choices.find(
-          (choice) => choice.id === answer.choiceId,
-        );
-        const isCorrect = answer.choiceId === answer.question.correctChoice;
-        const prefix = isCorrect
-          ? '正解'
-          : `不正解（選択: ${selectedChoice?.text ?? ''}）`;
-
-        feedback?.classList.add(isCorrect ? 'is-correct' : 'is-incorrect');
-        if (feedback) {
-          feedback.hidden = false;
-          feedback.textContent = `${prefix}: ${answer.question.explanation}`;
-        }
-        listItem?.classList.add(isCorrect ? 'is-correct' : 'is-incorrect');
-      }
-
-      const reviewCount = Object.values(lesson.questions).filter(
-        (question) => question.needsReview,
-      ).length;
-      const reviewText = reviewCount > 0 ? `・復習 ${reviewCount}問` : '';
-      setStatus(
-        root,
-        `今回 ${lesson.latestScore}/${lesson.totalQuestions}問 ${reviewText}`,
+    const getStoredReviewQuestions = () => {
+      const lessonId = root.dataset.lessonId;
+      const lesson = lessonId ? store.getLesson(lessonId) : undefined;
+      if (!lesson) return [];
+      return questions.filter(
+        (question) => lesson.questions[question.id]?.needsReview,
       );
+    };
+
+    const updateProgress = () => {
+      const current = Math.min(currentIndex + 1, activeQuestions.length);
+      const total = activeQuestions.length;
+      setText(root, '[data-quiz-progress-text]', `${current}/${total}`);
+      if (progressBar) {
+        progressBar.style.width = `${Math.round((current / total) * 100)}%`;
+      }
+    };
+
+    const renderResult = () => {
+      const answerList = activeQuestions.map((question) => ({
+        question,
+        choiceId: answers.get(question.id) ?? '',
+      }));
+      const score = answerList.filter(
+        (answer) => answer.choiceId === answer.question.correctChoice,
+      ).length;
+
+      if (dialogTitle) dialogTitle.textContent = '結果';
+      setText(root, '[data-quiz-mode-label]', '確認問題');
+      setText(
+        root,
+        '[data-quiz-progress-text]',
+        `${activeQuestions.length}/${activeQuestions.length}`,
+      );
+      if (progressBar) progressBar.style.width = '100%';
+
+      screen.replaceChildren();
+      const result = document.createElement('div');
+      result.className = 'biolearn-quiz-result';
+
+      const scoreText = document.createElement('p');
+      scoreText.className = 'biolearn-quiz-score';
+      scoreText.textContent = `${score}/${activeQuestions.length}問 正解`;
+
+      const message = document.createElement('p');
+      if (mode === 'review') {
+        message.textContent =
+          score === activeQuestions.length
+            ? '復習対象を更新しました。'
+            : 'まだ復習が必要な問題があります。解説を見直してからもう一度確認しましょう。';
+      } else {
+        message.textContent =
+          score === activeQuestions.length
+            ? 'よく理解できています。この記事は学習済みとして記録されました。'
+            : '間違えた問題は復習リストに残ります。解説を見直してからもう一度確認しましょう。';
+      }
+
+      result.append(scoreText, message);
+      screen.append(result);
+
+      prevButton.hidden = true;
+      nextButton.textContent = '閉じる';
+    };
+
+    const saveAttempt = () => {
+      const completeAnswers: QuizAnswer[] = activeQuestions.map((question) => ({
+        question,
+        choiceId: answers.get(question.id) ?? '',
+      }));
+
+      if (mode === 'review') {
+        for (const answer of completeAnswers) {
+          store.recordQuestionReview({
+            lessonId: root.dataset.lessonId ?? location.pathname,
+            path: root.dataset.lessonPath ?? location.pathname,
+            title: getLessonTitle(root),
+            question: answer.question,
+            choiceId: answer.choiceId,
+          });
+        }
+      } else {
+        store.recordQuizAttempt({
+          lessonId: root.dataset.lessonId ?? location.pathname,
+          path: root.dataset.lessonPath ?? location.pathname,
+          title: getLessonTitle(root),
+          totalQuestions: questions.length,
+          answers: completeAnswers,
+        });
+      }
+
+      updateEntryState(root);
+    };
+
+    const renderQuestion = () => {
+      const question = getCurrentQuestion();
+      const selectedChoiceId = answers.get(question.id);
+      const isAnswered = Boolean(selectedChoiceId);
+      const isCorrect = selectedChoiceId === question.correctChoice;
+
+      if (dialogTitle) dialogTitle.textContent = question.question;
+      setText(
+        root,
+        '[data-quiz-mode-label]',
+        mode === 'review' ? '復習' : '確認問題',
+      );
+      updateProgress();
+
+      screen.replaceChildren();
+      const form = document.createElement('fieldset');
+      form.className = 'biolearn-quiz-step';
+
+      const legend = document.createElement('legend');
+      legend.className = 'biolearn-sr-only';
+      legend.textContent = question.question;
+
+      form.append(legend);
+
+      if (revealed) {
+        const feedback = document.createElement('p');
+        feedback.className = `biolearn-quiz-feedback ${
+          isCorrect ? 'is-correct' : 'is-incorrect'
+        }`;
+        feedback.textContent = `${
+          isCorrect ? '正解' : '不正解'
+        }: ${question.explanation}`;
+        form.append(feedback);
+      }
+
+      const choices = document.createElement('div');
+      choices.className = 'biolearn-choice-list';
+      for (const choice of question.choices) {
+        choices.append(
+          buildChoice(question, choice, selectedChoiceId, revealed),
+        );
+      }
+
+      form.append(choices);
+      screen.append(form);
+      if (revealed) screen.scrollTop = 0;
+
+      prevButton.hidden = false;
+      prevButton.disabled = currentIndex === 0;
+      nextButton.disabled = !isAnswered && !revealed;
+      nextButton.textContent = revealed
+        ? currentIndex === activeQuestions.length - 1
+          ? '結果を見る'
+          : '次の問題へ'
+        : '回答する';
+    };
+
+    const openQuiz = (nextMode: 'all' | 'review') => {
+      mode = nextMode;
+      activeQuestions =
+        nextMode === 'review' ? getStoredReviewQuestions() : questions;
+      if (activeQuestions.length === 0) {
+        updateEntryState(root);
+        return;
+      }
+
+      currentIndex = 0;
+      revealed = false;
+      answers.clear();
+      renderQuestion();
+      dialog.showModal();
+    };
+
+    screen.addEventListener('change', () => {
+      const question = getCurrentQuestion();
+      const selectedChoiceId = getSelectedChoice(screen);
+      if (!question || !selectedChoiceId) return;
+      answers.set(question.id, selectedChoiceId);
+      nextButton.disabled = false;
+    });
+
+    root.querySelector('[data-quiz-open]')?.addEventListener('click', () => {
+      openQuiz('all');
     });
 
     root
       .querySelector('[data-quiz-review-wrong]')
       ?.addEventListener('click', () => {
-        const lessonId = root.dataset.lessonId;
-        const lesson = lessonId ? store.getLesson(lessonId) : undefined;
-        if (!lesson) {
-          setStatus(root, 'まだ復習対象はありません');
-          return;
-        }
-
-        let visibleCount = 0;
-        root
-          .querySelectorAll<HTMLElement>('.biolearn-quiz-item.is-scorable')
-          .forEach((item) => {
-            const questionId =
-              item.querySelector<HTMLElement>('[data-question-id]')?.dataset
-                .questionId;
-            const shouldShow = Boolean(
-              questionId && lesson.questions[questionId]?.needsReview,
-            );
-            item.hidden = !shouldShow;
-            if (shouldShow) visibleCount += 1;
-          });
-
-        clearFeedback(root);
-        root
-          .querySelectorAll<HTMLElement>('.biolearn-quiz-item.is-scorable')
-          .forEach((item) => {
-            const questionId =
-              item.querySelector<HTMLElement>('[data-question-id]')?.dataset
-                .questionId;
-            item.hidden = !(
-              questionId && lesson.questions[questionId]?.needsReview
-            );
-          });
-        setStatus(
-          root,
-          visibleCount > 0 ? `復習 ${visibleCount}問` : '復習対象はありません',
-        );
+        openQuiz('review');
       });
 
-    root.querySelector('[data-quiz-retry]')?.addEventListener('click', () => {
-      root
-        .querySelectorAll<HTMLInputElement>('input[type="radio"]')
-        .forEach((input) => {
-          input.checked = false;
-        });
-      clearFeedback(root);
-      updateStatusFromStore(root);
+    root.querySelector('[data-quiz-close]')?.addEventListener('click', () => {
+      dialog.close();
+    });
+
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+
+    prevButton.addEventListener('click', () => {
+      if (currentIndex === 0) return;
+      currentIndex -= 1;
+      revealed = false;
+      renderQuestion();
+    });
+
+    nextButton.addEventListener('click', () => {
+      if (nextButton.textContent === '閉じる') {
+        dialog.close();
+        return;
+      }
+
+      if (!revealed) {
+        revealed = true;
+        renderQuestion();
+        return;
+      }
+
+      if (currentIndex === activeQuestions.length - 1) {
+        saveAttempt();
+        renderResult();
+        return;
+      }
+
+      currentIndex += 1;
+      revealed = false;
+      renderQuestion();
     });
 
     root.querySelector('[data-quiz-reset]')?.addEventListener('click', () => {
       const lessonId = root.dataset.lessonId;
       if (lessonId) store.clearLesson(lessonId);
-      root
-        .querySelectorAll<HTMLInputElement>('input[type="radio"]')
-        .forEach((input) => {
-          input.checked = false;
-        });
-      clearFeedback(root);
-      setStatus(root, '未回答');
+      updateEntryState(root);
     });
+
+    updateEntryState(root);
   };
 
   document

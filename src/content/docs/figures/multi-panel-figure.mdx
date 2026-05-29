@@ -78,13 +78,53 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 <Quiz
   questions={[
     {
+      id: 'multi-panel-figure-q1',
       question: '複数パネルFigureを読むとき、最初に確認したいことは何ですか。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: '比較対象や条件を確認せず、結論だけを読む。',
+        },
+        {
+          id: 'b',
+          text: '軸、単位、凡例、Methodsを確認せず、表示された差だけを見る。',
+        },
+        {
+          id: 'c',
+          text: 'Figure全体が何を示そうとしているか、各パネルがどの役割を持つかを確認します。',
+        },
+        {
+          id: 'd',
+          text: 'サンプルや対照を見なくても、用語名だけで判断する。',
+        },
+      ],
+      answer: 'c',
+      explanation:
         'Figure全体が何を示そうとしているか、各パネルがどの役割を持つかを確認します。',
     },
     {
+      id: 'multi-panel-figure-q2',
       question: '代表画像だけで結論を決めない方がよい理由を説明してください。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: '細胞数や測定回数が多ければ、独立サンプル数は確認しなくてよい。',
+        },
+        {
+          id: 'b',
+          text: '技術的反復と生物学的反復は同じ意味なので区別しなくてよい。',
+        },
+        {
+          id: 'c',
+          text: 'nが大きければ、偏りや実験設計の問題は常に解決する。',
+        },
+        {
+          id: 'd',
+          text: '代表画像は一例であり、定量結果、反復、対照、統計表示と合わせて判断する必要があるためです。',
+        },
+      ],
+      answer: 'd',
+      explanation:
         '代表画像は一例であり、定量結果、反復、対照、統計表示と合わせて判断する必要があるためです。',
     },
   ]}

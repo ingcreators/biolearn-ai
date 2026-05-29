@@ -116,13 +116,53 @@ Discussionは、結果から何が言えるか、どこまでが限界かを述�
 <Quiz
   questions={[
     {
+      id: 'paper-structure-q1',
       question: 'ResultsとMethodsを行き来して読む理由を説明してください。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: '比較対象や条件を確認しなくても、常に同じ結論になるから。',
+        },
+        {
+          id: 'b',
+          text: '1つの測定値だけで、背景や文脈まで完全に判断できるから。',
+        },
+        {
+          id: 'c',
+          text: 'この概念は結果の解釈には関係しないため、確認する必要がないから。',
+        },
+        {
+          id: 'd',
+          text: 'Resultsで示された結果が、どの実験条件や解析手順から得られたものかを確認するためです。',
+        },
+      ],
+      answer: 'd',
+      explanation:
         'Resultsで示された結果が、どの実験条件や解析手順から得られたものかを確認するためです。',
     },
     {
+      id: 'paper-structure-q2',
       question: 'Discussionを読むときに注意したいことを一つ挙げてください。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: '著者の解釈がResultsやFigureの証拠でどこまで支えられているかを確認することです。',
+        },
+        {
+          id: 'b',
+          text: '比較対象や条件を確認せず、結論だけを読む。',
+        },
+        {
+          id: 'c',
+          text: '軸、単位、凡例、Methodsを確認せず、表示された差だけを見る。',
+        },
+        {
+          id: 'd',
+          text: 'サンプルや対照を見なくても、用語名だけで判断する。',
+        },
+      ],
+      answer: 'a',
+      explanation:
         '著者の解釈がResultsやFigureの証拠でどこまで支えられているかを確認することです。',
     },
   ]}

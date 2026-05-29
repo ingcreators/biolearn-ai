@@ -77,13 +77,53 @@ import LessonFigure from '../../../components/LessonFigure.astro';
 <Quiz
   questions={[
     {
+      id: 'supplementary-figures-q1',
       question: '補足Figureを見るとき、最初に確認したいことは何ですか。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: '比較対象や条件を確認せず、結論だけを読む。',
+        },
+        {
+          id: 'b',
+          text: '本文のどのFigureや主張に対応しているか、何を補足しているかを確認します。',
+        },
+        {
+          id: 'c',
+          text: '軸、単位、凡例、Methodsを確認せず、表示された差だけを見る。',
+        },
+        {
+          id: 'd',
+          text: 'サンプルや対照を見なくても、用語名だけで判断する。',
+        },
+      ],
+      answer: 'b',
+      explanation:
         '本文のどのFigureや主張に対応しているか、何を補足しているかを確認します。',
     },
     {
+      id: 'supplementary-figures-q2',
       question: '補足Figureに置かれることがある情報を2つ挙げてください。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: '「補足Figure」は、軸、単位、凡例、Figure legendを確認しなくても読める。',
+        },
+        {
+          id: 'b',
+          text: '「補足Figure」は、点や棒の見た目だけで結論を決められる。',
+        },
+        {
+          id: 'c',
+          text: '追加対照、品質管理、別条件、追加サンプル、解析パラメータ、代表画像の追加例などがあります。',
+        },
+        {
+          id: 'd',
+          text: '「補足Figure」は、何を比較している図かを確認しなくても解釈できる。',
+        },
+      ],
+      answer: 'c',
+      explanation:
         '追加対照、品質管理、別条件、追加サンプル、解析パラメータ、代表画像の追加例などがあります。',
     },
   ]}

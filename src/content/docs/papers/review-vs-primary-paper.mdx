@@ -103,13 +103,53 @@ import GlossaryTable from '../../../components/GlossaryTable.astro';
 <Quiz
   questions={[
     {
+      id: 'review-vs-primary-paper-q1',
       question: '初めてのテーマでレビュー論文から読む利点を説明してください。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: '「レビュー論文と原著論文の違い」は、Abstractの一文だけで十分に判断できる。',
+        },
+        {
+          id: 'b',
+          text: '「レビュー論文と原著論文の違い」は、Methodsや限界を確認しなくても結論を受け取れる。',
+        },
+        {
+          id: 'c',
+          text: '「レビュー論文と原著論文の違い」は、どの研究デザインでも同じ強さの証拠になる。',
+        },
+        {
+          id: 'd',
+          text: '分野の背景、主要な用語、代表的な研究、未解決の問題をまとめて把握しやすいためです。',
+        },
+      ],
+      answer: 'd',
+      explanation:
         '分野の背景、主要な用語、代表的な研究、未解決の問題をまとめて把握しやすいためです。',
     },
     {
+      id: 'review-vs-primary-paper-q2',
       question: '原著論文で特に確認したいセクションを2つ挙げてください。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: 'Results、Figure、Methodsなどです。どのデータがどの主張を支えるかを確認します。',
+        },
+        {
+          id: 'b',
+          text: '比較対象や条件を確認せず、結論だけを読む。',
+        },
+        {
+          id: 'c',
+          text: '軸、単位、凡例、Methodsを確認せず、表示された差だけを見る。',
+        },
+        {
+          id: 'd',
+          text: 'サンプルや対照を見なくても、用語名だけで判断する。',
+        },
+      ],
+      answer: 'a',
+      explanation:
         'Results、Figure、Methodsなどです。どのデータがどの主張を支えるかを確認します。',
     },
   ]}

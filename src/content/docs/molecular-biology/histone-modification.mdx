@@ -124,23 +124,103 @@ import GlossaryTable from '../../../components/GlossaryTable.astro';
 <Quiz
   questions={[
     {
+      id: 'histone-modification-q1',
       question: 'ヒストン修飾とは何ですか。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: 'DNAが巻きつくヒストンタンパク質に、アセチル化やメチル化などの化学修飾が付くことです。',
+        },
+        {
+          id: 'b',
+          text: '「ヒストン修飾」は、分子の量だけで機能まで常に決まる。',
+        },
+        {
+          id: 'c',
+          text: '「ヒストン修飾」は、細胞内の場所や相互作用とは関係しない。',
+        },
+        {
+          id: 'd',
+          text: '「ヒストン修飾」は、配列や構造が変わっても働きは常に同じである。',
+        },
+      ],
+      answer: 'a',
+      explanation:
         'DNAが巻きつくヒストンタンパク質に、アセチル化やメチル化などの化学修飾が付くことです。',
     },
     {
+      id: 'histone-modification-q2',
       question: 'H3K27acはどのような領域の手がかりとして使われますか。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: '条件や比較対象を確認しなくても、常に同じ結論になる。',
+        },
+        {
+          id: 'b',
+          text: '活性化したエンハンサーやプロモーターの手がかりとして使われます。',
+        },
+        {
+          id: 'c',
+          text: '本文や実験条件に関係なく、用語名だけで判断できる。',
+        },
+        {
+          id: 'd',
+          text: 'Figureの表示だけで、対照や限界を確認せずに判断できる。',
+        },
+      ],
+      answer: 'b',
+      explanation:
         '活性化したエンハンサーやプロモーターの手がかりとして使われます。',
     },
     {
+      id: 'histone-modification-q3',
       question: 'ヒストン修飾とDNAメチル化の違いは何ですか。',
-      answer:
+      choices: [
+        {
+          id: 'a',
+          text: '両者は完全に同じ意味なので、論文では区別して読む必要はない。',
+        },
+        {
+          id: 'b',
+          text: '一方だけを見れば、もう一方の情報も常に完全に分かる。',
+        },
+        {
+          id: 'c',
+          text: 'ヒストン修飾はヒストンタンパク質への修飾で、DNAメチル化はDNAへの修飾です。',
+        },
+        {
+          id: 'd',
+          text: '名前が似ているだけで、本文や実験結果の解釈には関係しない。',
+        },
+      ],
+      answer: 'c',
+      explanation:
         'ヒストン修飾はヒストンタンパク質への修飾で、DNAメチル化はDNAへの修飾です。',
     },
     {
+      id: 'histone-modification-q4',
       question: 'ヒストン修飾を測る実験法を一つ挙げてください。',
-      answer: 'ChIP-seq、CUT&Tag、CUT&RUNなどがあります。',
+      choices: [
+        {
+          id: 'a',
+          text: '比較対象や条件を確認せず、結論だけを読む。',
+        },
+        {
+          id: 'b',
+          text: '軸、単位、凡例、Methodsを確認せず、表示された差だけを見る。',
+        },
+        {
+          id: 'c',
+          text: 'サンプルや対照を見なくても、用語名だけで判断する。',
+        },
+        {
+          id: 'd',
+          text: 'ChIP-seq、CUT&Tag、CUT&RUNなどがあります。',
+        },
+      ],
+      answer: 'd',
+      explanation: 'ChIP-seq、CUT&Tag、CUT&RUNなどがあります。',
     },
   ]}
 />
