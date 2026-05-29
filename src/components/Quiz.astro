@@ -1,4 +1,6 @@
 ---
+import { lessonIdFromPath } from '../lib/learning-progress';
+
 interface Question {
   id?: string;
   question: string;
@@ -15,9 +17,7 @@ interface Props {
 }
 
 const { questions, lessonId, lessonTitle } = Astro.props;
-const derivedLessonId = (lessonId ?? Astro.url.pathname)
-  .replace(/^\/|\/$/g, '')
-  .replaceAll('/', '-');
+const derivedLessonId = lessonId ?? lessonIdFromPath(Astro.url.pathname);
 const derivedLessonTitle = lessonTitle ?? '';
 const choiceIds = ['a', 'b', 'c', 'd', 'e', 'f'];
 const normalizedQuestions = questions.map((item, questionIndex) => {

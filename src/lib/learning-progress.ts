@@ -58,11 +58,31 @@ export interface ReviewQuestion extends QuizQuestionProgress {
   lessonPath: string;
 }
 
+export type LessonProgressStatus =
+  | 'not-started'
+  | 'in-progress'
+  | 'completed'
+  | 'review';
+
+export interface LessonProgressSummary {
+  status: LessonProgressStatus;
+  label: string;
+  detail: string;
+  lesson?: LessonProgress;
+}
+
 export interface LearningProgressStore {
   read(): LearningProgressData;
   getLesson(lessonId: string): LessonProgress | undefined;
+  getLessonByPath(path: string): LessonProgress | undefined;
   getLessons(): LessonProgress[];
+  getLessonSummary(path: string): LessonProgressSummary;
   getReviewQuestions(): ReviewQuestion[];
+  markLessonCompleted(input: {
+    lessonId: string;
+    path: string;
+    title: string;
+  }): LessonProgress;
   recordQuizAttempt(input: RecordQuizAttemptInput): LessonProgress;
   recordQuestionReview(input: {
     lessonId: string;
@@ -79,6 +99,13 @@ const createEmptyData = (): LearningProgressData => ({
   version: 1,
   lessons: {},
 });
+
+export const lessonIdFromPath = (path: string) =>
+  path
+    .split('#')[0]
+    .split('?')[0]
+    .replace(/^\/|\/$/g, '')
+    .replaceAll('/', '-');
 
 const canUseLocalStorage = () =>
   typeof window !== 'undefined' && typeof window.localStorage !== 'undefined';
@@ -106,10 +133,60 @@ export class LocalLearningProgressStore implements LearningProgressStore {
     return this.read().lessons[lessonId];
   }
 
+  getLessonByPath(path: string) {
+    return this.getLesson(lessonIdFromPath(path));
+  }
+
   getLessons() {
     return Object.values(this.read().lessons).sort((a, b) =>
       b.lastAnsweredAt.localeCompare(a.lastAnsweredAt),
     );
+  }
+
+  getLessonSummary(path: string): LessonProgressSummary {
+    const lesson = this.getLessonByPath(path);
+    if (!lesson) {
+      return {
+        status: 'not-started',
+        label: '未学習',
+        detail: 'まだ学習履歴はありません。',
+      };
+    }
+
+    const reviewCount = Object.values(lesson.questions).filter(
+      (question) => question.needsReview,
+    ).length;
+
+    if (reviewCount > 0) {
+      return {
+        status: 'review',
+        label: '復習あり',
+        detail: `${reviewCount}問の復習があります。`,
+        lesson,
+      };
+    }
+
+    if (lesson.completed) {
+      return {
+        status: 'completed',
+        label: '学習済',
+        detail:
+          lesson.totalQuestions > 0
+            ? `前回 ${lesson.latestScore}/${lesson.totalQuestions}問、最高 ${lesson.bestScore}/${lesson.totalQuestions}問`
+            : 'この記事は学習済みです。',
+        lesson,
+      };
+    }
+
+    return {
+      status: 'in-progress',
+      label: '学習中',
+      detail:
+        lesson.totalQuestions > 0
+          ? `前回 ${lesson.latestScore}/${lesson.totalQuestions}問`
+          : 'この記事は学習中です。',
+      lesson,
+    };
   }
 
   getReviewQuestions() {
@@ -123,6 +200,33 @@ export class LocalLearningProgressStore implements LearningProgressStore {
           lessonPath: lesson.path,
         })),
     );
+  }
+
+  markLessonCompleted(input: {
+    lessonId: string;
+    path: string;
+    title: string;
+  }) {
+    const data = this.read();
+    const completedAt = new Date().toISOString();
+    const previousLesson = data.lessons[input.lessonId];
+
+    const nextLesson: LessonProgress = {
+      lessonId: input.lessonId,
+      path: input.path,
+      title: input.title,
+      lastAnsweredAt: completedAt,
+      latestScore: previousLesson?.latestScore ?? 0,
+      bestScore: previousLesson?.bestScore ?? 0,
+      totalQuestions: previousLesson?.totalQuestions ?? 0,
+      completed: true,
+      questions: previousLesson?.questions ?? {},
+    };
+
+    data.lessons[input.lessonId] = nextLesson;
+    this.write(data);
+
+    return nextLesson;
   }
 
   recordQuizAttempt(input: RecordQuizAttemptInput) {

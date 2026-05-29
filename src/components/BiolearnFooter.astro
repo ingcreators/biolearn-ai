@@ -4,9 +4,12 @@ import LastUpdated from 'virtual:starlight/components/LastUpdated';
 import Pagination from 'virtual:starlight/components/Pagination';
 import config from 'virtual:starlight/user-config';
 import { Icon } from '@astrojs/starlight/components';
+import LearningProgressEnhancer from './LearningProgressEnhancer.astro';
 ---
 
 <footer class="sl-flex">
+  <LearningProgressEnhancer />
+
   <div class="meta sl-flex">
     <EditLink />
     <LastUpdated />

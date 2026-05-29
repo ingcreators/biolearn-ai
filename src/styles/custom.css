@@ -241,6 +241,91 @@ h1[data-page-title] .biolearn-hero-main {
   margin-top: 0.75rem;
 }
 
+.biolearn-status-badge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
+  border: 1px solid var(--biolearn-panel-border);
+  border-radius: 999px;
+  padding: 0.08rem 0.5rem;
+  margin-left: 0.5rem;
+  color: var(--biolearn-panel-muted);
+  background: color-mix(in srgb, var(--biolearn-panel-bg) 86%, black);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.5;
+  vertical-align: middle;
+}
+
+:root[data-theme="light"] .biolearn-status-badge {
+  background: color-mix(in srgb, var(--biolearn-panel-bg) 88%, white);
+}
+
+.biolearn-status-badge.is-completed {
+  color: #bdeee6;
+  border-color: #54c6b7;
+}
+
+.biolearn-status-badge.is-review {
+  color: #ffe0a3;
+  border-color: #e6a93b;
+}
+
+.biolearn-status-badge.is-in-progress {
+  color: var(--sl-color-text-accent);
+  border-color: var(--sl-color-accent);
+}
+
+.biolearn-home-card > .biolearn-status-badge {
+  margin: 0 0 0.45rem;
+}
+
+.biolearn-article-status {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.65rem 0.8rem;
+  align-items: center;
+  color: var(--biolearn-panel-text);
+  border: 1px solid var(--biolearn-panel-border);
+  border-radius: 8px;
+  padding: 0.75rem 0.85rem;
+  margin: 1rem 0 1.25rem;
+  background: var(--biolearn-panel-bg);
+}
+
+.biolearn-article-status .biolearn-status-badge {
+  margin-left: 0;
+}
+
+.biolearn-article-status p {
+  color: var(--biolearn-panel-muted);
+  margin: 0;
+  line-height: 1.6;
+  font-size: 0.93rem;
+}
+
+.biolearn-article-status-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.biolearn-article-status button {
+  border: 1px solid var(--biolearn-panel-border);
+  border-radius: 8px;
+  padding: 0.45rem 0.65rem;
+  background: var(--biolearn-table-head);
+  color: var(--biolearn-panel-text);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.biolearn-article-status button:hover {
+  border-color: var(--sl-color-accent);
+}
+
 .biolearn-progress {
   display: grid;
   gap: 1rem;
@@ -667,6 +752,14 @@ h1[data-page-title] .biolearn-hero-main {
 }
 
 @media (max-width: 34rem) {
+  .biolearn-article-status {
+    grid-template-columns: 1fr;
+  }
+
+  .biolearn-article-status-actions {
+    justify-content: flex-start;
+  }
+
   .biolearn-diagram ol {
     grid-template-columns: 1fr;
   }

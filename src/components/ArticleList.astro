@@ -21,7 +21,12 @@ type Part =
   | 'paths'
   | 'about';
 
-type LearningPath = 'foundations' | 'figure-reading' | 'paper-reading';
+type LearningPath =
+  | 'foundations'
+  | 'figure-reading'
+  | 'paper-reading'
+  | 'methods-statistics'
+  | 'omics-analysis';
 
 interface Props {
   part?: Part;
@@ -229,8 +234,19 @@ const articleGroups = articles.reduce<
             <h3>{group.label}</h3>
             <ol class="biolearn-article-list">
               {group.articles.map((article) => (
-                <li>
+                <li
+                  data-biolearn-article-item
+                  data-lesson-path={toHref(article.id)}
+                  data-lesson-title={article.data.title}
+                >
                   <a href={toHref(article.id)}>{article.data.title}</a>
+                  <span
+                    class="biolearn-status-badge is-not-started"
+                    data-biolearn-progress-badge
+                    aria-label="学習状態: 未学習"
+                  >
+                    未学習
+                  </span>
                   {article.data.part ? (
                     <span class="biolearn-article-part">
                       {partLabels[article.data.part as Part]}
@@ -277,8 +293,19 @@ const articleGroups = articles.reduce<
     ) : (
       <ol class="biolearn-article-list">
         {articles.map((article) => (
-          <li>
+          <li
+            data-biolearn-article-item
+            data-lesson-path={toHref(article.id)}
+            data-lesson-title={article.data.title}
+          >
             <a href={toHref(article.id)}>{article.data.title}</a>
+            <span
+              class="biolearn-status-badge is-not-started"
+              data-biolearn-progress-badge
+              aria-label="学習状態: 未学習"
+            >
+              未学習
+            </span>
             {article.data.part ? (
               <span class="biolearn-article-part">
                 {partLabels[article.data.part as Part]}
