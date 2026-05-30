@@ -79,7 +79,7 @@ Results全体を読む前に、[Figureと主張を対応づける](/figures/figu
     {
       id: 'results-section-flow-q1',
       question:
-        'Results内で各Figureを読むとき、単独の内容以外に確認したいことは何ですか。',
+        'Results内で各Figureを読むとき、単独の内容以外に確認したいことはどれですか。',
       choices: [
         {
           id: 'a',
@@ -87,15 +87,15 @@ Results全体を読む前に、[Figureと主張を対応づける](/figures/figu
         },
         {
           id: 'b',
-          text: '比較対象や条件を確認せず、結論だけを読む。',
+          text: 'Figure番号が小さいほど、必ず重要度が高いこと。',
         },
         {
           id: 'c',
-          text: '軸、単位、凡例、Methodsを確認せず、表示された差だけを見る。',
+          text: 'Figureが並んでいれば、因果の順番も証明済みであること。',
         },
         {
           id: 'd',
-          text: 'サンプルや対照を見なくても、用語名だけで判断する。',
+          text: 'Resultsの小見出しだけを見れば、各Figureの根拠は確認しなくてよいこと。',
         },
       ],
       answer: 'a',
@@ -104,28 +104,81 @@ Results全体を読む前に、[Figureと主張を対応づける](/figures/figu
     },
     {
       id: 'results-section-flow-q2',
-      question: 'Figureの並びがきれいでも注意が必要な理由を説明してください。',
+      question:
+        'Figureの並びがきれいでも注意が必要な理由として適切なのはどれですか。',
       choices: [
         {
           id: 'a',
-          text: '細胞数や測定回数が多ければ、独立サンプル数は確認しなくてよい。',
+          text: 'ストーリーとして自然でも、対照、反復、代替説明、実験デザインが十分とは限らないため。',
         },
         {
           id: 'b',
-          text: 'ストーリーとして自然でも、対照、反復、代替説明、実験デザインが十分とは限らないためです。',
+          text: 'きれいに並んでいれば、Methodsや統計表示は確認しなくてよいため。',
         },
         {
           id: 'c',
-          text: '技術的反復と生物学的反復は同じ意味なので区別しなくてよい。',
+          text: 'Figureの順番は、常に実験が行われた順番そのものだから。',
         },
         {
           id: 'd',
-          text: 'nが大きければ、偏りや実験設計の問題は常に解決する。',
+          text: 'Discussionの結論は常にResultsより弱く書かれるから。',
         },
       ],
-      answer: 'b',
+      answer: 'a',
       explanation:
-        'ストーリーとして自然でも、対照、反復、代替説明、実験デザインが十分とは限らないためです。',
+        'Resultsの流れが自然でも、証拠の強さや代替説明が十分扱われているかは別に確認します。',
+    },
+    {
+      id: 'results-section-flow-q3',
+      question:
+        'Resultsセクションの流れを整理する方法として適切なのはどれですか。',
+      choices: [
+        {
+          id: 'a',
+          text: 'Figureごとに「何を示したか」を一文で書き、前後の問いとのつながりを見る。',
+        },
+        {
+          id: 'b',
+          text: '最後のFigureだけを読めば、途中のFigureは確認しなくてよい。',
+        },
+        {
+          id: 'c',
+          text: 'Figureの見た目が似ていれば、すべて同じ問いに答えていると読む。',
+        },
+        {
+          id: 'd',
+          text: '本文の流れはFigureとは独立しているので、対応づけない。',
+        },
+      ],
+      answer: 'a',
+      explanation:
+        '各Figureの役割を一文で整理すると、問いと証拠の積み上げが見えやすくなります。',
+    },
+    {
+      id: 'results-section-flow-q4',
+      question:
+        'Resultsの証拠とDiscussionの結論を比べるときに注意することはどれですか。',
+      choices: [
+        {
+          id: 'a',
+          text: 'Discussionの結論が、Resultsで示された証拠より強くなっていないか確認する。',
+        },
+        {
+          id: 'b',
+          text: 'Discussionに書かれていれば、ResultsのFigureに戻らなくてよい。',
+        },
+        {
+          id: 'c',
+          text: 'Discussionは必ずResultsと同じ強さの主張だけを書く。',
+        },
+        {
+          id: 'd',
+          text: 'Resultsの弱い点は、文章の流れがよければ確認しなくてよい。',
+        },
+      ],
+      answer: 'a',
+      explanation:
+        '論文全体を読むときは、Resultsの証拠からどこまで言えるかをDiscussionの主張と照らします。',
     },
   ]}
 />

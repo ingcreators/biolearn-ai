@@ -98,11 +98,11 @@ import LessonFigure from '../../../components/LessonFigure.astro';
     {
       id: 'how-to-read-heatmap-q1',
       question:
-        'ヒートマップで、色を見る前に確認したいことを2つ挙げてください。',
+        'ヒートマップで、色を見る前に確認したいこととして適切なものはどれですか。',
       choices: [
         {
           id: 'a',
-          text: '赤いセルは、どの表示方法でも必ず絶対発現量が高いことを示す。',
+          text: '行と列が何を表すか、色のスケールが何か、z-scoreなどで標準化されているか。',
         },
         {
           id: 'b',
@@ -114,10 +114,10 @@ import LessonFigure from '../../../components/LessonFigure.astro';
         },
         {
           id: 'd',
-          text: '行と列が何を表すか、色のスケールが何か、z-scoreなどで標準化されているかなどです。',
+          text: '赤いセルだけを見れば、元データや別Figureは確認しなくてよい。',
         },
       ],
-      answer: 'd',
+      answer: 'a',
       explanation:
         '行と列が何を表すか、色のスケールが何か、z-scoreなどで標準化されているかなどです。',
     },
@@ -146,6 +146,58 @@ import LessonFigure from '../../../components/LessonFigure.astro';
       answer: 'a',
       explanation:
         '必ずしも言えません。z-scoreでは、その遺伝子内で平均より相対的に高いことを示している場合があります。',
+    },
+    {
+      id: 'how-to-read-heatmap-q3',
+      question:
+        'クラスタリングされたヒートマップの読み方として適切なものはどれですか。',
+      choices: [
+        {
+          id: 'a',
+          text: '似たパターンの行や列が近くに並ぶが、それだけで原因が証明されたわけではない。',
+        },
+        {
+          id: 'b',
+          text: 'クラスタが分かれれば、必ず実験条件が原因だと判断できる。',
+        },
+        {
+          id: 'c',
+          text: 'クラスタリングがある図では、行と列の意味は確認しなくてよい。',
+        },
+        {
+          id: 'd',
+          text: '近くに並ぶ遺伝子は、必ず同じタンパク質をコードする。',
+        },
+      ],
+      answer: 'a',
+      explanation:
+        'クラスタリングは似たパターンを近くに並べる処理であり、原因や機能を直接示すものではありません。',
+    },
+    {
+      id: 'how-to-read-heatmap-q4',
+      question:
+        'ヒートマップで個別の遺伝子を解釈する前に確認したいことはどれですか。',
+      choices: [
+        {
+          id: 'a',
+          text: '色の印象だけで、個別遺伝子の結論まで決める。',
+        },
+        {
+          id: 'b',
+          text: '元データ、スケール、別Figure、qPCRなどの追加確認があるかを見る。',
+        },
+        {
+          id: 'c',
+          text: '赤ければ必ず絶対発現量が高いので、追加確認は不要である。',
+        },
+        {
+          id: 'd',
+          text: '列のアノテーションは色分けの飾りなので読まない。',
+        },
+      ],
+      answer: 'b',
+      explanation:
+        'ヒートマップは全体のパターンを見る図なので、個別遺伝子は元データや別Figureと合わせて確認します。',
     },
   ]}
 />

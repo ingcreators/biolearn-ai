@@ -121,11 +121,11 @@ Methodsでは、どの検定を何回行い、どの補正方法を使ったか�
   questions={[
     {
       id: 'multiple-testing-correction-q1',
-      question: '多くの遺伝子を同時に検定すると、なぜ補正が必要になりますか。',
+      question: '多重検定補正が必要になる理由として最も適切なのはどれですか。',
       choices: [
         {
           id: 'a',
-          text: 'p値だけで、効果の大きさや生物学的重要性まで判断できる。',
+          text: '多数の検定を同時に行うと、偶然小さいp値が出る候補も増えやすいから。',
         },
         {
           id: 'b',
@@ -137,20 +137,20 @@ Methodsでは、どの検定を何回行い、どの補正方法を使ったか�
         },
         {
           id: 'd',
-          text: '検定回数が増えるほど、偶然小さいp値が出る候補も増えやすいからです。',
+          text: '多重検定補正はデータの測定条件やスケールをそろえる処理だから。',
         },
       ],
-      answer: 'd',
+      answer: 'a',
       explanation:
-        '検定回数が増えるほど、偶然小さいp値が出る候補も増えやすいからです。',
+        '1万個の遺伝子を同時に検定する場合、偶然の有意が混ざる前提で読む必要があります。',
     },
     {
       id: 'multiple-testing-correction-q2',
-      question: 'RNA-seqの結果でadjusted p-valueを見る理由を説明してください。',
+      question: 'adjusted p-valueやFDRの役割として適切なのはどれですか。',
       choices: [
         {
           id: 'a',
-          text: '多数の遺伝子を同時に検定しているため、多重検定の影響を考慮する必要があるからです。',
+          text: '多数の検定を行った前提を反映し、偶然の有意を重要な候補として読みすぎないようにする。',
         },
         {
           id: 'b',
@@ -167,7 +167,58 @@ Methodsでは、どの検定を何回行い、どの補正方法を使ったか�
       ],
       answer: 'a',
       explanation:
-        '多数の遺伝子を同時に検定しているため、多重検定の影響を考慮する必要があるからです。',
+        'RNA-seqやGWASなどでは、補正済みp値やFDRを見ることで候補をより慎重に選びます。',
+    },
+    {
+      id: 'multiple-testing-correction-q3',
+      question:
+        'RNA-seqやオミクスFigureで確認したい表記として適切なのはどれですか。',
+      choices: [
+        {
+          id: 'a',
+          text: 'adjusted p-value、padj、FDR、q-value、補正方法、fold changeなどの効果量。',
+        },
+        {
+          id: 'b',
+          text: '補正前p値だけを見れば、多数の候補の解釈として十分である。',
+        },
+        {
+          id: 'c',
+          text: 'Volcano plotでは補正済みp値か補正前p値かを区別しなくてよい。',
+        },
+        {
+          id: 'd',
+          text: '解析ソフトの列名は結果の意味に関係しない。',
+        },
+      ],
+      answer: 'a',
+      explanation:
+        'Results、Figure legend、Methods、Supplementary tableで補正の有無と選択基準を確認します。',
+    },
+    {
+      id: 'multiple-testing-correction-q4',
+      question: '多重検定補正の読み方として適切なのはどれですか。',
+      choices: [
+        {
+          id: 'a',
+          text: 'FDRを満たした候補でも、生物学的な意味、効果量、データ品質、再現性を合わせて確認する。',
+        },
+        {
+          id: 'b',
+          text: '補正済みp値が小さければ、その候補は必ず生物学的に重要である。',
+        },
+        {
+          id: 'c',
+          text: '補正を厳しくしても、真の変化を見逃す可能性はない。',
+        },
+        {
+          id: 'd',
+          text: '多重検定補正は正規化と同じ処理なので、発現量のスケールをそろえるために使う。',
+        },
+      ],
+      answer: 'a',
+      explanation:
+        '多重検定補正は候補選びを慎重にする道具であり、結果の意味は文脈と合わせて読みます。',
     },
   ]}
 />

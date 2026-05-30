@@ -106,54 +106,106 @@ PMCで本文を読むときは、まずAbstractで全体像を確認し、Figure
   questions={[
     {
       id: 'pmc-q1',
-      question:
-        'PMCで本文を開いたあと、Figureを読むときに行き来したい場所を2つ挙げてください。',
+      question: 'PMCの役割として最も適切なのはどれですか。',
       choices: [
         {
           id: 'a',
-          text: '「PMC論文の探し方」は、Abstractの一文だけで十分に判断できる。',
+          text: '本文が公開されている生命科学・医学系論文を読めるアーカイブ。',
         },
         {
           id: 'b',
-          text: '「PMC論文の探し方」は、Methodsや限界を確認しなくても結論を受け取れる。',
+          text: '文献情報だけを検索し、本文やFigureは表示しないデータベース。',
         },
         {
           id: 'c',
-          text: '「PMC論文の探し方」は、どの研究デザインでも同じ強さの証拠になる。',
+          text: '論文の内容が正しいかを保証する審査ページ。',
         },
         {
           id: 'd',
-          text: 'Figure legend、Results本文、Methods、必要に応じて補足Figureなどです。',
-        },
-      ],
-      answer: 'd',
-      explanation:
-        'Figure legend、Results本文、Methods、必要に応じて補足Figureなどです。',
-    },
-    {
-      id: 'pmc-q2',
-      question: 'すべての論文がPMCで読めるわけではない理由を説明してください。',
-      choices: [
-        {
-          id: 'a',
-          text: '論文の公開条件、出版社の方針、オープンアクセスの有無などによって本文の公開状況が異なるためです。',
-        },
-        {
-          id: 'b',
-          text: '比較対象や条件を確認しなくても、常に同じ結論になるから。',
-        },
-        {
-          id: 'c',
-          text: '1つの測定値だけで、背景や文脈まで完全に判断できるから。',
-        },
-        {
-          id: 'd',
-          text: 'この概念は結果の解釈には関係しないため、確認する必要がないから。',
+          text: 'DOIを発行し、すべての出版社URLを置き換えるサービス。',
         },
       ],
       answer: 'a',
       explanation:
-        '論文の公開条件、出版社の方針、オープンアクセスの有無などによって本文の公開状況が異なるためです。',
+        'PMCは、本文が公開されている論文をWeb上で読めるアーカイブです。',
+    },
+    {
+      id: 'pmc-q2',
+      question:
+        'PMCで本文を開いたあと、Figureを読むときの進み方として最も適切なのはどれですか。',
+      choices: [
+        {
+          id: 'a',
+          text: 'Figureを見たら、legend、Results本文、Methodsを行き来して条件と解釈を確認する。',
+        },
+        {
+          id: 'b',
+          text: 'Figureだけを見て、MethodsやResultsを読まずに結論を決める。',
+        },
+        {
+          id: 'c',
+          text: 'Abstractの結論だけを読み、Figureは補足として扱う。',
+        },
+        {
+          id: 'd',
+          text: 'Referencesを最初に全部読み、本文のResultsは後回しにする。',
+        },
+      ],
+      answer: 'a',
+      explanation:
+        'PMCで本文が読める場合も、Figure、legend、Results、Methodsを行き来して根拠を確認します。',
+    },
+    {
+      id: 'pmc-q3',
+      question:
+        'PMCで本文を開いたら見る場所と確認内容の組み合わせとして正しいものはどれですか。',
+      choices: [
+        {
+          id: 'a',
+          text: 'Methodsでは、サンプル、条件、対照、解析、統計などを確認する。',
+        },
+        {
+          id: 'b',
+          text: 'Abstractでは、Figureの全条件と統計方法を完全に確認する。',
+        },
+        {
+          id: 'c',
+          text: 'Referencesでは、本文の結論が自動的に正しいかを判定する。',
+        },
+        {
+          id: 'd',
+          text: 'Figureでは、本文を読まずに研究全体の限界を確定する。',
+        },
+      ],
+      answer: 'a',
+      explanation:
+        'MethodsではFigureの解釈に必要なサンプル、条件、対照、解析、統計などを確認します。',
+    },
+    {
+      id: 'pmc-q4',
+      question:
+        'すべての論文がPMCで読めるわけではない理由として最も適切なのはどれですか。',
+      choices: [
+        {
+          id: 'a',
+          text: '論文の公開条件や出版社の方針によって、本文の入手方法が異なるため。',
+        },
+        {
+          id: 'b',
+          text: 'PMCで読めない論文は、PubMedにも文献情報が載らないため。',
+        },
+        {
+          id: 'c',
+          text: 'PMCにない論文は、研究として重要ではないと決まっているため。',
+        },
+        {
+          id: 'd',
+          text: 'DOIがある論文は、必ずPMCで無料公開されるため。',
+        },
+      ],
+      answer: 'a',
+      explanation:
+        'PMCで本文を読めるかどうかは、公開条件や出版社の方針などによって異なります。',
     },
   ]}
 />

@@ -78,53 +78,104 @@ import LessonFigure from '../../../components/LessonFigure.astro';
   questions={[
     {
       id: 'supplementary-figures-q1',
-      question: '補足Figureを見るとき、最初に確認したいことは何ですか。',
+      question: '補足Figureを見るとき、最初に確認したいことはどれですか。',
       choices: [
         {
           id: 'a',
-          text: '比較対象や条件を確認せず、結論だけを読む。',
+          text: '本文のどのFigureや主張に対応し、何を補っているか。',
         },
         {
           id: 'b',
-          text: '本文のどのFigureや主張に対応しているか、何を補足しているかを確認します。',
+          text: '補足に置かれているので、本文Figureとは関係が薄いと考える。',
         },
         {
           id: 'c',
-          text: '軸、単位、凡例、Methodsを確認せず、表示された差だけを見る。',
+          text: '本文にない大きな結論を、補足Figureだけから作る。',
         },
         {
           id: 'd',
-          text: 'サンプルや対照を見なくても、用語名だけで判断する。',
+          text: '補足Figureは重要ではないので読まなくてよい。',
+        },
+      ],
+      answer: 'a',
+      explanation:
+        '補足Figureは、本文Figureの主張を支える追加対照、品質管理、詳細データなどとして読みます。',
+    },
+    {
+      id: 'supplementary-figures-q2',
+      question:
+        '補足Figureに置かれることがある情報として適切なものはどれですか。',
+      choices: [
+        {
+          id: 'a',
+          text: '追加対照、品質管理、別条件、追加サンプル、解析パラメータ、代表画像の追加例。',
+        },
+        {
+          id: 'b',
+          text: '本文Figureとは無関係な、主張を作るためだけの図。',
+        },
+        {
+          id: 'c',
+          text: 'Methodsを読まなくても実験手順が完全に分かる図。',
+        },
+        {
+          id: 'd',
+          text: '結果ではなく装飾なので、対照や品質管理は含まれない。',
+        },
+      ],
+      answer: 'a',
+      explanation:
+        '補足Figureには、本文に入りきらない確認事項や詳細データが置かれることがあります。',
+    },
+    {
+      id: 'supplementary-figures-q3',
+      question: '補足Figureと本文Figureの関係として適切な読み方はどれですか。',
+      choices: [
+        {
+          id: 'a',
+          text: '補足Figureは本文Figureより後ろにあるので、主張の評価には使わない。',
+        },
+        {
+          id: 'b',
+          text: '本文Figureの主張を強めるのか、条件つきにするのかを確認する。',
+        },
+        {
+          id: 'c',
+          text: '補足Figureだけで本文にない新しい主張を作る。',
+        },
+        {
+          id: 'd',
+          text: '補足Figureに対照があれば、本文Figureの条件は確認しなくてよい。',
         },
       ],
       answer: 'b',
       explanation:
-        '本文のどのFigureや主張に対応しているか、何を補足しているかを確認します。',
+        '補足Figureは、本文Figureの主張をどう支えるか、またはどの限界を示すかに注目して読みます。',
     },
     {
-      id: 'supplementary-figures-q2',
-      question: '補足Figureに置かれることがある情報を2つ挙げてください。',
+      id: 'supplementary-figures-q4',
+      question: '補足Figureを読むときの注意として適切なものはどれですか。',
       choices: [
         {
           id: 'a',
-          text: '「補足Figure」は、軸、単位、凡例、Figure legendを確認しなくても読める。',
+          text: '補足にある品質管理や対照は、本文の解釈に影響しない。',
         },
         {
           id: 'b',
-          text: '「補足Figure」は、点や棒の見た目だけで結論を決められる。',
+          text: '本文Figureへの参照、Methods、Figure legendと行き来しながら位置づける。',
         },
         {
           id: 'c',
-          text: '追加対照、品質管理、別条件、追加サンプル、解析パラメータ、代表画像の追加例などがあります。',
+          text: '補足Figureは単独で読む方がよく、本文とは対応づけない。',
         },
         {
           id: 'd',
-          text: '「補足Figure」は、何を比較している図かを確認しなくても解釈できる。',
+          text: '補足Figureに差が見えれば、n数や条件は確認しなくてよい。',
         },
       ],
-      answer: 'c',
+      answer: 'b',
       explanation:
-        '追加対照、品質管理、別条件、追加サンプル、解析パラメータ、代表画像の追加例などがあります。',
+        '補足Figureは、本文FigureやMethodsに戻して、どの主張を支える情報かを確認します。',
     },
   ]}
 />

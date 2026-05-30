@@ -130,127 +130,57 @@ import GlossaryTable from '../../../components/GlossaryTable.astro';
 <Quiz
   questions={[
     {
-      id: 'noncoding-rna-q1',
-      question: '非コードRNAとは何ですか。',
+      id: 'noncoding-rna-definition',
+      question: '非コードRNAの説明として最も適切なのはどれですか。',
       choices: [
-        {
-          id: 'a',
-          text: '「非コードRNA」は、分子の量だけで機能まで常に決まる。',
-        },
-        {
-          id: 'b',
-          text: 'タンパク質へ翻訳されることを主な役割としないRNAの総称です。',
-        },
-        {
-          id: 'c',
-          text: '「非コードRNA」は、細胞内の場所や相互作用とは関係しない。',
-        },
-        {
-          id: 'd',
-          text: '「非コードRNA」は、配列や構造が変わっても働きは常に同じである。',
-        },
+        'タンパク質へ翻訳されることを主な役割としないRNAの総称',
+        'タンパク質をコードしないため、機能を持たないRNAの総称',
+        'DNA上の非コード領域そのもので、RNAとしては存在しないもの',
+        'すべてのRNAのうち、必ずmRNAへ変換される途中段階のもの',
       ],
-      answer: 'b',
+      answer: 'a',
       explanation:
         'タンパク質へ翻訳されることを主な役割としないRNAの総称です。',
     },
     {
-      id: 'noncoding-rna-q2',
-      question: '非コードRNAの例を一つ挙げてください。',
+      id: 'noncoding-rna-mrna',
+      question: 'mRNAと非コードRNAの区別として適切なのはどれですか。',
       choices: [
-        {
-          id: 'a',
-          text: '比較対象や条件を確認せず、結論だけを読む。',
-        },
-        {
-          id: 'b',
-          text: '軸、単位、凡例、Methodsを確認せず、表示された差だけを見る。',
-        },
-        {
-          id: 'c',
-          text: 'miRNA、lncRNA、rRNA、tRNAなどがあります。',
-        },
-        {
-          id: 'd',
-          text: 'サンプルや対照を見なくても、用語名だけで判断する。',
-        },
-      ],
-      answer: 'c',
-      explanation: 'miRNA、lncRNA、rRNA、tRNAなどがあります。',
-    },
-    {
-      id: 'noncoding-rna-q3',
-      question: 'mRNAと非コードRNAの違いを説明してください。',
-      choices: [
-        {
-          id: 'a',
-          text: '両者は完全に同じ意味なので、論文では区別して読む必要はない。',
-        },
-        {
-          id: 'b',
-          text: '一方だけを見れば、もう一方の情報も常に完全に分かる。',
-        },
-        {
-          id: 'c',
-          text: '名前が似ているだけで、本文や実験結果の解釈には関係しない。',
-        },
-        {
-          id: 'd',
-          text: 'mRNAはタンパク質を作る鋳型として使われ、非コードRNAは翻訳されずに機能することが多いRNAです。',
-        },
-      ],
-      answer: 'd',
-      explanation:
-        'mRNAはタンパク質を作る鋳型として使われ、非コードRNAは翻訳されずに機能することが多いRNAです。',
-    },
-    {
-      id: 'noncoding-rna-q4',
-      question: 'miRNAは非コードRNAですか。',
-      choices: [
-        {
-          id: 'a',
-          text: 'はい。miRNAは短い非コードRNAの一種です。',
-        },
-        {
-          id: 'b',
-          text: '条件や比較対象を確認しなくても、常に同じ結論になる。',
-        },
-        {
-          id: 'c',
-          text: '本文や実験条件に関係なく、用語名だけで判断できる。',
-        },
-        {
-          id: 'd',
-          text: 'Figureの表示だけで、対照や限界を確認せずに判断できる。',
-        },
+        'mRNAはタンパク質を作る鋳型として使われ、非コードRNAは翻訳を主な役割としないRNAである',
+        '非コードRNAはすべてmRNAの別名で、タンパク質の鋳型として使われる',
+        'mRNAはRNAとして働き、非コードRNAだけがタンパク質へ翻訳される',
+        'mRNAと非コードRNAの違いはDNA配列の有無だけで、RNAの役割とは関係しない',
       ],
       answer: 'a',
-      explanation: 'はい。miRNAは短い非コードRNAの一種です。',
+      explanation:
+        'mRNAはタンパク質を作る情報を持つRNAで、非コードRNAは翻訳されることを主な役割としないRNAです。',
     },
     {
-      id: 'noncoding-rna-q5',
-      question: '非コードRNAを読むときに注意したいことは何ですか。',
+      id: 'noncoding-rna-roles',
+      question:
+        '非コードRNAが遺伝子発現や細胞機能に関わる例として適切なのはどれですか。',
       choices: [
-        {
-          id: 'a',
-          text: '「非コードRNA」は、分子の量だけで機能まで常に決まる。',
-        },
-        {
-          id: 'b',
-          text: '種類が多いため、どのRNA種で、どの実験で検出され、どんな機能証拠があるかを確認します。',
-        },
-        {
-          id: 'c',
-          text: '「非コードRNA」は、細胞内の場所や相互作用とは関係しない。',
-        },
-        {
-          id: 'd',
-          text: '「非コードRNA」は、配列や構造が変わっても働きは常に同じである。',
-        },
+        'rRNAはリボソームを構成し、tRNAはアミノ酸を運び、miRNAはmRNAの使われ方を調節する',
+        '非コードRNAはタンパク質を作らないので、発現制御や細胞機能には関わらない',
+        '非コードRNAはすべて同じ働きを持つ1種類の分子として扱えばよい',
+        '非コードRNAは必ずDNAを別の配列に変えることで機能する',
       ],
-      answer: 'b',
+      answer: 'a',
       explanation:
-        '種類が多いため、どのRNA種で、どの実験で検出され、どんな機能証拠があるかを確認します。',
+        '非コードRNAにはrRNA、tRNA、miRNA、lncRNAなどがあり、構造や調節など多様な役割があります。',
+    },
+    {
+      id: 'noncoding-rna-interpretation',
+      question: '非コードRNAの発現変化の読み方として適切なのはどれですか。',
+      choices: [
+        '発現変化だけで機能を断定せず、標的RNA、結合相手、細胞種、機能実験の証拠を合わせて見る',
+        '非コードRNAの発現が変われば、そのRNAが直接の原因だとすぐに断定できる',
+        'RNA-seqで検出されれば、タンパク質として働いていることまで同時に分かる',
+        '非コードRNAは機能がないため、発現量の変化は結果の解釈では無視してよい',
+      ],
+      answer: 'a',
+      explanation:
+        '非コードRNAの発現変化は手がかりですが、直接の機能や原因関係には追加の証拠が必要です。',
     },
   ]}
 />

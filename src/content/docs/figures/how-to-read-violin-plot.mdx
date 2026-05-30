@@ -83,28 +83,28 @@ Violin plotは[分布](/statistics/distribution/)を読むFigureです。中央�
       choices: [
         {
           id: 'a',
-          text: '「Violin plot」は、軸、単位、凡例、Figure legendを確認しなくても読める。',
+          text: 'その値の付近にデータが多いことを表します。',
         },
         {
           id: 'b',
-          text: '「Violin plot」は、点や棒の見た目だけで結論を決められる。',
+          text: '値そのものが大きいことを表します。',
         },
         {
           id: 'c',
-          text: '「Violin plot」は、何を比較している図かを確認しなくても解釈できる。',
+          text: 'p値が小さいことを表します。',
         },
         {
           id: 'd',
-          text: 'その値の付近にデータが多いことを表します。',
+          text: 'サンプル数が必ず多いことだけを表します。',
         },
       ],
-      answer: 'd',
+      answer: 'a',
       explanation: 'その値の付近にデータが多いことを表します。',
     },
     {
       id: 'how-to-read-violin-plot-q2',
       question:
-        '2つの群の中央値が違って見えるとき、ほかに確認したいことを一つ挙げてください。',
+        '2つの群の中央値が違って見えるとき、ほかに確認したいこととして適切なものはどれですか。',
       choices: [
         {
           id: 'a',
@@ -112,20 +112,70 @@ Violin plotは[分布](/statistics/distribution/)を読むFigureです。中央�
         },
         {
           id: 'b',
-          text: '比較対象や条件を確認せず、結論だけを読む。',
+          text: '中央値だけを見れば十分で、分布の形は見なくてよい。',
         },
         {
           id: 'c',
-          text: '軸、単位、凡例、Methodsを確認せず、表示された差だけを見る。',
+          text: '幅が広い群を、常に測定値が大きい群として読む。',
         },
         {
           id: 'd',
-          text: 'サンプルや対照を見なくても、用語名だけで判断する。',
+          text: '点が表示されていなければ、n数は確認できないので不要である。',
         },
       ],
       answer: 'a',
       explanation:
         '分布の重なり、ばらつき、サンプル数、個々の点、統計表示などを確認します。',
+    },
+    {
+      id: 'how-to-read-violin-plot-q3',
+      question: 'Violin plotで最初に確認することとして適切なものはどれですか。',
+      choices: [
+        {
+          id: 'a',
+          text: '縦軸が何を測っているか、群ラベルが何を表すか。',
+        },
+        {
+          id: 'b',
+          text: '形が細いか太いかだけ。軸や群名は後でよい。',
+        },
+        {
+          id: 'c',
+          text: '中央線があれば、Figure legendは不要である。',
+        },
+        {
+          id: 'd',
+          text: '左右の形が対称なら、群間差は必ずない。',
+        },
+      ],
+      answer: 'a',
+      explanation:
+        '分布の形を読む前に、何の値の分布をどの群で比べているかを確認します。',
+    },
+    {
+      id: 'how-to-read-violin-plot-q4',
+      question: 'Violin plotを読むときの誤解として避けたいものはどれですか。',
+      choices: [
+        {
+          id: 'a',
+          text: '幅が広い部分を、値そのものが大きい部分だと読む。',
+        },
+        {
+          id: 'b',
+          text: '中央値や四分位範囲が重ねられているかを確認する。',
+        },
+        {
+          id: 'c',
+          text: '群どうしの分布の重なりを見る。',
+        },
+        {
+          id: 'd',
+          text: 'n数や個々の点をFigure legendで確認する。',
+        },
+      ],
+      answer: 'a',
+      explanation:
+        'Violin plotの幅は、その値付近のデータの多さを示し、値の大きさそのものではありません。',
     },
   ]}
 />

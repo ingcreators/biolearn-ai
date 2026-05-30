@@ -94,7 +94,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
     {
       id: 'how-to-read-bar-plot-q1',
       question:
-        '棒グラフで、棒の高さ以外に必ず確認したい要素を2つ挙げてください。',
+        '棒グラフで、棒の高さ以外に確認したい要素として適切なものはどれですか。',
       choices: [
         {
           id: 'a',
@@ -102,15 +102,15 @@ import LessonFigure from '../../../components/LessonFigure.astro';
         },
         {
           id: 'b',
-          text: 'エラーバーは常にp値そのものを表す。',
+          text: '棒の色だけ。色が濃いほど重要な結果だと読める。',
         },
         {
           id: 'c',
-          text: 'エラーバーが短ければ、反復の種類や定義は確認しなくてよい。',
+          text: '棒の高さだけ。平均なら分布や外れ値は見なくてよい。',
         },
         {
           id: 'd',
-          text: 'SDとSEMは同じ意味なので区別しなくてよい。',
+          text: 'アスタリスクだけ。p値があればn数は不要である。',
         },
       ],
       answer: 'a',
@@ -120,7 +120,7 @@ import LessonFigure from '../../../components/LessonFigure.astro';
     {
       id: 'how-to-read-bar-plot-q2',
       question:
-        'p値が小さい棒グラフを見たとき、なぜ効果の大きさも確認する必要がありますか。',
+        'p値が小さい棒グラフを見たとき、効果の大きさも確認する理由として適切なものはどれですか。',
       choices: [
         {
           id: 'a',
@@ -142,6 +142,58 @@ import LessonFigure from '../../../components/LessonFigure.astro';
       answer: 'b',
       explanation:
         'p値は差が偶然では説明しにくいかを示す指標であり、差が生物学的に大きいかどうかを直接示すものではないためです。',
+    },
+    {
+      id: 'how-to-read-bar-plot-q3',
+      question:
+        '棒グラフの棒の高さを読むときの注意として適切なものはどれですか。',
+      choices: [
+        {
+          id: 'a',
+          text: '棒の高さは多くの場合平均などの要約値なので、点の分布やばらつきも合わせて見る。',
+        },
+        {
+          id: 'b',
+          text: '棒が高いほど、常に生物学的に重要な結果である。',
+        },
+        {
+          id: 'c',
+          text: '平均値が表示されていれば、n数や外れ値は解釈に関係しない。',
+        },
+        {
+          id: 'd',
+          text: '棒グラフでは縦軸の単位や正規化の有無を確認しなくてよい。',
+        },
+      ],
+      answer: 'a',
+      explanation:
+        '棒の高さだけでは、分布、ばらつき、外れ値、サンプル数が見えにくいことがあります。',
+    },
+    {
+      id: 'how-to-read-bar-plot-q4',
+      question:
+        'エラーバーが重なっている棒グラフの読み方として適切なものはどれですか。',
+      choices: [
+        {
+          id: 'a',
+          text: '重なっていれば、必ず統計的に差がないと判断する。',
+        },
+        {
+          id: 'b',
+          text: '重なっていなければ、必ず生物学的に重要だと判断する。',
+        },
+        {
+          id: 'c',
+          text: 'エラーバーの定義、n数、検定方法、比較対象をFigure legendで確認する。',
+        },
+        {
+          id: 'd',
+          text: 'エラーバーは常にp値なので、棒の上の記号だけを見ればよい。',
+        },
+      ],
+      answer: 'c',
+      explanation:
+        'エラーバーの重なりだけで有意差を決めず、定義や統計検定の前提を確認します。',
     },
   ]}
 />

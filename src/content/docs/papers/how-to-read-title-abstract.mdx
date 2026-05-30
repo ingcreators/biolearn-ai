@@ -102,52 +102,106 @@ Abstractは、論文全体を短くまとめた文章です。多くの場合、
   questions={[
     {
       id: 'how-to-read-title-abstract-q1',
-      question: 'Abstractを読むときに分けて拾いたい要素を3つ挙げてください。',
+      question: 'Titleから最初に拾う情報として適切なのはどれですか。',
       choices: [
         {
           id: 'a',
-          text: '「TitleとAbstract」は、Abstractの一文だけで十分に判断できる。',
+          text: '研究対象、現象、手法、主題など、何についての論文か。',
         },
         {
           id: 'b',
-          text: '「TitleとAbstract」は、Methodsや限界を確認しなくても結論を受け取れる。',
+          text: '結論がどこまで強く証明されたかの最終判断。',
         },
         {
           id: 'c',
-          text: '背景、目的、方法、結果、結論などがあります。',
+          text: 'すべての実験条件と統計検定の詳細。',
         },
         {
           id: 'd',
-          text: '「TitleとAbstract」は、どの研究デザインでも同じ強さの証拠になる。',
+          text: 'Discussionに書かれた限界の一覧。',
         },
       ],
-      answer: 'c',
-      explanation: '背景、目的、方法、結果、結論などがあります。',
+      answer: 'a',
+      explanation:
+        'Titleでは、論文の対象、現象、手法、主題を拾い、何について読むのかをつかみます。',
     },
     {
       id: 'how-to-read-title-abstract-q2',
-      question: 'Abstractだけで論文を判断しきれない理由を説明してください。',
+      question:
+        'Abstractを読むときに分けて拾いたい要素として適切なのはどれですか。',
       choices: [
         {
           id: 'a',
-          text: '比較対象や条件を確認しなくても、常に同じ結論になるから。',
+          text: '背景、問い、方法、結果、結論候補。',
         },
         {
           id: 'b',
-          text: '1つの測定値だけで、背景や文脈まで完全に判断できるから。',
+          text: '著者の所属、雑誌名、引用数だけ。',
         },
         {
           id: 'c',
-          text: 'この概念は結果の解釈には関係しないため、確認する必要がないから。',
+          text: '試薬名、機器設定、すべての図の補足データだけ。',
         },
         {
           id: 'd',
-          text: '要約には著者の強調が含まれ、根拠の詳細はResults、Figure、Methodsにあるからです。',
+          text: '参考文献の並び順だけ。',
         },
       ],
-      answer: 'd',
+      answer: 'a',
       explanation:
-        '要約には著者の強調が含まれ、根拠の詳細はResults、Figure、Methodsにあるからです。',
+        'Abstractは圧縮された要約なので、背景、問い、方法、結果、結論候補に分けると骨格が見えます。',
+    },
+    {
+      id: 'how-to-read-title-abstract-q3',
+      question:
+        'Abstractだけで論文を判断しきれない理由として適切なのはどれですか。',
+      choices: [
+        {
+          id: 'a',
+          text: '要約には著者の強調が含まれ、根拠の詳細はResults、Figure、Methodsにあるから。',
+        },
+        {
+          id: 'b',
+          text: 'Abstractは常にMethodsより詳しいため、追加確認が不要だから。',
+        },
+        {
+          id: 'c',
+          text: 'Abstractに書かれた結論は、代替説明や限界をすべて排除しているから。',
+        },
+        {
+          id: 'd',
+          text: 'TitleとAbstractは研究デザインに関係なく同じ強さの証拠になるから。',
+        },
+      ],
+      answer: 'a',
+      explanation:
+        'Abstractは論文全体の地図であり、結論の強さは本文の証拠に戻って確認します。',
+    },
+    {
+      id: 'how-to-read-title-abstract-q4',
+      question:
+        'Abstractの最後の文を読むときの注意点として適切なのはどれですか。',
+      choices: [
+        {
+          id: 'a',
+          text: '著者が強調したい結論として読み、ResultsやMethodsで根拠を確認する。',
+        },
+        {
+          id: 'b',
+          text: '最後の文だけで論文全体の証拠の強さを確定する。',
+        },
+        {
+          id: 'c',
+          text: '最後の文は本文と関係しないので読み飛ばす。',
+        },
+        {
+          id: 'd',
+          text: '最後の文に強い表現があれば、限界は確認しなくてよい。',
+        },
+      ],
+      answer: 'a',
+      explanation:
+        'Abstractの最後の文は結論候補として便利ですが、根拠の十分さは本文で確認します。',
     },
   ]}
 />

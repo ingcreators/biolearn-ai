@@ -117,53 +117,106 @@ Discussionは、結果から何が言えるか、どこまでが限界かを述�
   questions={[
     {
       id: 'paper-structure-q1',
-      question: 'ResultsとMethodsを行き来して読む理由を説明してください。',
+      question: '生命科学論文の各セクションの役割として適切なのはどれですか。',
       choices: [
         {
           id: 'a',
-          text: '比較対象や条件を確認しなくても、常に同じ結論になるから。',
+          text: 'Resultsは証拠の流れ、Methodsは証拠の作られ方、Discussionは解釈と限界を主に扱う。',
         },
         {
           id: 'b',
-          text: '1つの測定値だけで、背景や文脈まで完全に判断できるから。',
+          text: 'Methodsは結論だけを短くまとめる場所で、条件や解析は読まなくてよい。',
         },
         {
           id: 'c',
-          text: 'この概念は結果の解釈には関係しないため、確認する必要がないから。',
+          text: 'Discussionは実験データそのものだけを示し、解釈や限界は含まない。',
         },
         {
           id: 'd',
-          text: 'Resultsで示された結果が、どの実験条件や解析手順から得られたものかを確認するためです。',
-        },
-      ],
-      answer: 'd',
-      explanation:
-        'Resultsで示された結果が、どの実験条件や解析手順から得られたものかを確認するためです。',
-    },
-    {
-      id: 'paper-structure-q2',
-      question: 'Discussionを読むときに注意したいことを一つ挙げてください。',
-      choices: [
-        {
-          id: 'a',
-          text: '著者の解釈がResultsやFigureの証拠でどこまで支えられているかを確認することです。',
-        },
-        {
-          id: 'b',
-          text: '比較対象や条件を確認せず、結論だけを読む。',
-        },
-        {
-          id: 'c',
-          text: '軸、単位、凡例、Methodsを確認せず、表示された差だけを見る。',
-        },
-        {
-          id: 'd',
-          text: 'サンプルや対照を見なくても、用語名だけで判断する。',
+          text: 'Abstractを読めば、ResultsやMethodsで根拠を確認する必要はない。',
         },
       ],
       answer: 'a',
       explanation:
-        '著者の解釈がResultsやFigureの証拠でどこまで支えられているかを確認することです。',
+        '各セクションは役割が異なり、問い、方法、結果、解釈を分担しています。',
+    },
+    {
+      id: 'paper-structure-q2',
+      question:
+        'ResultsとMethodsを行き来して読む理由として適切なのはどれですか。',
+      choices: [
+        {
+          id: 'a',
+          text: 'Resultsで示された結果が、どの実験条件や解析手順から得られたものかを確認するため。',
+        },
+        {
+          id: 'b',
+          text: 'Methodsを読むと、FigureやResultsを見なくても結論が確定するため。',
+        },
+        {
+          id: 'c',
+          text: 'ResultsとMethodsは同じ内容を繰り返すだけなので、片方だけで十分なため。',
+        },
+        {
+          id: 'd',
+          text: 'Methodsの細部をすべて暗記すれば、研究の問いは確認しなくてよいため。',
+        },
+      ],
+      answer: 'a',
+      explanation:
+        '結果の意味は、サンプル、条件、対照、解析方法によって変わります。',
+    },
+    {
+      id: 'paper-structure-q3',
+      question:
+        'Figure、Results本文、Figure legend、Methodsを行き来する読み方として適切なのはどれですか。',
+      choices: [
+        {
+          id: 'a',
+          text: 'Figureで証拠を見て、Results本文の主張、legendの条件、Methodsの手順を照らし合わせる。',
+        },
+        {
+          id: 'b',
+          text: 'Figureの見た目が分かれば、legendやMethodsは確認しなくてよい。',
+        },
+        {
+          id: 'c',
+          text: 'Results本文に書かれた解釈は、常にFigureから直接言える事実である。',
+        },
+        {
+          id: 'd',
+          text: 'Methodsの条件は、Figureの読み方には影響しない。',
+        },
+      ],
+      answer: 'a',
+      explanation:
+        '生命科学論文ではFigureが中心的な証拠になるため、本文、legend、Methodsと対応づけて読みます。',
+    },
+    {
+      id: 'paper-structure-q4',
+      question:
+        'Discussionを読むときに注意したいこととして適切なのはどれですか。',
+      choices: [
+        {
+          id: 'a',
+          text: '著者の解釈がResultsやFigureの証拠でどこまで支えられているかを確認する。',
+        },
+        {
+          id: 'b',
+          text: 'Discussionの結論は、Resultsより常に強い証拠を示す。',
+        },
+        {
+          id: 'c',
+          text: 'Discussionを読めば、限界やMethodsを確認する必要はない。',
+        },
+        {
+          id: 'd',
+          text: 'Discussionは背景説明だけで、論文の主張とは関係しない。',
+        },
+      ],
+      answer: 'a',
+      explanation:
+        'Discussionは解釈を述べる場所なので、主張の強さをResultsやFigureに戻って確認します。',
     },
   ]}
 />

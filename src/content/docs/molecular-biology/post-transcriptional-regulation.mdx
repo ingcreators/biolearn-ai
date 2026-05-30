@@ -127,129 +127,57 @@ miRNAがmRNAに結合すると、そのmRNAが分解されやすくなったり�
 <Quiz
   questions={[
     {
-      id: 'post-transcriptional-regulation-q1',
-      question: '転写後制御とは何ですか。',
+      id: 'post-transcriptional-regulation-definition',
+      question: '転写後制御の説明として最も適切なのはどれですか。',
       choices: [
-        {
-          id: 'a',
-          text: '「転写後制御」は、分子の量だけで機能まで常に決まる。',
-        },
-        {
-          id: 'b',
-          text: '「転写後制御」は、細胞内の場所や相互作用とは関係しない。',
-        },
-        {
-          id: 'c',
-          text: '「転写後制御」は、配列や構造が変わっても働きは常に同じである。',
-        },
-        {
-          id: 'd',
-          text: 'RNAが作られた後に、加工、安定性、翻訳などを通じて発現を調節する仕組みです。',
-        },
+        'RNAが作られた後に、加工、安定性、局在、翻訳効率などを通じて発現を調節する仕組み',
+        'DNAからRNAを作る前に、DNA配列そのものを必ず書き換える仕組み',
+        'RNAが作られた後には発現は調節されない、という考え方',
+        'タンパク質が分解された後にだけ起こる、RNAとは無関係な調節',
       ],
-      answer: 'd',
+      answer: 'a',
       explanation:
         'RNAが作られた後に、加工、安定性、翻訳などを通じて発現を調節する仕組みです。',
     },
     {
-      id: 'post-transcriptional-regulation-q2',
-      question: '転写後制御の例を一つ挙げてください。',
+      id: 'post-transcriptional-regulation-examples',
+      question: '転写後制御の例として適切なのはどれですか。',
       choices: [
-        {
-          id: 'a',
-          text: 'スプライシング、RNA分解、miRNAによる抑制、翻訳効率の調節などがあります。',
-        },
-        {
-          id: 'b',
-          text: '比較対象や条件を確認せず、結論だけを読む。',
-        },
-        {
-          id: 'c',
-          text: '軸、単位、凡例、Methodsを確認せず、表示された差だけを見る。',
-        },
-        {
-          id: 'd',
-          text: 'サンプルや対照を見なくても、用語名だけで判断する。',
-        },
+        'スプライシング、RNA分解、miRNAによる抑制、翻訳効率の調節',
+        'DNA複製、染色体分配、塩基配列の変異だけ',
+        'RNAポリメラーゼがDNAからRNAを作ることだけ',
+        'タンパク質の立体構造ができた後の分解だけ',
       ],
       answer: 'a',
       explanation:
         'スプライシング、RNA分解、miRNAによる抑制、翻訳効率の調節などがあります。',
     },
     {
-      id: 'post-transcriptional-regulation-q3',
-      question: '転写制御と転写後制御の違いを説明してください。',
+      id: 'post-transcriptional-regulation-transcriptional',
+      question: '転写制御と転写後制御の区別として適切なのはどれですか。',
       choices: [
-        {
-          id: 'a',
-          text: '両者は完全に同じ意味なので、論文では区別して読む必要はない。',
-        },
-        {
-          id: 'b',
-          text: '転写制御はRNAが作られる段階の調節で、転写後制御はRNAが作られた後の調節です。',
-        },
-        {
-          id: 'c',
-          text: '一方だけを見れば、もう一方の情報も常に完全に分かる。',
-        },
-        {
-          id: 'd',
-          text: '名前が似ているだけで、本文や実験結果の解釈には関係しない。',
-        },
+        '転写制御はRNAが作られる段階、転写後制御はRNAが作られた後の段階の調節である',
+        '転写制御と転写後制御はどちらもDNA複製だけを指す',
+        '転写後制御はRNAプロセシングだけで、安定性や翻訳効率は含まれない',
+        '転写制御を見れば、転写後制御の内容も常に完全に分かる',
       ],
-      answer: 'b',
+      answer: 'a',
       explanation:
         '転写制御はRNAが作られる段階の調節で、転写後制御はRNAが作られた後の調節です。',
     },
     {
-      id: 'post-transcriptional-regulation-q4',
-      question: 'mRNA量とタンパク質量が一致しない理由を一つ挙げてください。',
+      id: 'post-transcriptional-regulation-mrna-protein',
+      question:
+        'mRNA量とタンパク質量が一致しないことがある理由として適切なのはどれですか。',
       choices: [
-        {
-          id: 'a',
-          text: '比較対象や条件を確認しなくても、常に同じ結論になるから。',
-        },
-        {
-          id: 'b',
-          text: '1つの測定値だけで、背景や文脈まで完全に判断できるから。',
-        },
-        {
-          id: 'c',
-          text: '翻訳効率、RNA安定性、タンパク質分解などが影響するためです。',
-        },
-        {
-          id: 'd',
-          text: 'この概念は結果の解釈には関係しないため、確認する必要がないから。',
-        },
+        'RNA安定性、翻訳効率、タンパク質分解などが、mRNA量とは別に影響するため',
+        'mRNA量が増えれば、タンパク質量も必ず同じ割合で増えるため',
+        'RNA-seqはタンパク質量を直接測るので、両者は常に同じ値になるため',
+        '転写後制御はタンパク質量には関係しないため',
       ],
-      answer: 'c',
+      answer: 'a',
       explanation:
         '翻訳効率、RNA安定性、タンパク質分解などが影響するためです。',
-    },
-    {
-      id: 'post-transcriptional-regulation-q5',
-      question: 'miRNAは転写後制御にどう関わりますか。',
-      choices: [
-        {
-          id: 'a',
-          text: '条件や比較対象を確認しなくても、常に同じ結論になる。',
-        },
-        {
-          id: 'b',
-          text: '本文や実験条件に関係なく、用語名だけで判断できる。',
-        },
-        {
-          id: 'c',
-          text: 'Figureの表示だけで、対照や限界を確認せずに判断できる。',
-        },
-        {
-          id: 'd',
-          text: '標的mRNAに結合し、翻訳を抑えたりmRNA分解を促したりすることがあります。',
-        },
-      ],
-      answer: 'd',
-      explanation:
-        '標的mRNAに結合し、翻訳を抑えたりmRNA分解を促したりすることがあります。',
     },
   ]}
 />

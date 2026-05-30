@@ -73,54 +73,105 @@ Introductionを読み終えたら、「この論文は何を明らかにした�
   questions={[
     {
       id: 'how-to-read-introduction-q1',
-      question: 'Introductionでまず拾いたい要素を3つ挙げてください。',
+      question: 'Introductionでまず拾いたい流れとして適切なのはどれですか。',
       choices: [
         {
           id: 'a',
-          text: '背景、既に分かっていること、未解決の問題、この論文の目的や問いなどがあります。',
+          text: '背景、既に分かっていること、未解決の点、この論文の目的や問い。',
         },
         {
           id: 'b',
-          text: '「Introduction」は、Abstractの一文だけで十分に判断できる。',
+          text: 'すべての実験条件、統計検定、試薬名の詳細。',
         },
         {
           id: 'c',
-          text: '「Introduction」は、Methodsや限界を確認しなくても結論を受け取れる。',
+          text: 'Discussionの結論をそのまま受け取るための根拠。',
         },
         {
           id: 'd',
-          text: '「Introduction」は、どの研究デザインでも同じ強さの証拠になる。',
+          text: 'Referencesを上から順にすべて読む順番。',
         },
       ],
       answer: 'a',
       explanation:
-        '背景、既に分かっていること、未解決の問題、この論文の目的や問いなどがあります。',
+        'Introductionは背景から未解決の問いへ進み、この論文の目的を示す流れで読むと整理しやすくなります。',
     },
     {
       id: 'how-to-read-introduction-q2',
       question:
-        'Introductionを読んだあとResultsへ進む前に確認したいことは何ですか。',
+        'Introductionで「however」「remain unclear」などの表現が出たとき、注目することはどれですか。',
       choices: [
         {
           id: 'a',
-          text: '比較対象や条件を確認せず、結論だけを読む。',
+          text: 'この論文が入る未解決の点や、研究の問いにつながる部分。',
         },
         {
           id: 'b',
-          text: 'この論文が何を明らかにしようとしているのか、どの問いに答えようとしているのかを確認します。',
+          text: 'すでに完全に解決済みなのでResultsを読む必要がない部分。',
         },
         {
           id: 'c',
-          text: '軸、単位、凡例、Methodsを確認せず、表示された差だけを見る。',
+          text: '引用文献をすべて暗記しないと先に進めない部分。',
         },
         {
           id: 'd',
-          text: 'サンプルや対照を見なくても、用語名だけで判断する。',
+          text: 'この論文の結論が必ず正しいと示された部分。',
         },
       ],
-      answer: 'b',
+      answer: 'a',
       explanation:
-        'この論文が何を明らかにしようとしているのか、どの問いに答えようとしているのかを確認します。',
+        '未解決の点を見つけると、この論文が何を調べるのかを追いやすくなります。',
+    },
+    {
+      id: 'how-to-read-introduction-q3',
+      question:
+        'Introductionの最後の段落で確認したいこととして適切なのはどれですか。',
+      choices: [
+        {
+          id: 'a',
+          text: '研究目的、仮説、使うアプローチ、この論文が答えようとする問い。',
+        },
+        {
+          id: 'b',
+          text: 'すべてのFigureの数値結果。',
+        },
+        {
+          id: 'c',
+          text: 'Discussionに書かれる限界の全文。',
+        },
+        {
+          id: 'd',
+          text: 'Methodsの試薬メーカー名だけ。',
+        },
+      ],
+      answer: 'a',
+      explanation:
+        '最後の段落には研究目的やアプローチが書かれることが多く、Resultsの読み方の軸になります。',
+    },
+    {
+      id: 'how-to-read-introduction-q4',
+      question: 'Introductionを読むときに避けたい読み方はどれですか。',
+      choices: [
+        {
+          id: 'a',
+          text: '知らない専門用語で止まり続け、論文全体の問いを見失う。',
+        },
+        {
+          id: 'b',
+          text: '既知のことと未解決の点を分けて読む。',
+        },
+        {
+          id: 'c',
+          text: 'この論文が何を調べるのかを一文で整理する。',
+        },
+        {
+          id: 'd',
+          text: '背景が分からないときはレビュー論文に戻る。',
+        },
+      ],
+      answer: 'a',
+      explanation:
+        '初回は細部で止まりすぎず、背景から問いへ進む流れをつかむことが大切です。',
     },
   ]}
 />

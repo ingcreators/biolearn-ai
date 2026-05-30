@@ -79,50 +79,100 @@ import LessonFigure from '../../../components/LessonFigure.astro';
       choices: [
         {
           id: 'a',
-          text: '比較対象や条件を確認せず、結論だけを読む。',
+          text: '研究の問い、主要Figure、使った方法、結論の候補、後で深く読む箇所をつかむこと。',
         },
         {
           id: 'b',
-          text: '軸、単位、凡例、Methodsを確認せず、表示された差だけを見る。',
+          text: 'すべての試薬名、機器条件、引用文献をその場で完全に理解すること。',
         },
         {
           id: 'c',
-          text: '研究の問い、主要Figure、使った方法、結論の候補、後で深く読む箇所をつかむことです。',
+          text: 'Abstractだけで論文の結論を確定すること。',
         },
         {
           id: 'd',
-          text: 'サンプルや対照を見なくても、用語名だけで判断する。',
+          text: 'Figureを見ずに本文だけで理解すること。',
         },
       ],
-      answer: 'c',
+      answer: 'a',
       explanation:
-        '研究の問い、主要Figure、使った方法、結論の候補、後で深く読む箇所をつかむことです。',
+        '初回読みでは、細部に入る前に論文の地図を作ることを優先します。',
     },
     {
       id: 'first-pass-reading-q2',
+      question: '初回読みのおすすめ順として本文に沿っているものはどれですか。',
+      choices: [
+        {
+          id: 'a',
+          text: 'Title、Abstract、Figure一覧、Results見出し、必要なMethods、Discussionの限界。',
+        },
+        {
+          id: 'b',
+          text: 'Methodsの細部、すべてのReferences、Title、最後にFigure。',
+        },
+        {
+          id: 'c',
+          text: 'Discussionの結論だけ、Abstractだけ、Referencesだけ。',
+        },
+        {
+          id: 'd',
+          text: '統計手法だけを最初にすべて読み込む。',
+        },
+      ],
+      answer: 'a',
+      explanation:
+        '初回読みでは、全体像、主要Figure、必要なMethods、限界を順に拾うと迷いにくくなります。',
+    },
+    {
+      id: 'first-pass-reading-q3',
       question:
         '分からない手法が出てきたとき、初回読みではどう扱うとよいですか。',
       choices: [
         {
           id: 'a',
-          text: '比較対象や条件を確認せず、結論だけを読む。',
+          text: '印をつけて保留し、全体像をつかんだ後でMethodsや手法記事に戻る。',
         },
         {
           id: 'b',
-          text: '軸、単位、凡例、Methodsを確認せず、表示された差だけを見る。',
+          text: 'その場で完全に理解できるまで読み進めない。',
         },
         {
           id: 'c',
-          text: 'サンプルや対照を見なくても、用語名だけで判断する。',
+          text: '分からない手法は結果の解釈に関係しないので、永久に無視する。',
         },
         {
           id: 'd',
-          text: '印をつけて保留し、全体像をつかんだ後でMethodsや手法記事に戻ります。',
+          text: '手法名だけで、結果の信頼性を判断する。',
         },
       ],
-      answer: 'd',
+      answer: 'a',
       explanation:
-        '印をつけて保留し、全体像をつかんだ後でMethodsや手法記事に戻ります。',
+        '初回読みでは保留しながら全体像を作り、必要な箇所にあとで戻るのが有効です。',
+    },
+    {
+      id: 'first-pass-reading-q4',
+      question: '初回読みで作る「論文の地図」として適切なのはどれですか。',
+      choices: [
+        {
+          id: 'a',
+          text: '問い、主要Figure、比較条件、必要なMethods、結論候補、残る疑問をメモする。',
+        },
+        {
+          id: 'b',
+          text: '試薬名だけを一覧にして、研究の問いは後回しにする。',
+        },
+        {
+          id: 'c',
+          text: 'Abstractの結論を写して、FigureやMethodsは見ない。',
+        },
+        {
+          id: 'd',
+          text: '分からない用語をすべて解決してから、初めてFigureを見る。',
+        },
+      ],
+      answer: 'a',
+      explanation:
+        '地図を作る目的は、論文が何を問うていて、どこを深読みすべきかを見えるようにすることです。',
     },
   ]}
 />

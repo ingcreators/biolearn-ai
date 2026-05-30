@@ -78,54 +78,105 @@ Graphical abstractは、[TitleとAbstractの読み方](/papers/how-to-read-title
     {
       id: 'graphical-abstract-q1',
       question:
-        'Graphical abstractを読むとき、Resultsに戻って確認したいことは何ですか。',
+        'Graphical abstractを読むとき、Resultsに戻って確認したいことはどれですか。',
       choices: [
         {
           id: 'a',
-          text: '比較対象や条件を確認せず、結論だけを読む。',
+          text: '図に描かれた関係や主張が、どのFigureやResultsに支えられているか。',
         },
         {
           id: 'b',
-          text: '軸、単位、凡例、Methodsを確認せず、表示された差だけを見る。',
+          text: '模式図がきれいに描かれているかだけ。',
         },
         {
           id: 'c',
-          text: '図に描かれた関係や主張が、どのFigureやResultsに支えられているかです。',
+          text: 'Graphical abstractだけでMethodsの詳細まで分かるか。',
         },
         {
           id: 'd',
-          text: 'サンプルや対照を見なくても、用語名だけで判断する。',
+          text: '矢印が多いほど、主張が強く証明されているか。',
         },
       ],
-      answer: 'c',
+      answer: 'a',
       explanation:
-        '図に描かれた関係や主張が、どのFigureやResultsに支えられているかです。',
+        'Graphical abstractは入口なので、主張の根拠はResults本文や各Figureに戻って確認します。',
     },
     {
       id: 'graphical-abstract-q2',
       question:
-        'Graphical abstractを結果そのものとして読まない方がよい理由を説明してください。',
+        'Graphical abstractを結果そのものとして読まない方がよい理由として適切なのはどれですか。',
       choices: [
         {
           id: 'a',
-          text: '比較対象や条件を確認しなくても、常に同じ結論になるから。',
+          text: '著者の解釈やモデルを含む要約図であり、証拠の強さは本文やFigureで確認する必要があるため。',
         },
         {
           id: 'b',
-          text: '1つの測定値だけで、背景や文脈まで完全に判断できるから。',
+          text: 'Graphical abstractは、常にすべての実験データをそのまま載せる図だから。',
         },
         {
           id: 'c',
-          text: 'この概念は結果の解釈には関係しないため、確認する必要がないから。',
+          text: '模式図の矢印は、必ず因果関係が実験で確定したことを示すから。',
         },
         {
           id: 'd',
-          text: '著者の解釈やモデルを含む要約図であり、実際の証拠の強さは本文やFigureで確認する必要があるためです。',
+          text: 'Graphical abstractに書かれた内容は、Resultsより優先して読むべきだから。',
         },
       ],
-      answer: 'd',
+      answer: 'a',
       explanation:
-        '著者の解釈やモデルを含む要約図であり、実際の証拠の強さは本文やFigureで確認する必要があるためです。',
+        'Graphical abstractは研究の地図として便利ですが、実験結果そのものを置き換えるものではありません。',
+    },
+    {
+      id: 'graphical-abstract-q3',
+      question:
+        'Graphical abstract中の矢印や流れを読むときの注意点はどれですか。',
+      choices: [
+        {
+          id: 'a',
+          text: '因果、時間順、仮説、著者のモデルのどれとして描かれているかを見分ける。',
+        },
+        {
+          id: 'b',
+          text: '矢印は常に因果関係の確定を表す。',
+        },
+        {
+          id: 'c',
+          text: '矢印が太ければ、統計表示や対照の確認は不要である。',
+        },
+        {
+          id: 'd',
+          text: '矢印の向きは装飾なので、Resultsとの対応には関係しない。',
+        },
+      ],
+      answer: 'a',
+      explanation:
+        '模式図の矢印は、実験結果、仮説、モデルなど複数の意味を持つため、本文に戻って確認します。',
+    },
+    {
+      id: 'graphical-abstract-q4',
+      question: 'Graphical abstractの使い方として適切なのはどれですか。',
+      choices: [
+        {
+          id: 'a',
+          text: '研究対象、方法、主な結果、著者のモデルを大づかみに把握する入口として使う。',
+        },
+        {
+          id: 'b',
+          text: 'ResultsやMethodsを読まずに、論文の証拠をすべて理解したことにする。',
+        },
+        {
+          id: 'c',
+          text: '描かれた関係をすべて直接証明済みのデータとして扱う。',
+        },
+        {
+          id: 'd',
+          text: 'AbstractやDiscussionの主張がFigureより強いかどうかは確認しない。',
+        },
+      ],
+      answer: 'a',
+      explanation:
+        'Graphical abstractは全体像をつかむ入口として使い、主張の根拠は本文とFigureで確認します。',
     },
   ]}
 />

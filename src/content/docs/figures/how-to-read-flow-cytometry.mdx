@@ -79,32 +79,33 @@ import LessonFigure from '../../../components/LessonFigure.astro';
     {
       id: 'how-to-read-flow-cytometry-q1',
       question:
-        'フローサイトメトリーFigureでゲートを見る理由を説明してください。',
+        'フローサイトメトリーFigureでゲートを見る理由として適切なものはどれですか。',
       choices: [
         {
           id: 'a',
-          text: '比較対象や条件を確認しなくても、常に同じ結論になるから。',
+          text: 'ゲート内の割合だけでなく、どの細胞集団を解析対象にしているかが解釈に関わるため。',
         },
         {
           id: 'b',
-          text: '1つの測定値だけで、背景や文脈まで完全に判断できるから。',
+          text: 'ゲートは図を見やすくする飾りで、陽性率の解釈には関係しないため。',
         },
         {
           id: 'c',
-          text: 'どの細胞集団を解析対象にしているかが結果の解釈に関わるためです。',
+          text: 'ゲートがあれば、対照なしでも陽性と陰性を必ず決められるため。',
         },
         {
           id: 'd',
-          text: 'この概念は結果の解釈には関係しないため、確認する必要がないから。',
+          text: 'ゲート内の点が多ければ、独立サンプル数も必ず多いと分かるため。',
         },
       ],
-      answer: 'c',
+      answer: 'a',
       explanation:
         'どの細胞集団を解析対象にしているかが結果の解釈に関わるためです。',
     },
     {
       id: 'how-to-read-flow-cytometry-q2',
-      question: '点の数と独立サンプル数を区別する理由を説明してください。',
+      question:
+        '点の数と独立サンプル数を区別する理由として適切なものはどれですか。',
       choices: [
         {
           id: 'a',
@@ -126,6 +127,57 @@ import LessonFigure from '../../../components/LessonFigure.astro';
       answer: 'd',
       explanation:
         '多数の点が同じサンプル由来の細胞である可能性があるためです。',
+    },
+    {
+      id: 'how-to-read-flow-cytometry-q3',
+      question: 'ゲートを引く基準として確認したい対照はどれですか。',
+      choices: [
+        {
+          id: 'a',
+          text: 'unstained、single stain、isotype、FMOなどの対照。',
+        },
+        {
+          id: 'b',
+          text: '色がきれいに分かれているかだけ。',
+        },
+        {
+          id: 'c',
+          text: '陽性率が高い条件だけ。陰性対照は不要である。',
+        },
+        {
+          id: 'd',
+          text: 'Figure legendではなく、図中の割合の数字だけ。',
+        },
+      ],
+      answer: 'a',
+      explanation:
+        'フローサイトメトリーでは、対照を基準に陽性・陰性やゲートの位置を確認します。',
+    },
+    {
+      id: 'how-to-read-flow-cytometry-q4',
+      question:
+        '陽性率や平均蛍光強度を比較するときの読み方として適切なものはどれですか。',
+      choices: [
+        {
+          id: 'a',
+          text: 'どの細胞集団から解析が始まったか、ゲート、対照、独立サンプル数を確認する。',
+        },
+        {
+          id: 'b',
+          text: '陽性率の数字が大きければ、解析対象の集団は確認しなくてよい。',
+        },
+        {
+          id: 'c',
+          text: '蛍光強度の差は、常にタンパク質量の差だけを表す。',
+        },
+        {
+          id: 'd',
+          text: '補足Figureのゲーティング戦略は、本文Figureの解釈には使わない。',
+        },
+      ],
+      answer: 'a',
+      explanation:
+        '割合や蛍光強度は、ゲーティング戦略と対照、サンプル単位を確認してから比較します。',
     },
   ]}
 />

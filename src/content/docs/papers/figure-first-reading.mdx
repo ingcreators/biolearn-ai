@@ -78,54 +78,106 @@ Figure first readingは、Figureを先に見て、論文がどんな証拠を出
   questions={[
     {
       id: 'figure-first-reading-q1',
-      question:
-        'Figureから論文を読むとき、Figureの次に確認したい場所を2つ挙げてください。',
+      question: 'Figure first readingの説明として最も適切なのはどれですか。',
       choices: [
         {
           id: 'a',
-          text: 'Figure legend、Results本文、Methods、必要に応じてDiscussionなどです。',
+          text: 'Figureを入口にして、legend、Results、Methodsへ戻りながら根拠を確認する読み方。',
         },
         {
           id: 'b',
-          text: '比較対象や条件を確認せず、結論だけを読む。',
+          text: 'Figureの見た目だけで、論文の結論を先に確定する読み方。',
         },
         {
           id: 'c',
-          text: '軸、単位、凡例、Methodsを確認せず、表示された差だけを見る。',
+          text: 'Methodsを読まずに、AbstractとDiscussionだけで全体を理解する読み方。',
         },
         {
           id: 'd',
-          text: 'サンプルや対照を見なくても、用語名だけで判断する。',
+          text: 'Figureを最後に確認し、本文の主張を暗記してから図を見る読み方。',
         },
       ],
       answer: 'a',
       explanation:
-        'Figure legend、Results本文、Methods、必要に応じてDiscussionなどです。',
+        'Figure first readingは、Figureを出発点にしつつ、legend、Results、Methodsで条件と解釈を確認する読み方です。',
     },
     {
       id: 'figure-first-reading-q2',
-      question: 'Figureだけで結論を決めない方がよい理由を説明してください。',
+      question:
+        'Figureを見た直後にFigure legendで確認することとして最も適切なのはどれですか。',
       choices: [
         {
           id: 'a',
-          text: '細胞数や測定回数が多ければ、独立サンプル数は確認しなくてよい。',
+          text: '条件、記号、n数、統計表示など、図を読むための前提。',
         },
         {
           id: 'b',
-          text: '条件、反復、統計表示、解析方法、著者の解釈を確認しないと、図の意味を読み違える可能性があるためです。',
+          text: '著者の所属や雑誌名だけを見て、結果の信頼性を決める情報。',
         },
         {
           id: 'c',
-          text: '技術的反復と生物学的反復は同じ意味なので区別しなくてよい。',
+          text: '本文を読まなくても結論を確定できる最終的な解釈。',
         },
         {
           id: 'd',
-          text: 'nが大きければ、偏りや実験設計の問題は常に解決する。',
+          text: 'Methodsを読む代わりになる、すべての実験手順の詳細。',
         },
       ],
-      answer: 'b',
+      answer: 'a',
       explanation:
-        '条件、反復、統計表示、解析方法、著者の解釈を確認しないと、図の意味を読み違える可能性があるためです。',
+        'Figure legendでは、条件、記号、n数、統計表示など、Figureを誤読しないための前提を確認します。',
+    },
+    {
+      id: 'figure-first-reading-q3',
+      question:
+        '各Figureにつける一言メモとして最も本文に合っている組み合わせはどれですか。',
+      choices: [
+        {
+          id: 'a',
+          text: '何を測ったか、何を比較したか、この図から直接言えること。',
+        },
+        {
+          id: 'b',
+          text: '論文の結論、著者の評価、今後の研究費の見込み。',
+        },
+        {
+          id: 'c',
+          text: '図の色の好み、グラフの見た目、印象に残った単語。',
+        },
+        {
+          id: 'd',
+          text: 'Abstractの最後の文、Discussionの結論、Referencesの件数。',
+        },
+      ],
+      answer: 'a',
+      explanation:
+        'Figureメモでは「測ったもの」「比較した条件」「直接言えること」を短く残すと、本文へ戻りやすくなります。',
+    },
+    {
+      id: 'figure-first-reading-q4',
+      question:
+        'Figureから読んだあと、Discussionで特に注意して見る点はどれですか。',
+      choices: [
+        {
+          id: 'a',
+          text: 'そのFigureから直接言える範囲を超えて、広く解釈していないか。',
+        },
+        {
+          id: 'b',
+          text: 'Discussionに書かれていれば、Methodsを確認しなくても事実として扱えるか。',
+        },
+        {
+          id: 'c',
+          text: 'Figureの見た目の差が大きければ、統計表示を省略してよいか。',
+        },
+        {
+          id: 'd',
+          text: 'Abstractと同じ言葉があるかだけを見れば、解釈の強さは判断できるか。',
+        },
+      ],
+      answer: 'a',
+      explanation:
+        'Discussionでは、Figureから直接言えることより広い解釈になっていないかを確認します。',
     },
   ]}
 />

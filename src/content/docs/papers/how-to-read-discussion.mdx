@@ -79,53 +79,104 @@ Discussionでは、最初に主要な結果をまとめ、その後に「何を�
     {
       id: 'how-to-read-discussion-q1',
       question:
-        'DiscussionでResultsに戻って確認したい場面を一つ挙げてください。',
+        'DiscussionでResultsに戻って確認したい場面として適切なのはどれですか。',
       choices: [
         {
           id: 'a',
-          text: '比較対象や条件を確認せず、結論だけを読む。',
+          text: '著者が強い結論や広い解釈を述べているとき。',
         },
         {
           id: 'b',
-          text: '軸、単位、凡例、Methodsを確認せず、表示された差だけを見る。',
+          text: 'Discussionに限界が書かれていないときだけ。',
         },
         {
           id: 'c',
-          text: '著者が強い結論や広い解釈を述べているとき、その根拠となるFigureやResultsに戻ります。',
+          text: 'ResultsはDiscussionとは無関係なので戻らない。',
         },
         {
           id: 'd',
-          text: 'サンプルや対照を見なくても、用語名だけで判断する。',
+          text: '先行研究と一致していると書かれていれば、根拠確認は不要なとき。',
         },
       ],
-      answer: 'c',
+      answer: 'a',
       explanation:
-        '著者が強い結論や広い解釈を述べているとき、その根拠となるFigureやResultsに戻ります。',
+        'Discussionの強い主張は、対応するResultsやFigureでどこまで支えられているか確認します。',
     },
     {
       id: 'how-to-read-discussion-q2',
-      question: 'Discussionで限界を確認する理由を説明してください。',
+      question: 'Discussionで限界を確認する理由として適切なのはどれですか。',
       choices: [
         {
           id: 'a',
-          text: '比較対象や条件を確認しなくても、常に同じ結論になるから。',
+          text: '研究デザイン、サンプル、解析、一般化の範囲を知り、結論を読みすぎないため。',
         },
         {
           id: 'b',
-          text: '1つの測定値だけで、背景や文脈まで完全に判断できるから。',
+          text: '限界が書かれていれば、結果はすべて正しいと判断できるため。',
         },
         {
           id: 'c',
-          text: 'この概念は結果の解釈には関係しないため、確認する必要がないから。',
+          text: '限界は形式的な文章で、FigureやMethodsとは関係しないため。',
         },
         {
           id: 'd',
-          text: '研究デザイン、サンプル、解析、解釈の範囲を知ることで、結論を読みすぎないためです。',
+          text: '限界を読めば、ResultsやMethodsを確認しなくてよいため。',
         },
       ],
-      answer: 'd',
+      answer: 'a',
       explanation:
-        '研究デザイン、サンプル、解析、解釈の範囲を知ることで、結論を読みすぎないためです。',
+        '限界を読むと、その研究からどこまで言えるか、どこから先は未解決かを整理できます。',
+    },
+    {
+      id: 'how-to-read-discussion-q3',
+      question:
+        'Discussionで「suggest」「may」「consistent with」などの表現を見たときの読み方として適切なのはどれですか。',
+      choices: [
+        {
+          id: 'a',
+          text: '断定ではなく可能性や解釈を示すことがあるため、Resultsの証拠に戻って確認する。',
+        },
+        {
+          id: 'b',
+          text: 'これらの表現は「証明した」と完全に同じ意味として読む。',
+        },
+        {
+          id: 'c',
+          text: 'これらの表現があれば、代替説明はすべて排除されている。',
+        },
+        {
+          id: 'd',
+          text: '表現の強さは論文読解には関係しない。',
+        },
+      ],
+      answer: 'a',
+      explanation:
+        'Discussionでは、表現の強さを見ながら、結果からどこまで広げているかを確認します。',
+    },
+    {
+      id: 'how-to-read-discussion-q4',
+      question: 'Discussionで避けたい読み方はどれですか。',
+      choices: [
+        {
+          id: 'a',
+          text: 'Discussionの結論を、Resultsで直接示された事実と同じ強さで受け取る。',
+        },
+        {
+          id: 'b',
+          text: '先行研究との一致点と違う点を分ける。',
+        },
+        {
+          id: 'c',
+          text: '限界や残る疑問を探す。',
+        },
+        {
+          id: 'd',
+          text: '強い主張をFigureやMethodsに戻って確認する。',
+        },
+      ],
+      answer: 'a',
+      explanation:
+        'Discussionは解釈を含むため、Resultsで直接示されたことと同じ強さで読まないようにします。',
     },
   ]}
 />

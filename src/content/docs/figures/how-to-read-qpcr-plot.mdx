@@ -99,7 +99,7 @@ qPCR plotで迷ったら、Figureだけで判断せず、Methodsと統計の前�
       choices: [
         {
           id: 'a',
-          text: '「qPCR plot」は、軸、単位、凡例、Figure legendを確認しなくても読める。',
+          text: 'しきい値に遅く到達したため、初期量が少ないことを示す。',
         },
         {
           id: 'b',
@@ -107,11 +107,11 @@ qPCR plotで迷ったら、Figureだけで判断せず、Methodsと統計の前�
         },
         {
           id: 'c',
-          text: '「qPCR plot」は、点や棒の見た目だけで結論を決められる。',
+          text: 'Ct値が低いほど、必ず遺伝子の機能が強いことを示す。',
         },
         {
           id: 'd',
-          text: '「qPCR plot」は、何を比較している図かを確認しなくても解釈できる。',
+          text: 'Ct値はエラーバーの長さを示すので、初期量とは関係しない。',
         },
       ],
       answer: 'b',
@@ -125,11 +125,11 @@ qPCR plotで迷ったら、Figureだけで判断せず、Methodsと統計の前�
       choices: [
         {
           id: 'a',
-          text: '比較対象や条件を確認しなくても、常に同じ結論になるから。',
+          text: '内部標準遺伝子は、目的遺伝子の機能を直接証明するための遺伝子だから。',
         },
         {
           id: 'b',
-          text: '1つの測定値だけで、背景や文脈まで完全に判断できるから。',
+          text: '内部標準遺伝子が何でも、相対発現量の解釈は変わらないから。',
         },
         {
           id: 'c',
@@ -137,12 +137,62 @@ qPCR plotで迷ったら、Figureだけで判断せず、Methodsと統計の前�
         },
         {
           id: 'd',
-          text: 'この概念は結果の解釈には関係しないため、確認する必要がないから。',
+          text: '内部標準遺伝子を確認すれば、biological replicateの確認は不要になるから。',
         },
       ],
       answer: 'c',
       explanation:
         'サンプル量や反応条件の違いを補正する基準であり、その基準が不安定だと比較の解釈が揺らぐためです。',
+    },
+    {
+      id: 'how-to-read-qpcr-plot-q3',
+      question: '相対発現量のグラフを読むときに確認すべきことはどれですか。',
+      choices: [
+        {
+          id: 'a',
+          text: 'どの条件を基準に1としているか、内部標準遺伝子は何か。',
+        },
+        {
+          id: 'b',
+          text: '棒が高ければ、基準条件や正規化方法は確認しなくてよい。',
+        },
+        {
+          id: 'c',
+          text: 'Ct値が高いほど、常に初期量が多いと読む。',
+        },
+        {
+          id: 'd',
+          text: '相対発現量なら、technical replicateとbiological replicateは同じ意味になる。',
+        },
+      ],
+      answer: 'a',
+      explanation:
+        '相対発現量は基準条件や内部標準遺伝子の取り方で意味が変わるため、Figure legendやMethodsで確認します。',
+    },
+    {
+      id: 'how-to-read-qpcr-plot-q4',
+      question: 'qPCR plotで反復を読むときの注意として適切なものはどれですか。',
+      choices: [
+        {
+          id: 'a',
+          text: 'technical replicateが多ければ、独立した生物学的反復も多いと決めてよい。',
+        },
+        {
+          id: 'b',
+          text: '同じサンプルの測定繰り返しと、独立サンプルの反復を分けて確認する。',
+        },
+        {
+          id: 'c',
+          text: 'エラーバーが小さければ、反復の種類は確認しなくてよい。',
+        },
+        {
+          id: 'd',
+          text: 'p値が表示されていれば、どの比較に対する検定かは見なくてよい。',
+        },
+      ],
+      answer: 'b',
+      explanation:
+        'qPCRではtechnical replicateとbiological replicateを分け、独立したサンプルで傾向が見えるかを確認します。',
     },
   ]}
 />
