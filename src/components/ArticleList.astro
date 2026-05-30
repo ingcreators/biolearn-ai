@@ -4,6 +4,7 @@ import {
   learningPathRoutes,
   type LearningPathKey,
 } from '../data/learningPaths';
+import { glossaryTerms } from '../data/glossary';
 
 type Part =
   | 'start'
@@ -164,10 +165,8 @@ const hrefTitleMap = new Map(
   docs.map((entry) => [toHref(entry.id), entry.data.title]),
 );
 
-const glossaryTitleMap = new Map(
-  docs
-    .filter((entry) => entry.data.part === 'glossary')
-    .map((entry) => [toHref(entry.id), entry.data.title]),
+const glossaryTermMap = new Map(
+  glossaryTerms.map((term) => [term.href, term.term]),
 );
 
 const getPrerequisiteItems = (hrefs: string[] = []) =>
@@ -181,7 +180,7 @@ const getRelatedTermItems = (terms: string[] = []) =>
     const href = `/glossary/${term}/`;
     return {
       href,
-      title: glossaryTitleMap.get(href) ?? term,
+      title: glossaryTermMap.get(href) ?? term,
     };
   });
 
