@@ -229,6 +229,25 @@ const scorableQuestions = normalizedQuestions.filter((item) => item.choices);
 
   const store = createLearningProgressStore();
 
+  const shuffled = <T,>(items: T[]) => {
+    const nextItems = [...items];
+    for (let index = nextItems.length - 1; index > 0; index -= 1) {
+      const swapIndex = Math.floor(Math.random() * (index + 1));
+      [nextItems[index], nextItems[swapIndex]] = [
+        nextItems[swapIndex],
+        nextItems[index],
+      ];
+    }
+
+    return nextItems;
+  };
+
+  const shuffleQuestions = (questions: QuizQuestion[]) =>
+    shuffled(questions).map((question) => ({
+      ...question,
+      choices: shuffled(question.choices),
+    }));
+
   const getLessonTitle = (root: HTMLElement) =>
     root.dataset.lessonTitle ||
     document.querySelector('h1')?.textContent?.trim() ||
@@ -507,8 +526,9 @@ const scorableQuestions = normalizedQuestions.filter((item) => item.choices);
 
     const openQuiz = (nextMode: 'all' | 'review') => {
       mode = nextMode;
-      activeQuestions =
-        nextMode === 'review' ? getStoredReviewQuestions() : questions;
+      activeQuestions = shuffleQuestions(
+        nextMode === 'review' ? getStoredReviewQuestions() : questions,
+      );
       if (activeQuestions.length === 0) {
         updateEntryState(root);
         return;

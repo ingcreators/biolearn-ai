@@ -42,6 +42,19 @@
     return element;
   };
 
+  const shuffled = <T,>(items: T[]) => {
+    const nextItems = [...items];
+    for (let index = nextItems.length - 1; index > 0; index -= 1) {
+      const swapIndex = Math.floor(Math.random() * (index + 1));
+      [nextItems[index], nextItems[swapIndex]] = [
+        nextItems[swapIndex],
+        nextItems[index],
+      ];
+    }
+
+    return nextItems;
+  };
+
   const renderLessons = (target: HTMLElement) => {
     const lessons = store.getLessons();
     target.replaceChildren();
@@ -93,7 +106,7 @@
       return;
     }
 
-    for (const question of questions) {
+    for (const question of shuffled(questions)) {
       const item = createElement('article', 'biolearn-progress-question');
       const lessonLink = createElement(
         'a',
@@ -106,7 +119,7 @@
       const feedback = createElement('p', 'biolearn-progress-feedback');
       feedback.hidden = true;
 
-      for (const choice of question.choices) {
+      for (const choice of shuffled(question.choices)) {
         const label = createElement('label', 'biolearn-choice');
         const input = document.createElement('input');
         input.type = 'radio';
