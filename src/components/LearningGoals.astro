@@ -1,16 +1,17 @@
 ---
 interface Props {
   items: string[];
+  title?: string;
 }
 
-const { items } = Astro.props;
+const { items, title = 'この記事で学ぶこと' } = Astro.props;
 ---
 
 <section
   class="biolearn-box biolearn-goals"
   aria-labelledby="learning-goals-title"
 >
-  <h3 id="learning-goals-title">この記事で学ぶこと</h3>
+  <h3 id="learning-goals-title">{title}</h3>
   <ul>
     {items.map((item) => <li>{item}</li>)}
   </ul>

@@ -1,20 +1,25 @@
 ---
 title: 分子生物学
 description: 核酸、タンパク質、DNA複製、DNA損傷、DNA修復、組換え、セントラルドグマ、転写、発現制御、クロマチン、RNAプロセシング、翻訳を学びます。
+tableOfContents: false
 ---
 
 import ArticleList from '../../../components/ArticleList.astro';
+import LearningGoals from '../../../components/LearningGoals.astro';
+
+<LearningGoals
+  title="この分野で学ぶこと"
+  items={[
+    'DNA、RNA、タンパク質を、遺伝情報が使われる流れとして説明できる',
+    '核酸、ヌクレオチド、塩基対、アミノ酸を、分子の部品として整理できる',
+    '転写、翻訳、RNAプロセシング、スプライシングを区別できる',
+    'タンパク質構造、フォールディング、酵素の関係を説明できる',
+    'プロモーター、エンハンサー、転写因子、クロマチン状態を、発現調節のしくみとして読める',
+    'DNA損傷、DNA修復、組換えを、DNAを保つしくみとして整理できる',
+  ]}
+/>
 
 分子生物学は、生命現象をDNA、RNA、タンパク質などの分子の働きとして理解する分野です。BioLearnでは、基礎カテゴリで学んだ分子、細胞、DNA、RNA、タンパク質を土台に、核酸やアミノ酸などの部品から、遺伝情報が複製され、読み出され、細胞の中で働きに変わる流れまでを学びます。
-
-## この分野で学ぶこと
-
-- DNA、RNA、タンパク質を、遺伝情報が使われる流れとして説明できる
-- 核酸、ヌクレオチド、塩基対、アミノ酸を、分子の部品として整理できる
-- 転写、翻訳、RNAプロセシング、スプライシングを区別できる
-- タンパク質構造、フォールディング、酵素の関係を説明できる
-- プロモーター、エンハンサー、転写因子、クロマチン状態を、発現調節のしくみとして読める
-- DNA損傷、DNA修復、組換えを、DNAを保つしくみとして整理できる
 
 ## 目的別に選ぶ
 
@@ -65,12 +70,6 @@ import ArticleList from '../../../components/ArticleList.astro';
   </a>
 </div>
 
-## まず押さえる3つの考え方
-
-1. セントラルドグマは、遺伝情報がRNAやタンパク質へ向かう基本的な見取り図です。
-2. DNA複製はDNAを受け渡す過程で、DNA損傷・修復・組換えはDNAを維持する仕組みとして理解できます。
-3. プロモーター、エンハンサー、転写因子、クロマチン状態、転写後制御は、遺伝子の使われ方を調節する仕組みです。
-
 ## 記事一覧
 
 まず基礎カテゴリでDNA、RNA、タンパク質、遺伝子を確認し、このページでは記事一覧の各セクションを上から順に読みます。目的がはっきりしている場合は、必要なセクションから入ってもかまいません。
@@ -112,12 +111,3 @@ import ArticleList from '../../../components/ArticleList.astro';
 <ArticleList part="molecular-biology" module="dna-maintenance" />
 
 DNA、RNA、タンパク質、遺伝子があいまいな場合は、先に [生命科学の基礎](/fundamentals/) から読みます。実験手法へ進む場合は、次に [PCRとは何か](/methods/pcr/) を読みます。
-
-## 関連する用語
-
-主要な用語は各記事の「重要用語」で整理しています。カテゴリ全体を見渡す入口としては、次のまとまりから確認できます。
-
-- 情報の流れ: [DNA](/glossary/dna/)、[RNA](/glossary/rna/)、[タンパク質](/glossary/protein/)、[セントラルドグマ](/glossary/central-dogma/)、[転写](/glossary/transcription/)、[翻訳](/glossary/translation/)
-- 核酸と配列: [核酸](/glossary/nucleic-acids/)、[ヌクレオチド](/glossary/nucleotide/)、[塩基対](/glossary/base-pairing/)、[DNA複製](/glossary/dna-replication/)、[DNA修復](/glossary/dna-repair/)、[組換え](/glossary/recombination/)
-- 発現制御: [遺伝子発現制御](/glossary/gene-expression-regulation/)、[プロモーター](/glossary/promoter/)、[エンハンサー](/glossary/enhancer/)、[転写因子](/glossary/transcription-factor/)、[非コードRNA](/glossary/noncoding-rna/)、[miRNA](/glossary/microrna/)
-- クロマチンとタンパク質: [クロマチン](/glossary/chromatin/)、[ヌクレオソーム](/glossary/nucleosome/)、[エピジェネティクス](/glossary/epigenetics/)、[ヒストン修飾](/glossary/histone-modification/)、[タンパク質構造](/glossary/protein-structure/)、[酵素](/glossary/enzyme/)
