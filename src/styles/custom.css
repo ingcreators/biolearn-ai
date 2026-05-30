@@ -550,6 +550,11 @@ h1[data-page-title] .biolearn-hero-main {
   white-space: nowrap;
 }
 
+.biolearn-section-status-badge {
+  font-size: 0.74rem;
+  white-space: nowrap;
+}
+
 .sl-markdown-content li > .biolearn-path-status-badge,
 .sl-markdown-content td > .biolearn-path-status-badge {
   margin-left: 0.55rem;

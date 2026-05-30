@@ -138,6 +138,24 @@
     return badge;
   };
 
+  const ensureSectionHeadingBadge = (heading) => {
+    const existing = heading.querySelector(
+      ':scope > [data-biolearn-section-progress-badge]',
+    );
+    if (existing) return existing;
+
+    const badge = document.createElement('span');
+    badge.className =
+      'biolearn-status-badge biolearn-section-status-badge is-not-started';
+    badge.dataset.biolearnSectionProgressBadge = '';
+    badge.dataset.biolearnProgressBadge = '';
+    badge.textContent = '未学習';
+
+    heading.append(badge);
+
+    return badge;
+  };
+
   const updateArticleListBadges = () => {
     document
       .querySelectorAll('[data-biolearn-article-item]')
@@ -146,6 +164,31 @@
         const badge = item.querySelector('[data-biolearn-progress-badge]');
         if (!path || !badge) return;
         applyBadgeState(badge, store.getLessonSummary(path));
+      });
+  };
+
+  const updateSectionHeadingBadges = () => {
+    document
+      .querySelectorAll('.sl-markdown-content .sl-heading-wrapper.level-h3')
+      .forEach((wrapper) => {
+        const heading = wrapper.querySelector('h3');
+        const articleList = wrapper.nextElementSibling;
+        if (
+          !heading ||
+          !articleList?.classList.contains('biolearn-article-list')
+        ) {
+          return;
+        }
+
+        const paths = Array.from(
+          articleList.querySelectorAll('[data-biolearn-article-item]'),
+        )
+          .map((item) => item.dataset.lessonPath)
+          .filter(Boolean);
+        if (paths.length === 0) return;
+
+        const badge = ensureSectionHeadingBadge(heading);
+        applyBadgeState(badge, summarizePaths(paths));
       });
   };
 
@@ -244,6 +287,7 @@
 
   const renderProgress = () => {
     updateArticleListBadges();
+    updateSectionHeadingBadges();
     updatePathLinkBadges();
     updateArticleStatus();
   };
