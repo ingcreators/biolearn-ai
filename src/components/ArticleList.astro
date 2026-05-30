@@ -230,7 +230,7 @@ const articleGroups = articles.reduce<
     groupByModule ? (
       <div class="biolearn-module-list">
         {articleGroups.map((group) => (
-          <section>
+          <section id={group.module}>
             <h3>{group.label}</h3>
             <ol class="biolearn-article-list">
               {group.articles.map((article) => (

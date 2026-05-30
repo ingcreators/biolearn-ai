@@ -17,7 +17,7 @@ import ArticleList from '../../../components/ArticleList.astro';
 
 ## 目的別に選ぶ
 
-分子生物学は、基礎カテゴリで学んだDNA、RNA、タンパク質、遺伝子を、細胞の中で働く情報の流れとして読み直すカテゴリです。まず学びたいまとまりを選び、各セクションの順番に沿って読むと、部品、情報の流れ、働き、調節、DNAの維持がつながります。
+分子生物学は、基礎カテゴリで学んだDNA、RNA、タンパク質、遺伝子を、細胞の中で働く情報の流れとして読み直すカテゴリです。まず学びたいまとまりを選ぶと、記事一覧の該当セクションへ移動できます。各セクション内では、上から順に読むと部品、情報の流れ、働き、調節、DNAの維持がつながります。
 
 <div class="biolearn-home-grid">
   <a class="biolearn-home-card" href="#molecular-building-blocks">
@@ -70,59 +70,9 @@ import ArticleList from '../../../components/ArticleList.astro';
 2. DNA複製はDNAを受け渡す過程で、DNA損傷・修復・組換えはDNAを維持する仕組みとして理解できます。
 3. プロモーター、エンハンサー、転写因子、クロマチン状態、転写後制御は、遺伝子の使われ方を調節する仕組みです。
 
-## 読む順番
-
-まず基礎カテゴリでDNA、RNA、タンパク質、遺伝子を確認し、このページでは次の6セクションを順番に読みます。目的がはっきりしている場合は、必要なセクションから入ってもかまいません。
-
-<a id="molecular-building-blocks"></a>
-
-### 分子の部品を理解する
-
-DNAやRNAを「核酸」、タンパク質を「アミノ酸がつながった分子」として読むための入口です。配列、塩基対、アミノ酸を先に押さえると、後の転写、翻訳、変異、酵素反応が理解しやすくなります。
-
-読む記事: [核酸](/molecular-biology/nucleic-acids/) → [ヌクレオチド](/molecular-biology/nucleotide/) → [塩基対](/molecular-biology/base-pairing/) → [アミノ酸](/molecular-biology/amino-acid/)
-
-<a id="information-flow"></a>
-
-### 遺伝情報が使われる流れ
-
-遺伝情報が保存され、写し取られ、加工され、タンパク質へ変換される流れを整理します。Figure読解やRNA-seqへ進む前に、どの段階の現象を見ているのかを分けられるようにします。
-
-読む記事: [セントラルドグマ](/molecular-biology/central-dogma/) → [DNA複製](/molecular-biology/dna-replication/) → [転写](/molecular-biology/transcription/) → [RNAプロセシング](/molecular-biology/rna-processing/) → [スプライシング](/molecular-biology/splicing/) → [翻訳](/molecular-biology/translation/)
-
-<a id="protein-function"></a>
-
-### タンパク質が働く形になる
-
-翻訳でできたアミノ酸配列が、立体構造をとり、細胞内で働く分子になる流れを見ます。Western blot、酵素反応、細胞シグナル伝達へ進む前の土台になります。
-
-読む記事: [タンパク質構造](/molecular-biology/protein-structure/) → [タンパク質フォールディング](/molecular-biology/protein-folding/) → [酵素](/molecular-biology/enzyme/)
-
-<a id="gene-regulation"></a>
-
-### 発現を調節するしくみ
-
-遺伝子が「いつ、どの細胞で、どれくらい」使われるかを調節するしくみを読みます。発現量、差次的発現解析、転写因子のFigureを読むときの前提になります。
-
-読む記事: [遺伝子発現制御](/molecular-biology/gene-expression-regulation/) → [プロモーター](/molecular-biology/promoter/) → [エンハンサー](/molecular-biology/enhancer/) → [転写因子](/molecular-biology/transcription-factor/) → [非コードRNA](/molecular-biology/noncoding-rna/) → [miRNA](/molecular-biology/microrna/) → [転写後制御](/molecular-biology/post-transcriptional-regulation/)
-
-<a id="chromatin-epigenetics"></a>
-
-### DNAのしまわれ方とエピジェネティクス
-
-DNAが細胞内でどのように折りたたまれ、読み出しやすさがどう変わるかを学びます。クロマチン状態、DNAメチル化、ヒストン修飾は、発現制御やゲノムブラウザの読み方にもつながります。
-
-読む記事: [クロマチン](/molecular-biology/chromatin/) → [ヌクレオソーム](/molecular-biology/nucleosome/) → [エピジェネティクス](/molecular-biology/epigenetics/) → [DNAメチル化](/molecular-biology/dna-methylation/) → [ヒストン修飾](/molecular-biology/histone-modification/) → [クロマチンアクセシビリティ](/molecular-biology/chromatin-accessibility/)
-
-<a id="dna-maintenance"></a>
-
-### DNAを保つ・直すしくみ
-
-DNAは複製されるだけでなく、損傷を受けたり修復されたり、組換えによって並び替わったりします。変異、ゲノム安定性、がんゲノミクスへ進む前に、DNAを維持するしくみを押さえます。
-
-読む記事: [DNA損傷](/molecular-biology/dna-damage/) → [DNA修復](/molecular-biology/dna-repair/) → [組換え](/molecular-biology/recombination/)
-
 ## 記事一覧
+
+まず基礎カテゴリでDNA、RNA、タンパク質、遺伝子を確認し、このページでは記事一覧の各セクションを上から順に読みます。目的がはっきりしている場合は、必要なセクションから入ってもかまいません。
 
 <ArticleList part="molecular-biology" groupByModule />
 
