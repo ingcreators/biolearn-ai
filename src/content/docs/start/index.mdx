@@ -3,159 +3,38 @@ title: はじめに
 description: BioLearn の入口です。
 ---
 
-import FlowDiagram from '../../../components/FlowDiagram.astro';
+BioLearn は、生命科学の基礎から始めて、生命科学論文の Figure、Methods、Results を根拠に戻って読めるようになるための日本語教材サイトです。
 
-BioLearn は、生命科学の基礎から始めて、最終的に生命科学論文の Figure、Methods、Results を読めるようになるための日本語教材サイトです。
+まずは [学習ロードマップ](/roadmap/) で全体像を確認し、その後 [ラーニングパス](/paths/) から今の目的に合う順番を選びます。途中で用語や確認点だけ見直したい場合は、[用語集](/glossary/) や [リファレンス](/resources/) を使います。
 
-- 高校生物を学び直したい人
-- 医療・ヘルスケア・創薬領域に関心がある人
-- 情報系エンジニアとして生命科学に入門したい人
-- 生命科学論文を読めるようになりたい人
+## 最初の3ステップ
 
-最初に読む記事は [生命科学とは何か](/fundamentals/life-science/) です。すべてを一度に覚える必要はありません。まずは「細胞、DNA、RNA、タンパク質、遺伝子、ゲノム」を混同せずに置き、そこから実験手法、データ解析、統計表示、論文 Figure、論文本文へ広げていきます。
+1. [生命科学とは何か](/fundamentals/life-science/) を読み、BioLearnで扱う範囲をつかみます。
+2. [学習ロードマップ](/roadmap/) で、ラーニングパスと分野別カテゴリの使い分けを確認します。
+3. [ラーニングパス](/paths/) から、順番に読む入口を選びます。
 
-BioLearn 全体の構成は [学習ロードマップ](/roadmap/) にまとめています。順番に練習したい場合は [ラーニングパス](/paths/) から始め、途中で確認点だけ見直したい場合は [リファレンス](/resources/) を使います。
-
-## まず選ぶ
+## 入口を選ぶ
 
 <div class="biolearn-home-grid">
-  <a class="biolearn-home-card" href="/paths/foundations/">
-    <span>基礎</span>
-    <h3>基礎を固める</h3>
+  <a class="biolearn-home-card" href="/roadmap/">
+    <span>全体像</span>
+    <h3>学習ロードマップ</h3>
     <p>
-      生命科学の全体像、細胞、DNA、RNA、タンパク質、遺伝子、ゲノムを順番につなげます。
+      BioLearn全体の構成、ラーニングパスと分野別カテゴリの使い分けを確認します。
     </p>
   </a>
-  <a class="biolearn-home-card" href="/paths/cell-mechanisms/">
-    <span>基礎の次</span>
-    <h3>細胞のしくみを理解する</h3>
-    <p>
-      細胞構造、膜輸送、局在、シグナル伝達、細胞状態をFigureやMethodsに戻して読みます。
-    </p>
+  <a class="biolearn-home-card" href="/paths/">
+    <span>順番に読む</span>
+    <h3>ラーニングパス</h3>
+    <p>目的に合わせて、複数カテゴリの記事を読む順番に並べた入口です。</p>
   </a>
-  <a class="biolearn-home-card" href="/paths/methods-statistics/">
-    <span>実験・統計</span>
-    <h3>実験・統計を確認する</h3>
-    <p>
-      対照、反復、n数、ばらつき、p値、効果量をMethodsやFigure
-      legendに戻して読みます。
-    </p>
-  </a>
-  <a class="biolearn-home-card" href="/paths/omics-analysis/">
-    <span>オミクス</span>
-    <h3>オミクス解析を読む</h3>
-    <p>
-      ゲノム、RNA-seq、single-cell解析、変異解析のFigureをデータと解析条件に戻します。
-    </p>
-  </a>
-  <a class="biolearn-home-card" href="/paths/figure-reading/">
-    <span>Figure</span>
-    <h3>Figureを読む</h3>
-    <p>
-      実験手法、データ解析、統計表示を確認しながら、論文 Figure を読みます。
-    </p>
-  </a>
-  <a class="biolearn-home-card" href="/paths/paper-reading/">
-    <span>論文</span>
-    <h3>論文を読む</h3>
-    <p>
-      Abstract、Methods、Results、Discussionを行き来し、主張をデータに戻します。
-    </p>
+  <a class="biolearn-home-card" href="/resources/">
+    <span>途中で確認</span>
+    <h3>リファレンス</h3>
+    <p>Figure、Methods、論文探索で迷ったときに、確認点を短く見直します。</p>
   </a>
 </div>
 
-## 学習の全体像
+## 迷ったら
 
-<FlowDiagram
-  title="BioLearnで身につける流れ"
-  steps={[
-    '基礎: 生命科学の共通語彙',
-    '分子・細胞・ゲノム: 生命現象のしくみ',
-    '実験手法: 何をどう測るか',
-    'バイオインフォマティクス: データとして読む',
-    '統計・研究デザイン: 主張の強さを確認する',
-    'Figure・論文読解: 結果と本文を結びつける',
-  ]}
-  note="BioLearnは、用語の暗記ではなく、論文に出てくる結果を根拠に戻って読めるようになることを目標にしています。"
-/>
-
-## 使い方
-
-- はじめて学ぶ場合は、[基礎を固める](/paths/foundations/) から始めます。
-- すでに基礎用語に慣れている場合は、目的に合わせて [細胞のしくみを理解する](/paths/cell-mechanisms/)、[実験・統計を確認する](/paths/methods-statistics/)、[オミクス解析を読む](/paths/omics-analysis/)、または [Figureを読む](/paths/figure-reading/) から始めても構いません。
-- 論文全体を読みたい場合は、先に Figure と Methods に戻る感覚を作ってから [論文を読む](/paths/paper-reading/) へ進みます。
-- 特定の記事だけを探したい場合は、分野別カテゴリや [用語集](/glossary/) を使います。
-- 各記事の「確認問題」で説明できない用語があれば、[用語集](/glossary/) で確認します。
-
-## 分野別に探す
-
-| 探したいこと                      | 入口                                         |
-| --------------------------------- | -------------------------------------------- |
-| 生命科学の基本語                  | [生命科学の基礎](/fundamentals/)             |
-| DNA、RNA、タンパク質、遺伝子発現  | [分子生物学](/molecular-biology/)            |
-| 細胞膜、小器官、シグナル          | [細胞生物学](/cell-biology/)                 |
-| ゲノム、染色体、変異              | [ゲノミクス](/genomics/)                     |
-| PCR、qPCR、NGS、Western blotなど  | [実験手法](/methods/)                        |
-| RNA-seq、発現解析、オミクスデータ | [バイオインフォマティクス](/bioinformatics/) |
-| n数、p値、反復、研究デザイン      | [統計・研究デザイン](/statistics/)           |
-| Figureの種類ごとの読み方          | [論文Figureの読み方](/figures/)              |
-| 論文全体の読み方                  | [論文読解演習](/papers/)                     |
-
-## BioLearnの構成
-
-<div class="biolearn-roadmap">
-  <section>
-    <h3>学習の入口</h3>
-    <p>はじめに、ロードマップ、ラーニングパスで、目的に合う入口を選びます。</p>
-  </section>
-  <section>
-    <h3>生命科学の基礎</h3>
-    <p>
-      細胞、DNA、RNA、タンパク質、遺伝子、ゲノムなど、論文を読む前提になる言葉を整理します。
-    </p>
-  </section>
-  <section>
-    <h3>分子・細胞・ゲノム</h3>
-    <p>
-      セントラルドグマ、細胞構造、シグナル伝達、変異などを、生命現象のしくみとしてつなげます。
-    </p>
-  </section>
-  <section>
-    <h3>実験とデータ</h3>
-    <p>
-      PCR、NGS、Western
-      blot、RNA-seq、single-cell解析などが何を測っているかを確認します。
-    </p>
-  </section>
-  <section>
-    <h3>統計・研究デザイン</h3>
-    <p>
-      n数、反復、p値、効果量、バイアスを見て、結果の読みすぎを避ける力を育てます。
-    </p>
-  </section>
-  <section>
-    <h3>Figureと論文読解</h3>
-    <p>
-      Figure
-      legend、軸、条件、Methods、Results、Discussionを行き来して、論文の主張を読みます。
-    </p>
-  </section>
-</div>
-
-## 最短ルート
-
-まず [生命科学とは何か](/fundamentals/life-science/) と [細胞とは何か](/fundamentals/cell/) で全体像を作ります。その後、DNA、RNA、タンパク質、遺伝子、ゲノムを確認し、実験手法、バイオインフォマティクス、統計、Figure読解へ進みます。
-
-記事を順番に並べたルートで進みたい場合は、[ラーニングパス](/paths/) から、基礎、細胞、実験・統計、オミクス解析、Figure、論文のどこから入るかを選びます。全体の見取り図は [学習ロードマップ](/roadmap/) にあります。
-
-## 迷ったときの戻り先
-
-| 迷っていること                       | 戻る場所                                                                |
-| ------------------------------------ | ----------------------------------------------------------------------- |
-| 何から始めればよいか分からない       | [ラーニングパス](/paths/)                                               |
-| BioLearn全体の構成を知りたい         | [学習ロードマップ](/roadmap/)                                           |
-| 用語だけ確認したい                   | [用語集](/glossary/)                                                    |
-| Figureの種類から探したい             | [論文Figureの読み方](/figures/)                                         |
-| MethodsやFigure legendの手法名が不安 | [実験手法](/methods/)、[実験手法早見表](/resources/methods-cheatsheet/) |
-| 統計表示やn数が読みにくい            | [統計・研究デザイン](/statistics/)                                      |
-| 論文を探すところから始めたい         | [PubMed / PMC 早見表](/resources/pubmed-pmc/)                           |
+はじめて学ぶ場合は、[基礎を固める](/paths/foundations/) から始めます。読みたい分野や記事名がすでに分かっている場合は、[学習ロードマップ](/roadmap/) から分野別カテゴリへ進みます。

@@ -1,35 +1,31 @@
 ---
 title: 学習ロードマップ
-description: BioLearn で生命科学の基礎から論文読解までを見渡すためのロードマップです。
+description: BioLearn 全体の構成と、ラーニングパス・分野別カテゴリの使い分けを確認するページです。
 ---
 
 import FlowDiagram from '../../../components/FlowDiagram.astro';
 
-BioLearn のロードマップは、生命科学の基本語彙から、実験手法、データ解析、統計・研究デザイン、論文 Figure、論文本文の読み方までを見渡すための地図です。
-
-単なる記事一覧ではなく、「今どの分野を学んでいるのか」「その知識が論文読解のどこで必要になるのか」を確認するために使ってください。
+学習ロードマップは、BioLearn 全体の見取り図です。順番に読むならラーニングパス、分野や記事名から探すなら分野別カテゴリ、途中で確認点だけ見直すならリファレンスを使います。
 
 ## 使い分け
 
-このページは、BioLearn 全体の構成を見渡す場所です。順番に練習したい場合はラーニングパスへ、論文を読んでいる途中で確認点だけ見たい場合はリファレンスへ、用語だけ短く確認したい場合は用語集へ進みます。
-
 <div class="biolearn-home-grid">
   <a class="biolearn-home-card" href="/paths/">
-    <span>順番に学ぶ</span>
+    <span>順番に読む</span>
     <h3>ラーニングパス</h3>
+    <p>目的に合わせて、複数カテゴリの記事を読む順番に並べた学習ルートです。</p>
+  </a>
+  <a class="biolearn-home-card" href="#分野別に探す">
+    <span>記事を探す</span>
+    <h3>分野別カテゴリ</h3>
     <p>
-      基礎、細胞、実験・統計、オミクス解析、Figure、論文から、今の学習ルートを選びます。
+      生命科学の基礎、分子生物学、細胞生物学、実験手法などから記事を探します。
     </p>
   </a>
   <a class="biolearn-home-card" href="/resources/">
-    <span>途中で確認</span>
+    <span>確認する</span>
     <h3>リファレンス</h3>
     <p>Figure、Methods、論文探索で迷ったときに、確認点だけを短く見直します。</p>
-  </a>
-  <a class="biolearn-home-card" href="/glossary/">
-    <span>用語確認</span>
-    <h3>用語集</h3>
-    <p>本文やFigureで出てきた言葉を短く確認し、関連する解説記事へ戻ります。</p>
   </a>
 </div>
 
@@ -38,340 +34,48 @@ BioLearn のロードマップは、生命科学の基本語彙から、実験�
 <FlowDiagram
   title="論文を読む力をつけるまで"
   steps={[
-    '入口: 目的と学び方を選ぶ',
     '基礎: 生命科学の共通語彙を作る',
     'しくみ: 分子・細胞・ゲノムをつなげる',
     '測定: 実験手法が何を測るか知る',
     '解析: データと統計表示を読む',
     '読解: Figure、Methods、Resultsを行き来する',
   ]}
-  note="BioLearnの最終目標は、生命科学論文のFigure、Methods、Resultsを根拠に戻って読めるようになることです。"
+  note="BioLearnでは、用語を暗記するだけでなく、論文に出てくる結果を根拠に戻って読むことを目指します。"
 />
 
-## 到達目標
-
-このロードマップを一通りたどると、次の状態を目指せます。
-
-- DNA、RNA、タンパク質、遺伝子、ゲノムの違いを説明できる
-- 分子、細胞、ゲノム、実験データを別々の暗記項目ではなく、つながったものとして捉えられる
-- PCR、qPCR、NGS、Western blot、免疫染色、フローサイトメトリーが何を測っているか確認できる
-- RNA-seq、差次的発現解析、single-cell解析の結果を Figure として読む準備ができる
-- n数、反復、p値、効果量、バイアス、交絡を見て、主張の強さを慎重に判断できる
-- Figure legend、軸、条件、コントロール、Methodsを確認しながら、論文 Figure を読める
-- Abstract、Results、Methods、Discussion を行き来して、論文の主張をデータに戻せる
-
-## 推奨ペース
-
-急いで読み切るより、確認問題を解きながら進めるのがおすすめです。
-
-| ペース   | 目安                 | 向いている人                           |
-| -------- | -------------------- | -------------------------------------- |
-| ゆっくり | 1日1記事、約4週間    | 高校生物を学び直したい人               |
-| 標準     | 1日2〜3記事、約2週間 | 生命科学の全体像を早めにつかみたい人   |
-| 集中     | 週末にまとめて読む   | 情報系エンジニアで概念の地図がほしい人 |
-
-## 学習の入口
-
-### この領域で確認すること
-
-BioLearn の目的、使い方、学習順を確認します。分野別に探すのか、目的別に順番に学ぶのかを選びます。
-
-### 主な入口
-
-1. [はじめに](/start/)
-2. [学習ロードマップ](/roadmap/)
-3. [ラーニングパス](/paths/)
-4. [基礎を固める](/paths/foundations/)
-5. [細胞のしくみを理解する](/paths/cell-mechanisms/)
-6. [実験・統計を確認する](/paths/methods-statistics/)
-7. [オミクス解析を読む](/paths/omics-analysis/)
-8. [Figureを読む](/paths/figure-reading/)
-9. [論文を読む](/paths/paper-reading/)
-
-### 次に進む場所
-
-はじめて学ぶ場合は [基礎を固める](/paths/foundations/) へ進みます。特定の目的がある場合は、下の分野別カテゴリから直接入っても構いません。
-
-## 生命科学の基礎
-
-### この領域で学ぶこと
-
-論文を読む前提になる共通語彙を作ります。分子、細胞、組織、個体、DNA、RNA、タンパク質、遺伝子、ゲノムを混同せず、生命科学の文章で何が話題になっているかを見分けられるようにします。前提になる階層を先に押さえ、その後に遺伝情報、ゲノム、論文読解に必要な基本概念へ進みます。
-
-### 読む記事一覧
-
-1. [生命科学とは何か](/fundamentals/life-science/)
-2. [分子とは何か](/fundamentals/molecule/)
-3. [細胞とは何か](/fundamentals/cell/)
-4. [個体・組織・細胞の関係](/fundamentals/organism-tissue-cell/)
-5. [DNAとは何か](/fundamentals/dna/)
-6. [RNAとは何か](/fundamentals/rna/)
-7. [タンパク質とは何か](/fundamentals/protein/)
-8. [遺伝子とは何か](/fundamentals/gene/)
-9. [ゲノムとは何か](/fundamentals/genome/)
-10. [染色体とは何か](/fundamentals/chromosome/)
-11. [遺伝子発現とは何か](/fundamentals/gene-expression/)
-12. [変異とは何か](/fundamentals/mutation/)
-13. [表現型とは何か](/fundamentals/phenotype/)
-14. [モデル生物とは何か](/fundamentals/model-organisms/)
-15. [生命科学の問いとは何か](/fundamentals/biological-question/)
-
-### この領域を終えるとできること
-
-- 分子、細胞、組織、個体の階層を区別できる
-- DNA、RNA、タンパク質、遺伝子、ゲノム、染色体を区別できる
-- 遺伝子発現、変異、表現型、モデル生物、生命科学の問いを、Figureや論文を読む入口として説明できる
-- 細胞を生命現象の基本単位として位置づけられる
-- 分子生物学、細胞生物学、ゲノミクス、バイオインフォマティクスがつながった学習領域だと理解できる
-
-## 分子生物学
-
-### この領域で学ぶこと
-
-DNA、RNA、タンパク質を、情報の保存、読み出し、働きの流れとして学びます。セントラルドグマ、転写、翻訳、遺伝子発現を整理し、RNA-seq や発現解析へ進む土台を作ります。
-
-### 読む記事一覧
-
-1. [セントラルドグマとは何か](/molecular-biology/central-dogma/)
-2. [転写とは何か](/molecular-biology/transcription/)
-3. [翻訳とは何か](/molecular-biology/translation/)
-4. [遺伝子発現とは何か](/fundamentals/gene-expression/)
-
-### この領域を終えるとできること
-
-- 転写と翻訳が、遺伝情報からタンパク質へ向かう流れのどこにあるか説明できる
-- 遺伝子発現を、細胞の状態や実験データと結びつけて考えられる
-- RNA-seq の「発現量」が何を手がかりにした言葉なのか見通せる
-
-## 細胞生物学
-
-### この領域で学ぶこと
-
-分子の働きが、細胞という場所でどう機能として現れるのかを学びます。細胞膜、細胞小器官、膜輸送、タンパク質局在、細胞シグナル伝達、細胞状態を通して、外からの刺激、受容体、タンパク質、遺伝子発現のつながりを整理します。
-
-### 読む記事一覧
-
-1. [細胞膜とは何か](/cell-biology/cell-membrane/)
-2. [細胞小器官とは何か](/cell-biology/organelles/)
-3. [膜輸送とは何か](/cell-biology/membrane-transport/)
-4. [タンパク質局在とは何か](/cell-biology/protein-localization/)
-5. [細胞シグナル伝達とは何か](/cell-biology/cell-signaling/)
-6. [受容体とは何か](/cell-biology/receptor/)
-7. [リン酸化とは何か](/cell-biology/phosphorylation/)
-8. [細胞周期とは何か](/cell-biology/cell-cycle/)
-
-### この領域を終えるとできること
-
-- 細胞膜が、細胞の内外を分けるだけでなく情報の入口にもなることを説明できる
-- 細胞小器官を、分子が働く場所として捉えられる
-- 膜輸送、局在、シグナル伝達、細胞状態の変化をFigureやMethodsに戻して考えられる
-
-## ゲノミクス
-
-### この領域で学ぶこと
-
-遺伝情報を、単一の遺伝子だけでなくゲノム全体として捉えます。ゲノム、染色体、遺伝的変異、ゲノムブラウザを通して、配列情報を広い文脈で読みます。
-
-### 読む記事一覧
-
-1. [ゲノムとは何か](/fundamentals/genome/)
-2. [染色体とは何か](/fundamentals/chromosome/)
-3. [変異とは何か](/fundamentals/mutation/)
-4. [遺伝的変異とは何か](/genomics/genetic-variants/)
-5. [ゲノムブラウザとは何か](/genomics/genome-browser/)
-
-### この領域を終えるとできること
-
-- 遺伝子、ゲノム、染色体を混同せずに説明できる
-- 遺伝的変異を、ゲノム配列の違いとして捉えられる
-- ゲノムブラウザ図や変異図を読むための位置づけを持てる
-
-## 実験手法
-
-### この領域で学ぶこと
-
-論文 Figure や Methods に出てくる実験が、何を測り、どんな結果として示されるのかを確認します。手順を細かく暗記するより、測定対象、対照、限界を押さえます。
-
-### 読む記事一覧
-
-1. [PCRとは何か](/methods/pcr/)
-2. [qPCRとは何か](/methods/qpcr/)
-3. [RT-qPCRとは何か](/methods/rt-qpcr/)
-4. [シーケンシングとは何か](/methods/sequencing/)
-5. [NGSとは何か](/methods/ngs/)
-6. [Western blotとは何か](/methods/western-blot/)
-7. [免疫染色とは何か](/methods/immunostaining/)
-8. [フローサイトメトリーとは何か](/methods/flow-cytometry/)
-9. [対照とは何か](/methods/control/)
-
-### この領域を終えるとできること
-
-- 実験が測っている対象を、DNA、RNA、タンパク質、細胞のどれかに戻して考えられる
-- 陽性対照、陰性対照、ローディングコントロールを確認できる
-- Figure legend に出てくる手法名から、結果の読み方を推測できる
-
-## バイオインフォマティクス
-
-### この領域で学ぶこと
-
-生命科学データ解析の Figure を読むために、シーケンスデータ、RNA-seq、差次的発現解析、single-cell解析の基本を学びます。
-
-### 読む記事一覧
-
-1. [バイオインフォマティクスとは何か](/bioinformatics/bioinformatics/)
-2. [シーケンスデータとは何か](/bioinformatics/sequence-data/)
-3. [RNA-seqとは何か](/bioinformatics/rna-seq/)
-4. [差次的発現解析とは何か](/bioinformatics/differential-expression/)
-5. [カウント行列とは何か](/bioinformatics/count-matrix/)
-6. [single-cell RNA-seqとは何か](/bioinformatics/single-cell-rna-seq/)
-7. [次元削減とは何か](/bioinformatics/dimensionality-reduction/)
-8. [クラスタリングとは何か](/bioinformatics/clustering/)
-9. [UMAPとは何か](/bioinformatics/umap/)
-
-### この領域を終えるとできること
-
-- RNA-seq と差次的発現解析の関係を説明できる
-- カウント行列、クラスタリング、UMAP を single-cell 解析の流れとして捉えられる
-- Volcano plot、ヒートマップ、UMAP / t-SNE を読む前提を持てる
-
-## 統計・研究デザイン
-
-### この領域で学ぶこと
-
-Figure や Methods に出てくる統計表示、反復、対照、バイアスを読みます。p値だけで判断せず、効果量、ばらつき、サンプルサイズ、研究の限界を確認します。
-
-### 読む記事一覧
-
-1. [変数とは何か](/statistics/variable/)
-2. [分布とは何か](/statistics/distribution/)
-3. [平均と中央値](/statistics/mean-median/)
-4. [n数とは何か](/statistics/sample-size/)
-5. [生物学的反復と技術的反復](/statistics/biological-technical-replicates/)
-6. [p値とは何か](/statistics/p-value/)
-7. [効果量とは何か](/statistics/effect-size/)
-8. [多重検定補正とは何か](/statistics/multiple-testing-correction/)
-9. [相関と因果の違い](/statistics/correlation-causation/)
-10. [バイアスとは何か](/statistics/bias/)
-
-### この領域を終えるとできること
-
-- Figure の平均、ばらつき、n数、p値を分けて確認できる
-- 統計的有意性と生物学的重要性を混同しにくくなる
-- 論文の限界やバイアスを、主張を読むときの確認点として扱える
-
-## 論文Figureの読み方
-
-### この領域で学ぶこと
-
-生命科学論文の Results に出てくる主要な Figure を、見た目だけで判断せず、軸、条件、サンプル数、ばらつき、コントロール、統計表示を確認しながら読む練習をします。
-
-### 読む記事一覧
-
-1. [Figure legendの読み方](/figures/figure-legend/)
-2. [軸・ラベル・単位の読み方](/figures/axis-label-unit/)
-3. [棒グラフの読み方](/figures/how-to-read-bar-plot/)
-4. [箱ひげ図の読み方](/figures/how-to-read-box-plot/)
-5. [散布図の読み方](/figures/how-to-read-scatter-plot/)
-6. [qPCR plotの読み方](/figures/how-to-read-qpcr-plot/)
-7. [Western blotの読み方](/figures/how-to-read-western-blot/)
-8. [Volcano plotの読み方](/figures/how-to-read-volcano-plot/)
-9. [ヒートマップの読み方](/figures/how-to-read-heatmap/)
-10. [複数パネルFigureの読み方](/figures/multi-panel-figure/)
-11. [Figureと主張を対応づける](/figures/figure-to-claim/)
-
-### この領域を終えるとできること
-
-- Figure legend、軸、条件、コントロール、ばらつきを確認できる
-- 実験 Figure とオミクス Figure の読み方を分けて考えられる
-- Results セクションの主張を、Figure のどの部分が支えているか確認できる
-
-## 論文読解演習
-
-### この領域で学ぶこと
-
-Figure を読む練習のあとに、論文全体の構造、Methods、Results、Discussion を行き来する読み方へ進みます。論文を最初から訳すのではなく、研究の問い、主要 Figure、実験条件、結果の範囲、Discussion の解釈を分けて確認します。
-
-### 読む記事一覧
-
-1. [論文の構成](/papers/paper-structure/)
-2. [TitleとAbstractの読み方](/papers/how-to-read-title-abstract/)
-3. [論文を最初に読む手順](/papers/first-pass-reading/)
-4. [Figureから論文を読む方法](/papers/figure-first-reading/)
-5. [Methods確認チェックリスト](/papers/methods-checklist/)
-6. [Methodsの読み方](/papers/how-to-read-methods/)
-7. [Resultsの読み方](/papers/how-to-read-results/)
-8. [Discussionの読み方](/papers/how-to-read-discussion/)
-9. [PubMedの使い方](/papers/pubmed/)
-10. [読む論文の選び方](/papers/how-to-choose-paper/)
-
-### この領域を終えるとできること
-
-- 論文の各セクションの役割を説明できる
-- Figure の主張を Methods と Results に戻して確認できる
-- Discussion の解釈と、データから直接言えることを分けて読める
-
-## リファレンス
-
-### この領域で使うもの
-
-学習中に参照する辞書、早見表、外部リソース、サイト情報をまとめています。順番に読む場所というより、迷ったときに戻る場所です。
-
-### 主な入口
-
-1. [用語集](/glossary/)
-2. [リファレンス](/resources/)
-3. [実験手法早見表](/resources/methods-cheatsheet/)
-4. [Figure早見表](/resources/figures-cheatsheet/)
-5. [PubMed / PMC 早見表](/resources/pubmed-pmc/)
-6. [BioLearnについて](/about/)
-
-## 目的別ルート
-
-目的がはっきりしている場合は、次の入口から始めても構いません。
-
-### 高校生物を学び直したい
-
-[生命科学とは何か](/fundamentals/life-science/) から順番に読みます。各記事の確認問題で説明できない用語があれば、[用語集](/glossary/) に戻ります。
-
-### 分子生物学を先に学びたい
-
-[DNAとは何か](/fundamentals/dna/) から [遺伝子発現とは何か](/fundamentals/gene-expression/) までを読みます。その後、細胞生物学へ進むと、分子がどこで働くかを理解しやすくなります。
-
-### バイオインフォマティクスに進みたい
-
-いきなりRNA-seqへ進まず、[遺伝子発現とは何か](/fundamentals/gene-expression/) と [バイオインフォマティクスとは何か](/bioinformatics/bioinformatics/) を読んでから [RNA-seqとは何か](/bioinformatics/rna-seq/) に進みます。差次的発現解析へ進む前に、[ゲノムとは何か](/fundamentals/genome/) も読んでおくと位置づけが安定します。
-
-順番に進みたい場合は、[オミクス解析を読む](/paths/omics-analysis/) を使います。ゲノム、変異、RNA-seq、single-cell解析、解析Figureを一つの流れとして確認できます。
-
-### Methodsと統計表示を確認したい
-
-[実験・統計を確認する](/paths/methods-statistics/) を使います。対照、反復、n数、エラーバー、p値、効果量、基本的な実験手法をMethodsやFigure legendの確認点として並べています。
-
-### 基礎の次に細胞のしくみへ進みたい
-
-[細胞のしくみを理解する](/paths/cell-mechanisms/) を使います。細胞構造、膜輸送、タンパク質局在、シグナル伝達、細胞周期、細胞死を、顕微鏡画像、免疫染色、フローサイトメトリーなどのFigureへつなげて確認できます。
-
-### 論文Figureを読みたい
-
-まず [Figureを読む](/paths/figure-reading/) を使います。分野別に探す場合は、[実験手法](/methods/)、[バイオインフォマティクス](/bioinformatics/)、[統計・研究デザイン](/statistics/)、[論文Figureの読み方](/figures/) を行き来します。Figureの前提で詰まる場合は、[実験・統計を確認する](/paths/methods-statistics/) や [オミクス解析を読む](/paths/omics-analysis/) に戻ります。
-
-### 論文全体を読めるようになりたい
-
-先に Figure と Methods に戻る感覚を作り、その後 [論文を読む](/paths/paper-reading/) へ進みます。読む論文を探すところから始めたい場合は、[読む論文の選び方](/papers/how-to-choose-paper/) と [PubMedとは何か](/papers/pubmed/) を使います。
-
-## 学習チェック
-
-次の問いに自分の言葉で答えられれば、ロードマップの土台はできています。
-
-- DNA、遺伝子、ゲノム、染色体の違いは何ですか。
-- 転写と翻訳はどちらが先に起こりますか。
-- 遺伝子発現は細胞の状態とどう関係しますか。
-- PCR、qPCR、NGS、Western blot は、それぞれ何を測る手法ですか。
-- RNA-seqでは何を測っていると言えますか。
-- 差次的発現解析の結果を見るとき、p値以外に何を確認しますか。
-- 論文Figureを読むとき、軸、条件、コントロール、ばらつきのうち何を最初に確認しますか。
-- 論文のDiscussionで述べられた解釈を、どのFigureやMethodsに戻って確認しますか。
-
-## 次に進む
-
-ロードマップを読み終えたら、[ラーニングパス](/paths/) から今の目的に合う順路を選びます。特定の図表を確認したい場合は [論文Figureの読み方](/figures/)、論文全体の読み方を練習したい場合は [論文を読む](/paths/paper-reading/)、言葉を確認したい場合は [用語集](/glossary/) を行き来します。
+## ラーニングパスで読む
+
+| 目的                                         | 入口                                               |
+| -------------------------------------------- | -------------------------------------------------- |
+| 生命科学の共通語彙を作りたい                 | [基礎を固める](/paths/foundations/)                |
+| 細胞内で分子がどう働くか理解したい           | [細胞のしくみを理解する](/paths/cell-mechanisms/)  |
+| Methodsや統計表示の確認点を押さえたい        | [実験・統計を確認する](/paths/methods-statistics/) |
+| RNA-seq、single-cell解析、変異解析を読みたい | [オミクス解析を読む](/paths/omics-analysis/)       |
+| 論文Figureを読む練習をしたい                 | [Figureを読む](/paths/figure-reading/)             |
+| 論文全体の読み方を練習したい                 | [論文を読む](/paths/paper-reading/)                |
+
+どのパスから始めるか迷う場合は、[ラーニングパス](/paths/) で目的別の入口を確認します。
+
+## 分野別に探す
+
+| 探したいこと                      | 入口                                         |
+| --------------------------------- | -------------------------------------------- |
+| 生命科学の基本語                  | [生命科学の基礎](/fundamentals/)             |
+| DNA、RNA、タンパク質、遺伝子発現  | [分子生物学](/molecular-biology/)            |
+| 細胞膜、小器官、シグナル伝達      | [細胞生物学](/cell-biology/)                 |
+| ゲノム、染色体、変異              | [ゲノミクス](/genomics/)                     |
+| PCR、qPCR、NGS、Western blotなど  | [実験手法](/methods/)                        |
+| RNA-seq、発現解析、オミクスデータ | [バイオインフォマティクス](/bioinformatics/) |
+| n数、p値、反復、研究デザイン      | [統計・研究デザイン](/statistics/)           |
+| Figureの種類ごとの読み方          | [論文Figureの読み方](/figures/)              |
+| 論文全体の読み方                  | [論文読解演習](/papers/)                     |
+
+## 迷ったとき
+
+| 状況                                  | 進む場所                    |
+| ------------------------------------- | --------------------------- |
+| 何から読めばよいか分からない          | [ラーニングパス](/paths/)   |
+| 記事名や分野が分かっている            | このページの分野別カテゴリ  |
+| 用語だけ短く確認したい                | [用語集](/glossary/)        |
+| FigureやMethodsの確認点だけ見直したい | [リファレンス](/resources/) |
+| 読んだ記事を復習したい                | [学習履歴と復習](/review/)  |
