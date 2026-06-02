@@ -119,6 +119,7 @@ export default defineConfig({
           items: [
             { label: 'はじめに', link: '/start/' },
             { label: 'ラーニングパス', link: '/paths/' },
+            { label: '分野別カテゴリ', link: '/categories/' },
             { label: '学習履歴と復習', link: '/review/' },
           ],
         },

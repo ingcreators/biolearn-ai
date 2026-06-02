@@ -19,6 +19,7 @@
   ];
   const excludedArticlePrefixes = [
     '/about/',
+    '/categories/',
     '/glossary/',
     '/paths/',
     '/resources/',
@@ -63,6 +64,7 @@
   const canTrackPath = (href) =>
     href &&
     href.startsWith('/') &&
+    !href.startsWith('/categories/') &&
     !href.startsWith('/paths/') &&
     !href.startsWith('/glossary/') &&
     !categoryRootPaths.includes(href);
