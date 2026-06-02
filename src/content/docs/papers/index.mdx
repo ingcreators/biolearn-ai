@@ -4,158 +4,78 @@ description: 生命科学論文の Figure、Methods、Results を読む練習を
 ---
 
 import ArticleList from '../../../components/ArticleList.astro';
+import LearningGoals from '../../../components/LearningGoals.astro';
 
-論文読解演習は、論文の構造、読み方の型、論文探索、架空ケース演習を目的別に選ぶカテゴリです。
+<LearningGoals
+  title="このカテゴリで学ぶこと"
+  items={[
+    '論文のTitle、Abstract、Introduction、Methods、Results、Discussionの役割を区別できる',
+    'Figure、Results、Methods、Discussionを行き来し、主張をデータに戻して確認できる',
+    'PubMed、PMC、DOI、レビュー論文、原著論文を、論文を探す・選ぶ場面で使い分けられる',
+    '架空ケース演習を通じて、実験条件、Figure、限界を確認しながら論文を読める',
+  ]}
+/>
 
-順番に身につけたい場合は [論文を読めるようになる](/paths/paper-reading/) へ進みます。このページでは、いま読んでいる論文のどこで止まったか、または何を練習したいかから記事を選びます。
+論文読解演習は、ここまで学んだ生命科学の基礎、実験手法、統計、Figure読解を使って、論文を読む練習をするカテゴリです。最初から全文を精読するのではなく、論文の構造をつかみ、FigureとResultsを見て、必要なMethodsやDiscussionへ戻る読み方を身につけます。
 
-初学者は、最初から全文を精読しようとしなくて構いません。まず構造を知り、TitleとAbstractで地図を作り、FigureとResultsを見て、必要なMethodsに戻る、という流れを使います。
+順番に身につけたい場合は [論文を読めるようになる](/paths/paper-reading/) を使います。このページでは、いま読んでいる論文のどこで止まったか、または何を練習したいかからセクションを選びます。
 
-## 入口を選ぶ
+## セクション一覧
+
+論文読解演習は、論文の構成、読む手順、論文探索、架空ケース演習に分かれています。各カードから、記事一覧の該当セクションへ移動できます。
 
 <div class="biolearn-home-grid">
-  <a class="biolearn-home-card" href="/papers/paper-structure/">
+  <a class="biolearn-home-card" href="#論文の構成を読む">
     <span>構造</span>
-    <h3>論文の全体像</h3>
+    <h3>論文の構成を読む</h3>
     <p>
-      Abstract、Introduction、Methods、Results、Discussionの役割を確認します。
+      Title、Abstract、Introduction、Methods、Results、Discussionの役割を確認し、論文全体の地図を作ります。
     </p>
   </a>
-  <a class="biolearn-home-card" href="/papers/figure-first-reading/">
+  <a class="biolearn-home-card" href="#論文を読む手順">
     <span>読み方</span>
-    <h3>FigureとMethodsを行き来する</h3>
+    <h3>論文を読む手順</h3>
     <p>
-      Figure
-      legend、Results、Methodsへ戻りながら、図から言える範囲を確認します。
+      初回読み、Figureから読む方法、MethodsやDiscussionへの戻り方を整理し、読み進め方を決めます。
     </p>
   </a>
-  <a class="biolearn-home-card" href="/papers/how-to-choose-paper/">
+  <a class="biolearn-home-card" href="#論文を探す選ぶ">
     <span>探索</span>
-    <h3>読む論文を選ぶ</h3>
-    <p>PubMed、PMC、DOI、レビュー論文と原著論文の違いを確認します。</p>
+    <h3>論文を探す・選ぶ</h3>
+    <p>
+      PubMed、PMC、DOI、レビュー論文と原著論文、Referencesを確認し、読む論文を選ぶ前提を作ります。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="#論文読解演習">
+    <span>演習</span>
+    <h3>論文読解演習</h3>
+    <p>
+      RNA-seq、single-cell、Western
+      blot、免疫染色、がんゲノム、CRISPRの架空ケースで読み方を練習します。
+    </p>
   </a>
 </div>
 
-## 迷ったらこの順番
+## 記事一覧
 
-論文読解に慣れていない場合は、次の順番で進めます。基礎系ページと同じように、最初に全体像をつかみ、その後で種類、読み方、つまずきやすい点を分けて確認します。
+論文読解に慣れていない場合は、まず論文の構成を押さえ、次に読む手順を確認します。その後、読む論文を探す・選ぶ記事を使い、最後に架空ケース演習でMethods、Figure、Discussionを行き来する練習をします。
 
-1. [生命科学論文の構成](/papers/paper-structure/) で、Title、Abstract、Introduction、Results、Methods、Discussionの役割をつかみます。
-2. [論文を最初に読む手順](/papers/first-pass-reading/) で、初回読みでは何を保留してよいかを決めます。
-3. [TitleとAbstractの読み方](/papers/how-to-read-title-abstract/) で、研究の問い、対象、方法、結論の候補を拾います。
-4. [Figureから論文を読む方法](/papers/figure-first-reading/) と [Resultsの読み方](/papers/how-to-read-results/) で、主張をFigureに戻して確認します。
-5. [Methodsの読み方](/papers/how-to-read-methods/) と [Methods確認チェックリスト](/papers/methods-checklist/) で、サンプル、対照、反復、解析、統計を確認します。
-6. [Discussionの読み方](/papers/how-to-read-discussion/) と [論文を批判的に読む](/papers/critical-reading/) で、著者の解釈、限界、代替説明を分けます。
+### 論文の構成を読む
 
-## 論文の部位から探す
+<ArticleList part="papers" module="paper-structure" />
 
-読んでいる論文のどこで止まったかが分かっている場合は、近い入口から選びます。用語だけ確認したいときは用語集へ、読み方を練習したいときは論文読解記事へ進みます。
+### 論文を読む手順
 
-| 止まった場所・確認したいこと  | 練習する記事                                                                                               | 用語だけ確認する                                                                                                        | あわせて戻る場所                                                                                                  |
-| ----------------------------- | ---------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| TitleやAbstractで全体像を見る | [TitleとAbstractの読み方](/papers/how-to-read-title-abstract/)                                             | [Title](/glossary/title/)、[Abstract](/glossary/abstract/)、[研究の問い](/glossary/research-question/)                  | [論文の構成](/papers/paper-structure/)、[読む論文の選び方](/papers/how-to-choose-paper/)                          |
-| Introductionで背景をつかむ    | [Introductionの読み方](/papers/how-to-read-introduction/)                                                  | [Introduction](/glossary/introduction/)、[研究背景](/glossary/research-background/)、[先行研究](/glossary/prior-study/) | [Referencesの読み方](/papers/how-to-read-references/)、[レビュー論文と原著論文](/papers/review-vs-primary-paper/) |
-| Figureから根拠を見る          | [Figureから論文を読む方法](/papers/figure-first-reading/)、[Resultsの読み方](/papers/how-to-read-results/) | [Figure](/glossary/figure/)、[Figure legend](/glossary/figure-legend/)、[証拠](/glossary/evidence/)                     | [Figure早見表](/resources/figures-cheatsheet/)、[Figureと主張](/figures/figure-to-claim/)                         |
-| Methodsで条件を確認する       | [Methodsの読み方](/papers/how-to-read-methods/)、[Methods確認チェックリスト](/papers/methods-checklist/)   | [Methods](/glossary/methods/)、[対照群](/glossary/control-group/)、[反復](/glossary/biological-technical-replicates/)   | [実験手法早見表](/resources/methods-cheatsheet/)、[実験手法](/methods/)                                           |
-| Discussionの解釈を読む        | [Discussionの読み方](/papers/how-to-read-discussion/)、[批判的に読む](/papers/critical-reading/)           | [Discussion](/glossary/discussion/)、[主張](/glossary/claim/)、[限界](/glossary/limitation/)                            | [研究の限界](/statistics/limitations/)、[相関と因果](/statistics/correlation-causation/)                          |
-| 次に読む文献を探す            | [Referencesの読み方](/papers/how-to-read-references/)、[PubMedの使い方](/papers/pubmed/)                   | [References](/glossary/references/)、[PubMed](/glossary/pubmed/)、[DOI](/glossary/doi/)、[PMID](/glossary/pmid/)        | [PubMed / PMC の使い分け](/resources/pubmed-pmc/)、[DOIとは何か](/papers/doi/)                                    |
-
-論文の部位やFigure、主張、限界の用語だけを短く確認したいときは、[用語集の論文読解の用語](/glossary/#paper-section-terms) に戻ります。読み方を練習したいときは、このページの論文読解記事へ進みます。
-
-## 論文を探す・選ぶ前に確認する用語
-
-論文探索では、検索サービス、全文アーカイブ、識別子、論文タイプを混同しやすくなります。記事を読む前に用語だけ確認したい場合は、用語集へ戻ります。
-
-PubMed、PMC、DOI、PMID、レビュー論文、原著論文をまとめて確認したい場合は、[用語集の論文探索・論文タイプ・識別子の用語](/glossary/#paper-search-terms) に戻ります。
-
-| 迷いやすいこと                             | 用語集で確認する                                                                                   | 練習する記事                                                                                                             |
-| ------------------------------------------ | -------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| まず文献情報を探したい                     | PubMed、PMID                                                                                       | [PubMedの使い方](/papers/pubmed/)                                                                                        |
-| 全文、Figure、Methodsを開けるか知りたい    | [PMC](/glossary/pmc/)、Figure、Methods                                                             | [PMC論文の探し方](/papers/pmc/)、[PubMed / PMC の使い分け](/resources/pubmed-pmc/)                                       |
-| 論文を正確に特定したい                     | DOI、PMID                                                                                          | [DOIとは何か](/papers/doi/)                                                                                              |
-| 全体像を知る論文か、データを読む論文か迷う | [レビュー論文](/glossary/review-paper/)、[原著論文](/glossary/primary-research-article/)、先行研究 | [レビュー論文と原著論文の違い](/papers/review-vs-primary-paper/)、[最初に読む論文の選び方](/papers/how-to-choose-paper/) |
-
-## 演習から選ぶ
-
-読み方を学んだら、架空ケースでMethods、Figure、Discussionを行き来する練習をします。演習は実在の個別論文への評価ではなく、論文読解の型を安全に練習するための教材です。
-
-| 読みたい対象           | 演習                                                          | 先に見るFigure                                                                                             |
-| ---------------------- | ------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| RNA-seq論文            | [RNA-seqを含む論文](/papers/walkthrough-rna-seq/)             | [Volcano plot](/figures/how-to-read-volcano-plot/)、[ヒートマップ](/figures/how-to-read-heatmap/)          |
-| single-cell論文        | [single-cell解析を含む論文](/papers/walkthrough-single-cell/) | [UMAP / t-SNE](/figures/how-to-read-umap-tsne/)、[Violin plot](/figures/how-to-read-violin-plot/)          |
-| Western blotを含む論文 | [Western blotを含む論文](/papers/walkthrough-western-blot/)   | [Western blot](/figures/how-to-read-western-blot/)、[棒グラフ](/figures/how-to-read-bar-plot/)             |
-| 免疫染色画像を含む論文 | [免疫染色を含む論文](/papers/walkthrough-immunostaining/)     | [免疫染色画像](/figures/how-to-read-immunostaining/)、[顕微鏡画像](/figures/how-to-read-microscopy-image/) |
-| がんゲノム論文         | [がんゲノム論文](/papers/walkthrough-cancer-genomics/)        | [CNV plot](/figures/how-to-read-cnv-plot/)、[Lollipop plot](/figures/how-to-read-lollipop-plot/)           |
-| CRISPR論文             | [CRISPR論文](/papers/walkthrough-crispr/)                     | [Western blot](/figures/how-to-read-western-blot/)、[棒グラフ](/figures/how-to-read-bar-plot/)             |
-
-## 演習を順番に進める
-
-どれから始めるか迷う場合は、解析系Figureから実験系Figureへ進む順番で練習します。各演習では、Methods、Figure、Discussionの3段階に分けて、主張をデータに戻して読みます。
-
-1. [RNA-seqを含む論文](/papers/walkthrough-rna-seq/) で、PCA、Volcano plot、ヒートマップ、enrichmentを使った発現解析の読み方を練習します。
-2. [single-cell解析を含む論文](/papers/walkthrough-single-cell/) で、UMAP、クラスタ、マーカー遺伝子、サンプル単位の確認へ進みます。
-3. [Western blotを含む論文](/papers/walkthrough-western-blot/) で、代表画像、ローディングコントロール、定量グラフを対応づけます。
-4. [免疫染色を含む論文](/papers/walkthrough-immunostaining/) で、局在、対照、撮影条件、画像定量を確認します。
-5. [がんゲノム論文](/papers/walkthrough-cancer-genomics/) で、Tumor-normal比較、変異、コピー数変異、候補遺伝子を分けて読みます。
-6. [CRISPR論文](/papers/walkthrough-crispr/) で、編集確認、表現型、対照、レスキュー実験をつなげて確認します。
-
-この順番で読むと、オミクス解析、single-cell解析、タンパク質検出、画像Figure、ゲノム解析、遺伝子機能操作の違いを比べながら、同じ「Methodsに戻る」読み方を練習できます。
-
-## 基礎系ページとのつなぎ
-
-論文読解で止まりやすい理由の多くは、論文そのものではなく、前提となる基礎概念や実験手法が未整理なことです。本文中の用語で止まったら、論文を閉じるのではなく、近い基礎ページへ戻ってから再開します。
-
-| 止まった理由             | 戻る場所                                                                  | 論文側で再確認する場所                                |
-| ------------------------ | ------------------------------------------------------------------------- | ----------------------------------------------------- |
-| 生命科学の階層が曖昧     | [生命科学の基礎](/fundamentals/)                                          | Introduction、Discussionの背景                        |
-| 実験条件が読めない       | [実験手法](/methods/)、[実験手法早見表](/resources/methods-cheatsheet/)   | Methods、Figure legend                                |
-| Figureの見方が分からない | [Figureを読む](/figures/)、[Figure早見表](/resources/figures-cheatsheet/) | Results、Figure legend                                |
-| 統計表示で止まる         | [統計・研究デザイン](/statistics/)                                        | Results、Methods、Supplementary information           |
-| 用語だけ確認したい       | [用語集](/glossary/)                                                      | Title、Abstract、Figure legend、Methodsの該当する一文 |
-
-## 記事群の位置づけ
-
-論文読解演習カテゴリでは、記事の役割を大きく4つに分けています。最初からすべて読む必要はなく、今の目的に合う入口から選びます。
-
-| 役割                 | 使いどころ                                                                                                          | 代表記事                                                                                                                                                          |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 論文の構造を知る     | Abstract、Introduction、Methods、Results、Discussionの役割を確認したいとき                                          | [論文の構成](/papers/paper-structure/)、[TitleとAbstractの読み方](/papers/how-to-read-title-abstract/)                                                            |
-| 読み方を決める       | どこから読み始めるか、FigureとMethodsをどう行き来するかを決めたいとき                                               | [初回読みの流れ](/papers/first-pass-reading/)、[Figureから論文を読む方法](/papers/figure-first-reading/)、[Methods確認チェックリスト](/papers/methods-checklist/) |
-| 論文を探す・選ぶ     | PubMed、PMC、DOI、レビュー論文と原著論文の違いを確認し、読む論文を選びたいとき                                      | [PubMedの使い方](/papers/pubmed/)、[PMC論文の探し方](/papers/pmc/)、[読む論文の選び方](/papers/how-to-choose-paper/)                                              |
-| 架空ケースで練習する | RNA-seq、single-cell、Western blot、免疫染色、がんゲノム、CRISPRのFigureを、MethodsとDiscussionに戻して読みたいとき | [RNA-seq論文](/papers/walkthrough-rna-seq/)、[single-cell解析論文](/papers/walkthrough-single-cell/)、[Western blotを含む論文](/papers/walkthrough-western-blot/) |
-
-一覧では、論文を探す・選ぶ記事を探索系、架空ケースで練習する記事を演習系としてまとめています。探索系は読む論文を決める段階で使い、演習系は読み方の型を試す段階で使います。
-
-## 目的別に読む
-
-### 論文の構造をつかむ
-
-- [論文の構成](/papers/paper-structure/)
-- [TitleとAbstractの読み方](/papers/how-to-read-title-abstract/)
-- [Introductionの読み方](/papers/how-to-read-introduction/)
-- [Resultsの読み方](/papers/how-to-read-results/)
-- [Discussionの読み方](/papers/how-to-read-discussion/)
-
-### 根拠と限界を確認する
-
-- [Methodsの読み方](/papers/how-to-read-methods/)
-- [Methods確認チェックリスト](/papers/methods-checklist/)
-- [批判的に読む](/papers/critical-reading/)
-- [Figureから論文を読む方法](/papers/figure-first-reading/)
-- [メモの取り方](/papers/note-taking/)
+<ArticleList part="papers" module="reading-workflow" />
 
 ### 論文を探す・選ぶ
 
-- [読む論文の選び方](/papers/how-to-choose-paper/)
-- [レビュー論文と原著論文の違い](/papers/review-vs-primary-paper/)
-- [PubMedの使い方](/papers/pubmed/)
-- [PMC論文の探し方](/papers/pmc/)
-- [DOIとは何か](/papers/doi/)
+<ArticleList part="papers" module="paper-discovery" />
 
-## すべての記事
+### 論文読解演習
 
-<ArticleList part="papers" groupByModule />
+<ArticleList part="papers" module="paper-walkthrough" />
 
-## 次に進む
+## つまずいたら戻る
 
-論文を読む順番から練習したい場合は、[論文を読めるようになる](/paths/paper-reading/) へ進みます。先に [Figureを読めるようになる](/paths/figure-reading/) を学ぶと、論文読解演習に入りやすくなります。統計や研究デザインの前提を確認したい場合は、[統計・研究デザイン](/statistics/) へ戻ります。
+Figureの読み方で止まった場合は [論文Figureの読み方](/figures/) に戻ります。実験条件や対照で止まった場合は [実験手法](/methods/) を確認します。p値、n数、反復、限界の読み方で止まった場合は [統計・研究デザイン](/statistics/) に戻ります。論文を読む順番から練習したい場合は [論文を読めるようになる](/paths/paper-reading/) を使います。
