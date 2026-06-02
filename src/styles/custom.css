@@ -801,35 +801,11 @@ h1[data-page-title] .biolearn-hero-main {
   font-size: 1.25rem;
 }
 
-.biolearn-home-card p {
+.biolearn-home-card p,
+.biolearn-home-card-description {
   color: var(--biolearn-panel-muted);
   margin: 0;
   line-height: 1.75;
-}
-
-.biolearn-roadmap {
-  display: grid;
-  gap: 0.9rem;
-  margin: 1.25rem 0 2rem;
-}
-
-.biolearn-roadmap section {
-  border-left: 4px solid var(--sl-color-accent);
-  border-radius: 8px;
-  padding: 0.85rem 1rem;
-  background: var(--biolearn-panel-bg);
-  color: var(--biolearn-panel-text);
-}
-
-.biolearn-roadmap h3 {
-  color: var(--biolearn-panel-text);
-  margin: 0 0 0.25rem;
-  font-size: 1rem;
-}
-
-.biolearn-roadmap p {
-  color: var(--biolearn-panel-muted);
-  margin: 0;
 }
 
 .biolearn-article-list {

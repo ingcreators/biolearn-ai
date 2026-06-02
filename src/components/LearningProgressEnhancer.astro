@@ -23,8 +23,18 @@
     '/paths/',
     '/resources/',
     '/review/',
-    '/roadmap/',
     '/start/',
+  ];
+  const categoryRootPaths = [
+    '/fundamentals/',
+    '/molecular-biology/',
+    '/cell-biology/',
+    '/genomics/',
+    '/methods/',
+    '/bioinformatics/',
+    '/statistics/',
+    '/figures/',
+    '/papers/',
   ];
 
   const getArticleTitle = () =>
@@ -54,7 +64,8 @@
     href &&
     href.startsWith('/') &&
     !href.startsWith('/paths/') &&
-    !href.startsWith('/glossary/');
+    !href.startsWith('/glossary/') &&
+    !categoryRootPaths.includes(href);
 
   const getTrackedLinks = (container) =>
     Array.from(container.querySelectorAll('a[href^="/"]')).filter((link) =>
