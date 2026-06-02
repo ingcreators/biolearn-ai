@@ -1,6 +1,6 @@
 ---
 title: 論文を読む
-description: 生命科学論文の Figure、Methods、Results を読めるようになるためのラーニングパスです。
+description: 基礎で押さえた論文読解の入口をもとに、生命科学論文の Figure、Methods、Results を読めるようになるためのラーニングパスです。
 ---
 
 import ArticleList from '../../../components/ArticleList.astro';
@@ -9,15 +9,15 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 <LearningGoals
   title="このパスで身につけること"
   items={[
-    '論文の問い、背景、実験設計、主要結果、解釈を、論文の部位ごとに分けて読める',
-    'Figure、Results、Methodsを行き来し、本文の主張をデータに戻して確認できる',
+    'Title、Abstract、Introductionから、研究の問いと背景を分けて読める',
+    'Results、Figure、Methodsを行き来し、本文の主張をデータに戻して確認できる',
     'Discussionの解釈、限界、今後の課題を、結果そのものと区別して読める',
     'PubMed、PMC、DOI、レビュー論文、原著論文、Referencesを、論文を探す・選ぶ場面で使い分けられる',
     '架空ケース演習で、実験条件、Figure、限界を確認しながら論文読解を練習できる',
   ]}
 />
 
-このパスでは、論文を最初から順番に訳すのではなく、研究の問い、Figure、Methods、Results、Discussionを行き来しながら読む練習をします。Figureの見た目だけで結論を決めず、Methodsでサンプル、対照、反復、解析条件を確認し、Discussionではデータから言える範囲と解釈を分けて読みます。
+このパスでは、「基礎を固める」で確認した論文の構造、初回読み、Figureから読む姿勢を前提に、研究の問い、Figure、Methods、Results、Discussionを行き来しながら読む練習をします。Figureの見た目だけで結論を決めず、Methodsでサンプル、対照、反復、解析条件を確認し、Discussionではデータから言える範囲と解釈を分けて読みます。
 
 特定の記事や演習を探したい場合は [論文読解演習](/papers/) を使います。このページでは、論文読解の型を順番に身につけることを優先します。
 
@@ -26,25 +26,25 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 各カードから、記事一覧の該当セクションへ移動できます。論文を読む順番に迷う場合は上から進み、読んでいる論文の部位で止まった場合は該当セクションへ戻ります。
 
 <div class="biolearn-home-grid">
-  <a class="biolearn-home-card" href="#論文の構造と初回読み">
-    <span>構造</span>
-    <h3>論文の構造と初回読み</h3>
+  <a class="biolearn-home-card" href="#問いと背景を読む">
+    <span>背景</span>
+    <h3>問いと背景を読む</h3>
     <p>
-      論文の構成、初回読み、Title、Abstract、Introductionから、研究の問いと全体像をつかみます。
+      Title、Abstract、Introductionから、研究の問い、対象、背景をつかみます。
     </p>
   </a>
-  <a class="biolearn-home-card" href="#figureとresultsを読む">
+  <a class="biolearn-home-card" href="#resultsとmethodsを確認する">
     <span>根拠</span>
-    <h3>FigureとResultsを読む</h3>
+    <h3>ResultsとMethodsを確認する</h3>
     <p>
-      Figureから論文を読み、Results本文の主張を図やデータに戻して確認します。
+      Results本文の主張を図やデータに戻し、Methodsでサンプル、対照、解析条件を確認します。
     </p>
   </a>
-  <a class="biolearn-home-card" href="#methodsとdiscussionを確認する">
-    <span>確認</span>
-    <h3>MethodsとDiscussionを確認する</h3>
+  <a class="biolearn-home-card" href="#discussionと読み方を整える">
+    <span>解釈</span>
+    <h3>Discussionと読み方を整える</h3>
     <p>
-      サンプル、対照、反復、解析条件、限界、解釈を分け、主張の強さを見積もります。
+      解釈、限界、今後の課題を分け、メモを取りながら主張の強さを見積もります。
     </p>
   </a>
   <a class="biolearn-home-card" href="#論文を探す選ぶ">
@@ -66,29 +66,29 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 
 ## 記事一覧
 
-### 論文の構造と初回読み
+### 問いと背景を読む
 
 <ArticleList
   hrefs={[
-    '/papers/paper-structure/',
-    '/papers/first-pass-reading/',
     '/papers/how-to-read-title-abstract/',
     '/papers/how-to-read-introduction/',
   ]}
 />
 
-### FigureとResultsを読む
-
-<ArticleList
-  hrefs={['/papers/figure-first-reading/', '/papers/how-to-read-results/']}
-/>
-
-### MethodsとDiscussionを確認する
+### ResultsとMethodsを確認する
 
 <ArticleList
   hrefs={[
+    '/papers/how-to-read-results/',
     '/papers/how-to-read-methods/',
     '/papers/methods-checklist/',
+  ]}
+/>
+
+### Discussionと読み方を整える
+
+<ArticleList
+  hrefs={[
     '/papers/how-to-read-discussion/',
     '/papers/critical-reading/',
     '/papers/note-taking/',

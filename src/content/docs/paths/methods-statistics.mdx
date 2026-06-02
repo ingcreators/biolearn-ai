@@ -1,6 +1,6 @@
 ---
 title: 実験・統計を確認する
-description: Methods、Figure legend、Resultsを読むために、実験設計・統計表示・代表的な実験手法を順番に確認する学習パスです。
+description: 基礎で押さえた実験・統計の入口をもとに、実験設計、統計表示、代表的な実験手法を確認する学習パスです。
 ---
 
 import ArticleList from '../../../components/ArticleList.astro';
@@ -9,15 +9,14 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 <LearningGoals
   title="このパスで身につけること"
   items={[
-    'FigureやMethodsで、何を測り、何と比べ、どの単位で示しているかを確認できる',
-    'n数、反復、対照、ランダム化、盲検化を、結果の信頼性を読む確認点として使える',
-    'エラーバー、信頼区間、p値、効果量、多重検定補正を分けて読める',
-    'PCR、qPCR、Western blot、免疫染色、フローサイトメトリー、NGSなどが何を測る手法か説明できる',
-    '結果から言える範囲と、Discussionで追加された解釈を区別できる',
+    '分布、平均、中央値、対照群、ランダム化、盲検化を、比較の設計として確認できる',
+    '標準偏差、標準誤差、信頼区間、効果量、多重検定補正を、p値やエラーバーと分けて読める',
+    '交絡、バイアス、再現性、限界を使い、結果の読みすぎを避けられる',
+    'RT-qPCR、免疫染色、フローサイトメトリー、CRISPR、ライブラリ調製、シーケンスなどが何を測る手法か説明できる',
   ]}
 />
 
-このパスでは、生命科学論文の Methods、Figure legend、Results に出てくる「何を、何と比べ、どのくらい確からしく言えるのか」を読むための土台を作ります。手法の手順を細かく暗記するのではなく、サンプル、対照、反復、ばらつき、統計表示、測定対象を分けて確認します。
+このパスでは、「基礎を固める」で確認したサンプル、対照、反復、n数、p値、エラーバー、代表的な手法を前提に、Methods、Figure legend、Results を読む確認点を広げます。手順を細かく暗記するのではなく、何を測り、何と比べ、どのくらい確からしく言えるのかを分けて確認します。
 
 特定の手法や統計語だけを探したい場合は [実験手法](/methods/) または [統計・研究デザイン](/statistics/) を使います。このページでは、Figureや論文本文へ戻るための確認順として読みます。
 
@@ -30,36 +29,34 @@ import LearningGoals from '../../../components/LearningGoals.astro';
     <span>設計</span>
     <h3>データと比較の設計を読む</h3>
     <p>
-      変数、分布、平均、中央値、反復、n数、対照群を、比較の前提として確認します。
+      分布、平均、中央値、対照群、ランダム化、盲検化を、比較の前提として確認します。
     </p>
   </a>
-  <a class="biolearn-home-card" href="#対照と不確かさを読む">
+  <a class="biolearn-home-card" href="#不確かさと差の大きさを読む">
     <span>推定</span>
-    <h3>対照と不確かさを読む</h3>
+    <h3>不確かさと差の大きさを読む</h3>
     <p>
-      対照、エラーバー、信頼区間、p値、効果量、多重検定補正から、差の見え方を読みます。
+      標準偏差、標準誤差、信頼区間、効果量、多重検定補正、重要性を分けて読みます。
     </p>
   </a>
   <a class="biolearn-home-card" href="#主張の限界を確認する">
     <span>限界</span>
     <h3>主張の限界を確認する</h3>
-    <p>
-      相関と因果、交絡、バイアス、再現性、限界を使い、結果の読みすぎを避けます。
-    </p>
+    <p>交絡、バイアス、再現性、限界を使い、結果の読みすぎを避けます。</p>
   </a>
   <a class="biolearn-home-card" href="#実験figureの前提を読む">
     <span>実験</span>
     <h3>実験Figureの前提を読む</h3>
     <p>
-      PCR、qPCR、Western
-      blot、免疫染色、顕微鏡、フローサイトメトリーなどの測定対象と補正基準を整理します。
+      RT-qPCR、補正遺伝子、loading
+      control、免疫染色、顕微鏡、フローサイトメトリーなどの測定対象を整理します。
     </p>
   </a>
   <a class="biolearn-home-card" href="#遺伝子機能とmethodsへつなぐ">
     <span>Methods</span>
     <h3>遺伝子機能とMethodsへつなぐ</h3>
     <p>
-      CRISPR、ノックアウト、過剰発現、レポーター、NGSを、Methods確認の視点で読みます。
+      CRISPR、ノックアウト、過剰発現、レポーター、RNA抽出、ライブラリ調製、シーケンスをMethods確認の視点で読みます。
     </p>
   </a>
 </div>
@@ -70,27 +67,20 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 
 <ArticleList
   hrefs={[
-    '/statistics/variable/',
     '/statistics/distribution/',
     '/statistics/mean-median/',
-    '/statistics/biological-technical-replicates/',
-    '/statistics/sample-size/',
     '/statistics/control-group/',
     '/statistics/randomization/',
     '/statistics/blinding/',
   ]}
 />
 
-### 対照と不確かさを読む
+### 不確かさと差の大きさを読む
 
 <ArticleList
   hrefs={[
-    '/methods/control/',
-    '/methods/positive-negative-control/',
-    '/statistics/error-bars/',
     '/statistics/standard-deviation-standard-error/',
     '/statistics/confidence-interval/',
-    '/statistics/p-value/',
     '/statistics/effect-size/',
     '/statistics/multiple-testing-correction/',
     '/statistics/significance-vs-importance/',
@@ -101,12 +91,10 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 
 <ArticleList
   hrefs={[
-    '/statistics/correlation-causation/',
     '/statistics/confounding/',
     '/statistics/bias/',
     '/statistics/reproducibility/',
     '/statistics/limitations/',
-    '/methods/sample/',
   ]}
 />
 
@@ -114,11 +102,9 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 
 <ArticleList
   hrefs={[
-    '/methods/pcr/',
+    '/methods/positive-negative-control/',
     '/methods/rt-qpcr/',
-    '/methods/qpcr/',
     '/methods/housekeeping-gene/',
-    '/methods/western-blot/',
     '/methods/loading-control/',
     '/methods/immunostaining/',
     '/methods/fluorescence-microscopy/',
@@ -141,7 +127,6 @@ import LearningGoals from '../../../components/LearningGoals.astro';
     '/methods/rna-extraction/',
     '/methods/library-preparation/',
     '/methods/sequencing/',
-    '/methods/ngs/',
   ]}
 />
 

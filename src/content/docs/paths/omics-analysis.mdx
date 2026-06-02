@@ -1,6 +1,6 @@
 ---
 title: オミクス解析を読む
-description: ゲノム、変異、RNA-seq、single-cell解析、オミクスデータの流れを論文読解につなげる学習パスです。
+description: 基礎で押さえたオミクス解析の入口をもとに、ゲノム、変異、RNA-seq、single-cell解析、疾患オミクスを読む学習パスです。
 ---
 
 import ArticleList from '../../../components/ArticleList.astro';
@@ -9,15 +9,15 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 <LearningGoals
   title="このパスで身につけること"
   items={[
-    'ゲノム上の位置、遺伝子注釈、変異を、データとして読む前提にできる',
-    'FASTQ、マッピング、SAM/BAM、VCFを、シーケンス解析の流れの中で位置づけられる',
-    'RNA-seq、カウント行列、正規化、差次的発現解析、経路解析の関係を説明できる',
+    'ゲノム上の位置、遺伝子注釈、変異の種類を、データとして読む前提にできる',
+    'FASTQ、マッピング、SAM/BAM、VCF、ワークフローを、シーケンス解析の流れの中で位置づけられる',
+    'カウント行列、正規化、差次的発現解析、経路解析の関係を説明できる',
     'single-cell解析で、QC、バッチ効果、次元削減、クラスタ、細胞タイプ注釈を確認できる',
-    'ゲノム、発現、single-cell、疾患オミクスの解析結果を、元データや処理の流れに戻して確認できる',
+    '疾患ゲノム、エピゲノム、多層オミクスの解析結果を、元データや処理の流れに戻して確認できる',
   ]}
 />
 
-このパスでは、ゲノムや発現データを使った論文を読むために、ゲノミクスとバイオインフォマティクスをつなげて学びます。配列ファイルや解析手順を丸暗記するのではなく、何を測ったデータか、どの処理を経て結果になったか、結果からどこまで言えるかを確認します。
+このパスでは、「基礎を固める」で確認したリファレンスゲノム、変異、ゲノムブラウザ、配列データ、RNA-seq、single-cell解析を前提に、ゲノミクスとバイオインフォマティクスをつなげて学びます。解析手順を丸暗記するのではなく、何を測ったデータか、どの処理を経て結果になったか、結果からどこまで言えるかを確認します。
 
 特定の記事だけを探したい場合は [ゲノミクス](/genomics/) または [バイオインフォマティクス](/bioinformatics/) を使います。このページでは、オミクス論文のFigureやResultsへ戻るための読み順として整理します。
 
@@ -30,7 +30,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
     <span>ゲノム</span>
     <h3>ゲノムの地図と変異を読む</h3>
     <p>
-      リファレンスゲノム、座標、注釈、変異の種類を、ゲノムデータの前提として整理します。
+      遺伝子注釈、ゲノム座標、変異の種類を、ゲノムデータの前提として整理します。
     </p>
   </a>
   <a class="biolearn-home-card" href="#シーケンスデータの流れを読む">
@@ -40,9 +40,9 @@ import LearningGoals from '../../../components/LearningGoals.astro';
       FASTQ、マッピング、SAM/BAM、VCF、ワークフローを、解析前後のデータとして位置づけます。
     </p>
   </a>
-  <a class="biolearn-home-card" href="#rna-seqと発現解析を読む">
+  <a class="biolearn-home-card" href="#発現解析と経路解析を読む">
     <span>発現</span>
-    <h3>RNA-seqと発現解析を読む</h3>
+    <h3>発現解析と経路解析を読む</h3>
     <p>
       カウント行列、正規化、差次的発現解析、経路解析を、発現Figureの前提として読みます。
     </p>
@@ -69,10 +69,8 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 
 <ArticleList
   hrefs={[
-    '/genomics/reference-genome/',
     '/genomics/genome-annotation/',
     '/genomics/genomic-coordinate/',
-    '/genomics/genetic-variants/',
     '/genomics/variant/',
     '/genomics/snp-snv/',
     '/genomics/indel/',
@@ -80,7 +78,6 @@ import LearningGoals from '../../../components/LearningGoals.astro';
     '/genomics/structural-variant/',
     '/genomics/somatic-germline-variant/',
     '/genomics/variant-annotation/',
-    '/genomics/genome-browser/',
   ]}
 />
 
@@ -88,8 +85,6 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 
 <ArticleList
   hrefs={[
-    '/bioinformatics/bioinformatics/',
-    '/bioinformatics/sequence-data/',
     '/bioinformatics/metadata/',
     '/bioinformatics/fastq/',
     '/bioinformatics/mapping/',
@@ -101,11 +96,10 @@ import LearningGoals from '../../../components/LearningGoals.astro';
   ]}
 />
 
-### RNA-seqと発現解析を読む
+### 発現解析と経路解析を読む
 
 <ArticleList
   hrefs={[
-    '/bioinformatics/rna-seq/',
     '/bioinformatics/count-matrix/',
     '/bioinformatics/normalization/',
     '/bioinformatics/differential-expression/',
@@ -118,7 +112,6 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 
 <ArticleList
   hrefs={[
-    '/bioinformatics/single-cell-rna-seq/',
     '/bioinformatics/single-cell-quality-control/',
     '/bioinformatics/batch-effect/',
     '/bioinformatics/dimensionality-reduction/',

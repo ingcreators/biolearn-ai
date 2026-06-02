@@ -1,6 +1,6 @@
 ---
 title: Figureを読む
-description: 生命科学論文の Figure を条件、軸、対照、ばらつきから読むためのラーニングパスです。
+description: 基礎で押さえたFigure読解の入口をもとに、生命科学論文の Figure を条件、軸、対照、ばらつきから読むラーニングパスです。
 ---
 
 import ArticleList from '../../../components/ArticleList.astro';
@@ -9,29 +9,29 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 <LearningGoals
   title="このパスで身につけること"
   items={[
-    'Figure legend、軸、単位、複数パネルから、何を測り、何と比べた図かを確認できる',
+    '複数パネルや補足Figureから、何を測り、何と比べた図かを確認できる',
     '棒グラフ、箱ひげ図、Violin plot、散布図、相関図で、分布、ばらつき、関係を読める',
     'qPCR、Western blot、顕微鏡画像、免疫染色、フローサイトメトリーを、対照や反復と合わせて読める',
     'Volcano plot、ヒートマップ、PCA、UMAP、GSEA、ゲノム系Figureを解析条件に戻して読める',
-    'Results本文の主張を、対応するFigure、Methods、統計表示に戻して確かめられる',
+    'Results本文の流れを、対応するFigure、Methods、統計表示に戻して確かめられる',
   ]}
 />
 
-このパスでは、実験や解析の背景を押さえたうえで、生命科学論文の Figure を読む練習へ進みます。Figureを「きれいな図」として眺めるのではなく、何を測ったか、何と何を比べたか、どこまで言えるかを確認します。
+このパスでは、「基礎を固める」で確認した Figure legend、軸、単位、Figureと主張の対応を前提に、生命科学論文の Figure を読む練習へ進みます。Figureを「きれいな図」として眺めるのではなく、何を測ったか、何と何を比べたか、どこまで言えるかを確認します。
 
 特定のFigure記事だけを探したい場合は [論文Figureの読み方](/figures/) を使います。このページでは、Figure legend、Methods、統計表示を行き来する読み方を、順番に練習します。
 
 ## セクション一覧
 
-各カードから、記事一覧の該当セクションへ移動できます。Figureの種類が分からない場合は前提から読み、図の種類が分かっている場合は該当セクションへ進みます。
+各カードから、記事一覧の該当セクションへ移動できます。Figureの種類が分からない場合は構造から読み、図の種類が分かっている場合は該当セクションへ進みます。
 
 <div class="biolearn-home-grid">
-  <a class="biolearn-home-card" href="#figureの前提を読む">
-    <span>前提</span>
-    <h3>Figureの前提を読む</h3>
+  <a class="biolearn-home-card" href="#figureの構造を読む">
+    <span>構造</span>
+    <h3>Figureの構造を読む</h3>
     <p>
-      Figure
-      legend、軸、単位、複数パネル、補足Figureから、図を読む前提を確認します。
+      複数パネル、補足Figure、Results本文の流れ、graphical
+      abstractから、図を読む前提を確認します。
     </p>
   </a>
   <a class="biolearn-home-card" href="#定量グラフを読む">
@@ -57,26 +57,26 @@ import LearningGoals from '../../../components/LearningGoals.astro';
       plot、ヒートマップ、PCA、UMAP、GSEA、ゲノム系Figureを、解析条件に戻して読みます。
     </p>
   </a>
-  <a class="biolearn-home-card" href="#発展的figureと主張を読む">
-    <span>主張</span>
-    <h3>発展的Figureと主張を読む</h3>
+  <a class="biolearn-home-card" href="#発展的figureを読む">
+    <span>発展</span>
+    <h3>発展的Figureを読む</h3>
     <p>
       ROC曲線、Kaplan-Meier曲線、Forest
-      plot、Figureと主張の対応を慎重に確認します。
+      plot、患者コホート表を、対象、条件、結論の範囲に戻して確認します。
     </p>
   </a>
 </div>
 
 ## 記事一覧
 
-### Figureの前提を読む
+### Figureの構造を読む
 
 <ArticleList
   hrefs={[
-    '/figures/figure-legend/',
-    '/figures/axis-label-unit/',
     '/figures/multi-panel-figure/',
     '/figures/supplementary-figures/',
+    '/figures/results-section-flow/',
+    '/figures/graphical-abstract/',
   ]}
 />
 
@@ -120,7 +120,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
   ]}
 />
 
-### 発展的Figureと主張を読む
+### 発展的Figureを読む
 
 <ArticleList
   hrefs={[
@@ -128,9 +128,6 @@ import LearningGoals from '../../../components/LearningGoals.astro';
     '/figures/how-to-read-kaplan-meier/',
     '/figures/how-to-read-forest-plot/',
     '/figures/how-to-read-patient-cohort-table/',
-    '/figures/figure-to-claim/',
-    '/figures/results-section-flow/',
-    '/figures/graphical-abstract/',
   ]}
 />
 

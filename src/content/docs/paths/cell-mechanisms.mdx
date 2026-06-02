@@ -1,6 +1,6 @@
 ---
 title: 細胞のしくみを理解する
-description: 分子のしくみを押さえた後に、細胞の構造、膜輸送、局在、シグナル伝達、細胞状態を読むラーニングパスです。
+description: 基礎で押さえた細胞の場所と応答をもとに、細胞内区画、膜輸送、局在、シグナル伝達、細胞状態を読むラーニングパスです。
 ---
 
 import ArticleList from '../../../components/ArticleList.astro';
@@ -9,14 +9,14 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 <LearningGoals
   title="このパスで身につけること"
   items={[
-    '細胞を、分子が働く場所として捉え、細胞内の区画と機能を結びつけて説明できる',
-    '細胞膜、細胞小器官、細胞骨格、膜輸送、タンパク質局在を、細胞内外の境界や移動として読める',
+    '細胞小器官、ミトコンドリア、小胞体・ゴルジ体、リソソーム、細胞骨格を、細胞内の働く場所として説明できる',
+    '膜輸送、小胞輸送、エンドサイトーシス、エキソサイトーシス、タンパク質局在を、物質や分子の移動として読める',
     '受容体、リン酸化、キナーゼ、シグナル伝達経路を、外からの刺激が細胞内応答へ変わる流れとして整理できる',
-    '細胞周期、チェックポイント、細胞死、分解系、細胞老化を、細胞状態の変化として説明できる',
+    'チェックポイント、細胞死、分解系、細胞老化を、細胞状態の変化として説明できる',
   ]}
 />
 
-このパスでは、生命現象を「細胞の中でどこにあり、どこへ動き、どの刺激に応答し、どんな状態へ変わるか」として読みます。[基礎を固める](/paths/foundations/) と [分子のしくみを理解する](/paths/molecular-mechanisms/) で確認した分子や遺伝子発現を、細胞という場所の中で意味づけるための道筋です。
+このパスでは、「基礎を固める」で確認した細胞膜、細胞小器官、核、シグナル伝達、細胞周期を前提に、細胞内で分子がどこにあり、どこへ動き、どの刺激に応答し、どんな状態へ変わるかを読みます。
 
 細胞、組織、個体の階層があいまいな場合は、先に [基礎を固める](/paths/foundations/) で確認します。特定の細胞生物学記事だけを探したい場合は [細胞生物学](/cell-biology/) を使います。
 
@@ -25,11 +25,11 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 各カードから、記事一覧の該当セクションへ移動できます。はじめて読む場合は細胞の構造と区画から入り、論文Figureで止まった場合は該当する現象へ戻ります。
 
 <div class="biolearn-home-grid">
-  <a class="biolearn-home-card" href="#細胞の構造と区画を読む">
+  <a class="biolearn-home-card" href="#細胞内の区画と骨格を読む">
     <span>構造</span>
-    <h3>細胞の構造と区画を読む</h3>
+    <h3>細胞内の区画と骨格を読む</h3>
     <p>
-      細胞膜、細胞小器官、核、ミトコンドリア、細胞骨格を、分子が働く場所として整理します。
+      ミトコンドリア、小胞体・ゴルジ体、リソソーム、細胞骨格を、分子が働く場所として整理します。
     </p>
   </a>
   <a class="biolearn-home-card" href="#膜を越える移動と局在を読む">
@@ -50,20 +50,17 @@ import LearningGoals from '../../../components/LearningGoals.astro';
     <span>状態</span>
     <h3>細胞状態の変化を読む</h3>
     <p>
-      細胞周期、チェックポイント、アポトーシス、オートファジー、細胞老化を、増える、止まる、死ぬ、分解する変化として読みます。
+      チェックポイント、アポトーシス、オートファジー、細胞老化を、止まる、死ぬ、分解する変化として読みます。
     </p>
   </a>
 </div>
 
 ## 記事一覧
 
-### 細胞の構造と区画を読む
+### 細胞内の区画と骨格を読む
 
 <ArticleList
   hrefs={[
-    '/cell-biology/cell-membrane/',
-    '/cell-biology/organelles/',
-    '/cell-biology/nucleus/',
     '/cell-biology/mitochondria/',
     '/cell-biology/endoplasmic-reticulum-golgi/',
     '/cell-biology/lysosome/',
@@ -86,7 +83,6 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 
 <ArticleList
   hrefs={[
-    '/cell-biology/cell-signaling/',
     '/cell-biology/receptor/',
     '/cell-biology/pathway/',
     '/cell-biology/phosphorylation/',
@@ -100,7 +96,6 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 
 <ArticleList
   hrefs={[
-    '/cell-biology/cell-cycle/',
     '/cell-biology/checkpoint/',
     '/cell-biology/apoptosis/',
     '/cell-biology/autophagy/',

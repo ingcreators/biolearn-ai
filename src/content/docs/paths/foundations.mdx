@@ -1,6 +1,6 @@
 ---
 title: 基礎を固める
-description: 生命科学の全体像、主要な分子、遺伝情報、表現型を読むための基礎パスです。
+description: 生命科学、分子、細胞、実験、統計、オミクス、Figure、論文読解へ進むための共通基礎パスです。
 ---
 
 import ArticleList from '../../../components/ArticleList.astro';
@@ -9,62 +9,70 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 <LearningGoals
   title="このパスで身につけること"
   items={[
-    '生命科学が扱う階層を、分子、細胞、組織、個体、集団として整理できる',
-    'DNA、RNA、タンパク質を、遺伝情報と生命現象をつなぐ分子として説明できる',
-    '遺伝子、ゲノム、染色体を、DNA上の情報を扱う単位として区別できる',
-    '遺伝子発現、変異、表現型、モデル生物、研究の問いを、論文やFigureを読む前提として確認できる',
+    '生命科学が扱う階層と、研究で問われることを大まかに整理できる',
+    'DNA、RNA、タンパク質、遺伝子、ゲノム、遺伝情報の流れを、後続記事の前提として説明できる',
+    '細胞の場所、シグナル、細胞周期を、分子が働く場として読み始められる',
+    '実験、統計、オミクス解析、Figure、論文読解で最初に確認する語を見分けられる',
   ]}
 />
 
-このパスでは、生命科学を学ぶための最小限の土台を作ります。用語を単独で暗記するのではなく、生命現象の階層、遺伝情報を担う分子、観察される性質、研究で問われることをつなげて読みます。
+このパスでは、BioLearn の各カテゴリへ進む前に必要になる土台を横断的に確認します。分野別カテゴリを順番に読むのではなく、後続の学習で何度も出てくる概念を先に集め、論文やFigureを読むための足場を作ります。
 
-特定の基礎記事だけを探したい場合は [生命科学の基礎](/fundamentals/) を使います。このページでは、[分子のしくみを理解する](/paths/molecular-mechanisms/) や [細胞のしくみを理解する](/paths/cell-mechanisms/) へ進む前提を、順番に確認します。
+特定の分野だけを探したい場合は [分野別カテゴリ](/categories/) を使います。このページでは、[分子のしくみを理解する](/paths/molecular-mechanisms/) や [細胞のしくみを理解する](/paths/cell-mechanisms/) へ進む前提を、必要な範囲に絞って確認します。
 
 ## セクション一覧
 
 各カードから、記事一覧の該当セクションへ移動できます。はじめて読む場合は上から順に進み、知っている範囲がある場合は必要なセクションから入ります。
 
 <div class="biolearn-home-grid">
-  <a class="biolearn-home-card" href="#生命の階層をつかむ">
+  <a class="biolearn-home-card" href="#生命科学の地図を作る">
     <span>入口</span>
-    <h3>生命の階層をつかむ</h3>
+    <h3>生命科学の地図を作る</h3>
     <p>
-      生命科学が、分子、細胞、組織、個体、集団といった階層で生命現象を見ることを確認します。
+      生命現象を階層で見分け、研究対象、モデル生物、問いを読むための入口を作ります。
     </p>
   </a>
-  <a class="biolearn-home-card" href="#dnarnaタンパク質をつかむ">
+  <a class="biolearn-home-card" href="#遺伝情報と分子をつかむ">
     <span>分子</span>
-    <h3>DNA・RNA・タンパク質をつかむ</h3>
+    <h3>遺伝情報と分子をつかむ</h3>
     <p>
-      DNA、RNA、タンパク質を、遺伝情報の保存、読み出し、働きに関わる分子として整理します。
+      DNA、RNA、タンパク質、遺伝子、ゲノム、セントラルドグマを、分子生物学へ進む前提として整理します。
     </p>
   </a>
-  <a class="biolearn-home-card" href="#遺伝子ゲノム染色体をつかむ">
-    <span>情報</span>
-    <h3>遺伝子・ゲノム・染色体をつかむ</h3>
+  <a class="biolearn-home-card" href="#細胞で働く場所をつかむ">
+    <span>細胞</span>
+    <h3>細胞で働く場所をつかむ</h3>
     <p>
-      遺伝子、ゲノム、染色体を、DNA上の情報がどの範囲や単位で扱われるかとして区別します。
+      細胞膜、細胞小器官、核、シグナル伝達、細胞周期を、分子が働く場所と状態として確認します。
     </p>
   </a>
-  <a class="biolearn-home-card" href="#発現変異表現型をつなぐ">
-    <span>変化</span>
-    <h3>発現・変異・表現型をつなぐ</h3>
+  <a class="biolearn-home-card" href="#実験と統計の入口をつかむ">
+    <span>確認</span>
+    <h3>実験と統計の入口をつかむ</h3>
     <p>
-      遺伝子発現、変異、表現型を、DNAの情報が細胞や個体の性質として現れる流れで読みます。
+      サンプル、対照、反復、n数、p値、エラーバー、代表的な手法を、FigureやMethodsの確認点として読みます。
     </p>
   </a>
-  <a class="biolearn-home-card" href="#研究対象と問いを読む">
-    <span>研究</span>
-    <h3>研究対象と問いを読む</h3>
+  <a class="biolearn-home-card" href="#オミクス解析の入口をつかむ">
+    <span>解析</span>
+    <h3>オミクス解析の入口をつかむ</h3>
     <p>
-      モデル生物と研究の問いを確認し、論文や実験が何を明らかにしようとしているかを読む入口にします。
+      リファレンスゲノム、変異、ゲノムブラウザ、配列データ、RNA-seq、single-cell解析の入口を確認します。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="#figureと論文の入口をつかむ">
+    <span>読解</span>
+    <h3>Figureと論文の入口をつかむ</h3>
+    <p>
+      Figure
+      legend、軸、主張との対応、論文の構造、初回読みを、論文読解の前提として確認します。
     </p>
   </a>
 </div>
 
 ## 記事一覧
 
-### 生命の階層をつかむ
+### 生命科学の地図を作る
 
 <ArticleList
   hrefs={[
@@ -72,44 +80,90 @@ import LearningGoals from '../../../components/LearningGoals.astro';
     '/fundamentals/molecule/',
     '/fundamentals/cell/',
     '/fundamentals/organism-tissue-cell/',
-  ]}
-/>
-
-### DNA・RNA・タンパク質をつかむ
-
-<ArticleList
-  hrefs={['/fundamentals/dna/', '/fundamentals/rna/', '/fundamentals/protein/']}
-/>
-
-### 遺伝子・ゲノム・染色体をつかむ
-
-<ArticleList
-  hrefs={[
-    '/fundamentals/gene/',
-    '/fundamentals/genome/',
-    '/fundamentals/chromosome/',
-  ]}
-/>
-
-### 発現・変異・表現型をつなぐ
-
-<ArticleList
-  hrefs={[
-    '/fundamentals/gene-expression/',
-    '/fundamentals/mutation/',
-    '/fundamentals/phenotype/',
-  ]}
-/>
-
-### 研究対象と問いを読む
-
-<ArticleList
-  hrefs={[
     '/fundamentals/model-organisms/',
     '/fundamentals/biological-question/',
   ]}
 />
 
+### 遺伝情報と分子をつかむ
+
+<ArticleList
+  hrefs={[
+    '/fundamentals/dna/',
+    '/fundamentals/rna/',
+    '/fundamentals/protein/',
+    '/fundamentals/gene/',
+    '/fundamentals/genome/',
+    '/fundamentals/chromosome/',
+    '/fundamentals/gene-expression/',
+    '/fundamentals/mutation/',
+    '/fundamentals/phenotype/',
+    '/molecular-biology/nucleic-acids/',
+    '/molecular-biology/nucleotide/',
+    '/molecular-biology/base-pairing/',
+    '/molecular-biology/amino-acid/',
+    '/molecular-biology/central-dogma/',
+  ]}
+/>
+
+### 細胞で働く場所をつかむ
+
+<ArticleList
+  hrefs={[
+    '/cell-biology/cell-membrane/',
+    '/cell-biology/organelles/',
+    '/cell-biology/nucleus/',
+    '/cell-biology/cell-signaling/',
+    '/cell-biology/cell-cycle/',
+  ]}
+/>
+
+### 実験と統計の入口をつかむ
+
+<ArticleList
+  hrefs={[
+    '/methods/sample/',
+    '/methods/control/',
+    '/methods/pcr/',
+    '/methods/qpcr/',
+    '/methods/western-blot/',
+    '/methods/ngs/',
+    '/statistics/variable/',
+    '/statistics/biological-technical-replicates/',
+    '/statistics/sample-size/',
+    '/statistics/error-bars/',
+    '/statistics/p-value/',
+    '/statistics/correlation-causation/',
+  ]}
+/>
+
+### オミクス解析の入口をつかむ
+
+<ArticleList
+  hrefs={[
+    '/genomics/reference-genome/',
+    '/genomics/genetic-variants/',
+    '/genomics/genome-browser/',
+    '/bioinformatics/bioinformatics/',
+    '/bioinformatics/sequence-data/',
+    '/bioinformatics/rna-seq/',
+    '/bioinformatics/single-cell-rna-seq/',
+  ]}
+/>
+
+### Figureと論文の入口をつかむ
+
+<ArticleList
+  hrefs={[
+    '/figures/figure-legend/',
+    '/figures/axis-label-unit/',
+    '/figures/figure-to-claim/',
+    '/papers/paper-structure/',
+    '/papers/first-pass-reading/',
+    '/papers/figure-first-reading/',
+  ]}
+/>
+
 ## 次に進む
 
-基礎語を確認できたら、次は [分子のしくみを理解する](/paths/molecular-mechanisms/) で、DNA、RNA、タンパク質、発現調節、クロマチン、DNA修復を詳しく読みます。細胞内で分子がどこで働くかを先に見たい場合は [細胞のしくみを理解する](/paths/cell-mechanisms/) へ進みます。
+共通の土台を確認できたら、次は [分子のしくみを理解する](/paths/molecular-mechanisms/) で、遺伝情報が使われ、調節され、保たれるしくみを詳しく読みます。細胞内で分子がどこで働くかを先に見たい場合は [細胞のしくみを理解する](/paths/cell-mechanisms/) へ進みます。
