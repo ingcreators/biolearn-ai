@@ -1,6 +1,6 @@
 ---
 title: オミクス解析を読む
-description: ゲノム、変異、RNA-seq、single-cell解析、オミクスFigureを論文読解につなげる学習パスです。
+description: ゲノム、変異、RNA-seq、single-cell解析、オミクスデータの流れを論文読解につなげる学習パスです。
 ---
 
 import ArticleList from '../../../components/ArticleList.astro';
@@ -13,17 +13,17 @@ import LearningGoals from '../../../components/LearningGoals.astro';
     'FASTQ、マッピング、SAM/BAM、VCFを、シーケンス解析の流れの中で位置づけられる',
     'RNA-seq、カウント行列、正規化、差次的発現解析、経路解析の関係を説明できる',
     'single-cell解析で、QC、バッチ効果、次元削減、クラスタ、細胞タイプ注釈を確認できる',
-    'Volcano plot、ヒートマップ、PCA、UMAP、GSEA、ゲノムブラウザ図を解析条件に戻して読める',
+    'ゲノム、発現、single-cell、疾患オミクスの解析結果を、元データや処理の流れに戻して確認できる',
   ]}
 />
 
-このパスでは、ゲノムや発現データを使った論文を読むために、ゲノミクス、バイオインフォマティクス、オミクスFigureをつなげて学びます。配列ファイルや解析手順を丸暗記するのではなく、何を測ったデータか、どの処理を経てFigureになったか、結果からどこまで言えるかを確認します。
+このパスでは、ゲノムや発現データを使った論文を読むために、ゲノミクスとバイオインフォマティクスをつなげて学びます。配列ファイルや解析手順を丸暗記するのではなく、何を測ったデータか、どの処理を経て結果になったか、結果からどこまで言えるかを確認します。
 
 特定の記事だけを探したい場合は [ゲノミクス](/genomics/) または [バイオインフォマティクス](/bioinformatics/) を使います。このページでは、オミクス論文のFigureやResultsへ戻るための読み順として整理します。
 
 ## セクション一覧
 
-各カードから、記事一覧の該当セクションへ移動できます。ゲノム、発現、single-cell、疾患、Figureのどこで止まったかに合わせて戻ります。
+各カードから、記事一覧の該当セクションへ移動できます。ゲノム、発現、single-cell、疾患のどこで止まったかに合わせて戻ります。
 
 <div class="biolearn-home-grid">
   <a class="biolearn-home-card" href="#ゲノムの地図と変異を読む">
@@ -59,14 +59,6 @@ import LearningGoals from '../../../components/LearningGoals.astro';
     <h3>疾患ゲノムとオミクスを読む</h3>
     <p>
       GWAS、希少疾患、がんゲノム、エピゲノム、多層オミクスを、研究の目的に合わせて読みます。
-    </p>
-  </a>
-  <a class="biolearn-home-card" href="#figureと論文で練習する">
-    <span>演習</span>
-    <h3>Figureと論文で練習する</h3>
-    <p>
-      ゲノムブラウザ、Volcano
-      plot、ヒートマップ、UMAPなどを、論文内の主張と対応づけます。
     </p>
   </a>
 </div>
@@ -158,25 +150,6 @@ import LearningGoals from '../../../components/LearningGoals.astro';
   ]}
 />
 
-### Figureと論文で練習する
-
-<ArticleList
-  hrefs={[
-    '/figures/how-to-read-genome-browser/',
-    '/figures/how-to-read-volcano-plot/',
-    '/figures/how-to-read-heatmap/',
-    '/figures/how-to-read-pca-plot/',
-    '/figures/how-to-read-umap-tsne/',
-    '/figures/how-to-read-gsea-plot/',
-    '/figures/how-to-read-pathway-enrichment/',
-    '/figures/how-to-read-cnv-plot/',
-    '/figures/how-to-read-lollipop-plot/',
-    '/papers/walkthrough-rna-seq/',
-    '/papers/walkthrough-single-cell/',
-    '/papers/walkthrough-cancer-genomics/',
-  ]}
-/>
-
 ## 次に進む
 
-オミクス解析の流れが見えてきたら、[Figureを読む](/paths/figure-reading/) で図の読み方を横断的に練習します。論文全体の構造へ進む場合は [論文を読む](/paths/paper-reading/) を使います。統計や実験設計の確認点で止まった場合は [実験・統計を確認する](/paths/methods-statistics/) に戻ります。
+オミクス解析の流れが見えてきたら、次は [Figureを読む](/paths/figure-reading/) で、Volcano plot、ヒートマップ、PCA、UMAP、GSEA、ゲノムブラウザ図などを読みます。論文全体の構造へ進む場合は [論文を読む](/paths/paper-reading/) を使います。統計や実験設計の確認点で止まった場合は [実験・統計を確認する](/paths/methods-statistics/) に戻ります。

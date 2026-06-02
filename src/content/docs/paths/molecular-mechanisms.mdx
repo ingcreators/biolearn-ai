@@ -1,0 +1,148 @@
+---
+title: 分子のしくみを理解する
+description: DNA、RNA、タンパク質、発現調節、クロマチン、DNA維持を読むラーニングパスです。
+---
+
+import ArticleList from '../../../components/ArticleList.astro';
+import LearningGoals from '../../../components/LearningGoals.astro';
+
+<LearningGoals
+  title="このパスで身につけること"
+  items={[
+    '核酸、ヌクレオチド、塩基対、アミノ酸を、生命現象を担う分子の部品として説明できる',
+    'セントラルドグマ、DNA複製、転写、RNA加工、翻訳を、遺伝情報が使われる流れとして整理できる',
+    'タンパク質の構造、フォールディング、酵素の働きを、分子の形と機能の関係として読める',
+    'プロモーター、エンハンサー、転写因子、RNA調節、クロマチン、エピジェネティクスを、遺伝子の使われ方として確認できる',
+    'DNA損傷、DNA修復、組換えを、遺伝情報を保つしくみとして説明できる',
+  ]}
+/>
+
+このパスでは、生命科学の基礎で押さえた DNA、RNA、タンパク質、遺伝子を、より具体的な分子のしくみとして読みます。分子名を暗記するのではなく、どの部品が、どの流れで、どのように働き方を変えるかをつなげます。
+
+DNA、RNA、タンパク質、遺伝子、ゲノムの基本語があいまいな場合は、先に [基礎を固める](/paths/foundations/) を確認します。特定の分子生物学記事だけを探したい場合は [分子生物学](/molecular-biology/) を使います。
+
+## セクション一覧
+
+各カードから、記事一覧の該当セクションへ移動できます。はじめて読む場合は上から進み、論文やFigureで止まった場合は該当するしくみへ戻ります。
+
+<div class="biolearn-home-grid">
+  <a class="biolearn-home-card" href="#分子の部品を理解する">
+    <span>部品</span>
+    <h3>分子の部品を理解する</h3>
+    <p>
+      核酸、ヌクレオチド、塩基対、アミノ酸を、DNA、RNA、タンパク質を作る部品として整理します。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="#遺伝情報が使われる流れ">
+    <span>流れ</span>
+    <h3>遺伝情報が使われる流れ</h3>
+    <p>
+      DNA複製、転写、RNA加工、スプライシング、翻訳を、遺伝情報が読み出される順序として読みます。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="#タンパク質が働く形になる">
+    <span>形</span>
+    <h3>タンパク質が働く形になる</h3>
+    <p>
+      タンパク質の構造、フォールディング、酵素を、分子の形が働きにつながる例として確認します。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="#発現を調節するしくみ">
+    <span>調節</span>
+    <h3>発現を調節するしくみ</h3>
+    <p>
+      プロモーター、エンハンサー、転写因子、RNA調節を、遺伝子がいつどれだけ使われるかの調節として読みます。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="#dnaのしまわれ方とエピジェネティクス">
+    <span>配置</span>
+    <h3>DNAのしまわれ方とエピジェネティクス</h3>
+    <p>
+      クロマチン、ヌクレオソーム、DNAメチル化、ヒストン修飾を、DNAの読まれやすさに関わるしくみとして整理します。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="#dnaを保つ直すしくみ">
+    <span>維持</span>
+    <h3>DNAを保つ・直すしくみ</h3>
+    <p>
+      DNA損傷、DNA修復、組換えを、遺伝情報を保ち、変化を扱うしくみとして確認します。
+    </p>
+  </a>
+</div>
+
+## 記事一覧
+
+### 分子の部品を理解する
+
+<ArticleList
+  hrefs={[
+    '/molecular-biology/nucleic-acids/',
+    '/molecular-biology/nucleotide/',
+    '/molecular-biology/base-pairing/',
+    '/molecular-biology/amino-acid/',
+  ]}
+/>
+
+### 遺伝情報が使われる流れ
+
+<ArticleList
+  hrefs={[
+    '/molecular-biology/central-dogma/',
+    '/molecular-biology/dna-replication/',
+    '/molecular-biology/transcription/',
+    '/molecular-biology/rna-processing/',
+    '/molecular-biology/splicing/',
+    '/molecular-biology/translation/',
+  ]}
+/>
+
+### タンパク質が働く形になる
+
+<ArticleList
+  hrefs={[
+    '/molecular-biology/protein-structure/',
+    '/molecular-biology/protein-folding/',
+    '/molecular-biology/enzyme/',
+  ]}
+/>
+
+### 発現を調節するしくみ
+
+<ArticleList
+  hrefs={[
+    '/molecular-biology/gene-expression-regulation/',
+    '/molecular-biology/promoter/',
+    '/molecular-biology/enhancer/',
+    '/molecular-biology/transcription-factor/',
+    '/molecular-biology/post-transcriptional-regulation/',
+    '/molecular-biology/noncoding-rna/',
+    '/molecular-biology/microrna/',
+  ]}
+/>
+
+### DNAのしまわれ方とエピジェネティクス
+
+<ArticleList
+  hrefs={[
+    '/molecular-biology/chromatin/',
+    '/molecular-biology/nucleosome/',
+    '/molecular-biology/epigenetics/',
+    '/molecular-biology/dna-methylation/',
+    '/molecular-biology/histone-modification/',
+    '/molecular-biology/chromatin-accessibility/',
+  ]}
+/>
+
+### DNAを保つ・直すしくみ
+
+<ArticleList
+  hrefs={[
+    '/molecular-biology/dna-damage/',
+    '/molecular-biology/dna-repair/',
+    '/molecular-biology/recombination/',
+  ]}
+/>
+
+## 次に進む
+
+分子のしくみが見えてきたら、次は [細胞のしくみを理解する](/paths/cell-mechanisms/) で、分子が細胞内のどこで働き、どのように移動し、刺激に応答するかを読みます。実験条件や統計表示を先に確認したい場合は [実験・統計を確認する](/paths/methods-statistics/) へ進みます。

@@ -128,6 +128,10 @@ export default defineConfig({
           items: [
             { label: '基礎を固める', link: '/paths/foundations/' },
             {
+              label: '分子のしくみを理解する',
+              link: '/paths/molecular-mechanisms/',
+            },
+            {
               label: '細胞のしくみを理解する',
               link: '/paths/cell-mechanisms/',
             },
