@@ -144,7 +144,7 @@ export default defineConfig({
           ],
         },
         {
-          label: '分野別に学ぶ',
+          label: '分野別カテゴリ',
           items: [
             { label: '生命科学の基礎', link: '/fundamentals/' },
             { label: '分子生物学', link: '/molecular-biology/' },
