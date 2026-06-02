@@ -9,10 +9,10 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 <LearningGoals
   title="このパスで身につけること"
   items={[
-    '分布、平均、中央値、対照群、ランダム化、盲検化を、比較の設計として確認できる',
+    '対照群、ランダム化、盲検化を、比較の設計として確認できる',
     '標準偏差、標準誤差、信頼区間、効果量、多重検定補正を、p値やエラーバーと分けて読める',
     '交絡、バイアス、再現性、限界を使い、結果の読みすぎを避けられる',
-    'RT-qPCR、免疫染色、フローサイトメトリー、CRISPR、ライブラリ調製、シーケンスなどが何を測る手法か説明できる',
+    'RT-qPCR、免疫染色、フローサイトメトリー、CRISPR、ライブラリ調製などが何を測る手法か説明できる',
   ]}
 />
 
@@ -28,9 +28,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
   <a class="biolearn-home-card" href="#データと比較の設計を読む">
     <span>設計</span>
     <h3>データと比較の設計を読む</h3>
-    <p>
-      分布、平均、中央値、対照群、ランダム化、盲検化を、比較の前提として確認します。
-    </p>
+    <p>対照群、ランダム化、盲検化を、比較の前提として確認します。</p>
   </a>
   <a class="biolearn-home-card" href="#不確かさと差の大きさを読む">
     <span>推定</span>
@@ -42,7 +40,9 @@ import LearningGoals from '../../../components/LearningGoals.astro';
   <a class="biolearn-home-card" href="#主張の限界を確認する">
     <span>限界</span>
     <h3>主張の限界を確認する</h3>
-    <p>交絡、バイアス、再現性、限界を使い、結果の読みすぎを避けます。</p>
+    <p>
+      相関と因果、交絡、バイアス、再現性、限界を使い、結果の読みすぎを避けます。
+    </p>
   </a>
   <a class="biolearn-home-card" href="#実験figureの前提を読む">
     <span>実験</span>
@@ -56,7 +56,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
     <span>Methods</span>
     <h3>遺伝子機能とMethodsへつなぐ</h3>
     <p>
-      CRISPR、ノックアウト、過剰発現、レポーター、RNA抽出、ライブラリ調製、シーケンスをMethods確認の視点で読みます。
+      CRISPR、ノックアウト、過剰発現、レポーター、RNA抽出、ライブラリ調製をMethods確認の視点で読みます。
     </p>
   </a>
 </div>
@@ -67,8 +67,6 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 
 <ArticleList
   hrefs={[
-    '/statistics/distribution/',
-    '/statistics/mean-median/',
     '/statistics/control-group/',
     '/statistics/randomization/',
     '/statistics/blinding/',
@@ -91,6 +89,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 
 <ArticleList
   hrefs={[
+    '/statistics/correlation-causation/',
     '/statistics/confounding/',
     '/statistics/bias/',
     '/statistics/reproducibility/',
@@ -106,8 +105,8 @@ import LearningGoals from '../../../components/LearningGoals.astro';
     '/methods/rt-qpcr/',
     '/methods/housekeeping-gene/',
     '/methods/loading-control/',
-    '/methods/immunostaining/',
     '/methods/fluorescence-microscopy/',
+    '/methods/immunostaining/',
     '/methods/flow-cytometry/',
     '/methods/facs/',
     '/methods/antibody-validation/',
@@ -126,7 +125,6 @@ import LearningGoals from '../../../components/LearningGoals.astro';
     '/methods/reporter-assay/',
     '/methods/rna-extraction/',
     '/methods/library-preparation/',
-    '/methods/sequencing/',
   ]}
 />
 

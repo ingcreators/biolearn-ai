@@ -10,13 +10,13 @@ import LearningGoals from '../../../components/LearningGoals.astro';
   title="このパスで身につけること"
   items={[
     '生命科学が扱う階層と、研究で問われることを大まかに整理できる',
-    'DNA、RNA、タンパク質、遺伝子、ゲノム、遺伝情報の流れを、後続記事の前提として説明できる',
+    '分子の部品からDNA、RNA、タンパク質、遺伝子、ゲノム、遺伝情報の流れへ順に進める',
     '細胞の場所、シグナル、細胞周期を、分子が働く場として読み始められる',
     '実験、統計、オミクス解析、Figure、論文読解で最初に確認する語を見分けられる',
   ]}
 />
 
-このパスでは、BioLearn の各カテゴリへ進む前に必要になる土台を横断的に確認します。分野別カテゴリを順番に読むのではなく、後続の学習で何度も出てくる概念を先に集め、論文やFigureを読むための足場を作ります。
+このパスでは、BioLearn の各カテゴリへ進む前に必要になる土台を横断的に確認します。分野別カテゴリを順番に読むのではなく、後続の学習で何度も出てくる概念を、前提が満たされる順番で先に確認します。
 
 特定の分野だけを探したい場合は [分野別カテゴリ](/categories/) を使います。このページでは、[分子のしくみを理解する](/paths/molecular-mechanisms/) や [細胞のしくみを理解する](/paths/cell-mechanisms/) へ進む前提を、必要な範囲に絞って確認します。
 
@@ -28,20 +28,25 @@ import LearningGoals from '../../../components/LearningGoals.astro';
   <a class="biolearn-home-card" href="#生命科学の地図を作る">
     <span>入口</span>
     <h3>生命科学の地図を作る</h3>
-    <p>
-      生命現象を階層で見分け、研究対象、モデル生物、問いを読むための入口を作ります。
-    </p>
+    <p>生命現象を階層で見分け、研究対象と問いを読むための入口を作ります。</p>
   </a>
-  <a class="biolearn-home-card" href="#遺伝情報と分子をつかむ">
+  <a class="biolearn-home-card" href="#分子の部品から生命の分子へ進む">
     <span>分子</span>
-    <h3>遺伝情報と分子をつかむ</h3>
+    <h3>分子の部品から生命の分子へ進む</h3>
     <p>
-      DNA、RNA、タンパク質、遺伝子、ゲノム、セントラルドグマを、分子生物学へ進む前提として整理します。
+      核酸、ヌクレオチド、塩基対からDNAとRNAへ進み、タンパク質とアミノ酸を整理します。
     </p>
   </a>
-  <a class="biolearn-home-card" href="#細胞で働く場所をつかむ">
+  <a class="biolearn-home-card" href="#遺伝情報の単位と流れをつかむ">
+    <span>遺伝</span>
+    <h3>遺伝情報の単位と流れをつかむ</h3>
+    <p>
+      遺伝子、ゲノム、染色体、セントラルドグマ、発現、複製、変異、表現型を順に確認します。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="#細胞で働く場所と状態をつかむ">
     <span>細胞</span>
-    <h3>細胞で働く場所をつかむ</h3>
+    <h3>細胞で働く場所と状態をつかむ</h3>
     <p>
       細胞膜、細胞小器官、核、シグナル伝達、細胞周期を、分子が働く場所と状態として確認します。
     </p>
@@ -65,7 +70,7 @@ import LearningGoals from '../../../components/LearningGoals.astro';
     <h3>Figureと論文の入口をつかむ</h3>
     <p>
       Figure
-      legend、軸、主張との対応、論文の構造、初回読みを、論文読解の前提として確認します。
+      legend、軸、論文の構造、初回読みを、Figureと論文読解の入口として確認します。
     </p>
   </a>
 </div>
@@ -80,33 +85,41 @@ import LearningGoals from '../../../components/LearningGoals.astro';
     '/fundamentals/molecule/',
     '/fundamentals/cell/',
     '/fundamentals/organism-tissue-cell/',
-    '/fundamentals/model-organisms/',
     '/fundamentals/biological-question/',
   ]}
 />
 
-### 遺伝情報と分子をつかむ
+### 分子の部品から生命の分子へ進む
 
 <ArticleList
   hrefs={[
-    '/fundamentals/dna/',
-    '/fundamentals/rna/',
-    '/fundamentals/protein/',
-    '/fundamentals/gene/',
-    '/fundamentals/genome/',
-    '/fundamentals/chromosome/',
-    '/fundamentals/gene-expression/',
-    '/fundamentals/mutation/',
-    '/fundamentals/phenotype/',
     '/molecular-biology/nucleic-acids/',
     '/molecular-biology/nucleotide/',
     '/molecular-biology/base-pairing/',
+    '/fundamentals/dna/',
+    '/fundamentals/rna/',
+    '/fundamentals/protein/',
     '/molecular-biology/amino-acid/',
-    '/molecular-biology/central-dogma/',
   ]}
 />
 
-### 細胞で働く場所をつかむ
+### 遺伝情報の単位と流れをつかむ
+
+<ArticleList
+  hrefs={[
+    '/fundamentals/gene/',
+    '/fundamentals/genome/',
+    '/fundamentals/chromosome/',
+    '/molecular-biology/central-dogma/',
+    '/fundamentals/gene-expression/',
+    '/molecular-biology/dna-replication/',
+    '/fundamentals/mutation/',
+    '/fundamentals/phenotype/',
+    '/fundamentals/model-organisms/',
+  ]}
+/>
+
+### 細胞で働く場所と状態をつかむ
 
 <ArticleList
   hrefs={[
@@ -124,16 +137,18 @@ import LearningGoals from '../../../components/LearningGoals.astro';
   hrefs={[
     '/methods/sample/',
     '/methods/control/',
-    '/methods/pcr/',
-    '/methods/qpcr/',
-    '/methods/western-blot/',
-    '/methods/ngs/',
     '/statistics/variable/',
     '/statistics/biological-technical-replicates/',
     '/statistics/sample-size/',
+    '/statistics/distribution/',
+    '/statistics/mean-median/',
     '/statistics/error-bars/',
     '/statistics/p-value/',
-    '/statistics/correlation-causation/',
+    '/methods/pcr/',
+    '/methods/qpcr/',
+    '/methods/western-blot/',
+    '/methods/sequencing/',
+    '/methods/ngs/',
   ]}
 />
 
@@ -157,10 +172,8 @@ import LearningGoals from '../../../components/LearningGoals.astro';
   hrefs={[
     '/figures/figure-legend/',
     '/figures/axis-label-unit/',
-    '/figures/figure-to-claim/',
     '/papers/paper-structure/',
     '/papers/first-pass-reading/',
-    '/papers/figure-first-reading/',
   ]}
 />
 
