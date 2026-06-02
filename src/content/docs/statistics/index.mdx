@@ -22,40 +22,40 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 
 ## セクション一覧
 
-統計・研究デザインの記事は、データの種類、ばらつきと不確かさ、比較の設計、推論、批判的な読み方に分かれています。各カードから、記事一覧の該当セクションへ移動できます。
+統計・研究デザインの記事は、データの種類、比較の設計、ばらつきと不確かさ、推論、批判的な読み方に分かれています。各カードから、記事一覧の該当セクションへ移動できます。
 
 <div class="biolearn-home-grid">
-  <a class="biolearn-home-card" href="#データの種類と分布を読む">
+  <a class="biolearn-home-card" href="#データの種類と分布を確認する">
     <span>データ</span>
-    <h3>データの種類と分布を読む</h3>
+    <h3>データの種類と分布を確認する</h3>
     <p>
       変数、分布、平均と中央値を確認し、Figureの軸や代表値が何を表しているかを整理します。
     </p>
   </a>
-  <a class="biolearn-home-card" href="#ばらつきと不確かさを読む">
-    <span>不確かさ</span>
-    <h3>ばらつきと不確かさを読む</h3>
-    <p>
-      エラーバー、標準偏差、標準誤差、信頼区間を、ばらつきと推定の不確かさとして区別します。
-    </p>
-  </a>
-  <a class="biolearn-home-card" href="#比較反復の設計を読む">
+  <a class="biolearn-home-card" href="#比較反復の設計を確認する">
     <span>設計</span>
-    <h3>比較・反復の設計を読む</h3>
+    <h3>比較・反復の設計を確認する</h3>
     <p>
       生物学的反復、技術的反復、n数、対照群、ランダム化、盲検化を、比較の設計として確認します。
     </p>
   </a>
-  <a class="biolearn-home-card" href="#差の大きさと確からしさを読む">
+  <a class="biolearn-home-card" href="#ばらつきと不確かさを区別する">
+    <span>不確かさ</span>
+    <h3>ばらつきと不確かさを区別する</h3>
+    <p>
+      エラーバー、標準偏差、標準誤差、信頼区間を、ばらつきと推定の不確かさとして区別します。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="#差の大きさと確からしさを判断する">
     <span>推論</span>
-    <h3>差の大きさと確からしさを読む</h3>
+    <h3>差の大きさと確からしさを判断する</h3>
     <p>
       p値、効果量、多重検定補正、有意性と生物学的重要性を、結果の読みすぎを避ける視点として整理します。
     </p>
   </a>
-  <a class="biolearn-home-card" href="#関係偏り限界を読む">
+  <a class="biolearn-home-card" href="#関係偏り限界を見分ける">
     <span>限界</span>
-    <h3>関係・偏り・限界を読む</h3>
+    <h3>関係・偏り・限界を見分ける</h3>
     <p>
       相関と因果、交絡、バイアス、再現性、研究の限界を、Discussionの主張を読む前提として確認します。
     </p>
@@ -66,23 +66,23 @@ import LearningGoals from '../../../components/LearningGoals.astro';
 
 初めて読む場合は、まずデータが何を表しているかを押さえ、次に比較の設計を確認し、その後でエラーバー、p値、限界へ進むと読みやすくなります。
 
-### データの種類と分布を読む
+### データの種類と分布を確認する
 
 <ArticleList part="statistics" module="statistics-data-basics" />
 
-### ばらつきと不確かさを読む
-
-<ArticleList part="statistics" module="statistics-uncertainty" />
-
-### 比較・反復の設計を読む
+### 比較・反復の設計を確認する
 
 <ArticleList part="statistics" module="statistics-design" />
 
-### 差の大きさと確からしさを読む
+### ばらつきと不確かさを区別する
+
+<ArticleList part="statistics" module="statistics-uncertainty" />
+
+### 差の大きさと確からしさを判断する
 
 <ArticleList part="statistics" module="statistics-inference" />
 
-### 関係・偏り・限界を読む
+### 関係・偏り・限界を見分ける
 
 <ArticleList part="statistics" module="statistics-critical-reading" />
 
