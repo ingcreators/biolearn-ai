@@ -5,16 +5,23 @@ description: BioLearn を目的別に進めるための学習ルートです。
 
 ラーニングパスは、分野別の記事を目的に合わせて並べ直した学習ルートです。記事番号ではなく、「何が読めるようになりたいか」から選びます。
 
-コンテンツが増えたため、現在は5つのパスで学習の地図を作っています。基礎で共通語彙を作り、必要に応じて実験・統計やオミクス解析を確認し、Figure読解、論文読解へ進みます。各パスは独立したコースではなく、読んでいる論文やFigureで詰まった場所へ戻るための道筋です。
+コンテンツが増えたため、現在は6つのパスで学習の地図を作っています。基礎を固め、細胞のしくみを理解し、必要に応じて実験・統計、オミクス解析を確認し、Figure読解、論文読解へ進みます。各パスは独立したコースではなく、読んでいる論文やFigureで詰まった場所へ戻るための道筋です。
 
 ## まず選ぶ
 
 <div class="biolearn-home-grid">
   <a class="biolearn-home-card" href="/paths/foundations/">
     <span>基礎</span>
-    <h3>基礎から学ぶ</h3>
+    <h3>基礎を固める</h3>
     <p>
       生命科学の全体像、細胞、DNA、RNA、タンパク質、遺伝子、ゲノムを順番につなげます。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="/paths/cell-mechanisms/">
+    <span>基礎の次</span>
+    <h3>細胞のしくみを理解する</h3>
+    <p>
+      細胞構造、膜輸送、局在、シグナル伝達、細胞状態をFigureやMethodsに戻して読みます。
     </p>
   </a>
   <a class="biolearn-home-card" href="/paths/methods-statistics/">
@@ -33,7 +40,7 @@ description: BioLearn を目的別に進めるための学習ルートです。
   </a>
   <a class="biolearn-home-card" href="/paths/figure-reading/">
     <span>Figure</span>
-    <h3>Figureを読めるようになる</h3>
+    <h3>Figureを読む</h3>
     <p>
       Figure
       legend、軸、ばらつき、対照、解析条件を確認しながら、図から言える範囲を読みます。
@@ -41,7 +48,7 @@ description: BioLearn を目的別に進めるための学習ルートです。
   </a>
   <a class="biolearn-home-card" href="/paths/paper-reading/">
     <span>論文</span>
-    <h3>論文を読めるようになる</h3>
+    <h3>論文を読む</h3>
     <p>
       Figure、Methods、Results、Discussionを行き来し、主張をデータに戻して確認します。
     </p>
@@ -50,50 +57,54 @@ description: BioLearn を目的別に進めるための学習ルートです。
 
 ## 目的別に選ぶ
 
-| いまの目的                                 | おすすめの入口                                     | 次に進む場所                                                                                  |
-| ------------------------------------------ | -------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| 生命科学の用語がまだ不安                   | [基礎から学ぶ](/paths/foundations/)                | [生命科学の基礎](/fundamentals/)、[分子生物学](/molecular-biology/)                           |
-| DNA、RNA、タンパク質、ゲノムを整理したい   | [基礎から学ぶ](/paths/foundations/)                | [細胞生物学](/cell-biology/)、[ゲノミクス](/genomics/)                                        |
-| MethodsやFigure legendの確認点を知りたい   | [実験・統計を確認する](/paths/methods-statistics/) | [実験手法](/methods/)、[統計・研究デザイン](/statistics/)                                     |
-| n数、反復、p値、効果量で止まる             | [実験・統計を確認する](/paths/methods-statistics/) | [Figureを読めるようになる](/paths/figure-reading/)、[批判的に読む](/papers/critical-reading/) |
-| RNA-seqやsingle-cell解析を読みたい         | [オミクス解析を読む](/paths/omics-analysis/)       | [バイオインフォマティクス](/bioinformatics/)、[ゲノミクス](/genomics/)                        |
-| 変異、ゲノムブラウザ、がんゲノムを読みたい | [オミクス解析を読む](/paths/omics-analysis/)       | [論文Figureの読み方](/figures/)、[論文読解演習](/papers/)                                     |
-| 論文Figureを見ても何から確認するか迷う     | [Figureを読めるようになる](/paths/figure-reading/) | [論文Figureの読み方](/figures/)、[実験・統計を確認する](/paths/methods-statistics/)           |
-| 論文全体の読み方を練習したい               | [論文を読めるようになる](/paths/paper-reading/)    | [論文読解演習](/papers/)、[Figureを読めるようになる](/paths/figure-reading/)                  |
-| 読む論文を探すところから始めたい           | [論文を読めるようになる](/paths/paper-reading/)    | [PubMedの使い方](/papers/pubmed/)、[読む論文の選び方](/papers/how-to-choose-paper/)           |
+| いまの目的                                 | おすすめの入口                                     | 次に進む場所                                                                               |
+| ------------------------------------------ | -------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| 生命科学の用語がまだ不安                   | [基礎を固める](/paths/foundations/)                | [生命科学の基礎](/fundamentals/)、[分子生物学](/molecular-biology/)                        |
+| DNA、RNA、タンパク質、ゲノムを整理したい   | [基礎を固める](/paths/foundations/)                | [細胞生物学](/cell-biology/)、[ゲノミクス](/genomics/)                                     |
+| 細胞内で分子がどう働くか知りたい           | [細胞のしくみを理解する](/paths/cell-mechanisms/)  | [細胞生物学](/cell-biology/)、[論文Figureの読み方](/figures/)                              |
+| シグナル伝達や細胞状態のFigureで止まる     | [細胞のしくみを理解する](/paths/cell-mechanisms/)  | [実験・統計を確認する](/paths/methods-statistics/)、[Figureを読む](/paths/figure-reading/) |
+| MethodsやFigure legendの確認点を知りたい   | [実験・統計を確認する](/paths/methods-statistics/) | [実験手法](/methods/)、[統計・研究デザイン](/statistics/)                                  |
+| n数、反復、p値、効果量で止まる             | [実験・統計を確認する](/paths/methods-statistics/) | [Figureを読む](/paths/figure-reading/)、[批判的に読む](/papers/critical-reading/)          |
+| RNA-seqやsingle-cell解析を読みたい         | [オミクス解析を読む](/paths/omics-analysis/)       | [バイオインフォマティクス](/bioinformatics/)、[ゲノミクス](/genomics/)                     |
+| 変異、ゲノムブラウザ、がんゲノムを読みたい | [オミクス解析を読む](/paths/omics-analysis/)       | [論文Figureの読み方](/figures/)、[論文読解演習](/papers/)                                  |
+| 論文Figureを見ても何から確認するか迷う     | [Figureを読む](/paths/figure-reading/)             | [論文Figureの読み方](/figures/)、[実験・統計を確認する](/paths/methods-statistics/)        |
+| 論文全体の読み方を練習したい               | [論文を読む](/paths/paper-reading/)                | [論文読解演習](/papers/)、[Figureを読む](/paths/figure-reading/)                           |
+| 読む論文を探すところから始めたい           | [論文を読む](/paths/paper-reading/)                | [PubMedの使い方](/papers/pubmed/)、[読む論文の選び方](/papers/how-to-choose-paper/)        |
 
 ## 迷ったときの選び方
 
-| 自分に近い状態                                   | 最初に使うパス                                     | そこで身につけること                                     |
-| ------------------------------------------------ | -------------------------------------------------- | -------------------------------------------------------- |
-| DNA、RNA、タンパク質、遺伝子、ゲノムが混ざる     | [基礎から学ぶ](/paths/foundations/)                | 生命科学の階層と、分子・細胞・ゲノムの関係を整理する     |
-| 対照、反復、n数、p値、効果量で止まる             | [実験・統計を確認する](/paths/methods-statistics/) | MethodsとFigure legendから主張の強さを見積もる           |
-| FASTQ、RNA-seq、UMAP、変異解析で止まる           | [オミクス解析を読む](/paths/omics-analysis/)       | データ、解析、可視化、解釈の流れを整理する               |
-| Figure legend、軸、条件、統計表示で止まる        | [Figureを読めるようになる](/paths/figure-reading/) | 図の前提、比較、ばらつき、主張の範囲を確認する           |
-| Results、Methods、Discussionの行き来に慣れたい   | [論文を読めるようになる](/paths/paper-reading/)    | 論文の部位を行き来し、主張をFigureとMethodsに戻して読む  |
-| 特定の用語だけを短く確認したい                   | [用語集](/glossary/)                               | 個別用語を確認し、必要なカテゴリやパスへ戻る             |
-| いま読んでいる論文の確認点だけを素早く見直したい | [リファレンス](/resources/)                        | Figure、Methods、論文探索の早見表へ戻る                  |
-| 分野別に記事を探したい                           | [学習ロードマップ](/roadmap/)                      | 基礎、実験手法、統計、解析、Figure、論文読解の入口を選ぶ |
+| 自分に近い状態                                   | 最初に使うパス                                     | そこで身につけること                                       |
+| ------------------------------------------------ | -------------------------------------------------- | ---------------------------------------------------------- |
+| DNA、RNA、タンパク質、遺伝子、ゲノムが混ざる     | [基礎を固める](/paths/foundations/)                | 生命科学の階層と、分子・細胞・ゲノムの関係を整理する       |
+| 細胞膜、局在、シグナル伝達、細胞状態が混ざる     | [細胞のしくみを理解する](/paths/cell-mechanisms/)  | 細胞内の場所、移動、応答、状態変化をFigureに戻して整理する |
+| 対照、反復、n数、p値、効果量で止まる             | [実験・統計を確認する](/paths/methods-statistics/) | MethodsとFigure legendから主張の強さを見積もる             |
+| FASTQ、RNA-seq、UMAP、変異解析で止まる           | [オミクス解析を読む](/paths/omics-analysis/)       | データ、解析、可視化、解釈の流れを整理する                 |
+| Figure legend、軸、条件、統計表示で止まる        | [Figureを読む](/paths/figure-reading/)             | 図の前提、比較、ばらつき、主張の範囲を確認する             |
+| Results、Methods、Discussionの行き来に慣れたい   | [論文を読む](/paths/paper-reading/)                | 論文の部位を行き来し、主張をFigureとMethodsに戻して読む    |
+| 特定の用語だけを短く確認したい                   | [用語集](/glossary/)                               | 個別用語を確認し、必要なカテゴリやパスへ戻る               |
+| いま読んでいる論文の確認点だけを素早く見直したい | [リファレンス](/resources/)                        | Figure、Methods、論文探索の早見表へ戻る                    |
+| 分野別に記事を探したい                           | [学習ロードマップ](/roadmap/)                      | 基礎、実験手法、統計、解析、Figure、論文読解の入口を選ぶ   |
 
 ## パスを切り替える目安
 
-| いま使っているパス | 次に進む・戻るタイミング                                 | 切り替え先                                                                                                             |
-| ------------------ | -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| 基礎から学ぶ       | FigureやMethodsに出てくる用語の前提が分かるようになった  | [実験・統計を確認する](/paths/methods-statistics/)、[Figureを読めるようになる](/paths/figure-reading/)                 |
-| 実験・統計         | 手法、対照、反復、統計表示の確認点が見えるようになった   | [Figureを読めるようになる](/paths/figure-reading/)、[論文を読めるようになる](/paths/paper-reading/)                    |
-| オミクス解析       | RNA-seq、single-cell、変異解析の流れが見えるようになった | [Figureを読めるようになる](/paths/figure-reading/)、[論文を読めるようになる](/paths/paper-reading/)                    |
-| Figure読解         | Figure legend、軸、n数、反復、対照を拾えるようになった   | [論文を読めるようになる](/paths/paper-reading/)                                                                        |
-| 論文読解           | FigureやMethodsの確認点で詰まった                        | [Figure読解](/paths/figure-reading/)、[実験・統計](/paths/methods-statistics/)、[オミクス解析](/paths/omics-analysis/) |
-| どのパスでも       | 用語だけ分からない、または確認点だけ短く見たい           | [用語集](/glossary/)、[リファレンス](/resources/)                                                                      |
-| どのパスでも       | 目的の分野や記事名がすでに分かっている                   | [学習ロードマップ](/roadmap/)                                                                                          |
+| いま使っているパス     | 次に進む・戻るタイミング                                 | 切り替え先                                                                                                                               |
+| ---------------------- | -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| 基礎を固める           | FigureやMethodsに出てくる用語の前提が分かるようになった  | [実験・統計を確認する](/paths/methods-statistics/)、[Figureを読む](/paths/figure-reading/)                                               |
+| 細胞のしくみを理解する | 細胞の構造、移動、応答、状態変化をFigureで確認したい     | [Figureを読む](/paths/figure-reading/)、[実験・統計を確認する](/paths/methods-statistics/)                                               |
+| 実験・統計を確認する   | 手法、対照、反復、統計表示の確認点が見えるようになった   | [Figureを読む](/paths/figure-reading/)、[論文を読む](/paths/paper-reading/)                                                              |
+| オミクス解析を読む     | RNA-seq、single-cell、変異解析の流れが見えるようになった | [Figureを読む](/paths/figure-reading/)、[論文を読む](/paths/paper-reading/)                                                              |
+| Figureを読む           | Figure legend、軸、n数、反復、対照を拾えるようになった   | [論文を読む](/paths/paper-reading/)                                                                                                      |
+| 論文を読む             | FigureやMethodsの確認点で詰まった                        | [Figureを読む](/paths/figure-reading/)、[実験・統計を確認する](/paths/methods-statistics/)、[オミクス解析を読む](/paths/omics-analysis/) |
+| どのパスでも           | 用語だけ分からない、または確認点だけ短く見たい           | [用語集](/glossary/)、[リファレンス](/resources/)                                                                                        |
+| どのパスでも           | 目的の分野や記事名がすでに分かっている                   | [学習ロードマップ](/roadmap/)                                                                                                            |
 
 ## 推奨順
 
-初めて学ぶ場合は、[基礎から学ぶ](/paths/foundations/) で用語と全体像を整えます。その後、読めるようになりたい論文に合わせて分岐します。
+初めて学ぶ場合は、[基礎を固める](/paths/foundations/) で用語と全体像を整えます。その後、基礎の次に細胞内の場所や状態変化を確認したい場合は、[細胞のしくみを理解する](/paths/cell-mechanisms/) を使います。細胞画像、免疫染色、フローサイトメトリー、シグナル伝達のFigureを読む前提を確認しやすくなります。
 
-実験Figureや一般的なResultsを読みたい場合は、[実験・統計を確認する](/paths/methods-statistics/) から [Figureを読めるようになる](/paths/figure-reading/) へ進みます。RNA-seq、single-cell解析、変異解析、ゲノムブラウザ図を読む場合は、[オミクス解析を読む](/paths/omics-analysis/) を挟むと、解析Figureの前提が安定します。
+実験Figureや一般的なResultsを読みたい場合は、[実験・統計を確認する](/paths/methods-statistics/) から [Figureを読む](/paths/figure-reading/) へ進みます。RNA-seq、single-cell解析、変異解析、ゲノムブラウザ図を読む場合は、[オミクス解析を読む](/paths/omics-analysis/) を挟むと、解析Figureの前提が安定します。
 
-Figureの見方に慣れたら、[論文を読めるようになる](/paths/paper-reading/) で Methods、Results、Discussion を行き来する練習に進みます。特定の記事だけを探したい場合は、ラーニングパスではなく [分野別カテゴリ](/roadmap/) や [用語集](/glossary/) から探します。
+Figureの見方に慣れたら、[論文を読む](/paths/paper-reading/) で Methods、Results、Discussion を行き来する練習に進みます。特定の記事だけを探したい場合は、ラーニングパスではなく [分野別カテゴリ](/roadmap/) や [用語集](/glossary/) から探します。
 
 ## パスとカテゴリの使い分け
 
@@ -102,7 +113,8 @@ Figureの見方に慣れたら、[論文を読めるようになる](/paths/pape
 | したいこと                               | 使う場所                                           |
 | ---------------------------------------- | -------------------------------------------------- |
 | 順番に練習したい                         | [ラーニングパス](/paths/)                          |
-| 生命科学の基礎語彙を固めたい             | [基礎から学ぶ](/paths/foundations/)                |
+| 生命科学の基礎語彙を固めたい             | [基礎を固める](/paths/foundations/)                |
+| 細胞構造、膜輸送、シグナル伝達を読みたい | [細胞のしくみを理解する](/paths/cell-mechanisms/)  |
 | Methods、対照、統計表示を確認したい      | [実験・統計を確認する](/paths/methods-statistics/) |
 | RNA-seq、single-cell、変異解析を読みたい | [オミクス解析を読む](/paths/omics-analysis/)       |
 | Figureの種類から記事を探したい           | [論文Figureの読み方](/figures/)                    |

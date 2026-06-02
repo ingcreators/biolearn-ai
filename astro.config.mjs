@@ -125,17 +125,21 @@ export default defineConfig({
         {
           label: 'ラーニングパス',
           items: [
-            { label: '基礎から学ぶ', link: '/paths/foundations/' },
+            { label: '基礎を固める', link: '/paths/foundations/' },
+            {
+              label: '細胞のしくみを理解する',
+              link: '/paths/cell-mechanisms/',
+            },
             {
               label: '実験・統計を確認する',
               link: '/paths/methods-statistics/',
             },
             { label: 'オミクス解析を読む', link: '/paths/omics-analysis/' },
             {
-              label: 'Figureを読めるようになる',
+              label: 'Figureを読む',
               link: '/paths/figure-reading/',
             },
-            { label: '論文を読めるようになる', link: '/paths/paper-reading/' },
+            { label: '論文を読む', link: '/paths/paper-reading/' },
           ],
         },
         {

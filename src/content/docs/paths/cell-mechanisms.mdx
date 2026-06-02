@@ -1,0 +1,136 @@
+---
+title: 細胞のしくみを理解する
+description: 細胞の構造、膜輸送、局在、シグナル伝達、細胞状態をFigureやMethodsに戻して読むラーニングパスです。
+---
+
+import ArticleList from '../../../components/ArticleList.astro';
+import LearningGoals from '../../../components/LearningGoals.astro';
+
+<LearningGoals
+  title="このパスで身につけること"
+  items={[
+    '細胞を、分子が働く場所として捉え、構造と機能を結びつけて説明できる',
+    '細胞膜、細胞小器官、細胞骨格、膜輸送、タンパク質局在を、細胞内外の境界や移動として読める',
+    '受容体、リン酸化、キナーゼ、シグナル伝達経路を、外からの刺激が細胞内応答へ変わる流れとして整理できる',
+    '細胞周期、チェックポイント、細胞死、分解系、細胞老化を、細胞状態の変化としてFigureやMethodsに結びつけられる',
+    '顕微鏡画像、免疫染色、フローサイトメトリーを、細胞のしくみを確認する実験Figureとして読める',
+  ]}
+/>
+
+このパスでは、生命現象を「細胞の中でどこにあり、どこへ動き、どの刺激に応答し、どんな状態へ変わるか」として読みます。分子生物学で学んだタンパク質や遺伝子発現を、細胞という場所の中で意味づけるための道筋です。
+
+特定の細胞生物学記事だけを探したい場合は [細胞生物学](/cell-biology/) を使います。このページでは、細胞構造から膜輸送、局在、シグナル伝達、細胞状態、実験Figureまでを順番に確認します。
+
+## セクション一覧
+
+各カードから、記事一覧の該当セクションへ移動できます。はじめて読む場合は細胞の場所と構造から入り、論文Figureで止まった場合は該当する現象や実験へ戻ります。
+
+<div class="biolearn-home-grid">
+  <a class="biolearn-home-card" href="#細胞の場所と構造を読む">
+    <span>構造</span>
+    <h3>細胞の場所と構造を読む</h3>
+    <p>
+      細胞、組織、細胞膜、細胞小器官、核、ミトコンドリア、細胞骨格を、分子が働く場所として整理します。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="#膜を越える移動と局在を読む">
+    <span>移動</span>
+    <h3>膜を越える移動と局在を読む</h3>
+    <p>
+      膜輸送、小胞輸送、エンドサイトーシス、エキソサイトーシス、タンパク質局在を、物質や分子の移動として読みます。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="#刺激とシグナル伝達を読む">
+    <span>応答</span>
+    <h3>刺激とシグナル伝達を読む</h3>
+    <p>
+      受容体、リン酸化、キナーゼ、MAPK経路、PI3K-AKT経路を、刺激が細胞内応答へ変わる流れとして確認します。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="#細胞状態の変化を読む">
+    <span>状態</span>
+    <h3>細胞状態の変化を読む</h3>
+    <p>
+      細胞周期、チェックポイント、アポトーシス、オートファジー、細胞老化を、増える、止まる、死ぬ、分解する変化として読みます。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="#実験figureで確認する">
+    <span>Figure</span>
+    <h3>実験Figureで確認する</h3>
+    <p>
+      免疫染色、蛍光顕微鏡、フローサイトメトリー、顕微鏡画像を、細胞のしくみを確認する根拠として読みます。
+    </p>
+  </a>
+</div>
+
+## 記事一覧
+
+### 細胞の場所と構造を読む
+
+<ArticleList
+  hrefs={[
+    '/fundamentals/cell/',
+    '/fundamentals/organism-tissue-cell/',
+    '/cell-biology/cell-membrane/',
+    '/cell-biology/organelles/',
+    '/cell-biology/nucleus/',
+    '/cell-biology/mitochondria/',
+    '/cell-biology/endoplasmic-reticulum-golgi/',
+    '/cell-biology/lysosome/',
+    '/cell-biology/cytoskeleton/',
+  ]}
+/>
+
+### 膜を越える移動と局在を読む
+
+<ArticleList
+  hrefs={[
+    '/cell-biology/membrane-transport/',
+    '/cell-biology/vesicle-trafficking/',
+    '/cell-biology/endocytosis-exocytosis/',
+    '/cell-biology/protein-localization/',
+  ]}
+/>
+
+### 刺激とシグナル伝達を読む
+
+<ArticleList
+  hrefs={[
+    '/cell-biology/cell-signaling/',
+    '/cell-biology/receptor/',
+    '/cell-biology/pathway/',
+    '/cell-biology/phosphorylation/',
+    '/cell-biology/kinase/',
+    '/cell-biology/mapk-pathway/',
+    '/cell-biology/pi3k-akt-pathway/',
+  ]}
+/>
+
+### 細胞状態の変化を読む
+
+<ArticleList
+  hrefs={[
+    '/cell-biology/cell-cycle/',
+    '/cell-biology/checkpoint/',
+    '/cell-biology/apoptosis/',
+    '/cell-biology/autophagy/',
+    '/cell-biology/senescence/',
+  ]}
+/>
+
+### 実験Figureで確認する
+
+<ArticleList
+  hrefs={[
+    '/methods/immunostaining/',
+    '/methods/fluorescence-microscopy/',
+    '/methods/flow-cytometry/',
+    '/figures/how-to-read-microscopy-image/',
+    '/figures/how-to-read-immunostaining/',
+    '/figures/how-to-read-flow-cytometry/',
+  ]}
+/>
+
+## 次に進む
+
+細胞のしくみをFigureで確認する場合は [Figureを読む](/paths/figure-reading/) へ進みます。実験条件や対照、反復、n数を確認したい場合は [実験・統計を確認する](/paths/methods-statistics/) を使います。細胞内の分子の働きをさらに戻って確認したい場合は [分子生物学](/molecular-biology/) に戻ります。

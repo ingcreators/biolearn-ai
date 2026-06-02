@@ -31,7 +31,16 @@ export const collections = {
         priority: z.enum(['P0', 'P1', 'P2']).optional(),
         order: z.number().optional(),
         learningPaths: z
-          .array(z.enum(['foundations', 'figure-reading', 'paper-reading']))
+          .array(
+            z.enum([
+              'foundations',
+              'cell-mechanisms',
+              'methods-statistics',
+              'omics-analysis',
+              'figure-reading',
+              'paper-reading',
+            ]),
+          )
           .optional(),
         relatedTerms: z.array(z.string()).optional(),
         prerequisites: z.array(z.string()).optional(),

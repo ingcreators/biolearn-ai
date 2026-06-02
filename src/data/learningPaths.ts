@@ -1,16 +1,18 @@
 export type LearningPathKey =
   | 'foundations'
+  | 'cell-mechanisms'
   | 'methods-statistics'
   | 'omics-analysis'
   | 'figure-reading'
   | 'paper-reading';
 
 export const learningPathLabels: Record<LearningPathKey, string> = {
-  foundations: '基礎から学ぶ',
+  foundations: '基礎を固める',
+  'cell-mechanisms': '細胞のしくみを理解する',
   'methods-statistics': '実験・統計を確認する',
   'omics-analysis': 'オミクス解析を読む',
-  'figure-reading': 'Figureを読めるようになる',
-  'paper-reading': '論文を読めるようになる',
+  'figure-reading': 'Figureを読む',
+  'paper-reading': '論文を読む',
 };
 
 export const learningPathRoutes: Record<LearningPathKey, string[]> = {
@@ -75,6 +77,39 @@ export const learningPathRoutes: Record<LearningPathKey, string[]> = {
     '/genomics/genetic-variants/',
     '/genomics/genome-browser/',
   ],
+  'cell-mechanisms': [
+    '/fundamentals/cell/',
+    '/fundamentals/organism-tissue-cell/',
+    '/cell-biology/cell-membrane/',
+    '/cell-biology/organelles/',
+    '/cell-biology/nucleus/',
+    '/cell-biology/mitochondria/',
+    '/cell-biology/endoplasmic-reticulum-golgi/',
+    '/cell-biology/lysosome/',
+    '/cell-biology/cytoskeleton/',
+    '/cell-biology/membrane-transport/',
+    '/cell-biology/vesicle-trafficking/',
+    '/cell-biology/endocytosis-exocytosis/',
+    '/cell-biology/protein-localization/',
+    '/cell-biology/cell-signaling/',
+    '/cell-biology/receptor/',
+    '/cell-biology/pathway/',
+    '/cell-biology/phosphorylation/',
+    '/cell-biology/kinase/',
+    '/cell-biology/mapk-pathway/',
+    '/cell-biology/pi3k-akt-pathway/',
+    '/cell-biology/cell-cycle/',
+    '/cell-biology/checkpoint/',
+    '/cell-biology/apoptosis/',
+    '/cell-biology/autophagy/',
+    '/cell-biology/senescence/',
+    '/methods/immunostaining/',
+    '/methods/fluorescence-microscopy/',
+    '/methods/flow-cytometry/',
+    '/figures/how-to-read-microscopy-image/',
+    '/figures/how-to-read-immunostaining/',
+    '/figures/how-to-read-flow-cytometry/',
+  ],
   'methods-statistics': [
     '/statistics/variable/',
     '/statistics/distribution/',
@@ -102,6 +137,7 @@ export const learningPathRoutes: Record<LearningPathKey, string[]> = {
     '/methods/pcr/',
     '/methods/rt-qpcr/',
     '/methods/qpcr/',
+    '/methods/housekeeping-gene/',
     '/methods/western-blot/',
     '/methods/loading-control/',
     '/methods/immunostaining/',
