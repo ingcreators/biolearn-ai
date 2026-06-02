@@ -4,84 +4,89 @@ description: 生命科学論文の Methods と Figure を読むために必要�
 ---
 
 import ArticleList from '../../../components/ArticleList.astro';
+import LearningGoals from '../../../components/LearningGoals.astro';
 
-実験手法では、生命科学の論文に出てくる測定や操作が「何を目的にしているのか」「どのような結果として現れるのか」を学びます。
+<LearningGoals
+  title="この分野で学ぶこと"
+  items={[
+    '実験手法を、何を測るか、何を操作するか、何と比較するかに分けて説明できる',
+    'サンプル、対照、反復、条件を、MethodsやFigure legendで確認すべき情報として読める',
+    'PCR、qPCR、Western blot、免疫染色、フローサイトメトリーなどを、Figureでの見え方と結びつけられる',
+    'シーケンシングや遺伝子機能操作を、解析や主張の前提になる実験として整理できる',
+  ]}
+/>
 
-## このページの役割
+実験手法では、生命科学の論文に出てくる測定や操作が「何を目的にしているのか」「どのような結果として現れるのか」を学びます。論文を読んでいる途中で手法名だけを短く確認したい場合は、[実験手法早見表](/resources/methods-cheatsheet/) を使います。
 
-このページは、実験手法を分野として学び直すカテゴリトップです。論文を読んでいる途中で手法名だけを短く確認したい場合は、[実験手法早見表](/resources/methods-cheatsheet/) を使います。
+分子や細胞の前提があいまいな場合は、先に [生命科学の基礎](/fundamentals/) と [分子生物学](/molecular-biology/) を確認すると読みやすくなります。
 
-| いまの状態                                           | 使う入口                                                               |
-| ---------------------------------------------------- | ---------------------------------------------------------------------- |
-| PCR、qPCR、Western blotなどを順に学び直したい        | このページの記事一覧                                                   |
-| 実験手法と統計表示を順番につなげて確認したい         | [実験・統計を確認する](/paths/methods-statistics/)                     |
-| MethodsやFigure legendで出てきた手法名だけ確認したい | [実験手法早見表](/resources/methods-cheatsheet/)                       |
-| Methods全体の読み方を練習したい                      | [Methodsの読み方](/papers/how-to-read-methods/)                        |
-| サンプル、対照、反復、統計の確認漏れを減らしたい     | [Methods確認チェックリスト](/papers/methods-checklist/)                |
-| 手法がFigureでどう見えるか確認したい                 | [論文Figureの読み方](/figures/)                                        |
-| 用語だけを短く確認したい                             | [用語集の統計・研究デザインの用語](/glossary/#figure-statistics-terms) |
+## セクション一覧
 
-## MethodsやFigureで迷ったら
+実験手法の記事は、実験の組み立て、核酸測定、シーケンス、タンパク質・細胞測定、遺伝子機能操作に分かれています。各カードから、記事一覧の該当セクションへ移動できます。
 
 <div class="biolearn-home-grid">
-  <a class="biolearn-home-card" href="/resources/methods-cheatsheet/">
-    <span>早見表</span>
-    <h3>手法名から確認する</h3>
+  <a class="biolearn-home-card" href="#実験の組み立てとサンプル">
+    <span>設計</span>
+    <h3>実験の組み立てとサンプル</h3>
     <p>
-      MethodsやFigure legendに出てきた手法名から、何を測った方法かを確認します。
+      サンプル、対照群、陽性対照、陰性対照を確認し、何を何と比べる実験なのかを整理します。
     </p>
   </a>
-  <a class="biolearn-home-card" href="/papers/how-to-read-methods/">
-    <span>Methods</span>
-    <h3>条件と解析を読む</h3>
-    <p>サンプル、対照、反復、測定方法、解析条件を分けて確認します。</p>
-  </a>
-  <a class="biolearn-home-card" href="/figures/figure-legend/">
-    <span>Figure legend</span>
-    <h3>図の条件に戻る</h3>
+  <a class="biolearn-home-card" href="#核酸を増やす測る">
+    <span>核酸</span>
+    <h3>核酸を増やす・測る</h3>
     <p>
-      Figureだけでは分からない条件、n数、統計検定、略語をlegendから拾います。
+      PCR、qPCR、RNA抽出、RT-qPCR、参照遺伝子を、DNAやRNAを扱う測定として確認します。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="#シーケンスへつなぐ">
+    <span>配列</span>
+    <h3>シーケンスへつなぐ</h3>
+    <p>
+      シーケンシング、NGS、ライブラリ調製を、配列データが得られるまでの実験の流れとして読みます。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="#タンパク質細胞を見る">
+    <span>観察</span>
+    <h3>タンパク質・細胞を見る</h3>
+    <p>
+      Western
+      blot、蛍光顕微鏡、免疫染色、フローサイトメトリーなどを、タンパク質量、局在、細胞集団を見る方法として整理します。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="#遺伝子機能を動かして確かめる">
+    <span>操作</span>
+    <h3>遺伝子機能を動かして確かめる</h3>
+    <p>
+      CRISPR、ノックアウト、ノックダウン、過剰発現、レポーターアッセイを、遺伝子機能を確かめる操作として読みます。
     </p>
   </a>
 </div>
 
-## この分野で学ぶこと
-
-- PCR、qPCR、Western blot などの基本的な実験手法の目的を説明できる
-- 陽性対照、陰性対照、反復、サンプル調製の考え方を区別できる
-- Methods と Figure legend で、条件や測定対象を確認できる
-
-## おすすめの読む順番
-
-初学者が順番に読む場合は、まずサンプルと対照で「何を何と比べるか」を押さえ、その後に核酸、シーケンス、タンパク質・細胞、遺伝子機能の順で進むと読みやすくなります。
-
-| 順番 | まとまり                     | まず読む記事                                                                                                                                                                       |
-| ---- | ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1    | 実験の組み立て               | [サンプル](/methods/sample/) → [対照群](/methods/control/) → [陽性対照と陰性対照](/methods/positive-negative-control/)                                                             |
-| 2    | 核酸を増やす・測る           | [PCR](/methods/pcr/) → [qPCR](/methods/qpcr/) → [RNA抽出](/methods/rna-extraction/) → [RT-qPCR](/methods/rt-qpcr/)                                                                 |
-| 3    | シーケンスへつなぐ           | [シーケンシング](/methods/sequencing/) → [NGS](/methods/ngs/) → [ライブラリ調製](/methods/library-preparation/)                                                                    |
-| 4    | タンパク質・細胞を見る       | [Western blot](/methods/western-blot/) → [蛍光顕微鏡](/methods/fluorescence-microscopy/) → [免疫染色](/methods/immunostaining/) → [フローサイトメトリー](/methods/flow-cytometry/) |
-| 5    | 遺伝子機能を動かして確かめる | [CRISPR](/methods/crispr/) → [ノックアウト](/methods/knockout/) → [ノックダウン](/methods/knockdown/) → [過剰発現](/methods/overexpression/)                                       |
-
-ローディングコントロール、抗体検証、ハウスキーピング遺伝子、FACS、ELISA、レポーターアッセイは、対応する基本手法を読んだあとに補足として読むと整理しやすくなります。
-
-## 目的別に戻る
-
-| 確認したいこと                    | まず読む記事                                                                                                  | 関連するFigure・論文読解                                                                                           |
-| --------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| PCRやqPCRが何を測る方法か知りたい | [PCR](/methods/pcr/)、[qPCR](/methods/qpcr/)、[RT-qPCR](/methods/rt-qpcr/)                                    | [qPCR plot](/figures/how-to-read-qpcr-plot/)、[Methodsの読み方](/papers/how-to-read-methods/)                      |
-| タンパク質量や局在を確認したい    | [Western blot](/methods/western-blot/)、[免疫染色](/methods/immunostaining/)                                  | [Western blotの読み方](/figures/how-to-read-western-blot/)、[免疫染色画像](/figures/how-to-read-immunostaining/)   |
-| 細胞集団を1細胞ごとに見たい       | [フローサイトメトリー](/methods/flow-cytometry/)                                                              | [フローサイトメトリーFigure](/figures/how-to-read-flow-cytometry/)                                                 |
-| 対照群や反復の意味を確認したい    | [対照](/methods/control/)、[陽性対照と陰性対照](/methods/positive-negative-control/)                          | [Figure legend](/figures/figure-legend/)、[生物学的反復と技術的反復](/statistics/biological-technical-replicates/) |
-| NGSやRNA-seqの前処理を確認したい  | [シーケンシング](/methods/sequencing/)、[NGS](/methods/ngs/)、[ライブラリ調製](/methods/library-preparation/) | [RNA-seq](/bioinformatics/rna-seq/)、[Volcano plot](/figures/how-to-read-volcano-plot/)                            |
-| 手法名だけを短く確認したい        | [実験手法早見表](/resources/methods-cheatsheet/)                                                              | [Figure早見表](/resources/figures-cheatsheet/)、[論文を読めるようになる](/paths/paper-reading/)                    |
-
-対照、反復、n数、p値などの読み方で迷った場合は、[用語集の統計・研究デザインの用語](/glossary/#figure-statistics-terms) に戻ります。シーケンシング、NGS、シーケンスデータなどの配列関連語を確認したい場合は、[用語集のゲノミクスの用語](/glossary/#genomics-terms) を使います。
-
 ## 記事一覧
 
-<ArticleList part="methods" groupByModule />
+初学者が順番に読む場合は、まず実験の組み立てで「何を何と比べるか」を押さえ、その後に核酸、シーケンス、タンパク質・細胞、遺伝子機能の順で進むと読みやすくなります。
+
+### 実験の組み立てとサンプル
+
+<ArticleList part="methods" module="method-design" />
+
+### 核酸を増やす・測る
+
+<ArticleList part="methods" module="nucleic-acid-measurement" />
+
+### シーケンスへつなぐ
+
+<ArticleList part="methods" module="sequencing-workflow" />
+
+### タンパク質・細胞を見る
+
+<ArticleList part="methods" module="protein-cell-measurement" />
+
+### 遺伝子機能を動かして確かめる
+
+<ArticleList part="methods" module="gene-function-assay" />
 
 ## 次に進む
 
-実験手法の目的を押さえたら、[実験・統計を確認する](/paths/methods-statistics/) で対照、反復、n数、統計表示と合わせて確認します。データ解析へ進む場合は [バイオインフォマティクス](/bioinformatics/) や [オミクス解析を読む](/paths/omics-analysis/) を使い、実際の図に進む場合は [論文Figureの読み方](/figures/) に進みます。論文の中でMethodsを読む練習をしたい場合は、[Methodsの読み方](/papers/how-to-read-methods/) と [論文を読めるようになる](/paths/paper-reading/) を使います。
+実験手法の目的を押さえたら、[実験・統計を確認する](/paths/methods-statistics/) で対照、反復、n数、統計表示と合わせて確認します。実際の図に進む場合は [論文Figureの読み方](/figures/) に進み、論文の中でMethodsを読む練習をしたい場合は [Methodsの読み方](/papers/how-to-read-methods/) を使います。

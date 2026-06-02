@@ -4,103 +4,101 @@ description: 生命科学データを計算で扱うための入門カテゴリ�
 ---
 
 import ArticleList from '../../../components/ArticleList.astro';
+import LearningGoals from '../../../components/LearningGoals.astro';
 
-バイオインフォマティクスは、DNA配列、RNA発現、タンパク質などの生命科学データを計算機で扱う分野です。BioLearnでは、シーケンスデータ、FASTQ、マッピング、SAM/BAM、VCF、RNA-seq、差次的発現解析、single-cell解析を入口に、測定結果をデータとして読む考え方を学びます。
+<LearningGoals
+  title="この分野で学ぶこと"
+  items={[
+    '生命科学データを、実験で得られた測定結果として読み、解析手順と解釈を分けて考えられる',
+    'シーケンスデータ、FASTQ、SAM/BAM、VCFを、配列データが処理される流れとして整理できる',
+    'RNA-seqや差次的発現解析を、発現量の測定、正規化、変化量、統計的な確からしさに分けて読める',
+    'single-cell解析を、品質管理、バッチ効果、次元削減、クラスタ、細胞タイプ注釈のつながりとして確認できる',
+  ]}
+/>
 
-## この分野で学ぶこと
+バイオインフォマティクスは、DNA配列、RNA発現、タンパク質などの生命科学データを計算機で扱う分野です。BioLearnでは、測定結果がデータになり、前処理、解析、Figureでの表示、解釈へ進む流れを学びます。
 
-- RNA-seqが何を測っている実験なのかを説明できる
-- シーケンスデータを、DNAやRNA由来の配列情報として整理できる
-- FASTQ、SAM/BAM、VCFのようなファイル形式が解析のどの段階にあるかを区別できる
-- 差次的発現解析で、変化量と統計的な確からしさを分けて読める
-- single-cell解析で、細胞ごとの発現量、クラスタ、細胞タイプ注釈を慎重に確認できる
+DNA、RNA、遺伝子発現、ゲノムの考え方があいまいな場合は、先に [生命科学の基礎](/fundamentals/) と [ゲノミクス](/genomics/) を確認すると読みやすくなります。
 
-## 目的別に選ぶ
+## セクション一覧
 
-バイオインフォマティクスの記事は、解析手順を暗記するためではなく、論文中のデータ解析Figureを読むための前提として使います。先にFigureを読んでいて分からなくなった場合も、このカテゴリへ戻ると整理しやすくなります。
-
-図の種類ごとの確認点だけを素早く見たい場合は [Figure早見表](/resources/figures-cheatsheet/) を使います。このカテゴリでは、早見表で見つけた疑問を、RNA-seq、single-cell解析、次元削減、クラスタリングなどの前提へ戻して学び直します。
-
-ゲノム、変異、RNA-seq、single-cell解析、オミクスFigureを順番につなげて読みたい場合は、[オミクス解析を読む](/paths/omics-analysis/) を使います。
+バイオインフォマティクスの記事は、解析の全体像、シーケンスデータ、発現解析、single-cellデータ、細胞集団の解釈、解析品質に分かれています。各カードから、記事一覧の該当セクションへ移動できます。
 
 <div class="biolearn-home-grid">
-  <a class="biolearn-home-card" href="/bioinformatics/bioinformatics/">
-    <span>全体像</span>
-    <h3>解析Figureの地図を作る</h3>
+  <a class="biolearn-home-card" href="#解析の全体像とデータの入口">
+    <span>入口</span>
+    <h3>解析の全体像とデータの入口</h3>
     <p>
-      実験、データ、解析、解釈の流れを分け、バイオインフォマティクスの入口を確認します。
+      バイオインフォマティクスの全体像とシーケンスデータを確認し、実験、データ、解析、Figureの関係を整理します。
     </p>
   </a>
-  <a class="biolearn-home-card" href="/bioinformatics/rna-seq/">
-    <span>RNA-seq</span>
-    <h3>発現解析の入口をつかむ</h3>
-    <p>RNA-seq、カウント行列、正規化、差次的発現解析の関係を確認します。</p>
+  <a class="biolearn-home-card" href="#シーケンスデータの形式と前処理">
+    <span>前処理</span>
+    <h3>シーケンスデータの形式と前処理</h3>
+    <p>
+      メタデータ、FASTQ、マッピング、SAM/BAM、VCFを、解析の途中で出てくるデータ形式として読みます。
+    </p>
   </a>
-  <a class="biolearn-home-card" href="/bioinformatics/fastq/">
-    <span>ファイル形式</span>
-    <h3>解析の途中データを読む</h3>
-    <p>FASTQ、マッピング、SAM/BAM、VCFを、解析の流れの中で確認します。</p>
+  <a class="biolearn-home-card" href="#rna-seqカウント行列発現解析">
+    <span>発現解析</span>
+    <h3>RNA-seq・カウント行列・発現解析</h3>
+    <p>
+      RNA-seq、カウント行列、正規化、差次的発現解析、pathway
+      enrichment、GSEAを、発現解析の流れとして整理します。
+    </p>
   </a>
-  <a class="biolearn-home-card" href="/bioinformatics/single-cell-rna-seq/">
+  <a class="biolearn-home-card" href="#single-cellデータと品質を整える">
     <span>single-cell</span>
-    <h3>細胞ごとの発現を読む</h3>
+    <h3>single-cellデータと品質を整える</h3>
     <p>
-      QC、バッチ効果、次元削減、クラスタリング、マーカー遺伝子、細胞タイプ注釈を順に確認します。
+      single-cell
+      RNA-seq、品質管理、バッチ効果を、細胞ごとの発現データを読む前提として確認します。
     </p>
   </a>
-  <a class="biolearn-home-card" href="/figures/how-to-read-volcano-plot/">
-    <span>Figure</span>
-    <h3>オミクスFigureへ戻る</h3>
+  <a class="biolearn-home-card" href="#細胞集団を読み解く">
+    <span>解釈</span>
+    <h3>細胞集団を読み解く</h3>
     <p>
-      Volcano
-      plot、ヒートマップ、PCA、UMAP、GSEAを、解析条件と統計表示に戻して読みます。
+      次元削減、クラスタリング、UMAP、マーカー遺伝子、細胞タイプ注釈を、細胞集団の解釈として読みます。
     </p>
   </a>
-  <a class="biolearn-home-card" href="/statistics/multiple-testing-correction/">
-    <span>統計</span>
-    <h3>結果の強さを確認する</h3>
+  <a class="biolearn-home-card" href="#解析結果の偏りを確認する">
+    <span>品質</span>
+    <h3>解析結果の偏りを確認する</h3>
     <p>
-      p値、多重検定補正、効果量、サンプル条件を分け、解析結果から言える範囲を見ます。
+      解析ワークフロー、解析ノートブック、再解析を通じて、解析を読み返せる形にする視点を作ります。
     </p>
   </a>
 </div>
 
-| 迷っていること                     | 入口                                                                                                                                                                     | Figureで戻る場所                                                                                                                             |
-| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| 解析Figureの全体像を知りたい       | [バイオインフォマティクス](/bioinformatics/bioinformatics/)、[シーケンスデータ](/bioinformatics/sequence-data/)                                                          | [Figureを読めるようになる](/paths/figure-reading/)、[Figure早見表](/resources/figures-cheatsheet/)                                           |
-| オミクス解析を順番に学びたい       | [オミクス解析を読む](/paths/omics-analysis/)                                                                                                                             | [論文Figureの読み方](/figures/)、[論文読解演習](/papers/)                                                                                    |
-| FASTQやBAMなどの形式で迷う         | [FASTQ](/bioinformatics/fastq/)、[マッピング](/bioinformatics/mapping/)、[SAM/BAM](/bioinformatics/sam-bam/)、[VCF](/bioinformatics/vcf/)                                | [ゲノムブラウザ](/genomics/genome-browser/)、[Figure早見表](/resources/figures-cheatsheet/)                                                  |
-| RNA-seqが何を測るのか知りたい      | [RNA-seq](/bioinformatics/rna-seq/)、[シーケンスデータ](/bioinformatics/sequence-data/)                                                                                  | [Volcano plot](/figures/how-to-read-volcano-plot/)、[ヒートマップ](/figures/how-to-read-heatmap/)                                            |
-| 発現差の結果を読みたい             | [カウント行列](/bioinformatics/count-matrix/)、[正規化](/bioinformatics/normalization/)、[差次的発現解析](/bioinformatics/differential-expression/)                      | [Volcano plot](/figures/how-to-read-volcano-plot/)、[GSEA plot](/figures/how-to-read-gsea-plot/)                                             |
-| single-cell解析の流れを知りたい    | [single-cell RNA-seq](/bioinformatics/single-cell-rna-seq/)、[single-cell QC](/bioinformatics/single-cell-quality-control/)、[バッチ効果](/bioinformatics/batch-effect/) | [UMAP / t-SNE](/figures/how-to-read-umap-tsne/)、[Violin plot](/figures/how-to-read-violin-plot/)                                            |
-| クラスタや細胞型の意味を確認したい | [クラスタリング](/bioinformatics/clustering/)、[マーカー遺伝子](/bioinformatics/marker-gene/)、[細胞タイプ注釈](/bioinformatics/cell-type-annotation/)                   | [UMAP / t-SNE](/figures/how-to-read-umap-tsne/)、[Figureと主張](/figures/figure-to-claim/)                                                   |
-| 解析の偏りや条件差が気になる       | [バッチ効果](/bioinformatics/batch-effect/)、[次元削減](/bioinformatics/dimensionality-reduction/)                                                                       | [PCA plot](/figures/how-to-read-pca-plot/)、[多重検定補正](/statistics/multiple-testing-correction/)、[研究の限界](/statistics/limitations/) |
+## 記事一覧
 
-## まず押さえる3つの考え方
+カテゴリ内では、解析の全体像、シーケンスデータ、発現解析、single-cell解析、解析品質の順に読むとつながりやすくなります。ゲノム、変異、RNA-seq、single-cell解析、オミクスFigureを順番につなげたい場合は、[オミクス解析を読む](/paths/omics-analysis/) を使います。
 
-1. データは、実験で測った対象と方法を意識して読みます。
-2. RNA-seqの結果は、遺伝子発現の違いを調べる入口になります。
-3. single-cell解析では、UMAPの見た目だけでなく、品質管理、クラスタリング、注釈、バッチ効果を確認します。
+### 解析の全体像とデータの入口
 
-## 読む順番
+<ArticleList part="bioinformatics" module="bioinfo-foundations" />
 
-<ArticleList part="bioinformatics" groupByModule />
+### シーケンスデータの形式と前処理
 
-RNA-seqに進む前に、DNA、RNA、遺伝子発現、ゲノムの考え方を押さえておくと理解しやすくなります。カテゴリ内では、バイオインフォマティクスの全体像、シーケンスデータ、メタデータ、FASTQ、マッピング、SAM/BAM、VCFで配列データの流れを押さえます。次にRNA-seq、カウント行列、正規化、差次的発現解析、pathway enrichment、GSEAで発現解析の基本に進みます。その後single-cell RNA-seq、QC、バッチ効果、次元削減、クラスタリング、UMAP、マーカー遺伝子、細胞タイプ注釈へ進むのがおすすめです。解析の再現性や読み返し方は、最後に解析ワークフロー、解析ノートブック、再解析で確認します。
+<ArticleList part="bioinformatics" module="sequence-preprocessing" />
 
-## 関連する用語
+### RNA-seq・カウント行列・発現解析
 
-- [バイオインフォマティクス](/glossary/bioinformatics/)
-- [遺伝子発現](/glossary/gene-expression/)
-- [RNA-seq](/glossary/rna-seq/)
-- [single-cell RNA-seq](/glossary/single-cell-rna-seq/)
-- [カウント行列](/glossary/count-matrix/)
-- [UMAP](/glossary/umap/)
-- [バッチ効果](/glossary/batch-effect/)
-- [シーケンス](/glossary/sequencing/)
-- [シーケンスデータ](/glossary/sequence-data/)
-- [FASTQ](/glossary/fastq/)
-- [SAM/BAM](/glossary/sam-bam/)
-- [VCF](/glossary/vcf/)
-- [NGS](/glossary/ngs/)
-- [差次的発現解析](/glossary/differential-expression-analysis/)
+<ArticleList part="bioinformatics" module="expression-analysis" />
+
+### single-cellデータと品質を整える
+
+<ArticleList part="bioinformatics" module="single-cell-data" />
+
+### 細胞集団を読み解く
+
+<ArticleList part="bioinformatics" module="single-cell-interpretation" />
+
+### 解析結果の偏りを確認する
+
+<ArticleList part="bioinformatics" module="analysis-quality" />
+
+## 次に進む
+
+解析結果のFigureを読む場合は [論文Figureの読み方](/figures/) に進みます。結果の強さや統計表示を確認したい場合は [統計・研究デザイン](/statistics/) を使います。図の種類ごとの確認点だけを素早く見たい場合は [Figure早見表](/resources/figures-cheatsheet/) が便利です。

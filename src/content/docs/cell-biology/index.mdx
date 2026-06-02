@@ -4,86 +4,77 @@ description: 細胞の構造、細胞小器官、シグナル伝達、細胞状�
 ---
 
 import ArticleList from '../../../components/ArticleList.astro';
+import LearningGoals from '../../../components/LearningGoals.astro';
+
+<LearningGoals
+  title="この分野で学ぶこと"
+  items={[
+    '細胞を、分子が働く場所として捉え、構造と機能を結びつけて説明できる',
+    '細胞膜、細胞小器官、細胞骨格を、細胞内外の境界や役割分担として読める',
+    'シグナル伝達を、外からの刺激が細胞内の応答へ変わる流れとして整理できる',
+    '細胞周期、細胞死、分解系を、細胞状態の変化としてFigureやMethodsに結びつけられる',
+  ]}
+/>
 
 細胞生物学では、生命の基本単位である細胞の構造と働きを学びます。分子がどこで働き、細胞が外界からの情報をどう受け取り、内部の反応につなげるのかを見ていきます。
 
-## この分野で学ぶこと
+細胞、分子、組織、個体の関係があいまいな場合は、先に [生命科学の基礎](/fundamentals/) で階層を確認すると読みやすくなります。
 
-- 細胞膜が細胞の内外を分け、情報の入口にもなることを説明できる
-- 細胞小器官を、細胞内の役割分担として整理できる
-- 細胞シグナル伝達が、外からの刺激と細胞内の応答をつなぐことを説明できる
-- 細胞周期、細胞死、分解系を、細胞状態の変化として読める
+## セクション一覧
 
-## 目的別に選ぶ
-
-細胞生物学は、分子の知識を「細胞のどこで、何が起きているか」に戻すためのカテゴリです。論文Figureを読むときは、染色像、顕微鏡画像、シグナル伝達の模式図、遺伝子発現変化を細胞内の文脈と結びつけます。
+細胞生物学の記事は、細胞の構造、膜を越える移動、シグナル伝達、細胞状態の順にまとまっています。各カードから、記事一覧の該当セクションへ移動できます。
 
 <div class="biolearn-home-grid">
-  <a class="biolearn-home-card" href="/fundamentals/cell/">
-    <span>全体像</span>
-    <h3>細胞とは何かを確認する</h3>
-    <p>細胞を生命の基本単位として押さえ、分子、構造、機能をつなげます。</p>
-  </a>
-  <a class="biolearn-home-card" href="/cell-biology/cell-membrane/">
-    <span>境界</span>
-    <h3>細胞膜と情報の入口を読む</h3>
-    <p>
-      細胞の内外を分ける境界としての膜と、受容体やシグナルの入口を確認します。
-    </p>
-  </a>
-  <a class="biolearn-home-card" href="/cell-biology/organelles/">
+  <a class="biolearn-home-card" href="#細胞の境界と内部構造">
     <span>構造</span>
-    <h3>細胞小器官の役割を整理する</h3>
+    <h3>細胞の境界と内部構造</h3>
     <p>
-      核、ミトコンドリア、小胞体などの役割分担を、細胞内の場所と結びつけます。
+      細胞膜、細胞小器官、核、ミトコンドリア、小胞体、ゴルジ体、リソソーム、細胞骨格を、細胞内の場所と役割として整理します。
     </p>
   </a>
-  <a class="biolearn-home-card" href="/cell-biology/cell-signaling/">
+  <a class="biolearn-home-card" href="#膜を越える移動と局在">
+    <span>移動</span>
+    <h3>膜を越える移動と局在</h3>
+    <p>
+      膜輸送、小胞輸送、エンドサイトーシス、エキソサイトーシス、タンパク質局在を、物質や分子がどこへ動くかとして読みます。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="#刺激を受け取るしくみ">
     <span>応答</span>
-    <h3>シグナルから応答へ進む</h3>
+    <h3>刺激を受け取るしくみ</h3>
     <p>
-      外からの刺激が、タンパク質の働きや遺伝子発現の変化につながる流れを読みます。
+      受容体、リン酸化、キナーゼ、MAPK経路、PI3K-AKT経路を、外からの刺激と細胞内応答をつなぐしくみとして確認します。
     </p>
   </a>
-  <a class="biolearn-home-card" href="/cell-biology/cell-cycle/">
+  <a class="biolearn-home-card" href="#細胞周期細胞死品質管理">
     <span>状態</span>
-    <h3>細胞周期と細胞の運命を整理する</h3>
+    <h3>細胞周期・細胞死・品質管理</h3>
     <p>
-      細胞が増える、止まる、死ぬ、分解して再利用する、といった状態変化を読みます。
+      細胞周期、チェックポイント、アポトーシス、オートファジー、細胞老化を、細胞が増える、止まる、死ぬ、分解する変化として読みます。
     </p>
   </a>
 </div>
 
-| 迷っていること                | 入口                                                                                                                                                                                 | Figureや手法で戻る場所                                                                                                 |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------- |
-| 細胞の全体像を確認したい      | [細胞とは何か](/fundamentals/cell/)                                                                                                                                                  | [顕微鏡画像の読み方](/figures/how-to-read-microscopy-image/)、[免疫染色の読み方](/figures/how-to-read-immunostaining/) |
-| 境界や受容体の意味を知りたい  | [細胞膜](/cell-biology/cell-membrane/)                                                                                                                                               | [免疫染色](/methods/immunostaining/)、[フローサイトメトリー](/methods/flow-cytometry/)                                 |
-| 細胞内の場所を整理したい      | [細胞小器官](/cell-biology/organelles/)、[核](/cell-biology/nucleus/)、[ミトコンドリア](/cell-biology/mitochondria/)、[小胞体・ゴルジ体](/cell-biology/endoplasmic-reticulum-golgi/) | [顕微鏡画像の読み方](/figures/how-to-read-microscopy-image/)、[Figure legend](/figures/figure-legend/)                 |
-| 細胞の形や移動を読みたい      | [細胞骨格](/cell-biology/cytoskeleton/)、[細胞膜](/cell-biology/cell-membrane/)                                                                                                      | [免疫染色](/methods/immunostaining/)、[顕微鏡画像の読み方](/figures/how-to-read-microscopy-image/)                     |
-| 刺激と応答の流れを読みたい    | [細胞シグナル伝達](/cell-biology/cell-signaling/)、[遺伝子発現](/fundamentals/gene-expression/)                                                                                      | [Figureと主張](/figures/figure-to-claim/)、[Resultsセクションの流れ](/figures/results-section-flow/)                   |
-| 増殖、停止、細胞死を読みたい  | [細胞周期](/cell-biology/cell-cycle/)、[チェックポイント](/cell-biology/checkpoint/)、[アポトーシス](/cell-biology/apoptosis/)                                                       | [フローサイトメトリー](/methods/flow-cytometry/)、[Western blot](/methods/western-blot/)                               |
-| 分解や品質管理を読みたい      | [リソソーム](/cell-biology/lysosome/)、[オートファジー](/cell-biology/autophagy/)、[細胞老化](/cell-biology/senescence/)                                                             | [免疫染色](/methods/immunostaining/)、[顕微鏡画像の読み方](/figures/how-to-read-microscopy-image/)                     |
-| single-cell解析の細胞型が不安 | [細胞とは何か](/fundamentals/cell/)、[細胞タイプ注釈](/bioinformatics/cell-type-annotation/)                                                                                         | [UMAP / t-SNE](/figures/how-to-read-umap-tsne/)、[マーカー遺伝子](/bioinformatics/marker-gene/)                        |
+## 記事一覧
 
-## まず押さえる4つの考え方
+まず細胞の構造を押さえ、次に膜を越える移動、シグナル伝達、細胞状態へ進みます。分子生物学で学んだタンパク質や遺伝子発現が、細胞の中でどう意味を持つかを意識して読むと整理しやすくなります。
 
-1. 細胞は、分子がばらばらに存在する袋ではなく、機能が整理された場です。
-2. 細胞膜は境界であると同時に、情報を受け取る場所でもあります。
-3. シグナル伝達を見ると、外からの刺激と細胞内の応答をつなげて理解できます。
-4. 細胞周期、細胞死、分解系を見ると、細胞がどの状態へ向かっているかを読みやすくなります。
+### 細胞の境界と内部構造
 
-## 読む順番
+<ArticleList part="cell-biology" module="cell-structure" />
 
-<ArticleList part="cell-biology" groupByModule />
+### 膜を越える移動と局在
 
-まず細胞の全体像を押さえ、次に細胞膜、細胞小器官、シグナル伝達、細胞周期・細胞死へ進みます。分子生物学の記事で学んだタンパク質や遺伝子発現が、細胞の中でどう意味を持つかを意識して読むのがおすすめです。
+<ArticleList part="cell-biology" module="cell-transport-localization" />
 
-## 関連する用語
+### 刺激を受け取るしくみ
 
-主要な用語は各記事の「重要用語」で整理しています。カテゴリ全体を見渡す入口としては、次のまとまりから確認できます。
+<ArticleList part="cell-biology" module="cell-signaling" />
 
-- 細胞内構造: [細胞](/glossary/cell/)、[細胞小器官](/glossary/organelle/)、[核](/glossary/nucleus/)、[ミトコンドリア](/glossary/mitochondria/)、[小胞体](/glossary/endoplasmic-reticulum/)、[ゴルジ体](/glossary/golgi-apparatus/)、[リソソーム](/glossary/lysosome/)
-- 膜と輸送: [細胞膜](/glossary/cell-membrane/)、[膜輸送](/glossary/membrane-transport/)、[チャネル](/glossary/channel/)、[輸送体](/glossary/transporter/)、[小胞輸送](/glossary/vesicle-trafficking/)、[エンドサイトーシス](/glossary/endocytosis/)、[エキソサイトーシス](/glossary/exocytosis/)
-- 局在と観察: [細胞骨格](/glossary/cytoskeleton/)、[アクチンフィラメント](/glossary/actin-filament/)、[微小管](/glossary/microtubule/)、[タンパク質局在](/glossary/protein-localization/)、[細胞分画](/glossary/cell-fractionation/)、[共局在](/glossary/colocalization/)
-- シグナル伝達: [細胞シグナル伝達](/glossary/cell-signaling/)、[受容体](/glossary/receptor/)、[リガンド](/glossary/ligand/)、[リン酸化](/glossary/phosphorylation/)、[キナーゼ](/glossary/kinase/)、[MAPK経路](/glossary/mapk-pathway/)、[PI3K-AKT経路](/glossary/pi3k-akt-pathway/)
-- 細胞状態と運命: [細胞周期](/glossary/cell-cycle/)、[チェックポイント](/glossary/checkpoint/)、[アポトーシス](/glossary/apoptosis/)、[オートファジー](/glossary/autophagy/)、[細胞老化](/glossary/cellular-senescence/)
+### 細胞周期・細胞死・品質管理
+
+<ArticleList part="cell-biology" module="cell-state-control" />
+
+## 次に進む
+
+細胞を観察する方法へ進む場合は [実験手法](/methods/) の免疫染色、蛍光顕微鏡、フローサイトメトリーを確認します。細胞の画像やFigureを読む場合は [論文Figureの読み方](/figures/) へ進みます。

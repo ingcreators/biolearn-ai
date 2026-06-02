@@ -4,75 +4,88 @@ description: ゲノムの基礎を土台に、遺伝的変異とゲノムデー�
 ---
 
 import ArticleList from '../../../components/ArticleList.astro';
+import LearningGoals from '../../../components/LearningGoals.astro';
+
+<LearningGoals
+  title="この分野で学ぶこと"
+  items={[
+    'ゲノム、遺伝子、染色体を、遺伝情報の全体像と位置の関係として説明できる',
+    '遺伝的変異を、ゲノム配列の違いとして整理し、表示や解析結果につなげて読める',
+    'ゲノム上の座標、注釈、ブラウザ表示を使って、遺伝子や変異がどこにあるかを確認できる',
+    '疾患ゲノミクス、エピゲノム、オミクス解析を、ゲノム情報の使われ方として見通せる',
+  ]}
+/>
 
 ゲノミクスは、ゲノム全体を対象として生命を理解する分野です。基礎カテゴリで学ぶゲノムと染色体を土台に、遺伝情報の違いがデータとしてどう表れ、研究でどう扱われるのかを学びます。
 
-## この分野で学ぶこと
+ゲノム、遺伝子、染色体の違いがあいまいな場合は、先に [生命科学の基礎](/fundamentals/) で基本語の関係を確認すると読みやすくなります。
 
-- ゲノム、遺伝子、染色体の関係を使ってデータを読める
-- 遺伝的変異を、ゲノム配列の違いとして説明できる
-- ゲノム上の位置を基準に、遺伝子や変異の表示を読める
-- シーケンスデータや変異解析へ進むための前提を整理できる
+## セクション一覧
 
-## 目的別に選ぶ
-
-ゲノミクスは、遺伝子を1つずつ覚えるだけでなく、ゲノム上の位置、配列の違い、データ表示を対応づけて読むためのカテゴリです。ゲノム系Figureやシーケンスデータで迷ったときの戻り先として使います。
-
-ゲノミクスからRNA-seq、single-cell解析、変異解析、オミクスFigureへ順番につなげたい場合は、[オミクス解析を読む](/paths/omics-analysis/) を使います。
+ゲノミクスの記事は、ゲノムの地図、配列の違い、疾患との関係、ゲノムの働き、オミクスの全体像に分かれています。各カードから、記事一覧の該当セクションへ移動できます。
 
 <div class="biolearn-home-grid">
-  <a class="biolearn-home-card" href="/fundamentals/genome/">
-    <span>基礎</span>
-    <h3>ゲノムの全体像へ戻る</h3>
-    <p>ゲノム、遺伝子、染色体の関係を確認し、位置情報を読む土台を作ります。</p>
-  </a>
-  <a class="biolearn-home-card" href="/genomics/genetic-variants/">
-    <span>変異</span>
-    <h3>配列の違いとして捉える</h3>
+  <a class="biolearn-home-card" href="#ゲノムの地図を読む">
+    <span>地図</span>
+    <h3>ゲノムの地図を読む</h3>
     <p>
-      遺伝的変異を、良い悪いの判断ではなく、ゲノム配列の違いとして整理します。
+      リファレンスゲノム、ゲノム座標、ゲノムアノテーション、ゲノムブラウザを、位置情報として整理します。
     </p>
   </a>
-  <a class="biolearn-home-card" href="/genomics/genome-browser/">
-    <span>位置</span>
-    <h3>ゲノムブラウザで場所を見る</h3>
-    <p>遺伝子、変異、リード、注釈トラックを、ゲノム上の座標として読みます。</p>
-  </a>
-  <a class="biolearn-home-card" href="/bioinformatics/sequence-data/">
-    <span>データ</span>
-    <h3>シーケンスデータへ進む</h3>
+  <a class="biolearn-home-card" href="#配列の違いを読む">
+    <span>変異</span>
+    <h3>配列の違いを読む</h3>
     <p>
-      配列由来のデータが、RNA-seqや変異解析の入力として扱われることを確認します。
+      遺伝的変異、SNP、SNV、indel、コピー数変異、構造多型を、ゲノム配列の違いとして確認します。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="#疾患との関係を読む">
+    <span>疾患</span>
+    <h3>疾患との関係を読む</h3>
+    <p>
+      GWAS、ポリジェニックリスクスコア、希少疾患、がんゲノミクスを、疾患とゲノム情報の関係として読みます。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="#ゲノムの働きを読む">
+    <span>機能</span>
+    <h3>ゲノムの働きを読む</h3>
+    <p>
+      エピゲノム、DNAメチル化、ChIP-seq、ATAC-seq、3Dゲノムを、ゲノムの読み出され方として整理します。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="#オミクスで全体像を見る">
+    <span>オミクス</span>
+    <h3>オミクスで全体像を見る</h3>
+    <p>
+      トランスクリプトミクス、プロテオミクス、メタボロミクス、マルチオミクスを、生命情報を広く測る考え方として見ます。
     </p>
   </a>
 </div>
 
-| 迷っていること                     | 入口                                                                                                | Figureや解析で戻る場所                                                                                  |
-| ---------------------------------- | --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| ゲノム、遺伝子、染色体を整理したい | [ゲノム](/fundamentals/genome/)、[遺伝子](/fundamentals/gene/)、[染色体](/fundamentals/chromosome/) | [ゲノムブラウザ図](/figures/how-to-read-genome-browser/)、[軸・ラベル・単位](/figures/axis-label-unit/) |
-| オミクス解析へ順番に進みたい       | [オミクス解析を読む](/paths/omics-analysis/)                                                        | [バイオインフォマティクス](/bioinformatics/)、[論文Figureの読み方](/figures/)                           |
-| 変異やSNPの意味を確認したい        | [遺伝的変異](/genomics/genetic-variants/)、[SNP](/glossary/snp/)                                    | [Lollipop plot](/figures/how-to-read-lollipop-plot/)、[CNV plot](/figures/how-to-read-cnv-plot/)        |
-| ゲノム上の位置を読みたい           | [ゲノムブラウザ](/genomics/genome-browser/)                                                         | [ゲノムブラウザ図](/figures/how-to-read-genome-browser/)、[Figure legend](/figures/figure-legend/)      |
-| 配列データやRNA-seqにつなげたい    | [シーケンスデータ](/bioinformatics/sequence-data/)、[RNA-seq](/bioinformatics/rna-seq/)             | [Volcano plot](/figures/how-to-read-volcano-plot/)、[ヒートマップ](/figures/how-to-read-heatmap/)       |
-| 解析結果から言える範囲を確認したい | [差次的発現解析](/bioinformatics/differential-expression/)、[研究の限界](/statistics/limitations/)  | [Figureと主張](/figures/figure-to-claim/)、[Resultsセクションの流れ](/figures/results-section-flow/)    |
+## 記事一覧
 
-## まず押さえる3つの考え方
+まずゲノムの地図を押さえ、その後に変異、疾患との関係、ゲノムの働き、オミクスへ進みます。RNA-seq、single-cell解析、変異解析、オミクスFigureへ順番につなげたい場合は、[オミクス解析を読む](/paths/omics-analysis/) を使います。
 
-1. ゲノムは、生命が持つ遺伝情報の全体像です。
-2. 染色体や遺伝子の知識は、ゲノム上の位置や領域を読む土台です。
-3. 遺伝的変異は、良い悪いだけでなく、配列の違いとしてまず整理します。
+### ゲノムの地図を読む
 
-## 読む順番
+<ArticleList part="genomics" module="genome-map" />
 
-<ArticleList part="genomics" groupByModule />
+### 配列の違いを読む
 
-まず基礎カテゴリでゲノムと染色体を押さえ、その後に遺伝的変異とゲノムブラウザへ進みます。シーケンスデータやRNA-seqの記事へ進む前に読むと、データが何に由来するのかを理解しやすくなります。
+<ArticleList part="genomics" module="genomic-variation" />
 
-## 関連する用語
+### 疾患との関係を読む
 
-- [ゲノム](/glossary/genome/)
-- [遺伝子](/glossary/gene/)
-- [染色体](/glossary/chromosome/)
-- [変異](/glossary/mutation/)
-- [SNP](/glossary/snp/)
-- [シーケンス](/glossary/sequencing/)
+<ArticleList part="genomics" module="genomic-disease" />
+
+### ゲノムの働きを読む
+
+<ArticleList part="genomics" module="genome-function" />
+
+### オミクスで全体像を見る
+
+<ArticleList part="genomics" module="omics-overview" />
+
+## 次に進む
+
+配列データやRNA-seqへ進む場合は [バイオインフォマティクス](/bioinformatics/) を使います。ゲノムブラウザ図、Lollipop plot、CNV plotなどを読む場合は [論文Figureの読み方](/figures/) へ進みます。
