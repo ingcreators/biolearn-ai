@@ -4,63 +4,179 @@ description: ゲノム、変異、RNA-seq、single-cell解析、オミクスFigu
 ---
 
 import ArticleList from '../../../components/ArticleList.astro';
+import LearningGoals from '../../../components/LearningGoals.astro';
 
-このパスでは、ゲノムや発現データを使った論文を読むために、ゲノミクス、バイオインフォマティクス、オミクスFigureをつなげて学びます。
+<LearningGoals
+  title="このパスで身につけること"
+  items={[
+    'ゲノム上の位置、遺伝子注釈、変異を、データとして読む前提にできる',
+    'FASTQ、マッピング、SAM/BAM、VCFを、シーケンス解析の流れの中で位置づけられる',
+    'RNA-seq、カウント行列、正規化、差次的発現解析、経路解析の関係を説明できる',
+    'single-cell解析で、QC、バッチ効果、次元削減、クラスタ、細胞タイプ注釈を確認できる',
+    'Volcano plot、ヒートマップ、PCA、UMAP、GSEA、ゲノムブラウザ図を解析条件に戻して読める',
+  ]}
+/>
 
-配列ファイルや解析手順を暗記するのではなく、「何を測ったデータか」「どの処理を経てFigureになったか」「結果からどこまで言えるか」を確認できる状態を目指します。
+このパスでは、ゲノムや発現データを使った論文を読むために、ゲノミクス、バイオインフォマティクス、オミクスFigureをつなげて学びます。配列ファイルや解析手順を丸暗記するのではなく、何を測ったデータか、どの処理を経てFigureになったか、結果からどこまで言えるかを確認します。
 
-## このパスで身につけること
+特定の記事だけを探したい場合は [ゲノミクス](/genomics/) または [バイオインフォマティクス](/bioinformatics/) を使います。このページでは、オミクス論文のFigureやResultsへ戻るための読み順として整理します。
 
-- ゲノム上の位置、遺伝子注釈、変異をデータとして読む
-- FASTQ、マッピング、SAM/BAM、VCFを解析の流れの中で位置づける
-- RNA-seq、カウント行列、正規化、差次的発現解析の関係を説明する
-- single-cell解析で、QC、バッチ効果、次元削減、クラスタ、細胞タイプ注釈を確認する
-- Volcano plot、ヒートマップ、PCA、UMAP、GSEA、ゲノムブラウザ図を解析条件に戻して読む
+## セクション一覧
 
-## 推奨ルート
+各カードから、記事一覧の該当セクションへ移動できます。ゲノム、発現、single-cell、疾患、Figureのどこで止まったかに合わせて戻ります。
 
-| 順番 | まとまり                   | まず読む記事                                                                                                                                                                                                                                                 |
-| ---- | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 1    | ゲノム上の地図を作る       | [リファレンスゲノム](/genomics/reference-genome/) → [ゲノムアノテーション](/genomics/genome-annotation/) → [ゲノム座標](/genomics/genomic-coordinate/) → [ゲノムブラウザ](/genomics/genome-browser/)                                                         |
-| 2    | 変異を分類して読む         | [遺伝的変異](/genomics/genetic-variants/) → [変異](/genomics/variant/) → [SNP/SNV](/genomics/snp-snv/) → [indel](/genomics/indel/) → [コピー数変化](/genomics/copy-number-variation/) → [構造変異](/genomics/structural-variant/)                            |
-| 3    | 変異の文脈を見る           | [体細胞変異と生殖細胞系列変異](/genomics/somatic-germline-variant/) → [変異アノテーション](/genomics/variant-annotation/) → [GWAS](/genomics/gwas/) → [多遺伝子リスクスコア](/genomics/polygenic-risk-score/)                                                |
-| 4    | 配列データの流れを押さえる | [バイオインフォマティクス](/bioinformatics/bioinformatics/) → [シーケンスデータ](/bioinformatics/sequence-data/) → [メタデータ](/bioinformatics/metadata/) → [FASTQ](/bioinformatics/fastq/) → [マッピング](/bioinformatics/mapping/)                        |
-| 5    | 解析ファイルを位置づける   | [SAM/BAM](/bioinformatics/sam-bam/) → [VCF](/bioinformatics/vcf/)                                                                                                                                                                                            |
-| 6    | RNA-seqを読む              | [RNA-seq](/bioinformatics/rna-seq/) → [カウント行列](/bioinformatics/count-matrix/) → [正規化](/bioinformatics/normalization/) → [差次的発現解析](/bioinformatics/differential-expression/)                                                                  |
-| 7    | 経路・遺伝子セットを見る   | [Pathway enrichment](/bioinformatics/pathway-enrichment/) → [GSEA](/bioinformatics/gsea/)                                                                                                                                                                    |
-| 8    | single-cell解析を読む      | [single-cell RNA-seq](/bioinformatics/single-cell-rna-seq/) → [single-cell QC](/bioinformatics/single-cell-quality-control/) → [バッチ効果](/bioinformatics/batch-effect/) → [次元削減](/bioinformatics/dimensionality-reduction/)                           |
-| 9    | クラスタと細胞タイプを見る | [クラスタリング](/bioinformatics/clustering/) → [UMAP](/bioinformatics/umap/) → [マーカー遺伝子](/bioinformatics/marker-gene/) → [細胞タイプ注釈](/bioinformatics/cell-type-annotation/)                                                                     |
-| 10   | がん・疾患ゲノムを読む     | [希少疾患ゲノミクス](/genomics/rare-disease-genomics/) → [がんゲノミクス](/genomics/cancer-genomics/) → [腫瘍正常比較](/genomics/tumor-normal-comparison/)                                                                                                   |
-| 11   | エピゲノムと多層データ     | [エピゲノム](/genomics/epigenome/) → [メチローム](/genomics/methylome/) → [ChIP-seq](/genomics/chip-seq/) → [ATAC-seq](/genomics/atac-seq/) → [三次元ゲノム](/genomics/three-dimensional-genome/)                                                            |
-| 12   | オミクスの広がり           | [トランスクリプトミクス](/genomics/transcriptomics/) → [プロテオミクス](/genomics/proteomics/) → [メタボロミクス](/genomics/metabolomics/) → [マルチオミクス](/genomics/multiomics/)                                                                         |
-| 13   | Figureで読む               | [ゲノムブラウザ図](/figures/how-to-read-genome-browser/) → [Volcano plot](/figures/how-to-read-volcano-plot/) → [ヒートマップ](/figures/how-to-read-heatmap/) → [PCA plot](/figures/how-to-read-pca-plot/) → [UMAP / t-SNE](/figures/how-to-read-umap-tsne/) |
-| 14   | 論文で練習する             | [RNA-seq論文の読み方](/papers/walkthrough-rna-seq/) → [single-cell論文の読み方](/papers/walkthrough-single-cell/) → [がんゲノミクス論文の読み方](/papers/walkthrough-cancer-genomics/)                                                                       |
-
-## 目的別に戻る
-
-| つまずいていること                   | 戻る場所                                                                                                                                                          | 次に進む場所                                                                                      |
-| ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| ゲノム上の位置やトラックが読みにくい | [ゲノム座標](/genomics/genomic-coordinate/)、[ゲノムブラウザ](/genomics/genome-browser/)                                                                          | [ゲノムブラウザ図](/figures/how-to-read-genome-browser/)                                          |
-| 変異の種類が混ざる                   | [SNP/SNV](/genomics/snp-snv/)、[indel](/genomics/indel/)、[コピー数変化](/genomics/copy-number-variation/)                                                        | [Lollipop plot](/figures/how-to-read-lollipop-plot/)、[CNV plot](/figures/how-to-read-cnv-plot/)  |
-| FASTQ、BAM、VCFの関係が分からない    | [シーケンスデータ](/bioinformatics/sequence-data/)、[FASTQ](/bioinformatics/fastq/)、[SAM/BAM](/bioinformatics/sam-bam/)、[VCF](/bioinformatics/vcf/)             | [解析ワークフロー](/bioinformatics/workflow/)、[解析ノートブック](/bioinformatics/notebook/)      |
-| RNA-seqのFigureを読みたい            | [RNA-seq](/bioinformatics/rna-seq/)、[差次的発現解析](/bioinformatics/differential-expression/)                                                                   | [Volcano plot](/figures/how-to-read-volcano-plot/)、[ヒートマップ](/figures/how-to-read-heatmap/) |
-| single-cellのUMAPを読みたい          | [single-cell RNA-seq](/bioinformatics/single-cell-rna-seq/)、[バッチ効果](/bioinformatics/batch-effect/)、[細胞タイプ注釈](/bioinformatics/cell-type-annotation/) | [UMAP / t-SNE](/figures/how-to-read-umap-tsne/)、[Violin plot](/figures/how-to-read-violin-plot/) |
-| 統計表示や多重検定が不安             | [多重検定補正](/statistics/multiple-testing-correction/)、[効果量](/statistics/effect-size/)                                                                      | [実験・統計を確認する](/paths/methods-statistics/)、[GSEA plot](/figures/how-to-read-gsea-plot/)  |
-| 論文の主張と解析条件を結びつけたい   | [Figureと主張](/figures/figure-to-claim/)、[Resultsの読み方](/papers/how-to-read-results/)                                                                        | [論文を読めるようになる](/paths/paper-reading/)、[批判的に読む](/papers/critical-reading/)        |
-
-## どこまで読めば次へ進めるか
-
-次の問いに答えられるようになったら、オミクス系のFigureや論文ウォークスルーへ進めます。
-
-- そのFigureが、配列、発現量、変異、細胞タイプのどれを示しているか説明できる
-- 解析前のデータ、解析後の表、可視化されたFigureを分けて考えられる
-- Volcano plot、ヒートマップ、UMAPの見た目を、解析条件や統計表示に戻して確認できる
-- オミクス解析の結果から言える範囲と、追加実験で確かめる必要がある範囲を分けられる
+<div class="biolearn-home-grid">
+  <a class="biolearn-home-card" href="#ゲノムの地図と変異を読む">
+    <span>ゲノム</span>
+    <h3>ゲノムの地図と変異を読む</h3>
+    <p>
+      リファレンスゲノム、座標、注釈、変異の種類を、ゲノムデータの前提として整理します。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="#シーケンスデータの流れを読む">
+    <span>データ</span>
+    <h3>シーケンスデータの流れを読む</h3>
+    <p>
+      FASTQ、マッピング、SAM/BAM、VCF、ワークフローを、解析前後のデータとして位置づけます。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="#rna-seqと発現解析を読む">
+    <span>発現</span>
+    <h3>RNA-seqと発現解析を読む</h3>
+    <p>
+      カウント行列、正規化、差次的発現解析、経路解析を、発現Figureの前提として読みます。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="#single-cell解析を読む">
+    <span>細胞</span>
+    <h3>single-cell解析を読む</h3>
+    <p>
+      QC、バッチ効果、次元削減、クラスタ、マーカー遺伝子、細胞タイプ注釈を確認します。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="#疾患ゲノムとオミクスを読む">
+    <span>応用</span>
+    <h3>疾患ゲノムとオミクスを読む</h3>
+    <p>
+      GWAS、希少疾患、がんゲノム、エピゲノム、多層オミクスを、研究の目的に合わせて読みます。
+    </p>
+  </a>
+  <a class="biolearn-home-card" href="#figureと論文で練習する">
+    <span>演習</span>
+    <h3>Figureと論文で練習する</h3>
+    <p>
+      ゲノムブラウザ、Volcano
+      plot、ヒートマップ、UMAPなどを、論文内の主張と対応づけます。
+    </p>
+  </a>
+</div>
 
 ## 記事一覧
 
-<ArticleList learningPath="omics-analysis" />
+### ゲノムの地図と変異を読む
+
+<ArticleList
+  hrefs={[
+    '/genomics/reference-genome/',
+    '/genomics/genome-annotation/',
+    '/genomics/genomic-coordinate/',
+    '/genomics/genetic-variants/',
+    '/genomics/variant/',
+    '/genomics/snp-snv/',
+    '/genomics/indel/',
+    '/genomics/copy-number-variation/',
+    '/genomics/structural-variant/',
+    '/genomics/somatic-germline-variant/',
+    '/genomics/variant-annotation/',
+    '/genomics/genome-browser/',
+  ]}
+/>
+
+### シーケンスデータの流れを読む
+
+<ArticleList
+  hrefs={[
+    '/bioinformatics/bioinformatics/',
+    '/bioinformatics/sequence-data/',
+    '/bioinformatics/metadata/',
+    '/bioinformatics/fastq/',
+    '/bioinformatics/mapping/',
+    '/bioinformatics/sam-bam/',
+    '/bioinformatics/vcf/',
+    '/bioinformatics/workflow/',
+    '/bioinformatics/notebook/',
+    '/bioinformatics/reanalysis/',
+  ]}
+/>
+
+### RNA-seqと発現解析を読む
+
+<ArticleList
+  hrefs={[
+    '/bioinformatics/rna-seq/',
+    '/bioinformatics/count-matrix/',
+    '/bioinformatics/normalization/',
+    '/bioinformatics/differential-expression/',
+    '/bioinformatics/pathway-enrichment/',
+    '/bioinformatics/gsea/',
+  ]}
+/>
+
+### single-cell解析を読む
+
+<ArticleList
+  hrefs={[
+    '/bioinformatics/single-cell-rna-seq/',
+    '/bioinformatics/single-cell-quality-control/',
+    '/bioinformatics/batch-effect/',
+    '/bioinformatics/dimensionality-reduction/',
+    '/bioinformatics/clustering/',
+    '/bioinformatics/marker-gene/',
+    '/bioinformatics/cell-type-annotation/',
+    '/bioinformatics/umap/',
+  ]}
+/>
+
+### 疾患ゲノムとオミクスを読む
+
+<ArticleList
+  hrefs={[
+    '/genomics/transcriptomics/',
+    '/genomics/proteomics/',
+    '/genomics/metabolomics/',
+    '/genomics/multiomics/',
+    '/genomics/gwas/',
+    '/genomics/polygenic-risk-score/',
+    '/genomics/rare-disease-genomics/',
+    '/genomics/cancer-genomics/',
+    '/genomics/tumor-normal-comparison/',
+    '/genomics/epigenome/',
+    '/genomics/methylome/',
+    '/genomics/chip-seq/',
+    '/genomics/atac-seq/',
+    '/genomics/three-dimensional-genome/',
+  ]}
+/>
+
+### Figureと論文で練習する
+
+<ArticleList
+  hrefs={[
+    '/figures/how-to-read-genome-browser/',
+    '/figures/how-to-read-volcano-plot/',
+    '/figures/how-to-read-heatmap/',
+    '/figures/how-to-read-pca-plot/',
+    '/figures/how-to-read-umap-tsne/',
+    '/figures/how-to-read-gsea-plot/',
+    '/figures/how-to-read-pathway-enrichment/',
+    '/figures/how-to-read-cnv-plot/',
+    '/figures/how-to-read-lollipop-plot/',
+    '/papers/walkthrough-rna-seq/',
+    '/papers/walkthrough-single-cell/',
+    '/papers/walkthrough-cancer-genomics/',
+  ]}
+/>
 
 ## 次に進む
 
-オミクス解析の流れが見えてきたら、[Figureを読めるようになる](/paths/figure-reading/) で図の読み方を横断的に練習します。論文全体の構造へ進む場合は、[論文を読めるようになる](/paths/paper-reading/) を使います。統計や実験設計の確認点で止まった場合は、[実験・統計を確認する](/paths/methods-statistics/) に戻ります。
+オミクス解析の流れが見えてきたら、[Figureを読めるようになる](/paths/figure-reading/) で図の読み方を横断的に練習します。論文全体の構造へ進む場合は [論文を読めるようになる](/paths/paper-reading/) を使います。統計や実験設計の確認点で止まった場合は [実験・統計を確認する](/paths/methods-statistics/) に戻ります。

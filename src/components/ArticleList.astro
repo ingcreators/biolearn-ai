@@ -32,6 +32,7 @@ type LearningPath =
 interface Props {
   part?: Part;
   learningPath?: LearningPath;
+  hrefs?: string[];
   module?: string;
   groupByModule?: boolean;
   emptyMessage?: string;
@@ -40,6 +41,7 @@ interface Props {
 const {
   part,
   learningPath,
+  hrefs,
   module: moduleFilter,
   groupByModule = false,
   emptyMessage = '該当する記事はまだありません。',
@@ -184,9 +186,11 @@ const getRelatedTermItems = (terms: string[] = []) =>
     };
   });
 
-const routeHrefs = learningPath
-  ? learningPathRoutes[learningPath as LearningPathKey]
-  : undefined;
+const routeHrefs =
+  hrefs ??
+  (learningPath
+    ? learningPathRoutes[learningPath as LearningPathKey]
+    : undefined);
 
 const articles = routeHrefs
   ? routeHrefs
