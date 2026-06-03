@@ -452,7 +452,6 @@ h1[data-page-title] .biolearn-hero-main {
 
 .biolearn-quiz-actions button,
 .biolearn-quiz-modal-footer button,
-.biolearn-progress-actions button,
 .biolearn-progress-question button {
   border: 1px solid var(--biolearn-panel-border);
   border-radius: 8px;
@@ -466,7 +465,6 @@ h1[data-page-title] .biolearn-hero-main {
 
 .biolearn-quiz-actions button:hover,
 .biolearn-quiz-modal-footer button:hover,
-.biolearn-progress-actions button:hover,
 .biolearn-progress-question button:hover {
   border-color: var(--sl-color-accent);
   background: var(--biolearn-secondary-bg-hover);
@@ -686,9 +684,13 @@ h1[data-page-title] .biolearn-hero-main {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
+  height: 2.75rem;
   min-height: 2.75rem;
+  margin: 0;
   border-radius: 8px;
   padding: 0.55rem 0.85rem;
+  vertical-align: middle;
   font: inherit;
   font-weight: 700;
   line-height: 1.2;
