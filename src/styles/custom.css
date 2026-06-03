@@ -193,7 +193,7 @@ h1[data-page-title] .biolearn-hero-main {
   line-height: 1.65;
 }
 
-.biolearn-next-card-action {
+.biolearn-next-card .biolearn-next-card-action {
   justify-self: start;
   border: 1px solid var(--biolearn-primary-bg);
   border-radius: 8px;
@@ -205,7 +205,7 @@ h1[data-page-title] .biolearn-hero-main {
   text-decoration: none;
 }
 
-.biolearn-next-card-action:hover {
+.biolearn-next-card .biolearn-next-card-action:hover {
   border-color: var(--biolearn-primary-bg-hover);
   background: var(--biolearn-primary-bg-hover);
   color: var(--biolearn-primary-text);
