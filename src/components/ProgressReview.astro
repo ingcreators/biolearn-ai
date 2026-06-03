@@ -202,7 +202,10 @@ const lessonCatalogJson = JSON.stringify(lessonCatalog).replace(
 />
 
 <script>
-  import { createLearningProgressStore } from '../lib/learning-progress';
+  import {
+    createLearningProgressStore,
+    formatLearningDateTime,
+  } from '../lib/learning-progress';
 
   interface LessonCatalogItem {
     path: string;
@@ -395,10 +398,25 @@ const lessonCatalogJson = JSON.stringify(lessonCatalog).replace(
       title.append(link);
 
       const reviewCount = getReviewCount(lesson);
+      const completedAtText = lesson.completed
+        ? formatLearningDateTime(lesson.completedAt ?? lesson.lastAnsweredAt)
+        : undefined;
+      const lastAnsweredAtText = formatLearningDateTime(lesson.lastAnsweredAt);
+      const dateText = completedAtText
+        ? `学習済み ${completedAtText}`
+        : lastAnsweredAtText
+          ? `最終学習 ${lastAnsweredAtText}`
+          : undefined;
+      const scoreText =
+        lesson.totalQuestions > 0
+          ? `前回 ${lesson.latestScore}/${lesson.totalQuestions}問・最高 ${lesson.bestScore}/${lesson.totalQuestions}問`
+          : '確認問題なし';
       const meta = createElement(
         'p',
         'biolearn-progress-meta',
-        `前回 ${lesson.latestScore}/${lesson.totalQuestions}問・最高 ${lesson.bestScore}/${lesson.totalQuestions}問・復習 ${reviewCount}問`,
+        [dateText, scoreText, `復習 ${reviewCount}問`]
+          .filter(Boolean)
+          .join('・'),
       );
 
       item.append(title, meta);

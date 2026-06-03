@@ -27,6 +27,7 @@ export interface LessonProgress {
   path: string;
   title: string;
   lastAnsweredAt: string;
+  completedAt?: string;
   latestScore: number;
   bestScore: number;
   totalQuestions: number;
@@ -110,6 +111,22 @@ export const lessonIdFromPath = (path: string) =>
 const canUseLocalStorage = () =>
   typeof window !== 'undefined' && typeof window.localStorage !== 'undefined';
 
+export const formatLearningDateTime = (value?: string) => {
+  if (!value) return undefined;
+
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return undefined;
+
+  return new Intl.DateTimeFormat('ja-JP', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false,
+  }).format(date);
+};
+
 export class LocalLearningProgressStore implements LearningProgressStore {
   read(): LearningProgressData {
     if (!canUseLocalStorage()) return createEmptyData();
@@ -156,24 +173,33 @@ export class LocalLearningProgressStore implements LearningProgressStore {
     const reviewCount = Object.values(lesson.questions).filter(
       (question) => question.needsReview,
     ).length;
+    const completedAtText = lesson.completed
+      ? formatLearningDateTime(lesson.completedAt ?? lesson.lastAnsweredAt)
+      : undefined;
 
     if (reviewCount > 0) {
       return {
         status: 'review',
         label: '復習あり',
-        detail: `${reviewCount}問の復習があります。`,
+        detail: completedAtText
+          ? `${reviewCount}問の復習があります。学習済み ${completedAtText}`
+          : `${reviewCount}問の復習があります。`,
         lesson,
       };
     }
 
     if (lesson.completed) {
+      const scoreDetail =
+        lesson.totalQuestions > 0
+          ? `前回 ${lesson.latestScore}/${lesson.totalQuestions}問、最高 ${lesson.bestScore}/${lesson.totalQuestions}問`
+          : 'この記事は学習済みです';
+
       return {
         status: 'completed',
         label: '学習済',
-        detail:
-          lesson.totalQuestions > 0
-            ? `前回 ${lesson.latestScore}/${lesson.totalQuestions}問、最高 ${lesson.bestScore}/${lesson.totalQuestions}問`
-            : 'この記事は学習済みです。',
+        detail: completedAtText
+          ? `${scoreDetail}。学習済み ${completedAtText}`
+          : `${scoreDetail}。`,
         lesson,
       };
     }
@@ -216,6 +242,7 @@ export class LocalLearningProgressStore implements LearningProgressStore {
       path: input.path,
       title: input.title,
       lastAnsweredAt: completedAt,
+      completedAt,
       latestScore: previousLesson?.latestScore ?? 0,
       bestScore: previousLesson?.bestScore ?? 0,
       totalQuestions: previousLesson?.totalQuestions ?? 0,
@@ -254,15 +281,17 @@ export class LocalLearningProgressStore implements LearningProgressStore {
       };
     }
 
+    const completed = input.answers.length >= input.totalQuestions;
     const nextLesson: LessonProgress = {
       lessonId: input.lessonId,
       path: input.path,
       title: input.title,
       lastAnsweredAt: answeredAt,
+      completedAt: completed ? answeredAt : previousLesson?.completedAt,
       latestScore,
       bestScore: Math.max(previousLesson?.bestScore ?? 0, latestScore),
       totalQuestions: input.totalQuestions,
-      completed: input.answers.length >= input.totalQuestions,
+      completed,
       questions: nextQuestions,
     };
 
@@ -303,6 +332,11 @@ export class LocalLearningProgressStore implements LearningProgressStore {
       path: previousLesson?.path ?? input.path,
       title: previousLesson?.title ?? input.title,
       lastAnsweredAt: answeredAt,
+      completedAt:
+        previousLesson?.completedAt ??
+        (previousLesson?.completed
+          ? previousLesson.lastAnsweredAt
+          : answeredAt),
       latestScore: previousLesson?.latestScore ?? (isCorrect ? 1 : 0),
       bestScore: previousLesson?.bestScore ?? (isCorrect ? 1 : 0),
       totalQuestions: previousLesson?.totalQuestions ?? 1,
