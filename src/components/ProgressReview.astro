@@ -1,16 +1,175 @@
+---
+import { getCollection } from 'astro:content';
+import { learningPathLabels, learningPathRoutes } from '../data/learningPaths';
+
+type Part =
+  | 'start'
+  | 'fundamentals'
+  | 'molecular-biology'
+  | 'cell-biology'
+  | 'genomics'
+  | 'methods'
+  | 'bioinformatics'
+  | 'statistics'
+  | 'figures'
+  | 'papers'
+  | 'glossary'
+  | 'resources'
+  | 'paths'
+  | 'about';
+
+interface LessonCatalogItem {
+  path: string;
+  title: string;
+  description?: string;
+  section: string;
+}
+
+const partOrder: Record<Part, number> = {
+  start: 10,
+  fundamentals: 20,
+  'molecular-biology': 30,
+  'cell-biology': 40,
+  genomics: 50,
+  methods: 60,
+  bioinformatics: 70,
+  statistics: 80,
+  figures: 90,
+  papers: 100,
+  glossary: 110,
+  resources: 120,
+  paths: 130,
+  about: 140,
+};
+
+const partLabels: Record<Part, string> = {
+  start: 'はじめに',
+  fundamentals: '生命科学の基礎',
+  'molecular-biology': '分子生物学',
+  'cell-biology': '細胞生物学',
+  genomics: 'ゲノミクス',
+  methods: '実験手法',
+  bioinformatics: 'バイオインフォマティクス',
+  statistics: '統計・研究デザイン',
+  figures: '論文Figureの読み方',
+  papers: '論文読解演習',
+  glossary: '用語集',
+  resources: 'リソース',
+  paths: 'ラーニングパス',
+  about: 'About',
+};
+
+const excludedArticlePrefixes = [
+  '/about/',
+  '/categories/',
+  '/glossary/',
+  '/paths/',
+  '/resources/',
+  '/review/',
+  '/start/',
+];
+
+const categoryRootPaths = [
+  '/fundamentals/',
+  '/molecular-biology/',
+  '/cell-biology/',
+  '/genomics/',
+  '/methods/',
+  '/bioinformatics/',
+  '/statistics/',
+  '/figures/',
+  '/papers/',
+];
+
+const toHref = (id: string) => {
+  const pagePath = id.replace(/(^|\/)index$/, '').replace(/\/$/, '');
+  return pagePath ? `/${pagePath}/` : '/';
+};
+
+const canTrackPath = (href: string) =>
+  href.startsWith('/') &&
+  href !== '/' &&
+  !excludedArticlePrefixes.some((prefix) => href.startsWith(prefix)) &&
+  !categoryRootPaths.includes(href);
+
+const docs = await getCollection('docs');
+const docsWithHref = docs
+  .map((entry) => ({ entry, href: toHref(entry.id) }))
+  .filter((item) => !item.entry.data.draft && canTrackPath(item.href));
+const docByHref = new Map(docsWithHref.map((item) => [item.href, item]));
+const pathLabelMap = new Map<string, string[]>();
+
+for (const [learningPath, routes] of Object.entries(learningPathRoutes)) {
+  for (const href of routes) {
+    const labels = pathLabelMap.get(href) ?? [];
+    labels.push(
+      learningPathLabels[learningPath as keyof typeof learningPathLabels],
+    );
+    pathLabelMap.set(href, labels);
+  }
+}
+
+const lessonCatalog: LessonCatalogItem[] = [];
+const seenHrefs = new Set<string>();
+
+for (const href of Object.values(learningPathRoutes).flat()) {
+  const item = docByHref.get(href);
+  if (!item || seenHrefs.has(href)) continue;
+  seenHrefs.add(href);
+  lessonCatalog.push({
+    path: href,
+    title: item.entry.data.title,
+    description: item.entry.data.description,
+    section:
+      pathLabelMap.get(href)?.slice(0, 2).join(' / ') ??
+      partLabels[item.entry.data.part as Part] ??
+      '記事',
+  });
+}
+
+const remainingCatalogItems = docsWithHref
+  .filter((item) => !seenHrefs.has(item.href))
+  .sort((a, b) => {
+    const partDiff =
+      (partOrder[a.entry.data.part as Part] ?? 999) -
+      (partOrder[b.entry.data.part as Part] ?? 999);
+    if (partDiff !== 0) return partDiff;
+    const orderDiff = (a.entry.data.order ?? 999) - (b.entry.data.order ?? 999);
+    if (orderDiff !== 0) return orderDiff;
+    return a.href.localeCompare(b.href);
+  })
+  .map((item) => ({
+    path: item.href,
+    title: item.entry.data.title,
+    description: item.entry.data.description,
+    section: partLabels[item.entry.data.part as Part] ?? '記事',
+  }));
+
+lessonCatalog.push(...remainingCatalogItems);
+
+const lessonCatalogJson = JSON.stringify(lessonCatalog).replace(
+  /</g,
+  '\\u003c',
+);
+---
+
 <section class="biolearn-progress" data-biolearn-progress>
   <div class="biolearn-progress-actions">
     <button type="button" data-progress-refresh>更新</button>
     <button type="button" data-progress-clear>すべての履歴をリセット</button>
   </div>
 
-  <div
-    class="biolearn-progress-summary"
-    data-progress-summary
-    aria-live="polite"
-  >
-    学習履歴はまだありません。
+  <div class="biolearn-progress-overview" aria-live="polite">
+    <div class="biolearn-progress-summary" data-progress-summary>
+      学習履歴はまだありません。
+    </div>
+    <div class="biolearn-progress-meter" aria-hidden="true">
+      <span data-progress-meter-bar></span>
+    </div>
+    <div class="biolearn-progress-stats" data-progress-stats></div>
   </div>
+
+  <section class="biolearn-progress-next" data-progress-next></section>
 
   <div class="biolearn-progress-grid">
     <section>
@@ -18,18 +177,37 @@
       <div class="biolearn-progress-list" data-progress-lessons></div>
     </section>
 
-    <section>
+    <section id="review-questions">
       <h2>間違えた問題の復習</h2>
       <div class="biolearn-progress-list" data-progress-review></div>
     </section>
   </div>
 </section>
 
+<script
+  type="application/json"
+  id="biolearn-lesson-catalog"
+  set:html={lessonCatalogJson}
+/>
+
 <script>
   import { createLearningProgressStore } from '../lib/learning-progress';
 
+  interface LessonCatalogItem {
+    path: string;
+    title: string;
+    description?: string;
+    section: string;
+  }
+
   const store = createLearningProgressStore();
   const root = document.querySelector<HTMLElement>('[data-biolearn-progress]');
+  const catalogScript = document.querySelector<HTMLScriptElement>(
+    '#biolearn-lesson-catalog',
+  );
+  const lessonCatalog = catalogScript?.textContent
+    ? (JSON.parse(catalogScript.textContent) as LessonCatalogItem[])
+    : [];
 
   const createElement = <K extends keyof HTMLElementTagNameMap>(
     tagName: K,
@@ -55,6 +233,135 @@
     return nextItems;
   };
 
+  const getReviewCount = (
+    lesson: ReturnType<typeof store.getLessons>[number],
+  ) =>
+    Object.values(lesson.questions).filter((question) => question.needsReview)
+      .length;
+
+  const createLink = (href: string, text: string, className?: string) => {
+    const link = createElement('a', className, text);
+    link.href = href;
+    return link;
+  };
+
+  const getCatalogProgress = () => {
+    const lessonsByPath = new Map(
+      store.getLessons().map((lesson) => [lesson.path, lesson]),
+    );
+    const catalogItems = lessonCatalog.map((item, index) => ({
+      ...item,
+      index,
+      lesson: lessonsByPath.get(item.path),
+    }));
+    const started = catalogItems.filter((item) => item.lesson);
+    const completed = catalogItems.filter((item) => item.lesson?.completed);
+    const notStarted = catalogItems.filter((item) => !item.lesson);
+
+    return {
+      catalogItems,
+      started,
+      completed,
+      notStarted,
+      total: catalogItems.length,
+    };
+  };
+
+  const getNextCatalogItem = (
+    catalogItems: ReturnType<typeof getCatalogProgress>['catalogItems'],
+    notStarted: ReturnType<typeof getCatalogProgress>['notStarted'],
+  ) => {
+    if (notStarted.length === 0) return undefined;
+
+    const lessons = store.getLessons();
+    const latestLearnedIndex = lessons.reduce((latestIndex, lesson) => {
+      const catalogIndex = catalogItems.findIndex(
+        (item) => item.path === lesson.path,
+      );
+      return catalogIndex > latestIndex ? catalogIndex : latestIndex;
+    }, -1);
+
+    return (
+      notStarted.find((item) => item.index > latestLearnedIndex) ??
+      notStarted[0]
+    );
+  };
+
+  const getReviewCandidate = () =>
+    store
+      .getLessons()
+      .filter(
+        (lesson) =>
+          lesson.completed &&
+          lesson.totalQuestions > 0 &&
+          lesson.bestScore < lesson.totalQuestions,
+      )
+      .sort((a, b) => {
+        const scoreDiff =
+          a.bestScore / a.totalQuestions - b.bestScore / b.totalQuestions;
+        if (scoreDiff !== 0) return scoreDiff;
+        return b.lastAnsweredAt.localeCompare(a.lastAnsweredAt);
+      })[0] ?? store.getLessons()[0];
+
+  const renderNextStep = (target: HTMLElement) => {
+    const { catalogItems, started, completed, notStarted, total } =
+      getCatalogProgress();
+    const reviewCount = store.getReviewQuestions().length;
+    const nextItem = getNextCatalogItem(catalogItems, notStarted);
+    target.replaceChildren();
+
+    const eyebrow = createElement(
+      'p',
+      'biolearn-progress-next-eyebrow',
+      nextItem ? '次に読む記事' : '次の一歩',
+    );
+    const heading = createElement('h2');
+    const body = createElement('p', 'biolearn-progress-next-body');
+    const actions = createElement('div', 'biolearn-progress-next-actions');
+
+    if (nextItem) {
+      const learnedText =
+        total > 0 ? `${started.length}/${total}記事に着手` : '学習を再開';
+      heading.append(createLink(nextItem.path, nextItem.title));
+      body.textContent = `${nextItem.section}の流れで、まだ学習履歴のない記事です。${learnedText}。`;
+      actions.append(
+        createLink(
+          nextItem.path,
+          'この記事へ進む',
+          'biolearn-progress-primary',
+        ),
+        createLink('/paths/', 'パスを見る'),
+      );
+    } else {
+      const candidate = getReviewCandidate();
+      heading.textContent =
+        total > 0 ? '全記事に学習履歴があります' : '学習を始める記事を選べます';
+      body.textContent =
+        reviewCount > 0
+          ? `全体を一通り進めています。復習対象が ${reviewCount}問あるので、ここで解き直すと理解を固めやすくなります。`
+          : completed.length > 0
+            ? '復習対象はありません。点数を伸ばしたい記事や最近読んだ記事を再読して、理解を保てます。'
+            : 'まずはラーニングパスから、いまの目的に近い順番を選べます。';
+
+      if (reviewCount > 0) {
+        actions.append(
+          createLink(
+            '#review-questions',
+            '復習問題へ進む',
+            'biolearn-progress-primary',
+          ),
+        );
+      } else if (candidate) {
+        actions.append(
+          createLink(candidate.path, '再読する', 'biolearn-progress-primary'),
+        );
+      }
+      actions.append(createLink('/paths/', 'ラーニングパスを見る'));
+    }
+
+    target.append(eyebrow, heading, body, actions);
+  };
+
   const renderLessons = (target: HTMLElement) => {
     const lessons = store.getLessons();
     target.replaceChildren();
@@ -73,13 +380,10 @@
     for (const lesson of lessons) {
       const item = createElement('article', 'biolearn-progress-item');
       const title = createElement('h3');
-      const link = createElement('a', undefined, lesson.title);
-      link.href = lesson.path;
+      const link = createLink(lesson.path, lesson.title);
       title.append(link);
 
-      const reviewCount = Object.values(lesson.questions).filter(
-        (question) => question.needsReview,
-      ).length;
+      const reviewCount = getReviewCount(lesson);
       const meta = createElement(
         'p',
         'biolearn-progress-meta',
@@ -176,18 +480,39 @@
     const reviewTarget = root.querySelector<HTMLElement>(
       '[data-progress-review]',
     );
+    const nextTarget = root.querySelector<HTMLElement>('[data-progress-next]');
+    const meterBar = root.querySelector<HTMLElement>(
+      '[data-progress-meter-bar]',
+    );
+    const statsTarget = root.querySelector<HTMLElement>(
+      '[data-progress-stats]',
+    );
     const lessons = store.getLessons();
     const reviewCount = store.getReviewQuestions().length;
+    const { started, completed, total } = getCatalogProgress();
 
     if (summary) {
-      const completedCount = lessons.filter(
-        (lesson) => lesson.completed,
-      ).length;
       summary.textContent =
         lessons.length > 0
-          ? `学習済み ${lessons.length}記事・完了 ${completedCount}記事・復習 ${reviewCount}問`
-          : '学習履歴はまだありません。';
+          ? `学習済み ${started.length}/${total}記事・完了 ${completed.length}記事・復習 ${reviewCount}問`
+          : `学習履歴はまだありません。全${total}記事から始められます。`;
     }
+    if (meterBar) {
+      meterBar.style.width =
+        total > 0 ? `${Math.round((started.length / total) * 100)}%` : '0%';
+    }
+    if (statsTarget) {
+      statsTarget.replaceChildren(
+        createElement('span', undefined, `着手 ${started.length}`),
+        createElement('span', undefined, `完了 ${completed.length}`),
+        createElement(
+          'span',
+          undefined,
+          `未学習 ${Math.max(total - started.length, 0)}`,
+        ),
+      );
+    }
+    if (nextTarget) renderNextStep(nextTarget);
     if (lessonsTarget) renderLessons(lessonsTarget);
     if (reviewTarget) renderReviewQuestions(reviewTarget);
   };

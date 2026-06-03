@@ -133,22 +133,82 @@ h1[data-page-title] .biolearn-hero-main {
   border-left: 4px solid var(--sl-color-accent);
 }
 
-.biolearn-next ul,
 .biolearn-goals ul {
   margin-bottom: 0;
 }
 
-.biolearn-next-group + .biolearn-next-group {
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--biolearn-panel-border);
+.biolearn-next {
+  display: grid;
+  gap: 0.85rem;
 }
 
-.biolearn-next span {
-  display: inline-block;
-  margin-left: 0.5rem;
+.biolearn-next h3 {
+  margin-bottom: 0;
+}
+
+.biolearn-next-cards {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.biolearn-next-card {
+  display: grid;
+  gap: 0.55rem;
+  border: 1px solid var(--biolearn-panel-border);
+  border-radius: 8px;
+  padding: 0.85rem;
+  background: color-mix(in srgb, var(--biolearn-panel-bg) 92%, black);
+}
+
+:root[data-theme="light"] .biolearn-next-card {
+  background: color-mix(in srgb, var(--biolearn-panel-bg) 92%, white);
+}
+
+.biolearn-next-card-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.7rem;
+}
+
+.biolearn-next-card-heading p {
+  margin: 0;
   color: var(--biolearn-panel-muted);
-  font-size: 0.9rem;
+  font-size: 0.84rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.biolearn-next-card h4 {
+  margin: 0;
+  color: var(--biolearn-panel-text);
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.biolearn-next-card-detail {
+  margin: 0;
+  color: var(--biolearn-panel-muted);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.biolearn-next-card-action {
+  justify-self: start;
+  border: 1px solid var(--biolearn-primary-bg);
+  border-radius: 8px;
+  padding: 0.45rem 0.7rem;
+  background: var(--biolearn-primary-bg);
+  color: var(--biolearn-primary-text);
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.biolearn-next-card-action:hover {
+  border-color: var(--biolearn-primary-bg-hover);
+  background: var(--biolearn-primary-bg-hover);
+  color: var(--biolearn-primary-text);
 }
 
 .biolearn-quiz-heading {
@@ -621,7 +681,9 @@ h1[data-page-title] .biolearn-hero-main {
   gap: 0.6rem;
 }
 
+.biolearn-progress-overview,
 .biolearn-progress-summary,
+.biolearn-progress-next,
 .biolearn-progress-item,
 .biolearn-progress-question {
   color: var(--biolearn-panel-text);
@@ -629,6 +691,107 @@ h1[data-page-title] .biolearn-hero-main {
   border-radius: 8px;
   padding: 1rem;
   background: var(--biolearn-panel-bg);
+}
+
+.biolearn-progress-overview {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.biolearn-progress-summary {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.biolearn-progress-meter {
+  overflow: hidden;
+  height: 0.65rem;
+  border-radius: 999px;
+  background: var(--biolearn-table-head);
+}
+
+.biolearn-progress-meter span {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #54c6b7, var(--sl-color-accent));
+  transition: width 180ms ease;
+}
+
+.biolearn-progress-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.biolearn-progress-stats span {
+  border: 1px solid var(--biolearn-panel-border);
+  border-radius: 999px;
+  padding: 0.25rem 0.55rem;
+  color: var(--biolearn-panel-muted);
+  background: var(--biolearn-table-head);
+  font-size: 0.88rem;
+}
+
+.biolearn-progress-next {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.biolearn-progress-next-eyebrow {
+  margin: 0;
+  color: var(--biolearn-panel-muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.biolearn-progress-next h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.45;
+}
+
+.biolearn-progress-next-body {
+  margin: 0;
+  color: var(--biolearn-panel-muted);
+  line-height: 1.65;
+}
+
+.biolearn-progress-next-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.2rem;
+}
+
+.biolearn-progress-next-actions a {
+  border: 1px solid var(--biolearn-panel-border);
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  background: var(--biolearn-secondary-bg);
+  color: var(--biolearn-panel-text);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.biolearn-progress-next-actions a:hover {
+  border-color: var(--sl-color-accent);
+  background: var(--biolearn-secondary-bg-hover);
+}
+
+.biolearn-progress-next-actions .biolearn-progress-primary {
+  border-color: var(--biolearn-primary-bg);
+  background: var(--biolearn-primary-bg);
+  color: var(--biolearn-primary-text);
+}
+
+.biolearn-progress-next-actions .biolearn-progress-primary:hover {
+  border-color: var(--biolearn-primary-bg-hover);
+  background: var(--biolearn-primary-bg-hover);
 }
 
 .biolearn-progress-grid {

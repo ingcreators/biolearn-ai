@@ -22,6 +22,19 @@ interface LinkItem {
   href: string;
 }
 
+interface NextCandidate {
+  href: string;
+  title: string;
+  context: string;
+}
+
+interface NextCard {
+  id: string;
+  label: string;
+  fallbackDetail: string;
+  candidates: NextCandidate[];
+}
+
 interface Props {
   items: LinkItem[];
 }
@@ -54,35 +67,54 @@ const partLabels: Record<Part, string> = {
 const categoryParts = new Set<string>(Object.keys(partLabels));
 
 const docs = await getCollection('docs');
-const hrefTitleMap = new Map(
-  docs.map((entry) => [toHref(entry.id), entry.data.title]),
-);
 const docsWithHref = docs.map((entry) => ({
   entry,
   href: toHref(entry.id),
 }));
+const docByHref = new Map(docsWithHref.map((item) => [item.href, item]));
+
+const getTitle = (href: string) =>
+  docByHref.get(href)?.entry.data.title ??
+  href.replace(/^\/|\/$/g, '').replaceAll('/', ' / ');
+
+const getCandidates = (hrefs: string[], context: string): NextCandidate[] =>
+  hrefs
+    .map(normalizeHref)
+    .filter(
+      (href) => docByHref.has(href) && !docByHref.get(href)?.entry.data.draft,
+    )
+    .map((href) => ({
+      href,
+      title: getTitle(href),
+      context,
+    }));
 
 const currentHref = normalizeHref(Astro.url.pathname);
-const pathNextItems = Object.entries(learningPathRoutes).flatMap(
+const currentDoc = docByHref.get(currentHref);
+const currentPart = currentDoc?.entry.data.part;
+const currentModule = currentDoc?.entry.data.module;
+
+const pathCards = Object.entries(learningPathRoutes).flatMap(
   ([learningPath, route]) => {
     const currentIndex = route.indexOf(currentHref);
-    const nextHref = route[currentIndex + 1];
-    if (currentIndex === -1 || !nextHref) return [];
+    if (currentIndex === -1) return [];
+
+    const label = learningPathLabels[learningPath as LearningPathKey];
+    const candidates = getCandidates(route.slice(currentIndex + 1), label);
+    if (candidates.length === 0) return [];
 
     return [
       {
-        learningPath: learningPath as LearningPathKey,
-        href: nextHref,
-        title:
-          hrefTitleMap.get(nextHref) ??
-          nextHref.replace(/^\/|\/$/g, '').replaceAll('/', ' / '),
+        id: `path-${learningPath}`,
+        label: `ラーニングパス: ${label}`,
+        fallbackDetail:
+          'このパスの順番に沿って、次に読みやすい記事を表示しています。',
+        candidates,
       },
     ];
   },
 );
 
-const currentDoc = docsWithHref.find((item) => item.href === currentHref);
-const currentPart = currentDoc?.entry.data.part;
 const categoryArticles =
   currentPart && categoryParts.has(currentPart)
     ? docsWithHref
@@ -99,96 +131,251 @@ const categoryArticles =
           return a.href.localeCompare(b.href);
         })
     : [];
+
+const sameModuleArticles = currentModule
+  ? categoryArticles.filter((item) => item.entry.data.module === currentModule)
+  : [];
+const currentModuleIndex = sameModuleArticles.findIndex(
+  (item) => item.href === currentHref,
+);
 const currentCategoryIndex = categoryArticles.findIndex(
   (item) => item.href === currentHref,
 );
-const categoryNext = categoryArticles[currentCategoryIndex + 1];
-const categoryNextItems =
-  currentPart &&
-  categoryParts.has(currentPart) &&
-  currentCategoryIndex !== -1 &&
-  categoryNext
+const categoryLabel =
+  currentPart && categoryParts.has(currentPart)
+    ? partLabels[currentPart as Part]
+    : undefined;
+const sameModuleCandidates =
+  currentModuleIndex !== -1
+    ? sameModuleArticles.slice(currentModuleIndex + 1).map((item) => item.href)
+    : [];
+const categoryFallbackCandidates =
+  currentCategoryIndex !== -1
+    ? categoryArticles.slice(currentCategoryIndex + 1).map((item) => item.href)
+    : [];
+const categoryCandidates = getCandidates(
+  sameModuleCandidates.length > 0
+    ? sameModuleCandidates
+    : categoryFallbackCandidates,
+  sameModuleCandidates.length > 0 && categoryLabel
+    ? `${categoryLabel} / 同じまとまり`
+    : (categoryLabel ?? '分野別カテゴリ'),
+);
+const categoryCard: NextCard[] =
+  categoryCandidates.length > 0 && categoryLabel
     ? [
         {
-          context: partLabels[currentPart as Part],
-          href: categoryNext.href,
-          title:
-            hrefTitleMap.get(categoryNext.href) ??
-            categoryNext.href.replace(/^\/|\/$/g, '').replaceAll('/', ' / '),
+          id: 'category',
+          label: `分野別カテゴリ: ${categoryLabel}`,
+          fallbackDetail:
+            sameModuleCandidates.length > 0
+              ? '同じ分野の同じまとまりから、次に読みやすい記事を表示しています。'
+              : '同じ分野の並びから、次に読みやすい記事を表示しています。',
+          candidates: categoryCandidates,
         },
       ]
     : [];
 
-const sequenceItemMap = new Map<
-  string,
-  { href: string; title: string; contexts: string[] }
->();
-
-for (const item of pathNextItems) {
-  const existing = sequenceItemMap.get(item.href);
-  const context = learningPathLabels[item.learningPath];
-  if (existing) {
-    existing.contexts.push(context);
-  } else {
-    sequenceItemMap.set(item.href, {
-      href: item.href,
-      title: item.title,
-      contexts: [context],
-    });
-  }
-}
-
-for (const item of categoryNextItems) {
-  const existing = sequenceItemMap.get(item.href);
-  if (existing) {
-    existing.contexts.push(item.context);
-  } else {
-    sequenceItemMap.set(item.href, {
-      href: item.href,
-      title: item.title,
-      contexts: [item.context],
-    });
-  }
-}
-
-const sequenceItems = [...sequenceItemMap.values()];
-const sequenceHrefs = new Set(sequenceItems.map((item) => item.href));
-const relatedItems = items.filter(
-  (item) => !sequenceHrefs.has(normalizeHref(item.href)),
+const reservedHrefs = new Set(
+  [...pathCards, ...categoryCard].flatMap((card) =>
+    card.candidates.map((candidate) => candidate.href),
+  ),
 );
+const relatedCandidates = items
+  .map((item) => ({
+    href: normalizeHref(item.href),
+    title: item.title,
+    context: '関連して次に読む',
+  }))
+  .filter((item) => item.href !== currentHref && !reservedHrefs.has(item.href))
+  .filter(
+    (item, index, allItems) =>
+      allItems.findIndex((candidate) => candidate.href === item.href) === index,
+  );
+const relatedCard: NextCard[] =
+  relatedCandidates.length > 0
+    ? [
+        {
+          id: 'related',
+          label: '関連して次に読む',
+          fallbackDetail:
+            'この記事の理解を広げるために、関連する記事を表示しています。',
+          candidates: relatedCandidates,
+        },
+      ]
+    : [];
+
+const nextCards = [...pathCards, ...categoryCard, ...relatedCard];
 ---
 
-<nav class="biolearn-box biolearn-next" aria-labelledby="next-steps-title">
-  {
-    sequenceItems.length ? (
-      <section class="biolearn-next-group">
-        <h3 id="next-steps-title">順番で次に読む記事</h3>
-        <ul>
-          {sequenceItems.map((item) => (
-            <li>
-              <a href={item.href}>
-                {`${item.contexts.join(' / ')}: ${item.title}`}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </section>
-    ) : (
+{
+  nextCards.length > 0 ? (
+    <nav
+      class="biolearn-box biolearn-next"
+      aria-labelledby="next-steps-title"
+      data-biolearn-next-steps
+    >
       <h3 id="next-steps-title">次に読む記事</h3>
-    )
+      <div class="biolearn-next-cards">
+        {nextCards.map((card) => {
+          const firstCandidate = card.candidates[0];
+          return (
+            <article
+              class="biolearn-next-card"
+              data-biolearn-next-card
+              data-next-candidates={JSON.stringify(card.candidates)}
+              data-next-default-detail={card.fallbackDetail}
+            >
+              <div class="biolearn-next-card-heading">
+                <p>{card.label}</p>
+                <span
+                  class="biolearn-status-badge is-not-started"
+                  data-biolearn-next-status
+                  aria-label="学習状態: 未学習"
+                >
+                  未学習
+                </span>
+              </div>
+              <h4>
+                <a href={firstCandidate.href} data-biolearn-next-link>
+                  {firstCandidate.title}
+                </a>
+              </h4>
+              <p class="biolearn-next-card-detail" data-biolearn-next-detail>
+                {card.fallbackDetail}
+              </p>
+              <a
+                class="biolearn-next-card-action"
+                href={firstCandidate.href}
+                data-biolearn-next-action
+              >
+                この記事へ進む
+              </a>
+            </article>
+          );
+        })}
+      </div>
+    </nav>
+  ) : null
+}
+
+<script>
+  import { createLearningProgressStore } from '../lib/learning-progress';
+
+  interface NextCandidate {
+    href: string;
+    title: string;
+    context: string;
   }
-  {
-    relatedItems.length ? (
-      <section class="biolearn-next-group">
-        {sequenceItems.length ? <h3>関連して次に読む記事</h3> : null}
-        <ul>
-          {relatedItems.map((item) => (
-            <li>
-              <a href={item.href}>{item.title}</a>
-            </li>
-          ))}
-        </ul>
-      </section>
-    ) : null
-  }
-</nav>
+
+  const store = createLearningProgressStore();
+  const statusClassNames = [
+    'is-not-started',
+    'is-in-progress',
+    'is-completed',
+    'is-review',
+  ];
+
+  const applyBadgeState = (badge: Element, summary) => {
+    badge.textContent = summary.label;
+    badge.setAttribute('aria-label', `学習状態: ${summary.label}`);
+    badge.classList.remove(...statusClassNames);
+    badge.classList.add(`is-${summary.status}`);
+  };
+
+  const parseCandidates = (card: HTMLElement) => {
+    try {
+      return JSON.parse(card.dataset.nextCandidates ?? '[]') as NextCandidate[];
+    } catch {
+      return [];
+    }
+  };
+
+  const selectCandidate = (candidates: NextCandidate[]) => {
+    const summaries = candidates.map((candidate) => ({
+      candidate,
+      summary: store.getLessonSummary(candidate.href),
+    }));
+
+    return (
+      summaries.find((item) => item.summary.status === 'not-started') ??
+      summaries.find((item) => item.summary.status === 'review') ??
+      summaries.find((item) => item.summary.status === 'in-progress') ??
+      summaries[0]
+    );
+  };
+
+  const getActionText = (status: string) => {
+    if (status === 'review') return '復習する';
+    if (status === 'completed') return '再読する';
+    if (status === 'in-progress') return '続きを読む';
+    return 'この記事へ進む';
+  };
+
+  const getDetailText = (
+    card: HTMLElement,
+    selectedIndex: number,
+    candidate: NextCandidate,
+    status: string,
+  ) => {
+    if (status === 'review') {
+      return `${candidate.context}の候補です。復習が残っているので、読み直して確認問題に戻れます。`;
+    }
+    if (selectedIndex > 0) {
+      return `${candidate.context}の候補です。前の候補は学習済みなので、次の未学習記事を表示しています。`;
+    }
+    if (status === 'completed') {
+      return `${candidate.context}の候補です。この流れは一通り学習済みなので、再読用の導線として使えます。`;
+    }
+    if (status === 'in-progress') {
+      return `${candidate.context}の候補です。途中まで学習している記事に戻れます。`;
+    }
+    return card.dataset.nextDefaultDetail ?? `${candidate.context}の候補です。`;
+  };
+
+  const renderNextSteps = () => {
+    document
+      .querySelectorAll<HTMLElement>('[data-biolearn-next-card]')
+      .forEach((card) => {
+        const candidates = parseCandidates(card);
+        const selected = selectCandidate(candidates);
+        if (!selected) return;
+
+        const selectedIndex = candidates.findIndex(
+          (candidate) => candidate.href === selected.candidate.href,
+        );
+        const link = card.querySelector<HTMLAnchorElement>(
+          '[data-biolearn-next-link]',
+        );
+        const action = card.querySelector<HTMLAnchorElement>(
+          '[data-biolearn-next-action]',
+        );
+        const detail = card.querySelector<HTMLElement>(
+          '[data-biolearn-next-detail]',
+        );
+        const badge = card.querySelector('[data-biolearn-next-status]');
+
+        if (link) {
+          link.href = selected.candidate.href;
+          link.textContent = selected.candidate.title;
+        }
+        if (action) {
+          action.href = selected.candidate.href;
+          action.textContent = getActionText(selected.summary.status);
+        }
+        if (detail) {
+          detail.textContent = getDetailText(
+            card,
+            selectedIndex,
+            selected.candidate,
+            selected.summary.status,
+          );
+        }
+        if (badge) applyBadgeState(badge, selected.summary);
+      });
+  };
+
+  document.addEventListener('DOMContentLoaded', renderNextSteps);
+  window.addEventListener('biolearn-progress-updated', renderNextSteps);
+  renderNextSteps();
+</script>
