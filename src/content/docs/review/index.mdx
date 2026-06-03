@@ -14,3 +14,17 @@ import ProgressReview from '../../../components/ProgressReview.astro';
 将来的にログイン機能を追加した場合は、同じ学習データをアカウントに同期し、複数端末から復習を続けられる形に拡張します。
 
 <ProgressReview />
+
+## 学習した記事
+
+<section className="biolearn-progress-section" aria-label="学習した記事">
+  <div className="biolearn-progress-list" data-progress-lessons></div>
+</section>
+
+<span id="review-questions" className="biolearn-anchor-target"></span>
+
+## 間違えた問題の復習
+
+<section className="biolearn-progress-section" aria-label="間違えた問題の復習">
+  <div className="biolearn-progress-list" data-progress-review></div>
+</section>

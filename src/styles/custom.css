@@ -679,6 +679,110 @@ h1[data-page-title] .biolearn-hero-main {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
+  align-items: center;
+}
+
+.biolearn-progress-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  border-radius: 8px;
+  padding: 0.55rem 0.85rem;
+  font: inherit;
+  font-weight: 700;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.biolearn-progress-actions .biolearn-progress-refresh {
+  border: 1px solid var(--biolearn-primary-bg);
+  background: var(--biolearn-primary-bg);
+  color: var(--biolearn-primary-text);
+}
+
+.biolearn-progress-actions .biolearn-progress-refresh:hover {
+  border-color: var(--biolearn-primary-bg-hover);
+  background: var(--biolearn-primary-bg-hover);
+}
+
+.biolearn-progress-actions .biolearn-progress-clear {
+  border: 1px solid var(--biolearn-reset-border);
+  background: transparent;
+  color: var(--biolearn-reset-text);
+}
+
+.biolearn-progress-actions .biolearn-progress-clear:hover {
+  border-color: var(--biolearn-reset-text);
+  background: var(--biolearn-reset-bg-hover);
+}
+
+.biolearn-progress-dialog {
+  width: min(26rem, calc(100vw - 2rem));
+  border: 1px solid var(--biolearn-panel-border);
+  border-radius: 8px;
+  padding: 0;
+  background: var(--biolearn-panel-bg);
+  color: var(--biolearn-panel-text);
+}
+
+.biolearn-progress-dialog::backdrop {
+  background: rgb(6 21 19 / 0.68);
+}
+
+.biolearn-progress-dialog-body {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1rem;
+}
+
+.biolearn-progress-dialog-body p {
+  margin: 0;
+  color: var(--biolearn-panel-muted);
+  line-height: 1.65;
+}
+
+.biolearn-progress-dialog-body .biolearn-progress-dialog-title {
+  color: var(--biolearn-panel-text);
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.biolearn-progress-dialog-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.55rem;
+  margin-top: 0.25rem;
+}
+
+.biolearn-progress-dialog-actions button {
+  min-height: 2.5rem;
+  border: 1px solid var(--biolearn-panel-border);
+  border-radius: 8px;
+  padding: 0.45rem 0.75rem;
+  background: var(--biolearn-secondary-bg);
+  color: var(--biolearn-panel-text);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.biolearn-progress-dialog-actions button:hover {
+  border-color: var(--sl-color-accent);
+  background: var(--biolearn-secondary-bg-hover);
+}
+
+.biolearn-progress-dialog-actions [data-progress-clear-confirm] {
+  border-color: var(--biolearn-reset-border);
+  background: transparent;
+  color: var(--biolearn-reset-text);
+}
+
+.biolearn-progress-dialog-actions [data-progress-clear-confirm]:hover {
+  border-color: var(--biolearn-reset-text);
+  background: var(--biolearn-reset-bg-hover);
 }
 
 .biolearn-progress-overview,
@@ -794,19 +898,21 @@ h1[data-page-title] .biolearn-hero-main {
   background: var(--biolearn-primary-bg-hover);
 }
 
-.biolearn-progress-grid {
+.biolearn-progress-section {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-  gap: 1rem;
-}
-
-.biolearn-progress-grid h2 {
-  margin-top: 1rem;
+  align-content: start;
+  gap: 0.75rem;
 }
 
 .biolearn-progress-list {
   display: grid;
   gap: 0.8rem;
+}
+
+.biolearn-anchor-target {
+  display: block;
+  height: 0;
+  scroll-margin-top: 5rem;
 }
 
 .biolearn-progress-item h3,

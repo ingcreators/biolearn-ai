@@ -155,9 +155,32 @@ const lessonCatalogJson = JSON.stringify(lessonCatalog).replace(
 
 <section class="biolearn-progress" data-biolearn-progress>
   <div class="biolearn-progress-actions">
-    <button type="button" data-progress-refresh>更新</button>
-    <button type="button" data-progress-clear>すべての履歴をリセット</button>
+    <button
+      class="biolearn-progress-refresh"
+      type="button"
+      data-progress-refresh
+    >
+      更新
+    </button>
+    <button class="biolearn-progress-clear" type="button" data-progress-clear>
+      すべての履歴をリセット
+    </button>
   </div>
+
+  <dialog class="biolearn-progress-dialog" data-progress-clear-dialog>
+    <div class="biolearn-progress-dialog-body">
+      <p class="biolearn-progress-dialog-title">学習履歴をリセットしますか？</p>
+      <p>
+        記事の学習状態、確認問題の結果、復習リストがこの端末から削除されます。
+      </p>
+      <div class="biolearn-progress-dialog-actions">
+        <button type="button" data-progress-clear-cancel> キャンセル </button>
+        <button type="button" data-progress-clear-confirm>
+          リセットする
+        </button>
+      </div>
+    </div>
+  </dialog>
 
   <div class="biolearn-progress-overview" aria-live="polite">
     <div class="biolearn-progress-summary" data-progress-summary>
@@ -170,18 +193,6 @@ const lessonCatalogJson = JSON.stringify(lessonCatalog).replace(
   </div>
 
   <section class="biolearn-progress-next" data-progress-next></section>
-
-  <div class="biolearn-progress-grid">
-    <section>
-      <h2>学習した記事</h2>
-      <div class="biolearn-progress-list" data-progress-lessons></div>
-    </section>
-
-    <section id="review-questions">
-      <h2>間違えた問題の復習</h2>
-      <div class="biolearn-progress-list" data-progress-review></div>
-    </section>
-  </div>
 </section>
 
 <script
@@ -474,10 +485,10 @@ const lessonCatalogJson = JSON.stringify(lessonCatalog).replace(
     if (!root) return;
 
     const summary = root.querySelector<HTMLElement>('[data-progress-summary]');
-    const lessonsTarget = root.querySelector<HTMLElement>(
+    const lessonsTarget = document.querySelector<HTMLElement>(
       '[data-progress-lessons]',
     );
-    const reviewTarget = root.querySelector<HTMLElement>(
+    const reviewTarget = document.querySelector<HTMLElement>(
       '[data-progress-review]',
     );
     const nextTarget = root.querySelector<HTMLElement>('[data-progress-next]');
@@ -517,14 +528,37 @@ const lessonCatalogJson = JSON.stringify(lessonCatalog).replace(
     if (reviewTarget) renderReviewQuestions(reviewTarget);
   };
 
+  const clearAllProgress = () => {
+    store.clearAll();
+    render();
+  };
+
+  const clearDialog = root?.querySelector<HTMLDialogElement>(
+    '[data-progress-clear-dialog]',
+  );
+
   root
     ?.querySelector('[data-progress-refresh]')
     ?.addEventListener('click', render);
   root
     ?.querySelector('[data-progress-clear]')
     ?.addEventListener('click', () => {
-      store.clearAll();
-      render();
+      if (clearDialog?.showModal) {
+        clearDialog.showModal();
+        return;
+      }
+
+      if (!window.confirm('すべての学習履歴をリセットしますか？')) return;
+      clearAllProgress();
+    });
+  root
+    ?.querySelector('[data-progress-clear-cancel]')
+    ?.addEventListener('click', () => clearDialog?.close());
+  root
+    ?.querySelector('[data-progress-clear-confirm]')
+    ?.addEventListener('click', () => {
+      clearDialog?.close();
+      clearAllProgress();
     });
   window.addEventListener('biolearn-progress-updated', render);
   render();
